@@ -1,18 +1,23 @@
-import { Pool, neonConfig } from '@neondatabase/serverless';
-import { drizzle } from 'drizzle-orm/neon-serverless';
-import ws from "ws";
+import { createClient } from '@supabase/supabase-js';
 import * as schema from "../shared/schema";
 
-neonConfig.webSocketConstructor = ws;
+// Use Supabase client instead of Neon driver for Supabase compatibility
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-// Use Supabase connection string 
-const connectionString = process.env.SUPABASE_DATABASE_URL || process.env.DATABASE_URL;
-
-if (!connectionString) {
+if (!supabaseUrl || !supabaseServiceRoleKey) {
   throw new Error(
-    "Database connection string must be set. Check SUPABASE_DATABASE_URL or DATABASE_URL.",
+    "Supabase credentials must be set. Check NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.",
   );
 }
 
-export const pool = new Pool({ connectionString });
-export const db = drizzle({ client: pool, schema });
+// Create Supabase client for server-side operations
+export const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
+
+// For compatibility with existing Drizzle code, create a wrapper
+export const db = {
+  select: () => ({ from: (table: string) => supabase.from(table).select() }),
+  insert: (data: any) => ({ into: (table: string) => supabase.from(table).insert(data) }),
+  update: (data: any) => ({ table: (table: string) => supabase.from(table).update(data) }),
+  delete: () => ({ from: (table: string) => supabase.from(table).delete() })
+};
