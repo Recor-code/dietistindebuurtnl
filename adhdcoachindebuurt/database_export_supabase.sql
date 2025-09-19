@@ -22,7 +22,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: blog_posts; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.blog_posts (
@@ -41,10 +40,8 @@ CREATE TABLE public.blog_posts (
 );
 
 
-ALTER TABLE public.blog_posts OWNER TO neondb_owner;
 
 --
--- Name: blog_posts_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.blog_posts_id_seq
@@ -56,17 +53,14 @@ CREATE SEQUENCE public.blog_posts_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.blog_posts_id_seq OWNER TO neondb_owner;
 
 --
--- Name: blog_posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.blog_posts_id_seq OWNED BY public.blog_posts.id;
 
 
 --
--- Name: chat_conversations; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.chat_conversations (
@@ -81,10 +75,8 @@ CREATE TABLE public.chat_conversations (
 );
 
 
-ALTER TABLE public.chat_conversations OWNER TO neondb_owner;
 
 --
--- Name: chat_conversations_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.chat_conversations_id_seq
@@ -96,17 +88,14 @@ CREATE SEQUENCE public.chat_conversations_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.chat_conversations_id_seq OWNER TO neondb_owner;
 
 --
--- Name: chat_conversations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.chat_conversations_id_seq OWNED BY public.chat_conversations.id;
 
 
 --
--- Name: cities; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.cities (
@@ -125,10 +114,8 @@ CREATE TABLE public.cities (
 );
 
 
-ALTER TABLE public.cities OWNER TO neondb_owner;
 
 --
--- Name: cities_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.cities_id_seq
@@ -140,17 +127,14 @@ CREATE SEQUENCE public.cities_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.cities_id_seq OWNER TO neondb_owner;
 
 --
--- Name: cities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.cities_id_seq OWNED BY public.cities.id;
 
 
 --
--- Name: coaches; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.coaches (
@@ -179,10 +163,8 @@ CREATE TABLE public.coaches (
 );
 
 
-ALTER TABLE public.coaches OWNER TO neondb_owner;
 
 --
--- Name: coaches_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.coaches_id_seq
@@ -194,17 +176,14 @@ CREATE SEQUENCE public.coaches_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.coaches_id_seq OWNER TO neondb_owner;
 
 --
--- Name: coaches_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.coaches_id_seq OWNED BY public.coaches.id;
 
 
 --
--- Name: faq_items; Type: TABLE; Schema: public; Owner: neondb_owner
 --
 
 CREATE TABLE public.faq_items (
@@ -219,10 +198,8 @@ CREATE TABLE public.faq_items (
 );
 
 
-ALTER TABLE public.faq_items OWNER TO neondb_owner;
 
 --
--- Name: faq_items_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
 --
 
 CREATE SEQUENCE public.faq_items_id_seq
@@ -234,52 +211,44 @@ CREATE SEQUENCE public.faq_items_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.faq_items_id_seq OWNER TO neondb_owner;
 
 --
--- Name: faq_items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
 --
 
 ALTER SEQUENCE public.faq_items_id_seq OWNED BY public.faq_items.id;
 
 
 --
--- Name: blog_posts id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.blog_posts ALTER COLUMN id SET DEFAULT nextval('public.blog_posts_id_seq'::regclass);
 
 
 --
--- Name: chat_conversations id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.chat_conversations ALTER COLUMN id SET DEFAULT nextval('public.chat_conversations_id_seq'::regclass);
 
 
 --
--- Name: cities id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.cities ALTER COLUMN id SET DEFAULT nextval('public.cities_id_seq'::regclass);
 
 
 --
--- Name: coaches id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.coaches ALTER COLUMN id SET DEFAULT nextval('public.coaches_id_seq'::regclass);
 
 
 --
--- Name: faq_items id; Type: DEFAULT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.faq_items ALTER COLUMN id SET DEFAULT nextval('public.faq_items_id_seq'::regclass);
 
 
 --
--- Data for Name: blog_posts; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 INSERT INTO public.blog_posts VALUES (1, 'ADHD Coaching in Amsterdam: Wat Je Moet Weten', 'adhd-coaching-amsterdam', '<h2>ADHD Coaching in Amsterdam</h2><p>Ben je op zoek naar ADHD coaching in Amsterdam? In dit artikel bespreken we alles wat je moet weten over ADHD ondersteuning in jouw stad.</p><h3>Beschikbare ADHD Coaches</h3><p>In Amsterdam zijn verschillende ervaren ADHD coaches actief die je kunnen helpen met praktische vaardigheden...</p>', 'Ontdek alles over ADHD coaching mogelijkheden in Amsterdam. Van lokale coaches tot specialisaties.', 'ADHD coaching in Amsterdam - Vind ervaren coaches, bekijk reviews en vergelijk specialisaties in jouw stad.', 1, 'Noord-Holland', '["ADHD","coaching","Amsterdam","Noord-Holland"]', '2025-09-19 14:31:52.798', '2025-09-19 14:31:52.833756', '2025-09-19 14:31:52.833756');
@@ -295,13 +264,11 @@ INSERT INTO public.blog_posts VALUES (10, 'ADHD Coaching in Nijmegen: Wat Je Moe
 
 
 --
--- Data for Name: chat_conversations; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 
 
 --
--- Data for Name: cities; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 INSERT INTO public.cities VALUES (1, 'Amsterdam', 'amsterdam', 'Noord-Holland', 'NL', 907976, 52.36760000, 4.90410000, '{"prevalenceAdults":"4-6%","prevalenceChildren":"5-8%","waitingTimeAverageWeeks":12,"availableCoaches":0,"averageRating":4.2,"treatmentTypes":["ADHD Coaching","Gedragstherapie","Medicatie begeleiding","Psychoeducatie","Ouder/partner coaching"],"lastUpdated":"2025-09-19T14:31:51.731Z"}', 'Professionele ADHD ondersteuning in Amsterdam. Van coaching tot therapie - vind de juiste hulp bij jou in de buurt.', '2025-09-19 14:31:52.411772', '2025-09-19 14:31:52.411772');
@@ -357,7 +324,6 @@ INSERT INTO public.cities VALUES (50, 'Sint-Niklaas', 'sint-niklaas', 'Oost-Vlaa
 
 
 --
--- Data for Name: coaches; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 INSERT INTO public.coaches VALUES (1, 'Dr. Sarah van den Berg', 'sarah-van-den-berg', 'sarah@adhdcoach.nl', '06-12345678', 'https://sarahcoaching.nl', 'ADHD Coach & Psycholoog', 'Gespecialiseerd in ADHD coaching voor volwassenen. 15 jaar ervaring in gedragstherapie en coaching.', 'Hoofdstraat 123', 52.37249015, 4.90135955, 1, 4.80, 47, true, true, true, true, true, 'available', '2025-09-19 14:31:52.671257', '2025-09-19 14:31:52.671257');
@@ -423,7 +389,6 @@ INSERT INTO public.coaches VALUES (60, 'Lisa de Vries', 'lisa-de-vries', 'lisa@k
 
 
 --
--- Data for Name: faq_items; Type: TABLE DATA; Schema: public; Owner: neondb_owner
 --
 
 INSERT INTO public.faq_items VALUES (1, 'Wat is het verschil tussen een ADHD coach en een psycholoog?', 'Een ADHD coach richt zich vooral op praktische vaardigheden zoals planning, organisatie en tijdmanagement. Een psycholoog kan ook therapeutische behandeling bieden voor bijkomende problematiek zoals angst of depressie.', 'Algemeen', 1, true, '2025-09-19 14:31:52.752735', '2025-09-19 14:31:52.752735');
@@ -434,42 +399,36 @@ INSERT INTO public.faq_items VALUES (5, 'Wat moet ik verwachten van de eerste se
 
 
 --
--- Name: blog_posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.blog_posts_id_seq', 10, true);
 
 
 --
--- Name: chat_conversations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.chat_conversations_id_seq', 1, false);
 
 
 --
--- Name: cities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.cities_id_seq', 52, true);
 
 
 --
--- Name: coaches_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.coaches_id_seq', 60, true);
 
 
 --
--- Name: faq_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: neondb_owner
 --
 
 SELECT pg_catalog.setval('public.faq_items_id_seq', 5, true);
 
 
 --
--- Name: blog_posts blog_posts_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.blog_posts
@@ -477,7 +436,6 @@ ALTER TABLE ONLY public.blog_posts
 
 
 --
--- Name: blog_posts blog_posts_slug_unique; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.blog_posts
@@ -485,7 +443,6 @@ ALTER TABLE ONLY public.blog_posts
 
 
 --
--- Name: chat_conversations chat_conversations_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.chat_conversations
@@ -493,7 +450,6 @@ ALTER TABLE ONLY public.chat_conversations
 
 
 --
--- Name: cities cities_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.cities
@@ -501,7 +457,6 @@ ALTER TABLE ONLY public.cities
 
 
 --
--- Name: cities cities_slug_unique; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.cities
@@ -509,7 +464,6 @@ ALTER TABLE ONLY public.cities
 
 
 --
--- Name: coaches coaches_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.coaches
@@ -517,7 +471,6 @@ ALTER TABLE ONLY public.coaches
 
 
 --
--- Name: faq_items faq_items_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.faq_items
@@ -525,7 +478,6 @@ ALTER TABLE ONLY public.faq_items
 
 
 --
--- Name: blog_posts blog_posts_city_id_cities_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.blog_posts
@@ -533,7 +485,6 @@ ALTER TABLE ONLY public.blog_posts
 
 
 --
--- Name: coaches coaches_city_id_cities_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: neondb_owner
 --
 
 ALTER TABLE ONLY public.coaches
@@ -541,14 +492,12 @@ ALTER TABLE ONLY public.coaches
 
 
 --
--- Name: DEFAULT PRIVILEGES FOR SEQUENCES; Type: DEFAULT ACL; Schema: public; Owner: cloud_admin
 --
 
 ALTER DEFAULT PRIVILEGES FOR ROLE cloud_admin IN SCHEMA public GRANT ALL ON SEQUENCES TO neon_superuser WITH GRANT OPTION;
 
 
 --
--- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: public; Owner: cloud_admin
 --
 
 ALTER DEFAULT PRIVILEGES FOR ROLE cloud_admin IN SCHEMA public GRANT SELECT,INSERT,REFERENCES,DELETE,TRIGGER,TRUNCATE,UPDATE ON TABLES TO neon_superuser WITH GRANT OPTION;
