@@ -4,6 +4,7 @@ import { cities, coaches } from '../../../../shared/schema';
 import { eq } from 'drizzle-orm';
 import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter } from 'lucide-react';
 import Link from 'next/link';
+import GoogleMap from '@/components/GoogleMap';
 
 interface PageProps {
   params: {
@@ -237,6 +238,28 @@ export default async function CityPage({ params }: PageProps) {
 
           {/* Sidebar */}
           <div className="space-y-6">
+            {/* Google Map */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                ADHD Coaches op de kaart
+              </h3>
+              <GoogleMap
+                coaches={city.coaches.map(coach => ({
+                  id: coach.id,
+                  name: coach.name,
+                  latitude: coach.latitude,
+                  longitude: coach.longitude,
+                  rating: coach.rating,
+                  address: coach.address,
+                  specialization: coach.specialization
+                }))}
+                center={{
+                  lat: parseFloat(city.latitude!),
+                  lng: parseFloat(city.longitude!)
+                }}
+                height="300px"
+              />
+            </div>
             {/* ADHD Statistics */}
             {adhdStats && (
               <div className="bg-white rounded-lg shadow-md p-6">
