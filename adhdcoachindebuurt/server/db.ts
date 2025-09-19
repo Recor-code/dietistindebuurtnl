@@ -1,23 +1,16 @@
-import { createClient } from '@supabase/supabase-js';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import postgres from 'postgres';
 import * as schema from "../shared/schema";
 
-// Use Supabase client instead of Neon driver for Supabase compatibility
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+// Get database URL from environment variables
+const databaseUrl = process.env.SUPABASE_DATABASE_URL || process.env.DATABASE_URL;
 
-if (!supabaseUrl || !supabaseServiceRoleKey) {
+if (!databaseUrl) {
   throw new Error(
-    "Supabase credentials must be set. Check NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.",
+    "Database URL must be set. Check SUPABASE_DATABASE_URL or DATABASE_URL.",
   );
 }
 
-// Create Supabase client for server-side operations
-export const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
-
-// For compatibility with existing Drizzle code, create a wrapper
-export const db = {
-  select: () => ({ from: (table: string) => supabase.from(table).select() }),
-  insert: (data: any) => ({ into: (table: string) => supabase.from(table).insert(data) }),
-  update: (data: any) => ({ table: (table: string) => supabase.from(table).update(data) }),
-  delete: () => ({ from: (table: string) => supabase.from(table).delete() })
-};
+// Create PostgreSQL client for Supabase
+const client = postgres(databaseUrl);
+export const db = drizzle(client, { schema });
