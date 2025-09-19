@@ -6,10 +6,7 @@ async function getBlogPosts() {
   try {
     const { data, error } = await supabase
       .from('blog_posts')
-      .select(`
-        *,
-        cities!inner (id, name, slug)
-      `)
+      .select('*, cities!inner(id, name, slug)')
       .not('published_at', 'is', null)
       .order('published_at', { ascending: false });
 

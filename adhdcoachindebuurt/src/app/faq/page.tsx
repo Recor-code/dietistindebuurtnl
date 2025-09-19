@@ -6,7 +6,7 @@ async function getFAQItems() {
   try {
     const { data, error } = await supabase
       .from('faq_items')
-      .select('*')
+      .select('id, question, answer, category, "order", is_published, created_at, updated_at')
       .eq('is_published', true)
       .order('order', { ascending: true });
 

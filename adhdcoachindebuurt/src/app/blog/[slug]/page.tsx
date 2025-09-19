@@ -13,10 +13,7 @@ async function getBlogPost(slug: string) {
   try {
     const { data, error } = await supabase
       .from('blog_posts')
-      .select(`
-        *,
-        cities (id, name, slug)
-      `)
+      .select('*, cities(id, name, slug)')
       .eq('slug', slug)
       .single();
 
