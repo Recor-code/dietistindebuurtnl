@@ -1,18 +1,24 @@
-import { db } from '../../../server/db';
-import { blogPosts, cities } from '../../../shared/schema';
-import { desc, isNotNull } from 'drizzle-orm';
+import { supabase } from '../../../server/db';
 import { Calendar, MapPin, Tag, Heart } from 'lucide-react';
 import Link from 'next/link';
 
 async function getBlogPosts() {
   try {
-    return await db.query.blogPosts.findMany({
-      where: isNotNull(blogPosts.publishedAt),
-      orderBy: desc(blogPosts.publishedAt),
-      with: {
-        city: true
-      }
-    });
+    const { data, error } = await supabase
+      .from('blog_posts')
+      .select(`
+        *,
+        cities!inner (id, name, slug)
+      `)
+      .not('published_at', 'is', null)
+      .order('published_at', { ascending: false });
+
+    if (error) {
+      console.error('Error fetching blog posts:', error);
+      return [];
+    }
+
+    return data || [];
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     return [];

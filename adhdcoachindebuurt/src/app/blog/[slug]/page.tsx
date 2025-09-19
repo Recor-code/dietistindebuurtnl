@@ -1,7 +1,5 @@
 import { notFound } from 'next/navigation';
-import { db } from '../../../../server/db';
-import { blogPosts } from '../../../../shared/schema';
-import { eq } from 'drizzle-orm';
+import { supabase } from '../../../../server/db';
 import { Calendar, MapPin, Tag, Heart, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
@@ -13,13 +11,21 @@ interface PageProps {
 
 async function getBlogPost(slug: string) {
   try {
-    const post = await db.query.blogPosts.findFirst({
-      where: eq(blogPosts.slug, slug),
-      with: {
-        city: true
-      }
-    });
-    return post;
+    const { data, error } = await supabase
+      .from('blog_posts')
+      .select(`
+        *,
+        cities (id, name, slug)
+      `)
+      .eq('slug', slug)
+      .single();
+
+    if (error) {
+      console.error('Error fetching blog post:', error);
+      return null;
+    }
+
+    return data;
   } catch (error) {
     console.error('Error fetching blog post:', error);
     return null;

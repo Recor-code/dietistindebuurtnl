@@ -1,16 +1,17 @@
-import { drizzle } from 'drizzle-orm/postgres-js';
-import postgres from 'postgres';
-import * as schema from "../shared/schema";
+import { createClient } from '@supabase/supabase-js';
 
-// Get database URL from environment variables
-const databaseUrl = process.env.SUPABASE_DATABASE_URL || process.env.DATABASE_URL;
+// Use Supabase HTTP client instead of direct database connection
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!databaseUrl) {
+if (!supabaseUrl || !supabaseServiceRoleKey) {
   throw new Error(
-    "Database URL must be set. Check SUPABASE_DATABASE_URL or DATABASE_URL.",
+    "Supabase credentials must be set. Check NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.",
   );
 }
 
-// Create PostgreSQL client for Supabase
-const client = postgres(databaseUrl);
-export const db = drizzle(client, { schema });
+// Create Supabase client for server-side operations (bypasses RLS)
+export const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
+
+// Export for compatibility with existing imports
+export const db = supabase;

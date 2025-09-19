@@ -1,12 +1,21 @@
-import { db } from '../../../server/db';
-import { faqItems } from '../../../shared/schema';
-import { asc, eq } from 'drizzle-orm';
+import { supabase } from '../../../server/db';
 import { ChevronDown, Heart, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 
 async function getFAQItems() {
   try {
-    return await db.select().from(faqItems).where(eq(faqItems.isPublished, true)).orderBy(asc(faqItems.order));
+    const { data, error } = await supabase
+      .from('faq_items')
+      .select('*')
+      .eq('is_published', true)
+      .order('order', { ascending: true });
+
+    if (error) {
+      console.error('Error fetching FAQ items:', error);
+      return [];
+    }
+
+    return data || [];
   } catch (error) {
     console.error('Error fetching FAQ items:', error);
     return [];

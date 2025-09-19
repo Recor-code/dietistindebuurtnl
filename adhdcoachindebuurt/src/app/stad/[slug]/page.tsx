@@ -1,7 +1,5 @@
 import { notFound } from 'next/navigation';
-import { db } from '../../../../server/db';
-import { cities, coaches } from '../../../../shared/schema';
-import { eq } from 'drizzle-orm';
+import { supabase } from '../../../../server/db';
 import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
@@ -14,13 +12,29 @@ interface PageProps {
 
 async function getCityWithCoaches(slug: string) {
   try {
-    const city = await db.query.cities.findFirst({
-      where: eq(cities.slug, slug),
-      with: {
-        coaches: true
-      }
-    });
-    return city;
+    // Get city data
+    const { data: city, error: cityError } = await supabase
+      .from('cities')
+      .select('*')
+      .eq('slug', slug)
+      .single();
+
+    if (cityError || !city) {
+      return null;
+    }
+
+    // Get coaches for this city
+    const { data: coaches, error: coachesError } = await supabase
+      .from('coaches')
+      .select('*')
+      .eq('city_id', city.id);
+
+    if (coachesError) {
+      console.error('Error fetching coaches:', coachesError);
+      return { ...city, coaches: [] };
+    }
+
+    return { ...city, coaches: coaches || [] };
   } catch (error) {
     console.error('Error fetching city:', error);
     return null;

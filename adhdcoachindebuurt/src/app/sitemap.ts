@@ -1,7 +1,5 @@
 import { MetadataRoute } from 'next';
-import { db } from '../../server/db';
-import { cities, blogPosts } from '../../shared/schema';
-import { isNotNull } from 'drizzle-orm';
+import { supabase } from '../../server/db';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://adhdcoachindebuurt.nl';
@@ -36,19 +34,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     // Get all cities
-    const allCities = await db.select().from(cities);
-    const cityPages = allCities.map(city => ({
+    const { data: allCities } = await supabase
+      .from('cities')
+      .select('slug, created_at, updated_at');
+      
+    const cityPages = (allCities || []).map(city => ({
       url: `${baseUrl}/stad/${city.slug}`,
-      lastModified: new Date(city.updatedAt || city.createdAt!),
+      lastModified: new Date(city.updated_at || city.created_at),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     }));
 
     // Get all blog posts
-    const allPosts = await db.select().from(blogPosts).where(isNotNull(blogPosts.publishedAt));
-    const blogPages = allPosts.map(post => ({
+    const { data: allPosts } = await supabase
+      .from('blog_posts')
+      .select('slug, created_at, updated_at, published_at')
+      .not('published_at', 'is', null);
+      
+    const blogPages = (allPosts || []).map(post => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updatedAt || post.createdAt!),
+      lastModified: new Date(post.updated_at || post.created_at),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     }));
