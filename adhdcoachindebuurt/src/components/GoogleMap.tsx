@@ -35,6 +35,7 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
 
         const { Map } = await loader.importLibrary('maps');
         const { AdvancedMarkerElement } = await loader.importLibrary('marker');
+        const { InfoWindow } = await loader.importLibrary('maps');
 
         if (!mapRef.current) return;
 
@@ -70,7 +71,6 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
                 ${coach.address ? `<p class="text-gray-600 text-xs">${coach.address}</p>` : ''}
               `;
 
-              const { InfoWindow } = await loader.importLibrary('maps');
               const infoWindow = new InfoWindow({
                 content: infoContent,
               });

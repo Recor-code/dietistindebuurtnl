@@ -119,7 +119,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="text-sm text-gray-600 mt-1">
-                  {Math.floor(Math.random() * 20) + 5} coaches beschikbaar
+                  12 coaches beschikbaar
                 </div>
               </Link>
             ))}
