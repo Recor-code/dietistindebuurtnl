@@ -20,14 +20,7 @@ interface ADHDAnalysis {
 
 export default function ChatAssistant() {
   const [isOpen, setIsOpen] = useState(true);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      role: 'assistant',
-      content: 'Hallo! Ik ben hier om je te helpen de juiste ADHD ondersteuning te vinden. Kun je me vertellen wat je zoekt? Bijvoorbeeld hulp voor jezelf of je kind, welke problemen je ervaart, of waar je woont?',
-      timestamp: new Date()
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [analysis, setAnalysis] = useState<ADHDAnalysis | null>(null);
@@ -38,6 +31,18 @@ export default function ChatAssistant() {
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  // Initialize messages only on client side to avoid hydration mismatch
+  useEffect(() => {
+    setMessages([
+      {
+        id: '1',
+        role: 'assistant',
+        content: 'Hallo! Ik ben hier om je te helpen de juiste ADHD ondersteuning te vinden. Kun je me vertellen wat je zoekt? Bijvoorbeeld hulp voor jezelf of je kind, welke problemen je ervaart, of waar je woont?',
+        timestamp: new Date()
+      }
+    ]);
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
