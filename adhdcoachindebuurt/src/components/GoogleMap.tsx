@@ -31,9 +31,18 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   const mapRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
+  // Ensure component is mounted and running on client-side only
+  useEffect(() => {
+    // Only run on client-side after component mounts
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
+    // Skip if not mounted or if running on server-side
+    if (!isMounted || typeof window === 'undefined') return;
+
     const initMap = async () => {
       try {
         console.log('🗺️ GoogleMap: Starting initialization');
@@ -70,17 +79,27 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
         await loader.load();
         console.log('✅ GoogleMap: Google Maps API loaded successfully');
 
-        if (!mapRef.current) {
-          console.error('❌ GoogleMap: Map ref not available');
-          return;
+        // Try direct DOM access if ref isn't available
+        let mapElement = mapRef.current;
+        if (!mapElement) {
+          console.error('❌ GoogleMap: React ref not available, trying direct DOM access...');
+          mapElement = document.getElementById('google-map-container');
+          if (!mapElement) {
+            console.error('🚨 GoogleMap: Neither ref nor DOM element found');
+            setError('Map container niet gevonden. Probeer de pagina opnieuw te laden.');
+            return;
+          }
+          console.log('✅ GoogleMap: Using direct DOM access for map element');
+        } else {
+          console.log('✅ GoogleMap: Using React ref for map element');
         }
 
-        const map = new google.maps.Map(mapRef.current, {
+        const map = new google.maps.Map(mapElement, {
           center,
           zoom,
         });
 
-        console.log('🗺️ GoogleMap: Map instance created');
+        console.log('🗺️ GoogleMap: Map instance created successfully');
 
         let markersAdded = 0;
         let markersSkipped = 0;
@@ -135,6 +154,7 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
 
         console.log(`📊 GoogleMap: Summary - ${markersAdded} markers added, ${markersSkipped} markers skipped`);
         setIsLoaded(true);
+
       } catch (err) {
         console.error('❌ Error loading Google Maps:', err);
         setError('Kon de kaart niet laden. Controleer je internetverbinding.');
@@ -142,7 +162,22 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
     };
 
     initMap();
-  }, [coaches, center, zoom]);
+  }, [coaches, center, zoom, isMounted]);
+
+  // Show loading state while mounting
+  if (!isMounted) {
+    return (
+      <div 
+        className="bg-gray-50 border-gray-200 border rounded-lg flex items-center justify-center"
+        style={{ height }}
+      >
+        <div className="text-center">
+          <div className="animate-pulse h-4 w-32 bg-gray-300 rounded mx-auto mb-2"></div>
+          <p className="text-gray-500 text-sm">Kaart voorbereiden...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (error) {
     return (
@@ -180,7 +215,11 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
 
   return (
     <div className="rounded-lg overflow-hidden shadow-md">
-      <div ref={mapRef} style={{ height }} />
+      <div 
+        ref={mapRef} 
+        id="google-map-container"
+        style={{ height }} 
+      />
     </div>
   );
 }
