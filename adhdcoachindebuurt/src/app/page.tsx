@@ -36,7 +36,7 @@ export default function Home() {
           {/* Quick Search */}
           <div className="max-w-2xl mx-auto mb-12">
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-4 text-gray-800">Zoek in jouw stad</h3>
+              <h3 className="text-lg font-semibold mb-4 text-gray-800">Waar zoek je?</h3>
               <div className="flex gap-3">
                 <div className="flex-1 relative">
                   <MapPin className="absolute left-3 top-3 text-gray-400" size={20} />
