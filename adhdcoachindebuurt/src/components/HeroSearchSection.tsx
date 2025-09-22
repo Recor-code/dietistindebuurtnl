@@ -18,7 +18,7 @@ export default function HeroSearchSection() {
   return (
     <div className="max-w-2xl mx-auto mb-12">
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Waar zoek je?</label>
             <CitySearchInput 
@@ -38,12 +38,12 @@ export default function HeroSearchSection() {
               <option value="kinder-psycholoog">Kinderpsycholoog</option>
             </select>
           </div>
-        </div>
-        <div className="flex justify-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2">
-            <Search size={20} />
-            Zoeken
-          </button>
+          <div>
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2">
+              <Search size={20} />
+              Zoeken
+            </button>
+          </div>
         </div>
       </div>
     </div>
