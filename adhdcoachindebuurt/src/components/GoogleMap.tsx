@@ -25,6 +25,7 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+
   useEffect(() => {
     const initMap = async () => {
       try {
