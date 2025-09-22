@@ -30,8 +30,7 @@ export default function Home() {
             Vind de perfecte ADHD coach bij jou in de buurt
           </h2>
           <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto drop-shadow-md">
-            Ontdek ervaren ADHD coaches en gedragstherapeuten in jouw stad. 
-            Vergelijk reviews, beschikbaarheid en specialisaties om de juiste ondersteuning te vinden.
+            Vergelijk gecertificeerde ADHD coaches en gedragstherapeuten in jouw stad. Bekijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
           </p>
 
           {/* Quick Search */}
