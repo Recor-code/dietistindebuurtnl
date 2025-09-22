@@ -93,35 +93,110 @@ export default function Home() {
       </section>
 
       {/* Popular Cities */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">
-            Populaire steden
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              'Amsterdam', 'Rotterdam', 'Den Haag', 'Utrecht',
-              'Eindhoven', 'Groningen', 'Tilburg', 'Almere',
-              'Breda', 'Nijmegen', 'Enschede', 'Haarlem',
-              'Brussel', 'Antwerpen', 'Gent', 'Charleroi'
-            ].map((city) => (
-              <Link
-                key={city}
-                href={`/stad/${city.toLowerCase().replace(' ', '-')}`}
-                className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-gray-800">{city}</span>
-                  <div className="flex items-center gap-1 text-sm text-gray-600">
-                    <Star size={16} className="text-yellow-400 fill-current" />
-                    <span>4.5</span>
-                  </div>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Populaire Steden</h3>
+            <p className="text-lg text-gray-500">Vind ADHD coaches in de grootste steden van Nederland en België</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* Netherlands Cities */}
+            <Link href="/stad/amsterdam" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
+              <div className="flex items-start justify-between mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Amsterdam</h4>
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">NL</span>
                 </div>
-                <div className="text-sm text-gray-600 mt-1">
-                  12 coaches beschikbaar
+              </div>
+              <p className="text-gray-600 mb-2">39 coaches beschikbaar</p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MapPin size={14} className="mr-1" />
+                Noord-Holland
+              </div>
+            </Link>
+
+            <Link href="/stad/rotterdam" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
+              <div className="flex items-start justify-between mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Rotterdam</h4>
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">NL</span>
                 </div>
-              </Link>
-            ))}
+              </div>
+              <p className="text-gray-600 mb-2">51 coaches beschikbaar</p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MapPin size={14} className="mr-1" />
+                Zuid-Holland
+              </div>
+            </Link>
+
+            <Link href="/stad/den-haag" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
+              <div className="flex items-start justify-between mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Den Haag</h4>
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">NL</span>
+                </div>
+              </div>
+              <p className="text-gray-600 mb-2">108 coaches beschikbaar</p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MapPin size={14} className="mr-1" />
+                Zuid-Holland
+              </div>
+            </Link>
+
+            <Link href="/stad/utrecht" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
+              <div className="flex items-start justify-between mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Utrecht</h4>
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">NL</span>
+                </div>
+              </div>
+              <p className="text-gray-600 mb-2">85 coaches beschikbaar</p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MapPin size={14} className="mr-1" />
+                Utrecht
+              </div>
+            </Link>
+
+            {/* Belgium Cities */}
+            <Link href="/stad/brussel" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
+              <div className="flex items-start justify-between mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Brussel</h4>
+                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">BE</span>
+                </div>
+              </div>
+              <p className="text-gray-600 mb-2">26 coaches beschikbaar</p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MapPin size={14} className="mr-1" />
+                Brussel-Hoofdstad
+              </div>
+            </Link>
+
+            <Link href="/stad/antwerpen" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
+              <div className="flex items-start justify-between mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Antwerpen</h4>
+                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">BE</span>
+                </div>
+              </div>
+              <p className="text-gray-600 mb-2">32 coaches beschikbaar</p>
+              <div className="flex items-center text-sm text-gray-500">
+                <MapPin size={14} className="mr-1" />
+                Vlaanderen
+              </div>
+            </Link>
+          </div>
+
+          {/* View All Cities Link */}
+          <div className="text-right">
+            <Link href="/steden" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold transition-colors">
+              <span>Alle steden</span>
+              <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-sm text-gray-500">Bekijk alle 150 steden</span>
+            </Link>
           </div>
         </div>
       </section>
