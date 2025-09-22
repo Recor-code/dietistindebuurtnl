@@ -1,4 +1,4 @@
-import { supabase } from '../../../server/db';
+import { supabase } from '../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart } from 'lucide-react';
 import Link from 'next/link';
 

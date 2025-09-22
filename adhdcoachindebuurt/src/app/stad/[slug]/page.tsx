@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { supabase } from '../../../../server/db';
+import { supabase } from '../../../../lib/supabase';
 import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';

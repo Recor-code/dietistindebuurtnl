@@ -1,4 +1,4 @@
-import { supabase } from '../../../server/db';
+import { supabase } from '../../../lib/supabase';
 import { ChevronDown, Heart, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 
