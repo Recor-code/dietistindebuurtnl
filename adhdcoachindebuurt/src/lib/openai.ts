@@ -4,9 +4,20 @@ import OpenAI from "openai";
 // the newest OpenAI model is "gpt-5" which was released August 7, 2025. do not change this unless explicitly requested by the user
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
+// Assistant configuration
+const ASSISTANT_ID = process.env.OPENAI_ASSISTANT_ID;
+const USE_ASSISTANTS = !!ASSISTANT_ID;
+
 export interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
   content: string;
+}
+
+export function getAssistantStatus(): { usingAssistant: boolean; assistantId?: string } {
+  return {
+    usingAssistant: USE_ASSISTANTS,
+    assistantId: ASSISTANT_ID || undefined
+  };
 }
 
 export interface ADHDAnalysis {
@@ -23,6 +34,7 @@ export async function generateADHDAnalysis(
   try {
     const conversation = messages.map(m => `${m.role}: ${m.content}`).join('\n');
     
+    // Always use chat completions for analysis (more reliable for structured output)
     const response = await openai.chat.completions.create({
       model: "gpt-5", // the newest OpenAI model is "gpt-5" which was released August 7, 2025
       messages: [
@@ -65,7 +77,94 @@ export async function generateADHDAnalysis(
   }
 }
 
+// Thread storage for assistant conversations
+const threadStorage = new Map<string, string>();
+
+function getThreadId(sessionId: string = 'default'): string | undefined {
+  return threadStorage.get(sessionId);
+}
+
+function setThreadId(sessionId: string = 'default', threadId: string): void {
+  threadStorage.set(sessionId, threadId);
+}
+
 export async function generateChatResponse(
+  messages: ChatMessage[],
+  sessionId: string = 'default'
+): Promise<string> {
+  try {
+    if (USE_ASSISTANTS && ASSISTANT_ID) {
+      return await generateAssistantResponse(messages, sessionId);
+    } else {
+      return await generateChatCompletionResponse(messages);
+    }
+  } catch (error) {
+    console.error('Error generating chat response:', error);
+    throw new Error('Failed to generate chat response');
+  }
+}
+
+async function generateAssistantResponse(
+  messages: ChatMessage[],
+  sessionId: string = 'default'
+): Promise<string> {
+  try {
+    // Get or create thread
+    let threadId = getThreadId(sessionId);
+    
+    if (!threadId) {
+      const thread = await openai.beta.threads.create();
+      threadId = thread.id;
+      setThreadId(sessionId, threadId);
+    }
+
+    // Add the latest user message to the thread
+    const latestMessage = messages[messages.length - 1];
+    if (latestMessage && latestMessage.role === 'user') {
+      await openai.beta.threads.messages.create(threadId, {
+        role: 'user',
+        content: latestMessage.content
+      });
+    }
+
+    // Run the assistant
+    const run = await openai.beta.threads.runs.create(threadId, {
+      assistant_id: ASSISTANT_ID!
+    });
+
+    // Wait for completion
+    let runStatus = run;
+    
+    while (runStatus.status === 'queued' || runStatus.status === 'in_progress') {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      runStatus = await openai.beta.threads.runs.retrieve(threadId, run.id);
+    }
+
+    if (runStatus.status === 'completed') {
+      // Get the latest messages from the thread
+      const threadMessages = await openai.beta.threads.messages.list(threadId);
+      const latestResponse = threadMessages.data[0];
+      
+      if (latestResponse && latestResponse.content[0]) {
+        const content = latestResponse.content[0];
+        if (content.type === 'text') {
+          return content.text.value;
+        }
+      }
+    } else {
+      console.error('Assistant run failed:', runStatus.status, runStatus.last_error);
+      throw new Error(`Assistant run failed with status: ${runStatus.status}`);
+    }
+
+    return 'Sorry, ik kon geen antwoord genereren.';
+  } catch (error) {
+    console.error('Error with assistant response:', error);
+    // Fallback to chat completion if assistant fails
+    return await generateChatCompletionResponse(messages);
+  }
+}
+
+async function generateChatCompletionResponse(
   messages: ChatMessage[]
 ): Promise<string> {
   try {
@@ -93,7 +192,7 @@ export async function generateChatResponse(
 
     return response.choices[0].message.content || 'Sorry, ik kon geen antwoord genereren.';
   } catch (error) {
-    console.error('Error generating chat response:', error);
+    console.error('Error generating chat completion response:', error);
     throw new Error('Failed to generate chat response');
   }
 }

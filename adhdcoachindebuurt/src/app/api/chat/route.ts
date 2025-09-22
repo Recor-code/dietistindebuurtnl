@@ -3,7 +3,7 @@ import { generateChatResponse, type ChatMessage } from '@/lib/openai';
 
 export async function POST(request: NextRequest) {
   try {
-    const { messages }: { messages: ChatMessage[] } = await request.json();
+    const { messages, sessionId }: { messages: ChatMessage[]; sessionId?: string } = await request.json();
 
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json(
@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const response = await generateChatResponse(messages);
+    const response = await generateChatResponse(messages, sessionId);
 
     return NextResponse.json({ message: response });
   } catch (error) {
