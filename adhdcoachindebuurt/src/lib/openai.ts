@@ -104,6 +104,69 @@ export async function generateChatResponse(
   }
 }
 
+// New streaming function
+export async function generateStreamingChatResponse(
+  messages: ChatMessage[],
+  sessionId: string = 'default'
+): Promise<ReadableStream<Uint8Array>> {
+  const encoder = new TextEncoder();
+  
+  return new ReadableStream({
+    async start(controller) {
+      try {
+        if (USE_ASSISTANTS && ASSISTANT_ID) {
+          // For Assistant API, we'll use regular response since streaming isn't straightforward
+          const response = await generateAssistantResponse(messages, sessionId);
+          // Simulate typing effect by streaming word by word
+          const words = response.split(' ');
+          for (let i = 0; i < words.length; i++) {
+            const chunk = i === 0 ? words[i] : ' ' + words[i];
+            controller.enqueue(encoder.encode(chunk));
+            await new Promise(resolve => setTimeout(resolve, 50)); // Small delay between words
+          }
+        } else {
+          // Use streaming chat completions
+          const stream = await openai.chat.completions.create({
+            model: "gpt-5",
+            messages: [
+              {
+                role: "system",
+                content: `Je bent een warme, begripvolle AI ADHD Assistente voor de website "ADHD Coach in de Buurt". 
+                
+                Je helpt bezoekers met:
+                - Vragen over ADHD symptomen en uitdagingen
+                - Informatie over wat een ADHD coach kan betekenen
+                - Hulp bij het vinden van de juiste professionele ondersteuning
+                - Praktische tips voor dagelijks leven met ADHD
+                - Emotionele ondersteuning en begrip
+                
+                Spreek in warme, toegankelijke Nederlandse taal. Wees empathisch maar professioneel.
+                Verwijs mensen altijd naar professionele hulp voor diagnoses of behandeling.
+                Moedig mensen aan om de ADHD coaches in hun stad te bekijken op de website.`
+              },
+              ...messages
+            ],
+            stream: true
+          });
+
+          for await (const chunk of stream) {
+            const content = chunk.choices[0]?.delta?.content;
+            if (content) {
+              controller.enqueue(encoder.encode(content));
+            }
+          }
+        }
+        
+        controller.close();
+      } catch (error) {
+        console.error('Streaming error:', error);
+        controller.enqueue(encoder.encode('Sorry, er ging iets mis. Probeer het opnieuw.'));
+        controller.close();
+      }
+    }
+  });
+}
+
 async function generateAssistantResponse(
   messages: ChatMessage[],
   sessionId: string = 'default'
@@ -137,7 +200,8 @@ async function generateAssistantResponse(
     
     while (runStatus.status === 'queued' || runStatus.status === 'in_progress') {
       await new Promise(resolve => setTimeout(resolve, 1000));
-      runStatus = await openai.beta.threads.runs.retrieve(threadId, run.id);
+      const retrievedRun = await openai.beta.threads.runs.retrieve(threadId, run.id);
+      runStatus = retrievedRun;
     }
 
     if (runStatus.status === 'completed') {
