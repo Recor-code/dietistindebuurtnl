@@ -61,25 +61,6 @@ export default function Home() {
           {/* Quick Search */}
           <HeroSearchSection />
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="text-3xl font-bold text-blue-600 mb-2">150+</div>
-              <div className="text-gray-600">Steden</div>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600">ADHD Coaches</div>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="text-3xl font-bold text-blue-600 mb-2">4.5★</div>
-              <div className="text-gray-600">Gem. Rating</div>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="text-3xl font-bold text-blue-600 mb-2">2.000+</div>
-              <div className="text-gray-600">Reviews</div>
-            </div>
-          </div>
         </div>
       </section>
 
