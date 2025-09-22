@@ -24,12 +24,12 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+      <section className="relative isolate py-16 px-4 min-h-screen flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:z-0" style={{backgroundImage: "url('/hero-adhd-background.jpg')"}}>
+        <div className="max-w-6xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
             Vind de perfecte ADHD coach bij jou in de buurt
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto drop-shadow-md">
             Ontdek ervaren ADHD coaches en gedragstherapeuten in jouw stad. 
             Vergelijk reviews, beschikbaarheid en specialisaties om de juiste ondersteuning te vinden.
           </p>
