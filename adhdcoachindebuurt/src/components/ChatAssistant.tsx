@@ -151,7 +151,7 @@ export default function ChatAssistant() {
         <div className="w-16 h-16 bg-cyan-400 rounded-full mx-auto mb-4 flex items-center justify-center">
           <MessageCircle size={28} className="text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">Hoi! Ik ben Emma, jouw ADHD Assistente</h3>
+        <h3 className="text-2xl font-bold text-gray-800 mb-2">Hoi! Ik ben jouw ADHD Assistente</h3>
         <p className="text-gray-600">Vertel me over je situatie en ik help je de beste hulp te vinden</p>
         <button
           onClick={() => setIsOpen(false)}
