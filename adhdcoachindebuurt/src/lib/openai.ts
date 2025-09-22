@@ -104,7 +104,7 @@ export async function generateChatResponse(
   }
 }
 
-// New streaming function
+// New streaming function - ALWAYS use chat completions for real-time streaming
 export async function generateStreamingChatResponse(
   messages: ChatMessage[],
   sessionId: string = 'default'
@@ -114,46 +114,36 @@ export async function generateStreamingChatResponse(
   return new ReadableStream({
     async start(controller) {
       try {
-        if (USE_ASSISTANTS && ASSISTANT_ID) {
-          // For Assistant API, we'll use regular response since streaming isn't straightforward
-          const response = await generateAssistantResponse(messages, sessionId);
-          // Simulate typing effect by streaming word by word
-          const words = response.split(' ');
-          for (let i = 0; i < words.length; i++) {
-            const chunk = i === 0 ? words[i] : ' ' + words[i];
-            controller.enqueue(encoder.encode(chunk));
-            await new Promise(resolve => setTimeout(resolve, 50)); // Small delay between words
-          }
-        } else {
-          // Use streaming chat completions
-          const stream = await openai.chat.completions.create({
-            model: "gpt-5",
-            messages: [
-              {
-                role: "system",
-                content: `Je bent een warme, begripvolle AI ADHD Assistente voor de website "ADHD Coach in de Buurt". 
-                
-                Je helpt bezoekers met:
-                - Vragen over ADHD symptomen en uitdagingen
-                - Informatie over wat een ADHD coach kan betekenen
-                - Hulp bij het vinden van de juiste professionele ondersteuning
-                - Praktische tips voor dagelijks leven met ADHD
-                - Emotionele ondersteuning en begrip
-                
-                Spreek in warme, toegankelijke Nederlandse taal. Wees empathisch maar professioneel.
-                Verwijs mensen altijd naar professionele hulp voor diagnoses of behandeling.
-                Moedig mensen aan om de ADHD coaches in hun stad te bekijken op de website.`
-              },
-              ...messages
-            ],
-            stream: true
-          });
+        // ALWAYS use streaming chat completions for real-time response (not Assistant API)
+        const stream = await openai.chat.completions.create({
+          model: "gpt-4o", // Use reliable model
+          messages: [
+            {
+              role: "system",
+              content: `Je bent een warme, begripvolle AI ADHD Assistente voor de website "ADHD Coach in de Buurt". 
+              
+              Je helpt bezoekers met:
+              - Vragen over ADHD symptomen en uitdagingen
+              - Informatie over wat een ADHD coach kan betekenen
+              - Hulp bij het vinden van de juiste professionele ondersteuning
+              - Praktische tips voor dagelijks leven met ADHD
+              - Emotionele ondersteuning en begrip
+              
+              Spreek in warme, toegankelijke Nederlandse taal. Wees empathisch maar professioneel.
+              Verwijs mensen altijd naar professionele hulp voor diagnoses of behandeling.
+              Moedig mensen aan om de ADHD coaches in hun stad te bekijken op de website.`
+            },
+            ...messages
+          ],
+          stream: true,
+          temperature: 0.7,
+          max_tokens: 1000
+        });
 
-          for await (const chunk of stream) {
-            const content = chunk.choices[0]?.delta?.content;
-            if (content) {
-              controller.enqueue(encoder.encode(content));
-            }
+        for await (const chunk of stream) {
+          const content = chunk.choices[0]?.delta?.content;
+          if (content) {
+            controller.enqueue(encoder.encode(content));
           }
         }
         
