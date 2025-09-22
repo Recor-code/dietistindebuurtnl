@@ -4,7 +4,7 @@ import { Search } from 'lucide-react';
 import CitySearchInput from './CitySearchInput';
 
 export default function HeroSearchSection() {
-  const handleCitySelect = (result: any) => {
+  const handleCitySelect = (result: { slug?: string; type?: string; value?: string }) => {
     console.log('Selected:', result);
     // Navigate to city page if it has a slug
     if (result.slug) {

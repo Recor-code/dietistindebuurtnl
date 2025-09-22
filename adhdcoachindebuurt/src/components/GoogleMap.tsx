@@ -3,6 +3,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 
+// Declare global google types
+declare global {
+  interface Window {
+    google: typeof google;
+  }
+}
+
 interface Coach {
   id: number;
   name: string;
@@ -29,21 +36,27 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   useEffect(() => {
     const initMap = async () => {
       try {
+        const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+        
+        if (!apiKey) {
+          console.error('Google Maps API key is missing');
+          setError('Google Maps API key is niet geconfigureerd.');
+          return;
+        }
+
         const loader = new Loader({
-          apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
+          apiKey,
           version: 'weekly',
+          libraries: ['maps']
         });
 
-        const { Map } = await loader.importLibrary('maps');
-        const { AdvancedMarkerElement } = await loader.importLibrary('marker');
-        const { InfoWindow } = await loader.importLibrary('maps');
+        await loader.load();
 
         if (!mapRef.current) return;
 
-        const map = new Map(mapRef.current, {
+        const map = new google.maps.Map(mapRef.current, {
           center,
           zoom,
-          mapId: 'adhd-coaches-map',
         });
 
         // Add markers for coaches
@@ -53,26 +66,26 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
             const lng = parseFloat(coach.longitude);
             
             if (!isNaN(lat) && !isNaN(lng)) {
-              const marker = new AdvancedMarkerElement({
-                map,
+              const marker = new google.maps.Marker({
                 position: { lat, lng },
+                map: map,
                 title: coach.name,
               });
 
               // Create info window content
-              const infoContent = document.createElement('div');
-              infoContent.className = 'p-3 max-w-xs';
-              infoContent.innerHTML = `
-                <h3 class="font-semibold text-gray-800 mb-1">${coach.name}</h3>
-                <p class="text-blue-600 text-sm mb-2">${coach.specialization || 'ADHD Coach'}</p>
-                ${coach.rating ? `<div class="flex items-center gap-1 text-sm text-gray-600 mb-2">
-                  <span class="text-yellow-400">★</span>
-                  <span>${coach.rating}</span>
-                </div>` : ''}
-                ${coach.address ? `<p class="text-gray-600 text-xs">${coach.address}</p>` : ''}
+              const infoContent = `
+                <div class="p-3 max-w-xs">
+                  <h3 class="font-semibold text-gray-800 mb-1">${coach.name}</h3>
+                  <p class="text-blue-600 text-sm mb-2">${coach.specialization || 'ADHD Coach'}</p>
+                  ${coach.rating ? `<div class="flex items-center gap-1 text-sm text-gray-600 mb-2">
+                    <span class="text-yellow-400">★</span>
+                    <span>${coach.rating}</span>
+                  </div>` : ''}
+                  ${coach.address ? `<p class="text-gray-600 text-xs">${coach.address}</p>` : ''}
+                </div>
               `;
 
-              const infoWindow = new InfoWindow({
+              const infoWindow = new google.maps.InfoWindow({
                 content: infoContent,
               });
 
