@@ -2,6 +2,9 @@
   "name": "adhdcoachindebuurt",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev --turbopack --port 5000",
     "build": "next build --turbopack",
