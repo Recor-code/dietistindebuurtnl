@@ -42,7 +42,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-colors shadow-md text-sm md:text-base"
             >
-              ADHD Test
+              Gratis ADHD Test
             </a>
           </div>
         </div>
