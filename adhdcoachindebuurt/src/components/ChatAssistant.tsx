@@ -196,7 +196,7 @@ export default function ChatAssistant() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200">
+    <div className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200">
       {/* Header */}
       <div className="text-center p-6 border-b border-gray-100">
         <div className="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
