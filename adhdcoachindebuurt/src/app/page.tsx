@@ -20,17 +20,17 @@ export default function Home() {
             </Link>
             
             {/* Navigation Menu */}
-            <nav className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+            <nav className="flex items-center gap-4 md:gap-8">
+              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
                 Home
               </Link>
-              <Link href="/coaches" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <Link href="/coaches" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
                 Coaches
               </Link>
-              <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
                 Blog
               </Link>
-              <Link href="/faq" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <Link href="/faq" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
                 FAQ
               </Link>
             </nav>
@@ -39,9 +39,9 @@ export default function Home() {
               href="https://adhdzelftest.nl"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-colors shadow-md text-sm md:text-base"
             >
-              Doe de ADHD Test
+              ADHD Test
             </a>
           </div>
         </div>

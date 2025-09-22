@@ -60,17 +60,17 @@ export default async function CoachesPage() {
             </Link>
             
             {/* Navigation Menu */}
-            <nav className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+            <nav className="flex items-center gap-4 md:gap-8">
+              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
                 Home
               </Link>
-              <Link href="/coaches" className="text-blue-600 font-medium">
+              <Link href="/coaches" className="text-blue-600 font-medium text-sm md:text-base">
                 Coaches
               </Link>
-              <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
                 Blog
               </Link>
-              <Link href="/faq" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+              <Link href="/faq" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
                 FAQ
               </Link>
             </nav>
