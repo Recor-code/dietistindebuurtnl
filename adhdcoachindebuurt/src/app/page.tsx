@@ -202,34 +202,47 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="py-16 px-4 bg-blue-50">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">
-            Waarom kiezen voor ADHD Coach in de Buurt?
-          </h3>
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">
+              Waarom kiezen voor ons platform?
+            </h3>
+            <p className="text-lg text-gray-500">
+              Al het onderzoek is al voor je gedaan
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <MapPin className="text-blue-600 mb-4" size={32} />
-              <h4 className="text-xl font-semibold mb-3">Lokaal & Bereikbaar</h4>
-              <p className="text-gray-600">
-                Vind ADHD coaches en therapeuten in jouw directe omgeving. 
-                Geen lange reizen, wel persoonlijke ondersteuning.
+            <div className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-200">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-semibold text-gray-800 mb-4">Alleen gecertificeerde professionals</h4>
+              <p className="text-gray-600 leading-relaxed">
+                Alle coaches en therapeuten zijn geverifieerd en hebben bewezen expertise in ADHD behandeling.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <Star className="text-blue-600 mb-4" size={32} />
-              <h4 className="text-xl font-semibold mb-3">Betrouwbare Reviews</h4>
-              <p className="text-gray-600">
-                Lees echte ervaringen van anderen en maak een weloverwogen keuze 
-                gebaseerd op reviews en ratings.
+
+            <div className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-200">
+              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Star className="w-6 h-6 text-cyan-500 fill-current" />
+              </div>
+              <h4 className="text-xl font-semibold text-gray-800 mb-4">Betrouwbare reviews</h4>
+              <p className="text-gray-600 leading-relaxed">
+                Lees eerlijke ervaringen van andere cliënten om de beste keuze te maken.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <Clock className="text-blue-600 mb-4" size={32} />
-              <h4 className="text-xl font-semibold mb-3">Direct Contact</h4>
-              <p className="text-gray-600">
-                Bekijk beschikbaarheid, specialisaties en neem direct contact op 
-                met de coach die bij jou past.
+
+            <div className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-200">
+              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <MapPin className="w-6 h-6 text-orange-500" />
+              </div>
+              <h4 className="text-xl font-semibold text-gray-800 mb-4">Lokale specialisten</h4>
+              <p className="text-gray-600 leading-relaxed">
+                Vind coaches bij jou in de buurt voor persoonlijke sessies of online consultaties.
               </p>
             </div>
           </div>
