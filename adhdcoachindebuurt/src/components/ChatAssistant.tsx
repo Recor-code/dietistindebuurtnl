@@ -213,7 +213,7 @@ export default function ChatAssistant() {
       </div>
 
       {/* Messages */}
-      <div className="h-64 overflow-y-auto p-4 space-y-2">
+      <div className="h-48 overflow-y-auto p-4 space-y-2">
         {messages.map((message) => (
           <div
             key={message.id}
