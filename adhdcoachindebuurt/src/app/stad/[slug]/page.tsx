@@ -363,6 +363,20 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </div>
 
+      {/* Organicolabs CTA */}
+      <div className="bg-gray-50 border-t border-gray-200 py-8 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <a
+            href="https://shop.organicolabs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 text-lg font-medium transition-colors inline-flex items-center gap-2"
+          >
+            Op zoek naar natuurlijke supplementen die doen wat ze beloven? →
+          </a>
+        </div>
+      </div>
+
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 px-4 mt-16">
         <div className="max-w-6xl mx-auto">
