@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd adhdcoachindebuurt && npm run build",
+  "outputDirectory": "adhdcoachindebuurt/.next",
+  "installCommand": "cd adhdcoachindebuurt && npm install",
+  "framework": "nextjs",
+  "functions": {
+    "adhdcoachindebuurt/src/app/api/**/*.ts": {
+      "runtime": "nodejs20.x"
+    }
+  }
+}
