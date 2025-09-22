@@ -317,6 +317,28 @@ export default async function CityPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* ADHD Coaches op de kaart */}
+        <section className="mb-8">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <MapPin className="text-blue-600" />
+              ADHD Coaches op de kaart
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Ontdek de locaties van alle ADHD coaches in {city.name}. Klik op een marker voor meer informatie.
+            </p>
+            
+            <div className="w-full h-96 rounded-lg overflow-hidden">
+              <GoogleMap
+                coaches={city.coaches}
+                center={{ lat: parseFloat(city.latitude || '0'), lng: parseFloat(city.longitude || '0') }}
+                zoom={13}
+                height="100%"
+              />
+            </div>
+          </div>
+        </section>
+
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Coaches List */}
           <div className="lg:col-span-2">
