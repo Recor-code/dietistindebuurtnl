@@ -18,7 +18,7 @@ export default function HeroSearchSection() {
   return (
     <div className="max-w-2xl mx-auto mb-12">
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <h3 className="text-lg font-semibold mb-4 text-gray-800">Waar zoek je?</h3>
+        <h3 className="text-lg font-semibold mb-4 text-gray-800">Vind de beste ADHD coaches<br />bij jou in de buurt</h3>
         <div className="flex gap-3">
           <CitySearchInput 
             className="flex-1"
