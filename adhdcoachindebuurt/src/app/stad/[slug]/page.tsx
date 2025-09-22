@@ -24,15 +24,22 @@ async function getCityWithCoaches(slug: string) {
     }
 
     // Get coaches for this city
+    console.log(`🏙️ Fetching coaches for city: ${city.name} (ID: ${city.id})`);
     const { data: coaches, error: coachesError } = await supabase
       .from('coaches')
       .select('id, name, slug, email, phone, website, specialization, description, address, latitude, longitude, city_id, rating, review_count, is_child_friendly, weekend_available, online_available, in_person_available, accepts_insurance, availability_status, created_at, updated_at')
       .eq('city_id', city.id);
 
     if (coachesError) {
-      console.error('Error fetching coaches:', coachesError);
+      console.error('❌ Error fetching coaches:', coachesError);
+      console.log('🔄 Using fallback/mock data for coaches');
       return { ...city, coaches: [] };
     }
+
+    console.log(`👥 Found ${coaches?.length || 0} coaches for ${city.name}`);
+    coaches?.forEach((coach, index) => {
+      console.log(`🏃 Coach ${index + 1}: ${coach.name} at ${coach.latitude}, ${coach.longitude}`);
+    });
 
     // Transform data shape to match UI expectations
     const transformedCity = {

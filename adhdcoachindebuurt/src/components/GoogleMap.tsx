@@ -36,13 +36,29 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   useEffect(() => {
     const initMap = async () => {
       try {
+        console.log('🗺️ GoogleMap: Starting initialization');
+        console.log('📍 GoogleMap: Center coordinates:', center);
+        console.log('👥 GoogleMap: Total coaches received:', coaches.length);
+        
+        // Debug coach data
+        coaches.forEach((coach, index) => {
+          console.log(`🏃 Coach ${index + 1}:`, {
+            name: coach.name,
+            latitude: coach.latitude,
+            longitude: coach.longitude,
+            address: coach.address
+          });
+        });
+
         const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
         
         if (!apiKey) {
-          console.error('Google Maps API key is missing');
+          console.error('❌ Google Maps API key is missing');
           setError('Google Maps API key is niet geconfigureerd.');
           return;
         }
+
+        console.log('🔑 GoogleMap: API key available');
 
         const loader = new Loader({
           apiKey,
@@ -50,14 +66,24 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
           libraries: ['maps']
         });
 
+        console.log('⏳ GoogleMap: Loading Google Maps API...');
         await loader.load();
+        console.log('✅ GoogleMap: Google Maps API loaded successfully');
 
-        if (!mapRef.current) return;
+        if (!mapRef.current) {
+          console.error('❌ GoogleMap: Map ref not available');
+          return;
+        }
 
         const map = new google.maps.Map(mapRef.current, {
           center,
           zoom,
         });
+
+        console.log('🗺️ GoogleMap: Map instance created');
+
+        let markersAdded = 0;
+        let markersSkipped = 0;
 
         // Add markers for coaches
         coaches.forEach((coach) => {
@@ -65,12 +91,17 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
             const lat = parseFloat(coach.latitude);
             const lng = parseFloat(coach.longitude);
             
+            console.log(`📍 Processing ${coach.name}: lat=${lat}, lng=${lng}`);
+            
             if (!isNaN(lat) && !isNaN(lng)) {
               const marker = new google.maps.Marker({
                 position: { lat, lng },
                 map: map,
                 title: coach.name,
               });
+
+              console.log(`✅ Marker added for ${coach.name} at ${lat}, ${lng}`);
+              markersAdded++;
 
               // Create info window content
               const infoContent = `
@@ -92,13 +123,20 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
               marker.addListener('click', () => {
                 infoWindow.open(map, marker);
               });
+            } else {
+              console.warn(`⚠️ Invalid coordinates for ${coach.name}: lat=${coach.latitude}, lng=${coach.longitude}`);
+              markersSkipped++;
             }
+          } else {
+            console.warn(`⚠️ Missing coordinates for ${coach.name}: lat=${coach.latitude}, lng=${coach.longitude}`);
+            markersSkipped++;
           }
         });
 
+        console.log(`📊 GoogleMap: Summary - ${markersAdded} markers added, ${markersSkipped} markers skipped`);
         setIsLoaded(true);
       } catch (err) {
-        console.error('Error loading Google Maps:', err);
+        console.error('❌ Error loading Google Maps:', err);
         setError('Kon de kaart niet laden. Controleer je internetverbinding.');
       }
     };
@@ -109,12 +147,15 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   if (error) {
     return (
       <div 
-        className="bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300"
+        className="bg-red-100 border-red-300 border-2 rounded-lg flex items-center justify-center"
         style={{ height }}
       >
         <div className="text-center p-4">
-          <p className="text-gray-600 mb-2">🗺️</p>
-          <p className="text-gray-600 text-sm">{error}</p>
+          <p className="text-red-600 mb-2">❌ Google Maps Error</p>
+          <p className="text-red-600 text-sm font-medium">{error}</p>
+          <p className="text-gray-600 text-xs mt-2">
+            Rotterdam heeft {coaches.length} coach{coaches.length !== 1 ? 'es' : ''}
+          </p>
         </div>
       </div>
     );
@@ -123,12 +164,15 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   if (!isLoaded) {
     return (
       <div 
-        className="bg-gray-100 rounded-lg flex items-center justify-center"
+        className="bg-blue-50 border-blue-300 border-2 rounded-lg flex items-center justify-center"
         style={{ height }}
       >
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-          <p className="text-gray-600 text-sm">Kaart laden...</p>
+          <p className="text-blue-600 text-sm font-medium">Kaart laden...</p>
+          <p className="text-gray-600 text-xs mt-2">
+            {coaches.length} coach{coaches.length !== 1 ? 'es' : ''} gereed voor {center.lat.toFixed(4)}, {center.lng.toFixed(4)}
+          </p>
         </div>
       </div>
     );
