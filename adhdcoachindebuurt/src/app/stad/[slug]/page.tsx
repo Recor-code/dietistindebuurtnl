@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return {
     title: `ADHD Coach ${city.name} - Vind de beste ADHD coaches in ${city.name}`,
-    description: `Zoek ADHD coaches in ${city.name}. Bekijk reviews, specialisaties en beschikbaarheid van lokale ADHD coaches en gedragstherapeuten.`,
+    description: `Vind de beste ADHD coaches en gedragstherapeuten in ${city.name}. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.`,
   };
 }
 
