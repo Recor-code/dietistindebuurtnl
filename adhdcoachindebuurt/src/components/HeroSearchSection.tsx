@@ -18,14 +18,29 @@ export default function HeroSearchSection() {
   return (
     <div className="max-w-2xl mx-auto mb-12">
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <h3 className="text-lg font-semibold mb-4 text-gray-800">Vind de beste ADHD coaches<br />bij jou in de buurt</h3>
-        <div className="flex gap-3">
-          <CitySearchInput 
-            className="flex-1"
-            placeholder="Typ je stad of postcode..."
-            onSelect={handleCitySelect}
-          />
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Waar zoek je?</label>
+            <CitySearchInput 
+              className="w-full"
+              placeholder="Bijv. Amsterdam, Utrecht, Antwerpen"
+              onSelect={handleCitySelect}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Type hulpverlener</label>
+            <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white">
+              <option value="">Alle specialisten</option>
+              <option value="adhd-coach">ADHD Coach</option>
+              <option value="gedragstherapeut">Gedragstherapeut</option>
+              <option value="psycholoog">Psycholoog</option>
+              <option value="psychiater">Psychiater</option>
+              <option value="kinder-psycholoog">Kinderpsycholoog</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2">
             <Search size={20} />
             Zoeken
           </button>
