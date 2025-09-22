@@ -248,75 +248,75 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* TL;DR Section */}
-      <section className="bg-white border-b border-gray-200 py-8 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs">ℹ</span>
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* TL;DR Section */}
+        <section className="mb-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs">ℹ</span>
+                </div>
+                <h2 className="text-xl font-bold text-gray-800">
+                  TL;DR - {city.name}
+                </h2>
               </div>
-              <h2 className="text-xl font-bold text-gray-800">
-                TL;DR - {city.name}
-              </h2>
-            </div>
-            
-            <p className="text-gray-600 mb-6">
-              {city.name} biedt uitstekende ADHD ondersteuning met {city.coaches.length} geregistreerde specialisten en diverse behandelingsopties voor zowel kinderen als volwassenen.
-            </p>
+              
+              <p className="text-gray-600 mb-6">
+                {city.name} biedt uitstekende ADHD ondersteuning met {city.coaches.length} geregistreerde specialisten en diverse behandelingsopties voor zowel kinderen als volwassenen.
+              </p>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Lokale ADHD Zorg */}
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-3">Lokale ADHD Zorg</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>{city.coaches.length} geregistreerde specialisten</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Gemiddelde wachttijd: {city.coaches.length > 20 ? '2-4' : city.coaches.length > 10 ? '3-5' : '4-6'} weken</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Kosten: €75-€125 per sessie</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Online en fysieke consulten beschikbaar</span>
-                  </li>
-                </ul>
-              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Lokale ADHD Zorg */}
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-3">Lokale ADHD Zorg</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span>{city.coaches.length} geregistreerde specialisten</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span>Gemiddelde wachttijd: {city.coaches.length > 20 ? '2-4' : city.coaches.length > 10 ? '3-5' : '4-6'} weken</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span>Kosten: €75-€125 per sessie</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span>Online en fysieke consulten beschikbaar</span>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* ADHD Statistieken */}
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-3">ADHD Statistieken {city.name}</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Prevalentie: 5.2% van de bevolking</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Geschat {Math.round((city.population || 100000) * 0.052).toLocaleString()} mensen met ADHD</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Populatie: {(city.population || 0).toLocaleString()} inwoners</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Provincie: {city.province}, {city.country === 'NL' ? 'Nederland' : 'België'}</span>
-                  </li>
-                </ul>
+                {/* ADHD Statistieken */}
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-3">ADHD Statistieken {city.name}</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span>Prevalentie: 5.2% van de bevolking</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span>Geschat {Math.round((city.population || 100000) * 0.052).toLocaleString()} mensen met ADHD</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span>Populatie: {(city.population || 0).toLocaleString()} inwoners</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-600 mt-1">•</span>
+                      <span>Provincie: {city.province}, {city.country === 'NL' ? 'Nederland' : 'België'}</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Coaches List */}
           <div className="lg:col-span-2">
