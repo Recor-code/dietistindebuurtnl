@@ -213,7 +213,7 @@ export default function ChatAssistant() {
       </div>
 
       {/* Messages */}
-      <div className="h-64 overflow-y-auto p-6 space-y-4">
+      <div className="h-64 overflow-y-auto p-4 space-y-2">
         {messages.map((message) => (
           <div
             key={message.id}
@@ -225,14 +225,14 @@ export default function ChatAssistant() {
               </div>
             )}
             <div
-              className={`max-w-[80%] p-4 rounded-2xl ${
+              className={`max-w-[80%] p-3 rounded-2xl ${
                 message.role === 'user'
                   ? 'bg-blue-500 text-white rounded-br-md'
                   : 'bg-gray-100 text-gray-800 rounded-bl-md'
               }`}
             >
               <p>{message.content}</p>
-              <p className={`text-xs mt-2 ${message.role === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
+              <p className={`text-xs mt-1 ${message.role === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
                 {message.timestamp.toLocaleTimeString('nl-NL', {
                   hour: '2-digit',
                   minute: '2-digit'
@@ -251,7 +251,7 @@ export default function ChatAssistant() {
             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
               E
             </div>
-            <div className="bg-gray-100 p-4 rounded-2xl rounded-bl-md">
+            <div className="bg-gray-100 p-3 rounded-2xl rounded-bl-md">
               <div className="flex space-x-1">
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
