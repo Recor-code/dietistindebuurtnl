@@ -1,6 +1,19 @@
 import { supabase } from '../../../lib/supabase';
 import { ChevronDown, Heart, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
+interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
+  order: number;
+  created_at?: string;
+  updated_at?: string;
+  is_published?: boolean;
+}
 
 // Comprehensive static FAQ data
 const comprehensiveFAQs = [
@@ -112,7 +125,7 @@ const comprehensiveFAQs = [
   }
 ];
 
-async function getFAQItems() {
+async function getFAQItems(): Promise<FAQItem[]> {
   try {
     const { data, error } = await supabase
       .from('faq_items')
@@ -125,11 +138,35 @@ async function getFAQItems() {
       return comprehensiveFAQs; // Fallback to static content
     }
 
-    // Combine database content with static comprehensive FAQs
-    return [...(data || []), ...comprehensiveFAQs];
+    // Combine and deduplicate content, prioritize database entries
+    const dbItems = (data || []) as FAQItem[];
+    const staticItems = comprehensiveFAQs.filter(
+      staticItem => !dbItems.some(dbItem => dbItem.id === staticItem.id)
+    );
+    
+    const allItems = [...dbItems, ...staticItems];
+    
+    // Sort by category, then by order within category
+    return allItems.sort((a, b) => {
+      if (a.category !== b.category) {
+        return a.category.localeCompare(b.category);
+      }
+      return a.order - b.order;
+    });
   } catch (error) {
     console.error('Error fetching FAQ items:', error);
     return comprehensiveFAQs; // Fallback to static content
+  }
+
+  function groupFAQsByCategory(faqs: FAQItem[]) {
+    return faqs.reduce((groups, faq) => {
+      const category = faq.category;
+      if (!groups[category]) {
+        groups[category] = [];
+      }
+      groups[category].push(faq);
+      return groups;
+    }, {} as Record<string, FAQItem[]>);
   }
 }
 
@@ -140,6 +177,18 @@ export const metadata = {
 
 export default async function FAQPage() {
   const faqs = await getFAQItems();
+  
+  // Group FAQs by category
+  const faqsByCategory = faqs.reduce((groups, faq) => {
+    const category = faq.category;
+    if (!groups[category]) {
+      groups[category] = [];
+    }
+    groups[category].push(faq);
+    return groups;
+  }, {} as Record<string, FAQItem[]>);
+
+  const categories = Object.keys(faqsByCategory).sort();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -198,76 +247,60 @@ export default async function FAQPage() {
         </div>
       </section>
 
-      {/* FAQ Content */}
-      <section className="py-16 px-4">
+      {/* FAQ Categories Overview */}
+      <section className="py-8 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <details key={faq.id} className="bg-white rounded-lg shadow-md">
-                <summary className="p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-semibold text-gray-800 pr-4">
-                      {faq.question}
-                    </h3>
-                    <ChevronDown className="text-gray-400 flex-shrink-0 transform transition-transform duration-200" size={20} />
-                  </div>
-                </summary>
-                <div className="px-6 pb-6">
-                  <div className="pt-4 border-t border-gray-200">
-                    <div className="prose prose-blue max-w-none text-gray-600">
-                      {faq.answer.split('\n').map((paragraph, index) => (
-                        <p key={index} className="mb-3 last:mb-0">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+            FAQ Categorieën
+          </h2>
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {categories.map(category => (
+              <div key={category} className="bg-blue-50 rounded-lg border border-blue-200 p-4">
+                <h3 className="text-sm font-semibold text-blue-800 mb-2">
+                  {category}
+                </h3>
+                <div className="text-blue-600 text-sm">
+                  {faqsByCategory[category].length} {faqsByCategory[category].length === 1 ? 'vraag' : 'vragen'}
                 </div>
-              </details>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Categories */}
-          <div className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
-              FAQ Categorieën
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  Algemeen over ADHD
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Basisinformatie over ADHD symptomen, diagnose en behandeling.
-                </p>
-                <div className="text-blue-600 text-sm">
-                  {faqs.filter(f => f.category === 'Algemeen').length} vragen
-                </div>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  Coaching Process
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Alles over het coaching proces, sessies en verwachtingen.
-                </p>
-                <div className="text-blue-600 text-sm">
-                  {faqs.filter(f => f.category === 'Proces').length} vragen
-                </div>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  Kosten & Vergoeding
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Informatie over kosten, verzekeringen en vergoedingen.
-                </p>
-                <div className="text-blue-600 text-sm">
-                  {faqs.filter(f => f.category === 'Vergoeding').length} vragen
-                </div>
+      {/* FAQ Content organized by category */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          {categories.map(category => (
+            <div key={category} className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-blue-200">
+                {category}
+              </h2>
+              <div className="space-y-4">
+                {faqsByCategory[category].map((faq) => (
+                  <details key={faq.id} className="bg-white rounded-lg shadow-md">
+                    <summary className="p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
+                      <div className="flex justify-between items-center">
+                        <h3 className="text-lg font-semibold text-gray-800 pr-4">
+                          {faq.question}
+                        </h3>
+                        <ChevronDown className="text-gray-400 flex-shrink-0 transform transition-transform duration-200" size={20} />
+                      </div>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <div className="pt-4 border-t border-gray-200">
+                        <div className="prose prose-blue max-w-none text-gray-600">
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {faq.answer}
+                          </ReactMarkdown>
+                        </div>
+                      </div>
+                    </div>
+                  </details>
+                ))}
               </div>
             </div>
-          </div>
+          ))}
 
           {/* CTA Section */}
           <div className="mt-16 bg-blue-50 rounded-lg p-8 text-center border border-blue-200">
