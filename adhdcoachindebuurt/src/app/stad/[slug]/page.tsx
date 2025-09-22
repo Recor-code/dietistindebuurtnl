@@ -331,13 +331,24 @@ export default async function CityPage({ params }: PageProps) {
             </div>
 
             <div className="space-y-6">
-              {city.coaches.map((coach) => (
+              {city.coaches.map((coach, index) => (
                 <div key={coach.id} className="bg-white rounded-lg shadow-md p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-1">
-                        {coach.name}
-                      </h3>
+                      <div className="flex items-center gap-3 mb-1">
+                        <h3 className="text-xl font-semibold text-gray-800">
+                          {coach.name}
+                        </h3>
+                        {index < 3 && (
+                          <span className={`px-2 py-1 rounded-full text-xs font-bold ${
+                            index === 0 ? 'bg-yellow-400 text-yellow-900' :
+                            index === 1 ? 'bg-gray-300 text-gray-800' :
+                            'bg-amber-600 text-white'
+                          }`}>
+                            Top{index + 1}
+                          </span>
+                        )}
+                      </div>
                       <p className="text-blue-600 font-medium mb-2">
                         {coach.specialization}
                       </p>
