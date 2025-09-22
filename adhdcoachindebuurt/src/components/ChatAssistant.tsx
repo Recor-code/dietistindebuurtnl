@@ -145,10 +145,10 @@ export default function ChatAssistant() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border">
+    <div className="w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200">
       {/* Header */}
       <div className="text-center p-6 border-b border-gray-100">
-        <div className="w-16 h-16 bg-cyan-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+        <div className="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
           <MessageCircle size={28} className="text-white" />
         </div>
         <h3 className="text-2xl font-bold text-gray-800 mb-2">Hoi! Ik ben jouw ADHD Assistente</h3>
@@ -169,7 +169,7 @@ export default function ChatAssistant() {
             className={`flex items-start gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {message.role === 'assistant' && (
-              <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
                 E
               </div>
             )}
@@ -197,7 +197,7 @@ export default function ChatAssistant() {
         ))}
         {isLoading && (
           <div className="flex items-start gap-3 justify-start">
-            <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
               E
             </div>
             <div className="bg-gray-100 p-4 rounded-2xl rounded-bl-md">
@@ -222,13 +222,13 @@ export default function ChatAssistant() {
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Type hier je vraag of situatie..."
-            className="flex-1 border border-gray-200 rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
+            className="flex-1 border border-gray-200 rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
             disabled={isLoading}
           />
           <button
             onClick={sendMessage}
             disabled={!inputValue.trim() || isLoading}
-            className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 text-white p-3 rounded-full transition-colors flex items-center justify-center"
+            className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 text-white p-3 rounded-full transition-colors flex items-center justify-center"
           >
             <Send size={18} />
           </button>
