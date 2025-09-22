@@ -42,21 +42,38 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Heart className="text-blue-600" size={32} />
-            <Link href="/" className="text-2xl font-bold text-gray-800 hover:text-blue-600">
-              ADHD Coach in de Buurt
+        <div className="max-w-6xl mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <Link href="/" className="flex items-center gap-2">
+              <Heart className="text-blue-600" size={32} />
+              <h1 className="text-2xl font-bold text-gray-800">ADHD Coach in de Buurt</h1>
             </Link>
+            
+            {/* Navigation Menu */}
+            <nav className="hidden md:flex items-center gap-8">
+              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+                Home
+              </Link>
+              <Link href="/coaches" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+                Coaches
+              </Link>
+              <Link href="/blog" className="text-blue-600 font-medium">
+                Blog
+              </Link>
+              <Link href="/faq" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+                FAQ
+              </Link>
+            </nav>
+
+            <a
+              href="https://adhdzelftest.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
+            >
+              Doe de ADHD Test
+            </a>
           </div>
-          <a
-            href="https://adhdzelftest.nl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
-          >
-            Doe de ADHD Test
-          </a>
         </div>
       </header>
 
