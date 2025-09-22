@@ -249,36 +249,87 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Links */}
-      <section className="py-12 px-4">
+      {/* Latest Blog Articles */}
+      <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link
-              href="/blog"
-              className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <h4 className="text-xl font-semibold mb-3 text-gray-800">ADHD Blog</h4>
-              <p className="text-gray-600">
-                Lees de laatste artikelen over ADHD, tips en lokale informatie per stad.
-              </p>
+          <div className="flex justify-between items-start mb-12">
+            <div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">Laatste Blog Artikelen</h3>
+              <p className="text-lg text-gray-600">Lokale ADHD informatie en tips voor jouw regio</p>
+            </div>
+            <Link href="/blog" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
+              Alle artikelen →
             </Link>
-            <Link
-              href="/faq"
-              className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <h4 className="text-xl font-semibold mb-3 text-gray-800">Veelgestelde Vragen</h4>
-              <p className="text-gray-600">
-                Vind antwoorden op de meest gestelde vragen over ADHD en coaching.
-              </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Article 1 - Amsterdam */}
+            <Link href="/blog/adhd-diagnose-amsterdam-2024" className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group">
+              <div className="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                <svg className="w-16 h-16 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <div className="p-6">
+                <div className="text-sm text-blue-600 mb-3 font-medium">Amsterdam</div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  ADHD diagnose in Amsterdam: Wat je moet weten in 2024
+                </h4>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Een complete gids voor het krijgen van een ADHD diagnose in Amsterdam, inclusief wachttijden, kosten en beste klinieken...
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <span>5 min leestijd</span>
+                  <span>•</span>
+                  <span>3 dagen geleden</span>
+                </div>
+              </div>
             </Link>
-            <Link
-              href="/over-adhd"
-              className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <h4 className="text-xl font-semibold mb-3 text-gray-800">Over ADHD</h4>
-              <p className="text-gray-600">
-                Uitgebreide informatie over ADHD symptomen, behandeling en ondersteuning.
-              </p>
+
+            {/* Article 2 - Utrecht */}
+            <Link href="/blog/kindvriendelijke-adhd-coaches-utrecht" className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group">
+              <div className="aspect-video bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
+                <svg className="w-16 h-16 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.5a1.5 1.5 0 011.5 1.5V14a1.5 1.5 0 01-1.5 1.5H9m8-8.5a1.5 1.5 0 00-1.5-1.5h-1m1.5 1.5V9a1.5 1.5 0 01-1.5 1.5M15 10.5a1.5 1.5 0 00-1.5-1.5H12a1.5 1.5 0 00-1.5 1.5v4a1.5 1.5 0 001.5 1.5h1.5a1.5 1.5 0 001.5-1.5V12a1.5 1.5 0 00-1.5-1.5z" />
+                </svg>
+              </div>
+              <div className="p-6">
+                <div className="text-sm text-cyan-600 mb-3 font-medium">Utrecht</div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  Kindvriendelijke ADHD coaches in Utrecht
+                </h4>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Ontdek de beste ADHD coaches voor kinderen in Utrecht. Van speltherapie tot gedragsinterventies...
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <span>7 min leestijd</span>
+                  <span>•</span>
+                  <span>5 dagen geleden</span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Article 3 - België */}
+            <Link href="/blog/online-adhd-coaching-belgie-voordelen" className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group">
+              <div className="aspect-video bg-gradient-to-br from-orange-100 to-yellow-100 flex items-center justify-center">
+                <svg className="w-16 h-16 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+                </svg>
+              </div>
+              <div className="p-6">
+                <div className="text-sm text-orange-600 mb-3 font-medium">België</div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  Online ADHD coaching: Voor- en nadelen
+                </h4>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Alles wat je moet weten over online ADHD coaching in België. Effectiviteit, kosten en hoe je de juiste coach kiest...
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <span>6 min leestijd</span>
+                  <span>•</span>
+                  <span>7 dagen geleden</span>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
