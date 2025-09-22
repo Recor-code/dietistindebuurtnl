@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Send, MessageCircle, X, Bot } from 'lucide-react';
+import { Send, MessageCircle, X } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -24,7 +24,7 @@ export default function ChatAssistant() {
     {
       id: '1',
       role: 'assistant',
-      content: 'Hallo! Ik ben je AI ADHD Assistente. Ik ben hier om je te helpen met vragen over ADHD en om je te ondersteunen bij het vinden van de juiste hulp. Vertel me, waarmee kan ik je vandaag helpen?',
+      content: 'Hallo! Ik ben hier om je te helpen de juiste ADHD ondersteuning te vinden. Kun je me vertellen wat je zoekt? Bijvoorbeeld hulp voor jezelf of je kind, welke problemen je ervaart, of waar je woont?',
       timestamp: new Date()
     }
   ]);
@@ -145,51 +145,62 @@ export default function ChatAssistant() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg border">
+    <div className="w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border">
       {/* Header */}
-      <div className="bg-blue-600 text-white p-4 rounded-t-lg flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Bot size={24} />
-          <div>
-            <h3 className="font-semibold">AI ADHD Assistente</h3>
-            <p className="text-blue-100 text-sm">Hier om je te helpen</p>
-          </div>
+      <div className="text-center p-6 border-b border-gray-100">
+        <div className="w-16 h-16 bg-cyan-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+          <MessageCircle size={28} className="text-white" />
         </div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-2">Hoi! Ik ben Emma, jouw ADHD Assistente</h3>
+        <p className="text-gray-600">Vertel me over je situatie en ik help je de beste hulp te vinden</p>
         <button
           onClick={() => setIsOpen(false)}
-          className="text-blue-100 hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
         >
           <X size={20} />
         </button>
       </div>
 
       {/* Messages */}
-      <div className="h-64 overflow-y-auto p-4 space-y-4">
+      <div className="h-64 overflow-y-auto p-6 space-y-4">
         {messages.map((message) => (
           <div
             key={message.id}
-            className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+            className={`flex items-start gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
+            {message.role === 'assistant' && (
+              <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+                E
+              </div>
+            )}
             <div
-              className={`max-w-[80%] p-3 rounded-lg ${
+              className={`max-w-[80%] p-4 rounded-2xl ${
                 message.role === 'user'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-gray-800'
+                  ? 'bg-blue-500 text-white rounded-br-md'
+                  : 'bg-gray-100 text-gray-800 rounded-bl-md'
               }`}
             >
-              <p className="text-sm">{message.content}</p>
-              <p className="text-xs opacity-70 mt-1">
+              <p>{message.content}</p>
+              <p className={`text-xs mt-2 ${message.role === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
                 {message.timestamp.toLocaleTimeString('nl-NL', {
                   hour: '2-digit',
                   minute: '2-digit'
                 })}
               </p>
             </div>
+            {message.role === 'user' && (
+              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+                U
+              </div>
+            )}
           </div>
         ))}
         {isLoading && (
-          <div className="flex justify-start">
-            <div className="bg-gray-100 p-3 rounded-lg">
+          <div className="flex items-start gap-3 justify-start">
+            <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+              E
+            </div>
+            <div className="bg-gray-100 p-4 rounded-2xl rounded-bl-md">
               <div className="flex space-x-1">
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -202,24 +213,24 @@ export default function ChatAssistant() {
       </div>
 
       {/* Input */}
-      <div className="border-t p-4">
-        <div className="flex gap-2 mb-3">
+      <div className="border-t border-gray-100 p-6">
+        <div className="flex gap-3 mb-4">
           <input
             ref={inputRef}
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Typ je vraag over ADHD..."
-            className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Type hier je vraag of situatie..."
+            className="flex-1 border border-gray-200 rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
             disabled={isLoading}
           />
           <button
             onClick={sendMessage}
             disabled={!inputValue.trim() || isLoading}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 text-white p-2 rounded-lg transition-colors"
+            className="bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 text-white p-3 rounded-full transition-colors flex items-center justify-center"
           >
-            <Send size={20} />
+            <Send size={18} />
           </button>
         </div>
         
