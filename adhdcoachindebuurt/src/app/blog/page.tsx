@@ -6,7 +6,7 @@ async function getBlogPosts() {
   try {
     const { data, error } = await supabase
       .from('blog_posts')
-      .select('*, cities!inner(id, name, slug)')
+      .select('id, title, slug, excerpt, meta_description, published_at, tags, cities!inner(id, name, slug)')
       .not('published_at', 'is', null)
       .order('published_at', { ascending: false });
 
@@ -15,7 +15,15 @@ async function getBlogPosts() {
       return [];
     }
 
-    return data || [];
+    // Transform data shape to match UI expectations
+    const transformedData = (data || []).map(post => ({
+      ...post,
+      metaDescription: post.meta_description,
+      publishedAt: post.published_at ? new Date(post.published_at) : null,
+      city: post.cities && Array.isArray(post.cities) ? post.cities[0] : post.cities
+    }));
+
+    return transformedData;
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     return [];

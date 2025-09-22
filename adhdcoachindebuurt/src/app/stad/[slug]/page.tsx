@@ -15,9 +15,9 @@ async function getCityWithCoaches(slug: string) {
     // Get city data
     const { data: city, error: cityError } = await supabase
       .from('cities')
-      .select('*')
+      .select('id, name, slug, province, country, population, latitude, longitude, adhd_stats, tldr, created_at, updated_at')
       .eq('slug', slug)
-      .single();
+      .maybeSingle();
 
     if (cityError || !city) {
       return null;
@@ -26,7 +26,7 @@ async function getCityWithCoaches(slug: string) {
     // Get coaches for this city
     const { data: coaches, error: coachesError } = await supabase
       .from('coaches')
-      .select('*')
+      .select('id, name, slug, email, phone, website, specialization, description, address, latitude, longitude, city_id, rating, review_count, is_child_friendly, weekend_available, online_available, in_person_available, accepts_insurance, availability_status, created_at, updated_at')
       .eq('city_id', city.id);
 
     if (coachesError) {
@@ -34,7 +34,29 @@ async function getCityWithCoaches(slug: string) {
       return { ...city, coaches: [] };
     }
 
-    return { ...city, coaches: coaches || [] };
+    // Transform data shape to match UI expectations
+    const transformedCity = {
+      ...city,
+      adhdStats: city.adhd_stats,
+      createdAt: city.created_at ? new Date(city.created_at) : null,
+      updatedAt: city.updated_at ? new Date(city.updated_at) : null
+    };
+
+    const transformedCoaches = (coaches || []).map(coach => ({
+      ...coach,
+      cityId: coach.city_id,
+      reviewCount: coach.review_count,
+      isChildFriendly: coach.is_child_friendly,
+      weekendAvailable: coach.weekend_available,
+      onlineAvailable: coach.online_available,
+      inPersonAvailable: coach.in_person_available,
+      acceptsInsurance: coach.accepts_insurance,
+      availabilityStatus: coach.availability_status,
+      createdAt: coach.created_at ? new Date(coach.created_at) : null,
+      updatedAt: coach.updated_at ? new Date(coach.updated_at) : null
+    }));
+
+    return { ...transformedCity, coaches: transformedCoaches };
   } catch (error) {
     console.error('Error fetching city:', error);
     return null;

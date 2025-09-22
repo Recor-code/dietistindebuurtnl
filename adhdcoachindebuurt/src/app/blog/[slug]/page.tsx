@@ -13,16 +13,26 @@ async function getBlogPost(slug: string) {
   try {
     const { data, error } = await supabase
       .from('blog_posts')
-      .select('*, cities(id, name, slug)')
+      .select('id, title, slug, content, excerpt, meta_description, published_at, tags, cities(id, name, slug)')
       .eq('slug', slug)
-      .single();
+      .maybeSingle();
 
     if (error) {
       console.error('Error fetching blog post:', error);
       return null;
     }
 
-    return data;
+    if (!data) {
+      return null;
+    }
+
+    // Transform data shape to match UI expectations
+    return {
+      ...data,
+      metaDescription: data.meta_description,
+      publishedAt: data.published_at ? new Date(data.published_at) : null,
+      city: data.cities && Array.isArray(data.cities) ? data.cities[0] : data.cities
+    };
   } catch (error) {
     console.error('Error fetching blog post:', error);
     return null;
