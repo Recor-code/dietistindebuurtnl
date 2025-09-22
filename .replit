@@ -5,7 +5,7 @@ integrations = ["javascript_openai:1.0.0", "javascript_database:1.0.0", "javascr
 
 [nix]
 channel = "stable-25_05"
-packages = ["postgresql", "bind", "iputils", "nettools"]
+packages = ["postgresql", "bind", "iputils", "nettools", "imagemagick"]
 
 [workflows]
 runButton = "Project"

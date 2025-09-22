@@ -48,7 +48,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative isolate py-16 px-4 min-h-screen flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:z-0" style={{backgroundImage: "url('/hero-adhd-background.jpg')"}}>
+      <section className="relative isolate py-16 px-4 min-h-screen flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/50 before:z-0" style={{backgroundImage: "url('/adhd-bg3.webp')"}}>
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
             Vind de perfecte ADHD coach bij jou in de buurt
