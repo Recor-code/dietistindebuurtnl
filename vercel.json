@@ -1,6 +1,1 @@
-{
-  "buildCommand": "cd adhdcoachindebuurt && npm run build",
-  "outputDirectory": "adhdcoachindebuurt/.next",
-  "installCommand": "cd adhdcoachindebuurt && npm install",
-  "framework": null
-}
+{}
