@@ -335,6 +335,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ADHD Statistics */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            ADHD in Nederland & België
+          </h3>
+          <p className="text-lg text-gray-600 mb-16">
+            Belangrijke statistieken en trends
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-3">
+                5-7%
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                van kinderen heeft ADHD
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-cyan-500 mb-3">
+                2.5%
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                van volwassenen heeft ADHD
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-orange-500 mb-3">
+                1.2M+
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                mensen met ADHD in NL
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-3">
+                68%
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                verbetert met coaching
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
