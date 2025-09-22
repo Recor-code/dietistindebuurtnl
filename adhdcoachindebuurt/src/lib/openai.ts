@@ -190,7 +190,7 @@ async function generateAssistantResponse(
     
     while (runStatus.status === 'queued' || runStatus.status === 'in_progress') {
       await new Promise(resolve => setTimeout(resolve, 1000));
-      const retrievedRun = await openai.beta.threads.runs.retrieve(threadId, run.id);
+      const retrievedRun = await openai.beta.threads.runs.retrieve(threadId, { run_id: run.id });
       runStatus = retrievedRun;
     }
 

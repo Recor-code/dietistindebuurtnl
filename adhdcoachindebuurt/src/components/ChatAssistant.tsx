@@ -51,6 +51,8 @@ export default function ChatAssistant() {
   const sendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
+    console.log('🔄 Sending message...', inputValue.trim());
+
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
@@ -74,6 +76,7 @@ export default function ChatAssistant() {
     setMessages(prev => [...prev, assistantMessage]);
 
     try {
+      console.log('📡 Making API request to /api/chat');
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -85,25 +88,39 @@ export default function ChatAssistant() {
         })
       });
 
-      if (!response.ok) throw new Error('Failed to get response');
+      console.log('📨 Response received:', response.status, response.ok);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('❌ API Error:', errorText);
+        throw new Error(`API Error: ${response.status} - ${errorText}`);
+      }
 
       // Handle streaming response
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
 
       if (!reader) {
-        throw new Error('No reader available');
+        throw new Error('No reader available for streaming');
       }
 
+      console.log('🌊 Starting stream processing...');
       let streamedContent = '';
+      let chunkCount = 0;
 
       while (true) {
         const { done, value } = await reader.read();
         
-        if (done) break;
+        if (done) {
+          console.log('✅ Stream complete! Total chunks:', chunkCount);
+          break;
+        }
         
         const chunk = decoder.decode(value, { stream: true });
         streamedContent += chunk;
+        chunkCount++;
+        
+        console.log(`📦 Chunk ${chunkCount}:`, chunk);
         
         // Update the assistant message with new content
         setMessages(prev => 
@@ -115,12 +132,12 @@ export default function ChatAssistant() {
         );
       }
     } catch (error) {
-      console.error('Chat error:', error);
+      console.error('❌ Chat error:', error);
       // Update the assistant message with error
       setMessages(prev => 
         prev.map(msg => 
           msg.id === assistantMessageId 
-            ? { ...msg, content: 'Sorry, er ging iets mis. Probeer het opnieuw.' }
+            ? { ...msg, content: `Sorry, er ging iets mis: ${error instanceof Error ? error.message : 'Unknown error'}` }
             : msg
         )
       );
