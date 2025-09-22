@@ -93,8 +93,85 @@ export default async function CityPage({ params }: PageProps) {
     ? city.coaches.reduce((sum, coach) => sum + parseFloat(coach.rating || '0'), 0) / city.coaches.length 
     : 0;
 
+  // Generate structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `ADHD Coach ${city.name}`,
+    "description": `Vind ADHD coaches en gedragstherapeuten in ${city.name}. Vergelijk specialisten, bekijk reviews en boek een afspraak.`,
+    "url": `https://adhdcoachindebuurt.nl/stad/${city.slug}`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": city.name,
+      "addressRegion": city.province,
+      "addressCountry": city.country === 'NL' ? 'Nederland' : 'België'
+    },
+    "geo": {
+      "@type": "GeoCoordinates", 
+      "latitude": city.latitude,
+      "longitude": city.longitude
+    },
+    "serviceType": "ADHD Coaching and Therapy Services",
+    "areaServed": {
+      "@type": "City",
+      "name": city.name,
+      "addressRegion": city.province,
+      "addressCountry": city.country === 'NL' ? 'Nederland' : 'België'
+    },
+    "aggregateRating": city.coaches.length > 0 ? {
+      "@type": "AggregateRating",
+      "ratingValue": avgRating.toFixed(1),
+      "reviewCount": city.coaches.reduce((sum, coach) => sum + parseInt(coach.reviewCount || '0'), 0),
+      "bestRating": "5",
+      "worstRating": "1"
+    } : undefined,
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "ADHD Coaching Services",
+      "itemListElement": city.coaches.map((coach, index) => ({
+        "@type": "Offer",
+        "name": `${coach.name} - ${coach.specialization}`,
+        "description": coach.description,
+        "seller": {
+          "@type": "Person",
+          "name": coach.name,
+          "jobTitle": coach.specialization || "ADHD Coach"
+        },
+        "areaServed": city.name,
+        "priceRange": "€75-€125",
+        "availability": coach.availabilityStatus === 'available' ? "InStock" : "OutOfStock"
+      }))
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": city.coaches.length,
+      "itemListElement": city.coaches.map((coach, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Person",
+          "name": coach.name,
+          "jobTitle": coach.specialization || "ADHD Coach",
+          "description": coach.description,
+          "address": coach.address,
+          "aggregateRating": coach.rating ? {
+            "@type": "AggregateRating", 
+            "ratingValue": coach.rating,
+            "reviewCount": coach.reviewCount || 1
+          } : undefined
+        }
+      }))
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Structured Data */}
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
       {/* Header with Navigation */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 py-4">
