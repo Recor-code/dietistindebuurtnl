@@ -1,4 +1,5 @@
 import ChatAssistant from '@/components/ChatAssistant';
+import HeroSearchSection from '@/components/HeroSearchSection';
 import { Search, MapPin, Star, Users, Clock, Heart } from 'lucide-react';
 import Link from 'next/link';
 
@@ -58,25 +59,7 @@ export default function Home() {
           </p>
 
           {/* Quick Search */}
-          <div className="max-w-2xl mx-auto mb-12">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-4 text-gray-800">Waar zoek je?</h3>
-              <div className="flex gap-3">
-                <div className="flex-1 relative">
-                  <MapPin className="absolute left-3 top-3 text-gray-400" size={20} />
-                  <input
-                    type="text"
-                    placeholder="Typ je stad of postcode..."
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2">
-                  <Search size={20} />
-                  Zoeken
-                </button>
-              </div>
-            </div>
-          </div>
+          <HeroSearchSection />
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
