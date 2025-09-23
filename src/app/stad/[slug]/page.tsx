@@ -394,6 +394,38 @@ export default function CityPage({ params }: PageProps) {
               </div>
             </div>
 
+            {/* Active Filters Display */}
+            {(filters.kindvriendelijk || filters.weekend || filters.online || filters.hoogsteBeoordeling) && (
+              <div className="mb-6">
+                <div className="flex flex-wrap items-center gap-3">
+                  {filters.kindvriendelijk && (
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-blue-100 text-blue-700 border-blue-300 text-sm">
+                      <Users size={16} />
+                      Kindvriendelijk
+                    </div>
+                  )}
+                  {filters.weekend && (
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-green-100 text-green-700 border-green-300 text-sm">
+                      <Clock size={16} />
+                      Weekend beschikbaar
+                    </div>
+                  )}
+                  {filters.online && (
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-purple-100 text-purple-700 border-purple-300 text-sm">
+                      <Globe size={16} />
+                      Online beschikbaar
+                    </div>
+                  )}
+                  {filters.hoogsteBeoordeling && (
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-yellow-100 text-yellow-700 border-yellow-300 text-sm">
+                      <Star size={16} />
+                      Hoogste beoordeling
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="space-y-6">
               {filteredCoaches.map((coach, index) => {
                 const getPrimaryAction = () => {
