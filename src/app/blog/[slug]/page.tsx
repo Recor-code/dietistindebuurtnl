@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import Header from '@/components/Header';
 
 interface PageProps {
   params: {
@@ -74,25 +75,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Heart className="text-blue-600" size={32} />
-            <Link href="/" className="text-2xl font-bold text-gray-800 hover:text-blue-600">
-              ADHD Coach in de Buurt
-            </Link>
-          </div>
-          <a
-            href="https://adhdzelftest.nl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
-          >
-            Doe de ADHD Test
-          </a>
-        </div>
-      </header>
+      <Header />
 
       {/* Breadcrumb */}
       <div className="bg-white border-b">
