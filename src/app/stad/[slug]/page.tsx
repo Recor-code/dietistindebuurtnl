@@ -291,110 +291,177 @@ export default async function CityPage({ params }: PageProps) {
               </button>
             </div>
 
+            {/* Filter/Sort Bar */}
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-700">Sorteer:</span>
+                  <select className="text-sm border border-gray-300 rounded-md px-3 py-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option>Beschikbaar eerst</option>
+                    <option>Beste beoordeling</option>
+                    <option>Meeste reviews</option>
+                  </select>
+                </div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-sm font-medium text-gray-700">Filters:</span>
+                  <button className="text-xs px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
+                    Online
+                  </button>
+                  <button className="text-xs px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
+                    Kindvriendelijk
+                  </button>
+                  <button className="text-xs px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
+                    Weekend
+                  </button>
+                  <button className="text-xs px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
+                    Verzekering
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {city.coaches.map((coach, index) => (
-                <div key={coach.id} className="bg-white rounded-lg shadow-md p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <div className="flex items-center gap-3 mb-1">
-                        <h3 className="text-xl font-semibold text-gray-800">
-                          {coach.name}
-                        </h3>
-                        {index < 3 && (
-                          <span className={`px-2 py-1 rounded-full text-xs font-bold ${
-                            index === 0 ? 'bg-yellow-400 text-yellow-900' :
-                            index === 1 ? 'bg-gray-300 text-gray-800' :
-                            'bg-amber-600 text-white'
-                          }`}>
-                            Top{index + 1}
-                          </span>
-                        )}
+              {city.coaches.map((coach, index) => {
+                const getPrimaryAction = () => {
+                  if (coach.phone) return { type: 'phone', href: `tel:${coach.phone}`, label: 'Bellen', icon: Phone };
+                  if (coach.website) return { type: 'website', href: coach.website, label: 'Website', icon: Globe };
+                  if (coach.email) return { type: 'email', href: `mailto:${coach.email}`, label: 'E-mail', icon: Mail };
+                  return null;
+                };
+
+                const primaryAction = getPrimaryAction();
+                const isTopRated = parseFloat(coach.rating || '0') >= 4.7 && parseInt(coach.reviewCount || '0') >= 20;
+
+                return (
+                <div key={coach.id} className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-5">
+                  {/* Header Row */}
+                  <div className="flex justify-between items-start mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                        <span className="text-blue-700 font-semibold text-sm">
+                          {coach.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                        </span>
                       </div>
-                      <p className="text-blue-600 font-medium mb-2">
-                        {coach.specialization}
-                      </p>
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
-                        <div className="flex items-center gap-1">
-                          <Star size={16} className="text-yellow-400 fill-current" />
-                          <span>{coach.rating} ({coach.reviewCount} reviews)</span>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h3 className="font-semibold text-gray-900 text-lg leading-tight">
+                            {coach.name}
+                          </h3>
+                          {isTopRated && (
+                            <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium">
+                              Top beoordeeld
+                            </span>
+                          )}
                         </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin size={16} />
-                          <span>{coach.address}</span>
+                        <div className="flex items-center gap-1 mt-1">
+                          <Star size={14} className="text-yellow-400 fill-current" />
+                          <span className="text-sm font-medium text-gray-700">{coach.rating}</span>
+                          <span className="text-xs text-gray-500">({coach.reviewCount})</span>
                         </div>
                       </div>
                     </div>
-                    <div className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
                       coach.availabilityStatus === 'available' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-orange-100 text-orange-800'
+                        ? 'bg-green-100 text-green-700' 
+                        : 'bg-orange-100 text-orange-700'
                     }`}>
+                      <div className={`w-2 h-2 rounded-full ${
+                        coach.availabilityStatus === 'available' ? 'bg-green-500' : 'bg-orange-500'
+                      }`}></div>
                       {coach.availabilityStatus === 'available' ? 'Beschikbaar' : 'Druk bezet'}
                     </div>
                   </div>
 
-                  <p className="text-gray-600 mb-4">
-                    {coach.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {coach.isChildFriendly && (
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
-                        Kindvriendelijk
+                  {/* Key Facts Strip */}
+                  <div className="grid grid-cols-2 gap-3 mb-3 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Heart size={14} className="text-blue-500" />
+                      <span className="text-gray-700 truncate">{coach.specialization}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin size={14} className="text-gray-500" />
+                      <span className="text-gray-600 truncate">{coach.address?.split(',')[0] || 'Locatie onbekend'}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={14} className="text-gray-500" />
+                      <span className="text-gray-600">
+                        {coach.onlineAvailable && coach.inPersonAvailable ? 'Online & Fysiek' :
+                         coach.onlineAvailable ? 'Online' :
+                         coach.inPersonAvailable ? 'Fysiek' : 'Contacteer'}
                       </span>
-                    )}
-                    {coach.weekendAvailable && (
-                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">
-                        Weekend beschikbaar
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users size={14} className="text-gray-500" />
+                      <span className="text-gray-600">
+                        {coach.isChildFriendly ? 'Ook kinderen' : 'Volwassenen'}
                       </span>
-                    )}
-                    {coach.onlineAvailable && (
-                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">
-                        Online coaching
-                      </span>
-                    )}
-                    {coach.acceptsInsurance && (
-                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">
-                        Zorgverzekering
-                      </span>
-                    )}
+                    </div>
                   </div>
 
-                  {/* Contact Options */}
-                  <div className="flex gap-3 pt-4 border-t border-gray-200">
-                    {coach.phone && (
-                      <a 
-                        href={`tel:${coach.phone}`}
-                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                      >
-                        <Phone size={16} />
-                        Bellen
-                      </a>
-                    )}
-                    {coach.email && (
-                      <a 
-                        href={`mailto:${coach.email}`}
-                        className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                      >
-                        <Mail size={16} />
-                        E-mail
-                      </a>
-                    )}
-                    {coach.website && (
-                      <a 
-                        href={coach.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                      >
-                        <Globe size={16} />
-                        Website
-                      </a>
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                    {coach.description || 'Ervaren ADHD coach met persoonlijke aanpak voor jouw specifieke behoeften.'}
+                  </p>
+
+                  {/* Limited Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {[
+                      coach.weekendAvailable && { label: 'Weekend', color: 'bg-green-50 text-green-700' },
+                      coach.acceptsInsurance && { label: 'Verzekering', color: 'bg-blue-50 text-blue-700' },
+                      coach.onlineAvailable && { label: 'Online', color: 'bg-purple-50 text-purple-700' }
+                    ].filter(Boolean).slice(0, 3).map((tag, i) => (
+                      <span key={i} className={`px-2 py-1 rounded-full text-xs font-medium ${tag.color}`}>
+                        {tag.label}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Primary CTA */}
+                  <div className="pt-3 border-t border-gray-100">
+                    {primaryAction ? (
+                      <div className="flex gap-2">
+                        <a 
+                          href={primaryAction.href}
+                          target={primaryAction.type === 'website' ? '_blank' : undefined}
+                          rel={primaryAction.type === 'website' ? 'noopener noreferrer' : undefined}
+                          className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
+                        >
+                          <primaryAction.icon size={16} />
+                          {primaryAction.label}
+                        </a>
+                        {/* Secondary Actions */}
+                        <div className="flex gap-1">
+                          {coach.email && primaryAction.type !== 'email' && (
+                            <a 
+                              href={`mailto:${coach.email}`}
+                              className="flex items-center justify-center w-10 h-10 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                              title="E-mail"
+                            >
+                              <Mail size={16} className="text-gray-600" />
+                            </a>
+                          )}
+                          {coach.website && primaryAction.type !== 'website' && (
+                            <a 
+                              href={coach.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center w-10 h-10 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                              title="Website"
+                            >
+                              <Globe size={16} className="text-gray-600" />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="text-center py-2">
+                        <span className="text-sm text-gray-500">Contactgegevens binnenkort beschikbaar</span>
+                      </div>
                     )}
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
 
             {city.coaches.length === 0 && (
