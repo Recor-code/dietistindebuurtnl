@@ -71,7 +71,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-gray-800 mb-4">
-              Praat met onze AI ADHD Assistente
+              Hoi! Ik ben jouw ADHD Assistente
             </h3>
             <p className="text-lg text-gray-600">
               Krijg direct hulp en advies over ADHD. Onze AI assistente helpt je met vragen 
