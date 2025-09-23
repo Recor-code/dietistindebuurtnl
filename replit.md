@@ -38,10 +38,11 @@ Preferred communication style: Simple, everyday language.
 - **Security**: Environment-based API key management with service role keys for server operations
 
 ### AI Integration
-- **Chat System**: OpenAI GPT-5 integration for ADHD coaching assistance
+- **Chat System**: OpenAI GPT-5 integration for ADHD coaching assistance available on homepage, FAQ, blog, and all city pages
 - **Analysis Engine**: Conversation analysis to identify ADHD pain points and provide recommendations
 - **Response Generation**: Context-aware responses for ADHD-related queries
 - **Structured Output**: JSON-formatted analysis results for consistent data handling
+- **City Page Integration**: ChatAssistant component positioned above the "ADHD Coaches op de kaart" section for easy access during coach discovery
 
 ## External Dependencies
 

@@ -6,6 +6,7 @@ import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter } from 'l
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
+import ChatAssistant from '@/components/ChatAssistant';
 import { useState, useEffect } from 'react';
 
 interface PageProps {
@@ -255,6 +256,9 @@ export default function CityPage({ params }: PageProps) {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* Chat Assistant Section */}
+        <ChatAssistant />
+        
         {/* ADHD Coaches op de kaart - Main Section */}
         <section className="mb-8">
           <div className="bg-white rounded-lg shadow-lg p-6">
