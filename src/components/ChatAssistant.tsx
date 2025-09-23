@@ -38,7 +38,7 @@ export default function ChatAssistant() {
       {
         id: '1',
         role: 'assistant',
-        content: 'Hoi! Ik ben jouw ADHD Assistente. Vertel me over je situatie en ik help je de beste hulp te vinden',
+        content: 'Hoi! Ik ben jouw ADHD Assistente',
         timestamp: new Date()
       }
     ]);
