@@ -196,13 +196,7 @@ export default function ChatAssistant() {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200 relative">
-      <button
-        onClick={() => setIsOpen(false)}
-        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
-      >
-        <X size={20} />
-      </button>
+    <div className="w-full max-w-[800px] mx-auto bg-white rounded-2xl shadow-xl border border-gray-200 relative">
 
       {/* Messages */}
       <div className="h-48 overflow-y-auto p-4 space-y-2">
