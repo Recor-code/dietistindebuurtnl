@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db, cities } from '../../../../lib/db';
-import { ilike, asc } from 'drizzle-orm';
+import { supabase } from '../../../../lib/supabase';
 
 export async function GET(request: NextRequest) {
   try {
@@ -13,19 +12,18 @@ export async function GET(request: NextRequest) {
 
     const searchTerm = query.trim().toLowerCase();
     
-    // Search cities by name
-    const cityResults = await db
-      .select({
-        id: cities.id,
-        name: cities.name,
-        slug: cities.slug,
-        province: cities.province,
-        country: cities.country,
-      })
-      .from(cities)
-      .where(ilike(cities.name, `%${searchTerm}%`))
-      .orderBy(asc(cities.name))
+    // Search cities by name using Supabase
+    const { data: cityResults, error } = await supabase
+      .from('cities')
+      .select('id, name, slug, province, country')
+      .ilike('name', `%${searchTerm}%`)
+      .order('name', { ascending: true })
       .limit(10);
+
+    if (error) {
+      console.error('Supabase search error:', error);
+      return NextResponse.json([]);
+    }
 
     // Format results for autocomplete
     const results = (cityResults || []).map(city => ({
