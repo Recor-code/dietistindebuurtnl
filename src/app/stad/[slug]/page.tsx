@@ -555,9 +555,13 @@ export default async function CityPage({ params }: PageProps) {
             href="https://shop.organicolabs.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 text-lg font-medium transition-colors inline-flex items-center gap-2"
+            className="inline-block hover:opacity-90 transition-opacity"
           >
-            Op zoek naar natuurlijke supplementen die doen wat ze beloven? →
+            <img 
+              src="/relax-banner.jpg" 
+              alt="RELAX - Natuurlijke rust zonder loom gevoel" 
+              className="h-[90px] w-auto mx-auto"
+            />
           </a>
         </div>
       </div>
@@ -605,9 +609,13 @@ export default async function CityPage({ params }: PageProps) {
                   href="https://shop.organicolabs.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-300 text-sm underline"
+                  className="inline-block hover:opacity-90 transition-opacity"
                 >
-                  Op zoek naar natuurlijke supplementen die doen wat ze beloven?
+                  <img 
+                    src="/relax-banner.jpg" 
+                    alt="RELAX - Natuurlijke rust zonder loom gevoel" 
+                    className="h-[90px] w-auto"
+                  />
                 </a>
               </div>
             </div>
