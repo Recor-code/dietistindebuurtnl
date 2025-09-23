@@ -154,7 +154,7 @@ export default function Home() {
               <div className="p-6">
                 <div className="text-sm text-blue-600 mb-3 font-medium">Amsterdam</div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  ADHD diagnose in Amsterdam: Wat je moet weten in 2024
+                  ADHD diagnose in Amsterdam: Wat je moet weten in 2025
                 </h4>
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   Een complete gids voor het krijgen van een ADHD diagnose in Amsterdam, inclusief wachttijden, kosten en beste klinieken...
