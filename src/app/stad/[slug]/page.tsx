@@ -278,9 +278,9 @@ export default async function CityPage({ params }: PageProps) {
           </div>
         </section>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div>
           {/* Coaches List */}
-          <div className="lg:col-span-2">
+          <div>
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-gray-800">
                 ADHD Coaches in {city.name}
@@ -291,7 +291,7 @@ export default async function CityPage({ params }: PageProps) {
               </button>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {city.coaches.map((coach, index) => (
                 <div key={coach.id} className="bg-white rounded-lg shadow-md p-6">
                   <div className="flex justify-between items-start mb-4">
@@ -409,73 +409,6 @@ export default async function CityPage({ params }: PageProps) {
                 </p>
               </div>
             )}
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* ADHD Statistics */}
-            {adhdStats && (
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                  ADHD in {city.name}
-                </h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Prevalentie volwassenen:</span>
-                    <span className="font-medium">{adhdStats.prevalenceAdults}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Prevalentie kinderen:</span>
-                    <span className="font-medium">{adhdStats.prevalenceChildren}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Gem. wachttijd:</span>
-                    <span className="font-medium">{adhdStats.waitingTimeAverageWeeks} weken</span>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Quick Links */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                Handige Links
-              </h3>
-              <div className="space-y-3">
-                <Link 
-                  href="/faq"
-                  className="block text-blue-600 hover:text-blue-800 text-sm"
-                >
-                  Veelgestelde vragen over ADHD
-                </Link>
-                <Link 
-                  href="/blog"
-                  className="block text-blue-600 hover:text-blue-800 text-sm"
-                >
-                  ADHD Blog en artikelen
-                </Link>
-                <Link 
-                  href="/over-adhd"
-                  className="block text-blue-600 hover:text-blue-800 text-sm"
-                >
-                  Alles over ADHD symptomen
-                </Link>
-              </div>
-            </div>
-
-            {/* CTA Box */}
-            <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
-              <h3 className="text-lg font-semibold text-blue-800 mb-3">
-                Ben je een ADHD coach?
-              </h3>
-              <p className="text-blue-700 text-sm mb-4">
-                Wil je ook vermeld worden in onze directory? 
-                Neem contact met ons op om je profiel toe te voegen.
-              </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium w-full">
-                Coach worden
-              </button>
-            </div>
           </div>
         </div>
       </div>
