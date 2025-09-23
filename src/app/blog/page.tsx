@@ -292,7 +292,6 @@ export default async function BlogPage() {
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
                 <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
-                <li><Link href="/over-adhd" className="hover:text-white">Over ADHD</Link></li>
                 <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
               </ul>
             </div>
