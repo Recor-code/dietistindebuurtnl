@@ -2,6 +2,7 @@ import { supabase } from '../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ChatAssistant from '@/components/ChatAssistant';
 
 async function getBlogPosts() {
   try {
@@ -52,6 +53,21 @@ export default async function BlogPage() {
           <p className="text-xl text-blue-100">
             Ontdek praktische tips, het laatste nieuws en lokale informatie over ADHD coaching en ondersteuning.
           </p>
+        </div>
+      </section>
+
+      {/* AI Chat Assistant Section */}
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">
+              Hoi! Ik ben jouw ADHD Assistente
+            </h3>
+            <p className="text-lg text-gray-600">
+              Vertel me over je situatie en ik help je de beste hulp te vinden
+            </p>
+          </div>
+          <ChatAssistant />
         </div>
       </section>
 
