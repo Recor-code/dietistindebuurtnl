@@ -261,16 +261,12 @@ export default function Home() {
               </p>
               <div className="text-center">
                 <a
-                  href="https://organicolabs.com/relax-plus/"
+                  href="https://shop.organicolabs.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block hover:opacity-90 transition-opacity"
+                  className="text-blue-400 hover:text-blue-300 text-sm underline"
                 >
-                  <img 
-                    src="/relax-banner.jpg" 
-                    alt="RELAX - Natuurlijke rust zonder loom gevoel" 
-                    className="h-[90px] w-auto"
-                  />
+                  Op zoek naar natuurlijke supplementen die doen wat ze beloven? →
                 </a>
               </div>
             </div>

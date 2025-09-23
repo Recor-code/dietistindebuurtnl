@@ -557,16 +557,12 @@ export default function CityPage({ params }: PageProps) {
       <div className="bg-gray-50 border-t border-gray-200 py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <a
-            href="https://organicolabs.com/relax-plus/"
+            href="https://shop.organicolabs.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block hover:opacity-90 transition-opacity"
+            className="text-blue-600 hover:text-blue-800 underline font-medium"
           >
-            <img 
-              src="/relax-banner.jpg" 
-              alt="RELAX - Natuurlijke rust zonder loom gevoel" 
-              className="h-[90px] w-auto mx-auto"
-            />
+            Op zoek naar natuurlijke supplementen die doen wat ze beloven? →
           </a>
         </div>
       </div>
