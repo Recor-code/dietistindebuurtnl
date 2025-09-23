@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { Search } from 'lucide-react';
 import CitySearchInput from './CitySearchInput';
 
@@ -16,7 +17,7 @@ export default function HeroSearchSection() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mb-12">
+    <div className="w-[800px] mx-auto mb-12">
       <div className="bg-white rounded-lg shadow-lg p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
           <div>
