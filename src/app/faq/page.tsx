@@ -7,6 +7,7 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Header from '@/components/Header';
+import ChatAssistant from '@/components/ChatAssistant';
 
 interface FAQItem {
   id: string;
@@ -473,28 +474,30 @@ export default function FAQPage() {
             );
           })}
 
-          {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 rounded-lg p-8 text-center border border-blue-200">
-            <h2 className="text-2xl font-bold text-blue-800 mb-4">
-              Niet gevonden wat je zocht?
-            </h2>
-            <p className="text-blue-700 mb-6">
-              Praat met onze AI ADHD Assistente of bekijk ADHD coaches in jouw stad voor persoonlijke ondersteuning.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
-              >
-                Praat met AI Assistente
-              </Link>
-              <Link
-                href="/#cities"
-                className="bg-white hover:bg-gray-50 text-blue-600 border border-blue-600 px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
-              >
-                Vind een Coach
-              </Link>
+          {/* AI Chat Assistant Section */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                Niet gevonden wat je zocht?
+              </h2>
+              <p className="text-lg text-gray-600">
+                Praat met onze AI ADHD Assistente en krijg direct persoonlijke hulp
+              </p>
             </div>
+            <ChatAssistant />
+          </div>
+
+          {/* Additional CTA for finding coaches */}
+          <div className="mt-8 bg-blue-50 rounded-lg p-6 text-center border border-blue-200">
+            <p className="text-blue-700 mb-4">
+              Of bekijk ADHD coaches in jouw stad voor persoonlijke ondersteuning
+            </p>
+            <Link
+              href="/#cities"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
+            >
+              Vind een Coach
+            </Link>
           </div>
         </div>
       </section>
