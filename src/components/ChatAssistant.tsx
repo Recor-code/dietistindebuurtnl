@@ -197,7 +197,6 @@ export default function ChatAssistant() {
 
   return (
     <div className="w-full max-w-[800px] mx-auto bg-white rounded-2xl shadow-xl border border-gray-200 relative">
-
       {/* Messages */}
       <div className="h-48 overflow-y-auto p-4 space-y-2">
         {messages.map((message) => (
