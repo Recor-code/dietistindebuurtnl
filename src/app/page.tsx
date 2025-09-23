@@ -74,8 +74,7 @@ export default function Home() {
               Hoi! Ik ben jouw ADHD Assistente
             </h3>
             <p className="text-lg text-gray-600">
-              Krijg direct hulp en advies over ADHD. Onze AI assistente helpt je met vragen 
-              en geeft een persoonlijke analyse van je situatie.
+              Vertel me over je situatie en ik help je de beste hulp te vinden
             </p>
           </div>
           <ChatAssistant />
