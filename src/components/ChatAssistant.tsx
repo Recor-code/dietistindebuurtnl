@@ -44,8 +44,12 @@ export default function ChatAssistant() {
     ]);
   }, []);
 
+  // Only scroll to bottom when new messages are added (not on initial load)
   useEffect(() => {
-    scrollToBottom();
+    // Skip scrolling if this is the initial message load (length === 1)
+    if (messages.length > 1) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   const sendMessage = async () => {
