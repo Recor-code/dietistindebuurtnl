@@ -194,7 +194,7 @@ export default async function CityPage({ params }: PageProps) {
             </p>
             
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
               <div className="bg-blue-700 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">{city.coaches.length}</div>
                 <div className="text-blue-200 text-sm">ADHD Coaches</div>
@@ -206,10 +206,6 @@ export default async function CityPage({ params }: PageProps) {
               <div className="bg-blue-700 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-1">{avgRating.toFixed(1)}★</div>
                 <div className="text-blue-200 text-sm">Gem. Rating</div>
-              </div>
-              <div className="bg-blue-700 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-1">{city.population?.toLocaleString()}</div>
-                <div className="text-blue-200 text-sm">Inwoners</div>
               </div>
             </div>
           </div>
