@@ -440,8 +440,27 @@ export default function FAQPage() {
                     </summary>
                     <div className="px-6 pb-6">
                       <div className="pt-4 border-t border-gray-200">
-                        <div className="prose prose-blue max-w-none text-gray-600">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        <div className="prose prose-blue prose-lg max-w-none text-gray-700 
+                                      prose-p:mb-4 prose-p:leading-relaxed 
+                                      prose-headings:text-gray-800 prose-headings:font-semibold prose-headings:mb-3 prose-headings:mt-6
+                                      prose-ul:mb-4 prose-ul:mt-2 prose-li:mb-1 prose-li:leading-relaxed
+                                      prose-ol:mb-4 prose-ol:mt-2
+                                      prose-strong:text-gray-800 prose-strong:font-semibold
+                                      prose-em:text-gray-700
+                                      first:prose-headings:mt-0">
+                          <ReactMarkdown 
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                              p: ({children}) => <p className="mb-4 leading-relaxed">{children}</p>,
+                              h1: ({children}) => <h1 className="text-xl font-semibold text-gray-800 mb-3 mt-6 first:mt-0">{children}</h1>,
+                              h2: ({children}) => <h2 className="text-lg font-semibold text-gray-800 mb-3 mt-6 first:mt-0">{children}</h2>,
+                              h3: ({children}) => <h3 className="text-base font-semibold text-gray-800 mb-2 mt-5 first:mt-0">{children}</h3>,
+                              ul: ({children}) => <ul className="mb-4 mt-2 space-y-1">{children}</ul>,
+                              ol: ({children}) => <ol className="mb-4 mt-2 space-y-1">{children}</ol>,
+                              li: ({children}) => <li className="leading-relaxed">{children}</li>,
+                              strong: ({children}) => <strong className="font-semibold text-gray-800">{children}</strong>
+                            }}
+                          >
                             {faq.answer}
                           </ReactMarkdown>
                         </div>
