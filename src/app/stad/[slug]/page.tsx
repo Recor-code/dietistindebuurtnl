@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
-import { db, cities, coaches } from '../../../../lib/db';
-import { eq } from 'drizzle-orm';
+import { supabase } from '../../../../lib/supabase';
 import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
@@ -14,30 +13,57 @@ interface PageProps {
 async function getCityWithCoaches(slug: string) {
   try {
     // Get city data
-    const cityResult = await db
-      .select()
-      .from(cities)
-      .where(eq(cities.slug, slug))
-      .limit(1);
+    const { data: city, error: cityError } = await supabase
+      .from('cities')
+      .select('id, name, slug, province, country, population, latitude, longitude, adhd_stats, tldr, created_at, updated_at')
+      .eq('slug', slug)
+      .maybeSingle();
 
-    const city = cityResult[0];
-    if (!city) {
+    if (cityError || !city) {
       return null;
     }
 
     // Get coaches for this city
     console.log(`🏙️ Fetching coaches for city: ${city.name} (ID: ${city.id})`);
-    const coachesResult = await db
-      .select()
-      .from(coaches)
-      .where(eq(coaches.cityId, city.id));
+    const { data: coaches, error: coachesError } = await supabase
+      .from('coaches')
+      .select('id, name, slug, email, phone, website, specialization, description, address, latitude, longitude, city_id, rating, review_count, is_child_friendly, weekend_available, online_available, in_person_available, accepts_insurance, availability_status, created_at, updated_at')
+      .eq('city_id', city.id);
 
-    console.log(`👥 Found ${coachesResult?.length || 0} coaches for ${city.name}`);
-    coachesResult?.forEach((coach, index) => {
+    if (coachesError) {
+      console.error('❌ Error fetching coaches:', coachesError);
+      console.log('🔄 Using fallback/mock data for coaches');
+      return { ...city, coaches: [] };
+    }
+
+    console.log(`👥 Found ${coaches?.length || 0} coaches for ${city.name}`);
+    coaches?.forEach((coach, index) => {
       console.log(`🏃 Coach ${index + 1}: ${coach.name} at ${coach.latitude}, ${coach.longitude}`);
     });
 
-    return { ...city, coaches: coachesResult || [] };
+    // Transform data shape to match UI expectations
+    const transformedCity = {
+      ...city,
+      adhdStats: city.adhd_stats,
+      createdAt: city.created_at ? new Date(city.created_at) : null,
+      updatedAt: city.updated_at ? new Date(city.updated_at) : null
+    };
+
+    const transformedCoaches = (coaches || []).map(coach => ({
+      ...coach,
+      cityId: coach.city_id,
+      reviewCount: coach.review_count,
+      isChildFriendly: coach.is_child_friendly,
+      weekendAvailable: coach.weekend_available,
+      onlineAvailable: coach.online_available,
+      inPersonAvailable: coach.in_person_available,
+      acceptsInsurance: coach.accepts_insurance,
+      availabilityStatus: coach.availability_status,
+      createdAt: coach.created_at ? new Date(coach.created_at) : null,
+      updatedAt: coach.updated_at ? new Date(coach.updated_at) : null
+    }));
+
+    return { ...transformedCity, coaches: transformedCoaches };
   } catch (error) {
     console.error('Error fetching city:', error);
     return null;
