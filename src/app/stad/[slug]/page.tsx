@@ -567,7 +567,7 @@ export default async function CityPage({ params }: PageProps) {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12 px-4 mt-16">
+      <footer className="bg-gray-800 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
