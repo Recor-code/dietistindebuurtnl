@@ -1,4 +1,4 @@
-import { db } from '../../server/db';
+import { db } from '../../lib/db';
 import { cities, coaches, faqItems, blogPosts } from '../../shared/schema';
 import { allCities, adhdStatsTemplate, generateCityTldr } from '../data/cities';
 

@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 async function getBlogPost(slug: string) {

@@ -163,7 +163,7 @@ export default function ContactPage() {
                 Wil je jezelf toevoegen aan ons platform? Neem contact met ons op via het formulier.
               </p>
               <div className="text-sm text-gray-500">
-                Selecteer "Coach toevoegen aan platform" als onderwerp
+                Selecteer &quot;Coach toevoegen aan platform&quot; als onderwerp
               </div>
             </div>
           </div>

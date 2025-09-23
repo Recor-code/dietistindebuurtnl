@@ -45,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       
     const cityPages = (allCities || []).map(city => ({
       url: `${baseUrl}/stad/${city.slug}`,
-      lastModified: new Date(city.updatedAt || city.createdAt),
+      lastModified: city.updatedAt ? new Date(city.updatedAt) : new Date(city.createdAt || new Date()),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     }));
@@ -63,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       
     const blogPages = (allPosts || []).map(post => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updatedAt || post.createdAt),
+      lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(post.createdAt || new Date()),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     }));

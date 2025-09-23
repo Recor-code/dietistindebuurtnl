@@ -9,9 +9,9 @@ import Header from '@/components/Header';
 import { useState, useEffect } from 'react';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 async function getCityWithCoaches(slug: string) {
@@ -76,7 +76,7 @@ async function getCityWithCoaches(slug: string) {
 
 
 export default function CityPage({ params }: PageProps) {
-  const [city, setCity] = useState<any>(null);
+  const [city, setCity] = useState<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({
     kindvriendelijk: false,
@@ -113,7 +113,7 @@ export default function CityPage({ params }: PageProps) {
     notFound();
   }
 
-  const adhdStats = city.adhdStats ? JSON.parse(city.adhdStats) : null;
+  const adhdStats = city.adhd_stats ? JSON.parse(city.adhd_stats) : null;
   
   // Apply filters to coaches
   let filteredCoaches = [...city.coaches];
@@ -131,7 +131,7 @@ export default function CityPage({ params }: PageProps) {
     filteredCoaches = filteredCoaches.sort((a, b) => parseFloat(b.rating || '0') - parseFloat(a.rating || '0'));
   }
 
-  const availableCoaches = city.coaches.filter(coach => coach.availabilityStatus === 'available');
+  const availableCoaches = city.coaches.filter((coach: any) => coach.availabilityStatus === 'available'); // eslint-disable-line @typescript-eslint/no-explicit-any
   const avgRating = city.coaches.length > 0 
     ? city.coaches.reduce((sum, coach) => sum + parseFloat(coach.rating || '0'), 0) / city.coaches.length 
     : 0;
