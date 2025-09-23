@@ -606,7 +606,7 @@ export default async function CityPage({ params }: PageProps) {
               </p>
               <div className="text-center">
                 <a
-                  href="https://organicolabs.com/relax-plus/"
+                  href="https://shop.organicolabs.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:text-blue-300 text-sm underline"
