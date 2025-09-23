@@ -377,7 +377,7 @@ export default function FAQPage() {
             Veelgestelde Vragen over ADHD
           </h1>
           <p className="text-xl text-blue-100">
-            Vind antwoorden op de meest gestelde vragen over ADHD, coaching, behandeling en ondersteuning.
+            Uitgebreide antwoorden op de meest voorkomende vragen over ADHD coaching, diagnose, kosten en behandeling in Nederland en België.
           </p>
         </div>
       </section>
