@@ -73,8 +73,45 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const tags = post.tags ? JSON.parse(post.tags) : [];
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.metaDescription || post.excerpt,
+    author: {
+      '@type': 'Organization',
+      name: 'ADHD Coach in de Buurt',
+      url: 'https://adhdcoachindebuurt.nl'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ADHD Coach in de Buurt',
+      url: 'https://adhdcoachindebuurt.nl'
+    },
+    datePublished: post.publishedAt?.toISOString(),
+    dateModified: post.publishedAt?.toISOString(),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://adhdcoachindebuurt.nl/blog/${slug}`
+    },
+    url: `https://adhdcoachindebuurt.nl/blog/${slug}`,
+    articleSection: 'ADHD Coaching',
+    keywords: tags.join(', '),
+    inLanguage: 'nl-NL',
+    ...(post.city && {
+      locationCreated: {
+        '@type': 'Place',
+        name: post.city.name
+      }
+    })
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <Header />
 
       {/* Breadcrumb */}
