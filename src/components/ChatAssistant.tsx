@@ -186,7 +186,7 @@ export default function ChatAssistant() {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-200 flex items-center gap-2"
+          className="bg-slate-400 hover:bg-slate-500 text-white p-4 rounded-full shadow-lg transition-all duration-200 flex items-center gap-2"
         >
           <MessageCircle size={24} />
           <span className="hidden sm:inline">Chat met AI Assistente</span>
@@ -212,19 +212,19 @@ export default function ChatAssistant() {
             className={`flex items-start gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {message.role === 'assistant' && (
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+              <div className="w-8 h-8 bg-slate-400 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
                 E
               </div>
             )}
             <div
               className={`max-w-[80%] p-3 rounded-2xl ${
                 message.role === 'user'
-                  ? 'bg-blue-500 text-white rounded-br-md'
+                  ? 'bg-slate-400 text-white rounded-br-md'
                   : 'bg-gray-100 text-gray-800 rounded-bl-md'
               }`}
             >
               <p>{message.content}</p>
-              <p className={`text-xs mt-1 ${message.role === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
+              <p className={`text-xs mt-1 ${message.role === 'user' ? 'text-slate-100' : 'text-gray-500'}`}>
                 {message.timestamp.toLocaleTimeString('nl-NL', {
                   hour: '2-digit',
                   minute: '2-digit'
@@ -232,7 +232,7 @@ export default function ChatAssistant() {
               </p>
             </div>
             {message.role === 'user' && (
-              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+              <div className="w-8 h-8 bg-slate-400 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
                 U
               </div>
             )}
@@ -240,7 +240,7 @@ export default function ChatAssistant() {
         ))}
         {isLoading && (
           <div className="flex items-start gap-3 justify-start">
-            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
+            <div className="w-8 h-8 bg-slate-400 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0">
               E
             </div>
             <div className="bg-gray-100 p-3 rounded-2xl rounded-bl-md">
@@ -265,13 +265,13 @@ export default function ChatAssistant() {
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Type hier je vraag of situatie..."
-            className="flex-1 border border-gray-200 rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            className="flex-1 border border-gray-200 rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-slate-400"
             disabled={isLoading}
           />
           <button
             onClick={sendMessage}
             disabled={!inputValue.trim() || isLoading}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 text-white p-3 rounded-full transition-colors flex items-center justify-center"
+            className="bg-slate-400 hover:bg-slate-500 disabled:bg-gray-300 text-white p-3 rounded-full transition-colors flex items-center justify-center"
           >
             <Send size={18} />
           </button>

@@ -6,13 +6,13 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header with Navigation */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-slate-400 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">A</span>
               </div>
               <div className="flex flex-col">
@@ -23,16 +23,16 @@ export default function Home() {
             
             {/* Navigation Menu */}
             <nav className="flex items-center gap-4 md:gap-8">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
+              <Link href="/" className="text-gray-700 hover:text-slate-500 font-medium transition-colors text-sm md:text-base">
                 Home
               </Link>
-              <Link href="/coaches" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
+              <Link href="/coaches" className="text-gray-700 hover:text-slate-500 font-medium transition-colors text-sm md:text-base">
                 Coaches
               </Link>
-              <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
+              <Link href="/blog" className="text-gray-700 hover:text-slate-500 font-medium transition-colors text-sm md:text-base">
                 Blog
               </Link>
-              <Link href="/faq" className="text-gray-700 hover:text-blue-600 font-medium transition-colors text-sm md:text-base">
+              <Link href="/faq" className="text-gray-700 hover:text-slate-500 font-medium transition-colors text-sm md:text-base">
                 FAQ
               </Link>
             </nav>
@@ -41,7 +41,7 @@ export default function Home() {
               href="https://adhdzelftest.nl"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-colors shadow-md text-sm md:text-base"
+              className="bg-slate-400 hover:bg-slate-500 text-white px-3 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-colors shadow-md text-sm md:text-base"
             >
               Gratis ADHD Test
             </a>
@@ -93,7 +93,7 @@ export default function Home() {
             {/* Netherlands Cities */}
             <Link href="/stad/amsterdam" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
               <div className="flex items-start justify-between mb-3">
-                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Amsterdam</h4>
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-slate-500">Amsterdam</h4>
                 <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-bold">NL</span>
                 </div>
@@ -107,7 +107,7 @@ export default function Home() {
 
             <Link href="/stad/rotterdam" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
               <div className="flex items-start justify-between mb-3">
-                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Rotterdam</h4>
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-slate-500">Rotterdam</h4>
                 <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-bold">NL</span>
                 </div>
@@ -121,7 +121,7 @@ export default function Home() {
 
             <Link href="/stad/den-haag" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
               <div className="flex items-start justify-between mb-3">
-                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Den Haag</h4>
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-slate-500">Den Haag</h4>
                 <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-bold">NL</span>
                 </div>
@@ -135,7 +135,7 @@ export default function Home() {
 
             <Link href="/stad/utrecht" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
               <div className="flex items-start justify-between mb-3">
-                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Utrecht</h4>
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-slate-500">Utrecht</h4>
                 <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-bold">NL</span>
                 </div>
@@ -150,7 +150,7 @@ export default function Home() {
             {/* Belgium Cities */}
             <Link href="/stad/brussel" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
               <div className="flex items-start justify-between mb-3">
-                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Brussel</h4>
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-slate-500">Brussel</h4>
                 <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-bold">BE</span>
                 </div>
@@ -164,7 +164,7 @@ export default function Home() {
 
             <Link href="/stad/antwerpen" className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 group">
               <div className="flex items-start justify-between mb-3">
-                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">Antwerpen</h4>
+                <h4 className="text-xl font-semibold text-gray-800 group-hover:text-slate-500">Antwerpen</h4>
                 <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-bold">BE</span>
                 </div>
@@ -179,7 +179,7 @@ export default function Home() {
 
           {/* View All Cities Link */}
           <div className="text-right">
-            <Link href="/steden" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold transition-colors">
+            <Link href="/steden" className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-600 font-semibold transition-colors">
               <span>Alle steden</span>
               <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
@@ -204,8 +204,8 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-200">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -216,8 +216,8 @@ export default function Home() {
             </div>
 
             <div className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-200">
-              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Star className="w-6 h-6 text-cyan-500 fill-current" />
+              <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Star className="w-6 h-6 text-sky-400 fill-current" />
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-4">Betrouwbare reviews</h4>
               <p className="text-gray-600 leading-relaxed">
@@ -226,8 +226,8 @@ export default function Home() {
             </div>
 
             <div className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-200">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <MapPin className="w-6 h-6 text-orange-500" />
+              <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <MapPin className="w-6 h-6 text-rose-400" />
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-4">Lokale specialisten</h4>
               <p className="text-gray-600 leading-relaxed">
