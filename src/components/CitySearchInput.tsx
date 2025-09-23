@@ -28,7 +28,6 @@ export default function CitySearchInput({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<string | null>(null);
   
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -36,13 +35,6 @@ export default function CitySearchInput({
   // Debounced search
   useEffect(() => {
     if (query.trim().length < 2) {
-      setResults([]);
-      setIsOpen(false);
-      return;
-    }
-
-    // Don't show suggestions if the current query exactly matches a previously selected value
-    if (selectedValue && query === selectedValue) {
       setResults([]);
       setIsOpen(false);
       return;
@@ -66,7 +58,7 @@ export default function CitySearchInput({
     }, 300);
 
     return () => clearTimeout(searchTimeout);
-  }, [query, selectedValue]);
+  }, [query]);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -120,28 +112,16 @@ export default function CitySearchInput({
 
   const handleSelect = (result: SearchResult) => {
     setQuery(result.value);
-    setSelectedValue(result.value); // Track the selected value
     setIsOpen(false);
     setSelectedIndex(-1);
     onSelect?.(result);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
-    setQuery(newValue);
-    
-    // Clear selected value if user starts typing something different
-    if (selectedValue && newValue !== selectedValue) {
-      setSelectedValue(null);
-    }
+    setQuery(e.target.value);
   };
 
   const handleInputFocus = () => {
-    // Don't show suggestions if the current query matches a selected value
-    if (selectedValue && query === selectedValue) {
-      return;
-    }
-    
     if (results.length > 0) {
       setIsOpen(true);
     }
