@@ -270,8 +270,6 @@ export default function Home() {
                 </p>
                 <div className="flex items-center gap-4 text-sm text-gray-500">
                   <span>5 min leestijd</span>
-                  <span>•</span>
-                  <span>3 dagen geleden</span>
                 </div>
               </div>
             </Link>
@@ -293,8 +291,6 @@ export default function Home() {
                 </p>
                 <div className="flex items-center gap-4 text-sm text-gray-500">
                   <span>7 min leestijd</span>
-                  <span>•</span>
-                  <span>5 dagen geleden</span>
                 </div>
               </div>
             </Link>
@@ -316,8 +312,6 @@ export default function Home() {
                 </p>
                 <div className="flex items-center gap-4 text-sm text-gray-500">
                   <span>6 min leestijd</span>
-                  <span>•</span>
-                  <span>7 dagen geleden</span>
                 </div>
               </div>
             </Link>
