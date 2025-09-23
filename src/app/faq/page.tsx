@@ -241,7 +241,7 @@ export default async function FAQPage() {
               <div className="space-y-4">
                 {faqsByCategory[category].map((faq) => (
                   <details key={faq.id} className="bg-white rounded-lg shadow-md">
-                    <summary className="p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
+                    <summary className="p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors list-none [&::-webkit-details-marker]:hidden">
                       <div className="flex justify-between items-center">
                         <h3 className="text-lg font-semibold text-gray-800 pr-4">
                           {faq.question}
