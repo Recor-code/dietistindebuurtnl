@@ -256,6 +256,16 @@ export default function CityPage({ params }: PageProps) {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* ADHD Assistant Introduction */}
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+          <h2 className="text-xl font-semibold text-blue-800 mb-2">
+            Hoi! Ik ben jouw ADHD Assistente
+          </h2>
+          <p className="text-blue-700">
+            Vertel me over je situatie en ik help je de beste hulp te vinden
+          </p>
+        </div>
+        
         {/* Chat Assistant Section */}
         <ChatAssistant />
         
