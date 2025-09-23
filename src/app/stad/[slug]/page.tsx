@@ -190,7 +190,7 @@ export default async function CityPage({ params }: PageProps) {
               ADHD Coach {city.name}
             </h1>
             <p className="text-xl mb-8 text-blue-100">
-              {city.tldr}
+              Vind de beste ADHD coaches en gedragstherapeuten in {city.name}. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
             </p>
             
             {/* Quick Stats */}
