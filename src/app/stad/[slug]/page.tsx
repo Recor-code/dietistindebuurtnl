@@ -557,7 +557,7 @@ export default function CityPage({ params }: PageProps) {
       <div className="bg-gray-50 border-t border-gray-200 py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <a
-            href="https://shop.organicolabs.com/"
+            href="https://organicolabs.com/relax-plus/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block hover:opacity-90 transition-opacity"
