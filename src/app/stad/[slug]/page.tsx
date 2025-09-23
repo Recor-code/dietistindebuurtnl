@@ -594,7 +594,7 @@ export default function CityPage({ params }: PageProps) {
               </ul>
             </div>
             <div>
-              <h5 className="font-semibold mb-4">Andere Steden</h5>
+              <h5 className="font-semibold mb-4">Populaire Steden</h5>
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/stad/amsterdam" className="hover:text-white">Amsterdam</Link></li>
                 <li><Link href="/stad/rotterdam" className="hover:text-white">Rotterdam</Link></li>
