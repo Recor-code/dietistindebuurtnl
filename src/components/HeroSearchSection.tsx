@@ -21,7 +21,7 @@ export default function HeroSearchSection() {
       <div className="bg-white rounded-lg shadow-lg p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Waar zoek je?</label>
+            <label className="block text-base font-semibold text-gray-700 mb-2">Waar zoek je?</label>
             <CitySearchInput 
               className="w-full"
               placeholder="Bijv. Amsterdam, Utrecht, Antwerpen"
@@ -40,8 +40,8 @@ export default function HeroSearchSection() {
             </select>
           </div>
           <div>
-            <button className="w-full bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2">
-              <Search size={20} />
+            <button className="w-full bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+              <Search size={16} />
               Zoeken
             </button>
           </div>
