@@ -2,7 +2,6 @@ import { supabase } from '../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/Header';
-import ChatAssistant from '@/components/ChatAssistant';
 
 async function getBlogPosts() {
   try {
@@ -67,7 +66,6 @@ export default async function BlogPage() {
               Vertel me over je situatie en ik help je de beste hulp te vinden
             </p>
           </div>
-          <ChatAssistant />
         </div>
       </section>
 

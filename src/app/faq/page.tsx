@@ -4,7 +4,6 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Header from '@/components/Header';
-import ChatAssistant from '@/components/ChatAssistant';
 
 interface FAQItem {
   id: string;
@@ -220,7 +219,6 @@ export default async function FAQPage() {
               Vertel me over je situatie en ik help je de beste hulp te vinden
             </p>
           </div>
-          <ChatAssistant />
         </div>
       </section>
 
