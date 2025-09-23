@@ -198,12 +198,12 @@ export default function ChatAssistant() {
   return (
     <div className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-200">
       {/* Header */}
-      <div className="text-center p-6 border-b border-gray-100">
-        <div className="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-          <MessageCircle size={28} className="text-white" />
+      <div className="text-center p-4 border-b border-gray-100">
+        <div className="w-12 h-12 bg-blue-600 rounded-full mx-auto mb-2 flex items-center justify-center">
+          <MessageCircle size={24} className="text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">Hoi! Ik ben jouw ADHD Assistente</h3>
-        <p className="text-gray-600">Vertel me over je situatie en ik help je de beste hulp te vinden</p>
+        <h3 className="text-xl font-bold text-gray-800 mb-1">Hoi! Ik ben jouw ADHD Assistente</h3>
+        <p className="text-gray-600 text-sm">Vertel me over je situatie en ik help je de beste hulp te vinden</p>
         <button
           onClick={() => setIsOpen(false)}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
