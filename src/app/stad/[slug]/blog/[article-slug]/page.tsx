@@ -13,16 +13,7 @@ interface PageProps {
 
 // City-specific article data
 const cityArticles: Record<string, Record<string, any>> = {
-  amsterdam: {
-    'adhd-coach-in-amsterdam-hoe-vind-je-de-juiste-begeleiding-dichtbij-huis': {
-      title: 'ADHD coach in Amsterdam: hoe vind je de juiste begeleiding dichtbij huis?',
-      description: 'Ontdek hoe je de beste ADHD coach in Amsterdam vindt. Complete gids over ADHD coaching in de hoofdstad, kosten, specialisaties en praktische tips voor Amsterdam.',
-      publishedAt: new Date('2024-12-15'),
-      keywords: 'ADHD coach Amsterdam, ADHD coaching Amsterdam, ADHD behandeling Amsterdam',
-      author: 'ADHD Coach in de Buurt',
-      readingTime: '8 min',
-    }
-  }
+  // Articles will be added here as needed
 };
 
 async function getCityWithCoaches(citySlug: string) {

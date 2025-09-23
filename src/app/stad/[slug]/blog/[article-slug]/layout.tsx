@@ -10,16 +10,7 @@ interface PageProps {
 
 // City-specific article data - this would ideally come from a database
 const cityArticles: Record<string, Record<string, any>> = {
-  amsterdam: {
-    'adhd-coach-in-amsterdam-hoe-vind-je-de-juiste-begeleiding-dichtbij-huis': {
-      title: 'ADHD coach in Amsterdam: hoe vind je de juiste begeleiding dichtbij huis?',
-      description: 'Ontdek hoe je de beste ADHD coach in Amsterdam vindt. Complete gids over ADHD coaching in de hoofdstad, kosten, specialisaties en praktische tips voor Amsterdam.',
-      publishedAt: new Date('2024-12-15'),
-      keywords: 'ADHD coach Amsterdam, ADHD coaching Amsterdam, ADHD behandeling Amsterdam, ADHD hulp Amsterdam, gedragstherapeut Amsterdam, ADHD begeleiding Noord-Holland',
-      author: 'ADHD Coach in de Buurt',
-      content: '', // Content will be in the page component
-    }
-  }
+  // Articles will be added here as needed
 };
 
 async function getCityForBlog(citySlug: string) {
