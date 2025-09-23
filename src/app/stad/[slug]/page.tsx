@@ -291,32 +291,24 @@ export default async function CityPage({ params }: PageProps) {
               </button>
             </div>
 
-            {/* Filter/Sort Bar */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
-              <div className="flex flex-wrap items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium text-gray-700">Sorteer:</span>
-                  <select className="text-sm border border-gray-300 rounded-md px-3 py-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                    <option>Beschikbaar eerst</option>
-                    <option>Beste beoordeling</option>
-                    <option>Meeste reviews</option>
-                  </select>
-                </div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-sm font-medium text-gray-700">Filters:</span>
-                  <button className="text-xs px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
-                    Online
-                  </button>
-                  <button className="text-xs px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
-                    Kindvriendelijk
-                  </button>
-                  <button className="text-xs px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
-                    Weekend
-                  </button>
-                  <button className="text-xs px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
-                    Verzekering
-                  </button>
-                </div>
+            {/* Filter Bar */}
+            <div className="mb-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full border border-gray-300 hover:bg-gray-200 transition-colors text-sm">
+                  <Users size={16} />
+                  Kindvriendelijk
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full border border-gray-300 hover:bg-gray-200 transition-colors text-sm">
+                  <Clock size={16} />
+                  Weekend beschikbaar
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full border border-gray-300 hover:bg-gray-200 transition-colors text-sm">
+                  Online beschikbaar
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full border border-gray-300 hover:bg-gray-200 transition-colors text-sm">
+                  <Star size={16} />
+                  Hoogste beoordeling
+                </button>
               </div>
             </div>
 
