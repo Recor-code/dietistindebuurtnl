@@ -300,7 +300,7 @@ export default function Home() {
               </p>
               <div className="text-center">
                 <a
-                  href="https://shop.organicolabs.com"
+                  href="https://organicolabs.com/relax-plus/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block hover:opacity-90 transition-opacity"
