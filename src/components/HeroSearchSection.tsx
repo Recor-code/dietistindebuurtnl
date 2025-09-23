@@ -33,9 +33,7 @@ export default function HeroSearchSection() {
             <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white">
               <option value="">Alle specialisten</option>
               <option value="adhd-coach">ADHD Coach</option>
-              <option value="gedragstherapeut">Gedragstherapeut</option>
               <option value="psycholoog">Psycholoog</option>
-              <option value="psychiater">Psychiater</option>
               <option value="kinder-psycholoog">Kinderpsycholoog</option>
             </select>
           </div>
