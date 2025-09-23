@@ -18,7 +18,8 @@ export default function Home() {
             bij jou in de buurt
           </h2>
           <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto drop-shadow-md">
-            Vergelijk gecertificeerde ADHD coaches en gedragstherapeuten in jouw stad. Bekijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
+            Vergelijk gecertificeerde ADHD coaches en gedragstherapeuten in jouw stad.<br />
+            Bekijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
           </p>
 
           {/* Quick Search */}
@@ -252,7 +253,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-400">
-                Vind de beste ADHD coaches en therapeuten bij jou in de buurt. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
+                Vind de beste ADHD coaches en therapeuten bij jou in de buurt.<br />
+                Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
               </p>
             </div>
             <div>

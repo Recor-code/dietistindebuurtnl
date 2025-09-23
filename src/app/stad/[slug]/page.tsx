@@ -233,7 +233,8 @@ export default function CityPage({ params }: PageProps) {
               ADHD Coach {city.name}
             </h1>
             <p className="text-xl mb-8 text-blue-100">
-              Vind de beste ADHD coaches en gedragstherapeuten in {city.name}. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
+              Vind de beste ADHD coaches en gedragstherapeuten in {city.name}.<br />
+              Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
             </p>
             
             {/* Quick Stats */}
@@ -600,7 +601,8 @@ export default function CityPage({ params }: PageProps) {
                 </div>
               </div>
               <p className="text-gray-400">
-                Vind de beste ADHD coaches en therapeuten bij jou in de buurt. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
+                Vind de beste ADHD coaches en therapeuten bij jou in de buurt.<br />
+                Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
               </p>
             </div>
             <div>
