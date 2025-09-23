@@ -83,7 +83,7 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
         let mapElement = mapRef.current;
         if (!mapElement) {
           console.error('❌ GoogleMap: React ref not available, trying direct DOM access...');
-          mapElement = document.getElementById('google-map-container');
+          mapElement = document.getElementById('google-map-container') as HTMLDivElement;
           if (!mapElement) {
             console.error('🚨 GoogleMap: Neither ref nor DOM element found');
             setError('Map container niet gevonden. Probeer de pagina opnieuw te laden.');

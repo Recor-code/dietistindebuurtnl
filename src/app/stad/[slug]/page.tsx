@@ -133,7 +133,7 @@ export default function CityPage({ params }: PageProps) {
 
   const availableCoaches = city.coaches.filter((coach: any) => coach.availabilityStatus === 'available'); // eslint-disable-line @typescript-eslint/no-explicit-any
   const avgRating = city.coaches.length > 0 
-    ? city.coaches.reduce((sum, coach) => sum + parseFloat(coach.rating || '0'), 0) / city.coaches.length 
+    ? city.coaches.reduce((sum: number, coach: any) => sum + parseFloat(coach.rating || '0'), 0) / city.coaches.length // eslint-disable-line @typescript-eslint/no-explicit-any 
     : 0;
 
   const toggleFilter = (filterName: keyof typeof filters) => {
@@ -171,14 +171,14 @@ export default function CityPage({ params }: PageProps) {
     "aggregateRating": city.coaches.length > 0 ? {
       "@type": "AggregateRating",
       "ratingValue": avgRating.toFixed(1),
-      "reviewCount": city.coaches.reduce((sum, coach) => sum + parseInt(coach.reviewCount || '0'), 0),
+      "reviewCount": city.coaches.reduce((sum: number, coach: any) => sum + parseInt(coach.reviewCount || '0'), 0), // eslint-disable-line @typescript-eslint/no-explicit-any
       "bestRating": "5",
       "worstRating": "1"
     } : undefined,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "ADHD Coaching Services",
-      "itemListElement": city.coaches.map((coach, index) => ({
+      "itemListElement": city.coaches.map((coach: any, index: number) => ({ // eslint-disable-line @typescript-eslint/no-explicit-any
         "@type": "Offer",
         "name": `${coach.name} - ${coach.specialization}`,
         "description": coach.description,
@@ -195,7 +195,7 @@ export default function CityPage({ params }: PageProps) {
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": city.coaches.length,
-      "itemListElement": city.coaches.map((coach, index) => ({
+      "itemListElement": city.coaches.map((coach: any, index: number) => ({ // eslint-disable-line @typescript-eslint/no-explicit-any
         "@type": "ListItem",
         "position": index + 1,
         "item": {
@@ -361,7 +361,7 @@ export default function CityPage({ params }: PageProps) {
                     <div className="flex items-start gap-4 flex-1">
                       <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <span className="text-blue-700 font-semibold">
-                          {coach.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                          {coach.name.split(' ').map((n: string) => n[0]).join('').substring(0, 2)} {/* eslint-disable-line @typescript-eslint/no-explicit-any */}
                         </span>
                       </div>
                       
