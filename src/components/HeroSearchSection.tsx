@@ -1,18 +1,28 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import CitySearchInput from './CitySearchInput';
 
 export default function HeroSearchSection() {
+  const [selectedCity, setSelectedCity] = useState<{ slug?: string; type?: string; value?: string } | null>(null);
+  const [selectedProviderType, setSelectedProviderType] = useState<string>('');
+
   const handleCitySelect = (result: { slug?: string; type?: string; value?: string }) => {
     console.log('Selected:', result);
-    // Navigate to city page if it has a slug
-    if (result.slug) {
-      window.location.href = `/stad/${result.slug}`;
-    } else if (result.type === 'postcode') {
-      // For postcode, could redirect to a search results page or show coaches in that area
-      console.log('Postcode selected:', result.value);
+    setSelectedCity(result);
+    // Remove auto-navigation on selection, let user click the search button
+  };
+
+  const handleSearch = () => {
+    if (selectedCity) {
+      if (selectedCity.slug) {
+        window.location.href = `/stad/${selectedCity.slug}`;
+      } else if (selectedCity.type === 'postcode') {
+        // For postcode, could redirect to a search results page or show coaches in that area
+        console.log('Searching for postcode:', selectedCity.value);
+        // TODO: Implement postcode search functionality
+      }
     }
   };
 
@@ -30,7 +40,11 @@ export default function HeroSearchSection() {
           </div>
           <div className="md:col-span-5">
             <label className="block text-sm font-medium text-gray-700 mb-2">Type hulpverlener</label>
-            <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white">
+            <select 
+              value={selectedProviderType}
+              onChange={(e) => setSelectedProviderType(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white"
+            >
               <option value="">Alle specialisten</option>
               <option value="adhd-coach">ADHD Coach</option>
               <option value="psycholoog">Psycholoog</option>
@@ -38,7 +52,15 @@ export default function HeroSearchSection() {
             </select>
           </div>
           <div className="md:col-span-2">
-            <button className="w-full bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+            <button 
+              onClick={handleSearch}
+              disabled={!selectedCity}
+              className={`w-full px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
+                selectedCity 
+                  ? 'bg-sky-500 hover:bg-sky-600 text-white' 
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              }`}
+            >
               <Search size={16} />
               Zoeken
             </button>
