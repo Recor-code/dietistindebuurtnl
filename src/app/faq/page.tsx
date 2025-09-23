@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { supabase } from '../../../lib/supabase';
 import { ChevronDown, Heart, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
@@ -318,13 +321,36 @@ async function getFAQItems(): Promise<FAQItem[]> {
   }
 }
 
-export const metadata = {
-  title: 'Veelgestelde Vragen over ADHD - ADHD Coach in de Buurt',
-  description: 'Vind antwoorden op de meest gestelde vragen over ADHD, coaching, behandeling en ondersteuning.',
-};
+export default function FAQPage() {
+  const [faqs, setFaqs] = useState<FAQItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export default async function FAQPage() {
-  const faqs = await getFAQItems();
+  useEffect(() => {
+    async function loadFAQs() {
+      try {
+        const data = await getFAQItems();
+        setFaqs(data);
+      } catch (error) {
+        console.error('Error loading FAQs:', error);
+        setFaqs(comprehensiveFAQs);
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    loadFAQs();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">FAQ's laden...</p>
+        </div>
+      </div>
+    );
+  }
   
   // Group FAQs by category
   const faqsByCategory = faqs.reduce((groups, faq) => {
@@ -363,16 +389,30 @@ export default async function FAQPage() {
             FAQ Categorieën
           </h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {categories.map(category => (
-              <div key={category} className="bg-blue-50 rounded-lg border border-blue-200 p-4">
-                <h3 className="text-sm font-semibold text-blue-800 mb-2">
-                  {category}
-                </h3>
-                <div className="text-blue-600 text-sm">
-                  {faqsByCategory[category].length} {faqsByCategory[category].length === 1 ? 'vraag' : 'vragen'}
-                </div>
-              </div>
-            ))}
+            {categories.map(category => {
+              const categorySlug = category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+              return (
+                <a 
+                  key={category} 
+                  href={`#${categorySlug}`}
+                  className="bg-blue-50 rounded-lg border border-blue-200 p-4 hover:bg-blue-100 transition-colors cursor-pointer block"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById(categorySlug);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                >
+                  <h3 className="text-sm font-semibold text-blue-800 mb-2">
+                    {category}
+                  </h3>
+                  <div className="text-blue-600 text-sm">
+                    {faqsByCategory[category].length} {faqsByCategory[category].length === 1 ? 'vraag' : 'vragen'}
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -380,11 +420,13 @@ export default async function FAQPage() {
       {/* FAQ Content organized by category */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          {categories.map(category => (
-            <div key={category} className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-blue-200">
-                {category}
-              </h2>
+          {categories.map(category => {
+            const categorySlug = category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+            return (
+              <div key={category} id={categorySlug} className="mb-12 scroll-mt-20">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-blue-200">
+                  {category}
+                </h2>
               <div className="space-y-4">
                 {faqsByCategory[category].map((faq) => (
                   <details key={faq.id} className="bg-white rounded-lg shadow-md">
@@ -408,8 +450,9 @@ export default async function FAQPage() {
                   </details>
                 ))}
               </div>
-            </div>
-          ))}
+              </div>
+            );
+          })}
 
           {/* CTA Section */}
           <div className="mt-16 bg-blue-50 rounded-lg p-8 text-center border border-blue-200">
