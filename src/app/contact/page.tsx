@@ -221,7 +221,10 @@ export default function ContactPage() {
                 <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">A</span>
                 </div>
-                <span className="text-xl font-bold">ADHD Coach in de Buurt</span>
+                <div>
+                  <span className="text-xl font-bold">ADHD Coach in de Buurt</span>
+                  <div className="text-sm text-gray-500 mt-1">De grootste directory voor ADHD hulp</div>
+                </div>
               </div>
               <p className="text-gray-400">
                 Vind de beste ADHD coaches en therapeuten bij jou in de buurt. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.

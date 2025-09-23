@@ -578,7 +578,10 @@ export default function CityPage({ params }: PageProps) {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="text-blue-400" size={24} />
-                <span className="text-xl font-bold">ADHD Coach in de Buurt</span>
+                <div>
+                  <span className="text-xl font-bold">ADHD Coach in de Buurt</span>
+                  <div className="text-sm text-gray-500 mt-1">De grootste directory voor ADHD hulp</div>
+                </div>
               </div>
               <p className="text-gray-400">
                 Vind de beste ADHD coaches en therapeuten bij jou in de buurt. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
