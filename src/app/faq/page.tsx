@@ -477,11 +477,11 @@ export default function FAQPage() {
           {/* AI Chat Assistant Section */}
           <div className="mt-16">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Niet gevonden wat je zocht?
-              </h2>
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                Hoi! Ik ben jouw ADHD Assistente
+              </h3>
               <p className="text-lg text-gray-600">
-                Praat met onze AI ADHD Assistente en krijg direct persoonlijke hulp
+                Vertel me over je situatie en ik help je de beste hulp te vinden
               </p>
             </div>
             <ChatAssistant />
