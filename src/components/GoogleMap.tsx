@@ -126,7 +126,7 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
               const infoContent = `
                 <div class="p-3 max-w-xs">
                   <h3 class="font-semibold text-gray-800 mb-1">${coach.name}</h3>
-                  <p class="text-blue-600 text-sm mb-2">${coach.specialization || 'ADHD Coach'}</p>
+                  <p class="text-sky-500 text-sm mb-2">${coach.specialization || 'ADHD Coach'}</p>
                   ${coach.rating ? `<div class="flex items-center gap-1 text-sm text-gray-600 mb-2">
                     <span class="text-yellow-400">★</span>
                     <span>${coach.rating}</span>
@@ -199,12 +199,12 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   if (!isLoaded) {
     return (
       <div 
-        className="bg-blue-50 border-blue-300 border-2 rounded-lg flex items-center justify-center"
+        className="bg-sky-50 border-sky-300 border-2 rounded-lg flex items-center justify-center"
         style={{ height }}
       >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-          <p className="text-blue-600 text-sm font-medium">Kaart laden...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-500 mx-auto mb-2"></div>
+          <p className="text-sky-500 text-sm font-medium">Kaart laden...</p>
           <p className="text-gray-600 text-xs mt-2">
             {coaches.length} coach{coaches.length !== 1 ? 'es' : ''} gereed voor {center.lat.toFixed(4)}, {center.lng.toFixed(4)}
           </p>

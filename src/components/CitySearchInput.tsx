@@ -138,12 +138,12 @@ export default function CitySearchInput({
           onChange={handleInputChange}
           onFocus={handleInputFocus}
           placeholder={placeholder}
-          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-400 focus:border-slate-400 transition-colors"
+          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition-colors"
           autoComplete="off"
         />
         {isLoading && (
           <div className="absolute right-3 top-3">
-            <div className="w-5 h-5 border-2 border-slate-400 border-t-transparent rounded-full animate-spin"></div>
+            <div className="w-5 h-5 border-2 border-sky-400 border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
       </div>
@@ -157,15 +157,15 @@ export default function CitySearchInput({
             <button
               key={result.id}
               onClick={() => handleSelect(result)}
-              className={`w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-slate-50 transition-colors ${
-                index === selectedIndex ? 'bg-slate-50 border-l-4 border-slate-400' : ''
+              className={`w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-sky-50 transition-colors ${
+                index === selectedIndex ? 'bg-sky-50 border-l-4 border-sky-400' : ''
               } ${index !== results.length - 1 ? 'border-b border-gray-100' : ''}`}
             >
               <div className="flex-shrink-0">
                 {result.type === 'city' ? (
                   <MapPin size={16} className="text-gray-500" />
                 ) : (
-                  <Search size={16} className="text-slate-500" />
+                  <Search size={16} className="text-sky-500" />
                 )}
               </div>
               <div className="flex-1">
