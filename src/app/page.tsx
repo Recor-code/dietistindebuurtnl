@@ -233,7 +233,7 @@ export default function Home() {
             <img 
               src="/relax-banner-new.jpg" 
               alt="RELAX - Natuurlijke rust zonder loom gevoel" 
-              className="h-[90px] w-auto mx-auto"
+              className="w-auto mx-auto"
             />
           </a>
         </div>
