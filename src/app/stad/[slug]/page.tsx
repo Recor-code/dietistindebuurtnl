@@ -2,12 +2,12 @@
 
 import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
-import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter } from 'lucide-react';
+import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
 import ChatAssistant from '@/components/ChatAssistant';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface PageProps {
   params: Promise<{
@@ -85,6 +85,8 @@ export default function CityPage({ params }: PageProps) {
     online: false,
     hoogsteBeoordeling: false
   });
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  const filtersDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function fetchCityData() {
@@ -103,6 +105,20 @@ export default function CityPage({ params }: PageProps) {
     
     fetchCityData();
   }, [params]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (filtersDropdownRef.current && !filtersDropdownRef.current.contains(event.target as Node)) {
+        setIsFiltersOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   if (loading) {
     return <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -142,6 +158,10 @@ export default function CityPage({ params }: PageProps) {
       ...prev,
       [filterName]: !prev[filterName]
     }));
+  };
+
+  const toggleFiltersDropdown = () => {
+    setIsFiltersOpen(!isFiltersOpen);
   };
 
   // Generate structured data for SEO
@@ -306,58 +326,71 @@ export default function CityPage({ params }: PageProps) {
                   {filteredCoaches.length} {filteredCoaches.length === 1 ? 'coach gevonden' : 'coaches gevonden'}
                 </p>
               </div>
-              <button className="flex items-center gap-2 bg-white border border-gray-300 rounded-lg px-4 py-2 hover:bg-gray-50">
-                <Filter size={20} />
-                Filters
-              </button>
-            </div>
-
-            {/* Filter Bar */}
-            <div className="mb-6">
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="relative" ref={filtersDropdownRef}>
                 <button 
-                  onClick={() => toggleFilter('kindvriendelijk')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors text-sm ${
-                    filters.kindvriendelijk 
-                      ? 'bg-blue-100 text-blue-700 border-blue-300' 
-                      : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
-                  }`}
+                  onClick={toggleFiltersDropdown}
+                  className="flex items-center gap-2 bg-white border border-gray-300 rounded-lg px-4 py-2 hover:bg-gray-50 transition-colors"
                 >
-                  <Users size={16} />
-                  Kindvriendelijk
+                  <Filter size={20} />
+                  Filters
+                  <ChevronDown 
+                    size={16} 
+                    className={`transform transition-transform ${isFiltersOpen ? 'rotate-180' : ''}`} 
+                  />
                 </button>
-                <button 
-                  onClick={() => toggleFilter('weekend')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors text-sm ${
-                    filters.weekend 
-                      ? 'bg-green-100 text-green-700 border-green-300' 
-                      : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
-                  }`}
-                >
-                  <Clock size={16} />
-                  Weekend beschikbaar
-                </button>
-                <button 
-                  onClick={() => toggleFilter('online')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors text-sm ${
-                    filters.online 
-                      ? 'bg-purple-100 text-purple-700 border-purple-300' 
-                      : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
-                  }`}
-                >
-                  Online beschikbaar
-                </button>
-                <button 
-                  onClick={() => toggleFilter('hoogsteBeoordeling')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors text-sm ${
-                    filters.hoogsteBeoordeling 
-                      ? 'bg-yellow-100 text-yellow-700 border-yellow-300' 
-                      : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
-                  }`}
-                >
-                  <Star size={16} />
-                  Hoogste beoordeling
-                </button>
+                
+                {/* Filters Dropdown */}
+                {isFiltersOpen && (
+                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-50 min-w-64">
+                    <h3 className="text-sm font-semibold text-gray-700 mb-3">Filter opties</h3>
+                    <div className="space-y-2">
+                      <button 
+                        onClick={() => toggleFilter('kindvriendelijk')}
+                        className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg border transition-colors text-sm ${
+                          filters.kindvriendelijk 
+                            ? 'bg-blue-100 text-blue-700 border-blue-300' 
+                            : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+                        }`}
+                      >
+                        <Users size={16} />
+                        Kindvriendelijk
+                      </button>
+                      <button 
+                        onClick={() => toggleFilter('weekend')}
+                        className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg border transition-colors text-sm ${
+                          filters.weekend 
+                            ? 'bg-green-100 text-green-700 border-green-300' 
+                            : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+                        }`}
+                      >
+                        <Clock size={16} />
+                        Weekend beschikbaar
+                      </button>
+                      <button 
+                        onClick={() => toggleFilter('online')}
+                        className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg border transition-colors text-sm ${
+                          filters.online 
+                            ? 'bg-purple-100 text-purple-700 border-purple-300' 
+                            : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+                        }`}
+                      >
+                        <Globe size={16} />
+                        Online beschikbaar
+                      </button>
+                      <button 
+                        onClick={() => toggleFilter('hoogsteBeoordeling')}
+                        className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg border transition-colors text-sm ${
+                          filters.hoogsteBeoordeling 
+                            ? 'bg-yellow-100 text-yellow-700 border-yellow-300' 
+                            : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+                        }`}
+                      >
+                        <Star size={16} />
+                        Hoogste beoordeling
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
