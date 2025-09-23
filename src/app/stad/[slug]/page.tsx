@@ -238,17 +238,17 @@ export default function CityPage({ params }: PageProps) {
             
             {/* Quick Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-lg p-4 text-white">
+              <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg p-4 text-white">
                 <div className="text-2xl font-bold mb-1">{city.coaches.length}</div>
                 <div className="text-emerald-100 text-sm">ADHD Coaches</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-500 to-amber-600 rounded-lg p-4 text-white">
+              <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg p-4 text-white">
                 <div className="text-2xl font-bold mb-1">{availableCoaches.length}</div>
-                <div className="text-orange-100 text-sm">Beschikbaar</div>
+                <div className="text-emerald-100 text-sm">Beschikbaar</div>
               </div>
-              <div className="bg-gradient-to-br from-violet-600 to-purple-700 rounded-lg p-4 text-white">
-                <div className="text-2xl font-bold mb-1">{avgRating.toFixed(1)}★</div>
-                <div className="text-violet-100 text-sm">Gem. Rating</div>
+              <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg p-4 text-white">
+                <div className="text-2xl font-bold mb-1">{avgRating.toFixed(1)}<span className="text-yellow-400">★</span></div>
+                <div className="text-emerald-100 text-sm">Gem. Rating</div>
               </div>
             </div>
           </div>
