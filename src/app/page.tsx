@@ -5,9 +5,58 @@ import Header from '@/components/Header';
 import { Search, MapPin, Star, Users, Clock, Heart } from 'lucide-react';
 import Link from 'next/link';
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ADHD Coach in de Buurt',
+  url: 'https://adhdcoachindebuurt.nl',
+  logo: 'https://adhdcoachindebuurt.nl/logo.png',
+  description: 'De grootste directory voor ADHD coaches in Nederland en België. Vergelijk gecertificeerde coaches, bekijk reviews en vind de perfecte match voor ADHD ondersteuning.',
+  areaServed: [
+    {
+      '@type': 'Country',
+      name: 'Nederland'
+    },
+    {
+      '@type': 'Country', 
+      name: 'België'
+    }
+  ],
+  serviceType: 'ADHD Coaching Directory',
+  sameAs: [
+    'https://adhdcoachindebuurt.nl'
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'Customer Service',
+    availableLanguage: ['Dutch', 'Nederlands']
+  }
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'ADHD Coach in de Buurt',
+  url: 'https://adhdcoachindebuurt.nl',
+  description: 'De grootste directory voor ADHD coaches in Nederland en België.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://adhdcoachindebuurt.nl/stad/{search_term_string}',
+    'query-input': 'required name=search_term_string'
+  }
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <Header />
 
       {/* Hero Section */}
