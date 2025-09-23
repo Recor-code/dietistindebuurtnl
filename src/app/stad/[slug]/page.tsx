@@ -1,9 +1,12 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
 import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
+import { useState, useEffect } from 'react';
 
 interface PageProps {
   params: {
@@ -71,35 +74,74 @@ async function getCityWithCoaches(slug: string) {
   }
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
-  const city = await getCityWithCoaches(slug);
-  
-  if (!city) {
-    return {
-      title: 'Stad niet gevonden',
-    };
+
+export default function CityPage({ params }: PageProps) {
+  const [city, setCity] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [filters, setFilters] = useState({
+    kindvriendelijk: false,
+    weekend: false,
+    online: false,
+    hoogsteBeoordeling: false
+  });
+
+  useEffect(() => {
+    async function fetchCityData() {
+      const resolvedParams = await params;
+      const { slug } = resolvedParams;
+      const cityData = await getCityWithCoaches(slug);
+      
+      if (!cityData) {
+        notFound();
+        return;
+      }
+      
+      setCity(cityData);
+      setLoading(false);
+    }
+    
+    fetchCityData();
+  }, [params]);
+
+  if (loading) {
+    return <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-lg">Loading...</div>
+    </div>;
   }
-
-  return {
-    title: `ADHD Coach ${city.name} - Vind de beste ADHD coaches in ${city.name}`,
-    description: `Vind de beste ADHD coaches en gedragstherapeuten in ${city.name}. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.`,
-  };
-}
-
-export default async function CityPage({ params }: PageProps) {
-  const { slug } = await params;
-  const city = await getCityWithCoaches(slug);
 
   if (!city) {
     notFound();
   }
 
   const adhdStats = city.adhdStats ? JSON.parse(city.adhdStats) : null;
+  
+  // Apply filters to coaches
+  let filteredCoaches = [...city.coaches];
+  
+  if (filters.kindvriendelijk) {
+    filteredCoaches = filteredCoaches.filter(coach => coach.isChildFriendly);
+  }
+  if (filters.weekend) {
+    filteredCoaches = filteredCoaches.filter(coach => coach.weekendAvailable);
+  }
+  if (filters.online) {
+    filteredCoaches = filteredCoaches.filter(coach => coach.onlineAvailable);
+  }
+  if (filters.hoogsteBeoordeling) {
+    filteredCoaches = filteredCoaches.sort((a, b) => parseFloat(b.rating || '0') - parseFloat(a.rating || '0'));
+  }
+
   const availableCoaches = city.coaches.filter(coach => coach.availabilityStatus === 'available');
   const avgRating = city.coaches.length > 0 
     ? city.coaches.reduce((sum, coach) => sum + parseFloat(coach.rating || '0'), 0) / city.coaches.length 
     : 0;
+
+  const toggleFilter = (filterName: keyof typeof filters) => {
+    setFilters(prev => ({
+      ...prev,
+      [filterName]: !prev[filterName]
+    }));
+  };
 
   // Generate structured data for SEO
   const structuredData = {
@@ -239,9 +281,14 @@ export default async function CityPage({ params }: PageProps) {
           {/* Coaches List */}
           <div>
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-800">
-                ADHD Coaches in {city.name}
-              </h2>
+              <div>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  ADHD Coaches in {city.name}
+                </h2>
+                <p className="text-gray-600 mt-1">
+                  {filteredCoaches.length} {filteredCoaches.length === 1 ? 'coach gevonden' : 'coaches gevonden'}
+                </p>
+              </div>
               <button className="flex items-center gap-2 bg-white border border-gray-300 rounded-lg px-4 py-2 hover:bg-gray-50">
                 <Filter size={20} />
                 Filters
@@ -251,18 +298,46 @@ export default async function CityPage({ params }: PageProps) {
             {/* Filter Bar */}
             <div className="mb-6">
               <div className="flex flex-wrap items-center gap-3">
-                <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full border border-gray-300 hover:bg-gray-200 transition-colors text-sm">
+                <button 
+                  onClick={() => toggleFilter('kindvriendelijk')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors text-sm ${
+                    filters.kindvriendelijk 
+                      ? 'bg-blue-100 text-blue-700 border-blue-300' 
+                      : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
+                  }`}
+                >
                   <Users size={16} />
                   Kindvriendelijk
                 </button>
-                <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full border border-gray-300 hover:bg-gray-200 transition-colors text-sm">
+                <button 
+                  onClick={() => toggleFilter('weekend')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors text-sm ${
+                    filters.weekend 
+                      ? 'bg-green-100 text-green-700 border-green-300' 
+                      : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
+                  }`}
+                >
                   <Clock size={16} />
                   Weekend beschikbaar
                 </button>
-                <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full border border-gray-300 hover:bg-gray-200 transition-colors text-sm">
+                <button 
+                  onClick={() => toggleFilter('online')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors text-sm ${
+                    filters.online 
+                      ? 'bg-purple-100 text-purple-700 border-purple-300' 
+                      : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
+                  }`}
+                >
                   Online beschikbaar
                 </button>
-                <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full border border-gray-300 hover:bg-gray-200 transition-colors text-sm">
+                <button 
+                  onClick={() => toggleFilter('hoogsteBeoordeling')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors text-sm ${
+                    filters.hoogsteBeoordeling 
+                      ? 'bg-yellow-100 text-yellow-700 border-yellow-300' 
+                      : 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'
+                  }`}
+                >
                   <Star size={16} />
                   Hoogste beoordeling
                 </button>
@@ -270,7 +345,7 @@ export default async function CityPage({ params }: PageProps) {
             </div>
 
             <div className="space-y-6">
-              {city.coaches.map((coach, index) => {
+              {filteredCoaches.map((coach, index) => {
                 const getPrimaryAction = () => {
                   if (coach.phone) return { type: 'phone', href: `tel:${coach.phone}`, label: 'Bellen', icon: Phone };
                   if (coach.website) return { type: 'website', href: coach.website, label: 'Website', icon: Globe };
