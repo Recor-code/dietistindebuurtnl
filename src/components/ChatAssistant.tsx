@@ -189,7 +189,7 @@ export default function ChatAssistant() {
           className="bg-sky-400 hover:bg-sky-500 text-white p-4 rounded-full shadow-lg transition-all duration-200 flex items-center gap-2"
         >
           <MessageCircle size={24} />
-          <span className="hidden sm:inline">Chat met AI Assistente</span>
+          <span className="hidden sm:inline">Hoi! Ik ben jouw ADHD Assistente</span>
         </button>
       </div>
     );
