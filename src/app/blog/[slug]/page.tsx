@@ -256,7 +256,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <span className="text-xl font-bold">ADHD Coach in de Buurt</span>
               </div>
               <p className="text-gray-400">
-                De grootste directory van ADHD coaches en therapeuten in Nederland en België.
+                Vind de beste ADHD coaches en therapeuten bij jou in de buurt. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
               </p>
             </div>
             <div>
