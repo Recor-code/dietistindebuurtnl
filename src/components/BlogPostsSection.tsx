@@ -21,7 +21,7 @@ export default function BlogPostsSection() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await fetch('/api/test-blog');
+        const response = await fetch('/api/blog-posts');
         const data = await response.json();
         
         if (data.success) {
