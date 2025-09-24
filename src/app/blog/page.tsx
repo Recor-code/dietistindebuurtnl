@@ -65,16 +65,18 @@ export default async function BlogPage() {
               {posts.map((post) => (
                 <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   {/* Featured Image */}
-                  <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
-                    <Image
-                      src={`/img/blog/${post.slug}/featured.webp`}
-                      alt={`${post.title} - ADHD coaching artikel`}
-                      width={400}
-                      height={225}
-                      className="w-full h-full object-cover"
-                      priority={posts.indexOf(post) < 3} // Priority for first 3 posts
-                    />
-                  </div>
+                  <Link href={`/blog/${post.slug}`} className="block">
+                    <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50 cursor-pointer hover:opacity-95 transition-opacity">
+                      <Image
+                        src={`/img/blog/${post.slug}/featured.webp`}
+                        alt={`${post.title} - ADHD coaching artikel`}
+                        width={400}
+                        height={225}
+                        className="w-full h-full object-cover"
+                        priority={posts.indexOf(post) < 3} // Priority for first 3 posts
+                      />
+                    </div>
+                  </Link>
                   <div className="p-6">
                     <div className="flex items-center gap-2 text-xs text-gray-600 mb-3">
                       <Calendar size={14} />
