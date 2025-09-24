@@ -45,12 +45,12 @@ export default async function BlogPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      <section className="relative isolate py-16 h-[40vh] flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/40 before:z-0" style={{backgroundImage: "url('/relax-banner-new.jpg')"}}>
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
             ADHD Blog
           </h1>
-          <p className="text-xl text-blue-100">
+          <p className="text-xl text-gray-100 drop-shadow-md">
             Ontdek praktische tips, het laatste nieuws en lokale informatie over ADHD coaching en ondersteuning.
           </p>
         </div>
