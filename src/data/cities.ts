@@ -10,7 +10,7 @@ export interface CityData {
 }
 
 export const dutchCities: CityData[] = [
-  // Top 20 largest cities
+  // Ordered by population (descending)
   { name: 'Amsterdam', slug: 'amsterdam', province: 'Noord-Holland', country: 'NL', population: 931298, latitude: 52.3676, longitude: 4.9041 },
   { name: 'Rotterdam', slug: 'rotterdam', province: 'Zuid-Holland', country: 'NL', population: 670610, latitude: 51.9244, longitude: 4.4777 },
   { name: 'Den Haag', slug: 'den-haag', province: 'Zuid-Holland', country: 'NL', population: 566221, latitude: 52.0705, longitude: 4.3007 },
@@ -31,15 +31,13 @@ export const dutchCities: CityData[] = [
   { name: "'s-Hertogenbosch", slug: 's-hertogenbosch', province: 'Noord-Brabant', country: 'NL', population: 160757, latitude: 51.6978, longitude: 5.3037 },
   { name: 'Zwolle', slug: 'zwolle', province: 'Overijssel', country: 'NL', population: 133141, latitude: 52.5168, longitude: 6.0830 },
   { name: 'Leeuwarden', slug: 'leeuwarden', province: 'Friesland', country: 'NL', population: 128810, latitude: 53.2012, longitude: 5.8086 },
-
-  // Cities 21-40
   { name: 'Maastricht', slug: 'maastricht', province: 'Limburg', country: 'NL', population: 122378, latitude: 50.8514, longitude: 5.6910 },
   { name: 'Leiden', slug: 'leiden', province: 'Zuid-Holland', country: 'NL', population: 119713, latitude: 52.1601, longitude: 4.4970 },
   { name: 'Dordrecht', slug: 'dordrecht', province: 'Zuid-Holland', country: 'NL', population: 119260, latitude: 51.8133, longitude: 4.6900 },
   { name: 'Zoetermeer', slug: 'zoetermeer', province: 'Zuid-Holland', country: 'NL', population: 115845, latitude: 52.0575, longitude: 4.4933 },
-  { name: 'Alkmaar', slug: 'alkmaar', province: 'Noord-Holland', country: 'NL', population: 94853, latitude: 52.6326, longitude: 4.7482 },
   { name: 'Deventer', slug: 'deventer', province: 'Overijssel', country: 'NL', population: 97331, latitude: 52.2551, longitude: 6.1639 },
   { name: 'Delft', slug: 'delft', province: 'Zuid-Holland', country: 'NL', population: 95060, latitude: 52.0116, longitude: 4.3571 },
+  { name: 'Alkmaar', slug: 'alkmaar', province: 'Noord-Holland', country: 'NL', population: 94853, latitude: 52.6326, longitude: 4.7482 },
   { name: 'Heerlen', slug: 'heerlen', province: 'Limburg', country: 'NL', population: 93084, latitude: 50.8833, longitude: 5.9667 },
   { name: 'Venlo', slug: 'venlo', province: 'Limburg', country: 'NL', population: 92403, latitude: 51.3704, longitude: 6.1724 },
   { name: 'Hilversum', slug: 'hilversum', province: 'Noord-Holland', country: 'NL', population: 83640, latitude: 52.2242, longitude: 5.1758 },
@@ -53,8 +51,6 @@ export const dutchCities: CityData[] = [
   { name: 'Helmond', slug: 'helmond', province: 'Noord-Brabant', country: 'NL', population: 74740, latitude: 51.4816, longitude: 5.6619 },
   { name: 'Vlaardingen', slug: 'vlaardingen', province: 'Zuid-Holland', country: 'NL', population: 73798, latitude: 51.9133, longitude: 4.3417 },
   { name: 'Almelo', slug: 'almelo', province: 'Overijssel', country: 'NL', population: 72725, latitude: 52.3508, longitude: 6.6597 },
-
-  // Cities 41-60
   { name: 'Gouda', slug: 'gouda', province: 'Zuid-Holland', country: 'NL', population: 71952, latitude: 52.0115, longitude: 4.7077 },
   { name: 'Lelystad', slug: 'lelystad', province: 'Flevoland', country: 'NL', population: 70741, latitude: 52.5184, longitude: 5.4755 },
   { name: 'Alphen aan den Rijn', slug: 'alphen-aan-den-rijn', province: 'Zuid-Holland', country: 'NL', population: 70251, latitude: 52.1301, longitude: 4.6581 },
@@ -75,8 +71,6 @@ export const dutchCities: CityData[] = [
   { name: 'Kampen', slug: 'kampen', province: 'Overijssel', country: 'NL', population: 48980, latitude: 52.5553, longitude: 5.9117 },
   { name: 'Weert', slug: 'weert', province: 'Limburg', country: 'NL', population: 48662, latitude: 51.2508, longitude: 5.7069 },
   { name: 'Woerden', slug: 'woerden', province: 'Utrecht', country: 'NL', population: 48431, latitude: 52.0853, longitude: 4.8833 },
-
-  // Cities 61-80
   { name: 'Heerhugowaard', slug: 'heerhugowaard', province: 'Noord-Holland', country: 'NL', population: 47580, latitude: 52.6708, longitude: 4.8506 },
   { name: 'Rijswijk', slug: 'rijswijk', province: 'Zuid-Holland', country: 'NL', population: 47299, latitude: 52.0375, longitude: 4.3281 },
   { name: 'Middelburg', slug: 'middelburg', province: 'Zeeland', country: 'NL', population: 46485, latitude: 51.4989, longitude: 3.6139 },
@@ -97,8 +91,6 @@ export const dutchCities: CityData[] = [
   { name: 'Hoogeveen', slug: 'hoogeveen', province: 'Drenthe', country: 'NL', population: 38754, latitude: 52.7253, longitude: 6.4764 },
   { name: 'Barendrecht', slug: 'barendrecht', province: 'Zuid-Holland', country: 'NL', population: 38672, latitude: 51.8581, longitude: 4.5347 },
   { name: 'Nijkerk', slug: 'nijkerk', province: 'Gelderland', country: 'NL', population: 38335, latitude: 52.2217, longitude: 5.4858 },
-
-  // Cities 81-100
   { name: 'Beverwijk', slug: 'beverwijk', province: 'Noord-Holland', country: 'NL', population: 37585, latitude: 52.4819, longitude: 4.6564 },
   { name: 'Goes', slug: 'goes', province: 'Zeeland', country: 'NL', population: 36931, latitude: 51.5042, longitude: 3.8886 },
   { name: 'Zutphen', slug: 'zutphen', province: 'Gelderland', country: 'NL', population: 36188, latitude: 52.1383, longitude: 6.2014 },
@@ -122,22 +114,57 @@ export const dutchCities: CityData[] = [
 ];
 
 export const belgianCities: CityData[] = [
+  // Ordered by population (descending) - Flemish Region + Brussels only
   { name: 'Brussel', slug: 'brussel', province: 'Brussels Hoofdstedelijk Gewest', country: 'BE', population: 1218255, latitude: 50.8503, longitude: 4.3517 },
   { name: 'Antwerpen', slug: 'antwerpen', province: 'Antwerpen', country: 'BE', population: 529247, latitude: 51.2194, longitude: 4.4025 },
   { name: 'Gent', slug: 'gent', province: 'Oost-Vlaanderen', country: 'BE', population: 262219, latitude: 51.0500, longitude: 3.7303 },
-  { name: 'Charleroi', slug: 'charleroi', province: 'Henegouwen', country: 'BE', population: 201816, latitude: 50.4108, longitude: 4.4446 },
-  { name: 'Luik', slug: 'luik', province: 'Luik', country: 'BE', population: 197355, latitude: 50.6326, longitude: 5.5797 },
   { name: 'Brugge', slug: 'brugge', province: 'West-Vlaanderen', country: 'BE', population: 118284, latitude: 51.2085, longitude: 3.2254 },
-  { name: 'Namen', slug: 'namen', province: 'Namen', country: 'BE', population: 111300, latitude: 50.4674, longitude: 4.8720 },
   { name: 'Leuven', slug: 'leuven', province: 'Vlaams-Brabant', country: 'BE', population: 103000, latitude: 50.8798, longitude: 4.7005 },
-  { name: 'Bergen', slug: 'bergen', province: 'Henegouwen', country: 'BE', population: 93259, latitude: 50.4541, longitude: 3.9517 },
   { name: 'Mechelen', slug: 'mechelen', province: 'Antwerpen', country: 'BE', population: 86921, latitude: 51.0259, longitude: 4.4777 },
   { name: 'Aalst', slug: 'aalst', province: 'Oost-Vlaanderen', country: 'BE', population: 85638, latitude: 50.9368, longitude: 4.0397 },
-  { name: 'La Louvière', slug: 'la-louviere', province: 'Henegouwen', country: 'BE', population: 79844, latitude: 50.4792, longitude: 4.1878 },
-  { name: 'Kortrijk', slug: 'kortrijk', province: 'West-Vlaanderen', country: 'BE', population: 76265, latitude: 50.8281, longitude: 3.2648 },
   { name: 'Hasselt', slug: 'hasselt', province: 'Limburg', country: 'BE', population: 79073, latitude: 50.9307, longitude: 5.3378 },
   { name: 'Sint-Niklaas', slug: 'sint-niklaas', province: 'Oost-Vlaanderen', country: 'BE', population: 78549, latitude: 51.1657, longitude: 4.1431 },
-  // Add more Belgian cities to reach 50...
+  { name: 'Kortrijk', slug: 'kortrijk', province: 'West-Vlaanderen', country: 'BE', population: 76265, latitude: 50.8281, longitude: 3.2648 },
+  { name: 'Genk', slug: 'genk', province: 'Limburg', country: 'BE', population: 66557, latitude: 50.9658, longitude: 5.5039 },
+  { name: 'Oostende', slug: 'oostende', province: 'West-Vlaanderen', country: 'BE', population: 71494, latitude: 51.2211, longitude: 2.9267 },
+  { name: 'Sint-Truiden', slug: 'sint-truiden', province: 'Limburg', country: 'BE', population: 41735, latitude: 50.8167, longitude: 5.1833 },
+  { name: 'Turnhout', slug: 'turnhout', province: 'Antwerpen', country: 'BE', population: 45543, latitude: 51.3225, longitude: 4.9486 },
+  { name: 'Roeselare', slug: 'roeselare', province: 'West-Vlaanderen', country: 'BE', population: 62524, latitude: 50.9486, longitude: 3.1283 },
+  { name: 'Mol', slug: 'mol', province: 'Antwerpen', country: 'BE', population: 36981, latitude: 51.1928, longitude: 5.1169 },
+  { name: 'Dendermonde', slug: 'dendermonde', province: 'Oost-Vlaanderen', country: 'BE', population: 46518, latitude: 51.0281, longitude: 4.1031 },
+  { name: 'Beringen', slug: 'beringen', province: 'Limburg', country: 'BE', population: 47749, latitude: 51.0489, longitude: 5.2261 },
+  { name: 'Vilvoorde', slug: 'vilvoorde', province: 'Vlaams-Brabant', country: 'BE', population: 46286, latitude: 50.9281, longitude: 4.4267 },
+  { name: 'Lokeren', slug: 'lokeren', province: 'Oost-Vlaanderen', country: 'BE', population: 40047, latitude: 51.1053, longitude: 3.9919 },
+  { name: 'Brasschaat', slug: 'brasschaat', province: 'Antwerpen', country: 'BE', population: 38474, latitude: 51.2978, longitude: 4.4883 },
+  { name: 'Maasmechelen', slug: 'maasmechelen', province: 'Limburg', country: 'BE', population: 37086, latitude: 50.9642, longitude: 5.6942 },
+  { name: 'Ieper', slug: 'ieper', province: 'West-Vlaanderen', country: 'BE', population: 34963, latitude: 50.8508, longitude: 2.8850 },
+  { name: 'Herentals', slug: 'herentals', province: 'Antwerpen', country: 'BE', population: 28176, latitude: 51.1767, longitude: 4.8319 },
+  { name: 'Lommel', slug: 'lommel', province: 'Limburg', country: 'BE', population: 35330, latitude: 51.2303, longitude: 5.3053 },
+  { name: 'Waregem', slug: 'waregem', province: 'West-Vlaanderen', country: 'BE', population: 38503, latitude: 50.8892, longitude: 3.4269 },
+  { name: 'Geel', slug: 'geel', province: 'Antwerpen', country: 'BE', population: 40111, latitude: 51.1664, longitude: 4.9939 },
+  { name: 'Tongeren', slug: 'tongeren', province: 'Limburg', country: 'BE', population: 31097, latitude: 50.7811, longitude: 5.4650 },
+  { name: 'Deinze', slug: 'deinze', province: 'Oost-Vlaanderen', country: 'BE', population: 31158, latitude: 50.9850, longitude: 3.5286 },
+  { name: 'Eeklo', slug: 'eeklo', province: 'Oost-Vlaanderen', country: 'BE', population: 22810, latitude: 51.1856, longitude: 3.5606 },
+  { name: 'Geraardsbergen', slug: 'geraardsbergen', province: 'Oost-Vlaanderen', country: 'BE', population: 33765, latitude: 50.7733, longitude: 3.8811 },
+  { name: 'Halle', slug: 'halle', province: 'Vlaams-Brabant', country: 'BE', population: 40636, latitude: 50.7347, longitude: 4.2353 },
+  { name: 'Harelbeke', slug: 'harelbeke', province: 'West-Vlaanderen', country: 'BE', population: 28656, latitude: 50.8519, longitude: 3.3106 },
+  { name: 'Kapellen', slug: 'kapellen', province: 'Antwerpen', country: 'BE', population: 27333, latitude: 51.3167, longitude: 4.4333 },
+  { name: 'Koksijde', slug: 'koksijde', province: 'West-Vlaanderen', country: 'BE', population: 22390, latitude: 51.1167, longitude: 2.6333 },
+  { name: 'Menen', slug: 'menen', province: 'West-Vlaanderen', country: 'BE', population: 33069, latitude: 50.7969, longitude: 3.1206 },
+  { name: 'Ninove', slug: 'ninove', province: 'Oost-Vlaanderen', country: 'BE', population: 38698, latitude: 50.8281, longitude: 4.0272 },
+  { name: 'Oudenaarde', slug: 'oudenaarde', province: 'Oost-Vlaanderen', country: 'BE', population: 30917, latitude: 50.8500, longitude: 3.6167 },
+  { name: 'Poperinge', slug: 'poperinge', province: 'West-Vlaanderen', country: 'BE', population: 20228, latitude: 50.8558, longitude: 2.7347 },
+  { name: 'Schoten', slug: 'schoten', province: 'Antwerpen', country: 'BE', population: 33909, latitude: 51.2500, longitude: 4.5000 },
+  { name: 'Tielt', slug: 'tielt', province: 'West-Vlaanderen', country: 'BE', population: 19974, latitude: 50.9006, longitude: 3.3267 },
+  { name: 'Tienen', slug: 'tienen', province: 'Vlaams-Brabant', country: 'BE', population: 34882, latitude: 50.8067, longitude: 4.9400 },
+  { name: 'Zottegem', slug: 'zottegem', province: 'Oost-Vlaanderen', country: 'BE', population: 26506, latitude: 50.8692, longitude: 3.8106 },
+  { name: 'Aarschot', slug: 'aarschot', province: 'Vlaams-Brabant', country: 'BE', population: 30106, latitude: 50.9839, longitude: 4.8381 },
+  { name: 'Diest', slug: 'diest', province: 'Vlaams-Brabant', country: 'BE', population: 23609, latitude: 50.9900, longitude: 5.0506 },
+  { name: 'Houthalen-Helchteren', slug: 'houthalen-helchteren', province: 'Limburg', country: 'BE', population: 30851, latitude: 51.0325, longitude: 5.3650 },
+  { name: 'Izegem', slug: 'izegem', province: 'West-Vlaanderen', country: 'BE', population: 27732, latitude: 50.9133, longitude: 3.2131 },
+  { name: 'Knokke-Heist', slug: 'knokke-heist', province: 'West-Vlaanderen', country: 'BE', population: 34063, latitude: 51.3519, longitude: 3.2881 },
+  { name: 'Lier', slug: 'lier', province: 'Antwerpen', country: 'BE', population: 35551, latitude: 51.1311, longitude: 4.5700 },
+  { name: 'Mortsel', slug: 'mortsel', province: 'Antwerpen', country: 'BE', population: 25526, latitude: 51.1672, longitude: 4.4417 }
 ];
 
 export const allCities = [...dutchCities, ...belgianCities];
