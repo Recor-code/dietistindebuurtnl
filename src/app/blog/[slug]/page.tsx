@@ -57,8 +57,8 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
-  const featuredImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/featured.jpg`;
-  const ogImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/og.jpg`;
+  const featuredImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/featured.webp`;
+  const ogImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/og.webp`;
 
   return {
     title: post.title,
@@ -125,7 +125,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const tags = post.tags ? JSON.parse(post.tags) : [];
 
-  const featuredImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/og.jpg`;
+  const featuredImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/og.webp`;
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -189,10 +189,10 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Featured Image */}
             <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
               <Image
-                src={`/img/blog/${slug}/featured.jpg`}
+                src={`/img/blog/${slug}/featured.webp`}
                 alt="ADHD coaching - professionele begeleiding en ondersteuning"
-                width={1792}
-                height={1024}
+                width={1200}
+                height={675}
                 priority
                 className="w-full h-full object-cover"
               />
