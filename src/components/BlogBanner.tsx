@@ -8,7 +8,8 @@ export default function BlogBanner() {
           Zoek je een ADHD coach in jouw regio?
         </h3>
         <p className="text-xl mb-8 opacity-90">
-          Ontdek gekwalificeerde ADHD coaches bij jou in de buurt. Bekijk reviews, specialisaties en plan een kennismakingsgesprek.
+          Vergelijk gecertificeerde ADHD coaches en gedragstherapeuten in jouw stad.<br />
+          Bekijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
         </p>
         <Link 
           href="/"
