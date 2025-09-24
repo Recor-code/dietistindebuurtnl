@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import BlogBanner from '@/components/BlogBanner';
 
@@ -56,6 +57,9 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const featuredImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/featured.jpg`;
+  const ogImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/og.jpg`;
+
   return {
     title: post.title,
     description: post.metaDescription || post.excerpt,
@@ -65,6 +69,20 @@ export async function generateMetadata({ params }: PageProps) {
       type: 'article',
       publishedTime: post.publishedAt?.toISOString(),
       authors: ['ADHD Coach in de Buurt'],
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1024,
+          height: 1024,
+          alt: 'ADHD coaching - professionele begeleiding en ondersteuning',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.metaDescription || post.excerpt,
+      images: [ogImageUrl],
     },
   };
 }
@@ -107,11 +125,14 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const tags = post.tags ? JSON.parse(post.tags) : [];
 
+  const featuredImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/og.jpg`;
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription || post.excerpt,
+    image: [featuredImageUrl],
     author: {
       '@type': 'Organization',
       name: 'ADHD Coach in de Buurt',
@@ -165,6 +186,18 @@ export default async function BlogPostPage({ params }: PageProps) {
       <article className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* Featured Image */}
+            <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
+              <Image
+                src={`/img/blog/${slug}/featured.jpg`}
+                alt="ADHD coaching - professionele begeleiding en ondersteuning"
+                width={1792}
+                height={1024}
+                priority
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
             {/* Header */}
             <div className="p-8 pb-6">
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
