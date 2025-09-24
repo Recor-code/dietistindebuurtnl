@@ -1,6 +1,7 @@
 import { supabase } from '../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 
 async function getBlogPosts() {
@@ -65,6 +66,17 @@ export default async function BlogPage() {
               {posts[0] && (
                 <div className="lg:col-span-2">
                   <article className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    {/* Featured Image */}
+                    <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
+                      <Image
+                        src={`/img/blog/${posts[0].slug}/featured.webp`}
+                        alt={`${posts[0].title} - ADHD coaching artikel`}
+                        width={800}
+                        height={450}
+                        priority
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div className="p-8">
                       <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                         <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
@@ -210,6 +222,16 @@ export default async function BlogPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {posts.slice(1).map((post) => (
                   <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    {/* Featured Image */}
+                    <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
+                      <Image
+                        src={`/img/blog/${post.slug}/featured.webp`}
+                        alt={`${post.title} - ADHD coaching artikel`}
+                        width={400}
+                        height={225}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div className="p-6">
                       <div className="flex items-center gap-2 text-xs text-gray-600 mb-3">
                         <Calendar size={14} />

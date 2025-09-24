@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar } from 'lucide-react';
 
 interface BlogPost {
@@ -93,10 +94,15 @@ export default function BlogPostsSection() {
             href={`/blog/${post.slug}`} 
             className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group"
           >
-            <div className={`aspect-video bg-gradient-to-br ${gradients[index % 3]} flex items-center justify-center`}>
-              <svg className={`w-16 h-16 ${iconColors[index % 3]}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C20.832 18.477 19.247 18 17.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+            <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
+              <Image
+                src={`/img/blog/${post.slug}/featured.webp`}
+                alt={`${post.title} - ADHD coaching artikel`}
+                width={400}
+                height={225}
+                className="w-full h-full object-cover"
+                priority={index === 0}
+              />
             </div>
             <div className="p-6">
               <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
