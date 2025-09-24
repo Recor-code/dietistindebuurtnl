@@ -4,6 +4,11 @@ import { Calendar, MapPin, Tag, Heart, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 
+// Add proper caching headers for ultra-fast loading
+export const headers = {
+  'Cache-Control': 's-maxage=3600, stale-while-revalidate=86400'
+};
+
 interface PageProps {
   params: Promise<{
     slug: string;
@@ -62,6 +67,34 @@ export async function generateMetadata({ params }: PageProps) {
     },
   };
 }
+
+// Generate static params for all blog posts at build time
+export async function generateStaticParams() {
+  try {
+    const { data: posts, error } = await supabase
+      .from('blog_posts')
+      .select('slug')
+      .not('published_at', 'is', null);
+
+    if (error || !posts) {
+      console.warn('Error fetching blog posts for static generation:', error);
+      return [];
+    }
+
+    return posts.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    console.warn('Failed to generate static params for blog posts:', error);
+    return [];
+  }
+}
+
+// Enable Incremental Static Regeneration (ISR) - revalidate every hour
+export const revalidate = 3600; // 1 hour in seconds
+
+// Enable static generation with dynamic fallback
+export const dynamicParams = true;
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
