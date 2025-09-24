@@ -61,159 +61,60 @@ export default async function BlogPage() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           {posts.length > 0 ? (
-            <div className="grid lg:grid-cols-3 gap-8">
-              {/* Featured Post */}
-              {posts[0] && (
-                <div className="lg:col-span-2">
-                  <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-                    {/* Featured Image */}
-                    <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
-                      <Image
-                        src={`/img/blog/${posts[0].slug}/featured.webp`}
-                        alt={`${posts[0].title} - ADHD coaching artikel`}
-                        width={800}
-                        height={450}
-                        priority
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-8">
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
-                          Featured
-                        </span>
-                        <div className="flex items-center gap-1">
-                          <Calendar size={16} />
-                          <span>{new Date(posts[0].publishedAt!).toLocaleDateString('nl-NL')}</span>
-                        </div>
-                        {posts[0].city && (
-                          <div className="flex items-center gap-1">
-                            <MapPin size={16} />
-                            <span>{posts[0].city.name}</span>
-                          </div>
-                        )}
-                      </div>
-                      <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                        <Link 
-                          href={`/blog/${posts[0].slug}`}
-                          className="hover:text-blue-600 transition-colors"
-                        >
-                          {posts[0].title}
-                        </Link>
-                      </h2>
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        {posts[0].excerpt}
-                      </p>
-                      <Link
-                        href={`/blog/${posts[0].slug}`}
-                        className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-                      >
-                        Lees meer →
-                      </Link>
-                    </div>
-                  </article>
-                </div>
-              )}
-
-              {/* Sidebar */}
-              <div className="space-y-6">
-                {/* Categories */}
-                <div className="bg-white rounded-lg shadow-md p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                    Categorieën
-                  </h3>
-                  <div className="space-y-2">
-                    <Link 
-                      href="/blog?category=coaching"
-                      className="block text-gray-600 hover:text-blue-600 transition-colors"
-                    >
-                      ADHD Coaching
-                    </Link>
-                    <Link 
-                      href="/blog?category=tips"
-                      className="block text-gray-600 hover:text-blue-600 transition-colors"
-                    >
-                      Praktische Tips
-                    </Link>
-                    <Link 
-                      href="/blog?category=lokaal"
-                      className="block text-gray-600 hover:text-blue-600 transition-colors"
-                    >
-                      Lokale Informatie
-                    </Link>
-                    <Link 
-                      href="/blog?category=nieuws"
-                      className="block text-gray-600 hover:text-blue-600 transition-colors"
-                    >
-                      ADHD Nieuws
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Popular Posts */}
-                <div className="bg-white rounded-lg shadow-md p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                    Populaire Artikelen
-                  </h3>
-                  <div className="space-y-4">
-                    {posts.slice(1, 4).map((post) => (
-                      <Link
-                        key={post.id}
-                        href={`/blog/${post.slug}`}
-                        className="flex gap-3 hover:bg-gray-50 p-2 rounded transition-colors"
-                      >
-                        {/* Thumbnail Image */}
-                        <div className="relative w-16 h-16 bg-gradient-to-br from-blue-50 to-teal-50 rounded-lg overflow-hidden flex-shrink-0">
-                          <Image
-                            src={`/img/blog/${post.slug}/featured.webp`}
-                            alt={`${post.title} - thumbnail`}
-                            width={64}
-                            height={64}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        
-                        {/* Text Content */}
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-gray-800 mb-1 text-sm leading-tight line-clamp-2">
-                            {post.title}
-                          </h4>
-                          <div className="flex items-center gap-2 text-xs text-gray-600">
-                            <Calendar size={12} />
-                            <span>{new Date(post.publishedAt!).toLocaleDateString('nl-NL')}</span>
-                            {post.city && (
-                              <>
-                                <MapPin size={12} />
-                                <span>{post.city.name}</span>
-                              </>
-                            )}
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Newsletter CTA */}
-                <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
-                  <h3 className="text-lg font-semibold text-blue-800 mb-3">
-                    Blijf op de hoogte
-                  </h3>
-                  <p className="text-blue-700 text-sm mb-4">
-                    Ontvang wekelijks de beste ADHD tips en lokaal nieuws in je inbox.
-                  </p>
-                  <div className="space-y-3">
-                    <input
-                      type="email"
-                      placeholder="Je email adres"
-                      className="w-full px-3 py-2 border border-blue-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {posts.map((post) => (
+                <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                  {/* Featured Image */}
+                  <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
+                    <Image
+                      src={`/img/blog/${post.slug}/featured.webp`}
+                      alt={`${post.title} - ADHD coaching artikel`}
+                      width={400}
+                      height={225}
+                      className="w-full h-full object-cover"
+                      priority={posts.indexOf(post) < 3} // Priority for first 3 posts
                     />
-                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded font-medium text-sm transition-colors">
-                      Aanmelden
-                    </button>
                   </div>
-                </div>
-              </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 text-xs text-gray-600 mb-3">
+                      <Calendar size={14} />
+                      <span>{new Date(post.publishedAt!).toLocaleDateString('nl-NL')}</span>
+                      {post.city && (
+                        <>
+                          <MapPin size={14} />
+                          <span>{post.city.name}</span>
+                        </>
+                      )}
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                      <Link 
+                        href={`/blog/${post.slug}`}
+                        className="hover:text-blue-600 transition-colors"
+                      >
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    {post.tags && (
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {JSON.parse(post.tags).slice(0, 3).map((tag: string, index: number) => (
+                          <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                    >
+                      Lees meer →
+                    </Link>
+                  </div>
+                </article>
+              ))}
             </div>
           ) : (
             <div className="text-center py-16">
@@ -224,69 +125,6 @@ export default async function BlogPage() {
                 We zijn bezig met het toevoegen van interessante artikelen over ADHD.
                 Kom binnenkort terug voor nieuwe content!
               </p>
-            </div>
-          )}
-
-          {/* All Posts Grid */}
-          {posts.length > 1 && (
-            <div className="mt-16">
-              <h2 className="text-2xl font-bold text-gray-800 mb-8">
-                Alle Artikelen
-              </h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {posts.slice(1).map((post) => (
-                  <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    {/* Featured Image */}
-                    <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
-                      <Image
-                        src={`/img/blog/${post.slug}/featured.webp`}
-                        alt={`${post.title} - ADHD coaching artikel`}
-                        width={400}
-                        height={225}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 text-xs text-gray-600 mb-3">
-                        <Calendar size={14} />
-                        <span>{new Date(post.publishedAt!).toLocaleDateString('nl-NL')}</span>
-                        {post.city && (
-                          <>
-                            <MapPin size={14} />
-                            <span>{post.city.name}</span>
-                          </>
-                        )}
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                        <Link 
-                          href={`/blog/${post.slug}`}
-                          className="hover:text-blue-600 transition-colors"
-                        >
-                          {post.title}
-                        </Link>
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                        {post.excerpt}
-                      </p>
-                      {post.tags && (
-                        <div className="flex flex-wrap gap-1 mb-4">
-                          {JSON.parse(post.tags).slice(0, 3).map((tag: string, index: number) => (
-                            <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-                      >
-                        Lees meer →
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
             </div>
           )}
         </div>
