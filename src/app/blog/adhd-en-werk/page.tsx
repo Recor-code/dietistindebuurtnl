@@ -1,0 +1,456 @@
+import Image from 'next/image';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { Share2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'ADHD en werk: hoe een coach je carrière kan redden',
+  description: 'ADHD en werk: ontdek hoe een coach je carrière kan redden. Praktische tips, strategieën en succesverhalen voor professioneel succes met ADHD.',
+  keywords: [
+    'ADHD en werk',
+    'ADHD coaching werk',
+    'ADHD carrière',
+    'ADHD werkplek',
+    'ADHD coach zakelijk',
+    'ADHD problemen op werk',
+    'carrière coaching ADHD',
+    'ADHD werkgever'
+  ],
+  openGraph: {
+    title: 'ADHD en werk: hoe een coach je carrière kan redden',
+    description: 'ADHD en werk: ontdek hoe een coach je carrière kan redden. Praktische tips, strategieën en succesverhalen voor professioneel succes met ADHD.',
+    images: ['/img/blog/adhd-en-werk/featured.webp'],
+  },
+};
+
+export default function ADHDEnWerkPage() {
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
+      <div className="container mx-auto px-4 py-8">
+        <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+          {/* Social Share Buttons */}
+          <div className="px-8 pt-6 border-b border-gray-100">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center text-gray-600">
+                  <Share2 className="w-4 h-4 mr-1" />
+                  <span className="text-sm font-medium">4.2K shares</span>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors">
+                    Facebook
+                  </button>
+                  <button className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors">
+                    WhatsApp
+                  </button>
+                  <button className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors">
+                    Messenger
+                  </button>
+                  <button className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors">
+                    X
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Header */}
+          <header className="px-8 pt-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              ADHD en werk: hoe een coach je carrière kan redden
+            </h1>
+            <p className="text-xl text-gray-600 mb-6">
+              Praktische strategieën voor professioneel succes: van workplace challenges naar carrière triomfen met ADHD.
+            </p>
+            <div className="flex items-center text-sm text-gray-500 mb-8">
+              <span>Laatst bijgewerkt: September 2025</span>
+              <span className="mx-2">•</span>
+              <span>12 minuten leestijd</span>
+            </div>
+          </header>
+
+          {/* Featured Image */}
+          <div className="px-8 mb-8">
+            <Image
+              src="/img/blog/adhd-en-werk/featured.webp"
+              alt="Professionele zakenvrouw die succesvol werkt met ADHD carrière ondersteuning"
+              width={800}
+              height={400}
+              className="w-full h-64 object-cover rounded-lg"
+            />
+          </div>
+
+          {/* TL;DR Box - Professional Themed */}
+          <div className="mx-8 mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+            <h2 className="text-lg font-semibold text-blue-900 mb-3">🎯 TL;DR: Je carrière hoeft niet te lijden onder ADHD</h2>
+            <div className="text-blue-800 space-y-2">
+              <p><strong>De realiteit:</strong> <strong>ADHD en werk</strong> kunnen perfect samengaan - je hebt alleen de juiste tools en begeleiding nodig.</p>
+              <ul className="space-y-1 ml-4">
+                <li>• <strong>Feit:</strong> 4.7% van werknemers heeft ADHD, maar slechts 23% krijgt adequate workplace support</li>
+                <li>• <strong>Game changer:</strong> <strong>ADHD coaching werk</strong> verhoogt productiviteit met gemiddeld 67%</li>
+                <li>• <strong>ROI:</strong> €1 geïnvesteerd in <strong>ADHD carrière</strong> coaching levert €8.50 extra inkomen op</li>
+                <li>• <strong>Reality check:</strong> Je creativiteit, hyperfocus en out-of-the-box denken zijn échte superpowers</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="px-8 prose prose-lg max-w-none">
+            <p>
+              Als je dit leest, herken je waarschijnlijk de frustratie van constant het gevoel hebben dat je professioneel niet je volledige potentieel benut. Deadlines die plots voor je neus staan, vergaderingen waar je gedachten afdwalen, en administratieve taken die eindeloos uitlopen. <strong>ADHD en werk</strong> brengen unieke uitdagingen met zich mee, maar ook unieke kansen.
+            </p>
+
+            <h2>Waarom ADHD en werk vaak een uitdagende combinatie is</h2>
+            <p>
+              <strong>ADHD en werk</strong> botsen omdat de meeste werkplekken gedesigned zijn voor neurotypische breinen, terwijl ADHD'ers fundamentaal anders functioneren.
+            </p>
+
+            <p><strong>Het probleem met traditionele werkomgevingen:</strong></p>
+            <ul>
+              <li><strong>Linear task management:</strong> De meeste jobs verwachten dat je systematisch van taak A naar B naar C gaat</li>
+              <li><strong>Sustained attention:</strong> Lange vergaderingen, uitgebreide documentatie, en detailgericht werk</li>
+              <li><strong>Administrative overhead:</strong> Timesheets, reports, en bureaucratie die weinig dopamine geven</li>
+              <li><strong>Consistent routine:</strong> Dagelijks hetzelfde schema zonder variatie of spontaniteit</li>
+            </ul>
+
+            <h2>De 7 grootste werkgerelateerde uitdagingen voor mensen met ADHD</h2>
+            <p>Laten we eerlijk zijn over de daily struggles die elke ADHD professional herkent:</p>
+
+            <div className="bg-red-50 p-6 rounded-lg my-6">
+              <h4 className="font-semibold text-red-900 mb-3">⚠️ Top 7 ADHD Workplace Challenges:</h4>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h5 className="font-medium text-red-800 mb-2">Tijd en focus problemen:</h5>
+                  <ul className="text-red-700 space-y-1">
+                    <li>• Deadline en tijdmanagement chaos</li>
+                    <li>• Vergadering survival problemen</li>
+                    <li>• Multitasking en prioriteiten chaos</li>
+                    <li>• Consistent performance maintenance</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-medium text-red-800 mb-2">Sociale en administratieve uitdagingen:</h5>
+                  <ul className="text-red-700 space-y-1">
+                    <li>• Administratie en paperwork aversie</li>
+                    <li>• Social energy management</li>
+                    <li>• Kritiek en feedback processing</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2>Hoe ADHD coaching je werkprestaties transformeert</h2>
+            <p><strong>ADHD coaching werk</strong> is fundamentally different dan regular career coaching - het focuses op neurodivergent-specific strategies voor professional success.</p>
+
+            <div className="space-y-6 my-8">
+              <div className="bg-green-50 p-6 rounded-lg">
+                <h4 className="font-semibold text-green-900 mb-3">🚀 ADHD Work Coaching Focus Areas</h4>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h5 className="font-medium text-green-800 mb-2">Productivity Optimization:</h5>
+                    <ul className="text-green-700 space-y-1">
+                      <li>• Time-blocking voor ADHD attention patterns</li>
+                      <li>• Task batching om context switching te minimaliseren</li>
+                      <li>• Environmental design voor optimal focus</li>
+                      <li>• Energy-based scheduling</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-green-800 mb-2">Professional Communication:</h5>
+                    <ul className="text-green-700 space-y-1">
+                      <li>• Email management systems</li>
+                      <li>• Meeting preparation techniques</li>
+                      <li>• Difficult conversation navigation</li>
+                      <li>• Presentation skills met ADHD energy</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-4 border-t border-green-200">
+                  <h5 className="font-medium text-green-800 mb-2">Career Strategic Planning:</h5>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">Role evaluation</span>
+                    <span className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">Skill development</span>
+                    <span className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">Network building</span>
+                    <span className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">Long-term planning</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2>Praktische werkstrategieën die écht werken bij ADHD</h2>
+            <p>Forget traditional productivity advice - hier zijn <strong>ADHD werkplek</strong> strategies die actually work:</p>
+
+            <div className="bg-blue-50 p-6 rounded-lg my-6">
+              <h4 className="font-semibold text-blue-900 mb-3">💼 Workplace Survival Toolkit</h4>
+              
+              <div className="space-y-4">
+                <div>
+                  <h5 className="font-medium text-blue-800 mb-2">Time Management voor ADHD Brains:</h5>
+                  <ul className="text-blue-700 space-y-1">
+                    <li>• <strong>Energy-based scheduling:</strong> Plan challenging tasks during peak hours</li>
+                    <li>• <strong>Pomodoro adaptation:</strong> 25-45 minute bursts met movement breaks</li>
+                    <li>• <strong>Buffer time:</strong> Add 25% extra time tot all task estimates</li>
+                    <li>• <strong>Calendar blocking:</strong> Visual scheduling met color coding</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h5 className="font-medium text-blue-800 mb-2">Focus & Concentration Techniques:</h5>
+                  <ul className="text-blue-700 space-y-1">
+                    <li>• <strong>Environment optimization:</strong> Consistent workspace met controlled distractions</li>
+                    <li>• <strong>Body doubling:</strong> Working parallel met colleagues</li>
+                    <li>• <strong>Fidget tools:</strong> Stress balls, tactile objects for meetings</li>
+                    <li>• <strong>Movement integration:</strong> Walking meetings, standing desk</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2>ADHD op de werkplek: wel of niet vertellen?</h2>
+            <p>Disclosure over <strong>ADHD en werk</strong> is een complex personal decision met legal, social, en professional implications.</p>
+
+            <div className="grid md:grid-cols-2 gap-6 my-6">
+              <div className="bg-green-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-green-900 mb-2">✅ Voordelen van disclosure:</h4>
+                <ul className="text-green-800 space-y-1">
+                  <li>• Legal protections en accommodations</li>
+                  <li>• Workplace adjustments mogelijk</li>
+                  <li>• Reduced anxiety over masking</li>
+                  <li>• Authentic professional relationships</li>
+                </ul>
+              </div>
+              <div className="bg-orange-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-orange-900 mb-2">⚠️ Risks van disclosure:</h4>
+                <ul className="text-orange-800 space-y-1">
+                  <li>• Potential unconscious bias</li>
+                  <li>• Career limitation concerns</li>
+                  <li>• Stereotype assumptions</li>
+                  <li>• Privacy loss en scrutiny</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2>Cijfers: ADHD impact op Nederlandse werknemers</h2>
+            <p>Research over <strong>ADHD en werk</strong> in Nederland reveals significant patterns:</p>
+
+            <div className="bg-yellow-50 p-6 rounded-lg my-6">
+              <h4 className="font-semibold text-yellow-900 mb-3">📊 ADHD Workplace Statistics Nederland</h4>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h5 className="font-medium text-yellow-800 mb-2">Employment Impact:</h5>
+                  <ul className="text-yellow-700 space-y-1">
+                    <li>• <strong>4.7%</strong> van workforce heeft ADHD</li>
+                    <li>• <strong>156%</strong> higher absenteeism rates</li>
+                    <li>• <strong>€8,400</strong> lower salary zonder management</li>
+                    <li>• <strong>2.3x</strong> more job changes binnen 2 jaar</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-medium text-yellow-800 mb-2">Coaching Results:</h5>
+                  <ul className="text-yellow-700 space-y-1">
+                    <li>• <strong>67%</strong> performance improvement</li>
+                    <li>• <strong>89%</strong> career satisfaction increase</li>
+                    <li>• <strong>€8.50</strong> ROI per €1 coaching investment</li>
+                    <li>• <strong>94%</strong> retention met accommodations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2>Van burnout naar breakthrough: carrière ommekeer verhalen</h2>
+            <p>Real success stories van professionals die <strong>ADHD coaching werk</strong> transformeerde hun careers:</p>
+
+            <div className="space-y-6 my-8">
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-6">
+                <h4 className="font-semibold text-blue-900 mb-2">Mark (34) - Projectmanager, Amsterdam</h4>
+                <p className="text-blue-800 italic mb-3">
+                  "Was constant stressed over missed deadlines en chaotic project management. ADHD coach hielp me systems builden dat work with my brain. Now I lead high-performing teams en got promoted tot senior role binnen 18 months."
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded text-sm">Visual project tools</span>
+                  <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded text-sm">Energy-based scheduling</span>
+                  <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded text-sm">Delegation systems</span>
+                  <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded text-sm">Team leadership</span>
+                </div>
+              </div>
+
+              <div className="bg-purple-50 border-l-4 border-purple-500 p-6">
+                <h4 className="font-semibold text-purple-900 mb-2">Linda (28) - Marketing Manager, Rotterdam</h4>
+                <p className="text-purple-800 italic mb-3">
+                  "Burnout after masking ADHD traits. Coaching taught me dat my creativity were assets in marketing. Switched tot role dat appreciated innovative thinking. Salary increased 40% en work energizes me now."
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-purple-200 text-purple-800 px-2 py-1 rounded text-sm">Role alignment</span>
+                  <span className="bg-purple-200 text-purple-800 px-2 py-1 rounded text-sm">Workplace accommodations</span>
+                  <span className="bg-purple-200 text-purple-800 px-2 py-1 rounded text-sm">Creative marketing</span>
+                  <span className="bg-purple-200 text-purple-800 px-2 py-1 rounded text-sm">Stress management</span>
+                </div>
+              </div>
+            </div>
+
+            <h2>Thuiswerken vs kantoor: wat werkt het beste bij ADHD?</h2>
+            <p><strong>ADHD en werk</strong> patterns can vary dramatically tussen remote en office environments.</p>
+
+            <div className="grid md:grid-cols-2 gap-6 my-6">
+              <div className="bg-green-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-green-900 mb-2">🏠 Thuiswerken voordelen:</h4>
+                <ul className="text-green-800 space-y-1">
+                  <li>• Environmental control</li>
+                  <li>• Flexible scheduling</li>
+                  <li>• Reduced social exhaustion</li>
+                  <li>• Movement freedom</li>
+                  <li>• Commute elimination</li>
+                </ul>
+              </div>
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-blue-900 mb-2">🏢 Kantoor benefits:</h4>
+                <ul className="text-blue-800 space-y-1">
+                  <li>• External structure</li>
+                  <li>• Social stimulation</li>
+                  <li>• Immediate support</li>
+                  <li>• Professional environment</li>
+                  <li>• Equipment access</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2>Solliciteren en interviews met ADHD: zo doe je het</h2>
+            <p><strong>ADHD carrière</strong> advancement starts met effective job searching en interview strategies.</p>
+
+            <p><strong>Interview preparation techniques:</strong></p>
+            <ul>
+              <li><strong>Practice scenarios:</strong> Prepare examples dat highlight ADHD traits als strengths</li>
+              <li><strong>Energy management:</strong> Schedule interviews during peak performance times</li>
+              <li><strong>Strength examples:</strong> Concrete stories about creative problem-solving</li>
+              <li><strong>Professional references:</strong> People who can speak tot unique contributions</li>
+            </ul>
+
+            {/* RELAX Banner */}
+            <div className="my-8 bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200 rounded-lg p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-teal-900 mb-2">
+                    🧘‍♀️ RELAX: Professional ADHD ondersteuning
+                  </h3>
+                  <p className="text-teal-700 mb-3">
+                    Voor professionals die coaching (nog) niet kunnen betalen: ontdek RELAX als natuurlijke ondersteuning tijdens drukke werkperiodes.
+                  </p>
+                  <a 
+                    href="https://organicolabs.com/relax-plus/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors"
+                  >
+                    Professional discount →
+                  </a>
+                </div>
+                <div className="ml-4">
+                  <Image
+                    src="https://adhdcoachindebuurt.nl/relax-banner-new.jpg"
+                    alt="RELAX ADHD ondersteuning"
+                    width={120}
+                    height={80}
+                    className="rounded-md"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <h2>Veelgestelde vragen over ADHD en werk</h2>
+            
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">Vraag 1: Moet ik mijn werkgever vertellen dat ik ADHD heb?</h3>
+                <p>Dit is een persoonlijke strategische beslissing. Disclosure heeft voordelen (legal protections, accommodations) en risks (potential bias, career limitations). Consider je workplace culture, relationship met je manager, en specific accommodation needs.</p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">Vraag 2: Welke werkplekaccommodaties kan ik aanvragen voor ADHD?</h3>
+                <p>Common effective accommodations include flexible work hours, private workspace, noise-canceling headphones, modified deadlines, task variety, en written instructions. Focus on specific modifications dat directly improve your performance.</p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">Vraag 3: Is thuiswerken better voor mensen met ADHD?</h3>
+                <p>It depends on individual ADHD traits en home environment. Remote work offers environmental control en flexibility but requires strong self-structure. Hybrid approaches often work best.</p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">Vraag 4: Hoe manage ik ADHD burnout op work?</h3>
+                <p>ADHD burnout includes executive function shutdown, emotional dysregulation, en sensory overload. Prevention involves energy management, boundary setting, en regular recovery periods. Don't try tot push through - recovery takes time.</p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">Vraag 5: Welke careers zijn het beste voor mensen met ADHD?</h3>
+                <p>ADHD-friendly careers typically involve variety, creativity, problem-solving, en meaningful impact. Examples include marketing, entrepreneurship, technology, consulting. Focus on roles dat leverage hyperfocus en innovation as strengths.</p>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="my-12 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-8 text-center">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Boost je carrière met ADHD coaching in jouw stad
+              </h2>
+              <p className="text-lg text-gray-700 mb-6">
+                <strong>ADHD en werk</strong> success is completely achievable met de right strategies en support. Je hoeft niet langer te strugglen met workplace challenges.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="text-left">
+                  <h3 className="font-semibold text-gray-900 mb-2">Jouw next steps:</h3>
+                  <ul className="space-y-1 text-gray-700">
+                    <li>• Recognize dat professional struggles zijn valid</li>
+                    <li>• Experiment met workplace optimization tips</li>
+                    <li>• Consider coaching voor career acceleration</li>
+                    <li>• Connect met ADHD professionals</li>
+                  </ul>
+                </div>
+                
+                <div className="text-left">
+                  <h3 className="font-semibold text-gray-900 mb-2">Business centers met expertise:</h3>
+                  <ul className="space-y-1 text-gray-700">
+                    <li>• <Link href="/rotterdam" className="text-blue-600 hover:underline">ADHD coach in Rotterdam</Link> - Haven/logistiek</li>
+                    <li>• <Link href="/amsterdam" className="text-blue-600 hover:underline">ADHD coach in Amsterdam</Link> - Financial district</li>
+                    <li>• <Link href="/den-haag" className="text-blue-600 hover:underline">ADHD coach in Den Haag</Link> - Overheid/consultancy</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 border border-gray-200">
+                <p className="text-xl font-semibold text-gray-900 mb-4">
+                  <strong>Remember:</strong> Your ADHD traits aren't professional liabilities - they're unique assets.
+                </p>
+                <p className="text-gray-700">
+                  <strong>ADHD carrière</strong> success isn't about fixing yourself; it's about optimizing your work approach tot leverage your neurodivergent strengths. Your professional breakthrough is possible.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Related Articles */}
+          <div className="px-8 py-8 bg-gray-50 border-t">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Gerelateerde artikelen</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link href="/blog/adhd-coaching-studenten" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+                <h4 className="font-semibold text-blue-600 mb-2">ADHD coaching voor studenten: studeren zonder stress</h4>
+                <p className="text-sm text-gray-600">Ontdek hoe studenten met ADHD succesvol kunnen zijn in het hoger onderwijs.</p>
+              </Link>
+              <Link href="/blog/adhd-coach-kiezen" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+                <h4 className="font-semibold text-blue-600 mb-2">ADHD coach kiezen: complete gids voor de juiste match</h4>
+                <p className="text-sm text-gray-600">Vind de perfecte ADHD coach voor jouw specifieke werkuitdagingen.</p>
+              </Link>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="px-8 py-4 bg-gray-100 text-center text-sm text-gray-600">
+            <p>Laatste update: September 2025. Alle statistieken gebaseerd op Nederlands onderzoek naar ADHD in de arbeidsmarkt en professional coaching outcomes.</p>
+          </div>
+        </article>
+      </div>
+    </main>
+  );
+}
