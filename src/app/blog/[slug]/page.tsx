@@ -267,34 +267,21 @@ export default async function BlogPostPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* CTA Section */}
-            <div className="bg-blue-50 px-8 py-6 border-t border-blue-200">
+            {/* Organicolabs CTA */}
+            <div className="bg-gray-50 px-8 py-6 border-t border-gray-200">
               <div className="text-center">
-                <h3 className="text-lg font-semibold text-blue-800 mb-3">
-                  Op zoek naar ADHD ondersteuning?
-                </h3>
-                <p className="text-blue-700 mb-4">
-                  {post.city 
-                    ? `Bekijk ADHD coaches in ${post.city.name} of praat met onze AI assistente.`
-                    : 'Vind ADHD coaches in jouw stad of praat met onze AI assistente.'
-                  }
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  {post.city && (
-                    <Link
-                      href={`/stad/${post.city.slug}`}
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                    >
-                      Coaches in {post.city.name}
-                    </Link>
-                  )}
-                  <Link
-                    href="/"
-                    className="bg-white hover:bg-gray-50 text-blue-600 border border-blue-600 px-6 py-3 rounded-lg font-semibold transition-colors"
-                  >
-                    Praat met AI Assistente
-                  </Link>
-                </div>
+                <a
+                  href="https://organicolabs.com/relax-plus/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-90 transition-opacity"
+                >
+                  <img 
+                    src="https://adhdcoachindebuurt.nl/relax-banner-new.jpg" 
+                    alt="RELAX - Natuurlijke rust zonder loom gevoel" 
+                    className="w-auto mx-auto max-w-full"
+                  />
+                </a>
               </div>
             </div>
           </div>
