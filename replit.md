@@ -64,6 +64,6 @@ Preferred communication style: Simple, everyday language.
 - **SEO**: Next-SEO for enhanced search engine optimization
 
 ### Geographic Data
-- **City Database**: Pre-populated data for 100 largest Dutch cities and 50 largest Belgian cities
+- **City Database**: Pre-populated data for 100 largest Dutch cities and 50+ largest Flemish cities (Dutch-speaking Belgium only)
 - **Location Services**: Google Maps integration for geographic visualization and search
 - **Geolocation**: Latitude/longitude coordinate system for precise location matching
