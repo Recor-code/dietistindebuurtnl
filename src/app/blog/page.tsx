@@ -160,20 +160,34 @@ export default async function BlogPage() {
                       <Link
                         key={post.id}
                         href={`/blog/${post.slug}`}
-                        className="block hover:bg-gray-50 p-2 rounded transition-colors"
+                        className="flex gap-3 hover:bg-gray-50 p-2 rounded transition-colors"
                       >
-                        <h4 className="font-medium text-gray-800 mb-1 text-sm">
-                          {post.title}
-                        </h4>
-                        <div className="flex items-center gap-2 text-xs text-gray-600">
-                          <Calendar size={12} />
-                          <span>{new Date(post.publishedAt!).toLocaleDateString('nl-NL')}</span>
-                          {post.city && (
-                            <>
-                              <MapPin size={12} />
-                              <span>{post.city.name}</span>
-                            </>
-                          )}
+                        {/* Thumbnail Image */}
+                        <div className="relative w-16 h-16 bg-gradient-to-br from-blue-50 to-teal-50 rounded-lg overflow-hidden flex-shrink-0">
+                          <Image
+                            src={`/img/blog/${post.slug}/featured.webp`}
+                            alt={`${post.title} - thumbnail`}
+                            width={64}
+                            height={64}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        
+                        {/* Text Content */}
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium text-gray-800 mb-1 text-sm leading-tight line-clamp-2">
+                            {post.title}
+                          </h4>
+                          <div className="flex items-center gap-2 text-xs text-gray-600">
+                            <Calendar size={12} />
+                            <span>{new Date(post.publishedAt!).toLocaleDateString('nl-NL')}</span>
+                            {post.city && (
+                              <>
+                                <MapPin size={12} />
+                                <span>{post.city.name}</span>
+                              </>
+                            )}
+                          </div>
                         </div>
                       </Link>
                     ))}
