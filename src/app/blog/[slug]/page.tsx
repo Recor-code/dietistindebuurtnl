@@ -3,6 +3,7 @@ import { supabase } from '../../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import BlogBanner from '@/components/BlogBanner';
 
 // Add proper caching headers for ultra-fast loading
 export const headers = {
@@ -298,6 +299,9 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </div>
       </article>
+
+      {/* Blog Banner - can be changed in one place for all blog articles */}
+      <BlogBanner />
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 px-4">
