@@ -2,9 +2,9 @@ import React from 'react';
 import ChatAssistant from '@/components/ChatAssistant';
 import HeroSearchSection from '@/components/HeroSearchSection';
 import Header from '@/components/Header';
-import { Search, MapPin, Star, Users, Clock, Heart, Calendar } from 'lucide-react';
+import BlogPostsSection from '@/components/BlogPostsSection';
+import { Search, MapPin, Star, Users, Clock, Heart } from 'lucide-react';
 import Link from 'next/link';
-import { supabase } from '../../lib/supabase';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -47,29 +47,7 @@ const websiteSchema = {
   }
 };
 
-async function getLatestBlogPosts() {
-  try {
-    const { data: posts, error } = await supabase
-      .from('blog_posts')
-      .select('id, title, slug, excerpt, published_at, tags')
-      .not('published_at', 'is', null)
-      .order('published_at', { ascending: false })
-      .limit(3);
-
-    if (error) {
-      console.error('Error fetching blog posts:', error);
-      return [];
-    }
-
-    return posts || [];
-  } catch (error) {
-    console.error('Error fetching blog posts:', error);
-    return [];
-  }
-}
-
-export default async function Home() {
-  const latestPosts = await getLatestBlogPosts();
+export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
       <script
@@ -178,63 +156,7 @@ export default async function Home() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {latestPosts.length > 0 ? (
-              latestPosts.map((post, index) => {
-                const gradients = [
-                  'from-purple-100 to-pink-100',
-                  'from-green-100 to-blue-100', 
-                  'from-orange-100 to-yellow-100'
-                ];
-                const iconColors = [
-                  'text-purple-600',
-                  'text-green-600',
-                  'text-orange-600'
-                ];
-                
-                const publishedDate = new Date(post.published_at);
-                const readingTime = Math.ceil((post.excerpt?.length || 500) / 200); // Estimate 200 words per minute
-                
-                return (
-                  <Link key={post.id} href={`/blog/${post.slug}`} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group">
-                    <div className={`aspect-video bg-gradient-to-br ${gradients[index % 3]} flex items-center justify-center`}>
-                      <svg className={`w-16 h-16 ${iconColors[index % 3]}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C20.832 18.477 19.247 18 17.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                        <Calendar className="w-4 h-4" />
-                        <span>{publishedDate.toLocaleDateString('nl-NL', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}</span>
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                        {post.title}
-                      </h4>
-                      <p className="text-gray-600 mb-4 leading-relaxed">
-                        {post.excerpt || 'Lees dit artikel voor meer informatie over ADHD coaching...'}
-                      </p>
-                      <div className="flex items-center gap-4 text-sm text-gray-500">
-                        <span>{readingTime} min leestijd</span>
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })
-            ) : (
-              // Fallback content when no blog posts are available
-              <div className="col-span-3 text-center py-12">
-                <div className="text-gray-500 mb-4">
-                  <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C20.832 18.477 19.247 18 17.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">Binnenkort meer artikelen</h4>
-                <p className="text-gray-600">We zijn bezig met het schrijven van informatieve artikelen over ADHD coaching.</p>
-              </div>
-            )}
+            <BlogPostsSection />
           </div>
         </div>
       </section>
