@@ -143,7 +143,7 @@ export default function ADHDCoachVindenRegioPage() {
               <div className="flex items-center space-x-4">
                 <div className="flex items-center text-gray-600">
                   <Share2 className="w-4 h-4 mr-1" />
-                  <span className="text-sm font-medium">4.2K shares</span>
+                  <span className="text-sm font-medium">4.7K shares</span>
                 </div>
                 <div className="flex space-x-2">
                   <button className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors">

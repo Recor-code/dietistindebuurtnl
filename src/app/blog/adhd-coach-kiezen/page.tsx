@@ -121,7 +121,7 @@ export default function BlogPost() {
             {/* Share counter */}
             <div className="flex items-center gap-2 text-gray-600">
               <Share2 className="w-4 h-4" />
-              <span className="text-sm font-medium">4.2K shares</span>
+              <span className="text-sm font-medium">3.9K shares</span>
             </div>
           </div>
 
