@@ -308,15 +308,6 @@ export default function ChatAssistant() {
           </button>
         </div>
         
-        {messages.length > 4 && !showAnalysis && (
-          <button
-            onClick={generateAnalysis}
-            disabled={isLoading}
-            className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-300 text-white py-2 rounded-lg text-sm transition-colors"
-          >
-            {isLoading ? 'Bezig met analyseren...' : 'Krijg je persoonlijke ADHD analyse'}
-          </button>
-        )}
       </div>
 
       {/* Analysis Panel */}
