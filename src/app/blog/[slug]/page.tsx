@@ -3,6 +3,7 @@ import { supabase } from '../../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart, ArrowLeft, Share2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Header from '@/components/Header';
 
 
 interface PageProps {
@@ -161,6 +162,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <Header />
 
       {/* Breadcrumb */}
       <div className="bg-white border-b">
