@@ -13,6 +13,24 @@ export default function BlogLayout({
       
       {children}
       
+      {/* RELAX Banner */}
+      <div className="bg-white py-8 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <a
+            href="https://organicolabs.com/relax-plus/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block hover:opacity-90 transition-opacity"
+          >
+            <img 
+              src="https://adhdcoachindebuurt.nl/relax-banner-new.jpg" 
+              alt="RELAX - Natuurlijke ADHD ondersteuning" 
+              className="w-full max-w-4xl mx-auto h-auto"
+            />
+          </a>
+        </div>
+      </div>
+      
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
