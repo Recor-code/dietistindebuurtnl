@@ -492,7 +492,7 @@ export default function BlogPost() {
             <div className="mt-12 pt-8 border-t border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Gerelateerde artikelen</h3>
               <div className="grid md:grid-cols-2 gap-6">
-                <Link href="/blog/wat-doet-adhd-coach-voordelen" className="group">
+                <Link href="/blog/wat-doet-adhd-coach-precies" className="group">
                   <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
                     <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 mb-2">
                       Wat doet een ADHD coach? De 7 belangrijkste voordelen

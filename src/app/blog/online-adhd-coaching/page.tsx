@@ -490,7 +490,7 @@ export default function OnlineADHDCoachingPage() {
                 <h4 className="font-semibold text-blue-600 mb-2">De beste vragen om te stellen aan je ADHD coach</h4>
                 <p className="text-sm text-gray-600">Bereid je voor op het intakegesprek met deze essentiële vragenlijst.</p>
               </Link>
-              <Link href="/blog/adhd-coaching-kosten" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+              <Link href="/blog/kosten-adhd-coaching-tarieven" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
                 <h4 className="font-semibold text-blue-600 mb-2">ADHD coaching kosten: wat betaal je in 2024?</h4>
                 <p className="text-sm text-gray-600">Complete gids over ADHD coaching prijzen, vergoedingen en budgetplanning.</p>
               </Link>

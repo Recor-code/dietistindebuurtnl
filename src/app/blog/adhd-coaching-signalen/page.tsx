@@ -564,7 +564,7 @@ export default function ADHDCoachingSignalenPage() {
                 <h4 className="font-semibold text-blue-600 mb-2">ADHD coach vs psycholoog: wat is het verschil?</h4>
                 <p className="text-sm text-gray-600">Ontdek welke vorm van begeleiding het beste past bij jouw ADHD-behoeften en situatie.</p>
               </Link>
-              <Link href="/blog/adhd-coach-kiezen" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+              <Link href="/blog/hoe-kies-je-juiste-adhd-coach" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
                 <h4 className="font-semibold text-blue-600 mb-2">Hoe kies je de juiste ADHD coach?</h4>
                 <p className="text-sm text-gray-600">Complete gids met checklist voor het vinden van de perfecte ADHD coach bij jou in de buurt.</p>
               </Link>

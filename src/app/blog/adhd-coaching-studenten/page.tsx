@@ -463,7 +463,7 @@ export default function ADHDCoachingStudentenPage() {
           <div className="px-8 py-8 bg-gray-50 border-t">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Gerelateerde artikelen</h3>
             <div className="grid md:grid-cols-2 gap-4">
-              <Link href="/blog/adhd-coaching-kosten" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+              <Link href="/blog/kosten-adhd-coaching-tarieven" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
                 <h4 className="font-semibold text-blue-600 mb-2">Kosten ADHD coaching: tarieven en vergoedingen</h4>
                 <p className="text-sm text-gray-600">Ontdek wat ADHD coaching kost en hoe je het betaalbaar kunt maken als student.</p>
               </Link>

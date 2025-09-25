@@ -939,11 +939,11 @@ export default function ADHDRelatiesCoachBalansPage() {
           <div className="px-8 py-8 bg-gray-50 border-t">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Gerelateerde artikelen</h3>
             <div className="grid md:grid-cols-2 gap-4">
-              <Link href="/blog/adhd-volwassenen-coaching-medicatie" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+              <Link href="/blog/adhd-volwassenen-coaching-vs-medicatie" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
                 <h4 className="font-semibold text-pink-600 mb-2">ADHD bij volwassenen: waarom coaching vaak beter helpt dan medicatie alleen</h4>
                 <p className="text-sm text-gray-600">Hoe combination approaches helpen relationship stability too.</p>
               </Link>
-              <Link href="/blog/adhd-coachtraject-duur" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+              <Link href="/blog/hoe-lang-duurt-adhd-coachtraject" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
                 <h4 className="font-semibold text-pink-600 mb-2">Hoe lang duurt een ADHD coachtraject gemiddeld?</h4>
                 <p className="text-sm text-gray-600">Understanding timeline expectations voor relationship-focused coaching.</p>
               </Link>

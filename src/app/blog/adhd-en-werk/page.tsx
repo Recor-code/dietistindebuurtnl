@@ -458,7 +458,7 @@ export default function ADHDEnWerkPage() {
                 <h4 className="font-semibold text-blue-600 mb-2">ADHD coaching voor studenten: studeren zonder stress</h4>
                 <p className="text-sm text-gray-600">Ontdek hoe studenten met ADHD succesvol kunnen zijn in het hoger onderwijs.</p>
               </Link>
-              <Link href="/blog/adhd-coach-kiezen" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+              <Link href="/blog/hoe-kies-je-juiste-adhd-coach" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
                 <h4 className="font-semibold text-blue-600 mb-2">ADHD coach kiezen: complete gids voor de juiste match</h4>
                 <p className="text-sm text-gray-600">Vind de perfecte ADHD coach voor jouw specifieke werkuitdagingen.</p>
               </Link>

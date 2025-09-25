@@ -488,7 +488,7 @@ export default function ADHDCoachingKostenPage() {
                 <h4 className="font-semibold text-blue-600 mb-2">10 signalen dat ADHD coaching jou kan helpen</h4>
                 <p className="text-sm text-gray-600">Herken je deze signalen? Ontdek wanneer ADHD coaching écht verschil kan maken in je leven.</p>
               </Link>
-              <Link href="/blog/adhd-coach-kiezen" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+              <Link href="/blog/hoe-kies-je-juiste-adhd-coach" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
                 <h4 className="font-semibold text-blue-600 mb-2">Hoe kies je de juiste ADHD coach?</h4>
                 <p className="text-sm text-gray-600">Complete gids met checklist voor het vinden van de perfecte ADHD coach bij jou in de buurt.</p>
               </Link>
