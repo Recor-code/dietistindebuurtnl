@@ -4,8 +4,8 @@ import OpenAI from "openai";
 // the newest OpenAI model is "gpt-5" which was released August 7, 2025. do not change this unless explicitly requested by the user
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-// Assistant configuration
-const USE_ASSISTANTS = !!process.env.OPENAI_ASSISTANT_ID;
+// Assistant configuration - disabled for better streaming experience
+const USE_ASSISTANTS = false; // !!process.env.OPENAI_ASSISTANT_ID;
 
 export interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
@@ -35,7 +35,7 @@ export async function generateADHDAnalysis(
     
     // Always use chat completions for analysis (more reliable for structured output)
     const response = await openai.chat.completions.create({
-      model: "gpt-5", // the newest OpenAI model is "gpt-5" which was released August 7, 2025
+      model: "gpt-4o", // Using GPT-4o (GPT-5 requires org verification)
       messages: [
         {
           role: "system",
@@ -114,9 +114,11 @@ export async function generateStreamingChatResponse(
     async start(controller) {
       try {
         if (USE_ASSISTANTS && process.env.OPENAI_ASSISTANT_ID) {
+          console.log('🤖 Using Assistant API streaming');
           // Use Assistant API with streaming for function calling support
           await streamAssistantResponse(controller, encoder, messages, sessionId);
         } else {
+          console.log('💬 Using Chat Completions streaming fallback');
           // Fallback to chat completions
           await streamChatCompletionResponse(controller, encoder, messages);
         }
@@ -266,7 +268,7 @@ async function streamChatCompletionResponse(
   messages: ChatMessage[]
 ): Promise<void> {
   const stream = await openai.chat.completions.create({
-    model: "gpt-5", // the newest OpenAI model is "gpt-5" which was released August 7, 2025
+    model: "gpt-4o", // Using GPT-4o for streaming (GPT-5 requires org verification for streaming)
     messages: [
       {
         role: "system",
@@ -286,7 +288,7 @@ async function streamChatCompletionResponse(
       ...messages
     ],
     stream: true,
-    max_tokens: 1000
+    max_completion_tokens: 1000
   });
 
   for await (const chunk of stream) {
@@ -400,7 +402,7 @@ async function generateChatCompletionResponse(
 ): Promise<string> {
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-5", // the newest OpenAI model is "gpt-5" which was released August 7, 2025
+      model: "gpt-4o", // Using GPT-4o (GPT-5 requires org verification)
       messages: [
         {
           role: "system",
@@ -418,7 +420,8 @@ async function generateChatCompletionResponse(
           Moedig mensen aan om de ADHD coaches in hun stad te bekijken op de website.`
         },
         ...messages
-      ]
+      ],
+      max_completion_tokens: 1000
     });
 
     return response.choices[0].message.content || 'Sorry, ik kon geen antwoord genereren.';
