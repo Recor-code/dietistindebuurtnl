@@ -213,12 +213,13 @@ async function streamAssistantResponse(
 
             } catch (error) {
               console.error('Error processing function call:', error);
+              const errorMessage = error instanceof Error ? error.message : 'Unknown error';
               toolOutputs.push({
                 tool_call_id: toolCall.id,
                 output: JSON.stringify({
                   success: false,
                   message: 'Er is een fout opgetreden bij het verwerken van de functie aanroep',
-                  error: error.message
+                  error: errorMessage
                 })
               });
               controller.enqueue(encoder.encode('❌ **Er is een fout opgetreden bij het verzenden van het email rapport.**\n\n'));
@@ -229,9 +230,8 @@ async function streamAssistantResponse(
         // Submit tool outputs and continue streaming
         if (toolOutputs.length > 0) {
           const submitStream = openai.beta.threads.runs.submitToolOutputsStream(
-            threadId,
             event.data.id,
-            { tool_outputs: toolOutputs }
+            { thread_id: threadId, tool_outputs: toolOutputs }
           );
 
           for await (const submitEvent of submitStream) {
@@ -307,7 +307,14 @@ async function sendQuestionnaireReport(args: {
   responses: object;
 }): Promise<{ success: boolean; error?: string }> {
   try {
-    const response = await fetch('/api/send-report', {
+    // Use full URL for server-side fetch
+    const baseUrl = process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}` 
+      : process.env.NEXT_PUBLIC_SITE_URL 
+      ? process.env.NEXT_PUBLIC_SITE_URL 
+      : 'http://localhost:5000';
+    
+    const response = await fetch(`${baseUrl}/api/send-report`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(args),
@@ -321,7 +328,8 @@ async function sendQuestionnaireReport(args: {
     }
   } catch (error) {
     console.error('Error sending questionnaire report:', error);
-    return { success: false, error: error.message };
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return { success: false, error: errorMessage };
   }
 }
 
