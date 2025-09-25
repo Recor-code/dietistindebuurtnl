@@ -104,7 +104,7 @@ export async function generateChatResponse(
   }
 }
 
-// New streaming function - ALWAYS use chat completions for real-time streaming
+// New streaming function with Assistant support and function calling
 export async function generateStreamingChatResponse(
   messages: ChatMessage[],
   sessionId: string = 'default'
@@ -114,40 +114,13 @@ export async function generateStreamingChatResponse(
   return new ReadableStream({
     async start(controller) {
       try {
-        // ALWAYS use streaming chat completions for real-time response (not Assistant API)
-        const stream = await openai.chat.completions.create({
-          model: "gpt-4o", // Use reliable model
-          messages: [
-            {
-              role: "system",
-              content: `Je bent een warme, begripvolle AI ADHD Assistente voor de website "ADHD Coach in de Buurt". 
-              
-              Je helpt bezoekers met:
-              - Vragen over ADHD symptomen en uitdagingen
-              - Informatie over wat een ADHD coach kan betekenen
-              - Hulp bij het vinden van de juiste professionele ondersteuning
-              - Praktische tips voor dagelijks leven met ADHD
-              - Emotionele ondersteuning en begrip
-              
-              Spreek in warme, toegankelijke Nederlandse taal. Wees empathisch maar professioneel.
-              Verwijs mensen altijd naar professionele hulp voor diagnoses of behandeling.
-              Moedig mensen aan om de ADHD coaches in hun stad te bekijken op de website.`
-            },
-            ...messages
-          ],
-          stream: true,
-          temperature: 0.7,
-          max_tokens: 1000
-        });
-
-        for await (const chunk of stream) {
-          const content = chunk.choices[0]?.delta?.content;
-          if (content) {
-            controller.enqueue(encoder.encode(content));
-          }
+        if (USE_ASSISTANTS && ASSISTANT_ID) {
+          // Use Assistant API with streaming for function calling support
+          await streamAssistantResponse(controller, encoder, messages, sessionId);
+        } else {
+          // Fallback to chat completions
+          await streamChatCompletionResponse(controller, encoder, messages);
         }
-        
-        controller.close();
       } catch (error) {
         console.error('Streaming error:', error);
         controller.enqueue(encoder.encode('Sorry, er ging iets mis. Probeer het opnieuw.'));
@@ -155,6 +128,201 @@ export async function generateStreamingChatResponse(
       }
     }
   });
+}
+
+async function streamAssistantResponse(
+  controller: ReadableStreamDefaultController<Uint8Array>,
+  encoder: TextEncoder,
+  messages: ChatMessage[],
+  sessionId: string = 'default'
+): Promise<void> {
+  // Get or create thread
+  let threadId = getThreadId(sessionId);
+  
+  if (!threadId) {
+    const thread = await openai.beta.threads.create();
+    threadId = thread.id;
+    setThreadId(sessionId, threadId);
+  }
+
+  // Add the latest user message to the thread
+  const latestMessage = messages[messages.length - 1];
+  if (latestMessage && latestMessage.role === 'user') {
+    await openai.beta.threads.messages.create(threadId, {
+      role: 'user',
+      content: latestMessage.content
+    });
+  }
+
+  // Send thread info to client
+  controller.enqueue(encoder.encode(JSON.stringify({
+    type: 'thread_info',
+    threadId: threadId
+  }) + '\n'));
+
+  // Create streaming run
+  const stream = openai.beta.threads.runs.stream(threadId, {
+    assistant_id: ASSISTANT_ID!,
+  });
+
+  for await (const event of stream) {
+    if (event.event === 'thread.message.delta' && event.data.delta.content) {
+      const contentDeltas = event.data.delta.content;
+      for (const delta of contentDeltas) {
+        if (delta.type === 'text' && delta.text?.value) {
+          // Send text chunks to client
+          controller.enqueue(encoder.encode(delta.text.value));
+        }
+      }
+    }
+
+    if (event.event === 'thread.run.requires_action') {
+      const toolCalls = event.data.required_action?.submit_tool_outputs.tool_calls;
+      
+      if (toolCalls) {
+        const toolOutputs = [];
+        
+        for (const toolCall of toolCalls) {
+          if (toolCall.function.name === 'send_questionnaire_report') {
+            try {
+              const args = JSON.parse(toolCall.function.arguments);
+              
+              // Notify client about function call
+              controller.enqueue(encoder.encode('\n\n🔄 **Email rapport wordt verzonden...**\n\n'));
+              
+              // Call email sending function
+              const emailResult = await sendQuestionnaireReport(args);
+              
+              toolOutputs.push({
+                tool_call_id: toolCall.id,
+                output: JSON.stringify({
+                  success: emailResult.success,
+                  message: emailResult.success 
+                    ? `Email rapport succesvol verzonden naar ${args.email}` 
+                    : `Fout bij verzenden email: ${emailResult.error}`,
+                  timestamp: new Date().toISOString()
+                })
+              });
+
+              // Notify client of result
+              const statusMessage = emailResult.success
+                ? `✅ **Email rapport succesvol verzonden naar ${args.email}!**\n\n`
+                : `❌ **Fout bij verzenden email:** ${emailResult.error}\n\n`;
+              
+              controller.enqueue(encoder.encode(statusMessage));
+
+            } catch (error) {
+              console.error('Error processing function call:', error);
+              toolOutputs.push({
+                tool_call_id: toolCall.id,
+                output: JSON.stringify({
+                  success: false,
+                  message: 'Er is een fout opgetreden bij het verwerken van de functie aanroep',
+                  error: error.message
+                })
+              });
+              controller.enqueue(encoder.encode('❌ **Er is een fout opgetreden bij het verzenden van het email rapport.**\n\n'));
+            }
+          }
+        }
+
+        // Submit tool outputs and continue streaming
+        if (toolOutputs.length > 0) {
+          const submitStream = openai.beta.threads.runs.submitToolOutputsStream(
+            threadId,
+            event.data.id,
+            { tool_outputs: toolOutputs }
+          );
+
+          for await (const submitEvent of submitStream) {
+            if (submitEvent.event === 'thread.message.delta' && submitEvent.data.delta.content) {
+              const contentDeltas = submitEvent.data.delta.content;
+              for (const delta of contentDeltas) {
+                if (delta.type === 'text' && delta.text?.value) {
+                  controller.enqueue(encoder.encode(delta.text.value));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    if (event.event === 'thread.run.completed') {
+      break;
+    }
+
+    if (event.event === 'thread.run.failed') {
+      controller.enqueue(encoder.encode('\n\n❌ **Er is een fout opgetreden bij het verwerken van je verzoek.**'));
+      break;
+    }
+  }
+
+  controller.close();
+}
+
+async function streamChatCompletionResponse(
+  controller: ReadableStreamDefaultController<Uint8Array>,
+  encoder: TextEncoder,
+  messages: ChatMessage[]
+): Promise<void> {
+  const stream = await openai.chat.completions.create({
+    model: "gpt-5", // the newest OpenAI model is "gpt-5" which was released August 7, 2025
+    messages: [
+      {
+        role: "system",
+        content: `Je bent een warme, begripvolle AI ADHD Assistente voor de website "ADHD Coach in de Buurt". 
+        
+        Je helpt bezoekers met:
+        - Vragen over ADHD symptomen en uitdagingen
+        - Informatie over wat een ADHD coach kan betekenen
+        - Hulp bij het vinden van de juiste professionele ondersteuning
+        - Praktische tips voor dagelijks leven met ADHD
+        - Emotionele ondersteuning en begrip
+        
+        Spreek in warme, toegankelijke Nederlandse taal. Wees empathisch maar professioneel.
+        Verwijs mensen altijd naar professionele hulp voor diagnoses of behandeling.
+        Moedig mensen aan om de ADHD coaches in hun stad te bekijken op de website.`
+      },
+      ...messages
+    ],
+    stream: true,
+    max_tokens: 1000
+  });
+
+  for await (const chunk of stream) {
+    const content = chunk.choices[0]?.delta?.content;
+    if (content) {
+      controller.enqueue(encoder.encode(content));
+    }
+  }
+  
+  controller.close();
+}
+
+// Email sending function for questionnaire reports
+async function sendQuestionnaireReport(args: {
+  name: string;
+  email: string;
+  responses: object;
+}): Promise<{ success: boolean; error?: string }> {
+  try {
+    const response = await fetch('/api/send-report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(args),
+    });
+
+    if (response.ok) {
+      return { success: true };
+    } else {
+      const error = await response.text();
+      return { success: false, error };
+    }
+  } catch (error) {
+    console.error('Error sending questionnaire report:', error);
+    return { success: false, error: error.message };
+  }
 }
 
 async function generateAssistantResponse(
