@@ -25,7 +25,7 @@ const blogPosts = [
   {
     id: 'adhd-coachtraject-duur',
     title: 'Hoe lang duurt een ADHD coachtraject gemiddeld?',
-    slug: 'adhd-coachtraject-duur',
+    slug: 'hoe-lang-duurt-adhd-coachtraject',
     excerpt: 'Realistische tijdslijnen en wat de ADHD coachtraject duur bepaalt - van korte intensieve trajecten tot langdurige transformatieprocessen.',
     metaDescription: 'Hoe lang duurt ADHD coaching gemiddeld? Ontdek alle factoren die de duur bepalen en wat je kunt verwachten van je traject.',
     publishedAt: new Date('2025-09-25'),
@@ -34,7 +34,7 @@ const blogPosts = [
   {
     id: 'adhd-volwassenen-coaching-medicatie',
     title: 'ADHD bij volwassenen: waarom coaching vaak beter helpt dan medicatie alleen',
-    slug: 'adhd-volwassenen-coaching-medicatie',
+    slug: 'adhd-volwassenen-coaching-vs-medicatie',
     excerpt: 'Evidence-based guide explaining why combining coaching with medication produces superior results for adults with ADHD.',
     metaDescription: 'ADHD volwassenen: waarom coaching + medicatie beter werkt. Evidence-based onderzoek toont 73% betere uitkomsten met gecombineerde aanpak.',
     publishedAt: new Date('2025-09-25'),
@@ -43,7 +43,7 @@ const blogPosts = [
   {
     id: 'checklist-adhd-coach-voorbereiding',
     title: 'Checklist: zo bereid je je voor op je eerste gesprek met een ADHD coach',
-    slug: 'checklist-adhd-coach-voorbereiding',
+    slug: 'eerste-gesprek-adhd-coach-voorbereiding',
     excerpt: 'Complete timeline-based preparation guide with interactive preparation phases and printable checklists for your first ADHD coaching conversation.',
     metaDescription: 'Bereid je optimaal voor op je eerste ADHD coach gesprek met deze complete checklist. Tips voor kennismaking, vragen en verwachtingen.',
     publishedAt: new Date('2025-09-25'),
@@ -88,7 +88,7 @@ const blogPosts = [
   {
     id: 'adhd-coach-kiezen',
     title: 'De beste ADHD coach kiezen: waar moet je op letten?',
-    slug: 'adhd-coach-kiezen',
+    slug: 'hoe-kies-je-juiste-adhd-coach',
     excerpt: 'Complete gids voor het kiezen van de juiste ADHD coach: qualificaties, specialisaties, en matching criteria voor optimale resultaten.',
     metaDescription: 'ADHD coach kiezen: complete gids met criteria, vragen en tips om de beste coach voor jouw situatie te vinden.',
     publishedAt: new Date('2025-09-25'),
@@ -97,11 +97,20 @@ const blogPosts = [
   {
     id: 'adhd-coaching-kosten',
     title: 'ADHD coaching kosten en vergoedingen: complete gids 2025',
-    slug: 'adhd-coaching-kosten',
+    slug: 'kosten-adhd-coaching-tarieven',
     excerpt: 'Alles over ADHD coaching kosten, verzekeringsvergoedingen, en budget planning voor verschillende coaching trajecten.',
     metaDescription: 'ADHD coaching kosten 2025: tarieven, vergoedingen en budget tips. Complete gids voor financiële planning van ADHD coaching.',
     publishedAt: new Date('2025-09-25'),
     tags: ['Kosten', 'Vergoeding', 'Budget', 'Financiën']
+  },
+  {
+    id: 'wat-doet-adhd-coach-voordelen',
+    title: 'Wat doet een ADHD coach precies? Alle voordelen op een rij',
+    slug: 'wat-doet-adhd-coach-precies',
+    excerpt: 'Ontdek wat een ADHD coach precies doet, welke voordelen coaching biedt en hoe een coach je helpt met ADHD symptomen, werkstructuur en persoonlijke groei.',
+    metaDescription: 'Wat doet een ADHD coach precies? Ontdek de rol, taken en voordelen van ADHD coaching voor dagelijks leven en persoonlijke ontwikkeling.',
+    publishedAt: new Date('2025-09-25'),
+    tags: ['ADHD Coach', 'Voordelen', 'Taken', 'Ondersteuning']
   },
   {
     id: 'adhd-coaching-signalen',
