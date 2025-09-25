@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kosten ADHD coaching: wat zijn de tarieven en wordt het vergoed?',
     description: 'Wat kost ADHD coaching in Nederland? Complete overzicht van tarieven, vergoedingen en tips om coaching betaalbaar te maken. Inclusief regionale verschillen.',
-    images: ['/img/blog/adhd-coaching-kosten/featured.webp'],
+    images: ['/img/blog/kosten-adhd-coaching-tarieven/featured.webp'],
   },
 };
 

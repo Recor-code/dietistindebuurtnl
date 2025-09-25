@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Wat doet een ADHD coach precies? Alle voordelen op een rij',
     description: 'Ontdek wat een ADHD coach precies doet, welke voordelen coaching biedt en hoe een coach je helpt met ADHD symptomen, werkstructuur en persoonlijke groei.',
-    images: ['/img/blog/wat-doet-adhd-coach-voordelen/featured.webp'],
+    images: ['/img/blog/wat-doet-adhd-coach-precies/featured.webp'],
   },
 };
 

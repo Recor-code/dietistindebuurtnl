@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ADHD bij volwassenen: waarom coaching vaak beter helpt dan medicatie alleen',
     description: 'ADHD bij volwassenen: ontdek waarom coaching naast medicatie vaak betere resultaten geeft. Evidence-based informatie over integrale behandeling.',
-    images: ['/img/blog/adhd-volwassenen-coaching-medicatie/featured.webp'],
+    images: ['/img/blog/adhd-volwassenen-coaching-vs-medicatie/featured.webp'],
   },
 };
 

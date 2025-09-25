@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     authors: ['ADHD Coach in de Buurt'],
     images: [
       {
-        url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-coach-kiezen/featured.webp',
+        url: 'https://adhdcoachindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp',
         width: 1024,
         height: 1024,
         alt: 'Hoe kies je de juiste ADHD coach? Complete gids'
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hoe kies je de juiste ADHD coach bij jou in de buurt? [Complete gids]',
     description: 'Complete gids voor het kiezen van de juiste ADHD coach bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
-    images: ['https://adhdcoachindebuurt.nl/img/blog/adhd-coach-kiezen/featured.webp']
+    images: ['https://adhdcoachindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp']
   }
 };
 
