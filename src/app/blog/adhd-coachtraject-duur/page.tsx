@@ -127,18 +127,38 @@ export default function ADHDCoachtrajectDuurPage() {
                   <span className="text-sm font-medium">3.8K shares</span>
                 </div>
                 <div className="flex space-x-2">
-                  <button className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors">
+                  <a 
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coachtraject-duur')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors"
+                  >
                     Facebook
-                  </button>
-                  <button className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors">
+                  </a>
+                  <a 
+                    href={`https://wa.me/?text=${encodeURIComponent('Hoe lang duurt een ADHD coachtraject gemiddeld? - https://adhdcoachindebuurt.nl/blog/adhd-coachtraject-duur')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors"
+                  >
                     WhatsApp
-                  </button>
-                  <button className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors">
+                  </a>
+                  <a 
+                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coachtraject-duur')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors"
+                  >
                     Messenger
-                  </button>
-                  <button className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors">
+                  </a>
+                  <a 
+                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('Hoe lang duurt een ADHD coachtraject gemiddeld?')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coachtraject-duur')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors"
+                  >
                     X
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
