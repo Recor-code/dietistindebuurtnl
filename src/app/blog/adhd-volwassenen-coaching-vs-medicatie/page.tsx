@@ -616,36 +616,6 @@ export default function ADHDVolwassenenCoachingMedicatiePage() {
               ))}
             </div>
 
-            {/* RELAX Banner */}
-            <div className="my-8 bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200 rounded-lg p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-teal-900 mb-2">
-                    🧘‍♀️ RELAX: Ondersteuning naast medicatie en coaching
-                  </h3>
-                  <p className="text-teal-700 mb-3">
-                    Optimaliseer je <strong>ADHD volwassenen coaching</strong> resultaten met natuurlijke ondersteuning die complement je medicatie en coaching traject.
-                  </p>
-                  <a 
-                    href="https://organicolabs.com/relax-plus/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors"
-                  >
-                    Optimale ondersteuning →
-                  </a>
-                </div>
-                <div className="ml-4">
-                  <Image
-                    src="/relax-plus-banner.png"
-                    alt="RELAX ADHD ondersteuning"
-                    width={120}
-                    height={80}
-                    className="rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
 
             <h2>Hoe vind je de juiste balans tussen medicatie en coaching?</h2>
             <p>
@@ -806,23 +776,6 @@ export default function ADHDVolwassenenCoachingMedicatiePage() {
         </article>
       </div>
       
-      {/* RELAX Banner */}
-      <div className="bg-gray-50 border-t border-gray-200 py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <a
-            href="https://organicolabs.com/relax-plus/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <img 
-              src="/relax-banner-new.jpg" 
-              alt="RELAX - Natuurlijke ADHD ondersteuning" 
-              className="w-full max-w-4xl mx-auto h-auto"
-            />
-          </a>
-        </div>
-      </div>
     </main>
     </>
   );

@@ -782,36 +782,6 @@ export default function ADHDCoachVindenRegioPage() {
               </div>
             </div>
 
-            {/* RELAX Banner */}
-            <div className="my-8 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-blue-900 mb-2">
-                    🧘‍♀️ RELAX: Ondersteuning tijdens je coach zoek proces
-                  </h3>
-                  <p className="text-blue-700 mb-3">
-                    Terwijl je bezig bent om <strong>ADHD coach vinden</strong> in jouw regio, ondersteunt RELAX je naturally bij focus en stress management tijdens het zoekproces.
-                  </p>
-                  <a 
-                    href="https://organicolabs.com/relax-plus/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
-                  >
-                    Zoekproces ondersteuning →
-                  </a>
-                </div>
-                <div className="ml-4">
-                  <Image
-                    src="/relax-plus-banner.png"
-                    alt="RELAX ADHD ondersteuning"
-                    width={120}
-                    height={80}
-                    className="rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
 
             <h2>Actieplan: van zoeken naar eerste afspraak in 5 stappen</h2>
             <p>
@@ -993,24 +963,6 @@ export default function ADHDCoachVindenRegioPage() {
             <p>Laatste update: September 2025. Regional data compiled from Nederlandse coaching directories, zorgverlener networks, en client success surveys. Market conditions en beschikbaarheid kunnen veranderen.</p>
           </div>
         </article>
-      </div>
-      
-      {/* RELAX Banner */}
-      <div className="bg-gray-50 border-t border-gray-200 py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <a
-            href="https://organicolabs.com/relax-plus/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <img 
-              src="/relax-banner-new.jpg" 
-              alt="RELAX - Natuurlijke ADHD ondersteuning" 
-              className="w-full max-w-4xl mx-auto h-auto"
-            />
-          </a>
-        </div>
       </div>
     </main>
   );

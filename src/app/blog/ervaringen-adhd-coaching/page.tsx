@@ -381,25 +381,6 @@ export default function ErvaringenADHDCoachingPage() {
               </div>
             </div>
 
-            {/* RELAX Banner */}
-            <div className="my-8 bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200 rounded-lg p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-teal-900 mb-2">
-                    🧘‍♀️ RELAX: Ondersteuning tijdens je coaching journey
-                  </h3>
-                  <p className="text-teal-700 mb-3">
-                    Geïnspireerd door deze succesverhalen? Ontdek RELAX als natuurlijke ondersteuning tijdens je coaching traject voor optimale resultaten.
-                  </p>
-                  <a 
-                    href="https://organicolabs.com/relax-plus/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors"
-                  >
-                    Success ondersteuning →
-                  </a>
-                </div>
                 <div className="ml-4">
                   <Image
                     src="/relax-plus-banner.png"

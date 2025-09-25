@@ -768,36 +768,6 @@ export default function ADHDRelatiesCoachBalansPage() {
               </div>
             </div>
 
-            {/* RELAX Banner */}
-            <div className="my-8 bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 rounded-lg p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-rose-900 mb-2">
-                    🧘‍♀️ RELAX: Ondersteuning voor harmonieuze relaties
-                  </h3>
-                  <p className="text-rose-700 mb-3">
-                    Terwijl coaching helpt met <strong>ADHD en relaties</strong> vaardigheden, ondersteunt RELAX je naturally bij emotional regulation en stress management voor betere partnerships.
-                  </p>
-                  <a 
-                    href="https://organicolabs.com/relax-plus/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block bg-rose-600 text-white px-4 py-2 rounded-md hover:bg-rose-700 transition-colors"
-                  >
-                    Relatie ondersteuning →
-                  </a>
-                </div>
-                <div className="ml-4">
-                  <Image
-                    src="/relax-plus-banner.png"
-                    alt="RELAX ADHD ondersteuning"
-                    width={120}
-                    height={80}
-                    className="rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
 
             <h2>Langdurige relaties vs nieuwe relaties: verschillende benaderingen</h2>
             <p>

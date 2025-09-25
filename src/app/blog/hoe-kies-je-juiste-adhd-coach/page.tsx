@@ -518,23 +518,6 @@ export default function BlogPost() {
               </div>
             </div>
 
-            {/* RELAX Banner */}
-            <div className="bg-gradient-to-r from-blue-500 to-teal-600 text-white p-6 rounded-lg mb-8">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-xl font-bold mb-2">ADHD onder controle met RELAX</h3>
-                  <p className="text-blue-100 mb-4">
-                    Ontdek de wetenschappelijk bewezen RELAX-methode voor ADHD. Meer rust, focus en zelfvertrouwen in slechts 8 weken.
-                  </p>
-                  <a 
-                    href="https://organicolabs.com/relax-plus/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
-                  >
-                    Ontdek RELAX →
-                  </a>
-                </div>
                 <div className="hidden md:block">
                   <Image 
                     src="/relax-plus-banner.png"
@@ -609,22 +592,6 @@ export default function BlogPost() {
         </div>
       </article>
       
-      {/* RELAX Banner */}
-      <div className="bg-gray-50 border-t border-gray-200 py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <a
-            href="https://organicolabs.com/relax-plus/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <img 
-              src="/relax-banner-new.jpg" 
-              alt="RELAX - Natuurlijke ADHD ondersteuning" 
-              className="w-full max-w-4xl mx-auto h-auto"
-            />
-          </a>
-        </div>
       </div>
     </>
   );

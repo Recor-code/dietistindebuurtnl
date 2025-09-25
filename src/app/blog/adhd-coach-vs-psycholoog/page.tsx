@@ -434,23 +434,6 @@ export default function BlogPost() {
               </div>
             </div>
 
-            {/* RELAX Banner */}
-            <div className="bg-gradient-to-r from-blue-500 to-teal-600 text-white p-6 rounded-lg mb-8">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-xl font-bold mb-2">ADHD onder controle met RELAX</h3>
-                  <p className="text-blue-100 mb-4">
-                    Ontdek de wetenschappelijk bewezen RELAX-methode voor ADHD. Meer rust, focus en zelfvertrouwen in slechts 8 weken.
-                  </p>
-                  <a 
-                    href="https://organicolabs.com/relax-plus/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
-                  >
-                    Ontdek RELAX →
-                  </a>
-                </div>
                 <div className="hidden md:block">
                   <Image 
                     src="/relax-plus-banner.png"
