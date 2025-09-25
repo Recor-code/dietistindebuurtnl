@@ -1,6 +1,4 @@
 import { MetadataRoute } from 'next';
-import { db, cities, blogPosts } from '../../lib/db';
-import { isNotNull } from 'drizzle-orm';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://adhdcoachindebuurt.nl';
@@ -34,39 +32,52 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   try {
-    // Get all cities
-    const allCities = await db
-      .select({
-        slug: cities.slug,
-        createdAt: cities.createdAt,
-        updatedAt: cities.updatedAt,
-      })
-      .from(cities);
-      
-    const cityPages = (allCities || []).map(city => ({
-      url: `${baseUrl}/stad/${city.slug}`,
-      lastModified: city.updatedAt ? new Date(city.updatedAt) : new Date(city.createdAt || new Date()),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    }));
+    // Use Supabase REST API to avoid IPv6 connectivity issues during static generation
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    
+    if (!supabaseUrl || !supabaseKey) {
+      console.warn('Supabase credentials not found, returning static pages only');
+      return staticPages;
+    }
 
-    // Get all blog posts
-    const allPosts = await db
-      .select({
-        slug: blogPosts.slug,
-        createdAt: blogPosts.createdAt,
-        updatedAt: blogPosts.updatedAt,
-        publishedAt: blogPosts.publishedAt,
-      })
-      .from(blogPosts)
-      .where(isNotNull(blogPosts.publishedAt));
-      
-    const blogPages = (allPosts || []).map(post => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(post.createdAt || new Date()),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    }));
+    const headers = {
+      'apikey': supabaseKey,
+      'Authorization': `Bearer ${supabaseKey}`,
+      'Content-Type': 'application/json',
+    };
+
+    // Get all cities using REST API
+    const citiesResponse = await fetch(`${supabaseUrl}/rest/v1/cities?select=slug,created_at,updated_at`, {
+      headers,
+    });
+    
+    let cityPages = [];
+    if (citiesResponse.ok) {
+      const allCities = await citiesResponse.json();
+      cityPages = (allCities || []).map((city: any) => ({
+        url: `${baseUrl}/stad/${city.slug}`,
+        lastModified: city.updated_at ? new Date(city.updated_at) : new Date(city.created_at || new Date()),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+      }));
+    }
+
+    // Get all published blog posts using REST API
+    const postsResponse = await fetch(`${supabaseUrl}/rest/v1/blog_posts?select=slug,created_at,updated_at,published_at&published_at=not.is.null`, {
+      headers,
+    });
+    
+    let blogPages = [];
+    if (postsResponse.ok) {
+      const allPosts = await postsResponse.json();
+      blogPages = (allPosts || []).map((post: any) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: post.updated_at ? new Date(post.updated_at) : new Date(post.created_at || new Date()),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      }));
+    }
 
     return [...staticPages, ...cityPages, ...blogPages];
   } catch (error) {
