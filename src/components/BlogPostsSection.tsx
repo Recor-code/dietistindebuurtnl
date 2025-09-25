@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar, Users } from 'lucide-react';
+import { Users } from 'lucide-react';
 
 // Static blog posts data - latest 3 articles
 const latestPosts = [
@@ -34,8 +34,6 @@ export default function BlogPostsSection() {
   return (
     <>
       {latestPosts.map((post, index) => {
-        const publishedDate = new Date(post.publishedAt);
-        
         return (
           <Link 
             key={post.slug} 
@@ -53,15 +51,7 @@ export default function BlogPostsSection() {
               />
             </div>
             <div className="p-6">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <Calendar className="w-4 h-4" />
-                  <span>{publishedDate.toLocaleDateString('nl-NL', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}</span>
-                </div>
+              <div className="flex items-center justify-end mb-3">
                 <div className="flex items-center gap-1 text-sm text-blue-600 font-medium">
                   <Users className="w-4 h-4" />
                   <span>{post.shares}</span>
