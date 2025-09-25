@@ -140,13 +140,20 @@ export default function ChatAssistant() {
               if (!chunk.replace(/\{[^}]*\}/g, '').trim()) {
                 continue;
               }
+              // Remove JSON metadata from chunk but keep any text content
+              const cleanChunk = chunk.replace(/\{[^}]*\}/g, '').trim();
+              if (cleanChunk) {
+                streamedContent += cleanChunk;
+              }
             }
           } catch (e) {
             // Not JSON, treat as regular content
+            streamedContent += chunk;
           }
+        } else {
+          // No JSON metadata, add chunk as-is
+          streamedContent += chunk;
         }
-        
-        streamedContent += chunk;
         console.log(`📦 Chunk ${chunkCount}:`, chunk);
         
         // Update the assistant message with new content
