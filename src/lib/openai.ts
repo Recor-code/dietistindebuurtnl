@@ -5,8 +5,7 @@ import OpenAI from "openai";
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // Assistant configuration
-const ASSISTANT_ID = process.env.OPENAI_ASSISTANT_ID;
-const USE_ASSISTANTS = !!ASSISTANT_ID;
+const USE_ASSISTANTS = !!process.env.OPENAI_ASSISTANT_ID;
 
 export interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
@@ -16,7 +15,7 @@ export interface ChatMessage {
 export function getAssistantStatus(): { usingAssistant: boolean; assistantId?: string } {
   return {
     usingAssistant: USE_ASSISTANTS,
-    assistantId: ASSISTANT_ID || undefined
+    assistantId: process.env.OPENAI_ASSISTANT_ID || undefined
   };
 }
 
@@ -93,7 +92,7 @@ export async function generateChatResponse(
   sessionId: string = 'default'
 ): Promise<string> {
   try {
-    if (USE_ASSISTANTS && ASSISTANT_ID) {
+    if (USE_ASSISTANTS && process.env.OPENAI_ASSISTANT_ID) {
       return await generateAssistantResponse(messages, sessionId);
     } else {
       return await generateChatCompletionResponse(messages);
@@ -114,7 +113,7 @@ export async function generateStreamingChatResponse(
   return new ReadableStream({
     async start(controller) {
       try {
-        if (USE_ASSISTANTS && ASSISTANT_ID) {
+        if (USE_ASSISTANTS && process.env.OPENAI_ASSISTANT_ID) {
           // Use Assistant API with streaming for function calling support
           await streamAssistantResponse(controller, encoder, messages, sessionId);
         } else {
@@ -162,7 +161,7 @@ async function streamAssistantResponse(
 
   // Create streaming run
   const stream = openai.beta.threads.runs.stream(threadId, {
-    assistant_id: ASSISTANT_ID!,
+    assistant_id: process.env.OPENAI_ASSISTANT_ID!,
   });
 
   for await (const event of stream) {
@@ -360,7 +359,7 @@ async function generateAssistantResponse(
 
     // Run the assistant
     const run = await openai.beta.threads.runs.create(threadId, {
-      assistant_id: ASSISTANT_ID!
+      assistant_id: process.env.OPENAI_ASSISTANT_ID!
     });
 
     // Wait for completion
