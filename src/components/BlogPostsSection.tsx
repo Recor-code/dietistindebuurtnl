@@ -22,7 +22,7 @@ const latestPosts = [
   },
   {
     title: 'ADHD Volwassenen: Coaching vs Medicatie - Wat Werkt?',
-    slug: 'adhd-volwassenen-coaching-medicatie',
+    slug: 'adhd-volwassenen-coaching-vs-medicatie',
     excerpt: 'Vergelijk de voor- en nadelen van ADHD coaching versus medicatie voor volwassenen. Welke aanpak past bij jouw situatie?',
     publishedAt: '2024-12-05',
     readingTime: '9 min leestijd',
