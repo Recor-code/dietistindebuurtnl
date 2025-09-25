@@ -88,7 +88,8 @@ export default function ChatAssistant() {
           messages: [...messages, userMessage].map(m => ({
             role: m.role,
             content: m.content
-          }))
+          })),
+          sessionId: 'chat-session-' + Date.now() // Simple session management
         })
       });
 
@@ -121,9 +122,24 @@ export default function ChatAssistant() {
         }
         
         const chunk = decoder.decode(value, { stream: true });
-        streamedContent += chunk;
         chunkCount++;
         
+        // Check if chunk contains JSON data (for thread info)
+        if (chunk.includes('"type"')) {
+          try {
+            const jsonMatch = chunk.match(/\{"type"[^}]*\}/);
+            if (jsonMatch) {
+              const data = JSON.parse(jsonMatch[0]);
+              console.log('📋 Thread info:', data);
+              // We can store thread info if needed, but continue processing
+              continue;
+            }
+          } catch (e) {
+            // Not JSON, treat as regular content
+          }
+        }
+        
+        streamedContent += chunk;
         console.log(`📦 Chunk ${chunkCount}:`, chunk);
         
         // Update the assistant message with new content
