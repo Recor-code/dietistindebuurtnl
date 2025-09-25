@@ -23,6 +23,44 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'ADHD bij volwassenen: waarom coaching vaak beter helpt dan medicatie alleen',
+  description: 'ADHD bij volwassenen: ontdek waarom coaching naast medicatie vaak betere resultaten geeft. Evidence-based informatie over integrale behandeling.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-15T14:00:00.000Z',
+  dateModified: '2025-09-25T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/adhd-volwassenen-coaching-vs-medicatie'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-volwassenen-coaching-vs-medicatie/featured.webp',
+    width: 1024,
+    height: 1024
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/adhd-volwassenen-coaching-vs-medicatie',
+  wordCount: 3200,
+  articleSection: 'ADHD Behandeling',
+  keywords: ['ADHD volwassenen coaching', 'ADHD medicatie coaching', 'ADHD behandeling volwassenen', 'ADHD coaching vs medicatie'],
+  inLanguage: 'nl-NL'
+};
+
 export default function ADHDVolwassenenCoachingMedicatiePage() {
   const medicationBenefits = [
     { icon: <Brain className="w-5 h-5" />, benefit: "Verbetert concentratie en focus", description: "Stimulerende medicatie helpt neurotransmitters balanceren voor betere aandacht" },

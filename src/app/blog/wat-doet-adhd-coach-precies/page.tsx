@@ -23,6 +23,44 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Wat doet een ADHD coach precies? Alle voordelen op een rij',
+  description: 'Ontdek wat een ADHD coach precies doet, welke voordelen coaching biedt en hoe een coach je helpt met ADHD symptomen, werkstructuur en persoonlijke groei.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-18T14:00:00.000Z',
+  dateModified: '2025-09-25T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/wat-doet-adhd-coach-precies/featured.webp',
+    width: 1024,
+    height: 1024
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies',
+  wordCount: 2200,
+  articleSection: 'ADHD Coaching',
+  keywords: ['wat doet ADHD coach', 'ADHD coaching voordelen', 'ADHD coach taken', 'hoe helpt ADHD coach'],
+  inLanguage: 'nl-NL'
+};
+
 export default function WatDoetADHDCoachVoordelenPage() {
   const coachTaken = [
     {
@@ -143,7 +181,12 @@ export default function WatDoetADHDCoachVoordelenPage() {
   ];
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <main className="container mx-auto px-4 py-8">
       <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Social Share Buttons */}
         <div className="px-8 pt-6 border-b border-gray-100">
@@ -451,5 +494,6 @@ export default function WatDoetADHDCoachVoordelenPage() {
         </div>
       </article>
     </main>
+    </>
   );
 }

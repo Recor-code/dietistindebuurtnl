@@ -23,6 +23,44 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Kosten ADHD coaching: wat zijn de tarieven en wordt het vergoed?',
+  description: 'Wat kost ADHD coaching in Nederland? Complete overzicht van tarieven, vergoedingen en tips om coaching betaalbaar te maken. Inclusief regionale verschillen.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-12T14:00:00.000Z',
+  dateModified: '2025-09-25T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/kosten-adhd-coaching-tarieven/featured.webp',
+    width: 1024,
+    height: 1024
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven',
+  wordCount: 2800,
+  articleSection: 'ADHD Coaching',
+  keywords: ['ADHD coaching kosten', 'ADHD coaching tarieven', 'ADHD coaching vergoeding', 'prijs ADHD coach'],
+  inLanguage: 'nl-NL'
+};
+
 export default function ADHDCoachingKostenPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">

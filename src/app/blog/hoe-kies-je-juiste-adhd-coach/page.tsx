@@ -30,6 +30,44 @@ export const metadata: Metadata = {
   }
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Hoe kies je de juiste ADHD coach bij jou in de buurt? [Complete gids]',
+  description: 'Complete gids voor het kiezen van de juiste ADHD coach bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-24T14:00:00.000Z',
+  dateModified: '2025-09-25T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/hoe-kies-je-juiste-adhd-coach'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp',
+    width: 1024,
+    height: 1024
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/hoe-kies-je-juiste-adhd-coach',
+  wordCount: 2500,
+  articleSection: 'ADHD Coaching',
+  keywords: ['ADHD coach', 'ADHD coaching', 'coach vinden', 'ADHD hulp', 'coach kiezen'],
+  inLanguage: 'nl-NL'
+};
+
 export default function BlogPost() {
   const post = {
     id: 3,
@@ -47,6 +85,10 @@ export default function BlogPost() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       
       {/* Article */}
       <article className="min-h-screen bg-white">

@@ -23,9 +23,51 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'De beste vragen om te stellen aan je ADHD coach',
+  description: 'De beste vragen om te stellen aan je ADHD coach. Complete lijst met tips voor het intakegesprek en het vinden van de perfecte match.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-20T10:00:00.000Z',
+  dateModified: '2025-09-25T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/beste-vragen-adhd-coach/featured.webp',
+    width: 1024,
+    height: 1024
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach',
+  wordCount: 2000,
+  articleSection: 'ADHD Coaching',
+  keywords: ['vragen ADHD coach', 'ADHD coach gesprek', 'intakegesprek ADHD coach', 'ADHD coaching vragen'],
+  inLanguage: 'nl-NL'
+};
+
 export default function BesteVragenADHDCoachPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="container mx-auto px-4 py-8">
         <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
           {/* Social Share Buttons */}
