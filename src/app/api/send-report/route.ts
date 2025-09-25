@@ -3,12 +3,47 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting check
+    const clientIP = request.ip || request.headers.get('x-forwarded-for') || 'unknown';
+    if (!checkRateLimit(clientIP)) {
+      return NextResponse.json(
+        { error: 'Te veel verzoeken. Probeer het over een minuut opnieuw.' },
+        { status: 429 }
+      );
+    }
+
+    // Basic CSRF check - ensure request comes from same origin
+    const origin = request.headers.get('origin');
+    const host = request.headers.get('host');
+    if (origin && host && !origin.includes(host)) {
+      console.error('CSRF check failed:', { origin, host });
+      return NextResponse.json(
+        { error: 'Ongeldig verzoek' },
+        { status: 403 }
+      );
+    }
+
     const { name, email, responses } = await request.json();
 
     // Validate required fields
     if (!name || !email || !responses) {
       return NextResponse.json(
         { error: 'Naam, e-mail en antwoorden zijn verplicht' },
+        { status: 400 }
+      );
+    }
+
+    // Input sanitization
+    if (typeof name !== 'string' || name.length > 100) {
+      return NextResponse.json(
+        { error: 'Ongeldige naam' },
+        { status: 400 }
+      );
+    }
+
+    if (typeof email !== 'string' || email.length > 254) {
+      return NextResponse.json(
+        { error: 'Ongeldig e-mailadres' },
         { status: 400 }
       );
     }
@@ -46,11 +81,10 @@ export async function POST(request: NextRequest) {
     const reportContent = generateReportHTML(name, responses);
     const reportText = generateReportText(name, responses);
 
-    // Email options
+    // Email options (BCC removed for privacy - can be added back if needed)
     const mailOptions = {
       from: `ADHD Coach in de Buurt Assistant <${process.env.SMTP_USER}>`,
       to: email,
-      bcc: 'info@adhdcoachindebuurt.nl', // Send copy to the main inbox
       subject: `Je persoonlijke ADHD rapport van ${name}`,
       text: reportText,
       html: reportContent,
@@ -71,8 +105,38 @@ export async function POST(request: NextRequest) {
   }
 }
 
+// Simple rate limiting with in-memory store
+const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
+
+function checkRateLimit(identifier: string): boolean {
+  const now = Date.now();
+  const limit = rateLimitStore.get(identifier);
+  
+  if (!limit || now > limit.resetTime) {
+    // Reset or first request
+    rateLimitStore.set(identifier, { count: 1, resetTime: now + 60000 }); // 1 minute window
+    return true;
+  }
+  
+  if (limit.count >= 5) { // Max 5 emails per minute per IP
+    return false;
+  }
+  
+  limit.count++;
+  return true;
+}
+
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function generateReportHTML(name: string, responses: any): string {
-  const sanitizeName = name.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const sanitizeName = escapeHtml(name);
   const currentDate = new Date().toLocaleDateString('nl-NL', {
     year: 'numeric',
     month: 'long',
@@ -83,11 +147,13 @@ function generateReportHTML(name: string, responses: any): string {
   if (typeof responses === 'object' && responses !== null) {
     for (const [question, answer] of Object.entries(responses)) {
       if (typeof answer === 'string' || typeof answer === 'number') {
+        const sanitizedQuestion = escapeHtml(String(question));
+        const sanitizedAnswer = escapeHtml(String(answer)).replace(/\n/g, '<br>');
         responsesHTML += `
           <div style="margin-bottom: 15px;">
-            <strong style="color: #2563eb;">${question}:</strong><br>
+            <strong style="color: #2563eb;">${sanitizedQuestion}:</strong><br>
             <p style="margin: 5px 0; padding: 10px; background-color: #f8fafc; border-left: 3px solid #2563eb; border-radius: 4px;">
-              ${String(answer).replace(/\n/g, '<br>')}
+              ${sanitizedAnswer}
             </p>
           </div>
         `;

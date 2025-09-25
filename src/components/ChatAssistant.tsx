@@ -27,6 +27,11 @@ export default function ChatAssistant() {
   const [showAnalysis, setShowAnalysis] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  
+  // Stable session ID per component instance
+  const sessionIdRef = useRef<string>(`chat-session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`);
+  
+  // Remove conflicting function call UI state - using server-side automatic handling
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -89,7 +94,7 @@ export default function ChatAssistant() {
             role: m.role,
             content: m.content
           })),
-          sessionId: 'chat-session-' + Date.now() // Simple session management
+          sessionId: sessionIdRef.current // Stable session management
         })
       });
 
@@ -124,15 +129,17 @@ export default function ChatAssistant() {
         const chunk = decoder.decode(value, { stream: true });
         chunkCount++;
         
-        // Check if chunk contains JSON data (for thread info)
-        if (chunk.includes('"type"')) {
+        // Simple thread info parsing - skip pure JSON metadata but keep text content
+        if (chunk.includes('"type"') && chunk.includes('"threadId"')) {
           try {
             const jsonMatch = chunk.match(/\{"type"[^}]*\}/);
             if (jsonMatch) {
               const data = JSON.parse(jsonMatch[0]);
               console.log('📋 Thread info:', data);
-              // We can store thread info if needed, but continue processing
-              continue;
+              // Skip this chunk if it's only metadata
+              if (!chunk.replace(/\{[^}]*\}/g, '').trim()) {
+                continue;
+              }
             }
           } catch (e) {
             // Not JSON, treat as regular content
@@ -165,6 +172,8 @@ export default function ChatAssistant() {
       setIsLoading(false);
     }
   };
+
+  // Removed handleSendReport function - using server-side automatic handling
 
   const generateAnalysis = async () => {
     if (messages.length < 4) return; // Need some conversation first
@@ -267,6 +276,8 @@ export default function ChatAssistant() {
         )}
         <div ref={messagesEndRef} />
       </div>
+
+      {/* Removed conflicting function call UI - using server-side automatic handling */}
 
       {/* Input */}
       <div className="border-t border-gray-100 p-6">

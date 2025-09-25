@@ -300,6 +300,8 @@ async function streamChatCompletionResponse(
   controller.close();
 }
 
+// Removed unused submitToolOutputs function - using server-side automatic function calling
+
 // Email sending function for questionnaire reports
 async function sendQuestionnaireReport(args: {
   name: string;

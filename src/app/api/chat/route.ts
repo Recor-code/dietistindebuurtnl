@@ -4,6 +4,8 @@ import { generateStreamingChatResponse, type ChatMessage } from '@/lib/openai';
 export async function POST(request: NextRequest) {
   try {
     console.log('🚀 Chat API called');
+    
+    // Handle regular chat messages with server-side automatic function calling
     const { messages, sessionId }: { messages: ChatMessage[]; sessionId?: string } = await request.json();
 
     console.log('📝 Messages received:', messages?.length, 'messages');
