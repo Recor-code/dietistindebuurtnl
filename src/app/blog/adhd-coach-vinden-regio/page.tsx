@@ -283,7 +283,7 @@ export default function ADHDCoachVindenRegioPage() {
                 <div className="grid md:grid-cols-2 gap-2">
                   {searchTerms.map((term, index) => (
                     <div key={index} className="bg-blue-100 p-2 rounded text-blue-800 text-sm text-center">
-                      "{term}"
+                      &quot;{term}&quot;
                     </div>
                   ))}
                 </div>
@@ -317,7 +317,7 @@ export default function ADHDCoachVindenRegioPage() {
               <div className="space-y-3">
                 <div className="bg-white p-3 rounded border-l-4 border-orange-400">
                   <h5 className="font-medium text-orange-800 text-sm mb-1">Voor familie/vrienden:</h5>
-                  <p className="text-orange-700 text-sm">"Ik ben op zoek naar een ADHD coach in de [stad] regio. Ken jij iemand of heb je goede ervaringen gehoord?"</p>
+                  <p className="text-orange-700 text-sm">&quot;Ik ben op zoek naar een ADHD coach in de [stad] regio. Ken jij iemand of heb je goede ervaringen gehoord?&quot;</p>
                 </div>
                 
                 <div className="bg-white p-3 rounded border-l-4 border-orange-400">

@@ -9,7 +9,15 @@ interface PageProps {
 }
 
 // City-specific article data - this would ideally come from a database
-const cityArticles: Record<string, Record<string, any>> = {
+interface CityArticle {
+  title: string;
+  description: string;
+  keywords: string;
+  author: string;
+  publishedAt: Date;
+}
+
+const cityArticles: Record<string, Record<string, CityArticle>> = {
   // Articles will be added here as needed
 };
 

@@ -441,7 +441,7 @@ export default function ADHDVolwassenenCoachingMedicatiePage() {
               </div>
 
               <div className="mt-4 p-3 bg-pink-100 rounded">
-                <p className="text-pink-900 text-sm"><strong>Clinical threshold:</strong> If medication optimizes symptoms but life satisfaction remains &lt;7/10, coaching consultation strongly recommended.</p>
+                <p className="text-pink-900 text-sm"><strong>Clinical threshold:</strong> If medication optimizes symptoms but life satisfaction remains under 7/10, coaching consultation strongly recommended.</p>
               </div>
             </div>
 

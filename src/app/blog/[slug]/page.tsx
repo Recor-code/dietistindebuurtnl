@@ -5,10 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';
 
-// Add proper caching headers for ultra-fast loading
-export const headers = {
-  'Cache-Control': 's-maxage=3600, stale-while-revalidate=86400'
-};
 
 interface PageProps {
   params: Promise<{

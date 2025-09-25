@@ -225,17 +225,17 @@ export default function BlogPost() {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Werk & Productiviteit:</h3>
                 <ul className="text-gray-700 space-y-1">
-                  <li>• "Ik wil een planningsysteem dat werkt voor mijn ADHD-brein"</li>
-                  <li>• "Ik wil leren prioriteiten stellen zonder overweldigend te worden"</li>
-                  <li>• "Ik wil deadlines halen zonder stress-paniek"</li>
+                  <li>• &quot;Ik wil een planningsysteem dat werkt voor mijn ADHD-brein&quot;</li>
+                  <li>• &quot;Ik wil leren prioriteiten stellen zonder overweldigend te worden&quot;</li>
+                  <li>• &quot;Ik wil deadlines halen zonder stress-paniek&quot;</li>
                 </ul>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Persoonlijke Organisatie:</h3>
                 <ul className="text-gray-700 space-y-1">
-                  <li>• "Ik wil mijn administratie eindelijk op orde krijgen"</li>
-                  <li>• "Ik wil routines ontwikkelen die ik daadwerkelijk volhoud"</li>
-                  <li>• "Ik wil mijn huis overzichtelijk houden"</li>
+                  <li>• &quot;Ik wil mijn administratie eindelijk op orde krijgen&quot;</li>
+                  <li>• &quot;Ik wil routines ontwikkelen die ik daadwerkelijk volhoud&quot;</li>
+                  <li>• &quot;Ik wil mijn huis overzichtelijk houden&quot;</li>
                 </ul>
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function BlogPost() {
 
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Stap 2: Belangrijke kwalificaties en certificeringen</h2>
             <p className="text-gray-700 mb-4">
-              Niet elke coach die "ADHD-specialisatie" claimt, heeft daadwerkelijk de expertise. Hier is waar je op moet letten bij het <strong>ADHD coach vinden</strong>:
+              Niet elke coach die &quot;ADHD-specialisatie&quot; claimt, heeft daadwerkelijk de expertise. Hier is waar je op moet letten bij het <strong>ADHD coach vinden</strong>:
             </p>
 
             <div className="bg-yellow-50 p-4 rounded-lg mb-6">
@@ -270,27 +270,27 @@ export default function BlogPost() {
             <div className="space-y-4 mb-8">
               <div className="border-l-4 border-blue-500 pl-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">1. Certificeringen & Ervaring:</h3>
-                <p className="text-gray-700">"Welke specifieke ADHD-coaching certificeringen heeft u en hoeveel cliënten met ADHD heeft u begeleid?"</p>
+                <p className="text-gray-700">&quot;Welke specifieke ADHD-coaching certificeringen heeft u en hoeveel cliënten met ADHD heeft u begeleid?&quot;</p>
               </div>
               
               <div className="border-l-4 border-blue-500 pl-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">2. Coaching Filosofie:</h3>
-                <p className="text-gray-700">"Wat is uw coaching filosofie en hoe past u deze aan voor mensen met ADHD?"</p>
+                <p className="text-gray-700">&quot;Wat is uw coaching filosofie en hoe past u deze aan voor mensen met ADHD?&quot;</p>
               </div>
               
               <div className="border-l-4 border-blue-500 pl-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">3. Sessie Structuur:</h3>
-                <p className="text-gray-700">"Hoe ziet een typische coaching sessie eruit en hoe lang duren ze meestal?"</p>
+                <p className="text-gray-700">&quot;Hoe ziet een typische coaching sessie eruit en hoe lang duren ze meestal?&quot;</p>
               </div>
               
               <div className="border-l-4 border-blue-500 pl-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">4. Meetbare Resultaten:</h3>
-                <p className="text-gray-700">"Hoe meten we voortgang en wat zijn realistische verwachtingen qua timeline?"</p>
+                <p className="text-gray-700">&quot;Hoe meten we voortgang en wat zijn realistische verwachtingen qua timeline?&quot;</p>
               </div>
               
               <div className="border-l-4 border-blue-500 pl-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">5. Crisis Ondersteuning:</h3>
-                <p className="text-gray-700">"Hoe gaat u om met moeilijke momenten tussen sessies en wat is uw bereikbaarheid?"</p>
+                <p className="text-gray-700">&quot;Hoe gaat u om met moeilijke momenten tussen sessies en wat is uw bereikbaarheid?&quot;</p>
               </div>
             </div>
 
@@ -301,31 +301,31 @@ export default function BlogPost() {
               <div className="mt-4 space-y-3 pl-4">
                 <div className="border-l-2 border-gray-300 pl-3">
                   <p className="font-medium">6. Methoden & Tools:</p>
-                  <p className="text-gray-600">"Welke specifieke technieken en tools gebruikt u voor ADHD-uitdagingen?"</p>
+                  <p className="text-gray-600">&quot;Welke specifieke technieken en tools gebruikt u voor ADHD-uitdagingen?&quot;</p>
                 </div>
                 <div className="border-l-2 border-gray-300 pl-3">
                   <p className="font-medium">7. Aanpassing Strategie:</p>
-                  <p className="text-gray-600">"Hoe past u uw aanpak aan als de huidige strategie niet werkt?"</p>
+                  <p className="text-gray-600">&quot;Hoe past u uw aanpak aan als de huidige strategie niet werkt?&quot;</p>
                 </div>
                 <div className="border-l-2 border-gray-300 pl-3">
                   <p className="font-medium">8. Samenwerking Andere Professionals:</p>
-                  <p className="text-gray-600">"Werkt u samen met psychologen, psychiaters of andere hulpverleners?"</p>
+                  <p className="text-gray-600">&quot;Werkt u samen met psychologen, psychiaters of andere hulpverleners?&quot;</p>
                 </div>
                 <div className="border-l-2 border-gray-300 pl-3">
                   <p className="font-medium">9. Eigen ADHD-ervaring:</p>
-                  <p className="text-gray-600">"Heeft u zelf ervaring met ADHD en hoe beïnvloedt dat uw coaching?"</p>
+                  <p className="text-gray-600">&quot;Heeft u zelf ervaring met ADHD en hoe beïnvloedt dat uw coaching?&quot;</p>
                 </div>
                 <div className="border-l-2 border-gray-300 pl-3">
                   <p className="font-medium">10. Kosten & Betalingsopties:</p>
-                  <p className="text-gray-600">"Wat zijn uw tarieven, betalingsopties en annuleringsbeleid?"</p>
+                  <p className="text-gray-600">&quot;Wat zijn uw tarieven, betalingsopties en annuleringsbeleid?&quot;</p>
                 </div>
                 <div className="border-l-2 border-gray-300 pl-3">
                   <p className="font-medium">11. Referenties:</p>
-                  <p className="text-gray-600">"Kunt u referenties verstrekken van eerdere ADHD-cliënten (geanonimiseerd)?"</p>
+                  <p className="text-gray-600">&quot;Kunt u referenties verstrekken van eerdere ADHD-cliënten (geanonimiseerd)?&quot;</p>
                 </div>
                 <div className="border-l-2 border-gray-300 pl-3">
                   <p className="font-medium">12. Vervolgtraject:</p>
-                  <p className="text-gray-600">"Hoe ziet een typisch coachingstraject eruit en wanneer evalueren we of het werkt?"</p>
+                  <p className="text-gray-600">&quot;Hoe ziet een typisch coachingstraject eruit en wanneer evalueren we of het werkt?&quot;</p>
                 </div>
               </div>
             </details>
@@ -338,9 +338,9 @@ export default function BlogPost() {
                 <h3 className="text-lg font-semibold text-red-900 mb-2">🚩 Certificering Rode Vlaggen:</h3>
                 <ul className="text-red-800 space-y-1 text-sm">
                   <li>• Geen verificeerbare certificeringen</li>
-                  <li>• Alleen "online cursussen" als kwalificatie</li>
+                  <li>• Alleen &quot;online cursussen&quot; als kwalificatie</li>
                   <li>• Weigert certificaatnummers te delen</li>
-                  <li>• Claims over "revolutionaire methoden" zonder bewijs</li>
+                  <li>• Claims over &quot;revolutionaire methoden&quot; zonder bewijs</li>
                 </ul>
               </div>
               
