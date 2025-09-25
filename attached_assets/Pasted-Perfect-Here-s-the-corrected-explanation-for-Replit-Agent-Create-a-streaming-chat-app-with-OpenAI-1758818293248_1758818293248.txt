@@ -1,0 +1,77 @@
+Perfect! Here's the corrected explanation for Replit Agent:
+
+Create a streaming chat app with OpenAI Assistant that can send emails via our custom SMTP server.
+What I need:
+
+A chat interface where users can talk to an OpenAI Assistant
+The assistant responses should stream in real-time (like ChatGPT typing effect)
+The assistant can call a function to send email reports (OpenAI will detect the function call automatically)
+
+Technical specs:
+
+Use Next.js
+Install: openai, nodemailer
+OpenAI Assistant with streaming enabled
+Custom SMTP email sending (not SendGrid)
+
+Environment variables should be available in secrets:
+OPENAI_API_KEY
+ASSISTANT_ID
+SMTP_HOST
+SMTP_PORT
+SMTP_USER
+SMTP_PASS
+Key files needed:
+
+/api/chat.js - handles streaming OpenAI Assistant responses AND processes function calls
+/api/send-report.js - sends emails using Nodemailer with my SMTP settings
+Main page with chat interface that shows streaming responses
+
+IMPORTANT - Function Call Handling:
+The OpenAI Assistant is already configured with this function:
+json{
+  "name": "send_questionnaire_report",
+  "description": "Collect user information and send a personalized report via email",
+  "strict": false,
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "User's full name"
+      },
+      "email": {
+        "type": "string",
+        "description": "User's email address"
+      },
+      "responses": {
+        "type": "object",
+        "description": "User's responses to questionnaire questions"
+      }
+    },
+    "required": [
+      "name",
+      "email",
+      "responses"
+    ]
+  }
+}
+Function Response Handling:
+When OpenAI detects a function call during streaming, the /api/chat.js needs to:
+
+Receive the function call from OpenAI's stream
+Extract the function name and arguments
+If function name is "send_questionnaire_report":
+
+Call /api/send-report.js with the arguments
+Get the email sending result
+Send the result back to OpenAI so it can continue the conversation
+
+
+Continue streaming the assistant's response
+
+Email setup:
+Use Nodemailer to send from the SMTP credentials in secrets. Send professional email reports in HTML format.
+The flow:
+User chats → Assistant asks questions → OpenAI calls function → We handle function → Email gets sent → We return result to OpenAI → Assistant continues conversation
+Please build this complete working application with proper streaming function call response handling, error handling, and a clean chat UI.
