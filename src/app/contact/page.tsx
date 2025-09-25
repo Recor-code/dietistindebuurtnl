@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
   title: 'Contact - ADHD Coach in de Buurt',
@@ -34,76 +35,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-bold text-gray-800">Stuur ons een bericht</h2>
               </div>
               
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Naam *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                      placeholder="Je volledige naam"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      E-mailadres *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                      placeholder="je@email.nl"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Onderwerp
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  >
-                    <option value="">Selecteer een onderwerp</option>
-                    <option value="coach-listing">Coach toevoegen aan platform</option>
-                    <option value="general-question">Algemene vraag</option>
-                    <option value="technical-issue">Technisch probleem</option>
-                    <option value="partnership">Samenwerking</option>
-                    <option value="other">Anders</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Bericht *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-vertical"
-                    placeholder="Vertel ons waar we je mee kunnen helpen..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-md"
-                >
-                  <Send size={20} />
-                  Bericht versturen
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
 
