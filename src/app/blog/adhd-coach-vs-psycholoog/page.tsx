@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { Calendar, MapPin, Tag, Heart, ArrowLeft, Share2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '@/components/Header';
 
 // Static metadata for this specific article
 export const metadata: Metadata = {
@@ -48,7 +47,6 @@ export default function BlogPost() {
 
   return (
     <>
-      <Header />
       
       {/* Article */}
       <article className="min-h-screen bg-white">
@@ -524,40 +522,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">ADHD Coach in de Buurt</h3>
-              <p className="text-gray-300 mb-4">
-                Vind de beste ADHD coaches en therapeuten in jouw regio. Persoonlijke begeleiding voor een beter leven met ADHD.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Populaire steden</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><Link href="/amsterdam" className="hover:text-white">Amsterdam</Link></li>
-                <li><Link href="/rotterdam" className="hover:text-white">Rotterdam</Link></li>
-                <li><Link href="/den-haag" className="hover:text-white">Den Haag</Link></li>
-                <li><Link href="/utrecht" className="hover:text-white">Utrecht</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Hulp</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><Link href="/faq" className="hover:text-white">Veelgestelde vragen</Link></li>
-                <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
-                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 ADHD Coach in de Buurt. Alle rechten voorbehouden.</p>
-          </div>
-        </div>
-      </footer>
     </>
   );
 }
