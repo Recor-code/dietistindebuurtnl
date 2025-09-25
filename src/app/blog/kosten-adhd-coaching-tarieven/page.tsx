@@ -63,7 +63,12 @@ const articleSchema = {
 
 export default function ADHDCoachingKostenPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <main className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
       <div className="container mx-auto px-4 py-8">
         <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
           {/* Social Share Buttons */}
@@ -76,7 +81,7 @@ export default function ADHDCoachingKostenPage() {
                 </div>
                 <div className="flex space-x-2">
                   <a 
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-kosten')}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors"
@@ -84,7 +89,7 @@ export default function ADHDCoachingKostenPage() {
                     Facebook
                   </a>
                   <a 
-                    href={`https://wa.me/?text=${encodeURIComponent('Kosten ADHD coaching: wat zijn de tarieven en wordt het vergoed? - https://adhdcoachindebuurt.nl/blog/adhd-coaching-kosten')}`}
+                    href={`https://wa.me/?text=${encodeURIComponent('Kosten ADHD coaching: wat zijn de tarieven en wordt het vergoed? - https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors"
@@ -92,7 +97,7 @@ export default function ADHDCoachingKostenPage() {
                     WhatsApp
                   </a>
                   <a 
-                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-kosten')}`}
+                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors"
@@ -100,7 +105,7 @@ export default function ADHDCoachingKostenPage() {
                     Messenger
                   </a>
                   <a 
-                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('Kosten ADHD coaching: wat zijn de tarieven en wordt het vergoed?')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-kosten')}`}
+                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('Kosten ADHD coaching: wat zijn de tarieven en wordt het vergoed?')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors"
@@ -130,7 +135,7 @@ export default function ADHDCoachingKostenPage() {
           {/* Featured Image */}
           <div className="px-8 mb-8">
             <Image
-              src="/img/blog/adhd-coaching-kosten/featured.webp"
+              src="/img/blog/kosten-adhd-coaching-tarieven/featured.webp"
               alt="Professionele financiële planning en coaching kosten calculator"
               width={800}
               height={400}
@@ -540,5 +545,6 @@ export default function ADHDCoachingKostenPage() {
         </article>
       </div>
     </main>
+    </>
   );
 }

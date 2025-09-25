@@ -119,7 +119,12 @@ export default function ADHDVolwassenenCoachingMedicatiePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <main className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
       <div className="container mx-auto px-4 py-8">
         <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
           {/* Social Share Buttons */}
@@ -801,5 +806,6 @@ export default function ADHDVolwassenenCoachingMedicatiePage() {
         </article>
       </div>
     </main>
+    </>
   );
 }

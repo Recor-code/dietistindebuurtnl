@@ -198,7 +198,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
               </div>
               <div className="flex space-x-2">
                 <a 
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-voordelen')}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors"
@@ -206,7 +206,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
                   Facebook
                 </a>
                 <a 
-                  href={`https://wa.me/?text=${encodeURIComponent('Wat doet een ADHD coach precies? Alle voordelen op een rij - https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-voordelen')}`}
+                  href={`https://wa.me/?text=${encodeURIComponent('Wat doet een ADHD coach precies? Alle voordelen op een rij - https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors"
@@ -214,7 +214,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
                   WhatsApp
                 </a>
                 <a 
-                  href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-voordelen')}`}
+                  href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors"
@@ -222,7 +222,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
                   Messenger
                 </a>
                 <a 
-                  href={`https://x.com/intent/tweet?text=${encodeURIComponent('Wat doet een ADHD coach precies? Alle voordelen op een rij')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-voordelen')}`}
+                  href={`https://x.com/intent/tweet?text=${encodeURIComponent('Wat doet een ADHD coach precies? Alle voordelen op een rij')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors"
@@ -252,7 +252,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
         {/* Featured Image */}
         <div className="px-8 mb-8">
           <Image
-            src="/img/blog/wat-doet-adhd-coach-voordelen/featured.webp"
+            src="/img/blog/wat-doet-adhd-coach-precies/featured.webp"
             alt="ADHD coach guiding client success strategy development planning growth improvement"
             width={800}
             height={400}
