@@ -237,7 +237,7 @@ export default function BlogPage() {
             className="inline-block hover:opacity-90 transition-opacity"
           >
             <img 
-              src="https://adhdcoachindebuurt.nl/relax-banner-new.jpg" 
+              src="/relax-plus-banner.png" 
               alt="RELAX - Natuurlijke rust zonder loom gevoel" 
               className="w-auto mx-auto"
             />

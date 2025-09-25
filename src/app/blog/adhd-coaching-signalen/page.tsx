@@ -464,7 +464,7 @@ export default function ADHDCoachingSignalenPage() {
                 </div>
                 <div className="ml-4">
                   <Image
-                    src="https://adhdcoachindebuurt.nl/relax-banner-new.jpg"
+                    src="/relax-plus-banner.png"
                     alt="RELAX ADHD ondersteuning"
                     width={120}
                     height={80}

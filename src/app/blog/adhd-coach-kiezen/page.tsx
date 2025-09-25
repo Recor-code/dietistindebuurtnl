@@ -495,7 +495,7 @@ export default function BlogPost() {
                 </div>
                 <div className="hidden md:block">
                   <Image 
-                    src="https://adhdcoachindebuurt.nl/relax-banner-new.jpg"
+                    src="/relax-plus-banner.png"
                     alt="RELAX ADHD Training"
                     width={120}
                     height={80}
