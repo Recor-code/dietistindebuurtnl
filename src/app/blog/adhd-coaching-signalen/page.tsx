@@ -455,6 +455,7 @@ export default function ADHDCoachingSignalenPage() {
               </div>
             </div>
 
+            <div>
             <h2>Veelgestelde vragen over ADHD coaching signalen</h2>
             
             <div className="space-y-6">
@@ -533,6 +534,7 @@ export default function ADHDCoachingSignalenPage() {
                   De signalen zijn er niet om je te frustreren - ze zijn compass points naar een beter leven.
                 </p>
               </div>
+            </div>
             </div>
 
           </div>

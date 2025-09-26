@@ -1,0 +1,136 @@
+19:24:12.605 Running build in Washington, D.C., USA (East) – iad1
+19:24:12.606 Build machine configuration: 2 cores, 8 GB
+19:24:12.634 Cloning github.com/Recor-code/adhd (Branch: main, Commit: 30b9acb)
+19:24:19.227 Cloning completed: 6.592s
+19:24:19.484 Restored build cache from previous deployment (93nJ3FfYfSYkA7mvKnBJWhv92kwJ)
+19:24:20.091 Running "vercel build"
+19:24:20.934 Vercel CLI 48.1.6
+19:24:21.275 WARNING: You should not upload the `.next` directory.
+19:24:21.284 Installing dependencies...
+19:24:26.408 
+19:24:26.408 added 82 packages in 4s
+19:24:26.409 
+19:24:26.409 228 packages are looking for funding
+19:24:26.409   run `npm fund` for details
+19:24:26.418 Detected Next.js version: 15.5.3
+19:24:26.424 Running "npm run build"
+19:24:26.654 
+19:24:26.654 > adhdcoachindebuurt@0.1.0 build
+19:24:26.654 > next build
+19:24:26.655 
+19:24:27.714    ▲ Next.js 15.5.3
+19:24:27.715 
+19:24:27.833    Creating an optimized production build ...
+19:24:38.449 Failed to compile.
+19:24:38.449 
+19:24:38.449 ./src/app/blog/adhd-coach-vs-psycholoog/page.tsx
+19:24:38.449 Error:   [31mx[0m Expected '</', got 'jsx text (
+19:24:38.449   [31m|[0m         )'
+19:24:38.449      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-coach-vs-psycholoog/page.tsx[0m:505:1]
+19:24:38.449  [2m502[0m |                     </Link>
+19:24:38.449  [2m503[0m |                   </div>
+19:24:38.449  [2m504[0m |                 </div>
+19:24:38.449  [2m505[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m           </div>
+19:24:38.449  [2m506[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m         </div>
+19:24:38.450  [2m507[0m |           </article>
+19:24:38.450  [2m508[0m |         </>
+19:24:38.450  [2m509[0m |       );
+19:24:38.450      `----
+19:24:38.450 
+19:24:38.450 Caused by:
+19:24:38.450     Syntax Error
+19:24:38.450 
+19:24:38.450 Import trace for requested module:
+19:24:38.450 ./src/app/blog/adhd-coach-vs-psycholoog/page.tsx
+19:24:38.450 
+19:24:38.450 ./src/app/blog/adhd-coaching-kinderen-jongeren/page.tsx
+19:24:38.450 Error:   [31mx[0m Expected '</', got 'jsx text (
+19:24:38.450   [31m|[0m
+19:24:38.450   [31m|[0m             )'
+19:24:38.450      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-coaching-kinderen-jongeren/page.tsx[0m:337:1]
+19:24:38.450  [2m334[0m |                       />
+19:24:38.450  [2m335[0m |                     </div>
+19:24:38.450  [2m336[0m |                   </div>
+19:24:38.450  [2m337[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m             </div>
+19:24:38.450  [2m338[0m | [35;1m|[0m   
+19:24:38.450  [2m339[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m             <h2>De rol van ouders tijdens het coachingtraject</h2>
+19:24:38.451  [2m340[0m |                 <p>As ouders, your involvement in <strong>ADHD begeleiding kinderen</strong> is crucial - but finding the right balance tussen support en independence kan be tricky.</p>
+19:24:38.451  [2m341[0m |     
+19:24:38.451  [2m342[0m |                 <div className="bg-gray-50 p-6 rounded-lg my-6">
+19:24:38.451      `----
+19:24:38.451 
+19:24:38.451 Caused by:
+19:24:38.451     Syntax Error
+19:24:38.451 
+19:24:38.455 Import trace for requested module:
+19:24:38.455 ./src/app/blog/adhd-coaching-kinderen-jongeren/page.tsx
+19:24:38.455 
+19:24:38.455 ./src/app/blog/adhd-coaching-signalen/page.tsx
+19:24:38.456 Error:   [31mx[0m Expected '</', got 'jsx text (
+19:24:38.456   [31m|[0m
+19:24:38.456   [31m|[0m             )'
+19:24:38.456      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-coaching-signalen/page.tsx[0m:456:1]
+19:24:38.456  [2m453[0m |                       />
+19:24:38.456  [2m454[0m |                     </div>
+19:24:38.456  [2m455[0m |                   </div>
+19:24:38.456  [2m456[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m             </div>
+19:24:38.456  [2m457[0m | [35;1m|[0m   
+19:24:38.456  [2m458[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m             <h2>Veelgestelde vragen over ADHD coaching signalen</h2>
+19:24:38.456  [2m459[0m |                 
+19:24:38.456  [2m460[0m |                 <div className="space-y-6">
+19:24:38.456  [2m461[0m |                   <div>
+19:24:38.456      `----
+19:24:38.456 
+19:24:38.456 Caused by:
+19:24:38.456     Syntax Error
+19:24:38.456 
+19:24:38.456 Import trace for requested module:
+19:24:38.457 ./src/app/blog/adhd-coaching-signalen/page.tsx
+19:24:38.457 
+19:24:38.457 ./src/app/blog/adhd-coaching-studenten/page.tsx
+19:24:38.457 Error:   [31mx[0m Expected '</', got 'jsx text (
+19:24:38.457   [31m|[0m
+19:24:38.457   [31m|[0m             )'
+19:24:38.457      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-coaching-studenten/page.tsx[0m:370:1]
+19:24:38.457  [2m367[0m |                       />
+19:24:38.457  [2m368[0m |                     </div>
+19:24:38.457  [2m369[0m |                   </div>
+19:24:38.457  [2m370[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m             </div>
+19:24:38.457  [2m371[0m | [35;1m|[0m   
+19:24:38.457  [2m372[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m             <h2>Veelgestelde vragen over ADHD coaching voor studenten</h2>
+19:24:38.457  [2m373[0m |                 
+19:24:38.457  [2m374[0m |                 <div className="space-y-6">
+19:24:38.457  [2m375[0m |                   <div>
+19:24:38.457      `----
+19:24:38.457 
+19:24:38.457 Caused by:
+19:24:38.457     Syntax Error
+19:24:38.457 
+19:24:38.457 Import trace for requested module:
+19:24:38.458 ./src/app/blog/adhd-coaching-studenten/page.tsx
+19:24:38.458 
+19:24:38.458 ./src/app/blog/adhd-en-werk/page.tsx
+19:24:38.458 Error:   [31mx[0m Expected '</', got 'jsx text (
+19:24:38.458   [31m|[0m
+19:24:38.458   [31m|[0m             )'
+19:24:38.458      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-en-werk/page.tsx[0m:361:1]
+19:24:38.458  [2m358[0m |                       />
+19:24:38.458  [2m359[0m |                     </div>
+19:24:38.459  [2m360[0m |                   </div>
+19:24:38.459  [2m361[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m             </div>
+19:24:38.460  [2m362[0m | [35;1m|[0m   
+19:24:38.460  [2m363[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m             <h2>Veelgestelde vragen over ADHD en werk</h2>
+19:24:38.460  [2m364[0m |                 
+19:24:38.460  [2m365[0m |                 <div className="space-y-6">
+19:24:38.460  [2m366[0m |                   <div>
+19:24:38.460      `----
+19:24:38.460 
+19:24:38.460 Caused by:
+19:24:38.460     Syntax Error
+19:24:38.460 
+19:24:38.460 Import trace for requested module:
+19:24:38.460 ./src/app/blog/adhd-en-werk/page.tsx
+19:24:38.460 
+19:24:38.461 
+19:24:38.461 > Build failed because of webpack errors
+19:24:38.505 Error: Command "npm run build" exited with 1
