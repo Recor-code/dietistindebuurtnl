@@ -69,6 +69,13 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
 
   const handleOptionSelect = (field: keyof QuizData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+    
+    // Auto-advance to next step after selection (except for the last step)
+    if (currentStep < totalSteps) {
+      setTimeout(() => {
+        setCurrentStep(currentStep + 1);
+      }, 500); // Small delay for better UX
+    }
   };
 
   const handleInputChange = (field: keyof QuizData, value: string) => {
@@ -153,7 +160,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black bg-opacity-30 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header with close button */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
