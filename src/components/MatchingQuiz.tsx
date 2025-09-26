@@ -23,6 +23,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState<QuizData>({
     age: '',
     diagnosis: '',
@@ -102,6 +103,8 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
     if (!canProceed()) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
+    
     try {
       const response = await fetch('/api/submit-quiz', {
         method: 'POST',
@@ -115,12 +118,13 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
         setIsSubmitted(true);
         setCurrentStep(7); // Thank you step
       } else {
-        console.error('Failed to submit quiz');
-        alert('Er ging iets mis. Probeer het opnieuw.');
+        const errorData = await response.json();
+        const errorMessage = errorData.details || errorData.error || 'Er ging iets mis bij het versturen.';
+        setSubmitError(errorMessage);
       }
     } catch (error) {
       console.error('Quiz submission error:', error);
-      alert('Er ging iets mis. Probeer het opnieuw.');
+      setSubmitError('Netwerkfout. Controleer je internetverbinding en probeer het opnieuw.');
     } finally {
       setIsSubmitting(false);
     }
@@ -131,6 +135,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
       // Reset form when closing after submission
       setCurrentStep(1);
       setIsSubmitted(false);
+      setSubmitError(null);
       setFormData({
         age: '',
         diagnosis: '',
@@ -344,6 +349,19 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
               <p className="text-sm text-gray-600 mt-4">
                 We sturen je gepersonaliseerde zorg matches op basis van je antwoorden
               </p>
+              
+              {/* Error Message */}
+              {submitError && (
+                <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-sm text-red-700">{submitError}</p>
+                  <button
+                    onClick={() => setSubmitError(null)}
+                    className="text-xs text-red-500 underline mt-1 hover:text-red-700"
+                  >
+                    Verbergen
+                  </button>
+                </div>
+              )}
             </div>
           )}
 
