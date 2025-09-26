@@ -61,23 +61,40 @@ export async function POST(request: NextRequest) {
     console.log('📤 Forwarding to organicolabs.com...');
     
     // Submit to external API
-    const externalResponse = await fetch('https://organicolabs.com/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'User-Agent': 'ADHD-Coach-Platform/1.0',
-      },
-      body: JSON.stringify(submissionData),
-    });
+    try {
+      const externalResponse = await fetch('https://organicolabs.com/api/quiz-submissions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'User-Agent': 'ADHD-Coach-Platform/1.0',
+        },
+        body: JSON.stringify(submissionData),
+        signal: AbortSignal.timeout(10000), // 10 second timeout
+      });
 
-    if (!externalResponse.ok) {
-      console.error('❌ External API error:', externalResponse.status, externalResponse.statusText);
+      if (!externalResponse.ok) {
+        console.error('❌ External API error:', externalResponse.status, externalResponse.statusText);
+        
+        return NextResponse.json(
+          { 
+            error: 'Failed to submit to external service',
+            details: `External API returned ${externalResponse.status}`
+          },
+          { status: 502 }
+        );
+      }
       
-      // Even if external API fails, we can still return success to user
-      // but log the error for debugging
-      console.log('⚠️ Continuing despite external API error to not block user experience');
-    } else {
       console.log('✅ Successfully submitted to external API');
+    } catch (fetchError) {
+      console.error('❌ External API network error:', fetchError);
+      
+      return NextResponse.json(
+        { 
+          error: 'Network error submitting to external service',
+          details: fetchError instanceof Error ? fetchError.message : 'Network timeout'
+        },
+        { status: 502 }
+      );
     }
 
     console.log('✅ Quiz submission processed');
