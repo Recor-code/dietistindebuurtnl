@@ -160,7 +160,10 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+    >
       <div className="bg-white rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header with close button */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
