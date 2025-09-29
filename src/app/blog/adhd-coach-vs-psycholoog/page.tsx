@@ -46,10 +46,8 @@ export default function BlogPost() {
   const currentUrl = `https://adhdcoachindebuurt.nl/blog/${post.slug}`;
 
   return (
-    <>
-      
-      {/* Article */}
-      <article className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
+      <article className="max-w-4xl mx-auto">
         <div className="max-w-4xl mx-auto px-4 py-8">
           {/* Back link */}
           <Link href="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-6">
