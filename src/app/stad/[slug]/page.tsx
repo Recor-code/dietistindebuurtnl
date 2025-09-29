@@ -450,7 +450,9 @@ export default function CityPage({ params }: PageProps) {
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
                           <h3 className="text-xl font-semibold text-gray-900">
-                            {coach.name}
+                            <Link href={`/specialist/${coach.slug}`} className="hover:text-blue-600 transition-colors">
+                              {coach.name}
+                            </Link>
                           </h3>
                           <div className="flex items-center gap-1">
                             <Star size={16} className="text-yellow-400 fill-current" />
@@ -511,6 +513,15 @@ export default function CityPage({ params }: PageProps) {
                         }`}></div>
                         {coach.availabilityStatus === 'available' ? 'Beschikbaar' : 'Druk bezet'}
                       </div>
+                      
+                      {/* Profile Link */}
+                      <Link 
+                        href={`/specialist/${coach.slug}`}
+                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors justify-center font-medium mb-2"
+                      >
+                        <Users size={16} />
+                        Bekijk Profiel
+                      </Link>
                       
                       {/* Contact Options */}
                       <div className="flex gap-2">
