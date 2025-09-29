@@ -6,7 +6,6 @@ import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Heart, Filter, ChevronD
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
-import ChatAssistant from '@/components/ChatAssistant';
 import FeaturedSpots from '@/components/FeaturedSpots';
 import { useState, useEffect, useRef } from 'react';
 
@@ -277,20 +276,6 @@ export default function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* AI Chat Assistant Section */}
-      <section className="py-12 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">
-              Hoi! Ik ben jouw ADHD Assistente
-            </h3>
-            <p className="text-lg text-gray-600">
-              Vertel me over je situatie en ik help je de beste hulp te vinden
-            </p>
-          </div>
-          <ChatAssistant />
-        </div>
-      </section>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
 
