@@ -501,8 +501,8 @@ export default function BlogPost() {
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </main>
   );
 }
