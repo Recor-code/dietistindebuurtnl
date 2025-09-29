@@ -425,114 +425,112 @@ export default function CityPage({ params }: PageProps) {
                 const primaryAction = getPrimaryAction();
 
                 return (
-                <div key={coach.id} className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-start gap-4 flex-1">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-blue-700 font-semibold">
-                          {coach.name.split(' ').map((n: string) => n[0]).join('').substring(0, 2)} {/* eslint-disable-line @typescript-eslint/no-explicit-any */}
-                        </span>
-                      </div>
-                      
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-xl font-semibold text-gray-900">
-                            <Link href={`/specialist/${coach.slug}`} className="hover:text-blue-600 transition-colors">
-                              {coach.name}
-                            </Link>
-                          </h3>
-                          <div className="flex items-center gap-1">
-                            <Star size={16} className="text-yellow-400 fill-current" />
-                            <span className="text-sm font-medium text-gray-700">{coach.rating}</span>
-                            <span className="text-xs text-gray-500">({coach.reviewCount} reviews)</span>
-                          </div>
-                        </div>
-                        
-                        <p className="text-blue-600 font-medium mb-2">
-                          {coach.specialization}
-                        </p>
-                        
-                        <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                          <div className="flex items-center gap-1">
-                            <MapPin size={16} />
-                            <span>{coach.address}</span>
-                          </div>
-                        </div>
-                        
-                        {/* Contact Information */}
-                        <div className="text-sm text-gray-600 mb-4 space-y-1">
-                          {coach.phone && (
-                            <div className="flex items-center gap-2">
-                              <Phone size={14} className="text-blue-600" />
-                              <span>{coach.phone}</span>
-                            </div>
-                          )}
-                          {coach.email && (
-                            <div className="flex items-center gap-2">
-                              <Mail size={14} className="text-blue-600" />
-                              <span>{coach.email}</span>
-                            </div>
-                          )}
-                          {coach.website && (
-                            <div className="flex items-center gap-2">
-                              <Globe size={14} className="text-blue-600" />
-                              <span>{coach.website}</span>
-                            </div>
-                          )}
-                        </div>
-                        
-                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                          {coach.description || 'Ervaren ADHD coach met persoonlijke aanpak voor jouw specifieke behoeften.'}
-                        </p>
-                        
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-2">
-                          {coach.isChildFriendly && (
-                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
-                              Kindvriendelijk
-                            </span>
-                          )}
-                          {coach.weekendAvailable && (
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">
-                              Weekend beschikbaar
-                            </span>
-                          )}
-                          {coach.onlineAvailable && (
-                            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
-                              Online coaching
-                            </span>
-                          )}
-                          {coach.acceptsInsurance && (
-                            <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
-                              Zorgverzekering
-                            </span>
-                          )}
-                        </div>
-                      </div>
+                <div key={coach.id} className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-6 relative">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-blue-700 font-semibold">
+                        {coach.name.split(' ').map((n: string) => n[0]).join('').substring(0, 2)} {/* eslint-disable-line @typescript-eslint/no-explicit-any */}
+                      </span>
                     </div>
                     
-                    <div className="flex flex-col items-end gap-3">
-                      <div className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${
-                        coach.availabilityStatus === 'available' 
-                          ? 'bg-green-100 text-green-700' 
-                          : 'bg-orange-100 text-orange-700'
-                      }`}>
-                        <div className={`w-2 h-2 rounded-full ${
-                          coach.availabilityStatus === 'available' ? 'bg-green-500' : 'bg-orange-500'
-                        }`}></div>
-                        {coach.availabilityStatus === 'available' ? 'Beschikbaar' : 'Druk bezet'}
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-xl font-semibold text-gray-900">
+                          <Link href={`/specialist/${coach.slug}`} className="hover:text-blue-600 transition-colors">
+                            {coach.name}
+                          </Link>
+                        </h3>
+                        <div className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${
+                          coach.availabilityStatus === 'available' 
+                            ? 'bg-green-100 text-green-700' 
+                            : 'bg-orange-100 text-orange-700'
+                        }`}>
+                          <div className={`w-2 h-2 rounded-full ${
+                            coach.availabilityStatus === 'available' ? 'bg-green-500' : 'bg-orange-500'
+                          }`}></div>
+                          {coach.availabilityStatus === 'available' ? 'Beschikbaar' : 'Druk bezet'}
+                        </div>
                       </div>
                       
-                      {/* Profile Link */}
-                      <Link 
-                        href={`/specialist/${coach.slug}`}
-                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors justify-center font-medium mb-2"
-                      >
-                        <Users size={16} />
-                        Bekijk Profiel
-                      </Link>
+                      {/* Rating moved below name */}
+                      <div className="flex items-center gap-1 mb-2">
+                        <Star size={16} className="text-yellow-400 fill-current" />
+                        <span className="text-sm font-medium text-gray-700">{coach.rating}</span>
+                        <span className="text-xs text-gray-500">({coach.reviewCount} reviews)</span>
+                      </div>
                       
+                      <p className="text-blue-600 font-medium mb-2">
+                        {coach.specialization}
+                      </p>
+                      
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <div className="flex items-center gap-1">
+                          <MapPin size={16} />
+                          <span>{coach.address}</span>
+                        </div>
+                      </div>
+                      
+                      {/* Contact Information */}
+                      <div className="text-sm text-gray-600 mb-4 space-y-1">
+                        {coach.phone && (
+                          <div className="flex items-center gap-2">
+                            <Phone size={14} className="text-blue-600" />
+                            <span>{coach.phone}</span>
+                          </div>
+                        )}
+                        {coach.email && (
+                          <div className="flex items-center gap-2">
+                            <Mail size={14} className="text-blue-600" />
+                            <span>{coach.email}</span>
+                          </div>
+                        )}
+                        {coach.website && (
+                          <div className="flex items-center gap-2">
+                            <Globe size={14} className="text-blue-600" />
+                            <span>{coach.website}</span>
+                          </div>
+                        )}
+                      </div>
+                      
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                        {coach.description || 'Ervaren ADHD coach met persoonlijke aanpak voor jouw specifieke behoeften.'}
+                      </p>
+                      
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {coach.isChildFriendly && (
+                          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
+                            Kindvriendelijk
+                          </span>
+                        )}
+                        {coach.weekendAvailable && (
+                          <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">
+                            Weekend beschikbaar
+                          </span>
+                        )}
+                        {coach.onlineAvailable && (
+                          <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
+                            Online coaching
+                          </span>
+                        )}
+                        {coach.acceptsInsurance && (
+                          <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
+                            Zorgverzekering
+                          </span>
+                        )}
+                      </div>
                     </div>
+                  </div>
+                  
+                  {/* Profile Link - positioned at bottom right */}
+                  <div className="flex justify-end">
+                    <Link 
+                      href={`/specialist/${coach.slug}`}
+                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors font-medium"
+                    >
+                      <Users size={16} />
+                      Bekijk Profiel
+                    </Link>
                   </div>
                 </div>
                 );
