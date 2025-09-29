@@ -7,7 +7,6 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Header from '@/components/Header';
-import ChatAssistant from '@/components/ChatAssistant';
 
 interface FAQItem {
   id: string;
@@ -474,18 +473,6 @@ export default function FAQPage() {
             );
           })}
 
-          {/* AI Chat Assistant Section */}
-          <div className="mt-16">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">
-                Hoi! Ik ben jouw ADHD Assistente
-              </h3>
-              <p className="text-lg text-gray-600">
-                Vertel me over je situatie en ik help je de beste hulp te vinden
-              </p>
-            </div>
-            <ChatAssistant />
-          </div>
 
           {/* Additional CTA for finding coaches */}
           <div className="mt-8 bg-blue-50 rounded-lg p-6 text-center border border-blue-200">
