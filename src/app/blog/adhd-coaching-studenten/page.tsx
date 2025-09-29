@@ -370,7 +370,7 @@ export default function ADHDCoachingStudentenPage() {
             </div>
 
             <div>
-            <h2>Veelgestelde vragen over ADHD coaching voor studenten</h2>
+              <h2>Veelgestelde vragen over ADHD coaching voor studenten</h2>
             
             <div className="space-y-6">
               <div>
@@ -437,7 +437,6 @@ export default function ADHDCoachingStudentenPage() {
                   Het is about finding tools en strategies dat work WITH your brain instead van against it. <strong>Studeren zonder stress ADHD</strong> is possible - thousands van students hebben het gedaan, en jij kunt het ook.
                 </p>
               </div>
-            </div>
             </div>
 
           </div>

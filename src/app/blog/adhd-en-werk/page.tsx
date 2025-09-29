@@ -361,7 +361,7 @@ export default function ADHDEnWerkPage() {
             </div>
 
             <div>
-            <h2>Veelgestelde vragen over ADHD en werk</h2>
+              <h2>Veelgestelde vragen over ADHD en werk</h2>
             
             <div className="space-y-6">
               <div>
@@ -428,7 +428,6 @@ export default function ADHDEnWerkPage() {
                   <strong>ADHD carrière</strong> success isn't about fixing yourself; it's about optimizing your work approach tot leverage your neurodivergent strengths. Your professional breakthrough is possible.
                 </p>
               </div>
-            </div>
             </div>
 
           </div>

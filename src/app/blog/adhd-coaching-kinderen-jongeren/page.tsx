@@ -337,7 +337,7 @@ export default function ADHDCoachingKinderenJongerenPage() {
             </div>
 
             <div>
-            <h2>De rol van ouders tijdens het coachingtraject</h2>
+              <h2>De rol van ouders tijdens het coachingtraject</h2>
             <p>As ouders, your involvement in <strong>ADHD begeleiding kinderen</strong> is crucial - but finding the right balance tussen support en independence kan be tricky.</p>
 
             <div className="bg-gray-50 p-6 rounded-lg my-6">
@@ -428,7 +428,6 @@ export default function ADHDCoachingKinderenJongerenPage() {
                   Met de right <strong>ADHD hulp ouders</strong> support en guidance, children with ADHD often become some van the most creative, innovative, en successful individuals. <strong>Kind ADHD coaching</strong> provides the foundation your child needs tot thrive.
                 </p>
               </div>
-            </div>
             </div>
 
           </div>
