@@ -359,9 +359,10 @@ export default function ADHDEnWerkPage() {
                 </div>
               </div>
             </div>
-
-            <div>
-              <h2>Veelgestelde vragen over ADHD en werk</h2>
+          </div>
+          
+          <div className="px-8 prose prose-lg max-w-none">
+            <h2>Veelgestelde vragen over ADHD en werk</h2>
             
             <div className="space-y-6">
               <div>

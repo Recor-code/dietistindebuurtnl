@@ -454,9 +454,10 @@ export default function ADHDCoachingSignalenPage() {
                 </div>
               </div>
             </div>
-
-            <div>
-              <h2>Veelgestelde vragen over ADHD coaching signalen</h2>
+          </div>
+          
+          <div className="px-8 prose prose-lg max-w-none">
+            <h2>Veelgestelde vragen over ADHD coaching signalen</h2>
             
             <div className="space-y-6">
               <div>

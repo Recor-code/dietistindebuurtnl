@@ -335,9 +335,10 @@ export default function ADHDCoachingKinderenJongerenPage() {
                 </div>
               </div>
             </div>
-
-            <div>
-              <h2>De rol van ouders tijdens het coachingtraject</h2>
+          </div>
+          
+          <div className="px-8 prose prose-lg max-w-none">
+            <h2>De rol van ouders tijdens het coachingtraject</h2>
             <p>As ouders, your involvement in <strong>ADHD begeleiding kinderen</strong> is crucial - but finding the right balance tussen support en independence kan be tricky.</p>
 
             <div className="bg-gray-50 p-6 rounded-lg my-6">
