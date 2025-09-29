@@ -87,75 +87,56 @@ export default function FeaturedSpots({ cityId, cityName }: FeaturedSpotsProps) 
   if (featuredSpots.length === 0) {
     // Show purchase section when no featured spots available
     return (
-      <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-lg p-6 mb-8">
-        <div className="flex items-center gap-2 mb-6">
-          <Crown className="text-yellow-600" size={28} />
+      <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-8 mb-8 text-center">
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <Crown className="text-yellow-600" size={32} />
+          <h3 className="text-3xl font-bold text-yellow-800">
+            Premium Plaatsing Beschikbaar in {cityName}
+          </h3>
+        </div>
+        
+        <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
+          Als ADHD coach weet je hoe belangrijk zichtbaarheid is. Onze premium posities zorgen ervoor dat jouw profiel 
+          direct opvalt tussen de andere coaches in {cityName}.
+        </p>
+        
+        <div className="grid md:grid-cols-2 gap-8 mb-8 max-w-4xl mx-auto text-left">
           <div>
-            <h3 className="text-2xl font-bold text-yellow-800">
-              Premium Plaatsing Beschikbaar in {cityName}
-            </h3>
-            <p className="text-yellow-700 text-sm">
-              Verhoog je zichtbaarheid en trek meer cliënten aan
-            </p>
+            <h5 className="font-bold text-yellow-800 mb-4 text-lg">✨ Wat krijg je?</h5>
+            <ul className="text-gray-700 space-y-3">
+              <li>• Top positie met gouden crown badge</li>
+              <li>• Premium styling die opvalt</li>
+              <li>• Eerste indruk bij potentiële cliënten</li>
+              <li>• Hogere click-through rates</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h5 className="font-bold text-yellow-800 mb-4 text-lg">🎯 Waarom werkt dit?</h5>
+            <ul className="text-gray-700 space-y-3">
+              <li>• Mensen scannen eerst de top resultaten</li>
+              <li>• Premium uitstraling = meer vertrouwen</li>
+              <li>• Directe toegang tot jouw specialisaties</li>
+              <li>• Meer aanvragen = meer inkomsten</li>
+            </ul>
           </div>
         </div>
-
-        <div className="grid md:grid-cols-1 gap-6 mb-6">
-          <div className="bg-white rounded-lg border-2 border-yellow-300 p-8 text-center shadow-lg">
-            <div className="bg-gradient-to-r from-yellow-500 to-amber-500 text-white px-4 py-2 rounded-full inline-flex items-center gap-2 text-lg font-bold mb-6">
-              <Crown size={20} />
-              PREMIUM ZICHTBAARHEID
-            </div>
-            
-            <h4 className="text-2xl font-bold text-gray-900 mb-4">Sta bovenaan en trek meer cliënten aan!</h4>
-            
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Als ADHD coach weet je hoe belangrijk zichtbaarheid is. Onze premium posities zorgen ervoor dat jouw profiel 
-              direct opvalt tussen de andere coaches in {cityName}.
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="text-left">
-                <h5 className="font-bold text-gray-800 mb-3">✨ Wat krijg je?</h5>
-                <ul className="text-gray-600 space-y-2">
-                  <li>• Top positie met gouden crown badge</li>
-                  <li>• Premium styling die opvalt</li>
-                  <li>• Eerste indruk bij potentiële cliënten</li>
-                  <li>• Hogere click-through rates</li>
-                </ul>
-              </div>
-              
-              <div className="text-left">
-                <h5 className="font-bold text-gray-800 mb-3">🎯 Waarom werkt dit?</h5>
-                <ul className="text-gray-600 space-y-2">
-                  <li>• Mensen scannen eerst de top resultaten</li>
-                  <li>• Premium uitstraling = meer vertrouwen</li>
-                  <li>• Directe toegang tot jouw specialisaties</li>
-                  <li>• Meer aanvragen = meer inkomsten</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="bg-yellow-50 rounded-lg p-4 mb-6">
-              <p className="text-yellow-800 font-medium">
-                💡 Slechts 3 premium plekken beschikbaar per stad - First come, first served!
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <p className="text-yellow-700 text-lg mb-6 font-medium">
-            Klaar om je praktijk te laten groeien? Neem contact op voor beschikbaarheid en tarieven.
-          </p>
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
-            <Crown size={20} />
-            Neem Contact Op voor Premium Positie
-          </Link>
-        </div>
+        
+        <p className="text-yellow-700 text-lg mb-2 font-medium">
+          💡 Slechts 3 premium plekken beschikbaar per stad
+        </p>
+        
+        <p className="text-gray-600 mb-8">
+          Klaar om je praktijk te laten groeien? Neem contact op voor beschikbaarheid en tarieven.
+        </p>
+        
+        <Link 
+          href="/contact" 
+          className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+        >
+          <Crown size={20} />
+          Neem Contact Op voor Premium Positie
+        </Link>
       </div>
     );
   }
