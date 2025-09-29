@@ -17,6 +17,8 @@
     "@googlemaps/js-api-loader": "^1.16.10",
     "@hookform/resolvers": "^5.2.2",
     "@neondatabase/serverless": "^1.0.1",
+    "@stripe/react-stripe-js": "^4.0.2",
+    "@stripe/stripe-js": "^7.9.0",
     "@supabase/supabase-js": "^2.57.4",
     "@types/google.maps": "^3.58.1",
     "@types/nodemailer": "^7.0.1",
@@ -35,6 +37,7 @@
     "react-hook-form": "^7.62.0",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
+    "stripe": "^18.5.0",
     "ws": "^8.18.3",
     "zod": "^3.25.76"
   },
