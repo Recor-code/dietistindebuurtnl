@@ -123,6 +123,7 @@ export default function ContactForm() {
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
         >
           <option value="">Selecteer een onderwerp</option>
+          <option value="premium-placement">Premium plaatsing aanvragen</option>
           <option value="coach-listing">Coach toevoegen aan platform</option>
           <option value="general-question">Algemene vraag</option>
           <option value="technical-issue">Technisch probleem</option>
