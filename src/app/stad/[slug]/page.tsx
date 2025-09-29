@@ -476,6 +476,28 @@ export default function CityPage({ params }: PageProps) {
                           </div>
                         </div>
                         
+                        {/* Contact Information */}
+                        <div className="text-sm text-gray-600 mb-4 space-y-1">
+                          {coach.phone && (
+                            <div className="flex items-center gap-2">
+                              <Phone size={14} className="text-blue-600" />
+                              <span>{coach.phone}</span>
+                            </div>
+                          )}
+                          {coach.email && (
+                            <div className="flex items-center gap-2">
+                              <Mail size={14} className="text-blue-600" />
+                              <span>{coach.email}</span>
+                            </div>
+                          )}
+                          {coach.website && (
+                            <div className="flex items-center gap-2">
+                              <Globe size={14} className="text-blue-600" />
+                              <span>{coach.website}</span>
+                            </div>
+                          )}
+                        </div>
+                        
                         <p className="text-gray-600 text-sm leading-relaxed mb-4">
                           {coach.description || 'Ervaren ADHD coach met persoonlijke aanpak voor jouw specifieke behoeften.'}
                         </p>
@@ -527,38 +549,6 @@ export default function CityPage({ params }: PageProps) {
                         Bekijk Profiel
                       </Link>
                       
-                      {/* Contact Options */}
-                      <div className="flex gap-2">
-                        {coach.phone && (
-                          <a 
-                            href={`tel:${coach.phone}`}
-                            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                          >
-                            <Phone size={16} />
-                            Bellen
-                          </a>
-                        )}
-                        {coach.email && (
-                          <a 
-                            href={`mailto:${coach.email}`}
-                            className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                          >
-                            <Mail size={16} />
-                            E-mail
-                          </a>
-                        )}
-                        {coach.website && (
-                          <a 
-                            href={coach.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm transition-colors"
-                          >
-                            <Globe size={16} />
-                            Website
-                          </a>
-                        )}
-                      </div>
                     </div>
                   </div>
                 </div>
