@@ -7,6 +7,7 @@ import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
 import ChatAssistant from '@/components/ChatAssistant';
+import FeaturedSpots from '@/components/FeaturedSpots';
 import { useState, useEffect, useRef } from 'react';
 
 interface PageProps {
@@ -292,6 +293,9 @@ export default function CityPage({ params }: PageProps) {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* Featured Spots Section */}
+        <FeaturedSpots cityId={city.id} cityName={city.name} />
+
         {/* ADHD Coaches op de kaart - Main Section */}
         <section className="mb-8">
           <div className="bg-white rounded-lg shadow-lg p-6">

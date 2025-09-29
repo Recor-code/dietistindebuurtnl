@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '../../../lib/supabase';
+import { supabaseServer } from '../../../lib/supabase';
 import Stripe from 'stripe';
 
 if (!process.env.STRIPE_SECRET_KEY) {
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     endDate.setDate(startDate.getDate() + parseInt(duration || '30'));
 
     // Check if position is already taken for the overlapping period
-    const { data: existingSpot } = await supabase
+    const { data: existingSpot } = await supabaseServer
       .from('featured_spots')
       .select('*')
       .eq('city_id', parseInt(cityId))
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create featured spot record
-    const { data: featuredSpot, error } = await supabase
+    const { data: featuredSpot, error } = await supabaseServer
       .from('featured_spots')
       .insert({
         coach_id: parseInt(coachId),

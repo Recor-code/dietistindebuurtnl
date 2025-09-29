@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '../../../../lib/supabase';
+import { supabaseServer } from '../../../../lib/supabase';
 
 export async function GET(
   request: NextRequest,
@@ -9,7 +9,7 @@ export async function GET(
     const { cityId } = await params;
 
     // Get active featured spots for the city with coach details
-    const { data: featuredSpots, error } = await supabase
+    const { data: featuredSpots, error } = await supabaseServer
       .from('featured_spots')
       .select(`
         *,
