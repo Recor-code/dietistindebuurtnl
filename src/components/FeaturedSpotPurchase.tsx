@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+// @ts-ignore
 import { Crown, CreditCard, Lock, Star, MapPin } from 'lucide-react';
 
 // Initialize Stripe

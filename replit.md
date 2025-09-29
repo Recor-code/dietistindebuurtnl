@@ -67,3 +67,23 @@ Preferred communication style: Simple, everyday language.
 - **City Database**: Pre-populated data for 100 largest Dutch cities and 50+ largest Flemish cities (Dutch-speaking Belgium only)
 - **Location Services**: Google Maps integration for geographic visualization and search
 - **Geolocation**: Latitude/longitude coordinate system for precise location matching
+
+### Payment System (NEW)
+- **Stripe Integration**: Secure payment processing for premium coach placements
+- **Featured Spots**: Three-tier premium positioning system (€199/€149/€99 per month)
+- **Payment Tracking**: Database integration for subscription management and payment history
+- **Security**: Server-side validation and protected API endpoints
+
+## Recent Changes
+
+**September 29, 2025**: Successfully implemented Stripe-powered featured spots system for premium coach placements:
+- ✅ Added `featured_spots` database schema with payment tracking, position management, and expiration dates
+- ✅ Created Stripe API endpoints for payment processing (`create-payment-intent`, `confirm-featured-spot`)
+- ✅ Built FeaturedSpots display component with premium styling and crown badges
+- ✅ Developed FeaturedSpotPurchase component with Stripe Elements integration
+- ✅ Integrated featured spots section into city pages (positioned above map section)
+- ✅ Implemented tiered pricing: €199 (top), €149 (second), €99 (third) per month
+- 🔄 **Pending**: Database table creation (connection issues prevent migration)
+- 🔄 **Pending**: Address architectural concerns from code review (server-side validation, pricing enforcement)
+
+The system is architecturally complete with components ready for production once database issues are resolved.

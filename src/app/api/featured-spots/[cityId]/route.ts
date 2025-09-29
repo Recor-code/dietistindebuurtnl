@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseServer } from '../../../../lib/supabase';
+import { supabase } from '../../../../../lib/supabase';
 
 export async function GET(
   request: NextRequest,
@@ -8,8 +8,14 @@ export async function GET(
   try {
     const { cityId } = await params;
 
-    // Get active featured spots for the city with coach details
-    const { data: featuredSpots, error } = await supabaseServer
+    // For now, return empty array since the featured_spots table doesn't exist yet
+    // This allows the component to render properly while the database table is being set up
+    const featuredSpots: any[] = [];
+    const error = null;
+    
+    // TODO: Uncomment when featured_spots table is created in database
+    /*
+    const { data: featuredSpots, error } = await supabase
       .from('featured_spots')
       .select(`
         *,
@@ -24,6 +30,7 @@ export async function GET(
       .eq('is_active', true)
       .gte('end_date', new Date().toISOString())
       .order('position', { ascending: true });
+    */
 
     if (error) {
       console.error('Error fetching featured spots:', error);

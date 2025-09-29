@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseServer } from '../../../lib/supabase';
+import { supabaseServer } from '../../../../lib/supabase';
 import Stripe from 'stripe';
 
 if (!process.env.STRIPE_SECRET_KEY) {
