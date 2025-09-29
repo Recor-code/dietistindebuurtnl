@@ -82,9 +82,9 @@ async function getCoach(slug: string) {
       inPersonAvailable: coach.in_person_available,
       acceptsInsurance: coach.accepts_insurance,
       availabilityStatus: coach.availability_status,
-      cityName: coach.cities?.name,
-      citySlug: coach.cities?.slug,
-      province: coach.cities?.province,
+      cityName: Array.isArray(coach.cities) ? coach.cities[0]?.name : coach.cities?.name,
+      citySlug: Array.isArray(coach.cities) ? coach.cities[0]?.slug : coach.cities?.slug,
+      province: Array.isArray(coach.cities) ? coach.cities[0]?.province : coach.cities?.province,
     };
   } catch (error) {
     console.error('Error fetching coach:', error);
