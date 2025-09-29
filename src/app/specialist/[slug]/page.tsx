@@ -272,9 +272,9 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                   {coach.phone && (
                     <div className="flex items-center space-x-3 mb-4">
                       <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <a href={`tel:${coach.phone}`} className="text-sm text-gray-700 hover:text-blue-600">
+                      <span className="text-sm text-gray-700">
                         {coach.phone}
-                      </a>
+                      </span>
                     </div>
                   )}
 
@@ -282,35 +282,21 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                   {coach.email && (
                     <div className="flex items-center space-x-3 mb-4">
                       <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <a href={`mailto:${coach.email}`} className="text-sm text-gray-700 hover:text-blue-600">
+                      <span className="text-sm text-gray-700">
                         {coach.email}
-                      </a>
+                      </span>
                     </div>
                   )}
 
                   {/* Website */}
                   {coach.website && (
-                    <div className="flex items-center space-x-3 mb-6">
+                    <div className="flex items-center space-x-3 mb-4">
                       <Globe className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <a 
-                        href={coach.website} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-sm text-gray-700 hover:text-blue-600"
-                      >
-                        Website bezoeken
-                      </a>
+                      <span className="text-sm text-gray-700">
+                        {coach.website}
+                      </span>
                     </div>
                   )}
-
-                  {/* Contact button */}
-                  <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200 font-medium">
-                    Contact opnemen
-                  </button>
-                  
-                  <p className="text-xs text-gray-500 mt-2 text-center">
-                    Neem direct contact op voor een kennismakingsgesprek
-                  </p>
                 </div>
               </div>
             </div>
