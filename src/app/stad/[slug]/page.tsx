@@ -413,7 +413,7 @@ export default function CityPage({ params }: PageProps) {
               </div>
             )}
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {filteredCoaches.map((coach, index) => {
                 const getPrimaryAction = () => {
                   if (coach.phone) return { type: 'phone', href: `tel:${coach.phone}`, label: 'Bellen', icon: Phone };
