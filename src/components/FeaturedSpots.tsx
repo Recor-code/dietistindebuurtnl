@@ -87,14 +87,14 @@ export default function FeaturedSpots({ cityId, cityName }: FeaturedSpotsProps) 
   if (featuredSpots.length === 0) {
     // Show purchase section when no featured spots available
     return (
-      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-lg p-6 mb-8">
+      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-lg p-6 mb-8">
         <div className="flex items-center gap-2 mb-6">
-          <Crown className="text-amber-600" size={28} />
+          <Crown className="text-blue-600" size={28} />
           <div>
-            <h3 className="text-2xl font-bold text-amber-800">
+            <h3 className="text-2xl font-bold text-blue-800">
               Premium Plaatsing Beschikbaar in {cityName}
             </h3>
-            <p className="text-amber-700 text-sm">
+            <p className="text-blue-700 text-sm">
               Word de eerste premium ADHD coach op deze pagina
             </p>
           </div>
@@ -102,30 +102,30 @@ export default function FeaturedSpots({ cityId, cityName }: FeaturedSpotsProps) 
 
         <div className="grid md:grid-cols-3 gap-6 mb-6">
           {/* Top Spot */}
-          <div className="bg-white rounded-lg border-2 border-amber-300 p-6 text-center shadow-lg">
-            <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-3 py-1 rounded-full inline-flex items-center gap-1 text-sm font-bold mb-4">
+          <div className="bg-white rounded-lg border-2 border-blue-300 p-6 text-center shadow-lg">
+            <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full inline-flex items-center gap-1 text-sm font-bold mb-4">
               <Crown size={14} />
               TOP POSITIE
             </div>
             <h4 className="text-lg font-bold text-gray-900 mb-2">Positie #1</h4>
-            <p className="text-3xl font-bold text-amber-600 mb-2">€199</p>
+            <p className="text-3xl font-bold text-blue-600 mb-2">€199</p>
             <p className="text-sm text-gray-600 mb-4">per maand</p>
             <ul className="text-sm text-gray-600 text-left mb-4">
               <li>• Bovenaan de featured lijst</li>
-              <li>• Gouden crown badge</li>
+              <li>• Premium crown badge</li>
               <li>• Maximum zichtbaarheid</li>
               <li>• Premium styling</li>
             </ul>
           </div>
 
           {/* Second Spot */}
-          <div className="bg-white rounded-lg border-2 border-amber-300 p-6 text-center shadow-lg">
-            <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-3 py-1 rounded-full inline-flex items-center gap-1 text-sm font-bold mb-4">
+          <div className="bg-white rounded-lg border-2 border-blue-300 p-6 text-center shadow-lg">
+            <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full inline-flex items-center gap-1 text-sm font-bold mb-4">
               <Crown size={14} />
               TWEEDE PLAATS
             </div>
             <h4 className="text-lg font-bold text-gray-900 mb-2">Positie #2</h4>
-            <p className="text-3xl font-bold text-amber-600 mb-2">€149</p>
+            <p className="text-3xl font-bold text-blue-600 mb-2">€149</p>
             <p className="text-sm text-gray-600 mb-4">per maand</p>
             <ul className="text-sm text-gray-600 text-left mb-4">
               <li>• Tweede in featured lijst</li>
@@ -136,13 +136,13 @@ export default function FeaturedSpots({ cityId, cityName }: FeaturedSpotsProps) 
           </div>
 
           {/* Third Spot */}
-          <div className="bg-white rounded-lg border-2 border-amber-300 p-6 text-center shadow-lg">
-            <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-3 py-1 rounded-full inline-flex items-center gap-1 text-sm font-bold mb-4">
+          <div className="bg-white rounded-lg border-2 border-blue-300 p-6 text-center shadow-lg">
+            <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full inline-flex items-center gap-1 text-sm font-bold mb-4">
               <Crown size={14} />
               DERDE PLAATS
             </div>
             <h4 className="text-lg font-bold text-gray-900 mb-2">Positie #3</h4>
-            <p className="text-3xl font-bold text-amber-600 mb-2">€99</p>
+            <p className="text-3xl font-bold text-blue-600 mb-2">€99</p>
             <p className="text-sm text-gray-600 mb-4">per maand</p>
             <ul className="text-sm text-gray-600 text-left mb-4">
               <li>• Derde in featured lijst</li>
@@ -154,12 +154,12 @@ export default function FeaturedSpots({ cityId, cityName }: FeaturedSpotsProps) 
         </div>
 
         <div className="text-center">
-          <p className="text-amber-700 text-sm mb-4">
+          <p className="text-blue-700 text-sm mb-4">
             Wilt u een premium positie? Alle 3 de plekken zijn momenteel beschikbaar!
           </p>
           <Link 
             href="/contact" 
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
           >
             <Crown size={18} />
             Koop Premium Positie
