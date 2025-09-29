@@ -591,18 +591,6 @@ export default function ADHDCoachtrajectDuurPage() {
               </div>
             </div>
 
-                <div className="ml-4">
-                  <Image
-                    src="/relax-plus-banner.png"
-                    alt="RELAX ADHD ondersteuning"
-                    width={120}
-                    height={80}
-                    className="rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
-
             <h2>Kosten per trajectduur: wat investeer je gemiddeld?</h2>
             <p>
               Financial planning voor <strong>ADHD coaching tijdsduur Nederland</strong> requires understanding total investment across different trajectory lengths.
@@ -769,8 +757,6 @@ export default function ADHDCoachtrajectDuurPage() {
             <p>Laatste update: September 2025. Duration statistics compiled from Nederlandse ADHD coaching organizations en international coaching outcome research. Individual results may vary significantly.</p>
           </div>
         </article>
-      </div>
-      
       </div>
     </main>
   );

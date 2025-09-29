@@ -1,0 +1,127 @@
+16:06:31.589 Running build in Washington, D.C., USA (East) – iad1
+16:06:31.590 Build machine configuration: 2 cores, 8 GB
+16:06:31.603 Cloning github.com/Recor-code/adhd (Branch: main, Commit: 3157293)
+16:06:33.211 Cloning completed: 1.608s
+16:06:33.707 Restored build cache from previous deployment (93nJ3FfYfSYkA7mvKnBJWhv92kwJ)
+16:06:34.785 Running "vercel build"
+16:06:35.184 Vercel CLI 48.1.6
+16:06:35.540 Installing dependencies...
+16:06:39.416 
+16:06:39.417 added 82 packages in 4s
+16:06:39.417 
+16:06:39.418 228 packages are looking for funding
+16:06:39.418   run `npm fund` for details
+16:06:39.443 Detected Next.js version: 15.5.3
+16:06:39.448 Running "npm run build"
+16:06:39.577 
+16:06:39.577 > adhdcoachindebuurt@0.1.0 build
+16:06:39.577 > next build
+16:06:39.578 
+16:06:40.635    ▲ Next.js 15.5.3
+16:06:40.636 
+16:06:40.730    Creating an optimized production build ...
+16:06:52.086 Failed to compile.
+16:06:52.086 
+16:06:52.087 ./src/app/blog/adhd-coach-vs-psycholoog/page.tsx
+16:06:52.087 Error:   [31mx[0m Expected '</', got 'jsx text (
+16:06:52.087   [31m|[0m         )'
+16:06:52.087      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-coach-vs-psycholoog/page.tsx[0m:503:1]
+16:06:52.087  [2m500[0m |                     </Link>
+16:06:52.087  [2m501[0m |                   </div>
+16:06:52.087  [2m502[0m |                 </div>
+16:06:52.087  [2m503[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m           </div>
+16:06:52.087  [2m504[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m         </article>
+16:06:52.087  [2m505[0m |           </div>
+16:06:52.087  [2m506[0m |         </main>
+16:06:52.087  [2m507[0m |       );
+16:06:52.087      `----
+16:06:52.088 
+16:06:52.088 Caused by:
+16:06:52.088     Syntax Error
+16:06:52.088 
+16:06:52.088 Import trace for requested module:
+16:06:52.088 ./src/app/blog/adhd-coach-vs-psycholoog/page.tsx
+16:06:52.088 
+16:06:52.088 ./src/app/blog/adhd-coaching-kinderen-jongeren/page.tsx
+16:06:52.088 Error:   [31mx[0m Expected '</', got 'jsx text (
+16:06:52.088   [31m|[0m           )'
+16:06:52.088      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-coaching-kinderen-jongeren/page.tsx[0m:337:1]
+16:06:52.088  [2m334[0m |                       />
+16:06:52.088  [2m335[0m |                     </div>
+16:06:52.088  [2m336[0m |                   </div>
+16:06:52.088  [2m337[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m             </div>
+16:06:52.088  [2m338[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m           </div>
+16:06:52.088  [2m339[0m |             </article>
+16:06:52.088  [2m340[0m |           </div>
+16:06:52.088  [2m341[0m |         </main>
+16:06:52.088      `----
+16:06:52.089 
+16:06:52.089 Caused by:
+16:06:52.089     Syntax Error
+16:06:52.089 
+16:06:52.089 Import trace for requested module:
+16:06:52.089 ./src/app/blog/adhd-coaching-kinderen-jongeren/page.tsx
+16:06:52.089 
+16:06:52.089 ./src/app/blog/adhd-coaching-signalen/page.tsx
+16:06:52.089 Error:   [31mx[0m Expected '</', got 'jsx text (
+16:06:52.089   [31m|[0m           )'
+16:06:52.089      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-coaching-signalen/page.tsx[0m:456:1]
+16:06:52.089  [2m453[0m |                       />
+16:06:52.089  [2m454[0m |                     </div>
+16:06:52.089  [2m455[0m |                   </div>
+16:06:52.089  [2m456[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m             </div>
+16:06:52.090  [2m457[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m           </div>
+16:06:52.090  [2m458[0m |             </article>
+16:06:52.090  [2m459[0m |           </div>
+16:06:52.090  [2m460[0m |         </main>
+16:06:52.090      `----
+16:06:52.090 
+16:06:52.090 Caused by:
+16:06:52.090     Syntax Error
+16:06:52.090 
+16:06:52.090 Import trace for requested module:
+16:06:52.090 ./src/app/blog/adhd-coaching-signalen/page.tsx
+16:06:52.090 
+16:06:52.090 ./src/app/blog/adhd-coaching-studenten/page.tsx
+16:06:52.090 Error:   [31mx[0m Expected '</', got 'jsx text (
+16:06:52.090   [31m|[0m           )'
+16:06:52.091      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-coaching-studenten/page.tsx[0m:370:1]
+16:06:52.091  [2m367[0m |                       />
+16:06:52.091  [2m368[0m |                     </div>
+16:06:52.091  [2m369[0m |                   </div>
+16:06:52.091  [2m370[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m             </div>
+16:06:52.091  [2m371[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m           </div>
+16:06:52.091  [2m372[0m |             </article>
+16:06:52.091  [2m373[0m |           </div>
+16:06:52.091  [2m374[0m |         </main>
+16:06:52.091      `----
+16:06:52.091 
+16:06:52.091 Caused by:
+16:06:52.091     Syntax Error
+16:06:52.091 
+16:06:52.092 Import trace for requested module:
+16:06:52.092 ./src/app/blog/adhd-coaching-studenten/page.tsx
+16:06:52.092 
+16:06:52.092 ./src/app/blog/adhd-en-werk/page.tsx
+16:06:52.092 Error:   [31mx[0m Expected '</', got 'jsx text (
+16:06:52.092   [31m|[0m           )'
+16:06:52.092      ,-[[36;1;4m/vercel/path0/src/app/blog/adhd-en-werk/page.tsx[0m:361:1]
+16:06:52.092  [2m358[0m |                       />
+16:06:52.092  [2m359[0m |                     </div>
+16:06:52.092  [2m360[0m |                   </div>
+16:06:52.092  [2m361[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m             </div>
+16:06:52.092  [2m362[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m           </div>
+16:06:52.092  [2m363[0m |             </article>
+16:06:52.093  [2m364[0m |           </div>
+16:06:52.093  [2m365[0m |         </main>
+16:06:52.093      `----
+16:06:52.093 
+16:06:52.093 Caused by:
+16:06:52.093     Syntax Error
+16:06:52.093 
+16:06:52.093 Import trace for requested module:
+16:06:52.093 ./src/app/blog/adhd-en-werk/page.tsx
+16:06:52.095 
+16:06:52.111 
+16:06:52.112 > Build failed because of webpack errors
+16:06:52.145 Error: Command "npm run build" exited with 1

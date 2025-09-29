@@ -380,18 +380,6 @@ export default function OnlineADHDCoachingPage() {
               </div>
             </div>
 
-                <div className="ml-4">
-                  <Image
-                    src="/relax-plus-banner.png"
-                    alt="RELAX ADHD ondersteuning"
-                    width={120}
-                    height={80}
-                    className="rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
-
             <h2>Veelgestelde vragen over online ADHD coaching</h2>
             
             <div className="space-y-6">

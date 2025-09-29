@@ -356,18 +356,6 @@ export default function ADHDCoachingStudentenPage() {
                 </div>
               </div>
             </div>
-
-                <div className="ml-4">
-                  <Image
-                    src="/relax-plus-banner.png"
-                    alt="RELAX ADHD ondersteuning"
-                    width={120}
-                    height={80}
-                    className="rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </article>
       </div>

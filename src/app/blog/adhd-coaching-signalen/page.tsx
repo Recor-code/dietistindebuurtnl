@@ -442,18 +442,6 @@ export default function ADHDCoachingSignalenPage() {
               <li><Link href="/arnhem" className="text-blue-600 hover:underline">ADHD coach in Arnhem</Link> - Specialisten in <strong>ADHD problemen werk</strong></li>
               <li><Link href="/enschede" className="text-blue-600 hover:underline">ADHD coach in Enschede</Link> - Ervaren coaches voor <strong>ADHD coaching werk privé</strong></li>
             </ul>
-
-                <div className="ml-4">
-                  <Image
-                    src="/relax-plus-banner.png"
-                    alt="RELAX ADHD ondersteuning"
-                    width={120}
-                    height={80}
-                    className="rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </article>
       </div>

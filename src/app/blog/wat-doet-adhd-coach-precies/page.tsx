@@ -493,8 +493,6 @@ export default function WatDoetADHDCoachVoordelenPage() {
           </div>
         </div>
       </article>
-      
-      </div>
     </main>
     </>
   );

@@ -347,18 +347,6 @@ export default function ADHDEnWerkPage() {
               <li><strong>Strength examples:</strong> Concrete stories about creative problem-solving</li>
               <li><strong>Professional references:</strong> People who can speak tot unique contributions</li>
             </ul>
-
-                <div className="ml-4">
-                  <Image
-                    src="/relax-plus-banner.png"
-                    alt="RELAX ADHD ondersteuning"
-                    width={120}
-                    height={80}
-                    className="rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </article>
       </div>
