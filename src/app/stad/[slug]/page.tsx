@@ -293,8 +293,6 @@ export default function CityPage({ params }: PageProps) {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Featured Spots Section */}
-        <FeaturedSpots cityId={city.id} cityName={city.name} />
 
         {/* ADHD Coaches op de kaart - Main Section */}
         <section className="mb-8">
@@ -637,6 +635,13 @@ export default function CityPage({ params }: PageProps) {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Spots Section */}
+      <section className="py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <FeaturedSpots cityId={city.id} cityName={city.name} />
         </div>
       </section>
 
