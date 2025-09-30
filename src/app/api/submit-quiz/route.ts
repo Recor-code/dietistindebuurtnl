@@ -58,9 +58,30 @@ export async function POST(request: NextRequest) {
       quiz_type: 'matching_quiz'
     };
 
-    console.log('📤 Forwarding to organicolabs.com...');
+    console.log('📤 Forwarding to external services...');
     
-    // Submit to external API
+    // Submit to n8n webhook
+    try {
+      const webhookResponse = await fetch('https://n8n-595.workflowapp.ai/webhook/2000b831-93f2-407d-b0c2-eae969395796', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
+        signal: AbortSignal.timeout(10000), // 10 second timeout
+      });
+
+      if (!webhookResponse.ok) {
+        console.error('❌ Webhook error:', webhookResponse.status, webhookResponse.statusText);
+      } else {
+        console.log('✅ Successfully submitted to webhook');
+      }
+    } catch (webhookError) {
+      console.error('❌ Webhook network error:', webhookError);
+      // Don't fail the whole request if webhook fails
+    }
+    
+    // Submit to organicolabs API
     try {
       const externalResponse = await fetch('https://organicolabs.com/api/quiz-submissions', {
         method: 'POST',
