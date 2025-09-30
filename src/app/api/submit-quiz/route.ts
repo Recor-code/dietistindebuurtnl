@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
       quiz_type: 'matching_quiz'
     };
 
-    console.log('📤 Forwarding to external services...');
+    console.log('📤 Forwarding to n8n webhook...');
     
     // Submit to n8n webhook
     try {
@@ -73,46 +73,24 @@ export async function POST(request: NextRequest) {
 
       if (!webhookResponse.ok) {
         console.error('❌ Webhook error:', webhookResponse.status, webhookResponse.statusText);
-      } else {
-        console.log('✅ Successfully submitted to webhook');
-      }
-    } catch (webhookError) {
-      console.error('❌ Webhook network error:', webhookError);
-      // Don't fail the whole request if webhook fails
-    }
-    
-    // Submit to organicolabs API
-    try {
-      const externalResponse = await fetch('https://organicolabs.com/api/quiz-submissions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'User-Agent': 'ADHD-Coach-Platform/1.0',
-        },
-        body: JSON.stringify(submissionData),
-        signal: AbortSignal.timeout(10000), // 10 second timeout
-      });
-
-      if (!externalResponse.ok) {
-        console.error('❌ External API error:', externalResponse.status, externalResponse.statusText);
         
         return NextResponse.json(
           { 
-            error: 'Failed to submit to external service',
-            details: `External API returned ${externalResponse.status}`
+            error: 'Failed to submit quiz',
+            details: `Webhook returned ${webhookResponse.status}`
           },
           { status: 502 }
         );
       }
       
-      console.log('✅ Successfully submitted to external API');
-    } catch (fetchError) {
-      console.error('❌ External API network error:', fetchError);
+      console.log('✅ Successfully submitted to webhook');
+    } catch (webhookError) {
+      console.error('❌ Webhook network error:', webhookError);
       
       return NextResponse.json(
         { 
-          error: 'Network error submitting to external service',
-          details: fetchError instanceof Error ? fetchError.message : 'Network timeout'
+          error: 'Network error submitting quiz',
+          details: webhookError instanceof Error ? webhookError.message : 'Network timeout'
         },
         { status: 502 }
       );
