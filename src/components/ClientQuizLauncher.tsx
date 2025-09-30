@@ -19,7 +19,7 @@ const ClientQuizLauncher: React.FC = () => {
           </p>
           <button
             onClick={() => setIsQuizOpen(true)}
-            className="bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-lg transition-colors shadow-lg hover:shadow-xl"
+            className="bg-sky-400 hover:bg-sky-500 text-white text-lg font-semibold px-8 py-4 rounded-lg transition-colors shadow-lg hover:shadow-xl"
           >
             Doe Onze Matching Quiz
           </button>
