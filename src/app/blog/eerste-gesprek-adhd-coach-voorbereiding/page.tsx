@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import Footer from '@/components/Footer'
 import { CheckCircle2, AlertTriangle, ClipboardList, MessageCircle, Brain, Target, FileText, Lightbulb, Calendar, Phone, Mail, Share2, ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -611,7 +612,8 @@ export default function EersteGesprekVoorbereiding() {
             </div>
           </article>
         </div>
-      </main>
+  </main>
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Calendar, MapPin, Tag, Heart, ArrowLeft, Share2, CheckCircle, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
+import Footer from '@/components/Footer'
 import Image from 'next/image';
 
 // Static metadata for this specific article
@@ -734,7 +735,8 @@ export default function BlogPost() {
             </div>
           </div>
         </article>
-      </main>
+  </main>
+      <Footer />
     </>
   );
 }

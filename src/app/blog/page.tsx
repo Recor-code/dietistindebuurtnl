@@ -1,6 +1,7 @@
-import { Calendar, MapPin, Tag, Heart } from 'lucide-react';
+import { Calendar, MapPin, Tag } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 // Static blog posts data
 const blogPosts = [
@@ -236,6 +237,7 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }

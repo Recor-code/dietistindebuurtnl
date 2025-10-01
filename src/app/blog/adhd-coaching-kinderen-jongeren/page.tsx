@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Footer from '@/components/Footer'
 import { Share2 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -326,6 +327,7 @@ export default function ADHDCoachingKinderenJongerenPage() {
           </div>
         </article>
       </div>
-    </main>
+        <Footer />
+  </main>
   );
 }

@@ -3,6 +3,7 @@ import { supabase } from '../../../../lib/supabase';
 import { Calendar, MapPin, Tag, Heart, ArrowLeft, Share2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 
 interface PageProps {
@@ -381,6 +382,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </div>
       </article>
+      <Footer />
     </div>
   );
 }
