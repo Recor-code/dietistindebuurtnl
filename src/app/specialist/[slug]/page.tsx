@@ -191,120 +191,113 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
 
           {/* Content */}
           <div className="p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              
-              {/* Main content */}
-              <div className="lg:col-span-2">
-                {/* Description */}
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">Over {coach.name}</h2>
-                  <p className="text-gray-700 leading-relaxed">
-                    {coach.description || 'Geen beschrijving beschikbaar.'}
-                  </p>
-                </section>
+            {/* Description */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Over {coach.name}</h2>
+              <p className="text-gray-700 leading-relaxed">
+                {coach.description || 'Geen beschrijving beschikbaar.'}
+              </p>
+            </section>
 
-                {/* Services & Availability */}
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">Services & Beschikbaarheid</h2>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-5 h-5 text-blue-600" />
-                      <span className={coach.isChildFriendly ? 'text-green-700' : 'text-gray-500'}>
-                        {coach.isChildFriendly ? 'Kindvriendelijk' : 'Alleen volwassenen'}
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="w-5 h-5 text-blue-600" />
-                      <span className={coach.weekendAvailable ? 'text-green-700' : 'text-gray-500'}>
-                        {coach.weekendAvailable ? 'Weekend beschikbaar' : 'Alleen doordeweeks'}
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Monitor className="w-5 h-5 text-blue-600" />
-                      <span className={coach.onlineAvailable ? 'text-green-700' : 'text-gray-500'}>
-                        {coach.onlineAvailable ? 'Online sessies' : 'Geen online sessies'}
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Home className="w-5 h-5 text-blue-600" />
-                      <span className={coach.inPersonAvailable ? 'text-green-700' : 'text-gray-500'}>
-                        {coach.inPersonAvailable ? 'Persoonlijke sessies' : 'Geen persoonlijke sessies'}
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <CreditCard className="w-5 h-5 text-blue-600" />
-                      <span className={coach.acceptsInsurance ? 'text-green-700' : 'text-gray-500'}>
-                        {coach.acceptsInsurance ? 'Accepteert verzekering' : 'Geen verzekering'}
-                      </span>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Reviews placeholder */}
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">Reviews</h2>
-                  <div className="bg-gray-50 rounded-lg p-6 text-center">
-                    <Clock className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-                    <p className="text-gray-600">Reviews komen binnenkort beschikbaar</p>
-                    <p className="text-sm text-gray-500 mt-2">
-                      Wij werken hard aan een review systeem om je de beste ervaringen van andere cliënten te tonen.
-                    </p>
-                  </div>
-                </section>
-              </div>
-
-              {/* Sidebar */}
-              <div className="lg:col-span-1">
-                <div className="bg-gray-50 rounded-lg p-6 sticky top-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Contactgegevens</h3>
-                  
-                  {/* Location */}
-                  {coach.address && (
-                    <div className="flex items-start space-x-3 mb-4">
-                      <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="text-sm text-gray-700">{coach.address}</p>
-                        {coach.cityName && (
-                          <p className="text-sm text-gray-500">
-                            {coach.cityName}{coach.province && `, ${coach.province}`}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Phone */}
-                  {coach.phone && (
-                    <div className="flex items-center space-x-3 mb-4">
-                      <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">
-                        {coach.phone}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Email */}
-                  {coach.email && (
-                    <div className="flex items-center space-x-3 mb-4">
-                      <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">
-                        {coach.email}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Website */}
-                  {coach.website && (
-                    <div className="flex items-center space-x-3 mb-4">
-                      <Globe className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">
-                        {coach.website}
-                      </span>
-                    </div>
-                  )}
+            {/* Services & Availability */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Services & Beschikbaarheid</h2>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center space-x-2">
+                  <Users className="w-5 h-5 text-blue-600" />
+                  <span className={coach.isChildFriendly ? 'text-green-700' : 'text-gray-500'}>
+                    {coach.isChildFriendly ? 'Kindvriendelijk' : 'Alleen volwassenen'}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Calendar className="w-5 h-5 text-blue-600" />
+                  <span className={coach.weekendAvailable ? 'text-green-700' : 'text-gray-500'}>
+                    {coach.weekendAvailable ? 'Weekend beschikbaar' : 'Alleen doordeweeks'}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Monitor className="w-5 h-5 text-blue-600" />
+                  <span className={coach.onlineAvailable ? 'text-green-700' : 'text-gray-500'}>
+                    {coach.onlineAvailable ? 'Online sessies' : 'Geen online sessies'}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Home className="w-5 h-5 text-blue-600" />
+                  <span className={coach.inPersonAvailable ? 'text-green-700' : 'text-gray-500'}>
+                    {coach.inPersonAvailable ? 'Persoonlijke sessies' : 'Geen persoonlijke sessies'}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CreditCard className="w-5 h-5 text-blue-600" />
+                  <span className={coach.acceptsInsurance ? 'text-green-700' : 'text-gray-500'}>
+                    {coach.acceptsInsurance ? 'Accepteert verzekering' : 'Geen verzekering'}
+                  </span>
                 </div>
               </div>
-            </div>
+            </section>
+
+            {/* Contactgegevens */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contactgegevens</h2>
+              <div className="bg-gray-50 rounded-lg p-6">
+                {/* Location */}
+                {coach.address && (
+                  <div className="flex items-start space-x-3 mb-4">
+                    <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-gray-700">{coach.address}</p>
+                      {coach.cityName && (
+                        <p className="text-gray-500">
+                          {coach.cityName}{coach.province && `, ${coach.province}`}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Phone */}
+                {coach.phone && (
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <span className="text-gray-700">
+                      {coach.phone}
+                    </span>
+                  </div>
+                )}
+
+                {/* Email */}
+                {coach.email && (
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <span className="text-gray-700">
+                      {coach.email}
+                    </span>
+                  </div>
+                )}
+
+                {/* Website */}
+                {coach.website && (
+                  <div className="flex items-center space-x-3 mb-0">
+                    <Globe className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <span className="text-gray-700">
+                      {coach.website}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </section>
+
+            {/* Reviews placeholder */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Reviews</h2>
+              <div className="bg-gray-50 rounded-lg p-6 text-center">
+                <Clock className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+                <p className="text-gray-600">Reviews komen binnenkort beschikbaar</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  Wij werken hard aan een review systeem om je de beste ervaringen van andere cliënten te tonen.
+                </p>
+              </div>
+            </section>
 
             {/* Claim Practice Section - After Reviews */}
             <div className="mt-8 -mx-8 -mb-8">
