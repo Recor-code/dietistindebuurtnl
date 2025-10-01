@@ -365,7 +365,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                 <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
                 <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
                 <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-                <li><Link href="/gratis-adhd-test" className="hover:text-white">Gratis ADHD Test</Link></li>
+                <li><a href="https://adhdzelftest.nl/" target="_blank" rel="noopener noreferrer" className="hover:text-white">Gratis ADHD Test</a></li>
                 <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
               </ul>
             </div>
