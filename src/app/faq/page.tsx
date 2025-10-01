@@ -489,10 +489,28 @@ export default function FAQPage() {
         </div>
       </section>
 
+      {/* Organicolabs CTA */}
+      <div className="bg-gray-50 border-t border-gray-200 py-8 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <a
+            href="https://organicolabs.com/relax-plus/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block hover:opacity-90 transition-opacity"
+          >
+            <img 
+              src="/relax-banner-new.jpg" 
+              alt="RELAX - Natuurlijke rust zonder loom gevoel" 
+              className="w-auto mx-auto"
+            />
+          </a>
+        </div>
+      </div>
+
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="text-blue-400" size={24} />
@@ -502,7 +520,8 @@ export default function FAQPage() {
                 </div>
               </div>
               <p className="text-gray-400">
-                Vind de beste ADHD coaches en therapeuten bij jou in de buurt. Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
+                Vind de beste ADHD coaches en therapeuten bij jou in de buurt.<br />
+                Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
               </p>
             </div>
             <div>
@@ -511,15 +530,8 @@ export default function FAQPage() {
                 <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
                 <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
                 <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold mb-4">Populaire Steden</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/stad/amsterdam" className="hover:text-white">Amsterdam</Link></li>
-                <li><Link href="/stad/rotterdam" className="hover:text-white">Rotterdam</Link></li>
-                <li><Link href="/stad/utrecht" className="hover:text-white">Utrecht</Link></li>
-                <li><Link href="/stad/eindhoven" className="hover:text-white">Eindhoven</Link></li>
+                <li><a href="https://adhdzelftest.nl/" target="_blank" rel="noopener noreferrer" className="hover:text-white">Gratis ADHD Test</a></li>
+                <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
               </ul>
             </div>
           </div>
