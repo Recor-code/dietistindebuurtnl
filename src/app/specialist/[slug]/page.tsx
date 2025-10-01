@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ClaimPracticeButton from '@/components/ClaimPracticeButton';
 import { 
   MapPin, 
   Phone, 
@@ -325,6 +326,9 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
           </a>
         </div>
       </div>
+
+      {/* Claim Practice Button */}
+      <ClaimPracticeButton practiceName={coach.name} />
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 px-4">
