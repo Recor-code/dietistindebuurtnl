@@ -443,20 +443,20 @@ export default function ADHDCoachVindenRegioPage() {
                 <div>
                   <h5 className="font-medium text-indigo-800 mb-2">Veel keuze & specialisaties:</h5>
                   <ul className="text-indigo-700 text-sm space-y-1">
-                    <li>• <Link href="/amsterdam" className="text-indigo-600 hover:underline">ADHD coach in Amsterdam</Link> - Grootste aanbod, alle specialisaties</li>
-                    <li>• <Link href="/utrecht" className="text-indigo-600 hover:underline">ADHD coach in Utrecht</Link> - Centrale locatie, diverse opties</li>
-                    <li>• <Link href="/rotterdam" className="text-indigo-600 hover:underline">ADHD coach in Rotterdam</Link> - Focus op work-life coaching</li>
-                    <li>• <Link href="/eindhoven" className="text-indigo-600 hover:underline">ADHD coach in Eindhoven</Link> - Tech-industry specialisten</li>
+                    <li>• <Link href="/stad/amsterdam" className="text-indigo-600 hover:underline">ADHD coach in Amsterdam</Link> - Grootste aanbod, alle specialisaties</li>
+                    <li>• <Link href="/stad/utrecht" className="text-indigo-600 hover:underline">ADHD coach in Utrecht</Link> - Centrale locatie, diverse opties</li>
+                    <li>• <Link href="/stad/rotterdam" className="text-indigo-600 hover:underline">ADHD coach in Rotterdam</Link> - Focus op work-life coaching</li>
+                    <li>• <Link href="/stad/eindhoven" className="text-indigo-600 hover:underline">ADHD coach in Eindhoven</Link> - Tech-industry specialisten</li>
                   </ul>
                 </div>
                 
                 <div>
                   <h5 className="font-medium text-indigo-800 mb-2">Goede regionale opties:</h5>
                   <ul className="text-indigo-700 text-sm space-y-1">
-                    <li>• <Link href="/groningen" className="text-indigo-600 hover:underline">ADHD coach in Groningen</Link> - Student & young adult focus</li>
-                    <li>• <Link href="/tilburg" className="text-indigo-600 hover:underline">ADHD coach in Tilburg</Link> - Family coaching specialty</li>
-                    <li>• <Link href="/breda" className="text-indigo-600 hover:underline">ADHD coach in Breda</Link> - Work-life balance experts</li>
-                    <li>• <Link href="/nijmegen" className="text-indigo-600 hover:underline">ADHD coach in Nijmegen</Link> - Academic coaching strength</li>
+                    <li>• <Link href="/stad/groningen" className="text-indigo-600 hover:underline">ADHD coach in Groningen</Link> - Student & young adult focus</li>
+                    <li>• <Link href="/stad/tilburg" className="text-indigo-600 hover:underline">ADHD coach in Tilburg</Link> - Family coaching specialty</li>
+                    <li>• <Link href="/stad/breda" className="text-indigo-600 hover:underline">ADHD coach in Breda</Link> - Work-life balance experts</li>
+                    <li>• <Link href="/stad/nijmegen" className="text-indigo-600 hover:underline">ADHD coach in Nijmegen</Link> - Academic coaching strength</li>
                   </ul>
                 </div>
               </div>
@@ -903,20 +903,20 @@ export default function ADHDCoachVindenRegioPage() {
                 <div className="text-left">
                   <h3 className="font-semibold text-gray-900 mb-2">Populaire coaching steden:</h3>
                   <ul className="space-y-1 text-gray-700 text-sm">
-                    <li>• <Link href="/amsterdam" className="text-blue-600 hover:underline">ADHD coach in Amsterdam</Link></li>
-                    <li>• <Link href="/rotterdam" className="text-blue-600 hover:underline">ADHD coach in Rotterdam</Link></li>
-                    <li>• <Link href="/utrecht" className="text-blue-600 hover:underline">ADHD coach in Utrecht</Link></li>
-                    <li>• <Link href="/den-haag" className="text-blue-600 hover:underline">ADHD coach in Den Haag</Link></li>
+                    <li>• <Link href="/stad/amsterdam" className="text-blue-600 hover:underline">ADHD coach in Amsterdam</Link></li>
+                    <li>• <Link href="/stad/rotterdam" className="text-blue-600 hover:underline">ADHD coach in Rotterdam</Link></li>
+                    <li>• <Link href="/stad/utrecht" className="text-blue-600 hover:underline">ADHD coach in Utrecht</Link></li>
+                    <li>• <Link href="/stad/den-haag" className="text-blue-600 hover:underline">ADHD coach in Den Haag</Link></li>
                   </ul>
                 </div>
                 
                 <div className="text-left">
                   <h3 className="font-semibold text-gray-900 mb-2">Regionale opties:</h3>
                   <ul className="space-y-1 text-gray-700 text-sm">
-                    <li>• <Link href="/eindhoven" className="text-blue-600 hover:underline">ADHD coach in Eindhoven</Link></li>
-                    <li>• <Link href="/groningen" className="text-blue-600 hover:underline">ADHD coach in Groningen</Link></li>
-                    <li>• <Link href="/tilburg" className="text-blue-600 hover:underline">ADHD coach in Tilburg</Link></li>
-                    <li>• <Link href="/breda" className="text-blue-600 hover:underline">ADHD coach in Breda</Link></li>
+                    <li>• <Link href="/stad/eindhoven" className="text-blue-600 hover:underline">ADHD coach in Eindhoven</Link></li>
+                    <li>• <Link href="/stad/groningen" className="text-blue-600 hover:underline">ADHD coach in Groningen</Link></li>
+                    <li>• <Link href="/stad/tilburg" className="text-blue-600 hover:underline">ADHD coach in Tilburg</Link></li>
+                    <li>• <Link href="/stad/breda" className="text-blue-600 hover:underline">ADHD coach in Breda</Link></li>
                   </ul>
                 </div>
                 
