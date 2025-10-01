@@ -1,7 +1,3 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { supabase } from '../../../lib/supabase';
 import { ChevronDown, Heart, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
@@ -277,84 +273,9 @@ const comprehensiveFAQs = [
   }
 ];
 
-async function getFAQItems(): Promise<FAQItem[]> {
-  try {
-    const { data, error } = await supabase
-      .from('faq_items')
-      .select('id, question, answer, category, "order", is_published, created_at, updated_at')
-      .eq('is_published', true)
-      .order('order', { ascending: true });
-
-    if (error) {
-      console.error('Error fetching FAQ items:', error);
-      return comprehensiveFAQs; // Fallback to static content
-    }
-
-    // Combine and deduplicate content, prioritize database entries
-    const dbItems = (data || []) as FAQItem[];
-    const staticItems = comprehensiveFAQs.filter(
-      staticItem => !dbItems.some(dbItem => dbItem.id === staticItem.id)
-    );
-    
-    const allItems = [...dbItems, ...staticItems];
-    
-    // Sort by category, then by order within category
-    return allItems.sort((a, b) => {
-      if (a.category !== b.category) {
-        return a.category.localeCompare(b.category);
-      }
-      return a.order - b.order;
-    });
-  } catch (error) {
-    console.error('Error fetching FAQ items:', error);
-    return comprehensiveFAQs; // Fallback to static content
-  }
-
-  function groupFAQsByCategory(faqs: FAQItem[]) {
-    return faqs.reduce((groups, faq) => {
-      const category = faq.category;
-      if (!groups[category]) {
-        groups[category] = [];
-      }
-      groups[category].push(faq);
-      return groups;
-    }, {} as Record<string, FAQItem[]>);
-  }
-}
-
-export default function FAQPage() {
-  const [faqs, setFaqs] = useState<FAQItem[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadFAQs() {
-      try {
-        const data = await getFAQItems();
-        setFaqs(data);
-      } catch (error) {
-        console.error('Error loading FAQs:', error);
-        setFaqs(comprehensiveFAQs);
-      } finally {
-        setLoading(false);
-      }
-    }
-    
-    loadFAQs();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">FAQ&#39;s laden...</p>
-        </div>
-      </div>
-    );
-  }
-  
-  // Group FAQs by category
-  const faqsByCategory = faqs.reduce((groups, faq) => {
+// Helper function to group FAQs by category
+function groupFAQsByCategory(faqs: FAQItem[]) {
+  return faqs.reduce((groups, faq) => {
     const category = faq.category;
     if (!groups[category]) {
       groups[category] = [];
@@ -362,7 +283,11 @@ export default function FAQPage() {
     groups[category].push(faq);
     return groups;
   }, {} as Record<string, FAQItem[]>);
+}
 
+export default function FAQPage() {
+  // Group FAQs by category
+  const faqsByCategory = groupFAQsByCategory(comprehensiveFAQs);
   const categories = Object.keys(faqsByCategory).sort();
 
   return (
