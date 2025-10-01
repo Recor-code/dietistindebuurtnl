@@ -186,7 +186,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName }: Cl
                 Neem de controle over je praktijkprofiel en kom in contact met families die ADHD hulp zoeken.
               </p>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-green-50 rounded-lg p-6">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <CheckCircle className="w-6 h-6 text-green-600" />
@@ -203,14 +203,6 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName }: Cl
                   <p className="text-sm text-gray-600">Verbind met families</p>
                 </div>
               </div>
-
-              <button
-                onClick={handleNext}
-                className="w-full bg-sky-500 text-white px-8 py-4 rounded-lg hover:bg-sky-600 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
-              >
-                Aan de slag
-                <ArrowRight className="w-5 h-5" />
-              </button>
             </div>
           )}
 
