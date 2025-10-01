@@ -39,7 +39,7 @@ export default function Header() {
             href="https://adhdzelftest.nl"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-sky-400 hover:bg-sky-500 text-white px-3 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-colors shadow-md text-sm md:text-base"
+            className="bg-sky-400 hover:bg-sky-500 text-white px-2 py-1.5 md:px-6 md:py-3 rounded-lg font-medium md:font-semibold transition-colors shadow-md text-xs md:text-base"
           >
             Gratis ADHD Test
           </a>
