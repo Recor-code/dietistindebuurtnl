@@ -3,6 +3,7 @@ import { supabase } from '../../../../../../lib/supabase';
 import { Calendar, MapPin, ArrowLeft, Users, Star, Clock, Phone, Heart } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 interface PageProps {
   params: Promise<{
@@ -388,6 +389,7 @@ export default async function CityBlogPage({ params }: PageProps) {
           </div>
         </div>
       </article>
+      <Footer />
     </div>
   );
 }
