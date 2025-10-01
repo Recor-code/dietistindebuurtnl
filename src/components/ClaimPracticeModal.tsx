@@ -7,6 +7,7 @@ interface ClaimPracticeModalProps {
   isOpen: boolean;
   onClose: () => void;
   practiceName: string;
+  specialistSlug: string;
 }
 
 interface FormData {
@@ -25,7 +26,7 @@ const SERVICES = [
   'Anders'
 ];
 
-export default function ClaimPracticeModal({ isOpen, onClose, practiceName }: ClaimPracticeModalProps) {
+export default function ClaimPracticeModal({ isOpen, onClose, practiceName, specialistSlug }: ClaimPracticeModalProps) {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -76,6 +77,8 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName }: Cl
   const handleSubmit = async () => {
     setIsSubmitting(true);
     
+    const fullUrl = `https://adhdcoachindebuurt.nl/specialist/${specialistSlug}`;
+    
     try {
       const response = await fetch('https://n8n-595.workflowapp.ai/webhook-test/e892c3b5-8e7c-4bcc-909f-9e4bcdf2a1a1', {
         method: 'POST',
@@ -85,7 +88,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName }: Cl
         body: JSON.stringify({
           ...formData,
           submittedAt: new Date().toISOString(),
-          source: 'adhdcoachindebuurt.nl',
+          source: fullUrl,
           type: 'claim_practice'
         }),
       });

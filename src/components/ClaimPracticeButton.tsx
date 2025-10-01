@@ -6,9 +6,10 @@ import ClaimPracticeModal from './ClaimPracticeModal';
 
 interface ClaimPracticeButtonProps {
   practiceName: string;
+  specialistSlug: string;
 }
 
-export default function ClaimPracticeButton({ practiceName }: ClaimPracticeButtonProps) {
+export default function ClaimPracticeButton({ practiceName, specialistSlug }: ClaimPracticeButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -43,6 +44,7 @@ export default function ClaimPracticeButton({ practiceName }: ClaimPracticeButto
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         practiceName={practiceName}
+        specialistSlug={specialistSlug}
       />
     </>
   );

@@ -308,7 +308,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
 
             {/* Claim Practice Section - After Reviews */}
             <div className="mt-8 -mx-8 -mb-8">
-              <ClaimPracticeButton practiceName={coach.name} />
+              <ClaimPracticeButton practiceName={coach.name} specialistSlug={coach.slug} />
             </div>
           </div>
         </div>
