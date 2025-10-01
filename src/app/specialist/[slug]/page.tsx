@@ -149,11 +149,11 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-8">
+          <div className="border-b border-gray-200 p-8">
             <div className="flex items-start justify-between">
               <div>
-                <h1 className="text-3xl font-bold mb-2">{coach.name}</h1>
-                <p className="text-xl text-blue-100 mb-4">{coach.specialization}</p>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">{coach.name}</h1>
+                <p className="text-xl text-gray-600 mb-4">{coach.specialization}</p>
                 
                 {/* Rating */}
                 <div className="flex items-center space-x-2">
@@ -167,7 +167,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-blue-100">
+                  <span className="text-sm text-gray-600">
                     {rating > 0 ? `${rating.toFixed(1)}` : 'Nog geen reviews'} 
                     {reviewCount > 0 && ` (${reviewCount} reviews)`}
                   </span>
