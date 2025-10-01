@@ -328,7 +328,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="text-blue-400" size={24} />
@@ -348,15 +348,8 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                 <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
                 <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
                 <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold mb-4">Populaire Steden</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/stad/amsterdam" className="hover:text-white">Amsterdam</Link></li>
-                <li><Link href="/stad/rotterdam" className="hover:text-white">Rotterdam</Link></li>
-                <li><Link href="/stad/utrecht" className="hover:text-white">Utrecht</Link></li>
-                <li><Link href="/stad/eindhoven" className="hover:text-white">Eindhoven</Link></li>
+                <li><Link href="/gratis-adhd-test" className="hover:text-white">Gratis ADHD Test</Link></li>
+                <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
               </ul>
             </div>
           </div>
