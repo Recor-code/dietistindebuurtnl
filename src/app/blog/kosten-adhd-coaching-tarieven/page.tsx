@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import Footer from '@/components/Footer'
 import { Euro, Calculator, CreditCard, PiggyBank, TrendingUp, CheckCircle2, AlertTriangle, BarChart3, Clock, Share2, Target, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -700,7 +699,6 @@ export default function KostenADHDCoaching() {
           </article>
         </div>
   </main>
-      <Footer />
     </>
   );
 }

@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import Footer from '@/components/Footer'
 import { CheckCircle2, Star, Users, TrendingUp, Heart, Target, Lightbulb, AlertCircle, MessageSquare, Share2, ArrowLeft, Clock, Trophy } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -766,7 +765,6 @@ export default function ErvaringenADHDCoaching() {
           </article>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

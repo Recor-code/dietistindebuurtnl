@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import Footer from '@/components/Footer'
 import { CheckCircle2, AlertTriangle, MessageCircle, Target, Users, Calendar, Euro, BookOpen, Lightbulb, TrendingUp, Clock, Share2 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -530,7 +529,6 @@ export default function BestVragenADHDCoach() {
           </article>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

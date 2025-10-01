@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Footer from '@/components/Footer'
 import { Share2, Search, MapPin, Users, Clock, Euro, CheckCircle2, AlertCircle, Lightbulb, Target, Calendar, TrendingUp, BarChart3 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -965,7 +964,6 @@ export default function ADHDCoachVindenRegioPage() {
           </div>
         </article>
       </div>
-        <Footer />
   </main>
   );
 }
