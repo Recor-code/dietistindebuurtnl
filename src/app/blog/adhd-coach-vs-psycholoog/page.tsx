@@ -30,6 +30,41 @@ export const metadata: Metadata = {
   }
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'ADHD coach vs psycholoog: wat is het verschil en wat past bij jou?',
+  description: 'ADHD coach of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-24T12:00:00.000Z',
+  dateModified: '2025-09-24T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/adhd-coach-vs-psycholoog'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-coach-vs-psycholoog/featured.webp',
+    width: 1024,
+    height: 1024
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/adhd-coach-vs-psycholoog',
+  inLanguage: 'nl-NL'
+};
+
 export default function BlogPost() {
   const post = {
     id: 2,
@@ -46,8 +81,13 @@ export default function BlogPost() {
   const currentUrl = `https://adhdcoachindebuurt.nl/blog/${post.slug}`;
 
   return (
-    <main className="min-h-screen bg-white">
-      <article className="max-w-4xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <main className="min-h-screen bg-white">
+        <article className="max-w-4xl mx-auto">
         <div className="max-w-4xl mx-auto px-4 py-8">
           {/* Back link */}
           <Link href="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-6">
@@ -618,5 +658,6 @@ export default function BlogPost() {
         </div>
       </article>
   </main>
+  </>
   );
 }
