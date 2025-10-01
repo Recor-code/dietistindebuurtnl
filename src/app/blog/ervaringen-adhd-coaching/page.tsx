@@ -332,14 +332,14 @@ export default function ErvaringenADHDCoaching() {
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center text-gray-600">
                     <Share2 className="w-4 h-4 mr-1" />
-                    <span className="text-sm font-medium">3.2K shares</span>
+                    <span className="text-sm font-medium">3.2K Aandelen</span>
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex flex-wrap gap-2">
                     <a 
                       href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors"
+                      className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
                     >
                       Facebook
                     </a>
@@ -347,7 +347,7 @@ export default function ErvaringenADHDCoaching() {
                       href={`https://wa.me/?text=${encodeURIComponent('Ervaringen ADHD coaching - echte verhalen - ' + currentUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors"
+                      className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
                     >
                       WhatsApp
                     </a>
@@ -355,7 +355,7 @@ export default function ErvaringenADHDCoaching() {
                       href={`https://www.messenger.com/t/?link=${encodeURIComponent(currentUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors"
+                      className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
                     >
                       Messenger
                     </a>
@@ -363,7 +363,7 @@ export default function ErvaringenADHDCoaching() {
                       href={`https://x.com/intent/tweet?text=${encodeURIComponent('Ervaringen ADHD coaching - echte verhalen')}&url=${encodeURIComponent(currentUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors"
+                      className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
                     >
                       X
                     </a>

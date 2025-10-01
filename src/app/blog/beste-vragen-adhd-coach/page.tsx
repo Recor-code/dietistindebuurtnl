@@ -215,14 +215,14 @@ export default function BestVragenADHDCoach() {
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center text-gray-600">
                     <Share2 className="w-4 h-4 mr-1" />
-                    <span className="text-sm font-medium">2.8K shares</span>
+                    <span className="text-sm font-medium">2.8K Aandelen</span>
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex flex-wrap gap-2">
                     <a 
                       href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors"
+                      className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
                     >
                       Facebook
                     </a>
@@ -230,7 +230,7 @@ export default function BestVragenADHDCoach() {
                       href={`https://wa.me/?text=${encodeURIComponent('Beste vragen voor ADHD coach: complete interview gids - https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors"
+                      className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
                     >
                       WhatsApp
                     </a>
@@ -238,7 +238,7 @@ export default function BestVragenADHDCoach() {
                       href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors"
+                      className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
                     >
                       Messenger
                     </a>
@@ -246,7 +246,7 @@ export default function BestVragenADHDCoach() {
                       href={`https://x.com/intent/tweet?text=${encodeURIComponent('Beste vragen voor ADHD coach: complete interview gids')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors"
+                      className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
                     >
                       X
                     </a>
