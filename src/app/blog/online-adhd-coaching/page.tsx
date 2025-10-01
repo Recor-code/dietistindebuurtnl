@@ -507,9 +507,6 @@ export default function OnlineADHDCoachingPage() {
           </div>
 
           {/* Footer */}
-          <div className="px-8 py-4 bg-gray-100 text-center text-sm text-gray-600">
-            <p>Laatste update: September 2025. Research data from peer-reviewed studies on digital ADHD interventions en Nederlandse coaching industry reports.</p>
-          </div>
         </article>
       </div>
   </main>

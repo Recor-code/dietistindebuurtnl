@@ -769,10 +769,6 @@ export default function ADHDVolwassenenCoachingMedicatiePage() {
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="px-8 py-4 bg-gray-100 text-center text-sm text-gray-600">
-            <p>Laatste update: September 2025. Medical information is for educational purposes only - always consult healthcare professionals voor treatment decisions. Research data compiled from peer-reviewed studies en Dutch ADHD registries.</p>
-          </div>
         </article>
       </div>
       

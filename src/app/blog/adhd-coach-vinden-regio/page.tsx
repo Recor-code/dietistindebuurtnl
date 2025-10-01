@@ -998,10 +998,6 @@ export default function ADHDCoachVindenRegioPage() {
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="px-8 py-4 bg-gray-100 text-center text-sm text-gray-600">
-            <p>Laatste update: September 2025. Regional data compiled from Nederlandse coaching directories, zorgverlener networks, en client success surveys. Market conditions en beschikbaarheid kunnen veranderen.</p>
-          </div>
         </article>
       </div>
   </main>

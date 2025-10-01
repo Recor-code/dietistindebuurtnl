@@ -792,10 +792,6 @@ export default function ADHDCoachtrajectDuurPage() {
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="px-8 py-4 bg-gray-100 text-center text-sm text-gray-600">
-            <p>Laatste update: September 2025. Duration statistics compiled from Nederlandse ADHD coaching organizations en international coaching outcome research. Individual results may vary significantly.</p>
-          </div>
         </article>
       </div>
   </main>

@@ -960,10 +960,6 @@ export default function ADHDRelatiesCoachBalansPage() {
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="px-8 py-4 bg-gray-100 text-center text-sm text-gray-600">
-            <p>Laatste update: September 2025. Relationship statistics compiled from Nederlandse ADHD coaching practices en international relationship outcome research. Individual results may vary significantly based on commitment from both partners.</p>
-          </div>
         </article>
       </div>
   </main>
