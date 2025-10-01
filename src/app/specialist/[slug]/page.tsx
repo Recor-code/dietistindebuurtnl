@@ -149,11 +149,11 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           
           {/* Header */}
-          <div className="border-b border-gray-200 p-8">
+          <div className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 p-8">
             <div className="flex items-start justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">{coach.name}</h1>
-                <p className="text-xl text-gray-600 mb-4">{coach.specialization}</p>
+                <h1 className="text-3xl font-bold text-white mb-2">{coach.name}</h1>
+                <p className="text-xl text-white/90 mb-4">{coach.specialization}</p>
                 
                 {/* Rating */}
                 <div className="flex items-center space-x-2">
@@ -162,12 +162,12 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                       <Star
                         key={star}
                         className={`w-5 h-5 ${
-                          star <= rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+                          star <= rating ? 'text-yellow-300 fill-current' : 'text-white/40'
                         }`}
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-white/90">
                     {rating > 0 ? `${rating.toFixed(1)}` : 'Nog geen reviews'} 
                     {reviewCount > 0 && ` (${reviewCount} reviews)`}
                   </span>
@@ -177,10 +177,10 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
               {/* Availability status */}
               <div className={`px-3 py-1 rounded-full text-sm font-medium ${
                 coach.availabilityStatus === 'available' 
-                  ? 'bg-green-100 text-green-800'
+                  ? 'bg-white text-green-700'
                   : coach.availabilityStatus === 'busy'
-                  ? 'bg-yellow-100 text-yellow-800'
-                  : 'bg-red-100 text-red-800'
+                  ? 'bg-white text-yellow-700'
+                  : 'bg-white text-red-700'
               }`}>
                 {coach.availabilityStatus === 'available' && 'Beschikbaar'}
                 {coach.availabilityStatus === 'busy' && 'Druk bezet'}
