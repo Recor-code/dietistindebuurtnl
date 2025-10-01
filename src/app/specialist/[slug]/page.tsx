@@ -145,6 +145,23 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
         </div>
       </div>
 
+      {/* Return to city button */}
+      {coach.citySlug && (
+        <div className="bg-gray-50 border-b">
+          <div className="max-w-4xl mx-auto px-4 py-3">
+            <Link 
+              href={`/stad/${coach.citySlug}`}
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 font-medium"
+            >
+              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Terug naar {coach.cityName}
+            </Link>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           
