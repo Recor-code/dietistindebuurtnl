@@ -305,6 +305,11 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                 </div>
               </div>
             </div>
+
+            {/* Claim Practice Section - After Reviews */}
+            <div className="mt-8 -mx-8 -mb-8">
+              <ClaimPracticeButton practiceName={coach.name} />
+            </div>
           </div>
         </div>
       </div>
@@ -326,9 +331,6 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
           </a>
         </div>
       </div>
-
-      {/* Claim Practice Button */}
-      <ClaimPracticeButton practiceName={coach.name} />
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 px-4">
