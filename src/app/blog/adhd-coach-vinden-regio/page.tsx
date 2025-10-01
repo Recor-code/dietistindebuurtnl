@@ -23,6 +23,41 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'ADHD coach vinden in jouw regio',
+  description: 'Complete gids om systematisch de beste ADHD coach in jouw regio te vinden. Van zoekstrategie tot eerste gesprek.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-25T10:00:00.000Z',
+  dateModified: '2025-09-29T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/adhd-coach-vinden-regio'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-coach-vinden-regio/featured.webp',
+    width: 800,
+    height: 400
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/adhd-coach-vinden-regio',
+  inLanguage: 'nl-NL'
+};
+
 export default function ADHDCoachVindenRegioPage() {
   const searchPlatforms = [
     { name: "NIP (Nederlands Instituut voor Psychologen)", url: "nip.nl", focus: "Geregistreerde psychologen met ADHD specialisatie" },
@@ -134,6 +169,11 @@ export default function ADHDCoachVindenRegioPage() {
   ];
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="container mx-auto px-4 py-8">
         <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
@@ -965,5 +1005,6 @@ export default function ADHDCoachVindenRegioPage() {
         </article>
       </div>
   </main>
+  </>
   );
 }

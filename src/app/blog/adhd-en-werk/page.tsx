@@ -23,8 +23,48 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'ADHD op het werk',
+  description: 'Praktische gids voor ADHD op de werkplek. Van productiviteit tot werkgevers gesprek: zo maak je werk met ADHD succesvol.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-25T10:00:00.000Z',
+  dateModified: '2025-09-29T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/adhd-en-werk'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-en-werk/featured.webp',
+    width: 800,
+    height: 400
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/adhd-en-werk',
+  inLanguage: 'nl-NL'
+};
+
 export default function ADHDEnWerkPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50">
       <div className="container mx-auto px-4 py-8">
         <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
@@ -351,5 +391,6 @@ export default function ADHDEnWerkPage() {
         </article>
       </div>
   </main>
+  </>
   );
 }

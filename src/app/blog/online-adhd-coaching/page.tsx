@@ -23,6 +23,41 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Online ADHD coaching: voordelen, nadelen en werkt het echt?',
+  description: 'Online ADHD coaching: werkt het echt? Ontdek alle voordelen, nadelen en praktische tips voor digitale ADHD begeleiding thuis.',
+  author: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ADHD Coach in de Buurt',
+    url: 'https://adhdcoachindebuurt.nl',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://adhdcoachindebuurt.nl/logo.png'
+    }
+  },
+  datePublished: '2025-09-25T10:00:00.000Z',
+  dateModified: '2025-09-29T12:00:00.000Z',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://adhdcoachindebuurt.nl/blog/online-adhd-coaching'
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://adhdcoachindebuurt.nl/img/blog/online-adhd-coaching/featured.webp',
+    width: 800,
+    height: 400
+  },
+  url: 'https://adhdcoachindebuurt.nl/blog/online-adhd-coaching',
+  inLanguage: 'nl-NL'
+};
+
 export default function OnlineADHDCoachingPage() {
   return (
     <>
