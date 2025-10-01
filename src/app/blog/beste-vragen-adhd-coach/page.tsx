@@ -529,7 +529,7 @@ export default function BestVragenADHDCoach() {
             </div>
           </article>
         </div>
-  </main>
+      </main>
       <Footer />
     </>
   );
