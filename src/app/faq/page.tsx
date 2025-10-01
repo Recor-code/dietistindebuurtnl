@@ -1,3 +1,5 @@
+'use client';
+
 import { ChevronDown, Heart, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
