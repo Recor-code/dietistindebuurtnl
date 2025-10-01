@@ -80,7 +80,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName, spec
     const fullUrl = `https://adhdcoachindebuurt.nl/specialist/${specialistSlug}`;
     
     try {
-      const response = await fetch('https://n8n-595.workflowapp.ai/webhook-test/e892c3b5-8e7c-4bcc-909f-9e4bcdf2a1a1', {
+      const response = await fetch('https://n8n-595.workflowapp.ai/webhook/e892c3b5-8e7c-4bcc-909f-9e4bcdf2a1a1', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
