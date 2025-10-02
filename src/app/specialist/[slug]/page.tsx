@@ -320,28 +320,34 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <h3 className="font-semibold text-gray-900 mb-3">Openingstijden</h3>
                     <div className="space-y-2">
-                      {specialist.openingHours
-                        .split(/[;,]|\n/)
-                        .map((line: string) => line.trim())
-                        .filter((line: string) => line.length > 0)
-                        .map((line: string, index: number) => {
-                          const parts = line.split(':');
-                          if (parts.length >= 2) {
-                            const day = parts[0].trim();
-                            const hours = parts.slice(1).join(':').trim();
-                            return (
-                              <div key={index} className="flex justify-between text-sm">
-                                <span className="font-medium text-gray-900">{day}</span>
-                                <span className="text-gray-600">{hours}</span>
-                              </div>
-                            );
-                          }
-                          return (
-                            <div key={index} className="text-sm text-gray-600">
-                              {line}
-                            </div>
-                          );
-                        })}
+                      {(() => {
+                        const dayOrder = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag', 'zondag'];
+                        const entries = specialist.openingHours
+                          .split(',')
+                          .map((line: string) => line.trim())
+                          .filter((line: string) => line.length > 0)
+                          .map((line: string) => {
+                            const match = line.match(/^(\w+)\s+(.+)$/);
+                            if (match) {
+                              return { day: match[1].toLowerCase(), hours: match[2] };
+                            }
+                            return null;
+                          })
+                          .filter((entry): entry is { day: string; hours: string } => entry !== null);
+                        
+                        entries.sort((a, b) => {
+                          const aIndex = dayOrder.indexOf(a.day);
+                          const bIndex = dayOrder.indexOf(b.day);
+                          return aIndex - bIndex;
+                        });
+                        
+                        return entries.map((entry, index) => (
+                          <div key={index} className="flex justify-between text-sm">
+                            <span className="font-medium text-gray-900 capitalize">{entry.day}</span>
+                            <span className="text-gray-600">{entry.hours}</span>
+                          </div>
+                        ));
+                      })()}
                     </div>
                   </div>
                 )}
