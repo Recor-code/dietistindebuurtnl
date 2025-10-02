@@ -2,13 +2,13 @@
 
 import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
-import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Filter, ChevronDown } from 'lucide-react';
+import { MapPin, Star, Phone, Mail, Globe, Clock, Users } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import FeaturedSpots from '@/components/FeaturedSpots';
-import { useState, useEffect, useRef } from 'react';
+import ChatAssistant from '@/components/ChatAssistant';
+import { useState, useEffect } from 'react';
 
 interface PageProps {
   params: Promise<{
@@ -16,7 +16,7 @@ interface PageProps {
   }>;
 }
 
-async function getCityWithCoaches(slug: string) {
+async function getCityWithPlaces(slug: string) {
   try {
     // Get city data
     const { data: city, error: cityError } = await supabase
@@ -29,25 +29,22 @@ async function getCityWithCoaches(slug: string) {
       return null;
     }
 
-    // Get coaches for this city
-    console.log(`🏙️ Fetching coaches for city: ${city.name} (ID: ${city.id})`);
-    const { data: coaches, error: coachesError } = await supabase
-      .from('coaches')
-      .select('id, name, slug, email, phone, website, specialization, description, address, latitude, longitude, city_id, rating, review_count, is_child_friendly, weekend_available, online_available, in_person_available, accepts_insurance, availability_status, created_at, updated_at')
-      .eq('city_id', city.id);
+    // Get places for this city - using CITY name column
+    console.log(`🏙️ Fetching places for city: ${city.name} (ID: ${city.id})`);
+    const { data: places, error: placesError } = await supabase
+      .from('places')
+      .select('*')
+      .eq('CITY', city.name)
+      .order('RESULT POSITION', { ascending: true }); // Default: relevance (lower = more relevant)
 
-    if (coachesError) {
-      console.error('❌ Error fetching coaches:', coachesError);
-      console.log('🔄 Using fallback/mock data for coaches');
-      return { ...city, coaches: [] };
+    if (placesError) {
+      console.error('❌ Error fetching places:', placesError);
+      return { ...city, places: [] };
     }
 
-    console.log(`👥 Found ${coaches?.length || 0} coaches for ${city.name}`);
-    coaches?.forEach((coach, index) => {
-      console.log(`🏃 Coach ${index + 1}: ${coach.name} at ${coach.latitude}, ${coach.longitude}`);
-    });
+    console.log(`👥 Found ${places?.length || 0} places for ${city.name}`);
 
-    // Transform data shape to match UI expectations
+    // Transform data
     const transformedCity = {
       ...city,
       adhdStats: city.adhd_stats,
@@ -55,27 +52,38 @@ async function getCityWithCoaches(slug: string) {
       updatedAt: city.updated_at ? new Date(city.updated_at) : null
     };
 
-    const transformedCoaches = (coaches || []).map(coach => ({
-      ...coach,
-      cityId: coach.city_id,
-      reviewCount: coach.review_count,
-      isChildFriendly: coach.is_child_friendly,
-      weekendAvailable: coach.weekend_available,
-      onlineAvailable: coach.online_available,
-      inPersonAvailable: coach.in_person_available,
-      acceptsInsurance: coach.accepts_insurance,
-      availabilityStatus: coach.availability_status,
-      createdAt: coach.created_at ? new Date(coach.created_at) : null,
-      updatedAt: coach.updated_at ? new Date(coach.updated_at) : null
+    const transformedPlaces = (places || []).map(place => ({
+      id: place['PLACE ID'],
+      placeId: place['PLACE ID'],
+      name: place['NAME'],
+      slug: place.slug,
+      email: place['EMAIL'] && place['EMAIL'] !== 'n/a' ? place['EMAIL'] : null,
+      phone: place['PHONE'],
+      website: place['WEBSITE'],
+      url: place['URL'],
+      specialization: place['CATEGORY'] || 'ADHD Specialist',
+      description: place.description || `Professionele ADHD begeleiding in ${city.name}`,
+      address: place['ADDRESS'],
+      city: place['CITY'],
+      latitude: place['LAT'] ? parseFloat(place['LAT']) : null,
+      longitude: place['LNG'] ? parseFloat(place['LNG']) : null,
+      rating: place['SCORE'] ? parseFloat(place['SCORE']) : null,
+      reviewCount: place['RATINGS'] ? parseInt(place['RATINGS']) : 0,
+      isChildFriendly: place.kindvriendelijk_filter === 'yes',
+      weekendAvailable: place.weekend_beschikbaar_filter === 'yes',
+      acceptsInsurance: place.basisverzekering_filter === 'yes',
+      studentFriendly: place.studenten_filter === 'yes',
+      openingHours: place['OPENING HOURS'],
+      mainImageUrl: place['MAIN IMAGE URL'],
+      resultPosition: place['RESULT POSITION'] || 999999,
     }));
 
-    return { ...transformedCity, coaches: transformedCoaches };
+    return { ...transformedCity, places: transformedPlaces };
   } catch (error) {
     console.error('Error fetching city:', error);
     return null;
   }
 }
-
 
 export default function CityPage({ params }: PageProps) {
   const [city, setCity] = useState<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -83,17 +91,14 @@ export default function CityPage({ params }: PageProps) {
   const [filters, setFilters] = useState({
     kindvriendelijk: false,
     weekend: false,
-    online: false,
     hoogsteBeoordeling: false
   });
-  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-  const filtersDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function fetchCityData() {
       const resolvedParams = await params;
       const { slug } = resolvedParams;
-      const cityData = await getCityWithCoaches(slug);
+      const cityData = await getCityWithPlaces(slug);
       
       if (!cityData) {
         notFound();
@@ -107,20 +112,6 @@ export default function CityPage({ params }: PageProps) {
     fetchCityData();
   }, [params]);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (filtersDropdownRef.current && !filtersDropdownRef.current.contains(event.target as Node)) {
-        setIsFiltersOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
   if (loading) {
     return <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="text-lg">Loading...</div>
@@ -133,25 +124,29 @@ export default function CityPage({ params }: PageProps) {
 
   const adhdStats = city.adhd_stats ? JSON.parse(city.adhd_stats) : null;
   
-  // Apply filters to coaches
-  let filteredCoaches = [...city.coaches];
+  // Apply filters to places
+  let filteredPlaces = [...city.places];
   
   if (filters.kindvriendelijk) {
-    filteredCoaches = filteredCoaches.filter(coach => coach.isChildFriendly);
+    filteredPlaces = filteredPlaces.filter(place => place.isChildFriendly);
   }
   if (filters.weekend) {
-    filteredCoaches = filteredCoaches.filter(coach => coach.weekendAvailable);
-  }
-  if (filters.online) {
-    filteredCoaches = filteredCoaches.filter(coach => coach.onlineAvailable);
+    filteredPlaces = filteredPlaces.filter(place => place.weekendAvailable);
   }
   if (filters.hoogsteBeoordeling) {
-    filteredCoaches = filteredCoaches.sort((a, b) => parseFloat(b.rating || '0') - parseFloat(a.rating || '0'));
+    // Sort by SCORE (higher to lower)
+    filteredPlaces = filteredPlaces.sort((a, b) => {
+      const ratingA = parseFloat(a.rating || '0');
+      const ratingB = parseFloat(b.rating || '0');
+      return ratingB - ratingA;
+    });
+  } else {
+    // Default: sort by RESULT POSITION (lower to higher = more relevant)
+    filteredPlaces = filteredPlaces.sort((a, b) => a.resultPosition - b.resultPosition);
   }
 
-  const availableCoaches = city.coaches.filter((coach: any) => coach.availabilityStatus === 'available'); // eslint-disable-line @typescript-eslint/no-explicit-any
-  const avgRating = city.coaches.length > 0 
-    ? city.coaches.reduce((sum: number, coach: any) => sum + parseFloat(coach.rating || '0'), 0) / city.coaches.length // eslint-disable-line @typescript-eslint/no-explicit-any 
+  const avgRating = city.places.length > 0 
+    ? city.places.reduce((sum: number, place: any) => sum + parseFloat(place.rating || '0'), 0) / city.places.length // eslint-disable-line @typescript-eslint/no-explicit-any 
     : 0;
 
   const toggleFilter = (filterName: keyof typeof filters) => {
@@ -159,10 +154,6 @@ export default function CityPage({ params }: PageProps) {
       ...prev,
       [filterName]: !prev[filterName]
     }));
-  };
-
-  const toggleFiltersDropdown = () => {
-    setIsFiltersOpen(!isFiltersOpen);
   };
 
   // Generate structured data for SEO
@@ -190,46 +181,28 @@ export default function CityPage({ params }: PageProps) {
       "addressRegion": city.province,
       "addressCountry": city.country === 'NL' ? 'Nederland' : 'België'
     },
-    "aggregateRating": city.coaches.length > 0 ? {
+    "aggregateRating": city.places.length > 0 ? {
       "@type": "AggregateRating",
       "ratingValue": avgRating.toFixed(1),
-      "reviewCount": city.coaches.reduce((sum: number, coach: any) => sum + parseInt(coach.reviewCount || '0'), 0), // eslint-disable-line @typescript-eslint/no-explicit-any
+      "reviewCount": city.places.reduce((sum: number, place: any) => sum + parseInt(place.reviewCount || '0'), 0), // eslint-disable-line @typescript-eslint/no-explicit-any
       "bestRating": "5",
       "worstRating": "1"
     } : undefined,
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "ADHD Coaching Services",
-      "itemListElement": city.coaches.map((coach: any, index: number) => ({ // eslint-disable-line @typescript-eslint/no-explicit-any
-        "@type": "Offer",
-        "name": `${coach.name} - ${coach.specialization}`,
-        "description": coach.description,
-        "seller": {
-          "@type": "Person",
-          "name": coach.name,
-          "jobTitle": coach.specialization || "ADHD Coach"
-        },
-        "areaServed": city.name,
-        "priceRange": "€75-€125",
-        "availability": coach.availabilityStatus === 'available' ? "InStock" : "OutOfStock"
-      }))
-    },
     "mainEntity": {
       "@type": "ItemList",
-      "numberOfItems": city.coaches.length,
-      "itemListElement": city.coaches.map((coach: any, index: number) => ({ // eslint-disable-line @typescript-eslint/no-explicit-any
+      "numberOfItems": city.places.length,
+      "itemListElement": city.places.map((place: any, index: number) => ({ // eslint-disable-line @typescript-eslint/no-explicit-any
         "@type": "ListItem",
         "position": index + 1,
         "item": {
-          "@type": "Person",
-          "name": coach.name,
-          "jobTitle": coach.specialization || "ADHD Coach",
-          "description": coach.description,
-          "address": coach.address,
-          "aggregateRating": coach.rating ? {
+          "@type": "LocalBusiness",
+          "name": place.name,
+          "description": place.description,
+          "address": place.address,
+          "aggregateRating": place.rating ? {
             "@type": "AggregateRating", 
-            "ratingValue": coach.rating,
-            "reviewCount": coach.reviewCount || 1
+            "ratingValue": place.rating,
+            "reviewCount": place.reviewCount || 1
           } : undefined
         }
       }))
@@ -261,12 +234,12 @@ export default function CityPage({ params }: PageProps) {
             {/* Quick Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
               <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg p-4 text-white">
-                <div className="text-2xl font-bold mb-1">{city.coaches.length}</div>
-                <div className="text-emerald-100 text-sm">ADHD Coaches</div>
+                <div className="text-2xl font-bold mb-1">{city.places.length}</div>
+                <div className="text-emerald-100 text-sm">ADHD Specialisten</div>
               </div>
               <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg p-4 text-white">
-                <div className="text-2xl font-bold mb-1">{availableCoaches.length}</div>
-                <div className="text-emerald-100 text-sm">Beschikbaar</div>
+                <div className="text-2xl font-bold mb-1">{city.places.filter((p: any) => p.weekendAvailable).length}</div>
+                <div className="text-emerald-100 text-sm">Weekend beschikbaar</div>
               </div>
               <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg p-4 text-white">
                 <div className="text-2xl font-bold mb-1">{avgRating.toFixed(1)}<span className="text-yellow-400">★</span></div>
@@ -277,10 +250,34 @@ export default function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-
       <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* ADHD Info Section */}
+        {adhdStats && (
+          <section className="mb-8">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                ADHD in {city.name}
+              </h2>
+              <div className="prose max-w-none">
+                <p className="text-gray-700 mb-4">{adhdStats.summary || city.tldr}</p>
+                {adhdStats.details && (
+                  <div className="space-y-2 text-gray-700">
+                    {adhdStats.details.map((detail: string, index: number) => (
+                      <p key={index}>{detail}</p>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
 
-        {/* ADHD Coaches op de kaart - Main Section */}
+        {/* Chat Assistant */}
+        <section className="mb-8">
+          <ChatAssistant city={city.name} />
+        </section>
+
+        {/* ADHD Coaches op de kaart */}
         <section className="mb-8">
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
@@ -293,7 +290,7 @@ export default function CityPage({ params }: PageProps) {
             
             <div className="w-full h-96 rounded-lg overflow-hidden">
               <GoogleMap
-                coaches={city.coaches}
+                coaches={city.places.filter((p: any) => p.latitude && p.longitude)}
                 center={{ lat: parseFloat(city.latitude || '0'), lng: parseFloat(city.longitude || '0') }}
                 zoom={13}
                 height="100%"
@@ -302,332 +299,185 @@ export default function CityPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* Places List */}
         <div>
-          {/* Coaches List */}
-          <div>
-            <div className="flex justify-between items-center mb-6">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800">
-                  ADHD Coaches in {city.name}
-                </h2>
-                <p className="text-gray-600 mt-1">
-                  {filteredCoaches.length} {filteredCoaches.length === 1 ? 'coach gevonden' : 'coaches gevonden'}
-                </p>
-              </div>
-              <div className="relative" ref={filtersDropdownRef}>
-                <button 
-                  onClick={toggleFiltersDropdown}
-                  className="flex items-center gap-2 bg-white border border-gray-300 rounded-lg px-4 py-2 hover:bg-gray-50 transition-colors"
-                >
-                  <Filter size={20} />
-                  Filters
-                  <ChevronDown 
-                    size={16} 
-                    className={`transform transition-transform ${isFiltersOpen ? 'rotate-180' : ''}`} 
-                  />
-                </button>
-                
-                {/* Filters Dropdown */}
-                {isFiltersOpen && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-50 min-w-64">
-                    <h3 className="text-sm font-semibold text-gray-700 mb-3">Filter opties</h3>
-                    <div className="space-y-2">
-                      <button 
-                        onClick={() => toggleFilter('kindvriendelijk')}
-                        className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg border transition-colors text-sm ${
-                          filters.kindvriendelijk 
-                            ? 'bg-blue-100 text-blue-700 border-blue-300' 
-                            : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
-                        }`}
-                      >
-                        <Users size={16} />
-                        Kindvriendelijk
-                      </button>
-                      <button 
-                        onClick={() => toggleFilter('weekend')}
-                        className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg border transition-colors text-sm ${
-                          filters.weekend 
-                            ? 'bg-green-100 text-green-700 border-green-300' 
-                            : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
-                        }`}
-                      >
-                        <Clock size={16} />
-                        Weekend beschikbaar
-                      </button>
-                      <button 
-                        onClick={() => toggleFilter('online')}
-                        className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg border transition-colors text-sm ${
-                          filters.online 
-                            ? 'bg-purple-100 text-purple-700 border-purple-300' 
-                            : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
-                        }`}
-                      >
-                        <Globe size={16} />
-                        Online beschikbaar
-                      </button>
-                      <button 
-                        onClick={() => toggleFilter('hoogsteBeoordeling')}
-                        className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg border transition-colors text-sm ${
-                          filters.hoogsteBeoordeling 
-                            ? 'bg-yellow-100 text-yellow-700 border-yellow-300' 
-                            : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
-                        }`}
-                      >
-                        <Star size={16} />
-                        Hoogste beoordeling
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              ADHD Coaches in {city.name}
+            </h2>
+            
+            {/* Visible Filters - No Dropdown */}
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <span className="text-sm font-medium text-gray-700">Filters:</span>
+              <button 
+                onClick={() => toggleFilter('kindvriendelijk')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.kindvriendelijk 
+                    ? 'bg-blue-600 text-white border-blue-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400 hover:bg-blue-50'
+                }`}
+              >
+                <Users size={16} />
+                Kindvriendelijk
+              </button>
+              <button 
+                onClick={() => toggleFilter('weekend')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.weekend 
+                    ? 'bg-green-600 text-white border-green-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-green-400 hover:bg-green-50'
+                }`}
+              >
+                <Clock size={16} />
+                Weekend beschikbaar
+              </button>
+              <button 
+                onClick={() => toggleFilter('hoogsteBeoordeling')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.hoogsteBeoordeling 
+                    ? 'bg-yellow-600 text-white border-yellow-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-yellow-400 hover:bg-yellow-50'
+                }`}
+              >
+                <Star size={16} />
+                Hoogste beoordeling
+              </button>
             </div>
 
-            {/* Active Filters Display */}
-            {(filters.kindvriendelijk || filters.weekend || filters.online || filters.hoogsteBeoordeling) && (
-              <div className="mb-6">
-                <div className="flex flex-wrap items-center gap-3">
-                  {filters.kindvriendelijk && (
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-blue-100 text-blue-700 border-blue-300 text-sm">
-                      <Users size={16} />
-                      Kindvriendelijk
-                    </div>
-                  )}
-                  {filters.weekend && (
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-green-100 text-green-700 border-green-300 text-sm">
-                      <Clock size={16} />
-                      Weekend beschikbaar
-                    </div>
-                  )}
-                  {filters.online && (
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-purple-100 text-purple-700 border-purple-300 text-sm">
-                      <Globe size={16} />
-                      Online beschikbaar
-                    </div>
-                  )}
-                  {filters.hoogsteBeoordeling && (
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-yellow-100 text-yellow-700 border-yellow-300 text-sm">
-                      <Star size={16} />
-                      Hoogste beoordeling
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
+            <p className="text-gray-600">
+              {filteredPlaces.length} {filteredPlaces.length === 1 ? 'specialist gevonden' : 'specialisten gevonden'}
+              {!filters.hoogsteBeoordeling && ' (gesorteerd op relevantie)'}
+              {filters.hoogsteBeoordeling && ' (gesorteerd op hoogste beoordeling)'}
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {filteredCoaches.map((coach, index) => {
-                const getPrimaryAction = () => {
-                  if (coach.phone) return { type: 'phone', href: `tel:${coach.phone}`, label: 'Bellen', icon: Phone };
-                  if (coach.website) return { type: 'website', href: coach.website, label: 'Website', icon: Globe };
-                  if (coach.email) return { type: 'email', href: `mailto:${coach.email}`, label: 'E-mail', icon: Mail };
-                  return null;
-                };
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {filteredPlaces.map((place) => {
+              const getPrimaryAction = () => {
+                if (place.phone) return { type: 'phone', href: `tel:${place.phone}`, label: 'Bellen', icon: Phone };
+                if (place.website) return { type: 'website', href: place.website, label: 'Website', icon: Globe };
+                if (place.email) return { type: 'email', href: `mailto:${place.email}`, label: 'E-mail', icon: Mail };
+                return null;
+              };
 
-                const primaryAction = getPrimaryAction();
+              const primaryAction = getPrimaryAction();
 
-                return (
-                <div key={coach.id} className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-6 relative">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-blue-700 font-semibold">
-                        {coach.name.split(' ').map((n: string) => n[0]).join('').substring(0, 2)} {/* eslint-disable-line @typescript-eslint/no-explicit-any */}
-                      </span>
-                    </div>
-                    
-                    <div className="flex-1">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-xl font-semibold text-gray-900">
-                          <Link href={`/specialist/${coach.slug}`} className="hover:text-blue-600 transition-colors">
-                            {coach.name}
-                          </Link>
-                        </h3>
-                        <div className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${
-                          coach.availabilityStatus === 'available' 
-                            ? 'bg-green-100 text-green-700' 
-                            : 'bg-orange-100 text-orange-700'
-                        }`}>
-                          <div className={`w-2 h-2 rounded-full ${
-                            coach.availabilityStatus === 'available' ? 'bg-green-500' : 'bg-orange-500'
-                          }`}></div>
-                          {coach.availabilityStatus === 'available' ? 'Beschikbaar' : 'Druk bezet'}
-                        </div>
-                      </div>
-                      
-                      {/* Rating moved below name */}
-                      <div className="flex items-center gap-1 mb-2">
-                        <Star size={16} className="text-yellow-400 fill-current" />
-                        <span className="text-sm font-medium text-gray-700">{coach.rating}</span>
-                        <span className="text-xs text-gray-500">({coach.reviewCount} reviews)</span>
-                      </div>
-                      
-                      <p className="text-blue-600 font-medium mb-2">
-                        {coach.specialization}
-                      </p>
-                      
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <div className="flex items-center gap-1">
-                          <MapPin size={16} />
-                          <span>{coach.address}</span>
-                        </div>
-                      </div>
-                      
-                      {/* Contact Information */}
-                      <div className="text-sm text-gray-600 mb-4 space-y-1">
-                        {coach.phone && (
-                          <div className="flex items-center gap-2">
-                            <Phone size={14} className="text-blue-600" />
-                            <span>{coach.phone}</span>
-                          </div>
-                        )}
-                        {coach.email && (
-                          <div className="flex items-center gap-2">
-                            <Mail size={14} className="text-blue-600" />
-                            <span>{coach.email}</span>
-                          </div>
-                        )}
-                        {coach.website && (
-                          <div className="flex items-center gap-2">
-                            <Globe size={14} className="text-blue-600" />
-                            <span>{coach.website}</span>
-                          </div>
-                        )}
-                      </div>
-                      
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                        {coach.description || 'Ervaren ADHD coach met persoonlijke aanpak voor jouw specifieke behoeften.'}
-                      </p>
-                      
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {coach.isChildFriendly && (
-                          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
-                            Kindvriendelijk
-                          </span>
-                        )}
-                        {coach.weekendAvailable && (
-                          <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">
-                            Weekend beschikbaar
-                          </span>
-                        )}
-                        {coach.onlineAvailable && (
-                          <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
-                            Online coaching
-                          </span>
-                        )}
-                        {coach.acceptsInsurance && (
-                          <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
-                            Zorgverzekering
-                          </span>
-                        )}
-                      </div>
-                    </div>
+              return (
+              <div key={place.id} className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-6 relative">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-blue-700 font-semibold">
+                      {place.name.split(' ').map((n: string) => n[0]).join('').substring(0, 2)}
+                    </span>
                   </div>
                   
-                  {/* Profile Link - positioned at bottom right */}
-                  <div className="flex justify-end">
-                    <Link 
-                      href={`/specialist/${coach.slug}`}
-                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors font-medium"
-                    >
-                      <Users size={16} />
-                      Bekijk Profiel
-                    </Link>
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        {place.slug ? (
+                          <Link href={`/specialist/${place.slug}`} className="hover:text-blue-600 transition-colors">
+                            {place.name}
+                          </Link>
+                        ) : (
+                          <span>{place.name}</span>
+                        )}
+                      </h3>
+                    </div>
+                    
+                    {/* Rating */}
+                    {place.rating && place.rating > 0 && (
+                      <div className="flex items-center gap-1 mb-2">
+                        <Star size={16} className="text-yellow-400 fill-current" />
+                        <span className="text-sm font-medium text-gray-700">{place.rating}</span>
+                        <span className="text-xs text-gray-500">({place.reviewCount} reviews)</span>
+                      </div>
+                    )}
+                    
+                    <p className="text-blue-600 font-medium mb-2 text-sm">
+                      {place.specialization}
+                    </p>
+                    
+                    <div className="flex items-start gap-2 text-sm text-gray-600 mb-3">
+                      <MapPin size={16} className="flex-shrink-0 mt-0.5" />
+                      <span className="line-clamp-1">{place.address}</span>
+                    </div>
+                    
+                    {/* Contact Information */}
+                    <div className="text-sm text-gray-600 mb-4 space-y-1">
+                      {place.phone && (
+                        <div className="flex items-center gap-2">
+                          <Phone size={14} className="text-blue-600" />
+                          <a href={`tel:${place.phone}`} className="hover:text-blue-600">{place.phone}</a>
+                        </div>
+                      )}
+                      {place.email && (
+                        <div className="flex items-center gap-2">
+                          <Mail size={14} className="text-blue-600" />
+                          <a href={`mailto:${place.email}`} className="hover:text-blue-600">{place.email}</a>
+                        </div>
+                      )}
+                      {place.website && (
+                        <div className="flex items-center gap-2">
+                          <Globe size={14} className="text-blue-600" />
+                          <a href={place.website} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 line-clamp-1">
+                            Bezoek website
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                    
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {place.isChildFriendly && (
+                        <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Kindvriendelijk
+                        </span>
+                      )}
+                      {place.weekendAvailable && (
+                        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Weekend beschikbaar
+                        </span>
+                      )}
+                      {place.acceptsInsurance && (
+                        <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Zorgverzekering
+                        </span>
+                      )}
+                      {place.studentFriendly && (
+                        <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Studentvriendelijk
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
-                );
-              })}
-            </div>
-
-            {city.coaches.length === 0 && (
-              <div className="bg-white rounded-lg shadow-md p-8 text-center">
-                <Users size={48} className="mx-auto text-gray-400 mb-4" />
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  Nog geen coaches gevonden
-                </h3>
-                <p className="text-gray-600">
-                  We zijn nog bezig met het toevoegen van ADHD coaches in {city.name}. 
-                  Check binnenkort opnieuw of neem contact met ons op.
-                </p>
+                
+                {/* CTA Button */}
+                {primaryAction && (
+                  <a
+                    href={primaryAction.href}
+                    target={primaryAction.type === 'website' ? '_blank' : undefined}
+                    rel={primaryAction.type === 'website' ? 'noopener noreferrer' : undefined}
+                    className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  >
+                    <primaryAction.icon size={18} />
+                    {primaryAction.label}
+                  </a>
+                )}
               </div>
-            )}
+              );
+            })}
           </div>
+
+          {/* No Results Message */}
+          {filteredPlaces.length === 0 && (
+            <div className="text-center py-12 bg-white rounded-lg shadow-sm">
+              <p className="text-gray-600 text-lg mb-2">Geen specialisten gevonden met de geselecteerde filters.</p>
+              <p className="text-gray-500 text-sm">Probeer de filters aan te passen om meer resultaten te zien.</p>
+            </div>
+          )}
         </div>
       </div>
-
-      {/* TL;DR Section */}
-      <section className="bg-white border-t border-gray-200 py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs">ℹ</span>
-              </div>
-              <h2 className="text-xl font-bold text-gray-800">
-                TL;DR - {city.name}
-              </h2>
-            </div>
-            
-            <p className="text-gray-600 mb-6">
-              {city.name} biedt uitstekende ADHD ondersteuning met {city.coaches.length} geregistreerde specialisten en diverse behandelingsopties voor zowel kinderen als volwassenen.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Lokale ADHD Zorg */}
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-3">Lokale ADHD Zorg</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>{city.coaches.length} geregistreerde specialisten</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Gemiddelde wachttijd: {city.coaches.length > 20 ? '2-4' : city.coaches.length > 10 ? '3-5' : '4-6'} weken</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Kosten: €75-€125 per sessie</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Online en fysieke consulten beschikbaar</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* ADHD Statistieken */}
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-3">ADHD Statistieken {city.name}</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Prevalentie: 5.2% van de bevolking</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Geschat {Math.round((city.population || 100000) * 0.052).toLocaleString()} mensen met ADHD</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Populatie: {(city.population || 0).toLocaleString()} inwoners</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Provincie: {city.province}, {city.country === 'NL' ? 'Nederland' : 'België'}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Spots Section */}
-      <section className="py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <FeaturedSpots cityId={city.id} cityName={city.name} />
-        </div>
-      </section>
 
       <Footer />
     </div>

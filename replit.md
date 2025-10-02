@@ -28,9 +28,10 @@ Preferred communication style: Simple, everyday language.
 
 ### Data Storage Solutions
 - **Primary Database**: Supabase (PostgreSQL) as the main data store
-- **Database Schema**: Relational design with cities, coaches, blog posts, and FAQ items
+- **Database Schema**: Relational design with cities, places (Google Maps data), coaches (legacy), blog posts, and FAQ items
+- **Primary Data Source**: Places table contains all specialist listings with Google Maps integration
 - **Migration Strategy**: Drizzle Kit for database migrations and schema management
-- **Data Seeding**: Automated seeding system for Dutch and Belgian cities with coach data
+- **Data Seeding**: Automated seeding system for Dutch and Belgian cities with specialist data from Google Maps
 
 ### Authentication and Authorization
 - **Auth Provider**: Supabase Authentication for user management
@@ -76,6 +77,23 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**October 2, 2025**: Completed full migration from coaches table to places table (Google Maps data):
+- ✅ Updated specialist pages (`/specialist/[slug]`) to query exclusively from places table using slug column
+- ✅ Updated city pages (`/stad/[slug]`) to query exclusively from places table using CITY column matching
+- ✅ Implemented visible filter buttons (no dropdowns): Kindvriendelijk, Weekend beschikbaar, Hoogste beoordeling
+- ✅ Configured default sorting by RESULT POSITION column (lower = more relevant/higher in Google results)
+- ✅ Configured Hoogste beoordeling filter to sort by SCORE column (higher = better rating)
+- ✅ Using correct filter column names: `kindvriendelijk_filter`, `weekend_beschikbaar_filter`, `basisverzekering_filter`, `studenten_filter`
+- ✅ Email filtering: skips "n/a" values when displaying contact information
+- ✅ Reviews properly linked via PLACE_ID matching between places and reviews tables
+- ✅ All 415 cities now display specialists from Google Maps data
+
+**Database Structure**:
+- **places table**: Primary data source with columns: PLACE ID (varchar), NAME, CATEGORY, ADDRESS, CITY, PHONE, EMAIL, WEBSITE, URL, SCORE, RATINGS, OPENING HOURS, RESULT POSITION, filter columns, slug
+- **Filter columns**: Values are 'yes' or 'no' strings
+- **Sorting**: Default by RESULT POSITION (ascending), optional by SCORE (descending)
+- **City matching**: Uses CITY column (city name) to match with cities.name
+
 **September 29, 2025**: Successfully implemented Stripe-powered featured spots system for premium coach placements:
 - ✅ Added `featured_spots` database schema with payment tracking, position management, and expiration dates
 - ✅ Created Stripe API endpoints for payment processing (`create-payment-intent`, `confirm-featured-spot`)
@@ -83,7 +101,3 @@ Preferred communication style: Simple, everyday language.
 - ✅ Developed FeaturedSpotPurchase component with Stripe Elements integration
 - ✅ Integrated featured spots section into city pages (positioned above map section)
 - ✅ Implemented tiered pricing: €199 (top), €149 (second), €99 (third) per month
-- 🔄 **Pending**: Database table creation (connection issues prevent migration)
-- 🔄 **Pending**: Address architectural concerns from code review (server-side validation, pricing enforcement)
-
-The system is architecturally complete with components ready for production once database issues are resolved.
