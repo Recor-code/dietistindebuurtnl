@@ -23,29 +23,21 @@ interface Params {
   slug: string;
 }
 
-// Generate static params for all specialists (from places table)
+// Generate static params for all specialists
 export async function generateStaticParams() {
   try {
-    // Get all places with slugs
-    const { data: allPlaces, error } = await supabase
-      .from('places')
-      .select('slug')
-      .not('slug', 'is', null);
+    // Use coaches table which has slugs
+    const { data: allCoaches, error } = await supabase
+      .from('coaches')
+      .select('slug');
     
     if (error) {
       console.error('Error generating static params for specialists:', error);
-      // Fallback to coaches table
-      const { data: allCoaches } = await supabase
-        .from('coaches')
-        .select('slug');
-      
-      return (allCoaches || []).map((coach) => ({
-        slug: coach.slug,
-      }));
+      return [];
     }
 
-    return (allPlaces || []).map((place) => ({
-      slug: place.slug,
+    return (allCoaches || []).map((coach) => ({
+      slug: coach.slug,
     }));
   } catch (error) {
     console.error('Error generating static params for specialists:', error);
@@ -53,58 +45,10 @@ export async function generateStaticParams() {
   }
 }
 
-// Fetch specialist data from places table
+// Fetch specialist data - use coaches table but enrich with places/reviews when available
 async function getSpecialist(slug: string) {
   try {
-    // First try to get from places table
-    const { data: place, error: placeError } = await supabase
-      .from('places')
-      .select(`
-        *, 
-        cities!inner(name, slug, province)
-      `)
-      .eq('slug', slug)
-      .maybeSingle();
-
-    if (!placeError && place) {
-      // Get reviews for this place
-      const { data: reviews } = await supabase
-        .from('reviews')
-        .select('*')
-        .eq('PLACE ID', place['PLACE ID'])
-        .order('PUBLISHED_TIME', { ascending: false })
-        .limit(10);
-      
-      // Transform place data to match expected format
-      return {
-        id: place['PLACE ID'],
-        name: place['NAME'],
-        slug: place.slug,
-        email: place['EMAIL'],
-        phone: place['PHONE'],
-        website: place['WEBSITE'],
-        specialization: place.specialization || place['CATEGORY'] || 'ADHD Specialist',
-        description: place.description || `Professionele ADHD begeleiding in ${place['CITY']}`,
-        address: place['ADDRESS'] || place['STREET ADDRESS'],
-        rating: place.rating || (place['SCORE'] ? parseFloat(place['SCORE']) : null),
-        reviewCount: place.review_count || (place['RATINGS'] ? parseInt(place['RATINGS']) : 0),
-        isChildFriendly: place.is_child_friendly || false,
-        weekendAvailable: place.weekend_available || false,
-        onlineAvailable: place.online_available || false,
-        inPersonAvailable: place.in_person_available !== false,
-        acceptsInsurance: place.accepts_insurance || false,
-        availabilityStatus: place.availability_status || 'available',
-        openingHours: place['OPENING HOURS'],
-        mainImageUrl: place['MAIN IMAGE URL'],
-        cityName: place.cities?.name || place['CITY'],
-        citySlug: place.cities?.slug,
-        province: place.cities?.province,
-        reviews: reviews || [],
-        placeId: place['PLACE ID'],
-      };
-    }
-
-    // Fallback to coaches table if not found in places
+    // Get coach data first
     const { data: coach, error } = await supabase
       .from('coaches')
       .select(`
@@ -119,30 +63,59 @@ async function getSpecialist(slug: string) {
       return null;
     }
 
-    // Transform coach data
+    // Try to find matching place by name and city
+    let reviews = [];
+    let placeData = null;
+    
+    if (coach.name) {
+      // Try to find place by name
+      const { data: places } = await supabase
+        .from('places')
+        .select('*')
+        .ilike('NAME', `%${coach.name}%`)
+        .limit(1);
+      
+      if (places && places.length > 0) {
+        placeData = places[0];
+        
+        // Get reviews for this place
+        const { data: placeReviews } = await supabase
+          .from('reviews')
+          .select('*')
+          .eq('PLACE ID', placeData['PLACE ID'])
+          .order('PUBLISHED_TIME', { ascending: false })
+          .limit(10);
+        
+        reviews = placeReviews || [];
+      }
+    }
+
+    // Transform and merge data
     return {
       id: coach.id,
       name: coach.name,
       slug: coach.slug,
-      email: coach.email,
-      phone: coach.phone,
-      website: coach.website,
-      specialization: coach.specialization,
+      email: coach.email || placeData?.['EMAIL'],
+      phone: coach.phone || placeData?.['PHONE'],
+      website: coach.website || placeData?.['WEBSITE'],
+      specialization: coach.specialization || placeData?.['CATEGORY'] || 'ADHD Specialist',
       description: coach.description,
-      address: coach.address,
-      rating: coach.rating,
-      reviewCount: coach.review_count,
+      address: coach.address || placeData?.['ADDRESS'],
+      rating: coach.rating || (placeData?.['SCORE'] ? parseFloat(placeData['SCORE']) : null),
+      reviewCount: coach.review_count || (placeData?.['RATINGS'] ? parseInt(placeData['RATINGS']) : 0),
       isChildFriendly: coach.is_child_friendly,
       weekendAvailable: coach.weekend_available,
       onlineAvailable: coach.online_available,
       inPersonAvailable: coach.in_person_available,
       acceptsInsurance: coach.accepts_insurance,
       availabilityStatus: coach.availability_status,
+      openingHours: placeData?.['OPENING HOURS'],
+      mainImageUrl: placeData?.['MAIN IMAGE URL'],
       cityName: coach.cities?.name,
       citySlug: coach.cities?.slug,
       province: coach.cities?.province,
-      reviews: [],
-      placeId: coach.place_id,
+      reviews: reviews,
+      placeId: placeData?.['PLACE ID'],
     };
   } catch (error) {
     console.error('Error fetching specialist:', error);
