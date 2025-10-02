@@ -464,7 +464,7 @@ export default function CityPage({ params }: PageProps) {
 
         {/* TL;DR Section */}
         {city.tldr && (
-          <section className="mt-12 mb-8">
+          <section className="mt-12 mb-8 max-w-3xl mx-auto">
             <div className="bg-blue-50 rounded-lg shadow-sm p-6 border border-blue-200">
               <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">ℹ️</span> TL;DR - {city.name}
@@ -509,20 +509,20 @@ export default function CityPage({ params }: PageProps) {
 
         {/* Premium Placement Box */}
         <section className="mt-8 mb-12">
-          <div className="bg-yellow-50 rounded-lg shadow-sm p-8 border border-yellow-200">
-            <h2 className="text-xl font-bold text-amber-800 mb-4 text-center flex items-center justify-center gap-2">
+          <div className="bg-amber-50 rounded-lg shadow-sm p-8 border border-amber-100">
+            <h2 className="text-2xl font-bold text-amber-900 mb-4 flex items-center gap-2">
               <span>👑</span> Premium Plaatsing Beschikbaar in {city.name}
             </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed text-center">
+            <p className="text-gray-700 mb-8 leading-relaxed">
               Als ADHD coach weet je hoe belangrijk zichtbaarheid is. Onze premium posities zorgen ervoor dat jouw profiel direct opvalt tussen de andere coaches in {city.name}.
             </p>
             
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <span>✨</span> Wat krijg je?
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <ul className="space-y-2 text-gray-700">
                   <li>• Top positie met gouden crown badge</li>
                   <li>• Premium styling die opvalt</li>
                   <li>• Eerste indruk bij potentiële cliënten</li>
@@ -531,10 +531,10 @@ export default function CityPage({ params }: PageProps) {
               </div>
 
               <div>
-                <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <span>🎯</span> Waarom werkt dit?
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <ul className="space-y-2 text-gray-700">
                   <li>• Mensen scannen eerst de top resultaten</li>
                   <li>• Premium uitstraling = meer vertrouwen</li>
                   <li>• Directe toegang tot jouw specialisaties</li>
@@ -544,18 +544,18 @@ export default function CityPage({ params }: PageProps) {
             </div>
 
             <div className="text-center mb-6">
-              <p className="text-gray-800 font-medium text-sm">
-                💡 Slechts 3 premium plekken beschikbaar per stad
+              <p className="text-gray-800 font-medium flex items-center justify-center gap-2">
+                <span>💡</span> Slechts 3 premium plekken beschikbaar per stad
+              </p>
+              <p className="text-gray-600 text-sm mt-2">
+                Klaar om je praktijk te laten groeien? Neem contact op voor beschikbaarheid en tarieven.
               </p>
             </div>
 
             <div className="text-center">
-              <p className="text-gray-700 mb-4 text-sm">
-                Klaar om je praktijk te laten groeien? Neem contact op voor beschikbaarheid en tarieven.
-              </p>
               <a
                 href="mailto:info@adhdcoachindebuurt.nl"
-                className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
               >
                 <span>👑</span> Neem Contact Op voor Premium Positie
               </a>
