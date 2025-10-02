@@ -20,6 +20,7 @@ interface ReviewsListProps {
 export default function ReviewsList({ reviews, specialistName }: ReviewsListProps) {
   const [filterRating, setFilterRating] = useState<number | null>(null);
   const [sortBy, setSortBy] = useState<'newest' | 'highest' | 'lowest'>('newest');
+  const [visibleCount, setVisibleCount] = useState(6);
 
   // Filter reviews
   let filteredReviews = [...reviews];
@@ -37,6 +38,9 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
       return (a['SCORE'] || 0) - (b['SCORE'] || 0);
     }
   });
+
+  const displayedReviews = filteredReviews.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredReviews.length;
 
   if (!reviews || reviews.length === 0) {
     return (
@@ -120,52 +124,72 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
 
       {/* Reviews List */}
       {filteredReviews.length > 0 ? (
-        <div className="space-y-4">
-          {filteredReviews.map((review, index) => (
-            <div key={review['INTERNAL REVIEW ID'] || index} className="border rounded-lg p-4 bg-white">
-              {/* Rating and Date Row */}
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        size={18}
-                        className={`${
-                          i < review['SCORE'] ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
-                        }`}
-                      />
-                    ))}
+        <>
+          <div className="space-y-4">
+            {displayedReviews.map((review, index) => (
+              <div 
+                key={review['INTERNAL REVIEW ID'] || index} 
+                className="border border-gray-200 rounded-xl p-5 bg-white hover:shadow-md transition-shadow duration-200"
+              >
+                {/* Rating and Date Row */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          size={18}
+                          className={`${
+                            i < review['SCORE'] ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm font-semibold text-gray-800">{review['SCORE']}/5</span>
                   </div>
-                  <span className="text-sm font-medium text-gray-700">{review['SCORE']}/5</span>
+                  <span className="text-sm text-gray-500">
+                    {new Date(review['PUBLISHED AT DATETIME']).toLocaleDateString('en-US', { 
+                      month: 'numeric', 
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </span>
                 </div>
-                <span className="text-sm text-gray-500">
-                  {new Date(review['PUBLISHED AT DATETIME']).toLocaleDateString('en-US', { 
-                    month: 'numeric', 
-                    day: 'numeric',
-                    year: 'numeric'
-                  })}
-                </span>
+                
+                {/* User Name */}
+                <p className="font-semibold text-gray-900 mb-3">{review['USER NAME']}</p>
+                
+                {/* Review Text */}
+                {review['TEXT'] && (
+                  <p className="text-gray-700 text-sm leading-relaxed mb-3">{review['TEXT']}</p>
+                )}
+                
+                {/* Owner Reply */}
+                {review['RESPONSE FROM OWNER'] && (
+                  <div className="mt-4 pt-4 border-t border-gray-200 bg-blue-50 -mx-5 -mb-5 px-5 py-4 rounded-b-xl">
+                    <p className="text-xs font-bold text-blue-800 mb-2 flex items-center gap-1">
+                      <span className="inline-block w-1 h-1 bg-blue-600 rounded-full"></span>
+                      Reactie van eigenaar
+                    </p>
+                    <p className="text-gray-700 text-sm leading-relaxed">{review['RESPONSE FROM OWNER']}</p>
+                  </div>
+                )}
               </div>
-              
-              {/* User Name */}
-              <p className="font-medium text-gray-900 mb-2">{review['USER NAME']}</p>
-              
-              {/* Review Text */}
-              {review['TEXT'] && (
-                <p className="text-gray-700 text-sm leading-relaxed">{review['TEXT']}</p>
-              )}
-              
-              {/* Owner Reply */}
-              {review['RESPONSE FROM OWNER'] && (
-                <div className="mt-3 pt-3 border-t border-gray-200">
-                  <p className="text-xs font-semibold text-gray-700 mb-1">Reactie van eigenaar</p>
-                  <p className="text-gray-600 text-sm">{review['RESPONSE FROM OWNER']}</p>
-                </div>
-              )}
+            ))}
+          </div>
+          
+          {/* Load More Button */}
+          {hasMore && (
+            <div className="mt-6 text-center">
+              <button
+                onClick={() => setVisibleCount(prev => prev + 6)}
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                Load more reviews ({filteredReviews.length - visibleCount} remaining)
+              </button>
             </div>
-          ))}
-        </div>
+          )}
+        </>
       ) : (
         <div className="text-center py-8">
           <p className="text-gray-600">Geen reviews gevonden met de geselecteerde filters.</p>
