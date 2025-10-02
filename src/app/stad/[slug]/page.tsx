@@ -133,11 +133,21 @@ export default function CityPage({ params }: PageProps) {
     filteredPlaces = filteredPlaces.filter(place => place.weekendAvailable);
   }
   if (filters.hoogsteBeoordeling) {
-    // Sort by SCORE (higher to lower)
+    // Sort by weighted score: considers both rating AND review count
+    // Formula: rating * (reviewCount / (reviewCount + 5))
+    // This gives more weight to specialists with more reviews
     filteredPlaces = filteredPlaces.sort((a, b) => {
       const ratingA = parseFloat(a.rating || '0');
       const ratingB = parseFloat(b.rating || '0');
-      return ratingB - ratingA;
+      const reviewsA = a.reviewCount || 0;
+      const reviewsB = b.reviewCount || 0;
+      
+      // Weighted score: rating is adjusted by review confidence
+      // More reviews = higher confidence = closer to actual rating
+      const weightedA = ratingA * (reviewsA / (reviewsA + 5));
+      const weightedB = ratingB * (reviewsB / (reviewsB + 5));
+      
+      return weightedB - weightedA;
     });
   } else {
     // Default: sort by RESULT POSITION (lower to higher = more relevant)
