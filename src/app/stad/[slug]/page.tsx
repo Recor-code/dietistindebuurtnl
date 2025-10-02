@@ -563,12 +563,12 @@ export default function CityPage({ params }: PageProps) {
             </div>
 
             <div className="text-center">
-              <a
-                href="mailto:info@adhdcoachindebuurt.nl"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 <span>👑</span> Neem Contact Op voor Premium Positie
-              </a>
+              </Link>
             </div>
           </div>
         </section>
