@@ -235,115 +235,118 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
             </div>
           )}
 
-          {/* Services & Availability */}
-          {(specialist.isChildFriendly || specialist.weekendAvailable || specialist.acceptsInsurance || specialist.studentFriendly || specialist.openingHours) && (
-            <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">Services & Beschikbaarheid</h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {specialist.isChildFriendly && (
-                  <div className="flex items-center gap-3 text-gray-700">
-                    <Users className="w-5 h-5 text-blue-600" />
-                    <span>Kindvriendelijk</span>
+          {/* Two Column Layout: Contact & Services */}
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {/* Contact Information - Left Column */}
+            <div className="bg-white rounded-lg shadow-sm p-8">
+              <h2 className="text-xl font-bold text-gray-900 mb-6">Contactgegevens</h2>
+              <div className="space-y-4">
+                {specialist.address && (
+                  <div className="flex items-start gap-3 text-gray-700">
+                    <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div>{specialist.address}</div>
+                      {specialist.cityName && specialist.province && (
+                        <div className="text-sm text-gray-600">{specialist.cityName}, {specialist.province}</div>
+                      )}
+                    </div>
                   </div>
                 )}
                 
-                {specialist.weekendAvailable && (
+                {specialist.phone && (
                   <div className="flex items-center gap-3 text-gray-700">
-                    <Calendar className="w-5 h-5 text-blue-600" />
-                    <span>Weekend beschikbaar</span>
+                    <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <a href={`tel:${specialist.phone}`} className="hover:text-blue-600">
+                      {specialist.phone}
+                    </a>
                   </div>
                 )}
                 
-                {specialist.acceptsInsurance && (
+                {specialist.email && (
                   <div className="flex items-center gap-3 text-gray-700">
-                    <CreditCard className="w-5 h-5 text-blue-600" />
-                    <span>Basisverzekering</span>
+                    <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <a href={`mailto:${specialist.email}`} className="hover:text-blue-600">
+                      {specialist.email}
+                    </a>
                   </div>
                 )}
                 
-                {specialist.studentFriendly && (
+                {specialist.website && (
                   <div className="flex items-center gap-3 text-gray-700">
-                    <Users className="w-5 h-5 text-blue-600" />
-                    <span>Studentvriendelijk</span>
+                    <Globe className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <a href={specialist.website} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                      {specialist.website}
+                    </a>
                   </div>
                 )}
               </div>
-              
-              {specialist.openingHours && (
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <h3 className="font-semibold text-gray-900 mb-3">Openingstijden</h3>
-                  <div className="space-y-2">
-                    {specialist.openingHours
-                      .split(/[;,]|\n/)
-                      .map((line: string) => line.trim())
-                      .filter((line: string) => line.length > 0)
-                      .map((line: string, index: number) => {
-                        const parts = line.split(':');
-                        if (parts.length >= 2) {
-                          const day = parts[0].trim();
-                          const hours = parts.slice(1).join(':').trim();
+            </div>
+
+            {/* Services & Availability - Right Column */}
+            {(specialist.isChildFriendly || specialist.weekendAvailable || specialist.acceptsInsurance || specialist.studentFriendly || specialist.openingHours) && (
+              <div className="bg-white rounded-lg shadow-sm p-8">
+                <h2 className="text-xl font-bold text-gray-900 mb-6">Services & Beschikbaarheid</h2>
+                <div className="space-y-3">
+                  {specialist.isChildFriendly && (
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <Users className="w-5 h-5 text-blue-600" />
+                      <span>Kindvriendelijk</span>
+                    </div>
+                  )}
+                  
+                  {specialist.weekendAvailable && (
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <Calendar className="w-5 h-5 text-blue-600" />
+                      <span>Weekend beschikbaar</span>
+                    </div>
+                  )}
+                  
+                  {specialist.acceptsInsurance && (
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <CreditCard className="w-5 h-5 text-blue-600" />
+                      <span>Basisverzekering</span>
+                    </div>
+                  )}
+                  
+                  {specialist.studentFriendly && (
+                    <div className="flex items-center gap-3 text-gray-700">
+                      <Users className="w-5 h-5 text-blue-600" />
+                      <span>Studentvriendelijk</span>
+                    </div>
+                  )}
+                </div>
+                
+                {specialist.openingHours && (
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <h3 className="font-semibold text-gray-900 mb-3">Openingstijden</h3>
+                    <div className="space-y-2">
+                      {specialist.openingHours
+                        .split(/[;,]|\n/)
+                        .map((line: string) => line.trim())
+                        .filter((line: string) => line.length > 0)
+                        .map((line: string, index: number) => {
+                          const parts = line.split(':');
+                          if (parts.length >= 2) {
+                            const day = parts[0].trim();
+                            const hours = parts.slice(1).join(':').trim();
+                            return (
+                              <div key={index} className="flex justify-between text-sm">
+                                <span className="font-medium text-gray-900">{day}</span>
+                                <span className="text-gray-600">{hours}</span>
+                              </div>
+                            );
+                          }
                           return (
-                            <div key={index} className="flex justify-between text-sm">
-                              <span className="font-medium text-gray-900">{day}</span>
-                              <span className="text-gray-600">{hours}</span>
+                            <div key={index} className="text-sm text-gray-600">
+                              {line}
                             </div>
                           );
-                        }
-                        return (
-                          <div key={index} className="text-sm text-gray-600">
-                            {line}
-                          </div>
-                        );
-                      })}
+                        })}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Contact Information */}
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">Contactgegevens</h2>
-            <div className="space-y-4">
-              {specialist.address && (
-                <div className="flex items-start gap-3 text-gray-700">
-                  <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div>{specialist.address}</div>
-                    {specialist.cityName && specialist.province && (
-                      <div className="text-sm text-gray-600">{specialist.cityName}, {specialist.province}</div>
-                    )}
-                  </div>
-                </div>
-              )}
-              
-              {specialist.phone && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <a href={`tel:${specialist.phone}`} className="hover:text-blue-600">
-                    {specialist.phone}
-                  </a>
-                </div>
-              )}
-              
-              {specialist.email && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <a href={`mailto:${specialist.email}`} className="hover:text-blue-600">
-                    {specialist.email}
-                  </a>
-                </div>
-              )}
-              
-              {specialist.website && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Globe className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <a href={specialist.website} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-                    {specialist.website}
-                  </a>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Reviews Section */}
