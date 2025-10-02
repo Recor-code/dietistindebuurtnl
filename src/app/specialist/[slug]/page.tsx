@@ -201,14 +201,6 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
             </div>
           </div>
 
-          {/* About Section */}
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Over {specialist.name}</h2>
-            <p className="text-gray-700 leading-relaxed">
-              {specialist.description}
-            </p>
-          </div>
-
           {/* Location Map */}
           {specialist.latitude && specialist.longitude && (
             <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
