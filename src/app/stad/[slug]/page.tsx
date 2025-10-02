@@ -7,7 +7,6 @@ import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ChatAssistant from '@/components/ChatAssistant';
 import { useState, useEffect } from 'react';
 
 interface PageProps {
@@ -271,11 +270,6 @@ export default function CityPage({ params }: PageProps) {
             </div>
           </section>
         )}
-
-        {/* Chat Assistant */}
-        <section className="mb-8">
-          <ChatAssistant city={city.name} />
-        </section>
 
         {/* ADHD Coaches op de kaart */}
         <section className="mb-8">
