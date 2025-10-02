@@ -322,7 +322,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                           })
                           .filter((entry: { day: string; hours: string } | null): entry is { day: string; hours: string } => entry !== null);
                         
-                        entries.sort((a, b) => {
+                        entries.sort((a: { day: string; hours: string }, b: { day: string; hours: string }) => {
                           const aIndex = dayOrder.indexOf(a.day);
                           const bIndex = dayOrder.indexOf(b.day);
                           return aIndex - bIndex;
