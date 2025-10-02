@@ -23,21 +23,21 @@ interface Params {
   slug: string;
 }
 
-// Generate static params for all specialists
+// Generate static params for all specialists from places table
 export async function generateStaticParams() {
   try {
-    // Use coaches table which has slugs
-    const { data: allCoaches, error } = await supabase
-      .from('coaches')
-      .select('slug');
+    const { data: allPlaces, error } = await supabase
+      .from('places')
+      .select('slug')
+      .not('slug', 'is', null);
     
     if (error) {
       console.error('Error generating static params for specialists:', error);
       return [];
     }
 
-    return (allCoaches || []).map((coach) => ({
-      slug: coach.slug,
+    return (allPlaces || []).map((place) => ({
+      slug: place.slug,
     }));
   } catch (error) {
     console.error('Error generating static params for specialists:', error);
@@ -45,77 +45,68 @@ export async function generateStaticParams() {
   }
 }
 
-// Fetch specialist data - use coaches table but enrich with places/reviews when available
+// Fetch specialist data from places table
 async function getSpecialist(slug: string) {
   try {
-    // Get coach data first
-    const { data: coach, error } = await supabase
-      .from('coaches')
-      .select(`
-        *, 
-        cities!inner(name, slug, province)
-      `)
+    // Get place data by slug
+    const { data: place, error } = await supabase
+      .from('places')
+      .select('*')
       .eq('slug', slug)
       .maybeSingle();
 
-    if (error || !coach) {
+    if (error || !place) {
       console.error('Error fetching specialist:', error);
       return null;
     }
 
-    // Try to find matching place by name and city
-    let reviews = [];
-    let placeData = null;
-    
-    if (coach.name) {
-      // Try to find place by name
-      const { data: places } = await supabase
-        .from('places')
-        .select('*')
-        .ilike('NAME', `%${coach.name}%`)
-        .limit(1);
-      
-      if (places && places.length > 0) {
-        placeData = places[0];
-        
-        // Get reviews for this place
-        const { data: placeReviews } = await supabase
-          .from('reviews')
-          .select('*')
-          .eq('PLACE ID', placeData['PLACE ID'])
-          .order('PUBLISHED_TIME', { ascending: false })
-          .limit(10);
-        
-        reviews = placeReviews || [];
-      }
+    // Get city info if city_id is set
+    let cityData = null;
+    if (place.city_id) {
+      const { data: city } = await supabase
+        .from('cities')
+        .select('name, slug, province')
+        .eq('id', place.city_id)
+        .single();
+      cityData = city;
     }
 
-    // Transform and merge data
+    // Get reviews for this place
+    const { data: reviews } = await supabase
+      .from('reviews')
+      .select('*')
+      .eq('PLACE ID', place['PLACE ID'])
+      .order('PUBLISHED_TIME', { ascending: false })
+      .limit(10);
+
+    // Transform place data to match expected format
     return {
-      id: coach.id,
-      name: coach.name,
-      slug: coach.slug,
-      email: coach.email || placeData?.['EMAIL'],
-      phone: coach.phone || placeData?.['PHONE'],
-      website: coach.website || placeData?.['WEBSITE'],
-      specialization: coach.specialization || placeData?.['CATEGORY'] || 'ADHD Specialist',
-      description: coach.description,
-      address: coach.address || placeData?.['ADDRESS'],
-      rating: coach.rating || (placeData?.['SCORE'] ? parseFloat(placeData['SCORE']) : null),
-      reviewCount: coach.review_count || (placeData?.['RATINGS'] ? parseInt(placeData['RATINGS']) : 0),
-      isChildFriendly: coach.is_child_friendly,
-      weekendAvailable: coach.weekend_available,
-      onlineAvailable: coach.online_available,
-      inPersonAvailable: coach.in_person_available,
-      acceptsInsurance: coach.accepts_insurance,
-      availabilityStatus: coach.availability_status,
-      openingHours: placeData?.['OPENING HOURS'],
-      mainImageUrl: placeData?.['MAIN IMAGE URL'],
-      cityName: coach.cities?.name,
-      citySlug: coach.cities?.slug,
-      province: coach.cities?.province,
-      reviews: reviews,
-      placeId: placeData?.['PLACE ID'],
+      id: place['PLACE ID'],
+      name: place['NAME'],
+      slug: place.slug,
+      email: place['EMAIL'] || place.email,
+      phone: place['PHONE'] || place.phone,
+      website: place['WEBSITE'] || place.website,
+      specialization: place.specialization || place['CATEGORY'] || 'ADHD Specialist',
+      description: place.description || `Professionele ADHD begeleiding in ${place['CITY']}`,
+      address: place['ADDRESS'] || place['STREET ADDRESS'],
+      latitude: place['LAT'],
+      longitude: place['LNG'],
+      rating: place.rating || (place['SCORE'] ? parseFloat(place['SCORE']) : null),
+      reviewCount: place.review_count || (place['RATINGS'] ? parseInt(place['RATINGS']) : 0),
+      isChildFriendly: place.is_child_friendly || false,
+      weekendAvailable: place.weekend_available || false,
+      onlineAvailable: place.online_available || false,
+      inPersonAvailable: place.in_person_available !== false,
+      acceptsInsurance: place.accepts_insurance || false,
+      availabilityStatus: place.availability_status || 'available',
+      openingHours: place['OPENING HOURS'],
+      mainImageUrl: place['MAIN IMAGE URL'],
+      cityName: cityData?.name || place['CITY'],
+      citySlug: cityData?.slug,
+      province: cityData?.province,
+      reviews: reviews || [],
+      placeId: place['PLACE ID'],
     };
   } catch (error) {
     console.error('Error fetching specialist:', error);
@@ -382,12 +373,14 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                 </div>
                 
                 <div className="mt-6 space-y-3">
-                  <a
-                    href={`tel:${specialist.phone}`}
-                    className="block w-full bg-blue-600 text-white text-center py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
-                  >
-                    Bel nu
-                  </a>
+                  {specialist.phone && (
+                    <a
+                      href={`tel:${specialist.phone}`}
+                      className="block w-full bg-blue-600 text-white text-center py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+                    >
+                      Bel nu
+                    </a>
+                  )}
                   {specialist.email && (
                     <a
                       href={`mailto:${specialist.email}`}
