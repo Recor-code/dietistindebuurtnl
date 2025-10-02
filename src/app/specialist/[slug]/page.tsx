@@ -87,6 +87,8 @@ async function getSpecialist(slug: string) {
       specialization: place['CATEGORY'] || 'ADHD Specialist',
       description: place.description || `Gecertificeerde specialist met specialisatie in ADHD begeleiding. Professionele ondersteuning voor kinderen, adolescenten en volwassenen.`,
       address: place['ADDRESS'],
+      latitude: place['LAT'] ? parseFloat(place['LAT']) : null,
+      longitude: place['LNG'] ? parseFloat(place['LNG']) : null,
       rating: place['SCORE'] ? parseFloat(place['SCORE']) : null,
       reviewCount: place['RATINGS'] ? parseInt(place['RATINGS']) : 0,
       isChildFriendly: place.kindvriendelijk_filter === 'yes',
