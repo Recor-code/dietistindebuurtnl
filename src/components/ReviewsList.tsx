@@ -6,11 +6,10 @@ import { Star, Clock, Filter } from 'lucide-react';
 interface Review {
   'INTERNAL REVIEW ID': string;
   'USER NAME': string;
-  'RATING': number;
+  'SCORE': number;
   'TEXT': string;
-  'RELATIVE PUBLISHED TIME': string;
-  'PUBLISHED_TIME': string;
-  'OWNER REPLY'?: string;
+  'PUBLISHED AT DATETIME': string;
+  'RESPONSE FROM OWNER'?: string;
 }
 
 interface ReviewsListProps {
@@ -25,17 +24,17 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
   // Filter reviews
   let filteredReviews = [...reviews];
   if (filterRating !== null) {
-    filteredReviews = filteredReviews.filter(review => review['RATING'] >= filterRating);
+    filteredReviews = filteredReviews.filter(review => review['SCORE'] >= filterRating);
   }
 
   // Sort reviews
   filteredReviews.sort((a, b) => {
     if (sortBy === 'newest') {
-      return new Date(b['PUBLISHED_TIME']).getTime() - new Date(a['PUBLISHED_TIME']).getTime();
+      return new Date(b['PUBLISHED AT DATETIME']).getTime() - new Date(a['PUBLISHED AT DATETIME']).getTime();
     } else if (sortBy === 'highest') {
-      return (b['RATING'] || 0) - (a['RATING'] || 0);
+      return (b['SCORE'] || 0) - (a['SCORE'] || 0);
     } else {
-      return (a['RATING'] || 0) - (b['RATING'] || 0);
+      return (a['SCORE'] || 0) - (b['SCORE'] || 0);
     }
   });
 
@@ -133,29 +132,35 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <p className="font-medium text-gray-900">{review['USER NAME']}</p>
-                  {review['RATING'] && (
+                  {review['SCORE'] && (
                     <div className="flex items-center mt-1">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
                           size={16}
                           className={`${
-                            i < review['RATING'] ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
+                            i < review['SCORE'] ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
                           }`}
                         />
                       ))}
                     </div>
                   )}
                 </div>
-                <span className="text-sm text-gray-500">{review['RELATIVE PUBLISHED TIME']}</span>
+                <span className="text-sm text-gray-500">
+                  {new Date(review['PUBLISHED AT DATETIME']).toLocaleDateString('nl-NL', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </span>
               </div>
               {review['TEXT'] && (
                 <p className="text-gray-700 mt-2">{review['TEXT']}</p>
               )}
-              {review['OWNER REPLY'] && (
+              {review['RESPONSE FROM OWNER'] && (
                 <div className="mt-4 pl-4 border-l-2 border-blue-200">
                   <p className="text-sm font-medium text-blue-600">Reactie van eigenaar:</p>
-                  <p className="text-gray-600 text-sm mt-1">{review['OWNER REPLY']}</p>
+                  <p className="text-gray-600 text-sm mt-1">{review['RESPONSE FROM OWNER']}</p>
                 </div>
               )}
             </div>
