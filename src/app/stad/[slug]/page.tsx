@@ -381,12 +381,12 @@ export default function CityPage({ params }: PageProps) {
                     </div>
                     
                     {/* Rating */}
-                    {place.rating && place.rating > 0 && (
-                      <div className="flex items-center gap-1 mb-2">
+                    {place.rating && place.rating > 0 && place.slug && (
+                      <Link href={`/specialist/${place.slug}`} className="flex items-center gap-1 mb-2 hover:opacity-80 transition-opacity cursor-pointer w-fit">
                         <Star size={16} className="text-yellow-400 fill-current" />
                         <span className="text-sm font-medium text-gray-700">{place.rating}</span>
                         <span className="text-xs text-gray-500">({place.reviewCount} reviews)</span>
-                      </div>
+                      </Link>
                     )}
                     
                     <p className="text-blue-600 font-medium mb-2 text-sm">
