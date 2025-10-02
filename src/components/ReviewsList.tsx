@@ -54,113 +54,113 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
 
   return (
     <div>
-      {/* Filter and Sort Controls */}
-      <div className="mb-6 flex flex-wrap gap-4 items-center pb-4 border-b">
-        <div className="flex items-center gap-2">
-          <Filter className="w-4 h-4 text-gray-600" />
-          <span className="text-sm font-medium text-gray-700">Filter:</span>
-        </div>
-        
-        <div className="flex flex-wrap gap-2">
-          <button
-            onClick={() => setFilterRating(null)}
-            className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-              filterRating === null
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            Alle
-          </button>
-          <button
-            onClick={() => setFilterRating(5)}
-            className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-              filterRating === 5
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            5 sterren
-          </button>
-          <button
-            onClick={() => setFilterRating(4)}
-            className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-              filterRating === 4
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            4+ sterren
-          </button>
-          <button
-            onClick={() => setFilterRating(3)}
-            className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-              filterRating === 3
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            3+ sterren
-          </button>
-        </div>
-
-        <div className="ml-auto flex items-center gap-2">
-          <span className="text-sm font-medium text-gray-700">Sorteer:</span>
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as 'newest' | 'highest' | 'lowest')}
-            className="px-3 py-1 rounded-lg border border-gray-300 text-sm font-medium text-gray-700 bg-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="newest">Nieuwste eerst</option>
-            <option value="highest">Hoogste beoordeling</option>
-            <option value="lowest">Laagste beoordeling</option>
-          </select>
-        </div>
+      {/* Filter Buttons */}
+      <div className="mb-6 flex flex-wrap gap-2">
+        <button
+          onClick={() => setFilterRating(null)}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            filterRating === null
+              ? 'bg-gray-800 text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          }`}
+        >
+          All Ratings
+        </button>
+        <button
+          onClick={() => setFilterRating(5)}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            filterRating === 5
+              ? 'bg-gray-800 text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          }`}
+        >
+          5 ⭐
+        </button>
+        <button
+          onClick={() => setFilterRating(4)}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            filterRating === 4
+              ? 'bg-gray-800 text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          }`}
+        >
+          4 ⭐
+        </button>
+        <button
+          onClick={() => setFilterRating(3)}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            filterRating === 3
+              ? 'bg-gray-800 text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          }`}
+        >
+          3 ⭐
+        </button>
+        <button
+          onClick={() => setFilterRating(2)}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            filterRating === 2
+              ? 'bg-gray-800 text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          }`}
+        >
+          2 ⭐
+        </button>
+        <button
+          onClick={() => setFilterRating(1)}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            filterRating === 1
+              ? 'bg-gray-800 text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          }`}
+        >
+          1 ⭐
+        </button>
       </div>
-
-      {/* Reviews Count */}
-      <p className="text-sm text-gray-600 mb-4">
-        {filteredReviews.length} {filteredReviews.length === 1 ? 'review' : 'reviews'}
-        {filterRating !== null && ` met ${filterRating}+ sterren`}
-      </p>
 
       {/* Reviews List */}
       {filteredReviews.length > 0 ? (
-        <div className="space-y-6">
+        <div className="space-y-4">
           {filteredReviews.map((review, index) => (
-            <div key={review['INTERNAL REVIEW ID'] || index} className="border-b pb-6 last:border-b-0">
-              <div className="flex items-start justify-between mb-2">
-                <div>
-                  <p className="font-medium text-gray-900">{review['USER NAME']}</p>
-                  {review['SCORE'] && (
-                    <div className="flex items-center mt-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={16}
-                          className={`${
-                            i < review['SCORE'] ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  )}
+            <div key={review['INTERNAL REVIEW ID'] || index} className="border rounded-lg p-4 bg-white">
+              {/* Rating and Date Row */}
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={18}
+                        className={`${
+                          i < review['SCORE'] ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">{review['SCORE']}/5</span>
                 </div>
                 <span className="text-sm text-gray-500">
-                  {new Date(review['PUBLISHED AT DATETIME']).toLocaleDateString('nl-NL', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
+                  {new Date(review['PUBLISHED AT DATETIME']).toLocaleDateString('en-US', { 
+                    month: 'numeric', 
+                    day: 'numeric',
+                    year: 'numeric'
                   })}
                 </span>
               </div>
+              
+              {/* User Name */}
+              <p className="font-medium text-gray-900 mb-2">{review['USER NAME']}</p>
+              
+              {/* Review Text */}
               {review['TEXT'] && (
-                <p className="text-gray-700 mt-2">{review['TEXT']}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">{review['TEXT']}</p>
               )}
+              
+              {/* Owner Reply */}
               {review['RESPONSE FROM OWNER'] && (
-                <div className="mt-4 pl-4 border-l-2 border-blue-200">
-                  <p className="text-sm font-medium text-blue-600">Reactie van eigenaar:</p>
-                  <p className="text-gray-600 text-sm mt-1">{review['RESPONSE FROM OWNER']}</p>
+                <div className="mt-3 pt-3 border-t border-gray-200">
+                  <p className="text-xs font-semibold text-gray-700 mb-1">Reactie van eigenaar</p>
+                  <p className="text-gray-600 text-sm">{review['RESPONSE FROM OWNER']}</p>
                 </div>
               )}
             </div>
