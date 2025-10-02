@@ -450,13 +450,14 @@ export default function CityPage({ params }: PageProps) {
                 
                 {/* CTA Button - View Profile */}
                 {place.slug && (
-                  <Link
-                    href={`/specialist/${place.slug}`}
-                    className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                  >
-                    <Users size={18} />
-                    Bekijk profiel
-                  </Link>
+                  <div className="flex justify-end">
+                    <Link
+                      href={`/specialist/${place.slug}`}
+                      className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                    >
+                      Bekijk profiel
+                    </Link>
+                  </div>
                 )}
               </div>
               );
