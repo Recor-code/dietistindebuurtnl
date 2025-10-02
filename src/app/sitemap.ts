@@ -63,23 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }));
     }
 
-    // Get all published blog posts using REST API
-    const postsResponse = await fetch(`${supabaseUrl}/rest/v1/blog_posts?select=slug,created_at,updated_at,published_at&published_at=not.is.null`, {
-      headers,
-    });
-    
-    let blogPages = [];
-    if (postsResponse.ok) {
-      const allPosts = await postsResponse.json();
-      blogPages = (allPosts || []).map((post: any) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: post.updated_at ? new Date(post.updated_at) : new Date(post.created_at || new Date()),
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      }));
-    }
-
-    return [...staticPages, ...cityPages, ...blogPages];
+    return [...staticPages, ...cityPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
     return staticPages;

@@ -12,33 +12,8 @@ interface PageProps {
 }
 
 async function getBlogPost(slug: string) {
-  try {
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('id, title, slug, content, excerpt, meta_description, published_at, tags, cities(id, name, slug)')
-      .eq('slug', slug)
-      .maybeSingle();
-
-    if (error) {
-      console.error('Error fetching blog post:', error);
-      return null;
-    }
-
-    if (!data) {
-      return null;
-    }
-
-    // Transform data shape to match UI expectations
-    return {
-      ...data,
-      metaDescription: data.meta_description,
-      publishedAt: data.published_at ? new Date(data.published_at) : null,
-      city: data.cities && Array.isArray(data.cities) ? data.cities[0] : data.cities
-    };
-  } catch (error) {
-    console.error('Error fetching blog post:', error);
-    return null;
-  }
+  // No blog posts table available
+  return null;
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -83,24 +58,8 @@ export async function generateMetadata({ params }: PageProps) {
 
 // Generate static params for all blog posts at build time
 export async function generateStaticParams() {
-  try {
-    const { data: posts, error } = await supabase
-      .from('blog_posts')
-      .select('slug')
-      .not('published_at', 'is', null);
-
-    if (error || !posts) {
-      console.warn('Error fetching blog posts for static generation:', error);
-      return [];
-    }
-
-    return posts.map((post) => ({
-      slug: post.slug,
-    }));
-  } catch (error) {
-    console.warn('Failed to generate static params for blog posts:', error);
-    return [];
-  }
+  // No blog posts table available - return empty array
+  return [];
 }
 
 // Enable Incremental Static Regeneration (ISR) - revalidate every hour
