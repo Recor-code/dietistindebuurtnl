@@ -316,14 +316,14 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
           </div>
 
           {/* Reviews Section */}
-          <div className="bg-white rounded-lg shadow-sm p-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
             <h2 className="text-xl font-bold text-gray-900 mb-6">Reviews</h2>
             <ReviewsList reviews={specialist.reviews} specialistName={specialist.name} />
           </div>
-        </div>
 
-        {/* Claim Practice Section */}
-        <ClaimPracticeButton practiceName={specialist.name} specialistSlug={specialist.slug} />
+          {/* Claim Practice Section */}
+          <ClaimPracticeButton practiceName={specialist.name} specialistSlug={specialist.slug} />
+        </div>
       </main>
       <Footer />
     </>
