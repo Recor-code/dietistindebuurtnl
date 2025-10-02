@@ -237,38 +237,49 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
           )}
 
           {/* Services & Availability */}
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">Services & Beschikbaarheid</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {specialist.isChildFriendly && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Users className="w-5 h-5 text-blue-600" />
-                  <span>Kindvriendelijk</span>
-                </div>
-              )}
+          {(specialist.isChildFriendly || specialist.weekendAvailable || specialist.acceptsInsurance || specialist.studentFriendly || specialist.openingHours) && (
+            <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-6">Services & Beschikbaarheid</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {specialist.isChildFriendly && (
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <Users className="w-5 h-5 text-blue-600" />
+                    <span>Kindvriendelijk</span>
+                  </div>
+                )}
+                
+                {specialist.weekendAvailable && (
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <Calendar className="w-5 h-5 text-blue-600" />
+                    <span>Weekend beschikbaar</span>
+                  </div>
+                )}
+                
+                {specialist.acceptsInsurance && (
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <CreditCard className="w-5 h-5 text-blue-600" />
+                    <span>Basisverzekering</span>
+                  </div>
+                )}
+                
+                {specialist.studentFriendly && (
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <Users className="w-5 h-5 text-blue-600" />
+                    <span>Studentvriendelijk</span>
+                  </div>
+                )}
+              </div>
               
-              {specialist.weekendAvailable && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Calendar className="w-5 h-5 text-blue-600" />
-                  <span>Weekend beschikbaar</span>
-                </div>
-              )}
-              
-              {specialist.acceptsInsurance && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <CreditCard className="w-5 h-5 text-blue-600" />
-                  <span>Basisverzekering</span>
-                </div>
-              )}
-              
-              {specialist.studentFriendly && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Users className="w-5 h-5 text-blue-600" />
-                  <span>Studentvriendelijk</span>
+              {specialist.openingHours && (
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <h3 className="font-semibold text-gray-900 mb-3">Openingstijden</h3>
+                  <div className="text-gray-700 whitespace-pre-line">
+                    {specialist.openingHours}
+                  </div>
                 </div>
               )}
             </div>
-          </div>
+          )}
 
           {/* Contact Information */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
