@@ -185,7 +185,7 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
                 onClick={() => setVisibleCount(prev => prev + 6)}
                 className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-200 shadow-md hover:shadow-lg"
               >
-                Load more reviews ({filteredReviews.length - visibleCount} remaining)
+                Meer reviews laden ({filteredReviews.length - visibleCount} over)
               </button>
             </div>
           )}
