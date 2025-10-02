@@ -68,7 +68,7 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           }`}
         >
-          All Ratings
+          Alle beoordelingen
         </button>
         <button
           onClick={() => setFilterRating(5)}
