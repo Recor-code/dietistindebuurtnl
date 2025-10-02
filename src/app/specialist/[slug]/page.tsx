@@ -209,6 +209,40 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
             </p>
           </div>
 
+          {/* Location Map */}
+          {specialist.latitude && specialist.longitude && (
+            <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <MapPin className="text-blue-600" />
+                Locatie
+              </h2>
+              <p className="text-gray-600 mb-4">
+                {specialist.address}
+              </p>
+              <div className="w-full h-96 rounded-lg overflow-hidden">
+                <GoogleMap
+                  coaches={[{
+                    id: specialist.id,
+                    placeId: specialist.placeId,
+                    name: specialist.name,
+                    latitude: specialist.latitude,
+                    longitude: specialist.longitude,
+                    rating: specialist.rating,
+                    address: specialist.address,
+                    specialization: specialist.specialization,
+                    slug: specialist.slug
+                  }]}
+                  center={{ 
+                    lat: typeof specialist.latitude === 'string' ? parseFloat(specialist.latitude) : specialist.latitude, 
+                    lng: typeof specialist.longitude === 'string' ? parseFloat(specialist.longitude) : specialist.longitude 
+                  }}
+                  zoom={15}
+                  height="100%"
+                />
+              </div>
+            </div>
+          )}
+
           {/* Services & Availability */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
             <h2 className="text-xl font-bold text-gray-900 mb-6">Services & Beschikbaarheid</h2>
@@ -299,40 +333,6 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
               )}
             </div>
           </div>
-
-          {/* Location Map */}
-          {specialist.latitude && specialist.longitude && (
-            <div className="bg-white rounded-lg shadow-sm p-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <MapPin className="text-blue-600" />
-                Locatie
-              </h2>
-              <p className="text-gray-600 mb-4">
-                {specialist.address}
-              </p>
-              <div className="w-full h-96 rounded-lg overflow-hidden">
-                <GoogleMap
-                  coaches={[{
-                    id: specialist.id,
-                    placeId: specialist.placeId,
-                    name: specialist.name,
-                    latitude: specialist.latitude,
-                    longitude: specialist.longitude,
-                    rating: specialist.rating,
-                    address: specialist.address,
-                    specialization: specialist.specialization,
-                    slug: specialist.slug
-                  }]}
-                  center={{ 
-                    lat: typeof specialist.latitude === 'string' ? parseFloat(specialist.latitude) : specialist.latitude, 
-                    lng: typeof specialist.longitude === 'string' ? parseFloat(specialist.longitude) : specialist.longitude 
-                  }}
-                  zoom={15}
-                  height="100%"
-                />
-              </div>
-            </div>
-          )}
 
           {/* Reviews Section */}
           <div className="bg-white rounded-lg shadow-sm p-8">
