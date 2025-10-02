@@ -14,7 +14,8 @@ import {
   Monitor,
   Home,
   CreditCard,
-  ArrowLeft
+  ArrowLeft,
+  Clock
 } from 'lucide-react';
 
 interface Params {
