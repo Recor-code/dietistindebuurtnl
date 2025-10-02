@@ -134,8 +134,8 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
                   ${coach.address ? `<p style="font-size: 12px; color: #6b7280; margin: 0 0 12px 0;">${coach.address}</p>` : ''}
                   ${coach.slug ? `
                     <a href="/specialist/${coach.slug}" 
-                       style="display: inline-block; background: #3b82f6; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 500;">
-                      Bekijk profiel
+                       style="display: inline-block; color: #3b82f6; text-decoration: none; font-size: 13px; font-weight: 400; margin-top: 4px;">
+                      Bekijk profiel →
                     </a>
                   ` : ''}
                 </div>
