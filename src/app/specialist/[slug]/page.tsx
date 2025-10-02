@@ -3,6 +3,7 @@ import { supabase } from '../../../../lib/supabase';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ReviewsList from '@/components/ReviewsList';
 import { 
   MapPin, 
   Phone, 
@@ -14,8 +15,7 @@ import {
   Monitor,
   Home,
   CreditCard,
-  ArrowLeft,
-  Clock
+  ArrowLeft
 } from 'lucide-react';
 
 interface Params {
@@ -301,53 +301,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
           {/* Reviews Section */}
           <div className="bg-white rounded-lg shadow-sm p-8">
             <h2 className="text-xl font-bold text-gray-900 mb-6">Reviews</h2>
-            
-            {specialist.reviews && specialist.reviews.length > 0 ? (
-              <div className="space-y-6">
-                {specialist.reviews.map((review: any, index: number) => (
-                  <div key={review['INTERNAL REVIEW ID'] || index} className="border-b pb-6 last:border-b-0">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <p className="font-medium text-gray-900">{review['USER NAME']}</p>
-                        {review['RATING'] && (
-                          <div className="flex items-center mt-1">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                size={16}
-                                className={`${
-                                  i < review['RATING'] ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
-                                }`}
-                              />
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                      <span className="text-sm text-gray-500">{review['RELATIVE PUBLISHED TIME']}</span>
-                    </div>
-                    {review['TEXT'] && (
-                      <p className="text-gray-700 mt-2">{review['TEXT']}</p>
-                    )}
-                    {review['OWNER REPLY'] && (
-                      <div className="mt-4 pl-4 border-l-2 border-blue-200">
-                        <p className="text-sm font-medium text-blue-600">Reactie van eigenaar:</p>
-                        <p className="text-gray-600 text-sm mt-1">{review['OWNER REPLY']}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-                  <Clock className="w-8 h-8 text-gray-400" />
-                </div>
-                <p className="text-gray-600 font-medium mb-2">Reviews komen binnenkort beschikbaar</p>
-                <p className="text-gray-500 text-sm">
-                  Wij werken hard aan een review systeem om je de beste ervaringen van andere cliënten te tonen.
-                </p>
-              </div>
-            )}
+            <ReviewsList reviews={specialist.reviews} specialistName={specialist.name} />
           </div>
         </div>
       </main>
