@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
 
-// Declare global google types
 declare global {
   interface Window {
     google: typeof google;
@@ -12,12 +11,14 @@ declare global {
 
 interface Coach {
   id: number;
+  placeId?: string;
   name: string;
-  latitude: string | null;
-  longitude: string | null;
-  rating: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  rating: number | null;
   address: string | null;
   specialization: string | null;
+  slug?: string;
 }
 
 interface GoogleMapProps {
@@ -29,35 +30,37 @@ interface GoogleMapProps {
 
 export default function GoogleMap({ coaches, center, zoom = 12, height = '400px' }: GoogleMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<google.maps.Map | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isMounted, setIsMounted] = useState(false);
 
-  // Ensure component is mounted and running on client-side only
+  // Track component mount
   useEffect(() => {
-    // Only run on client-side after component mounts
     setIsMounted(true);
+    return () => setIsMounted(false);
   }, []);
 
   useEffect(() => {
     // Skip if not mounted or if running on server-side
     if (!isMounted || typeof window === 'undefined') return;
 
+    // Skip if map already initialized
+    if (mapInstanceRef.current) return;
+
     const initMap = async () => {
       try {
         console.log('🗺️ GoogleMap: Starting initialization');
         console.log('📍 GoogleMap: Center coordinates:', center);
         console.log('👥 GoogleMap: Total coaches received:', coaches.length);
-        
-        // Debug coach data
-        coaches.forEach((coach, index) => {
-          console.log(`🏃 Coach ${index + 1}:`, {
-            name: coach.name,
-            latitude: coach.latitude,
-            longitude: coach.longitude,
-            address: coach.address
-          });
-        });
+
+        // Check if container ref is available
+        if (!mapRef.current) {
+          console.error('❌ GoogleMap: Map container ref not yet available, will retry');
+          return;
+        }
+
+        console.log('✅ GoogleMap: Map container ref is available');
 
         const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
         
@@ -69,48 +72,44 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
 
         console.log('🔑 GoogleMap: API key available');
 
+        // Load Google Maps API
         const loader = new Loader({
           apiKey,
           version: 'weekly',
-          libraries: ['maps']
+          libraries: ['maps', 'marker']
         });
 
         console.log('⏳ GoogleMap: Loading Google Maps API...');
         await loader.load();
         console.log('✅ GoogleMap: Google Maps API loaded successfully');
 
-        // Try direct DOM access if ref isn't available
-        let mapElement = mapRef.current;
-        if (!mapElement) {
-          console.error('❌ GoogleMap: React ref not available, trying direct DOM access...');
-          mapElement = document.getElementById('google-map-container') as HTMLDivElement;
-          if (!mapElement) {
-            console.error('🚨 GoogleMap: Neither ref nor DOM element found');
-            setError('Map container niet gevonden. Probeer de pagina opnieuw te laden.');
-            return;
-          }
-          console.log('✅ GoogleMap: Using direct DOM access for map element');
-        } else {
-          console.log('✅ GoogleMap: Using React ref for map element');
+        // Double-check ref is still available after async load
+        if (!mapRef.current) {
+          console.error('❌ GoogleMap: Map container ref lost after API load');
+          setError('Map container niet gevonden na laden van API.');
+          return;
         }
 
-        const map = new google.maps.Map(mapElement, {
+        // Create map instance
+        const map = new google.maps.Map(mapRef.current, {
           center,
           zoom,
+          mapTypeControl: true,
+          streetViewControl: false,
+          fullscreenControl: true,
         });
 
+        mapInstanceRef.current = map;
         console.log('🗺️ GoogleMap: Map instance created successfully');
 
         let markersAdded = 0;
         let markersSkipped = 0;
 
-        // Add markers for coaches
+        // Add markers for coaches with valid coordinates
         coaches.forEach((coach) => {
           if (coach.latitude && coach.longitude) {
-            const lat = parseFloat(coach.latitude);
-            const lng = parseFloat(coach.longitude);
-            
-            console.log(`📍 Processing ${coach.name}: lat=${lat}, lng=${lng}`);
+            const lat = typeof coach.latitude === 'string' ? parseFloat(coach.latitude) : coach.latitude;
+            const lng = typeof coach.longitude === 'string' ? parseFloat(coach.longitude) : coach.longitude;
             
             if (!isNaN(lat) && !isNaN(lng)) {
               const marker = new google.maps.Marker({
@@ -119,19 +118,26 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
                 title: coach.name,
               });
 
-              console.log(`✅ Marker added for ${coach.name} at ${lat}, ${lng}`);
               markersAdded++;
 
-              // Create info window content
+              // Create info window with link to specialist page
               const infoContent = `
-                <div class="p-3 max-w-xs">
-                  <h3 class="font-semibold text-gray-800 mb-1">${coach.name}</h3>
-                  <p class="text-sky-500 text-sm mb-2">${coach.specialization || 'ADHD Coach'}</p>
-                  ${coach.rating ? `<div class="flex items-center gap-1 text-sm text-gray-600 mb-2">
-                    <span class="text-yellow-400">★</span>
-                    <span>${coach.rating}</span>
-                  </div>` : ''}
-                  ${coach.address ? `<p class="text-gray-600 text-xs">${coach.address}</p>` : ''}
+                <div style="padding: 12px; max-width: 280px; font-family: system-ui, -apple-system, sans-serif;">
+                  <h3 style="font-size: 16px; font-weight: 600; color: #1f2937; margin: 0 0 4px 0;">${coach.name}</h3>
+                  <p style="font-size: 14px; color: #0ea5e9; margin: 0 0 8px 0;">${coach.specialization || 'ADHD Specialist'}</p>
+                  ${coach.rating ? `
+                    <div style="display: flex; align-items: center; gap: 4px; font-size: 14px; color: #6b7280; margin-bottom: 8px;">
+                      <span style="color: #fbbf24;">★</span>
+                      <span>${coach.rating.toFixed(1)}</span>
+                    </div>
+                  ` : ''}
+                  ${coach.address ? `<p style="font-size: 12px; color: #6b7280; margin: 0 0 12px 0;">${coach.address}</p>` : ''}
+                  ${coach.slug ? `
+                    <a href="/specialist/${coach.slug}" 
+                       style="display: inline-block; background: #3b82f6; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 500;">
+                      Bekijk profiel
+                    </a>
+                  ` : ''}
                 </div>
               `;
 
@@ -147,7 +153,6 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
               markersSkipped++;
             }
           } else {
-            console.warn(`⚠️ Missing coordinates for ${coach.name}: lat=${coach.latitude}, lng=${coach.longitude}`);
             markersSkipped++;
           }
         });
@@ -157,23 +162,30 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
 
       } catch (err) {
         console.error('❌ Error loading Google Maps:', err);
+        console.error('❌ Error details:', err instanceof Error ? err.message : 'Unknown error');
+        console.error('❌ Error stack:', err instanceof Error ? err.stack : 'No stack trace');
         setError('Kon de kaart niet laden. Controleer je internetverbinding.');
       }
     };
 
-    initMap();
+    // Add delay to ensure DOM is fully ready
+    const timeoutId = setTimeout(() => {
+      initMap();
+    }, 200);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [coaches, center, zoom, isMounted]);
 
-  // Show loading state while mounting
   if (!isMounted) {
     return (
       <div 
-        className="bg-gray-50 border-gray-200 border rounded-lg flex items-center justify-center"
+        className="bg-gray-100 rounded-lg flex items-center justify-center"
         style={{ height }}
       >
         <div className="text-center">
-          <div className="animate-pulse h-4 w-32 bg-gray-300 rounded mx-auto mb-2"></div>
-          <p className="text-gray-500 text-sm">Kaart voorbereiden...</p>
+          <p className="text-gray-500 text-sm">Map voorbereiden...</p>
         </div>
       </div>
     );
@@ -182,44 +194,35 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   if (error) {
     return (
       <div 
-        className="bg-red-100 border-red-300 border-2 rounded-lg flex items-center justify-center"
+        className="bg-red-50 border border-red-200 rounded-lg flex items-center justify-center"
         style={{ height }}
       >
         <div className="text-center p-4">
-          <p className="text-red-600 mb-2">❌ Google Maps Error</p>
-          <p className="text-red-600 text-sm font-medium">{error}</p>
-          <p className="text-gray-600 text-xs mt-2">
-            Rotterdam heeft {coaches.length} coach{coaches.length !== 1 ? 'es' : ''}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!isLoaded) {
-    return (
-      <div 
-        className="bg-sky-50 border-sky-300 border-2 rounded-lg flex items-center justify-center"
-        style={{ height }}
-      >
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-500 mx-auto mb-2"></div>
-          <p className="text-sky-500 text-sm font-medium">Kaart laden...</p>
-          <p className="text-gray-600 text-xs mt-2">
-            {coaches.length} coach{coaches.length !== 1 ? 'es' : ''} gereed voor {center.lat.toFixed(4)}, {center.lng.toFixed(4)}
-          </p>
+          <p className="text-red-600 font-medium mb-2">Google Maps kon niet laden</p>
+          <p className="text-red-500 text-sm">{error}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="rounded-lg overflow-hidden shadow-md">
+    <div className="rounded-lg overflow-hidden shadow-md relative" style={{ height }}>
       <div 
         ref={mapRef} 
-        id="google-map-container"
-        style={{ height }} 
+        className="w-full h-full"
+        style={{ minHeight: height }}
       />
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-blue-50 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-3"></div>
+            <p className="text-blue-600 text-sm font-medium">Kaart laden...</p>
+            <p className="text-gray-500 text-xs mt-1">
+              {coaches.length} specialist{coaches.length !== 1 ? 'en' : ''} gereed
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
