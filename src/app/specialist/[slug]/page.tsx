@@ -68,13 +68,12 @@ async function getSpecialist(slug: string) {
       .ilike('name', place['CITY'])
       .maybeSingle();
 
-    // Get reviews for this place
+    // Get reviews for this place (sorting handled client-side in ReviewsList)
     const { data: reviews } = await supabase
       .from('reviews')
       .select('*')
       .eq('PLACE ID', place['PLACE ID'])
-      .order('PUBLISHED_TIME', { ascending: false })
-      .limit(10);
+      .limit(50);
 
     // Transform place data to match expected format
     return {
