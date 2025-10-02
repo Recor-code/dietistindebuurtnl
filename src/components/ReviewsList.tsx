@@ -18,14 +18,33 @@ interface ReviewsListProps {
 }
 
 export default function ReviewsList({ reviews, specialistName }: ReviewsListProps) {
-  const [filterRating, setFilterRating] = useState<number | null>(null);
+  const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
   const [sortBy, setSortBy] = useState<'newest' | 'highest' | 'lowest'>('newest');
   const [visibleCount, setVisibleCount] = useState(6);
 
+  // Calculate rating distribution
+  const ratingCounts = [0, 0, 0, 0, 0];
+  reviews.forEach(review => {
+    const score = review['SCORE'];
+    if (score >= 1 && score <= 5) {
+      ratingCounts[score - 1]++;
+    }
+  });
+  const maxCount = Math.max(...ratingCounts);
+
+  // Toggle rating selection
+  const toggleRating = (rating: number) => {
+    if (selectedRatings.includes(rating)) {
+      setSelectedRatings(selectedRatings.filter(r => r !== rating));
+    } else {
+      setSelectedRatings([...selectedRatings, rating]);
+    }
+  };
+
   // Filter reviews
   let filteredReviews = [...reviews];
-  if (filterRating !== null) {
-    filteredReviews = filteredReviews.filter(review => review['SCORE'] >= filterRating);
+  if (selectedRatings.length > 0) {
+    filteredReviews = filteredReviews.filter(review => selectedRatings.includes(review['SCORE']));
   }
 
   // Sort reviews
@@ -58,68 +77,46 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
 
   return (
     <div>
-      {/* Filter Buttons */}
-      <div className="mb-6 flex flex-wrap gap-2">
-        <button
-          onClick={() => setFilterRating(null)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            filterRating === null
-              ? 'bg-gray-800 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          Alle beoordelingen
-        </button>
-        <button
-          onClick={() => setFilterRating(5)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            filterRating === 5
-              ? 'bg-gray-800 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          5 ⭐
-        </button>
-        <button
-          onClick={() => setFilterRating(4)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            filterRating === 4
-              ? 'bg-gray-800 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          4 ⭐
-        </button>
-        <button
-          onClick={() => setFilterRating(3)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            filterRating === 3
-              ? 'bg-gray-800 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          3 ⭐
-        </button>
-        <button
-          onClick={() => setFilterRating(2)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            filterRating === 2
-              ? 'bg-gray-800 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          2 ⭐
-        </button>
-        <button
-          onClick={() => setFilterRating(1)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            filterRating === 1
-              ? 'bg-gray-800 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          1 ⭐
-        </button>
+      {/* Rating Distribution */}
+      <div className="mb-8 p-6 bg-gray-50 rounded-lg">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">Rating Distribution</h3>
+        <div className="space-y-2">
+          {[5, 4, 3, 2, 1].map((rating) => {
+            const count = ratingCounts[rating - 1];
+            const percentage = reviews.length > 0 ? (count / reviews.length) * 100 : 0;
+            const isSelected = selectedRatings.includes(rating);
+            
+            return (
+              <button
+                key={rating}
+                onClick={() => toggleRating(rating)}
+                className={`w-full flex items-center gap-3 p-2 rounded-lg transition-colors ${
+                  isSelected ? 'bg-blue-100 ring-2 ring-blue-500' : 'hover:bg-gray-100'
+                }`}
+              >
+                <div className="flex items-center gap-1 w-12">
+                  <span className="text-sm font-medium text-gray-900">{rating}</span>
+                  <Star size={14} className="text-yellow-400 fill-yellow-400" />
+                </div>
+                <div className="flex-1 h-4 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-yellow-400 transition-all duration-300"
+                    style={{ width: `${percentage}%` }}
+                  />
+                </div>
+                <span className="text-sm text-gray-600 w-12 text-right">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+        {selectedRatings.length > 0 && (
+          <button
+            onClick={() => setSelectedRatings([])}
+            className="mt-4 text-sm text-blue-600 hover:text-blue-700 font-medium"
+          >
+            Wis filters
+          </button>
+        )}
       </div>
 
       {/* Reviews List */}
