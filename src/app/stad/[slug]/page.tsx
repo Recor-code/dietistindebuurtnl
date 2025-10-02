@@ -520,10 +520,10 @@ export default function CityPage({ params }: PageProps) {
         {/* Premium Placement Box */}
         <section className="mt-8 mb-12">
           <div className="bg-amber-50 rounded-lg shadow-sm p-8 border border-amber-100">
-            <h2 className="text-2xl font-bold text-amber-900 mb-4 flex items-center gap-2">
+            <h2 className="text-2xl font-bold text-amber-900 mb-4 flex items-center justify-center gap-2">
               <span>👑</span> Premium Plaatsing Beschikbaar in {city.name}
             </h2>
-            <p className="text-gray-700 mb-8 leading-relaxed">
+            <p className="text-gray-700 mb-8 leading-relaxed text-center">
               Als ADHD coach weet je hoe belangrijk zichtbaarheid is. Onze premium posities zorgen ervoor dat jouw profiel direct opvalt tussen de andere coaches in {city.name}.
             </p>
             
@@ -565,7 +565,7 @@ export default function CityPage({ params }: PageProps) {
             <div className="text-center">
               <a
                 href="mailto:info@adhdcoachindebuurt.nl"
-                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 <span>👑</span> Neem Contact Op voor Premium Positie
               </a>
