@@ -328,7 +328,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                           return aIndex - bIndex;
                         });
                         
-                        return entries.map((entry, index) => (
+                        return entries.map((entry: { day: string; hours: string }, index: number) => (
                           <div key={index} className="flex justify-between text-sm">
                             <span className="font-medium text-gray-900 capitalize">{entry.day}</span>
                             <span className="text-gray-600">{entry.hours}</span>
