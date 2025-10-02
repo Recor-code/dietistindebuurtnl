@@ -93,9 +93,8 @@ async function getSpecialist(slug: string) {
       reviewCount: place['RATINGS'] ? parseInt(place['RATINGS']) : 0,
       isChildFriendly: place.kindvriendelijk_filter === 'yes',
       weekendAvailable: place.weekend_beschikbaar_filter === 'yes',
-      onlineAvailable: true,
-      inPersonAvailable: true,
       acceptsInsurance: place.basisverzekering_filter === 'yes',
+      studentFriendly: place.studenten_filter === 'yes',
       availabilityStatus: 'available',
       openingHours: place['OPENING HOURS'],
       cityName: city?.name || place['CITY'],
@@ -248,36 +247,24 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                 </div>
               )}
               
-              {specialist.weekendAvailable ? (
+              {specialist.weekendAvailable && (
                 <div className="flex items-center gap-3 text-gray-700">
                   <Calendar className="w-5 h-5 text-blue-600" />
                   <span>Weekend beschikbaar</span>
-                </div>
-              ) : (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Calendar className="w-5 h-5 text-blue-600" />
-                  <span>Alleen doordeweeks</span>
-                </div>
-              )}
-              
-              {specialist.onlineAvailable && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Monitor className="w-5 h-5 text-blue-600" />
-                  <span>Online sessies</span>
-                </div>
-              )}
-              
-              {specialist.inPersonAvailable && (
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Home className="w-5 h-5 text-blue-600" />
-                  <span>Persoonlijke sessies</span>
                 </div>
               )}
               
               {specialist.acceptsInsurance && (
                 <div className="flex items-center gap-3 text-gray-700">
                   <CreditCard className="w-5 h-5 text-blue-600" />
-                  <span>Accepteert verzekering</span>
+                  <span>Basisverzekering</span>
+                </div>
+              )}
+              
+              {specialist.studentFriendly && (
+                <div className="flex items-center gap-3 text-gray-700">
+                  <Users className="w-5 h-5 text-blue-600" />
+                  <span>Studentvriendelijk</span>
                 </div>
               )}
             </div>
