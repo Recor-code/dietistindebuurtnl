@@ -183,7 +183,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName, spec
                 <CheckCircle className="w-10 h-10 text-sky-600" />
               </div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Klaar om meer verwijzingen te krijgen?
+                Klaar om meer referrals te krijgen?
               </h3>
               <p className="text-lg text-gray-600 mb-8">
                 Neem de controle over je praktijkprofiel en kom in contact met families die ADHD hulp zoeken.
@@ -202,7 +202,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName, spec
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <CheckCircle className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Krijg Verwijzingen</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">Krijg Referrals</h4>
                   <p className="text-sm text-gray-600">Verbind met families</p>
                 </div>
               </div>
