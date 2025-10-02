@@ -191,7 +191,7 @@ export default function ReviewsList({ reviews, specialistName }: ReviewsListProp
         <div className="text-center py-8">
           <p className="text-gray-600">Geen reviews gevonden met de geselecteerde filters.</p>
           <button
-            onClick={() => setFilterRating(null)}
+            onClick={() => setSelectedRatings([])}
             className="mt-2 text-blue-600 hover:text-blue-700 text-sm font-medium"
           >
             Reset filters
