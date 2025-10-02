@@ -465,88 +465,99 @@ export default function CityPage({ params }: PageProps) {
         {/* TL;DR Section */}
         {city.tldr && (
           <section className="mt-12 mb-8">
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl shadow-lg p-8 border border-blue-100">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                Samenvatting: ADHD Coach in {city.name}
+            <div className="bg-blue-50 rounded-lg shadow-sm p-6 border border-blue-200">
+              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <span className="text-blue-600">ℹ️</span> TL;DR - {city.name}
               </h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-6">
                 {city.tldr}
               </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-3">Lokale ADHD Zorg</h3>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li>• {city.places.length} geregistreerde specialisten</li>
+                    <li>• Gemiddelde wachttijd: 4-6 weken</li>
+                    <li>• Kosten: €75-€125 per sessie</li>
+                    <li>• Online en fysieke consulten beschikbaar</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-3">ADHD Statistieken {city.name}</h3>
+                  {adhdStats ? (
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      <li>• Prevalentie: {adhdStats.prevalence || '5.2%'} van de bevolking</li>
+                      <li>• Geschat {adhdStats.estimated_adhd_population || Math.round(city.population * 0.052).toLocaleString()} mensen met ADHD</li>
+                      <li>• Populatie: {city.population?.toLocaleString()} inwoners</li>
+                      <li>• Provincie: {city.province}, Nederland</li>
+                    </ul>
+                  ) : (
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      <li>• Prevalentie: 5.2% van de bevolking</li>
+                      <li>• Geschat {Math.round(city.population * 0.052).toLocaleString()} mensen met ADHD</li>
+                      <li>• Populatie: {city.population?.toLocaleString()} inwoners</li>
+                      <li>• Provincie: {city.province}, Nederland</li>
+                    </ul>
+                  )}
+                </div>
+              </div>
             </div>
           </section>
         )}
 
         {/* Premium Placement Box */}
         <section className="mt-8 mb-12">
-          <div className="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-2xl shadow-xl p-8 border-2 border-amber-200">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              ✨ Premium Plaatsing Beschikbaar in {city.name}
+          <div className="bg-yellow-50 rounded-lg shadow-sm p-8 border border-yellow-200">
+            <h2 className="text-xl font-bold text-amber-800 mb-4 text-center flex items-center justify-center gap-2">
+              <span>👑</span> Premium Plaatsing Beschikbaar in {city.name}
             </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-gray-700 mb-6 leading-relaxed text-center">
               Als ADHD coach weet je hoe belangrijk zichtbaarheid is. Onze premium posities zorgen ervoor dat jouw profiel direct opvalt tussen de andere coaches in {city.name}.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">✨ Wat krijg je?</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Top positie met gouden crown badge</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Premium styling die opvalt</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Eerste indruk bij potentiële cliënten</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
-                    <span>Hogere click-through rates</span>
-                  </li>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                  <span>✨</span> Wat krijg je?
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• Top positie met gouden crown badge</li>
+                  <li>• Premium styling die opvalt</li>
+                  <li>• Eerste indruk bij potentiële cliënten</li>
+                  <li>• Hogere click-through rates</li>
                 </ul>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">🎯 Waarom werkt dit?</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
-                    <span>Mensen scannen eerst de top resultaten</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
-                    <span>Premium uitstraling = meer vertrouwen</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
-                    <span>Directe toegang tot jouw specialisaties</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
-                    <span>Meer aanvragen = meer inkomsten</span>
-                  </li>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                  <span>🎯</span> Waarom werkt dit?
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• Mensen scannen eerst de top resultaten</li>
+                  <li>• Premium uitstraling = meer vertrouwen</li>
+                  <li>• Directe toegang tot jouw specialisaties</li>
+                  <li>• Meer aanvragen = meer inkomsten</li>
                 </ul>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-amber-100 to-yellow-100 rounded-xl p-6 mb-6 border border-amber-300">
-              <p className="text-center text-gray-800 font-semibold text-lg">
+            <div className="text-center mb-6">
+              <p className="text-gray-800 font-medium text-sm">
                 💡 Slechts 3 premium plekken beschikbaar per stad
               </p>
             </div>
 
             <div className="text-center">
-              <p className="text-gray-700 mb-4 text-lg">
+              <p className="text-gray-700 mb-4 text-sm">
                 Klaar om je praktijk te laten groeien? Neem contact op voor beschikbaarheid en tarieven.
               </p>
               <a
                 href="mailto:info@adhdcoachindebuurt.nl"
-                className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-cyan-700 transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
               >
-                📧 Contact voor Premium Plaatsing
+                <span>👑</span> Neem Contact Op voor Premium Positie
               </a>
             </div>
           </div>
