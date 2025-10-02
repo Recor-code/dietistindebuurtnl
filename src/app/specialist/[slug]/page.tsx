@@ -177,7 +177,14 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                 
                 {/* Rating */}
                 {rating > 0 && (
-                  <div className="flex items-center gap-2">
+                  <a 
+                    href="#reviews-section"
+                    className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('reviews-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  >
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
                         <Star
@@ -190,7 +197,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
                       ))}
                     </div>
                     <span className="text-white font-medium">{rating.toFixed(1)} ({reviewCount} reviews)</span>
-                  </div>
+                  </a>
                 )}
               </div>
               
@@ -356,7 +363,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
           </div>
 
           {/* Reviews Section */}
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
+          <div id="reviews-section" className="bg-white rounded-lg shadow-sm p-8 mb-6 scroll-mt-4">
             <h2 className="text-xl font-bold text-gray-900 mb-6">Reviews</h2>
             <ReviewsList reviews={specialist.reviews} specialistName={specialist.name} />
           </div>
