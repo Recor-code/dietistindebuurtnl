@@ -1,4 +1,4 @@
-import { pgTable, serial, text, boolean, decimal, timestamp, integer, varchar } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, boolean, decimal, timestamp, integer } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
 // Cities table for Dutch and Belgian cities
@@ -17,78 +17,7 @@ export const cities = pgTable('cities', {
   updatedAt: timestamp('updated_at').defaultNow(),
 });
 
-// PLACES table (Google Maps data) - Primary source for specialists
-export const places = pgTable('places', {
-  // Google Places data - Using exact column names from database
-  PLACE_ID: varchar('PLACE ID').primaryKey(), // Unique Google Place ID
-  NAME: text('NAME').notNull(),
-  CATEGORY: text('CATEGORY'),
-  STREET_ADDRESS: text('STREET ADDRESS'),
-  ADDRESS: text('ADDRESS'),
-  CITY: text('CITY'),
-  REGION: text('REGION'),
-  ZIP_CODE: text('ZIP CODE'),
-  COUNTRY_NAME: text('COUNTRY NAME'),
-  COUNTRY_CODE: text('COUNTRY CODE'),
-  PHONE: text('PHONE'),
-  EMAIL: text('EMAIL'),
-  WEBSITE: text('WEBSITE'),
-  FACEBOOK: text('FACEBOOK'),
-  INSTAGRAM: text('INSTAGRAM'),
-  URL: text('URL'),
-  BOOKING_LINK: text('BOOKING LINK'),
-  LAT: decimal('LAT', { precision: 10, scale: 8 }),
-  LNG: decimal('LNG', { precision: 11, scale: 8 }),
-  SCORE: text('SCORE'),
-  RATINGS: text('RATINGS'),
-  IS_TEMPORARILY_CLOSED: boolean('IS TEMPORARILY CLOSED'),
-  OPENING_HOURS: text('OPENING HOURS'),
-  MAIN_IMAGE_URL: text('MAIN IMAGE URL'),
-  IMAGES_COUNT: integer('IMAGES COUNT'),
-  CID: text('CID'),
-  RESULT_POSITION: integer('RESULT POSITION'),
-  INPUT_URL: text('INPUT URL'),
-  
-  // Additional custom fields for our app (will be added via migration)
-  slug: text('slug'), // For URL routing
-  specialization: text('specialization'),
-  description: text('description'),
-  city_id: integer('city_id').references(() => cities.id),
-  rating: decimal('rating', { precision: 3, scale: 2 }),
-  review_count: integer('review_count').default(0),
-  is_child_friendly: boolean('is_child_friendly').default(false),
-  weekend_available: boolean('weekend_available').default(false),
-  online_available: boolean('online_available').default(false),
-  in_person_available: boolean('in_person_available').default(true),
-  accepts_insurance: boolean('accepts_insurance').default(false),
-  availability_status: text('availability_status').default('available'),
-});
-
-// Reviews table (Google Reviews data)
-export const reviews = pgTable('reviews', {
-  // Using exact column names from database
-  INTERNAL_REVIEW_ID: varchar('INTERNAL REVIEW ID').primaryKey(),
-  PLACE_ID: varchar('PLACE ID').notNull(), // References places.PLACE_ID
-  PLACE_NAME: text('PLACE NAME'),
-  PLACE_ADDRESS: text('PLACE ADDRESS'),
-  USER_NAME: text('USER NAME'),
-  USER_LINK: text('USER LINK'),
-  USER_INTERNAL_ID: text('USER INTERNAL ID'),
-  USER_REVIEWS_COUNT: text('USER REVIEWS COUNT'),
-  USER_IMAGE_URL: text('USER IMAGE URL'),
-  IS_USER_LOCAL_GUIDE: boolean('IS USER LOCAL GUIDE'),
-  RATING: integer('RATING'),
-  TEXT: text('TEXT'),
-  PUBLISHED_TIME: text('PUBLISHED TIME'),
-  RELATIVE_PUBLISHED_TIME: text('RELATIVE PUBLISHED TIME'),
-  OWNER_REPLY: text('OWNER REPLY'),
-  OWNER_REPLY_PUBLISHED_TIME: text('OWNER REPLY PUBLISHED TIME'),
-  OWNER_REPLY_RELATIVE_PUBLISHED_TIME: text('OWNER REPLY RELATIVE PUBLISHED TIME'),
-  CID: text('CID'),
-  RESULT_POSITION: integer('RESULT POSITION'),
-});
-
-// ADHD Coaches and Therapists (Legacy - kept for reference)
+// ADHD Coaches and Therapists
 export const coaches = pgTable('coaches', {
   id: serial('id').primaryKey(),
   name: text('name').notNull(),
@@ -114,9 +43,6 @@ export const coaches = pgTable('coaches', {
   
   // Availability
   availabilityStatus: text('availability_status').default('available'), // available, busy, not_accepting
-  
-  // Link to places table (to be added via migration)
-  placeId: text('place_id'), // References places.PLACE_ID
   
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),
@@ -162,11 +88,30 @@ export const chatConversations = pgTable('chat_conversations', {
   updatedAt: timestamp('updated_at').defaultNow(),
 });
 
+// Relations
+export const citiesRelations = relations(cities, ({ many }) => ({
+  coaches: many(coaches),
+  blogPosts: many(blogPosts),
+}));
+
+export const coachesRelations = relations(coaches, ({ one }) => ({
+  city: one(cities, {
+    fields: [coaches.cityId],
+    references: [cities.id],
+  }),
+}));
+
+export const blogPostsRelations = relations(blogPosts, ({ one }) => ({
+  city: one(cities, {
+    fields: [blogPosts.cityId],
+    references: [cities.id],
+  }),
+}));
+
 // Featured spots for premium placement on city pages
 export const featuredSpots = pgTable('featured_spots', {
   id: serial('id').primaryKey(),
-  coachId: integer('coach_id').references(() => coaches.id), // Legacy reference
-  placeId: varchar('place_id'), // New reference to places.PLACE_ID
+  coachId: integer('coach_id').notNull().references(() => coaches.id),
   cityId: integer('city_id').notNull().references(() => cities.id),
   position: integer('position').notNull(), // 1, 2, or 3 for the 3 featured spots
   
@@ -187,45 +132,7 @@ export const featuredSpots = pgTable('featured_spots', {
   updatedAt: timestamp('updated_at').defaultNow(),
 });
 
-// Relations
-export const citiesRelations = relations(cities, ({ many }) => ({
-  coaches: many(coaches),
-  places: many(places),
-  blogPosts: many(blogPosts),
-  featuredSpots: many(featuredSpots),
-}));
-
-export const placesRelations = relations(places, ({ one, many }) => ({
-  city: one(cities, {
-    fields: [places.city_id],
-    references: [cities.id],
-  }),
-  reviews: many(reviews),
-}));
-
-export const reviewsRelations = relations(reviews, ({ one }) => ({
-  place: one(places, {
-    fields: [reviews.PLACE_ID],
-    references: [places.PLACE_ID],
-  }),
-}));
-
-export const coachesRelations = relations(coaches, ({ one, many }) => ({
-  city: one(cities, {
-    fields: [coaches.cityId],
-    references: [cities.id],
-  }),
-  featuredSpots: many(featuredSpots),
-}));
-
-export const blogPostsRelations = relations(blogPosts, ({ one }) => ({
-  city: one(cities, {
-    fields: [blogPosts.cityId],
-    references: [cities.id],
-  }),
-}));
-
-// Featured spots relations
+// Relations for featured spots
 export const featuredSpotsRelations = relations(featuredSpots, ({ one }) => ({
   coach: one(coaches, {
     fields: [featuredSpots.coachId],
@@ -237,13 +144,23 @@ export const featuredSpotsRelations = relations(featuredSpots, ({ one }) => ({
   }),
 }));
 
+export const coachesRelationsExtended = relations(coaches, ({ one, many }) => ({
+  city: one(cities, {
+    fields: [coaches.cityId],
+    references: [cities.id],
+  }),
+  featuredSpots: many(featuredSpots),
+}));
+
+export const citiesRelationsExtended = relations(cities, ({ many }) => ({
+  coaches: many(coaches),
+  blogPosts: many(blogPosts),
+  featuredSpots: many(featuredSpots),
+}));
+
 // Type exports
 export type City = typeof cities.$inferSelect;
 export type InsertCity = typeof cities.$inferInsert;
-export type Place = typeof places.$inferSelect;
-export type InsertPlace = typeof places.$inferInsert;
-export type Review = typeof reviews.$inferSelect;
-export type InsertReview = typeof reviews.$inferInsert;
 export type Coach = typeof coaches.$inferSelect;
 export type InsertCoach = typeof coaches.$inferInsert;
 export type BlogPost = typeof blogPosts.$inferSelect;
