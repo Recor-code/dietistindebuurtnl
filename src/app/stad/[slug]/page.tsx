@@ -347,14 +347,6 @@ export default function CityPage({ params }: PageProps) {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {filteredPlaces.map((place) => {
-              const getPrimaryAction = () => {
-                if (place.phone) return { type: 'phone', href: `tel:${place.phone}`, label: 'Bellen', icon: Phone };
-                if (place.website) return { type: 'website', href: place.website, label: 'Website', icon: Globe };
-                if (place.email) return { type: 'email', href: `mailto:${place.email}`, label: 'E-mail', icon: Mail };
-                return null;
-              };
-
-              const primaryAction = getPrimaryAction();
 
               return (
               <div key={place.id} className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-6 relative">
@@ -446,17 +438,15 @@ export default function CityPage({ params }: PageProps) {
                   </div>
                 </div>
                 
-                {/* CTA Button */}
-                {primaryAction && (
-                  <a
-                    href={primaryAction.href}
-                    target={primaryAction.type === 'website' ? '_blank' : undefined}
-                    rel={primaryAction.type === 'website' ? 'noopener noreferrer' : undefined}
+                {/* CTA Button - View Profile */}
+                {place.slug && (
+                  <Link
+                    href={`/specialist/${place.slug}`}
                     className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
                   >
-                    <primaryAction.icon size={18} />
-                    {primaryAction.label}
-                  </a>
+                    <Users size={18} />
+                    Bekijk profiel
+                  </Link>
                 )}
               </div>
               );
