@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReviewsList from '@/components/ReviewsList';
 import GoogleMap from '@/components/GoogleMap';
+import ClaimPracticeButton from '@/components/ClaimPracticeButton';
 import { 
   MapPin, 
   Phone, 
@@ -339,6 +340,9 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
             <ReviewsList reviews={specialist.reviews} specialistName={specialist.name} />
           </div>
         </div>
+
+        {/* Claim Practice Section */}
+        <ClaimPracticeButton practiceName={specialist.name} specialistSlug={specialist.slug} />
       </main>
       <Footer />
     </>
