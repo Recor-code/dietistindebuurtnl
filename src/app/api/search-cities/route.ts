@@ -121,11 +121,16 @@ export async function GET(request: NextRequest) {
 
     // If it's a postcode, search the postcodes table first
     if (isDutchPostcode || isBelgianPostcode) {
+      console.log('Searching for postcode:', searchTerm);
+      
+      // Try both uppercase and lowercase since postcodes might be stored in either format
       const { data: postcodeResults, error: postcodeError } = await supabase
         .from('postcodes')
         .select('postcode, woonplaats, lat, lon')
-        .eq('postcode', searchTerm)
+        .or(`postcode.eq.${searchTerm},postcode.eq.${searchTerm.toLowerCase()}`)
         .limit(5);
+      
+      console.log('Postcode results:', postcodeResults, 'Error:', postcodeError);
 
       if (!postcodeError && postcodeResults && postcodeResults.length > 0) {
         for (const postcodeResult of postcodeResults) {
