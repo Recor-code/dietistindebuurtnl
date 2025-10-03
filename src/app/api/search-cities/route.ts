@@ -10,55 +10,88 @@ export async function GET(request: NextRequest) {
       return NextResponse.json([]);
     }
 
-    const searchTerm = query.trim().toLowerCase();
+    const searchTerm = query.trim().toUpperCase();
     
-    // Search cities by name using Supabase
-    const { data: cityResults, error } = await supabase
+    // Check if query looks like a postcode
+    // Dutch: 4 digits + 2 letters (e.g., 1011AB)
+    // Belgian: 4 digits only (e.g., 1000)
+    const dutchPostcodePattern = /^\d{4}[A-Z]{0,2}$/;
+    const belgianPostcodePattern = /^\d{4}$/;
+    
+    const isDutchPostcode = dutchPostcodePattern.test(searchTerm);
+    const isBelgianPostcode = belgianPostcodePattern.test(searchTerm) && searchTerm.length === 4;
+    
+    let results: any[] = [];
+
+    // If it's a postcode, search the postcode table first
+    if (isDutchPostcode || isBelgianPostcode) {
+      const { data: postcodeResults, error: postcodeError } = await supabase
+        .from('postcode')
+        .select('postcode, woonplaats')
+        .eq('postcode', searchTerm)
+        .limit(5);
+
+      if (!postcodeError && postcodeResults && postcodeResults.length > 0) {
+        // For each postcode result, get the city slug
+        const cityNames = [...new Set(postcodeResults.map((p: { woonplaats: string }) => p.woonplaats))];
+        
+        const { data: cityData, error: cityError } = await supabase
+          .from('cities')
+          .select('id, name, slug, province, country')
+          .in('name', cityNames);
+
+        if (!cityError && cityData) {
+          // Map postcode results to city results
+          const postcodeMatches = postcodeResults.map((postcodeResult: { postcode: string; woonplaats: string }) => {
+            const matchingCity = cityData.find((c: { name: string }) => 
+              c.name.toLowerCase() === postcodeResult.woonplaats.toLowerCase()
+            );
+            
+            if (matchingCity) {
+              return {
+                id: `postcode-${postcodeResult.postcode}`,
+                label: `${postcodeResult.postcode} - ${postcodeResult.woonplaats}`,
+                value: postcodeResult.woonplaats,
+                slug: matchingCity.slug,
+                country: matchingCity.country,
+                type: 'postcode'
+              };
+            }
+            return null;
+          }).filter((r: any) => r !== null);
+
+          results.push(...postcodeMatches);
+        }
+      }
+    }
+
+    // Also search cities by name (always include this)
+    const { data: cityResults, error: cityError } = await supabase
       .from('cities')
       .select('id, name, slug, province, country')
       .ilike('name', `%${searchTerm}%`)
       .order('name', { ascending: true })
       .limit(10);
 
-    if (error) {
-      console.error('Supabase search error:', error);
-      return NextResponse.json([]);
+    if (!cityError && cityResults) {
+      const cityMatches = cityResults.map((city: { id: number; name: string; slug: string; province: string; country: string }) => ({
+        id: city.id,
+        label: `${city.name}${city.province ? `, ${city.province}` : ''}`,
+        value: city.name,
+        slug: city.slug,
+        country: city.country,
+        type: 'city'
+      }));
+      
+      results.push(...cityMatches);
     }
 
-    // Format results for autocomplete
-    const results = (cityResults || []).map(city => ({
-      id: city.id,
-      label: `${city.name}${city.province ? `, ${city.province}` : ''}`,
-      value: city.name,
-      slug: city.slug,
-      country: city.country,
-      type: 'city'
-    }));
+    // Remove duplicates based on slug
+    const uniqueResults = results.filter((result: { slug: string }, index: number, self: any[]) => 
+      index === self.findIndex((r: { slug: string }) => r.slug === result.slug)
+    );
 
-    // If query looks like a postcode (starts with numbers), suggest postcode format
-    const postcodePattern = /^\d{1,4}[a-zA-Z]{0,2}$/i;
-    if (postcodePattern.test(searchTerm)) {
-      // Dutch postcode format: 4 digits + 2 letters
-      if (searchTerm.length >= 4) {
-        const digits = searchTerm.substring(0, 4);
-        const letters = searchTerm.substring(4).toUpperCase();
-        
-        // Suggest completing the postcode
-        if (letters.length < 2) {
-          const suggestions = ['AA', 'AB', 'AC', 'AD', 'AE'].map(suffix => ({
-            id: `postcode-${digits}${letters}${suffix.substring(letters.length)}`,
-            label: `${digits}${letters}${suffix.substring(letters.length)} - Postcode`,
-            value: `${digits}${letters}${suffix.substring(letters.length)}`,
-            slug: undefined,
-            country: 'NL',
-            type: 'postcode'
-          }));
-          results.unshift(...suggestions.slice(0, 3));
-        }
-      }
-    }
-
-    return NextResponse.json(results);
+    return NextResponse.json(uniqueResults);
   } catch (error) {
     console.error('Search cities API error:', error);
     return NextResponse.json([]);
