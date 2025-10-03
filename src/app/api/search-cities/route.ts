@@ -144,8 +144,13 @@ export async function GET(request: NextRequest) {
           
           // If no exact match, find closest city by coordinates
           if (!matchingCity && postcodeResult.lat && postcodeResult.lon) {
-            const postcodeLat = parseFloat(postcodeResult.lat);
-            const postcodeLon = parseFloat(postcodeResult.lon);
+            // Handle European decimal format (comma instead of period)
+            const latStr = postcodeResult.lat.replace(',', '.');
+            const lonStr = postcodeResult.lon.replace(',', '.');
+            const postcodeLat = parseFloat(latStr);
+            const postcodeLon = parseFloat(lonStr);
+            
+            console.log('Parsed coordinates:', { latStr, lonStr, postcodeLat, postcodeLon });
             
             if (!isNaN(postcodeLat) && !isNaN(postcodeLon)) {
               const { city: closestCity, distance: closestDistance } = findClosestCity(
@@ -216,8 +221,11 @@ export async function GET(request: NextRequest) {
         const cityData = postcodesByCityName[0];
         
         if (cityData.lat && cityData.lon) {
-          const cityLat = parseFloat(cityData.lat);
-          const cityLon = parseFloat(cityData.lon);
+          // Handle European decimal format (comma instead of period)
+          const latStr = cityData.lat.replace(',', '.');
+          const lonStr = cityData.lon.replace(',', '.');
+          const cityLat = parseFloat(latStr);
+          const cityLon = parseFloat(lonStr);
           
           if (!isNaN(cityLat) && !isNaN(cityLon)) {
             const { city: closestCity, distance: closestDistance } = findClosestCity(
