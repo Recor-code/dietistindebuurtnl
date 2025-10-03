@@ -486,63 +486,27 @@ export default function CityPage({ params }: PageProps) {
           )}
         </div>
 
-        {/* Premium Placement Box */}
-        <section className="mt-8 mb-12">
-          <div className="bg-amber-50 rounded-lg shadow-sm p-8 md:p-12 lg:p-16 border border-amber-100">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-amber-900 mb-4 flex items-center justify-center gap-2">
-                <span>👑</span> Premium Plaatsing Beschikbaar in {city.name}
-              </h2>
-              <p className="text-gray-700 mb-8 leading-relaxed text-center">
-                Als ADHD coach weet je hoe belangrijk zichtbaarheid is. Onze premium posities zorgen ervoor dat jouw profiel direct opvalt tussen de andere coaches in {city.name}.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <span>✨</span> Wat krijg je?
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Top positie met gouden crown badge</li>
-                  <li>• Premium styling die opvalt</li>
-                  <li>• Eerste indruk bij potentiële cliënten</li>
-                  <li>• Hogere click-through rates</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <span>🎯</span> Waarom werkt dit?
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Mensen scannen eerst de top resultaten</li>
-                  <li>• Premium uitstraling = meer vertrouwen</li>
-                  <li>• Directe toegang tot jouw specialisaties</li>
-                  <li>• Meer aanvragen = meer inkomsten</li>
-                </ul>
-              </div>
-              </div>
-
-              <div className="text-center mb-6">
-                <p className="text-gray-800 font-medium flex items-center justify-center gap-2">
-                  <span>💡</span> Slechts 3 premium plekken beschikbaar per stad
-                </p>
-                <p className="text-gray-600 text-sm mt-2">
-                  Klaar om je praktijk te laten groeien? Neem contact op voor beschikbaarheid en tarieven.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                >
-                  <span>👑</span> Neem Contact Op voor Premium Positie
-                </Link>
-              </div>
-            </div>
+        {/* Premium Placement CTA - Subtle */}
+        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-lg p-6 mb-8 text-center">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <span>👑</span>
+            <h3 className="text-lg font-bold text-amber-800">
+              Jouw praktijk in het daglicht?
+            </h3>
           </div>
-        </section>
+          
+          <p className="text-gray-700 mb-4 text-sm max-w-2xl mx-auto">
+            Sta bovenaan in {city.name} en bereik meer cliënten. Slechts 3 premium posities beschikbaar.
+          </p>
+          
+          <Link 
+            href="/premium-positie" 
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg"
+          >
+            <span>👑</span>
+            Bekijk Premium Posities
+          </Link>
+        </div>
 
         {/* RELAX Plus Banner */}
         <div className="bg-gray-50 border-t border-gray-200 py-8 px-4 mb-8">
