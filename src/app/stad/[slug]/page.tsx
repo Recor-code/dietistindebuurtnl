@@ -92,6 +92,7 @@ export default function CityPage({ params }: PageProps) {
     weekend: false,
     hoogsteBeoordeling: false
   });
+  const [visibleCount, setVisibleCount] = useState(8);
 
   useEffect(() => {
     async function fetchCityData() {
@@ -356,7 +357,7 @@ export default function CityPage({ params }: PageProps) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {filteredPlaces.map((place) => {
+            {filteredPlaces.slice(0, visibleCount).map((place) => {
 
               return (
               <div key={place.id} className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-6 relative">
@@ -463,6 +464,18 @@ export default function CityPage({ params }: PageProps) {
               );
             })}
           </div>
+
+          {/* Load More Button */}
+          {filteredPlaces.length > visibleCount && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setVisibleCount(prev => prev + 8)}
+                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                Meer specialisten laden ({filteredPlaces.length - visibleCount} over)
+              </button>
+            </div>
+          )}
 
           {/* No Results Message */}
           {filteredPlaces.length === 0 && (
