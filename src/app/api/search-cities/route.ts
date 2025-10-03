@@ -23,10 +23,10 @@ export async function GET(request: NextRequest) {
     
     let results: any[] = [];
 
-    // If it's a postcode, search the postcode table first
+    // If it's a postcode, search the postcodes table first
     if (isDutchPostcode || isBelgianPostcode) {
       const { data: postcodeResults, error: postcodeError } = await supabase
-        .from('postcode')
+        .from('postcodes')
         .select('postcode, woonplaats')
         .eq('postcode', searchTerm)
         .limit(5);
