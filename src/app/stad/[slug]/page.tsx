@@ -487,25 +487,27 @@ export default function CityPage({ params }: PageProps) {
         </div>
 
         {/* Premium Placement CTA - Subtle */}
-        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-lg p-6 mb-8 text-center">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <span>👑</span>
-            <h3 className="text-lg font-bold text-amber-800">
-              Jouw praktijk in het daglicht?
-            </h3>
+        <div className="mt-12 mb-8 flex justify-center">
+          <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-lg p-6 text-center w-full max-w-[500px]">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <span>👑</span>
+              <h3 className="text-lg font-bold text-amber-800">
+                Jouw praktijk in het daglicht?
+              </h3>
+            </div>
+            
+            <p className="text-gray-700 mb-4 text-sm">
+              Sta bovenaan in {city.name} en bereik meer cliënten. Slechts 3 premium posities beschikbaar.
+            </p>
+            
+            <Link 
+              href="/premium-positie" 
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              <span>👑</span>
+              Bekijk Premium Posities
+            </Link>
           </div>
-          
-          <p className="text-gray-700 mb-4 text-sm max-w-2xl mx-auto">
-            Sta bovenaan in {city.name} en bereik meer cliënten. Slechts 3 premium posities beschikbaar.
-          </p>
-          
-          <Link 
-            href="/premium-positie" 
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg"
-          >
-            <span>👑</span>
-            Bekijk Premium Posities
-          </Link>
         </div>
 
         {/* RELAX Plus Banner */}
