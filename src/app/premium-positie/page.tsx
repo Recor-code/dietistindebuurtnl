@@ -329,7 +329,7 @@ export default function PremiumPositiePage() {
               Wij nemen het risico. Jij krijgt de resultaten. Want wij weten dat dit werkt.
             </p>
             <Link
-              href="/contact"
+              href="#pricing"
               className="inline-block bg-white text-amber-700 px-12 py-5 rounded-lg text-xl font-bold hover:bg-gray-100 transition-all shadow-2xl"
             >
               Ja, Ik Wil Premium Worden
@@ -350,7 +350,7 @@ export default function PremiumPositiePage() {
               Of domineer de top 3 en trek dagelijks nieuwe cliënten aan.
             </p>
             <Link
-              href="/contact"
+              href="#pricing"
               className="inline-block bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-12 py-6 rounded-lg text-2xl font-bold hover:from-amber-600 hover:to-yellow-600 transition-all shadow-2xl"
             >
               Start Vandaag Met Groeien
