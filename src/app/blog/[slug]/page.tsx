@@ -20,39 +20,9 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const post = await getBlogPost(slug);
   
-  if (!post) {
-    return {
-      title: 'Artikel niet gevonden',
-    };
-  }
-
-  const featuredImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/featured.webp`;
-  const ogImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/og.webp`;
-
+  // Blog functionality is disabled
   return {
-    title: post.title,
-    description: post.metaDescription || post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.metaDescription || post.excerpt,
-      type: 'article',
-      publishedTime: post.publishedAt?.toISOString(),
-      authors: ['ADHD Coach in de Buurt'],
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1024,
-          height: 1024,
-          alt: 'ADHD coaching - professionele begeleiding en ondersteuning',
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.metaDescription || post.excerpt,
-      images: [ogImageUrl],
-    },
+    title: 'Artikel niet gevonden',
   };
 }
 
