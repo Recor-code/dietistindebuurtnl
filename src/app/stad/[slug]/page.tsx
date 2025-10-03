@@ -559,6 +559,15 @@ export default function CityPage({ params }: PageProps) {
                 className="w-auto mx-auto"
               />
             </a>
+            
+            <div className="mt-4">
+              <Link 
+                href="/banner"
+                className="text-sm text-gray-600 hover:text-sky-600 transition-colors underline"
+              >
+                Jouw banner hier? → Meer info
+              </Link>
+            </div>
           </div>
         </div>
 
