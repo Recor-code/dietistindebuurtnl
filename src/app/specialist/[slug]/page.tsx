@@ -3,6 +3,7 @@ import { supabase } from '../../../../lib/supabase';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import RelaxBanner from '@/components/RelaxBanner';
 import ReviewsList from '@/components/ReviewsList';
 import GoogleMap from '@/components/GoogleMap';
 import ClaimPracticeButton from '@/components/ClaimPracticeButton';
@@ -352,6 +353,7 @@ export default async function SpecialistPage({ params }: { params: Promise<Param
           <ClaimPracticeButton practiceName={specialist.name} specialistSlug={specialist.slug} />
         </div>
       </main>
+      <RelaxBanner />
       <Footer />
     </>
   );

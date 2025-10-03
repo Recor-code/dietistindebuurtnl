@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import RelaxBanner from '@/components/RelaxBanner';
 import { Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -187,6 +188,7 @@ export default function PrivacyPolicy() {
         </div>
       </div>
 
+      <RelaxBanner />
       <Footer />
     </div>
   );

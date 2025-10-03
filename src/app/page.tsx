@@ -2,6 +2,7 @@ import React from 'react';
 import HeroSearchSection from '@/components/HeroSearchSection';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import RelaxBanner from '@/components/RelaxBanner';
 import BlogPostsSection from '@/components/BlogPostsSection';
 import ClientQuizLauncher from '@/components/ClientQuizLauncher';
 import { Search, MapPin, Star, Users, Clock } from 'lucide-react';
@@ -199,6 +200,7 @@ export default function Home() {
         </div>
       </section>
 
+      <RelaxBanner />
       <Footer />
     </div>
   );

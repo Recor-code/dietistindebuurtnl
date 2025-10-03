@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import RelaxBanner from '@/components/RelaxBanner';
 
 export default function BlogLayout({
   children,
@@ -12,6 +13,7 @@ export default function BlogLayout({
       
       {children}
       
+      <RelaxBanner />
       <Footer />
     </div>
   );
