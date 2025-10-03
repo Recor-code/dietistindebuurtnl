@@ -486,51 +486,6 @@ export default function CityPage({ params }: PageProps) {
           )}
         </div>
 
-        {/* TL;DR Section */}
-        {city.tldr && (
-          <section className="mt-12 mb-8 max-w-3xl mx-auto">
-            <div className="bg-blue-50 rounded-lg shadow-sm p-6 border border-blue-200">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <span className="text-blue-600">ℹ️</span> TL;DR - {city.name}
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                {city.tldr}
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-gray-800 mb-3">Lokale ADHD Zorg</h3>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• {city.places.length} geregistreerde specialisten</li>
-                    <li>• Gemiddelde wachttijd: 4-6 weken</li>
-                    <li>• Kosten: €75-€125 per sessie</li>
-                    <li>• Online en fysieke consulten beschikbaar</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="font-semibold text-gray-800 mb-3">ADHD Statistieken {city.name}</h3>
-                  {adhdStats ? (
-                    <ul className="space-y-2 text-sm text-gray-700">
-                      <li>• Prevalentie: {adhdStats.prevalence || '5.2%'} van de bevolking</li>
-                      <li>• Geschat {adhdStats.estimated_adhd_population || Math.round(city.population * 0.052).toLocaleString()} mensen met ADHD</li>
-                      <li>• Populatie: {city.population?.toLocaleString()} inwoners</li>
-                      <li>• Provincie: {city.province}, Nederland</li>
-                    </ul>
-                  ) : (
-                    <ul className="space-y-2 text-sm text-gray-700">
-                      <li>• Prevalentie: 5.2% van de bevolking</li>
-                      <li>• Geschat {Math.round(city.population * 0.052).toLocaleString()} mensen met ADHD</li>
-                      <li>• Populatie: {city.population?.toLocaleString()} inwoners</li>
-                      <li>• Provincie: {city.province}, Nederland</li>
-                    </ul>
-                  )}
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* Premium Placement Box */}
         <section className="mt-8 mb-12">
           <div className="bg-amber-50 rounded-lg shadow-sm p-8 md:p-12 lg:p-16 border border-amber-100">
@@ -588,6 +543,51 @@ export default function CityPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        {/* TL;DR Section */}
+        {city.tldr && (
+          <section className="mt-12 mb-8 max-w-3xl mx-auto">
+            <div className="bg-blue-50 rounded-lg shadow-sm p-6 border border-blue-200">
+              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <span className="text-blue-600">ℹ️</span> TL;DR - {city.name}
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                {city.tldr}
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-3">Lokale ADHD Zorg</h3>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li>• {city.places.length} geregistreerde specialisten</li>
+                    <li>• Gemiddelde wachttijd: 4-6 weken</li>
+                    <li>• Kosten: €75-€125 per sessie</li>
+                    <li>• Online en fysieke consulten beschikbaar</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-3">ADHD Statistieken {city.name}</h3>
+                  {adhdStats ? (
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      <li>• Prevalentie: {adhdStats.prevalence || '5.2%'} van de bevolking</li>
+                      <li>• Geschat {adhdStats.estimated_adhd_population || Math.round(city.population * 0.052).toLocaleString()} mensen met ADHD</li>
+                      <li>• Populatie: {city.population?.toLocaleString()} inwoners</li>
+                      <li>• Provincie: {city.province}, Nederland</li>
+                    </ul>
+                  ) : (
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      <li>• Prevalentie: 5.2% van de bevolking</li>
+                      <li>• Geschat {Math.round(city.population * 0.052).toLocaleString()} mensen met ADHD</li>
+                      <li>• Populatie: {city.population?.toLocaleString()} inwoners</li>
+                      <li>• Provincie: {city.province}, Nederland</li>
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
       </div>
 
       <Footer />
