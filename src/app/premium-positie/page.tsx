@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PremiumPositiePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white scroll-smooth">
       <Header />
       
       <main className="flex-1">
@@ -171,11 +171,11 @@ export default function PremiumPositiePage() {
               ⚠️ Als je stad vol is, kom je op de wachtlijst. Volgende beschikbaarheid kan maanden duren.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
               {/* Position 1 */}
-              <div className="bg-white rounded-xl shadow-2xl border-4 border-yellow-400 p-8 relative transform hover:scale-105 transition-transform">
+              <div className="bg-white rounded-xl shadow-2xl border-4 border-yellow-400 p-6 md:p-8 relative transform hover:scale-105 transition-transform">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                  <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 px-3 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg whitespace-nowrap">
                     👑 KONING POSITIE
                   </span>
                 </div>
@@ -221,7 +221,7 @@ export default function PremiumPositiePage() {
               </div>
 
               {/* Position 2 */}
-              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-8 transform hover:scale-105 transition-transform">
+              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-6 md:p-8 transform hover:scale-105 transition-transform">
                 <div className="text-center mb-6">
                   <Crown className="w-16 h-16 text-amber-600 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold mb-2">Positie #2</h3>
@@ -264,7 +264,7 @@ export default function PremiumPositiePage() {
               </div>
 
               {/* Position 3 */}
-              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-8 transform hover:scale-105 transition-transform">
+              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-6 md:p-8 transform hover:scale-105 transition-transform">
                 <div className="text-center mb-6">
                   <Crown className="w-16 h-16 text-amber-500 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold mb-2">Positie #3</h3>
