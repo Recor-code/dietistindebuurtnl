@@ -176,7 +176,7 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // Also search cities by name (always include this)
+    // Search cities by name (always include this)
     const { data: cityResults, error: cityError } = await supabase
       .from('cities')
       .select('id, name, slug, province, country')
@@ -196,6 +196,47 @@ export async function GET(request: NextRequest) {
       }));
       
       results.push(...cityMatches);
+    }
+
+    // If no city results found and not a postcode, try finding the city in postcodes table
+    // and suggest nearest major city
+    if (results.length === 0 && !isDutchPostcode && !isBelgianPostcode) {
+      const { data: postcodesByCityName, error: postcodeNameError } = await supabase
+        .from('postcodes')
+        .select('woonplaats, lat, lon')
+        .ilike('woonplaats', `%${searchTerm}%`)
+        .limit(1);
+
+      if (!postcodeNameError && postcodesByCityName && postcodesByCityName.length > 0) {
+        const cityData = postcodesByCityName[0];
+        
+        if (cityData.lat && cityData.lon) {
+          const cityLat = parseFloat(cityData.lat);
+          const cityLon = parseFloat(cityData.lon);
+          
+          if (!isNaN(cityLat) && !isNaN(cityLon)) {
+            const { city: closestCity, distance: closestDistance } = findClosestCity(
+              cityLat,
+              cityLon,
+              cities
+            );
+            
+            // Only suggest if within threshold
+            if (closestCity && closestDistance <= MAX_DISTANCE_KM) {
+              results.push({
+                id: `nearest-${closestCity.slug}`,
+                label: `${cityData.woonplaats} - Dichtstbijzijnde: ${closestCity.name} (~${Math.round(closestDistance)} km)`,
+                value: closestCity.name,
+                slug: closestCity.slug,
+                country: closestCity.country,
+                type: 'city',
+                approximate: true,
+                distance: Math.round(closestDistance),
+              });
+            }
+          }
+        }
+      }
     }
 
     // Remove duplicates based on slug
