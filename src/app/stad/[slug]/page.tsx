@@ -261,26 +261,21 @@ export default function CityPage({ params }: PageProps) {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* ADHD Info Section */}
-        {adhdStats && (
-          <section className="mb-8">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                ADHD in {city.name}
-              </h2>
-              <div className="prose max-w-none">
-                <p className="text-gray-700 mb-4">{adhdStats.summary || city.tldr}</p>
-                {adhdStats.details && (
-                  <div className="space-y-2 text-gray-700">
-                    {adhdStats.details.map((detail: string, index: number) => (
-                      <p key={index}>{detail}</p>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-        )}
+        {/* RELAX Plus Banner - Small */}
+        <section className="mb-8 flex justify-center">
+          <a
+            href="https://organicolabs.com/relax-plus/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block hover:opacity-90 transition-opacity"
+          >
+            <img 
+              src="/relax-banner-squared.jpg" 
+              alt="RELAX - Natuurlijke rust zonder loom gevoel" 
+              className="w-full max-w-[300px] rounded-lg"
+            />
+          </a>
+        </section>
 
         {/* ADHD Coaches op de kaart */}
         <section className="mb-8">
