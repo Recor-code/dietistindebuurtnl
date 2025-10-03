@@ -63,79 +63,30 @@ export default function FeaturedSpots({ cityId, cityName }: FeaturedSpotsProps) 
   };
 
   if (loading) {
-    return (
-      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-lg p-6 mb-8">
-        <div className="flex items-center gap-2 mb-4">
-          <Crown className="text-amber-600" size={24} />
-          <h3 className="text-xl font-bold text-amber-800">Premium ADHD Coaches</h3>
-        </div>
-        <div className="animate-pulse">
-          <div className="grid md:grid-cols-3 gap-4">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-lg border border-amber-200 p-4">
-                <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                <div className="h-3 bg-gray-200 rounded mb-2"></div>
-                <div className="h-3 bg-gray-200 rounded w-2/3"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
+    return null; // Don't show loading state
   }
 
   if (featuredSpots.length === 0) {
-    // Show purchase section when no featured spots available
+    // Subtle CTA when no featured spots
     return (
-      <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-8 mb-8 text-center">
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <Crown className="text-yellow-600" size={32} />
-          <h3 className="text-3xl font-bold text-yellow-800">
-            Premium Plaatsing Beschikbaar in {cityName}
+      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-lg p-6 mb-8 text-center">
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <Crown className="text-amber-600" size={24} />
+          <h3 className="text-lg font-bold text-amber-800">
+            Jouw praktijk in het daglicht?
           </h3>
         </div>
         
-        <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
-          Als ADHD coach weet je hoe belangrijk zichtbaarheid is. Onze premium posities zorgen ervoor dat jouw profiel 
-          direct opvalt tussen de andere coaches in {cityName}.
-        </p>
-        
-        <div className="grid md:grid-cols-2 gap-8 mb-8 max-w-4xl mx-auto text-left">
-          <div>
-            <h5 className="font-bold text-yellow-800 mb-4 text-lg">✨ Wat krijg je?</h5>
-            <ul className="text-gray-700 space-y-3">
-              <li>• Top positie met gouden crown badge</li>
-              <li>• Premium styling die opvalt</li>
-              <li>• Eerste indruk bij potentiële cliënten</li>
-              <li>• Hogere click-through rates</li>
-            </ul>
-          </div>
-          
-          <div>
-            <h5 className="font-bold text-yellow-800 mb-4 text-lg">🎯 Waarom werkt dit?</h5>
-            <ul className="text-gray-700 space-y-3">
-              <li>• Mensen scannen eerst de top resultaten</li>
-              <li>• Premium uitstraling = meer vertrouwen</li>
-              <li>• Directe toegang tot jouw specialisaties</li>
-              <li>• Meer aanvragen = meer inkomsten</li>
-            </ul>
-          </div>
-        </div>
-        
-        <p className="text-yellow-700 text-lg mb-2 font-medium">
-          💡 Slechts 3 premium plekken beschikbaar per stad
-        </p>
-        
-        <p className="text-gray-600 mb-8">
-          Klaar om je praktijk te laten groeien? Neem contact op voor beschikbaarheid en tarieven.
+        <p className="text-gray-700 mb-4 text-sm max-w-2xl mx-auto">
+          Sta bovenaan in {cityName} en bereik meer cliënten. Slechts 3 premium posities beschikbaar.
         </p>
         
         <Link 
-          href="/contact" 
-          className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+          href="/premium-positie" 
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg"
         >
-          <Crown size={20} />
-          Neem Contact Op voor Premium Positie
+          <Crown size={16} />
+          Bekijk Premium Posities
         </Link>
       </div>
     );
@@ -299,8 +250,8 @@ export default function FeaturedSpots({ cityId, cityName }: FeaturedSpotsProps) 
       <div className="mt-6 text-center">
         <p className="text-amber-700 text-sm">
           Wilt u ook een premium positie? 
-          <Link href="/contact" className="ml-1 underline hover:text-amber-800 font-medium">
-            Neem contact op
+          <Link href="/premium-positie" className="ml-1 underline hover:text-amber-800 font-medium">
+            Bekijk beschikbaarheid
           </Link>
         </p>
       </div>
