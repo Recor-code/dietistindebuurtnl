@@ -15,12 +15,14 @@ interface SearchResult {
 interface CitySearchInputProps {
   placeholder?: string;
   onSelect?: (result: SearchResult) => void;
+  onQueryChange?: (query: string) => void;
   className?: string;
 }
 
 export default function CitySearchInput({ 
   placeholder = "Typ je stad of postcode...", 
   onSelect,
+  onQueryChange,
   className = "" 
 }: CitySearchInputProps) {
   const [query, setQuery] = useState('');
@@ -131,6 +133,9 @@ export default function CitySearchInput({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setQuery(newValue);
+    
+    // Notify parent of query change
+    onQueryChange?.(newValue);
     
     // Reset selection state if user changes the input from selected value
     if (hasSelection && newValue !== selectedValue) {
