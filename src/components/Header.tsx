@@ -1,9 +1,15 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="bg-white shadow-sm border-b">
+    <header className="sticky top-0 z-50 bg-white shadow-sm border-b">
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3">
@@ -22,29 +28,81 @@ export default function Header() {
             </div>
           </Link>
           
-          {/* Navigation Menu */}
-          <nav className="flex items-center gap-4 md:gap-8">
-            <Link href="/" className="text-gray-700 hover:text-sky-500 font-medium transition-colors text-sm md:text-base">
+          {/* Desktop Navigation Menu */}
+          <nav className="hidden md:flex items-center gap-8">
+            <Link href="/" className="text-gray-700 hover:text-sky-500 font-medium transition-colors">
               Home
             </Link>
-            <Link href="/blog" className="text-gray-700 hover:text-sky-500 font-medium transition-colors text-sm md:text-base">
+            <Link href="/blog" className="text-gray-700 hover:text-sky-500 font-medium transition-colors">
               Blog
             </Link>
-            <Link href="/faq" className="text-gray-700 hover:text-sky-500 font-medium transition-colors text-sm md:text-base">
+            <Link href="/faq" className="text-gray-700 hover:text-sky-500 font-medium transition-colors">
               FAQ
             </Link>
           </nav>
 
+          {/* Desktop CTA Button */}
           <a
             href="https://adhdzelftest.nl"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-sky-400 hover:bg-sky-500 text-white px-2 py-1.5 md:px-6 md:py-3 rounded-lg font-medium md:font-semibold transition-colors shadow-md text-xs md:text-base"
+            className="hidden md:block bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
           >
             Gratis ADHD Test
           </a>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-gray-700 hover:text-sky-500 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t bg-white">
+          <nav className="flex flex-col px-4 py-4 space-y-3">
+            <Link 
+              href="/" 
+              className="text-gray-700 hover:text-sky-500 font-medium transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              href="/blog" 
+              className="text-gray-700 hover:text-sky-500 font-medium transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link 
+              href="/faq" 
+              className="text-gray-700 hover:text-sky-500 font-medium transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              FAQ
+            </Link>
+          </nav>
+          
+          {/* Mobile CTA Button - Full Width Outside Hamburger */}
+          <div className="px-4 pb-4">
+            <a
+              href="https://adhdzelftest.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Gratis ADHD Test
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
