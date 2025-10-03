@@ -492,7 +492,8 @@ export default function CityPage({ params }: PageProps) {
             </div>
             
             <p className="text-gray-700 mb-4 text-sm">
-              Sta bovenaan in {city.name} en bereik meer cliënten. Slechts 3 premium posities beschikbaar.
+              Sta bovenaan in {city.name} en bereik meer cliënten.<br />
+              Slechts 3 premium posities beschikbaar.
             </p>
             
             <Link 
