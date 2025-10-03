@@ -1,6 +1,99 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '../../../../lib/supabase';
 
+// In-memory cache for cities (loaded once on first request)
+let citiesCache: Array<{
+  id: number;
+  name: string;
+  slug: string;
+  province: string;
+  country: string;
+  latitude: number;
+  longitude: number;
+}> | null = null;
+
+// Maximum distance threshold in kilometers
+const MAX_DISTANCE_KM = 50;
+
+/**
+ * Calculate distance between two points using Haversine formula
+ * Returns distance in kilometers
+ */
+function haversineDistance(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+): number {
+  const R = 6371; // Earth's radius in kilometers
+  const dLat = toRadians(lat2 - lat1);
+  const dLon = toRadians(lon2 - lon1);
+  
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRadians(lat1)) *
+    Math.cos(toRadians(lat2)) *
+    Math.sin(dLon / 2) *
+    Math.sin(dLon / 2);
+  
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function toRadians(degrees: number): number {
+  return degrees * (Math.PI / 180);
+}
+
+/**
+ * Load all cities into memory cache
+ */
+async function loadCitiesCache() {
+  if (citiesCache) return citiesCache;
+  
+  const { data, error } = await supabase
+    .from('cities')
+    .select('id, name, slug, province, country, latitude, longitude');
+  
+  if (error || !data) {
+    console.error('Failed to load cities cache:', error);
+    return [];
+  }
+  
+  citiesCache = data.map((city: any) => ({
+    id: city.id,
+    name: city.name,
+    slug: city.slug,
+    province: city.province,
+    country: city.country,
+    latitude: parseFloat(city.latitude),
+    longitude: parseFloat(city.longitude),
+  }));
+  
+  return citiesCache;
+}
+
+/**
+ * Find the closest city to given coordinates
+ */
+function findClosestCity(
+  lat: number,
+  lon: number,
+  cities: Array<{ id: number; name: string; slug: string; province: string; country: string; latitude: number; longitude: number }>
+) {
+  let closestCity = null;
+  let minDistance = Infinity;
+  
+  for (const city of cities) {
+    const distance = haversineDistance(lat, lon, city.latitude, city.longitude);
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestCity = city;
+    }
+  }
+  
+  return { city: closestCity, distance: minDistance };
+}
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -23,44 +116,62 @@ export async function GET(request: NextRequest) {
     
     let results: any[] = [];
 
+    // Load cities cache
+    const cities = await loadCitiesCache();
+
     // If it's a postcode, search the postcodes table first
     if (isDutchPostcode || isBelgianPostcode) {
       const { data: postcodeResults, error: postcodeError } = await supabase
         .from('postcodes')
-        .select('postcode, woonplaats')
+        .select('postcode, woonplaats, lat, lon')
         .eq('postcode', searchTerm)
         .limit(5);
 
       if (!postcodeError && postcodeResults && postcodeResults.length > 0) {
-        // For each postcode result, get the city slug
-        const cityNames = [...new Set(postcodeResults.map((p: { woonplaats: string }) => p.woonplaats))];
-        
-        const { data: cityData, error: cityError } = await supabase
-          .from('cities')
-          .select('id, name, slug, province, country')
-          .in('name', cityNames);
-
-        if (!cityError && cityData) {
-          // Map postcode results to city results
-          const postcodeMatches = postcodeResults.map((postcodeResult: { postcode: string; woonplaats: string }) => {
-            const matchingCity = cityData.find((c: { name: string }) => 
-              c.name.toLowerCase() === postcodeResult.woonplaats.toLowerCase()
-            );
+        for (const postcodeResult of postcodeResults) {
+          // First try to find exact match by woonplaats
+          let matchingCity = cities.find((c) => 
+            c.name.toLowerCase() === postcodeResult.woonplaats.toLowerCase()
+          );
+          
+          let isApproximate = false;
+          let distance = 0;
+          
+          // If no exact match, find closest city by coordinates
+          if (!matchingCity && postcodeResult.lat && postcodeResult.lon) {
+            const postcodeLat = parseFloat(postcodeResult.lat);
+            const postcodeLon = parseFloat(postcodeResult.lon);
             
-            if (matchingCity) {
-              return {
-                id: `postcode-${postcodeResult.postcode}`,
-                label: `${postcodeResult.postcode} - ${postcodeResult.woonplaats}`,
-                value: postcodeResult.woonplaats,
-                slug: matchingCity.slug,
-                country: matchingCity.country,
-                type: 'postcode'
-              };
+            if (!isNaN(postcodeLat) && !isNaN(postcodeLon)) {
+              const { city: closestCity, distance: closestDistance } = findClosestCity(
+                postcodeLat,
+                postcodeLon,
+                cities
+              );
+              
+              // Only use closest city if within threshold
+              if (closestCity && closestDistance <= MAX_DISTANCE_KM) {
+                matchingCity = closestCity;
+                isApproximate = true;
+                distance = Math.round(closestDistance);
+              }
             }
-            return null;
-          }).filter((r: any) => r !== null);
-
-          results.push(...postcodeMatches);
+          }
+          
+          if (matchingCity) {
+            results.push({
+              id: `postcode-${postcodeResult.postcode}`,
+              label: isApproximate
+                ? `${postcodeResult.postcode} - Dichtstbijzijnde: ${matchingCity.name} (~${distance} km)`
+                : `${postcodeResult.postcode} - ${matchingCity.name}`,
+              value: matchingCity.name,
+              slug: matchingCity.slug,
+              country: matchingCity.country,
+              type: 'postcode',
+              approximate: isApproximate,
+              distance: distance,
+            });
+          }
         }
       }
     }
@@ -80,7 +191,8 @@ export async function GET(request: NextRequest) {
         value: city.name,
         slug: city.slug,
         country: city.country,
-        type: 'city'
+        type: 'city',
+        approximate: false,
       }));
       
       results.push(...cityMatches);
