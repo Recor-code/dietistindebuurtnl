@@ -22,6 +22,7 @@ export default function Footer() {
           <div>
             <h5 className="font-semibold mb-4">Handige Links</h5>
             <ul className="space-y-1 text-gray-400">
+              <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
               <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
               <li><a href="https://adhdzelftest.nl/" target="_blank" rel="noopener noreferrer" className="hover:text-white">Gratis ADHD Test</a></li>
