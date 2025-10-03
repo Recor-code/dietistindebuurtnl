@@ -144,15 +144,30 @@ export async function GET(request: NextRequest) {
           
           // If no exact match, find closest city by coordinates
           if (!matchingCity && postcodeResult.lat && postcodeResult.lon) {
-            // Handle European decimal format (comma instead of period)
-            const latStr = postcodeResult.lat.replace(',', '.');
-            const lonStr = postcodeResult.lon.replace(',', '.');
-            const postcodeLat = parseFloat(latStr);
-            const postcodeLon = parseFloat(lonStr);
+            // Handle coordinates that may be in scientific notation format
+            // Example: '5,23249E+13' should be 52.3249, '4,5962E+14' should be 4.5962
+            let latStr = postcodeResult.lat.replace(',', '.');
+            let lonStr = postcodeResult.lon.replace(',', '.');
             
-            console.log('Parsed coordinates:', { latStr, lonStr, postcodeLat, postcodeLon });
+            // If in scientific notation like 5.23249E+13, divide by appropriate factor
+            // Netherlands coordinates: lat ~50-54, lon ~3-7
+            let postcodeLat = parseFloat(latStr);
+            let postcodeLon = parseFloat(lonStr);
             
-            if (!isNaN(postcodeLat) && !isNaN(postcodeLon)) {
+            // Fix incorrect scientific notation (if value is way too large)
+            if (postcodeLat > 1000) {
+              postcodeLat = postcodeLat / 1e12; // Adjust for E+13
+            }
+            if (postcodeLon > 1000) {
+              postcodeLon = postcodeLon / 1e13; // Adjust for E+14
+            }
+            
+            console.log('Parsed coordinates:', { 
+              raw: { lat: postcodeResult.lat, lon: postcodeResult.lon },
+              parsed: { postcodeLat, postcodeLon }
+            });
+            
+            if (!isNaN(postcodeLat) && !isNaN(postcodeLon) && postcodeLat > 0 && postcodeLon > 0) {
               const { city: closestCity, distance: closestDistance } = findClosestCity(
                 postcodeLat,
                 postcodeLon,
@@ -221,13 +236,22 @@ export async function GET(request: NextRequest) {
         const cityData = postcodesByCityName[0];
         
         if (cityData.lat && cityData.lon) {
-          // Handle European decimal format (comma instead of period)
-          const latStr = cityData.lat.replace(',', '.');
-          const lonStr = cityData.lon.replace(',', '.');
-          const cityLat = parseFloat(latStr);
-          const cityLon = parseFloat(lonStr);
+          // Handle coordinates that may be in scientific notation format
+          let latStr = cityData.lat.replace(',', '.');
+          let lonStr = cityData.lon.replace(',', '.');
           
-          if (!isNaN(cityLat) && !isNaN(cityLon)) {
+          let cityLat = parseFloat(latStr);
+          let cityLon = parseFloat(lonStr);
+          
+          // Fix incorrect scientific notation (if value is way too large)
+          if (cityLat > 1000) {
+            cityLat = cityLat / 1e12;
+          }
+          if (cityLon > 1000) {
+            cityLon = cityLon / 1e13;
+          }
+          
+          if (!isNaN(cityLat) && !isNaN(cityLon) && cityLat > 0 && cityLon > 0) {
             const { city: closestCity, distance: closestDistance } = findClosestCity(
               cityLat,
               cityLon,
