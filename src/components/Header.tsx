@@ -33,9 +33,6 @@ export default function Header() {
             <Link href="/" className="text-gray-700 hover:text-sky-500 font-medium transition-colors">
               Home
             </Link>
-            <Link href="/blog" className="text-gray-700 hover:text-sky-500 font-medium transition-colors">
-              Blog
-            </Link>
             <Link href="/faq" className="text-gray-700 hover:text-sky-500 font-medium transition-colors">
               FAQ
             </Link>
@@ -92,7 +89,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown - Only Home, Blog, FAQ */}
+      {/* Mobile Menu Dropdown - Only Home, FAQ */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t bg-white">
           <nav className="flex flex-col px-4 py-4 space-y-3">
@@ -102,13 +99,6 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link 
-              href="/blog" 
-              className="text-gray-700 hover:text-sky-500 font-medium transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Blog
             </Link>
             <Link 
               href="/faq" 
