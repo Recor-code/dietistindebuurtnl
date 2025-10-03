@@ -13,7 +13,7 @@ export default function RelaxBanner() {
           <img 
             src="/relax-banner-squared.jpg" 
             alt="RELAX - Natuurlijke rust zonder loom gevoel" 
-            className="w-full max-w-2xl mx-auto rounded-lg"
+            className="w-full max-w-[500px] mx-auto rounded-lg"
           />
         </a>
         
