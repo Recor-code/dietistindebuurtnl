@@ -262,7 +262,7 @@ export default function CityPage({ params }: PageProps) {
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* RELAX Plus Banner - Small */}
-        <section className="mb-8 flex justify-center">
+        <section className="mb-8 flex flex-col items-center">
           <a
             href="https://organicolabs.com/relax-plus/"
             target="_blank"
@@ -275,6 +275,15 @@ export default function CityPage({ params }: PageProps) {
               className="w-full max-w-[300px] rounded-lg"
             />
           </a>
+          
+          <div className="mt-3">
+            <Link 
+              href="/banner"
+              className="text-sm text-gray-600 hover:text-sky-600 transition-colors underline"
+            >
+              Jouw banner hier? → Meer info
+            </Link>
+          </div>
         </section>
 
         {/* ADHD Coaches op de kaart */}
