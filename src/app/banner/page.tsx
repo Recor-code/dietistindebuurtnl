@@ -147,7 +147,7 @@ export default function BannerPage() {
               {/* Premium Spot */}
               <div className="bg-white rounded-xl shadow-xl border-4 border-yellow-400 p-8 relative transform hover:scale-105 transition-transform">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
+                  <span className="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
                     MEEST POPULAIR
                   </span>
                 </div>
