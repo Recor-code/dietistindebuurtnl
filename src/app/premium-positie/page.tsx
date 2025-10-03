@@ -210,12 +210,14 @@ export default function PremiumPositiePage() {
                     <span>Maandelijkse performance rapportage</span>
                   </li>
                 </ul>
-                <Link
-                  href="/contact"
+                <a
+                  href="https://shop-nu.plugandpay.nl/checkout/premium-positie-1-adhdcoachindebuurt"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 text-center py-4 rounded-lg font-bold hover:from-yellow-500 hover:to-amber-600 transition-colors shadow-lg"
                 >
                   Claim Positie #1
-                </Link>
+                </a>
               </div>
 
               {/* Position 2 */}
@@ -251,12 +253,14 @@ export default function PremiumPositiePage() {
                     <span>Maandelijkse performance rapportage</span>
                   </li>
                 </ul>
-                <Link
-                  href="/contact"
+                <a
+                  href="https://shop-nu.plugandpay.nl/checkout/premium-positie-2-adhdcoachindebuurt"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full bg-amber-600 text-white text-center py-4 rounded-lg font-bold hover:bg-amber-700 transition-colors shadow-lg"
                 >
                   Claim Positie #2
-                </Link>
+                </a>
               </div>
 
               {/* Position 3 */}
@@ -292,12 +296,14 @@ export default function PremiumPositiePage() {
                     <span>Maandelijkse performance rapportage</span>
                   </li>
                 </ul>
-                <Link
-                  href="/contact"
+                <a
+                  href="https://shop-nu.plugandpay.nl/checkout/premium-positie-3-adhdcoachindebuurt"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full bg-amber-600 text-white text-center py-4 rounded-lg font-bold hover:bg-amber-700 transition-colors shadow-lg"
                 >
                   Claim Positie #3
-                </Link>
+                </a>
               </div>
             </div>
 
