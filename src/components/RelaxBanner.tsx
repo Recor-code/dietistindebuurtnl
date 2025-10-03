@@ -11,9 +11,9 @@ export default function RelaxBanner() {
           className="inline-block hover:opacity-90 transition-opacity"
         >
           <img 
-            src="/relax-banner-new.jpg" 
+            src="/relax-banner-squared.jpg" 
             alt="RELAX - Natuurlijke rust zonder loom gevoel" 
-            className="w-auto mx-auto"
+            className="w-full max-w-2xl mx-auto rounded-lg"
           />
         </a>
         
