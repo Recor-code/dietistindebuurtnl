@@ -117,7 +117,7 @@ export default function PremiumPositiePage() {
                 <Crown className="w-12 h-12 text-amber-500 mb-4" />
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Onmiddellijke Zichtbaarheid</h3>
                 <p className="text-gray-700">
-                  Je staat bovenaan met een gouden crown badge. Mensen zien JOU het eerst. Altijd. Op alle 415+ steden.
+                  Je staat bovenaan met een gouden crown badge. Mensen zien JOU het eerst in jouw gekozen stad. Altijd.
                 </p>
               </div>
 
@@ -195,7 +195,7 @@ export default function PremiumPositiePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Op alle 415+ stadspagina's</span>
+                    <span>Op jouw gekozen stadspagina</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -236,7 +236,7 @@ export default function PremiumPositiePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Op alle 415+ stadspagina's</span>
+                    <span>Op jouw gekozen stadspagina</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -277,7 +277,7 @@ export default function PremiumPositiePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Op alle 415+ stadspagina's</span>
+                    <span>Op jouw gekozen stadspagina</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
