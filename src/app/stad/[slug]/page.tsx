@@ -72,6 +72,7 @@ async function getCityWithPlaces(slug: string) {
       weekendAvailable: place.weekend_beschikbaar_filter === 'yes',
       acceptsInsurance: place.basisverzekering_filter === 'yes',
       studentFriendly: place.studenten_filter === 'yes',
+      englishSpeaking: place.english_filter === 'yes',
       openingHours: place['OPENING HOURS'],
       mainImageUrl: place['MAIN IMAGE URL'],
       resultPosition: place['RESULT POSITION'] || 999999,
@@ -90,7 +91,8 @@ export default function CityPage({ params }: PageProps) {
   const [filters, setFilters] = useState({
     kindvriendelijk: false,
     weekend: false,
-    hoogsteBeoordeling: false
+    hoogsteBeoordeling: false,
+    englishSpeaking: false
   });
   const [visibleCount, setVisibleCount] = useState(8);
 
@@ -132,6 +134,9 @@ export default function CityPage({ params }: PageProps) {
   }
   if (filters.weekend) {
     filteredPlaces = filteredPlaces.filter(place => place.weekendAvailable);
+  }
+  if (filters.englishSpeaking) {
+    filteredPlaces = filteredPlaces.filter(place => place.englishSpeaking);
   }
   if (filters.hoogsteBeoordeling) {
     // Sort by weighted score: considers both rating AND review count
@@ -351,6 +356,17 @@ export default function CityPage({ params }: PageProps) {
                 <Star size={16} />
                 Hoogste beoordeling
               </button>
+              <button 
+                onClick={() => toggleFilter('englishSpeaking')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.englishSpeaking 
+                    ? 'bg-purple-600 text-white border-purple-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-purple-400 hover:bg-purple-50'
+                }`}
+              >
+                <Globe size={16} />
+                English Speaking
+              </button>
             </div>
 
             <p className="text-gray-600">
@@ -447,6 +463,11 @@ export default function CityPage({ params }: PageProps) {
                       {place.studentFriendly && (
                         <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
                           Studentvriendelijk
+                        </span>
+                      )}
+                      {place.englishSpeaking && (
+                        <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">
+                          English Speaking
                         </span>
                       )}
                     </div>
