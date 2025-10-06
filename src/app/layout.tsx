@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   description: "De grootste directory voor ADHD coaches in Nederland en België. Vergelijk gecertificeerde coaches, bekijk reviews en vind de perfecte match voor ADHD ondersteuning.",
   keywords: "ADHD coaches, ADHD coaching, ADHD behandeling, ADHD hulp, gedragstherapeut, Nederland, België, ADHD ondersteuning",
   authors: [{ name: "ADHD Coach in de Buurt" }],
+  icons: {
+    icon: "/favicon-2024.ico",
+    shortcut: "/favicon-2024.ico",
+    apple: "/favicon-2024.ico",
+  },
   robots: {
     index: true,
     follow: true,

@@ -1,0 +1,14 @@
+{
+  "name": "ADHD Coach in de Buurt",
+  "short_name": "ADHD Coach",
+  "icons": [
+    {
+      "src": "/favicon-2024.ico",
+      "sizes": "32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#0284c7",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
