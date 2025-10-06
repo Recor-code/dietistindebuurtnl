@@ -43,9 +43,12 @@ export default async function BlogPostPage({ params }: PageProps) {
   const post = await getBlogPost(slug);
 
   // Blog functionality is disabled - always show 404
-  notFound();
+  if (!post) {
+    notFound();
+  }
 
   const featuredImageUrl = `https://adhdcoachindebuurt.nl/img/blog/${slug}/og.webp`;
+  const tags: string[] = [];
 
   const articleSchema = {
     '@context': 'https://schema.org',
