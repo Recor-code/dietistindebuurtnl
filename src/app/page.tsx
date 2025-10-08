@@ -63,15 +63,15 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative isolate py-16 px-4 h-[55vh] flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/20 before:z-0" style={{backgroundImage: "url('/adhd-bg3.webp')"}}>
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-            Vind de beste ADHD coaches<br />
-            bij jou in de buurt
+      <section className="relative isolate py-12 sm:py-16 px-4 min-h-[55vh] flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/20 before:z-0" style={{backgroundImage: "url('/adhd-bg3.webp')"}}>
+        <div className="w-full mx-auto text-center relative z-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg px-4">
+            Vind de beste ADHD coaches<br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>bij jou in de buurt
           </h2>
-          <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto drop-shadow-md">
-            Vergelijk gecertificeerde ADHD coaches en gedragstherapeuten in jouw stad.<br />
-            Bekijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
+          <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-md px-4">
+            Vergelijk gecertificeerde ADHD coaches en gedragstherapeuten in jouw stad.<br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>Bekijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
           </p>
 
           {/* Quick Search */}
