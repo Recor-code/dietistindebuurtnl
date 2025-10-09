@@ -7,6 +7,10 @@ import { CheckCircle, Users, TrendingUp, Target, Zap, Award } from 'lucide-react
 export const metadata: Metadata = {
   title: 'Adverteer op ADHD Coach in de Buurt | Premium Bannerplekken',
   description: 'Bereik duizenden mensen die actief zoeken naar ADHD hulp. Exclusieve bannerplekken op de grootste ADHD coach directory van Nederland en België.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function BannerPage() {

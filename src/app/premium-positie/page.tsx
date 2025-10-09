@@ -7,6 +7,10 @@ import { CheckCircle, Crown, TrendingUp, Users, Target, Zap, Award, DollarSign }
 export const metadata: Metadata = {
   title: 'Premium Posities | Word de #1 ADHD Coach in Jouw Stad',
   description: 'Stop met onzichtbaar zijn. Domineer de top 3 posities in jouw stad en trek dagelijks nieuwe cliënten aan. Beperkte plekken beschikbaar.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function PremiumPositiePage() {
