@@ -14,6 +14,7 @@ interface FormData {
   practiceName: string;
   name: string;
   email: string;
+  countryCode: string;
   phone: string;
   website: string;
   services: string[];
@@ -34,6 +35,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName, spec
     practiceName: practiceName,
     name: '',
     email: '',
+    countryCode: '+31',
     phone: '',
     website: '',
     services: []
@@ -48,6 +50,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName, spec
         practiceName: practiceName,
         name: '',
         email: '',
+        countryCode: '+31',
         phone: '',
         website: '',
         services: []
@@ -274,14 +277,24 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName, spec
               <p className="text-gray-600 mb-6">
                 Zo kunnen we je snel bereiken als dat nodig is.
               </p>
-              <input
-                type="tel"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent text-lg"
-                placeholder="06 12345678"
-                autoFocus
-              />
+              <div className="flex gap-3">
+                <select
+                  value={formData.countryCode}
+                  onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+                  className="w-32 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent text-lg bg-white"
+                >
+                  <option value="+31">🇳🇱 +31</option>
+                  <option value="+32">🇧🇪 +32</option>
+                </select>
+                <input
+                  type="tel"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent text-lg"
+                  placeholder={formData.countryCode === '+31' ? '6 12345678' : '470 12 34 56'}
+                  autoFocus
+                />
+              </div>
             </div>
           )}
 
