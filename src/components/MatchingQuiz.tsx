@@ -11,6 +11,7 @@ interface QuizData {
   location: string;
   name: string;
   email: string;
+  countryCode: string;
   phone: string;
 }
 
@@ -32,6 +33,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
     location: '',
     name: '',
     email: '',
+    countryCode: '+31',
     phone: ''
   });
 
@@ -151,6 +153,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
         location: '',
         name: '',
         email: '',
+        countryCode: '+31',
         phone: ''
       });
     }
@@ -347,13 +350,23 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Telefoon (optioneel)
                   </label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    placeholder="06 12345678"
-                    className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  />
+                  <div className="flex gap-2">
+                    <select
+                      value={formData.countryCode}
+                      onChange={(e) => handleInputChange('countryCode', e.target.value)}
+                      className="w-28 p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    >
+                      <option value="+31">🇳🇱 +31</option>
+                      <option value="+32">🇧🇪 +32</option>
+                    </select>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      placeholder={formData.countryCode === '+31' ? '6 12345678' : '470 12 34 56'}
+                      className="flex-1 p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
                 </div>
               </div>
               <p className="text-sm text-gray-600 mt-4">
