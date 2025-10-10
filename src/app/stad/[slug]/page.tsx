@@ -275,7 +275,7 @@ export default function CityPage({ params }: PageProps) {
             className="inline-block hover:opacity-90 transition-opacity"
           >
             <img 
-              src="/relax-banner-squared.jpg" 
+              src="/relax-banner-500.webp" 
               alt="RELAX - Natuurlijke rust zonder loom gevoel" 
               className="w-full max-w-[300px] rounded-lg"
             />
@@ -546,7 +546,7 @@ export default function CityPage({ params }: PageProps) {
               className="inline-block hover:opacity-90 transition-opacity"
             >
               <img 
-                src="/relax-banner-squared.jpg" 
+                src="/relax-banner-500.webp" 
                 alt="RELAX - Natuurlijke rust zonder loom gevoel" 
                 className="w-full max-w-[500px] mx-auto rounded-lg"
               />
