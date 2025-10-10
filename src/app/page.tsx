@@ -13,7 +13,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'ADHD Coach in de Buurt',
   url: 'https://adhdcoachindebuurt.nl',
-  logo: 'https://adhdcoachindebuurt.nl/logo.png',
+  logo: 'https://adhdcoachindebuurt.nl/images/logo.webp',
   description: 'De grootste directory voor ADHD coaches in Nederland en België. Vergelijk gecertificeerde coaches, bekijk reviews en vind de perfecte match voor ADHD ondersteuning.',
   areaServed: [
     {

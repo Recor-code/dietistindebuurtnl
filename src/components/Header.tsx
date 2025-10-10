@@ -16,7 +16,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 relative">
               <Image 
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="ADHD Coach in de Buurt Logo"
                 width={40}
                 height={40}
@@ -58,7 +58,7 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 relative">
                 <Image 
-                  src="/images/logo.png"
+                  src="/images/logo.webp"
                   alt="ADHD Coach in de Buurt Logo"
                   width={40}
                   height={40}

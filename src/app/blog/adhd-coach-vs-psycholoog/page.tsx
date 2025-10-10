@@ -46,7 +46,7 @@ const articleSchema = {
     url: 'https://adhdcoachindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/logo.png'
+      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-24T12:00:00.000Z',
