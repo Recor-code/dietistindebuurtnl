@@ -1,0 +1,135 @@
+
+Reduce JavaScript execution time 1.4 s
+Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. Learn how to reduce Javascript execution time.TBT
+URL
+Total CPU Time
+Script Evaluation
+Script Parse
+Google Maps utility 
+999 ms	703 ms	92 ms
+…9c/map.js(maps.googleapis.com)
+315 ms
+279 ms
+14 ms
+…9c/main.js(maps.googleapis.com)
+249 ms
+175 ms
+42 ms
+…9c/controls.js(maps.googleapis.com)
+236 ms
+159 ms
+10 ms
+…9c/common.js(maps.googleapis.com)
+134 ms
+31 ms
+21 ms
+…9c/log.js(maps.googleapis.com)
+65 ms
+58 ms
+5 ms
+adhdcoachindebuurt.nl 1st party
+676 ms	278 ms	40 ms
+/stad/amsterdam(adhdcoachindebuurt.nl)
+286 ms
+4 ms
+1 ms
+…chunks/1255-1622f43a1c0ebec5.js(adhdcoachindebuurt.nl)
+150 ms
+130 ms
+15 ms
+…chunks/4bd1b696-f785427dddbba9fb.js(adhdcoachindebuurt.nl)
+140 ms
+45 ms
+24 ms
+…chunks/main-app-5eb0d9c55a395822.js(adhdcoachindebuurt.nl)
+101 ms
+100 ms
+0 ms
+Google Tag Manager tag-manager 
+284 ms	162 ms	120 ms
+/gtag/js?id=G-6YRZ288H3S&cx=c&gtm=4e5a80(www.googletagmanager.com)
+184 ms
+108 ms
+76 ms
+/gtm.js?id=GTM-WQ87ZF3Z(www.googletagmanager.com)
+100 ms
+54 ms
+44 ms
+Unattributable
+180 ms	43 ms	0 ms
+Unattributable
+180 ms
+43 ms
+0 ms
+Minimize main-thread work 2.3 s
+Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. Learn how to minimize main-thread workTBT
+Category
+Time Spent
+Script Evaluation
+1,246 ms
+Script Parsing & Compilation
+344 ms
+Other
+308 ms
+Style & Layout
+204 ms
+Rendering
+115 ms
+Garbage Collection
+58 ms
+Parse HTML & CSS
+33 ms
+Reduce unused JavaScript Est savings of 192 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCP
+URL
+Transfer Size
+Est Savings
+Google Tag Manager tag-manager 
+237.0 KiB	104.1 KiB
+/gtag/js?id=G-6YRZ288H3S&cx=c&gtm=4e5a80(www.googletagmanager.com)
+137.4 KiB
+53.9 KiB
+/gtm.js?id=GTM-WQ87ZF3Z(www.googletagmanager.com)
+99.5 KiB
+50.2 KiB
+Google Maps utility 
+150.8 KiB	57.0 KiB
+…9c/main.js(maps.googleapis.com)
+80.7 KiB
+35.8 KiB
+…9c/util.js(maps.googleapis.com)
+70.2 KiB
+21.2 KiB
+adhdcoachindebuurt.nl 1st party
+40.8 KiB	30.8 KiB
+…chunks/4789-62f99696ef917507.js(adhdcoachindebuurt.nl)
+40.8 KiB
+30.8 KiB
+Does not use passive listeners to improve scrolling performance
+Consider marking your touch and wheel event listeners as passive to improve your page's scroll performance. Learn more about adopting passive event listeners.
+Source
+Google Maps utility 
+…9c/main.js:469:38(maps.googleapis.com)
+…9c/main.js:469:24(maps.googleapis.com)
+Avoid serving legacy JavaScript to modern browsers Est savings of 11 KiB
+Polyfills and transforms enable legacy browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile Baseline features, unless you know you must support legacy browsers. Learn why most sites can deploy ES6+ code without transpilingLCPFCP
+URL
+Est Savings
+adhdcoachindebuurt.nl 1st party
+11.3 KiB
+…chunks/1255-1622f43a1c0ebec5.js(adhdcoachindebuurt.nl)
+11.3 KiB
+…chunks/1255-1622f43a1c0ebec5.js:1:4078(adhdcoachindebuurt.nl)
+Array.prototype.at
+…chunks/1255-1622f43a1c0ebec5.js:1:3466(adhdcoachindebuurt.nl)
+Array.prototype.flat
+…chunks/1255-1622f43a1c0ebec5.js:1:3579(adhdcoachindebuurt.nl)
+Array.prototype.flatMap
+…chunks/1255-1622f43a1c0ebec5.js:1:3955(adhdcoachindebuurt.nl)
+Object.fromEntries
+…chunks/1255-1622f43a1c0ebec5.js:1:4213(adhdcoachindebuurt.nl)
+Object.hasOwn
+…chunks/1255-1622f43a1c0ebec5.js:1:3208(adhdcoachindebuurt.nl)
+String.prototype.trimEnd
+…chunks/1255-1622f43a1c0ebec5.js:1:3123(adhdcoachindebuurt.nl)
+String.prototype.trimStart

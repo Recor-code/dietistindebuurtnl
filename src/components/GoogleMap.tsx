@@ -32,6 +32,7 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<google.maps.Map | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -41,9 +42,37 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
     return () => setIsMounted(false);
   }, []);
 
+  // Lazy load on scroll - IntersectionObserver
   useEffect(() => {
-    // Skip if not mounted or if running on server-side
     if (!isMounted || typeof window === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log('🗺️ GoogleMap: Container is visible, starting lazy load');
+            setShouldLoad(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        rootMargin: '200px', // Start loading 200px before map comes into view
+      }
+    );
+
+    if (mapRef.current) {
+      observer.observe(mapRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isMounted]);
+
+  useEffect(() => {
+    // Skip if not mounted, running on server-side, or shouldn't load yet
+    if (!isMounted || typeof window === 'undefined' || !shouldLoad) return;
 
     // Skip if map already initialized
     if (mapInstanceRef.current) return;
@@ -168,15 +197,8 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
       }
     };
 
-    // Add delay to ensure DOM is fully ready
-    const timeoutId = setTimeout(() => {
-      initMap();
-    }, 200);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [coaches, center, zoom, isMounted]);
+    initMap();
+  }, [coaches, center, zoom, isMounted, shouldLoad]);
 
   if (!isMounted) {
     return (
