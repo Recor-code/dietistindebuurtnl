@@ -1,0 +1,27 @@
+'use client';
+
+import { ChevronDown, Heart, HelpCircle } from 'lucide-react';
+import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import RelaxBanner from '@/components/RelaxBanner';
+
+interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
+  order: number;
+  created_at?: string;
+  updated_at?: string;
+  is_published?: boolean;
+}
+
+// Comprehensive static FAQ data for Dietist
+const comprehensiveFAQs = [
+  // General Information about Dietists
+  {
+    id: 'general-1',
+    question: 'Wat is een dietist en wat doet een dietist?',

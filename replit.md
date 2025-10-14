@@ -1,10 +1,10 @@
-# ADHD Coach in de Buurt
+# Dietist in de Buurt
 
 ## Overview
 
-ADHD Coach in de Buurt is a Dutch/Belgian web platform designed to help people find ADHD coaches and therapists in their local area. The application serves as a directory and matchmaking service for individuals seeking ADHD support, featuring location-based search, coach profiles, reviews, and an AI-powered chat assistant to help users understand their ADHD needs.
+Dietist in de Buurt is a Dutch/Belgian web platform designed to help people find dietists (nutritionists) in their local area. The application serves as a directory and matchmaking service for individuals seeking nutritional guidance and dietary support, featuring location-based search, dietist profiles, reviews, and comprehensive FAQ content to help users understand dietetic services.
 
-The platform targets Dutch and Belgian cities, providing localized information about ADHD coaches, therapists, and resources. It includes features like interactive maps, coach filtering, blog content, and an intelligent chat system that can analyze conversations to provide personalized ADHD guidance.
+The platform targets Dutch and Belgian cities, providing localized information about dietists, nutritionists, and dietary resources. It includes features like interactive maps, dietist filtering, blog content, and extensive FAQs covering costs, insurance, specializations, and finding the right dietist.
 
 ## User Preferences
 
@@ -38,10 +38,10 @@ Preferred communication style: Simple, everyday language.
 - **Client Setup**: Separate client and server-side Supabase configurations
 - **Security**: Environment-based API key management with service role keys for server operations
 
-### AI Integration
-- **Chat System**: OpenAI GPT-5 integration for ADHD coaching assistance (currently disabled for performance optimization)
-- **Analysis Engine**: Conversation analysis to identify ADHD pain points and provide recommendations
-- **Response Generation**: Context-aware responses for ADHD-related queries
+### AI Integration (Legacy - Currently Disabled)
+- **Chat System**: OpenAI GPT-5 integration (currently disabled for performance optimization)
+- **Analysis Engine**: Conversation analysis capabilities
+- **Response Generation**: Context-aware responses
 - **Structured Output**: JSON-formatted analysis results for consistent data handling
 
 ## External Dependencies
@@ -76,7 +76,29 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-**October 14, 2025**: UI improvements for homepage search and quiz phone input:
+**October 14, 2025**: Complete platform transformation from ADHD to Dietist:
+- ✅ **Full Content Migration**: Transformed entire app from ADHD coaching to dietist/nutritionist directory
+  - All ADHD terminology replaced with dietist-specific content throughout the codebase
+  - Updated site name from "ADHD Coach in de Buurt" to "Dietist in de Buurt"
+  - Domain references changed from adhdcoachindebuurt.nl to dietistindebuurt.nl
+- ✅ **New Comprehensive FAQ Page**: Created extensive FAQ with 20 detailed questions covering:
+  - What is a dietist and when to see one
+  - Costs and insurance (€70-€95 first consult, €45-€70 follow-up)
+  - No referral needed since 2022
+  - Weight loss and management
+  - Sports nutrition, medical conditions (diabetes, high cholesterol)
+  - Emotional eating, food allergies/intolerances
+  - Children's nutrition, pregnancy and breastfeeding
+  - How to find a good dietist
+  - Features: 10 category filters, collapsible FAQ items, professional blue gradient design
+- ✅ **Technical Fixes**:
+  - Fixed unicode escape errors by using double quotes for Dutch special characters
+  - Resolved favicon conflict by removing duplicate file
+  - All 17+ blog posts updated with dietist content
+  - All 415+ city pages (stad/) updated with dietist terminology
+  - Components (Header, Footer, BlogPostsSection) updated
+  - Data files updated with dietist statistics
+- ✅ **Homepage UI improvements**: Search and quiz phone input enhancements
 - ✅ Fixed homepage "Zoeken" button width by changing grid ratio from 10:2 to 9:3 (input:button)
   - **Impact**: Button now 50% wider and better proportioned to input field
 - ✅ Fixed "Zoeken" button height to match input field height (changed from py-2 to py-3 padding)
