@@ -55,7 +55,7 @@ export default function HeroSearchSection() {
     <div className="w-full max-w-[600px] mx-auto mb-12 px-4 sm:px-0">
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
-          <div className="md:col-span-10">
+          <div className="md:col-span-9">
             <label className="block text-sm font-medium text-gray-700 mb-2">Waar zoek je?</label>
             <CitySearchInput 
               className="w-full"
@@ -64,7 +64,7 @@ export default function HeroSearchSection() {
               onQueryChange={handleQueryChange}
             />
           </div>
-          <div className="md:col-span-2">
+          <div className="md:col-span-3">
             <button 
               onClick={handleSearch}
               disabled={!isButtonEnabled}
