@@ -84,8 +84,8 @@ async function getSpecialist(slug: string) {
       email: place['EMAIL'] && place['EMAIL'] !== 'n/a' ? place['EMAIL'] : null,
       phone: place['PHONE'],
       website: place['WEBSITE'],
-      specialization: place['CATEGORY'] || 'ADHD Specialist',
-      description: place.description || `Gecertificeerde specialist met specialisatie in ADHD begeleiding. Professionele ondersteuning voor kinderen, adolescenten en volwassenen.`,
+      specialization: place['CATEGORY'] || 'Diëtiek Specialist',
+      description: place.description || `Gecertificeerde specialist met specialisatie in Diëtiek begeleiding. Professionele ondersteuning voor kinderen, adolescenten en volwassenen.`,
       address: place['ADDRESS'],
       latitude: place['LAT'] ? parseFloat(place['LAT']) : null,
       longitude: place['LNG'] ? parseFloat(place['LNG']) : null,
@@ -116,14 +116,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
   if (!specialist) {
     return {
       title: 'Specialist niet gevonden',
-      description: 'De opgevraagde ADHD specialist kon niet worden gevonden.',
+      description: 'De opgevraagde Diëtiek specialist kon niet worden gevonden.',
     };
   }
 
   return {
     title: `${specialist.name} - ${specialist.specialization} in ${specialist.cityName}`,
     description: specialist.description?.substring(0, 155),
-    keywords: `ADHD coach, ${specialist.name}, ${specialist.cityName}, ADHD specialist`,
+    keywords: `Dietist, ${specialist.name}, ${specialist.cityName}, Diëtiek specialist`,
   };
 }
 

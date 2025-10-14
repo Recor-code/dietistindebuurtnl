@@ -11,10 +11,10 @@ import Link from 'next/link';
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'ADHD Coach in de Buurt',
-  url: 'https://adhdcoachindebuurt.nl',
-  logo: 'https://adhdcoachindebuurt.nl/images/logo.webp',
-  description: 'De grootste directory voor ADHD coaches in Nederland en België. Vergelijk gecertificeerde coaches, bekijk reviews en vind de perfecte match voor ADHD ondersteuning.',
+  name: 'Dietist in de Buurt',
+  url: 'https://dietistindebuurt.nl',
+  logo: 'https://dietistindebuurt.nl/images/logo.webp',
+  description: 'De grootste directory voor Dietisten in Nederland en België. Vergelijk gecertificeerde dietisten, bekijk reviews en vind de perfecte match voor voedingsadvies.',
   areaServed: [
     {
       '@type': 'Country',
@@ -25,9 +25,9 @@ const organizationSchema = {
       name: 'België'
     }
   ],
-  serviceType: 'ADHD Coaching Directory',
+  serviceType: 'Dietist Directory',
   sameAs: [
-    'https://adhdcoachindebuurt.nl'
+    'https://dietistindebuurt.nl'
   ],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -39,12 +39,12 @@ const organizationSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'ADHD Coach in de Buurt',
-  url: 'https://adhdcoachindebuurt.nl',
-  description: 'De grootste directory voor ADHD coaches in Nederland en België.',
+  name: 'Dietist in de Buurt',
+  url: 'https://dietistindebuurt.nl',
+  description: 'De grootste directory voor Dietisten in Nederland en België.',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://adhdcoachindebuurt.nl/stad/{search_term_string}',
+    target: 'https://dietistindebuurt.nl/stad/{search_term_string}',
     'query-input': 'required name=search_term_string'
   }
 };
@@ -66,11 +66,11 @@ export default function Home() {
       <section className="relative isolate py-12 sm:py-16 px-4 min-h-[55vh] flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/20 before:z-0" style={{backgroundImage: "url('/adhd-bg3.webp')"}}>
         <div className="w-full mx-auto text-center relative z-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg px-4">
-            Vind de beste ADHD coaches<br className="hidden sm:block" />
+            Vind de beste Dietisten<br className="hidden sm:block" />
             <span className="sm:hidden"> </span>bij jou in de buurt
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-md px-4">
-            Vergelijk gecertificeerde ADHD coaches en gedragstherapeuten in jouw stad.<br className="hidden sm:block" />
+            Vergelijk gecertificeerde dietisten en voedingsdeskundigen in jouw stad.<br className="hidden sm:block" />
             <span className="sm:hidden"> </span>Bekijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
           </p>
 
@@ -104,7 +104,7 @@ export default function Home() {
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-4">Alleen gecertificeerde professionals</h4>
               <p className="text-gray-600 leading-relaxed">
-                Alle coaches en therapeuten zijn geverifieerd en hebben bewezen expertise in ADHD behandeling.
+                Alle dietisten zijn geverifieerd en hebben bewezen expertise in voedingsadvies.
               </p>
             </div>
 
@@ -124,7 +124,7 @@ export default function Home() {
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-4">Lokale specialisten</h4>
               <p className="text-gray-600 leading-relaxed">
-                Vind coaches bij jou in de buurt voor persoonlijke sessies of online consultaties.
+                Vind dietisten bij jou in de buurt voor persoonlijke sessies of online consultaties.
               </p>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Home() {
           <div className="flex justify-between items-start mb-12">
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-2">Laatste Blog Artikelen</h3>
-              <p className="text-lg text-gray-600">Lokale ADHD informatie en tips voor jouw regio</p>
+              <p className="text-lg text-gray-600">Lokale voedingsinformatie en tips voor jouw regio</p>
             </div>
             <Link href="/blog" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
               Alle artikelen →
@@ -150,11 +150,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ADHD Statistics */}
+      {/* Dietist Statistics */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">
-            ADHD in Nederland & België
+            Diëtiek in Nederland & België
           </h3>
           <p className="text-lg text-gray-600 mb-16">
             Belangrijke statistieken en trends
@@ -163,37 +163,37 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-3">
-                5-7%
+                3000+
               </div>
               <p className="text-gray-600 leading-relaxed">
-                van kinderen heeft ADHD
+                gecertificeerde dietisten
               </p>
             </div>
 
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-sky-500 mb-3">
-                2.5%
+                85%
               </div>
               <p className="text-gray-600 leading-relaxed">
-                van volwassenen heeft ADHD
+                gezondere leefstijl na advies
               </p>
             </div>
 
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-blue-500 mb-3">
-                1.2M+
+                5M+
               </div>
               <p className="text-gray-600 leading-relaxed">
-                mensen met ADHD in NL
+                mensen zoeken voedingsadvies
               </p>
             </div>
 
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-3">
-                68%
+                90%
               </div>
               <p className="text-gray-600 leading-relaxed">
-                verbetert met coaching
+                verbetert gezondheid
               </p>
             </div>
           </div>

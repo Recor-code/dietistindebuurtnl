@@ -141,13 +141,13 @@ Bericht:
 ${sanitizedMessage}
 
 ---
-Dit bericht is verzonden via het contactformulier van adhdcoachindebuurt.nl
+Dit bericht is verzonden via het contactformulier van dietistindebuurt.nl
 Verzonden op: ${new Date().toLocaleString('nl-NL')}
     `.trim();
 
     const mailOptions = {
-      from: `ADHD Coach in de Buurt <${process.env.SMTP_USER}>`,
-      to: 'info@adhdcoachindebuurt.nl',
+      from: `Dietist in de Buurt <${process.env.SMTP_USER}>`,
+      to: 'info@dietistindebuurt.nl',
       replyTo: email,
       subject: emailSubject,
       text: textMessage,
@@ -171,7 +171,7 @@ Verzonden op: ${new Date().toLocaleString('nl-NL')}
           </div>
           
           <div style="border-top: 1px solid #e5e7eb; padding-top: 15px; margin-top: 30px; color: #6b7280; font-size: 14px;">
-            <p>Dit bericht is verzonden via het contactformulier van adhdcoachindebuurt.nl</p>
+            <p>Dit bericht is verzonden via het contactformulier van dietistindebuurt.nl</p>
             <p>Verzonden op: ${new Date().toLocaleString('nl-NL')}</p>
           </div>
         </div>

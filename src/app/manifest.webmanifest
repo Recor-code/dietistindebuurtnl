@@ -1,7 +1,7 @@
 {
-  "name": "ADHD Coach in de Buurt",
-  "short_name": "ADHD Coach",
-  "description": "Vind de beste ADHD coaches bij jou in de buurt",
+  "name": "Dietist in de Buurt",
+  "short_name": "Dietist",
+  "description": "Vind de beste Dietisten bij jou in de buurt",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

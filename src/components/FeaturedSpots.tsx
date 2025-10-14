@@ -235,7 +235,7 @@ export default function FeaturedSpots({ cityId, cityName }: FeaturedSpotsProps) 
         <Crown className="text-amber-600" size={28} />
         <div>
           <h3 className="text-2xl font-bold text-amber-800">
-            Premium ADHD Coaches in {cityName}
+            Premium Diëtiek Coaches in {cityName}
           </h3>
           <p className="text-amber-700 text-sm">
             Handpicked professionals with verified expertise

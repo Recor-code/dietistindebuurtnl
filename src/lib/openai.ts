@@ -19,7 +19,7 @@ export function getAssistantStatus(): { usingAssistant: boolean; assistantId?: s
   };
 }
 
-export interface ADHDAnalysis {
+export interface DiëtiekAnalysis {
   summary: string;
   painPoints: string[];
   recommendations: string[];
@@ -27,9 +27,9 @@ export interface ADHDAnalysis {
   suggestedActions: string[];
 }
 
-export async function generateADHDAnalysis(
+export async function generateDiëtiekAnalysis(
   messages: ChatMessage[]
-): Promise<ADHDAnalysis> {
+): Promise<DiëtiekAnalysis> {
   try {
     const conversation = messages.map(m => `${m.role}: ${m.content}`).join('\n');
     
@@ -39,7 +39,7 @@ export async function generateADHDAnalysis(
       messages: [
         {
           role: "system",
-          content: `Je bent een ervaren ADHD specialist die gesprekken analyseert om mensen te helpen hun ADHD-uitdagingen beter te begrijpen. 
+          content: `Je bent een ervaren Diëtiek specialist die gesprekken analyseert om mensen te helpen hun Diëtiek-uitdagingen beter te begrijpen. 
           
           Analyseer het gesprek en geef terug in JSON format:
           {
@@ -50,7 +50,7 @@ export async function generateADHDAnalysis(
             "suggestedActions": ["concrete", "stappen", "om", "te", "ondernemen"]
           }
           
-          Focus op ADHD-specifieke uitdagingen zoals concentratie, organisatie, emotieregulatie, impulsiviteit, etc.
+          Focus op Diëtiek-specifieke uitdagingen zoals concentratie, organisatie, emotieregulatie, impulsiviteit, etc.
           Geef praktische, bruikbare adviezen.`
         },
         {
@@ -71,8 +71,8 @@ export async function generateADHDAnalysis(
       suggestedActions: result.suggestedActions || []
     };
   } catch (error) {
-    console.error('Error generating ADHD analysis:', error);
-    throw new Error('Failed to generate ADHD analysis');
+    console.error('Error generating Diëtiek analysis:', error);
+    throw new Error('Failed to generate Diëtiek analysis');
   }
 }
 
@@ -272,18 +272,18 @@ async function streamChatCompletionResponse(
     messages: [
       {
         role: "system",
-        content: `Je bent een warme, begripvolle AI ADHD Assistente voor de website "ADHD Coach in de Buurt". 
+        content: `Je bent een warme, begripvolle AI Diëtiek Assistente voor de website "Dietist in de Buurt". 
         
         Je helpt bezoekers met:
-        - Vragen over ADHD symptomen en uitdagingen
-        - Informatie over wat een ADHD coach kan betekenen
+        - Vragen over Diëtiek symptomen en uitdagingen
+        - Informatie over wat een Dietist kan betekenen
         - Hulp bij het vinden van de juiste professionele ondersteuning
-        - Praktische tips voor dagelijks leven met ADHD
+        - Praktische tips voor dagelijks leven met Diëtiek
         - Emotionele ondersteuning en begrip
         
         Spreek in warme, toegankelijke Nederlandse taal. Wees empathisch maar professioneel.
         Verwijs mensen altijd naar professionele hulp voor diagnoses of behandeling.
-        Moedig mensen aan om de ADHD coaches in hun stad te bekijken op de website.`
+        Moedig mensen aan om de Dietisten in hun stad te bekijken op de website.`
       },
       ...messages
     ],
@@ -406,18 +406,18 @@ async function generateChatCompletionResponse(
       messages: [
         {
           role: "system",
-          content: `Je bent een warme, begripvolle AI ADHD Assistente voor de website "ADHD Coach in de Buurt". 
+          content: `Je bent een warme, begripvolle AI Diëtiek Assistente voor de website "Dietist in de Buurt". 
           
           Je helpt bezoekers met:
-          - Vragen over ADHD symptomen en uitdagingen
-          - Informatie over wat een ADHD coach kan betekenen
+          - Vragen over Diëtiek symptomen en uitdagingen
+          - Informatie over wat een Dietist kan betekenen
           - Hulp bij het vinden van de juiste professionele ondersteuning
-          - Praktische tips voor dagelijks leven met ADHD
+          - Praktische tips voor dagelijks leven met Diëtiek
           - Emotionele ondersteuning en begrip
           
           Spreek in warme, toegankelijke Nederlandse taal. Wees empathisch maar professioneel.
           Verwijs mensen altijd naar professionele hulp voor diagnoses of behandeling.
-          Moedig mensen aan om de ADHD coaches in hun stad te bekijken op de website.`
+          Moedig mensen aan om de Dietisten in hun stad te bekijken op de website.`
         },
         ...messages
       ],

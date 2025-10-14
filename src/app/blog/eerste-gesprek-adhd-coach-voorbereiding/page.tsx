@@ -4,21 +4,21 @@ import Image from 'next/image'
 import { CheckCircle2, AlertTriangle, ClipboardList, MessageCircle, Brain, Target, FileText, Lightbulb, Calendar, Phone, Mail, Share2, ArrowLeft } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: "Eerste gesprek ADHD coach voorbereiden: complete checklist [2025]",
-  description: "Zo bereid je je optimaal voor op je eerste gesprek met een ADHD coach. Complete checklist met vragen, documenten en tips voor een succesvol intake gesprek.",
+  title: "Eerste gesprek Dietist voorbereiden: complete checklist [2025]",
+  description: "Zo bereid je je optimaal voor op je eerste gesprek met een Dietist. Complete checklist met vragen, documenten en tips voor een succesvol intake gesprek.",
   keywords: [
-    'eerste gesprek ADHD coach',
-    'ADHD coach voorbereiding',
-    'intake gesprek ADHD',
-    'ADHD coach afspraak',
+    'eerste gesprek Dietist',
+    'Dietist voorbereiding',
+    'intake gesprek Diëtiek',
+    'Dietist afspraak',
     'kennismaking coach',
     'coaching intake voorbereiden',
-    'ADHD eerste sessie',
+    'Diëtiek eerste sessie',
     'coach gesprek checklist'
   ],
   openGraph: {
-    title: "Eerste gesprek ADHD coach voorbereiden: complete checklist [2025]",
-    description: "Zo bereid je je optimaal voor op je eerste gesprek met een ADHD coach. Complete checklist met vragen, documenten en tips voor een succesvol intake gesprek.",
+    title: "Eerste gesprek Dietist voorbereiden: complete checklist [2025]",
+    description: "Zo bereid je je optimaal voor op je eerste gesprek met een Dietist. Complete checklist met vragen, documenten en tips voor een succesvol intake gesprek.",
     images: ['/img/blog/eerste-gesprek-adhd-coach-voorbereiding/featured.webp'],
   },
 }
@@ -26,38 +26,38 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Eerste gesprek ADHD coach voorbereiden: complete checklist [2025]',
-  description: 'Zo bereid je je optimaal voor op je eerste gesprek met een ADHD coach. Complete checklist met vragen, documenten en tips voor een succesvol intake gesprek.',
+  headline: 'Eerste gesprek Dietist voorbereiden: complete checklist [2025]',
+  description: 'Zo bereid je je optimaal voor op je eerste gesprek met een Dietist. Complete checklist met vragen, documenten en tips voor een succesvol intake gesprek.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-25T10:00:00.000Z',
   dateModified: '2025-09-30T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/eerste-gesprek-adhd-coach-voorbereiding'
+    '@id': 'https://dietistindebuurt.nl/blog/eerste-gesprek-adhd-coach-voorbereiding'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/eerste-gesprek-adhd-coach-voorbereiding/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/eerste-gesprek-adhd-coach-voorbereiding/featured.webp',
     width: 1024,
     height: 1024
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/eerste-gesprek-adhd-coach-voorbereiding',
+  url: 'https://dietistindebuurt.nl/blog/eerste-gesprek-adhd-coach-voorbereiding',
   wordCount: 2600,
-  articleSection: 'ADHD Coaching',
-  keywords: ['eerste gesprek ADHD coach', 'ADHD coach voorbereiding', 'intake gesprek', 'coaching checklist'],
+  articleSection: 'Diëtiek Coaching',
+  keywords: ['eerste gesprek Dietist', 'Dietist voorbereiding', 'intake gesprek', 'coaching checklist'],
   inLanguage: 'nl-NL'
 };
 
@@ -67,7 +67,7 @@ export default function EersteGesprekVoorbereiding() {
       category: "Persoonlijke Informatie & Documentatie",
       icon: <FileText className="w-5 h-5" />,
       items: [
-        "ADHD diagnose rapport (indien beschikbaar)",
+        "Diëtiek diagnose rapport (indien beschikbaar)",
         "Medicatie overzicht en dosering",
         "Relevante medische geschiedenis",
         "Eerdere therapie of coaching ervaringen",
@@ -76,14 +76,14 @@ export default function EersteGesprekVoorbereiding() {
       why: "Deze documenten geven de coach een volledig beeld van je situatie en versnellen het kennismakingsproces."
     },
     {
-      category: "ADHD Uitdagingen Inventarisatie",
+      category: "Diëtiek Uitdagingen Inventarisatie",
       icon: <Brain className="w-5 h-5" />,
       items: [
-        "Lijst van je top 5 ADHD-gerelateerde problemen",
+        "Lijst van je top 5 Diëtiek-gerelateerde problemen",
         "Concrete voorbeelden van dagelijkse struggles",
         "Triggersituaties die je lastig vindt",
         "Patronen die je herkent in je gedrag",
-        "Momenten waarop ADHD je meest hindert"
+        "Momenten waarop Diëtiek je meest hindert"
       ],
       why: "Specifieke voorbeelden helpen de coach je uitdagingen beter te begrijpen en gerichte ondersteuning te bieden."
     },
@@ -117,10 +117,10 @@ export default function EersteGesprekVoorbereiding() {
     {
       category: "Over de Coach & Werkwijze",
       questions: [
-        "Wat is je specifieke ervaring met ADHD coaching?",
-        "Welke coaching methodiek gebruik je bij ADHD cliënten?",
-        "Hoe lang werk je gemiddeld met een ADHD cliënt?",
-        "Kun je een voorbeeld geven van een succesvol ADHD traject?",
+        "Wat is je specifieke ervaring met voedingsadvies?",
+        "Welke coaching methodiek gebruik je bij Diëtiek cliënten?",
+        "Hoe lang werk je gemiddeld met een Diëtiek cliënt?",
+        "Kun je een voorbeeld geven van een succesvol Diëtiek traject?",
         "Hoe meet je voortgang en resultaten?"
       ]
     },
@@ -153,7 +153,7 @@ export default function EersteGesprekVoorbereiding() {
     },
     {
       tip: "Maak notities",
-      explanation: "ADHD hersenen vergeten snel - schrijf belangrijke punten op of vraag of je mag opnemen (met toestemming). Review je notities binnen 24 uur."
+      explanation: "Diëtiek hersenen vergeten snel - schrijf belangrijke punten op of vraag of je mag opnemen (met toestemming). Review je notities binnen 24 uur."
     },
     {
       tip: "Test de 'klik'",
@@ -226,7 +226,7 @@ export default function EersteGesprekVoorbereiding() {
     }
   ];
 
-  const currentUrl = 'https://adhdcoachindebuurt.nl/blog/eerste-gesprek-adhd-coach-voorbereiding';
+  const currentUrl = 'https://dietistindebuurt.nl/blog/eerste-gesprek-adhd-coach-voorbereiding';
 
   return (
     <>
@@ -255,7 +255,7 @@ export default function EersteGesprekVoorbereiding() {
                       Facebook
                     </a>
                     <a 
-                      href={`https://wa.me/?text=${encodeURIComponent('Eerste gesprek ADHD coach voorbereiden - ' + currentUrl)}`}
+                      href={`https://wa.me/?text=${encodeURIComponent('Eerste gesprek Dietist voorbereiden - ' + currentUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -271,7 +271,7 @@ export default function EersteGesprekVoorbereiding() {
                       Messenger
                     </a>
                     <a 
-                      href={`https://x.com/intent/tweet?text=${encodeURIComponent('Eerste gesprek ADHD coach voorbereiden')}&url=${encodeURIComponent(currentUrl)}`}
+                      href={`https://x.com/intent/tweet?text=${encodeURIComponent('Eerste gesprek Dietist voorbereiden')}&url=${encodeURIComponent(currentUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -286,10 +286,10 @@ export default function EersteGesprekVoorbereiding() {
             {/* Header */}
             <header className="px-8 pt-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Eerste gesprek met ADHD coach: zo bereid je je optimaal voor
+                Eerste gesprek met Dietist: zo bereid je je optimaal voor
               </h1>
               <p className="text-xl text-gray-600 mb-6">
-                Een <strong>goed voorbereid intake gesprek</strong> is het fundament voor succesvolle ADHD coaching. Deze complete checklist met vragen, documenten en praktische tips helpt je het maximale uit je eerste gesprek te halen.
+                Een <strong>goed voorbereid intake gesprek</strong> is het fundament voor succesvolle voedingsadvies. Deze complete checklist met vragen, documenten en praktische tips helpt je het maximale uit je eerste gesprek te halen.
               </p>
               <div className="flex items-center text-sm text-gray-500 mb-8">
                 <span>Laatst bijgewerkt: September 2025</span>
@@ -302,7 +302,7 @@ export default function EersteGesprekVoorbereiding() {
             <div className="px-8 mb-8">
               <Image
                 src="/img/blog/eerste-gesprek-adhd-coach-voorbereiding/featured.webp"
-                alt="ADHD coach eerste gesprek voorbereiding checklist intake meeting preparation"
+                alt="Dietist eerste gesprek voorbereiding checklist intake meeting preparation"
                 width={800}
                 height={400}
                 className="w-full h-64 object-cover rounded-lg"
@@ -313,10 +313,10 @@ export default function EersteGesprekVoorbereiding() {
             <div className="mx-8 mb-8 bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-6 rounded-r-lg">
               <h2 className="text-lg font-semibold text-green-900 mb-3 flex items-center">
                 <CheckCircle2 className="w-5 h-5 mr-2" />
-                🎯 TL;DR: Je eerste ADHD coach gesprek checklist
+                🎯 TL;DR: Je eerste Dietist gesprek checklist
               </h2>
               <div className="text-green-800 space-y-2">
-                <p><strong>Doel:</strong> Optimale voorbereiding voor een <strong>succesvol intake gesprek ADHD coach</strong> dat de basis legt voor effectieve samenwerking.</p>
+                <p><strong>Doel:</strong> Optimale voorbereiding voor een <strong>succesvol intake gesprek Dietist</strong> dat de basis legt voor effectieve samenwerking.</p>
                 <ul className="space-y-1 ml-4">
                   <li>• <strong>Voor het gesprek:</strong> Verzamel documenten, definieer doelen, bereid vragen voor</li>
                   <li>• <strong>Tijdens gesprek:</strong> Wees open, test de klik, maak notities, vraag concrete voorbeelden</li>
@@ -329,16 +329,16 @@ export default function EersteGesprekVoorbereiding() {
             {/* Content */}
             <div className="px-8 prose prose-lg max-w-none">
               <p>
-                Het <strong>eerste gesprek met een ADHD coach</strong> kan zenuwslopend zijn, maar met de juiste voorbereiding wordt het een krachtige start van je coaching reis. Studies tonen aan dat mensen die zich goed voorbereiden op hun intake gesprek 65% meer tevreden zijn met hun coach keuze én sneller resultaten boeken.
+                Het <strong>eerste gesprek met een Dietist</strong> kan zenuwslopend zijn, maar met de juiste voorbereiding wordt het een krachtige start van je coaching reis. Studies tonen aan dat mensen die zich goed voorbereiden op hun intake gesprek 65% meer tevreden zijn met hun coach keuze én sneller resultaten boeken.
               </p>
 
               <p>
-                Deze gids helpt je stap voor stap om je <strong>ADHD coach voorbereiding</strong> te structureren, zodat je vol vertrouwen het gesprek ingaat en alle informatie krijgt die je nodig hebt voor een weloverwogen beslissing.
+                Deze gids helpt je stap voor stap om je <strong>Dietist voorbereiding</strong> te structureren, zodat je vol vertrouwen het gesprek ingaat en alle informatie krijgt die je nodig hebt voor een weloverwogen beslissing.
               </p>
 
               <h2>Waarom voorbereiding zo belangrijk is</h2>
               <p>
-                Een <strong>intake gesprek ADHD</strong> is veel meer dan een kennismaking - het is een tweezijdige evaluatie waarbij zowel jij als de coach bepalen of jullie goed bij elkaar passen. Goede voorbereiding:
+                Een <strong>intake gesprek Diëtiek</strong> is veel meer dan een kennismaking - het is een tweezijdige evaluatie waarbij zowel jij als de coach bepalen of jullie goed bij elkaar passen. Goede voorbereiding:
               </p>
 
               <div className="bg-blue-50 p-6 rounded-lg my-6">
@@ -364,7 +364,7 @@ export default function EersteGesprekVoorbereiding() {
 
               <h2>Complete voorbereiding checklist (48 uur voor gesprek)</h2>
               <p>
-                Gebruik deze <strong>ADHD coach afspraak checklist</strong> om systematisch alle belangrijke aspecten voor te bereiden. Ideaal is om 1-2 dagen voor het gesprek te starten.
+                Gebruik deze <strong>Dietist afspraak checklist</strong> om systematisch alle belangrijke aspecten voor te bereiden. Ideaal is om 1-2 dagen voor het gesprek te starten.
               </p>
 
               <div className="space-y-8 my-8">
@@ -432,7 +432,7 @@ export default function EersteGesprekVoorbereiding() {
 
               <h2>Tijdens het gesprek: 5 gouden tips</h2>
               <p>
-                Het gesprek zelf is je kans om de coach echt te leren kennen en te evalueren of jullie goed bij elkaar passen. Deze tips maximaliseren de waarde van het <strong>kennismakingsgesprek ADHD coach</strong>.
+                Het gesprek zelf is je kans om de coach echt te leren kennen en te evalueren of jullie goed bij elkaar passen. Deze tips maximaliseren de waarde van het <strong>kennismakingsgesprek Dietist</strong>.
               </p>
 
               <div className="space-y-4 my-8">
@@ -481,7 +481,7 @@ export default function EersteGesprekVoorbereiding() {
 
               <h2>6 veelgemaakte fouten bij intake gesprekken</h2>
               <p>
-                Leer van de ervaringen van anderen en vermijd deze veel voorkomende valkuilen bij je <strong>eerste ADHD coach sessie voorbereiding</strong>.
+                Leer van de ervaringen van anderen en vermijd deze veel voorkomende valkuilen bij je <strong>eerste Dietist sessie voorbereiding</strong>.
               </p>
 
               <div className="space-y-4 my-8">
@@ -526,7 +526,7 @@ export default function EersteGesprekVoorbereiding() {
                 </div>
 
                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                  <h4 className="font-semibold text-gray-900 mb-3">🧠 ADHD-vriendelijke voorbereidingstips</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">🧠 Diëtiek-vriendelijke voorbereidingstips</h4>
                   <div className="text-gray-700 text-sm space-y-2">
                     <p>• <strong>Gebruik visuele checklist:</strong> Print deze gids en vink af wat je hebt voorbereid</p>
                     <p>• <strong>Stel reminders in:</strong> 48 uur, 24 uur en 2 uur voor het gesprek</p>
@@ -557,7 +557,7 @@ export default function EersteGesprekVoorbereiding() {
                 <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
                   <h4 className="font-semibold text-yellow-900 mb-2">Wat als ik zenuwachtig ben of mijn gedachten niet kan ordenen?</h4>
                   <p className="text-yellow-800 text-sm">
-                    Dat is normaal! Breng je voorbereide vragen en notities mee naar het gesprek. Leg uit dat je ADHD hebt en soms moeite hebt met structuur - goede coaches begrijpen dit perfect en helpen je erdoorheen.
+                    Dat is normaal! Breng je voorbereide vragen en notities mee naar het gesprek. Leg uit dat je Diëtiek hebt en soms moeite hebt met structuur - goede coaches begrijpen dit perfect en helpen je erdoorheen.
                   </p>
                 </div>
 
@@ -571,7 +571,7 @@ export default function EersteGesprekVoorbereiding() {
 
               <h2>Conclusie: Voorbereiding = succesfactor #1</h2>
               <p>
-                Een <strong>goed voorbereid eerste gesprek ADHD coach</strong> legt de basis voor een succesvolle coaching relatie. Door deze checklist te volgen, je vragen voor te bereiden en na het gesprek goed te evalueren, vergroot je je kansen op het vinden van de perfecte coach match aanzienlijk.
+                Een <strong>goed voorbereid eerste gesprek Dietist</strong> legt de basis voor een succesvolle coaching relatie. Door deze checklist te volgen, je vragen voor te bereiden en na het gesprek goed te evalueren, vergroot je je kansen op het vinden van de perfecte coach match aanzienlijk.
               </p>
 
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg my-6 border border-green-200">
@@ -586,10 +586,10 @@ export default function EersteGesprekVoorbereiding() {
 
               <div className="mt-12 p-8 bg-gradient-to-br from-sky-50 to-blue-100 rounded-2xl border-2 border-sky-200">
                 <h3 className="text-2xl font-bold text-sky-900 mb-4 text-center">
-                  Klaar om de juiste ADHD coach te vinden?
+                  Klaar om de juiste Dietist te vinden?
                 </h3>
                 <p className="text-sky-800 text-center mb-6">
-                  Ontdek gecertificeerde ADHD coaches bij jou in de buurt. Vergelijk profielen, lees reviews en vind de perfecte match.
+                  Ontdek gecertificeerde Dietisten bij jou in de buurt. Vergelijk profielen, lees reviews en vind de perfecte match.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link 
@@ -597,7 +597,7 @@ export default function EersteGesprekVoorbereiding() {
                     className="inline-flex items-center px-8 py-4 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-600 transition-all transform hover:scale-105 shadow-lg"
                   >
                     <ClipboardList className="w-5 h-5 mr-2" />
-                    Vind jouw ADHD coach
+                    Vind jouw Dietist
                   </Link>
                   <Link 
                     href="/blog/beste-vragen-adhd-coach" 

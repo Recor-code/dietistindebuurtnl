@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://adhdcoachindebuurt.nl/sitemap.xml',
+    sitemap: 'https://dietistindebuurt.nl/sitemap.xml',
   };
 }

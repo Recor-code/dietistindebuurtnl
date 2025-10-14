@@ -12,7 +12,7 @@ const ClientQuizLauncher: React.FC = () => {
       <section className="py-12 px-4 bg-gradient-to-r from-blue-50 to-sky-50">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold text-gray-800 mb-4">
-            Vind de perfecte ADHD coach voor jou
+            Vind de perfecte Dietist voor jou
           </h3>
           <p className="text-lg text-gray-600 mb-8">
             Beantwoord 6 snelle vragen en ontvang gepersonaliseerde aanbevelingen

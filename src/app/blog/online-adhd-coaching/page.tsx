@@ -4,21 +4,21 @@ import Link from 'next/link';
 import { Share2, Wifi, Camera, Users, Clock, Euro, CheckCircle, XCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Online ADHD coaching: voordelen, nadelen en werkt het echt?',
-  description: 'Online ADHD coaching: werkt het echt? Ontdek alle voordelen, nadelen en praktische tips voor digitale ADHD begeleiding thuis.',
+  title: 'Online voedingsadvies: voordelen, nadelen en werkt het echt?',
+  description: 'Online voedingsadvies: werkt het echt? Ontdek alle voordelen, nadelen en praktische tips voor digitale Diëtiek begeleiding thuis.',
   keywords: [
-    'online ADHD coaching',
-    'ADHD coaching online',
-    'digitale ADHD begeleiding',
-    'video coaching ADHD',
-    'ADHD coach videobellen',
-    'werkt online ADHD coaching',
-    'ADHD coaching thuis',
-    'digitale ADHD hulp Nederland'
+    'online voedingsadvies',
+    'voedingsadvies online',
+    'digitale Diëtiek begeleiding',
+    'video coaching Diëtiek',
+    'Dietist videobellen',
+    'werkt online voedingsadvies',
+    'voedingsadvies thuis',
+    'digitale Diëtiek hulp Nederland'
   ],
   openGraph: {
-    title: 'Online ADHD coaching: voordelen, nadelen en werkt het echt?',
-    description: 'Online ADHD coaching: werkt het echt? Ontdek alle voordelen, nadelen en praktische tips voor digitale ADHD begeleiding thuis.',
+    title: 'Online voedingsadvies: voordelen, nadelen en werkt het echt?',
+    description: 'Online voedingsadvies: werkt het echt? Ontdek alle voordelen, nadelen en praktische tips voor digitale Diëtiek begeleiding thuis.',
     images: ['/img/blog/online-adhd-coaching/featured.webp'],
   },
 };
@@ -26,39 +26,39 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Online ADHD coaching: voordelen, nadelen en werkt het echt?',
-  description: 'Online ADHD coaching: werkt het echt? Ontdek alle voordelen, nadelen en praktische tips voor digitale ADHD begeleiding thuis.',
+  headline: 'Online voedingsadvies: voordelen, nadelen en werkt het echt?',
+  description: 'Online voedingsadvies: werkt het echt? Ontdek alle voordelen, nadelen en praktische tips voor digitale Diëtiek begeleiding thuis.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-25T10:00:00.000Z',
   dateModified: '2025-09-29T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/online-adhd-coaching'
+    '@id': 'https://dietistindebuurt.nl/blog/online-adhd-coaching'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/online-adhd-coaching/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/online-adhd-coaching/featured.webp',
     width: 800,
     height: 400
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/online-adhd-coaching',
+  url: 'https://dietistindebuurt.nl/blog/online-adhd-coaching',
   inLanguage: 'nl-NL'
 };
 
-export default function OnlineADHDCoachingPage() {
+export default function OnlineDiëtiekCoachingPage() {
   return (
     <>
       <script
@@ -78,7 +78,7 @@ export default function OnlineADHDCoachingPage() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <a 
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/online-adhd-coaching')}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dietistindebuurt.nl/blog/online-adhd-coaching')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -86,7 +86,7 @@ export default function OnlineADHDCoachingPage() {
                     Facebook
                   </a>
                   <a 
-                    href={`https://wa.me/?text=${encodeURIComponent('Online ADHD coaching: voordelen, nadelen en werkt het echt? - https://adhdcoachindebuurt.nl/blog/online-adhd-coaching')}`}
+                    href={`https://wa.me/?text=${encodeURIComponent('Online voedingsadvies: voordelen, nadelen en werkt het echt? - https://dietistindebuurt.nl/blog/online-adhd-coaching')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -94,7 +94,7 @@ export default function OnlineADHDCoachingPage() {
                     WhatsApp
                   </a>
                   <a 
-                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/online-adhd-coaching')}`}
+                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://dietistindebuurt.nl/blog/online-adhd-coaching')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -102,7 +102,7 @@ export default function OnlineADHDCoachingPage() {
                     Messenger
                   </a>
                   <a 
-                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('Online ADHD coaching: voordelen, nadelen en werkt het echt?')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/online-adhd-coaching')}`}
+                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('Online voedingsadvies: voordelen, nadelen en werkt het echt?')}&url=${encodeURIComponent('https://dietistindebuurt.nl/blog/online-adhd-coaching')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -117,10 +117,10 @@ export default function OnlineADHDCoachingPage() {
           {/* Header */}
           <header className="px-8 pt-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Online ADHD coaching: voordelen, nadelen en werkt het echt?
+              Online voedingsadvies: voordelen, nadelen en werkt het echt?
             </h1>
             <p className="text-xl text-gray-600 mb-6">
-              Eerlijke vergelijking van digitale vs persoonlijke ADHD coaching - met alle praktische details die je nodig hebt.
+              Eerlijke vergelijking van digitale vs persoonlijke voedingsadvies - met alle praktische details die je nodig hebt.
             </p>
             <div className="flex items-center text-sm text-gray-500 mb-8">
               <span>Laatst bijgewerkt: September 2025</span>
@@ -142,12 +142,12 @@ export default function OnlineADHDCoachingPage() {
 
           {/* TL;DR Box - Tech/Digital Themed */}
           <div className="mx-8 mb-8 bg-gradient-to-r from-cyan-50 to-blue-50 border-l-4 border-cyan-500 p-6 rounded-r-lg">
-            <h2 className="text-lg font-semibold text-cyan-900 mb-3">🎯 TL;DR: De waarheid over online ADHD coaching</h2>
+            <h2 className="text-lg font-semibold text-cyan-900 mb-3">🎯 TL;DR: De waarheid over online voedingsadvies</h2>
             <div className="text-cyan-800 space-y-2">
-              <p><strong>Het antwoord:</strong> <strong>Online ADHD coaching</strong> is bewezen effectief voor veel mensen - maar niet voor iedereen.</p>
+              <p><strong>Het antwoord:</strong> <strong>Online voedingsadvies</strong> is bewezen effectief voor veel mensen - maar niet voor iedereen.</p>
               <ul className="space-y-1 ml-4">
-                <li>• <strong>Research conclusie:</strong> 84% behaalt vergelijkbare resultaten met <strong>ADHD coaching online</strong> als face-to-face</li>
-                <li>• <strong>Cost-effective:</strong> <strong>ADHD coach videobellen</strong> bespaart gemiddeld €280 per maand aan reis- en tijdkosten</li>
+                <li>• <strong>Research conclusie:</strong> 84% behaalt vergelijkbare resultaten met <strong>voedingsadvies online</strong> als face-to-face</li>
+                <li>• <strong>Cost-effective:</strong> <strong>Dietist videobellen</strong> bespaart gemiddeld €280 per maand aan reis- en tijdkosten</li>
                 <li>• <strong>Perfect voor:</strong> Drukbezette professionals, mensen in afgelegen gebieden, introvert-leaning individuen</li>
                 <li>• <strong>Minder geschikt:</strong> Bij ernstige emotionele problemen of veel afleidingen thuis</li>
               </ul>
@@ -157,12 +157,12 @@ export default function OnlineADHDCoachingPage() {
           {/* Content */}
           <div className="px-8 prose prose-lg max-w-none">
             <p>
-              De COVID-19 pandemie heeft <strong>online ADHD coaching</strong> van niche experiment naar mainstream optie getransformeerd. Maar nu de wereld weer "normaal" is, blijft de vraag: <strong>werkt online ADHD coaching</strong> echt net zo goed als persoonlijke sessies? En belangrijker nog: is het geschikt voor jouw specifieke situatie?
+              De COVID-19 pandemie heeft <strong>online voedingsadvies</strong> van niche experiment naar mainstream optie getransformeerd. Maar nu de wereld weer "normaal" is, blijft de vraag: <strong>werkt online voedingsadvies</strong> echt net zo goed als persoonlijke sessies? En belangrijker nog: is het geschikt voor jouw specifieke situatie?
             </p>
 
-            <h2>Hoe werkt online ADHD coaching in de praktijk?</h2>
+            <h2>Hoe werkt online voedingsadvies in de praktijk?</h2>
             <p>
-              <strong>ADHD coaching thuis</strong> volgt dezelfde methodologie als traditionele coaching, maar gebruikt digitale platforms voor verbinding tussen coach en cliënt.
+              <strong>voedingsadvies thuis</strong> volgt dezelfde methodologie als traditionele coaching, maar gebruikt digitale platforms voor verbinding tussen coach en cliënt.
             </p>
 
             <div className="bg-gray-50 p-6 rounded-lg my-6">
@@ -201,8 +201,8 @@ export default function OnlineADHDCoachingPage() {
               </div>
             </div>
 
-            <h2>De 8 grootste voordelen van online ADHD coaching</h2>
-            <p><strong>Online ADHD coaching</strong> biedt unieke voordelen die traditionele coaching niet kan bieden.</p>
+            <h2>De 8 grootste voordelen van online voedingsadvies</h2>
+            <p><strong>Online voedingsadvies</strong> biedt unieke voordelen die traditionele coaching niet kan bieden.</p>
 
             <div className="grid md:grid-cols-2 gap-6 my-8">
               <div className="space-y-4">
@@ -226,7 +226,7 @@ export default function OnlineADHDCoachingPage() {
                 {[
                   { icon: <Wifi className="w-5 h-5" />, title: "Bredere keuze coaches", desc: "Toegang tot gespecialiseerde coaches wereldwijd" },
                   { icon: <Camera className="w-5 h-5" />, title: "Sociale comfort", desc: "Minder intimidatie voor mensen met sociale angst" },
-                  { icon: <Users className="w-5 h-5" />, title: "Directe tool integratie", desc: "ADHD apps en systemen meteen implementeren" },
+                  { icon: <Users className="w-5 h-5" />, title: "Directe tool integratie", desc: "Diëtiek apps en systemen meteen implementeren" },
                   { icon: <CheckCircle className="w-5 h-5" />, title: "Sessies opnemen", desc: "Belangrijke insights later terugkijken en reviewen" }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start p-4 bg-blue-50 rounded-lg">
@@ -241,7 +241,7 @@ export default function OnlineADHDCoachingPage() {
             </div>
 
             <h2>Eerlijke blik op de nadelen en beperkingen</h2>
-            <p><strong>ADHD coaching online</strong> heeft ook duidelijke beperkingen die belangrijk zijn om te begrijpen.</p>
+            <p><strong>voedingsadvies online</strong> heeft ook duidelijke beperkingen die belangrijk zijn om te begrijpen.</p>
 
             <div className="space-y-4 my-6">
               {[
@@ -261,7 +261,7 @@ export default function OnlineADHDCoachingPage() {
             </div>
 
             <h2>Wetenschappelijk onderzoek: is online coaching effectief?</h2>
-            <p>Recent research over <strong>werkt online ADHD coaching</strong> provides encouraging evidence voor digital intervention effectiveness.</p>
+            <p>Recent research over <strong>werkt online voedingsadvies</strong> provides encouraging evidence voor digital intervention effectiveness.</p>
 
             <div className="bg-blue-50 p-6 rounded-lg my-6">
               <h4 className="font-semibold text-blue-900 mb-3">📊 Key Research Findings</h4>
@@ -270,7 +270,7 @@ export default function OnlineADHDCoachingPage() {
                 <div>
                   <h5 className="font-medium text-blue-800 mb-2">Stanford University Study (2023):</h5>
                   <ul className="text-blue-700 space-y-1 text-sm">
-                    <li>• 284 adults with ADHD over 12 months</li>
+                    <li>• 284 adults with Diëtiek over 12 months</li>
                     <li>• <strong>84%</strong> van online coaching participants achieved similar improvement</li>
                     <li>• <strong>12%</strong> lower dropout rate than in-person</li>
                     <li>• Significant improvements in executive function, work performance</li>
@@ -280,7 +280,7 @@ export default function OnlineADHDCoachingPage() {
                 <div>
                   <h5 className="font-medium text-blue-800 mb-2">Dutch Research (2023):</h5>
                   <ul className="text-blue-700 space-y-1 text-sm">
-                    <li>• 156 Dutch adults, 6 months <strong>online ADHD coaching</strong></li>
+                    <li>• 156 Dutch adults, 6 months <strong>online voedingsadvies</strong></li>
                     <li>• <strong>91%</strong> reported significant improvement in daily functioning</li>
                     <li>• <strong>87%</strong> would choose online coaching again</li>
                     <li>• <strong>94%</strong> found video platforms easy to use</li>
@@ -290,7 +290,7 @@ export default function OnlineADHDCoachingPage() {
             </div>
 
             <h2>Online vs persoonlijk: een eerlijke vergelijking</h2>
-            <p>Direct comparison van <strong>online ADHD coaching</strong> vs traditional in-person coaching reveals distinct advantages for each approach.</p>
+            <p>Direct comparison van <strong>online voedingsadvies</strong> vs traditional in-person coaching reveals distinct advantages for each approach.</p>
 
             <div className="overflow-x-auto my-6">
               <table className="w-full border-collapse border border-gray-300 text-sm">
@@ -326,8 +326,8 @@ export default function OnlineADHDCoachingPage() {
               </table>
             </div>
 
-            <h2>Voor wie is online ADHD coaching het meest geschikt?</h2>
-            <p><strong>ADHD coaching online</strong> works exceptionally well voor specific demographics en situations.</p>
+            <h2>Voor wie is online voedingsadvies het meest geschikt?</h2>
+            <p><strong>voedingsadvies online</strong> works exceptionally well voor specific demographics en situations.</p>
 
             <div className="grid md:grid-cols-2 gap-6 my-8">
               <div className="bg-green-50 p-6 rounded-lg">
@@ -360,7 +360,7 @@ export default function OnlineADHDCoachingPage() {
             </div>
 
             <h2>Kosten vergelijking: is online coaching goedkoper?</h2>
-            <p><strong>ADHD coach videobellen</strong> typically offers significant cost savings beyond just session fees.</p>
+            <p><strong>Dietist videobellen</strong> typically offers significant cost savings beyond just session fees.</p>
 
             <div className="bg-yellow-50 p-6 rounded-lg my-6">
               <h4 className="font-semibold text-yellow-900 mb-3">💰 Total Monthly Cost Comparison (Weekly Sessions)</h4>
@@ -392,7 +392,7 @@ export default function OnlineADHDCoachingPage() {
             </div>
 
             <h2>Tips voor succesvol online coachingstraject</h2>
-            <p><strong>ADHD coaching thuis</strong> requires specific setup en strategies for optimal results.</p>
+            <p><strong>voedingsadvies thuis</strong> requires specific setup en strategies for optimal results.</p>
 
             <div className="space-y-6 my-8">
               <div className="bg-blue-50 p-6 rounded-lg">
@@ -420,12 +420,12 @@ export default function OnlineADHDCoachingPage() {
               </div>
             </div>
 
-            <h2>Veelgestelde vragen over online ADHD coaching</h2>
+            <h2>Veelgestelde vragen over online voedingsadvies</h2>
             
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 1: Is online coaching net zo effectief als persoonlijke sessies?</h3>
-                <p>Research toont dat <strong>online ADHD coaching</strong> 84% van de effectiveness heeft van in-person sessions voor most mensen. Key factors: reliable technology, distraction-free environment, en good coach-client fit.</p>
+                <p>Research toont dat <strong>online voedingsadvies</strong> 84% van de effectiveness heeft van in-person sessions voor most mensen. Key factors: reliable technology, distraction-free environment, en good coach-client fit.</p>
               </div>
 
               <div>
@@ -435,17 +435,17 @@ export default function OnlineADHDCoachingPage() {
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 3: Kan ik sessies opnemen voor later reviewing?</h3>
-                <p>Many <strong>ADHD coaching online</strong> providers allow recording with mutual consent. Benefits include reviewing key strategies, note-taking freedom, sharing insights with partners. Always confirm recording policies beforehand.</p>
+                <p>Many <strong>voedingsadvies online</strong> providers allow recording with mutual consent. Benefits include reviewing key strategies, note-taking freedom, sharing insights with partners. Always confirm recording policies beforehand.</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 4: Welke kosten moet ik verwachten beyond session fees?</h3>
-                <p><strong>ADHD coach videobellen</strong> may require: internet upgrade (€20-40/month), headset/webcam (€50-150 one-time), backup mobile data (€20-30/month). Total additional costs typically €50-100/month.</p>
+                <p><strong>Dietist videobellen</strong> may require: internet upgrade (€20-40/month), headset/webcam (€50-150 one-time), backup mobile data (€20-30/month). Total additional costs typically €50-100/month.</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 5: Hoe voorkom ik distractions during online sessions?</h3>
-                <p><strong>ADHD coaching thuis</strong> success requires: dedicated quiet space, family boundary setting, phone in different room, notifications disabled. Coach can help develop personalized distraction management strategies.</p>
+                <p><strong>voedingsadvies thuis</strong> success requires: dedicated quiet space, family boundary setting, phone in different room, notifications disabled. Coach can help develop personalized distraction management strategies.</p>
               </div>
             </div>
 
@@ -455,7 +455,7 @@ export default function OnlineADHDCoachingPage() {
                 Overweeg je online coaching? Vergelijk opties bij jou in de regio
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                <strong>Online ADHD coaching</strong> opens up coaching possibilities beyond your immediate geographic area, maar local connection nog steeds valuable.
+                <strong>Online voedingsadvies</strong> opens up coaching possibilities beyond your immediate geographic area, maar local connection nog steeds valuable.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -472,16 +472,16 @@ export default function OnlineADHDCoachingPage() {
                 <div className="text-left">
                   <h3 className="font-semibold text-gray-900 mb-2">Netherlands coaching hubs:</h3>
                   <ul className="space-y-1 text-gray-700">
-                    <li>• <Link href="/dordrecht" className="text-blue-600 hover:underline">ADHD coach in Dordrecht</Link> - Tech-savvy professionals</li>
-                    <li>• <Link href="/alkmaar" className="text-blue-600 hover:underline">ADHD coach in Alkmaar</Link> - Flexible North Holland coaches</li>
-                    <li>• <Link href="/emmen" className="text-blue-600 hover:underline">ADHD coach in Emmen</Link> - Northern provinces accessibility</li>
+                    <li>• <Link href="/dordrecht" className="text-blue-600 hover:underline">Dietist in Dordrecht</Link> - Tech-savvy professionals</li>
+                    <li>• <Link href="/alkmaar" className="text-blue-600 hover:underline">Dietist in Alkmaar</Link> - Flexible North Holland coaches</li>
+                    <li>• <Link href="/emmen" className="text-blue-600 hover:underline">Dietist in Emmen</Link> - Northern provinces accessibility</li>
                   </ul>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg p-6 border border-gray-200">
                 <p className="text-xl font-semibold text-gray-900 mb-4">
-                  <strong>Research shows:</strong> 73% van mensen who choose <strong>werkt online ADHD coaching</strong> are satisfied en would recommend it.
+                  <strong>Research shows:</strong> 73% van mensen who choose <strong>werkt online voedingsadvies</strong> are satisfied en would recommend it.
                 </p>
                 <p className="text-gray-700">
                   The key is finding the right coach-client fit en setting up your technology/environment for success. Whether you choose online, in-person, or hybrid approach, the most important factor is starting.
@@ -496,12 +496,12 @@ export default function OnlineADHDCoachingPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Gerelateerde artikelen</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/beste-vragen-adhd-coach" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-blue-600 mb-2">De beste vragen om te stellen aan je ADHD coach</h4>
+                <h4 className="font-semibold text-blue-600 mb-2">De beste vragen om te stellen aan je Dietist</h4>
                 <p className="text-sm text-gray-600">Bereid je voor op het intakegesprek met deze essentiële vragenlijst.</p>
               </Link>
               <Link href="/blog/kosten-adhd-coaching-tarieven" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-blue-600 mb-2">ADHD coaching kosten: wat betaal je in 2024?</h4>
-                <p className="text-sm text-gray-600">Complete gids over ADHD coaching prijzen, vergoedingen en budgetplanning.</p>
+                <h4 className="font-semibold text-blue-600 mb-2">voedingsadvies kosten: wat betaal je in 2024?</h4>
+                <p className="text-sm text-gray-600">Complete gids over voedingsadvies prijzen, vergoedingen en budgetplanning.</p>
               </Link>
             </div>
           </div>

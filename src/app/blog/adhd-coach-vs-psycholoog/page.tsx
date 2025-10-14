@@ -5,80 +5,80 @@ import Image from 'next/image';
 
 // Static metadata for this specific article
 export const metadata: Metadata = {
-  title: 'ADHD coach vs psycholoog: wat is het verschil en wat past bij jou?',
-  description: 'ADHD coach of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
+  title: 'Dietist vs psycholoog: wat is het verschil en wat past bij jou?',
+  description: 'Dietist of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
   openGraph: {
-    title: 'ADHD coach vs psycholoog: wat is het verschil en wat past bij jou?',
-    description: 'ADHD coach of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
+    title: 'Dietist vs psycholoog: wat is het verschil en wat past bij jou?',
+    description: 'Dietist of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
     type: 'article',
     publishedTime: '2025-09-24T12:00:00.000Z',
-    authors: ['ADHD Coach in de Buurt'],
+    authors: ['Dietist in de Buurt'],
     images: [
       {
-        url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-coach-vs-psycholoog/featured.webp',
+        url: 'https://dietistindebuurt.nl/img/blog/adhd-coach-vs-psycholoog/featured.webp',
         width: 1024,
         height: 1024,
-        alt: 'ADHD coach vs psycholoog vergelijking'
+        alt: 'Dietist vs psycholoog vergelijking'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ADHD coach vs psycholoog: wat is het verschil en wat past bij jou?',
-    description: 'ADHD coach of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
-    images: ['https://adhdcoachindebuurt.nl/img/blog/adhd-coach-vs-psycholoog/featured.webp']
+    title: 'Dietist vs psycholoog: wat is het verschil en wat past bij jou?',
+    description: 'Dietist of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
+    images: ['https://dietistindebuurt.nl/img/blog/adhd-coach-vs-psycholoog/featured.webp']
   }
 };
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'ADHD coach vs psycholoog: wat is het verschil en wat past bij jou?',
-  description: 'ADHD coach of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
+  headline: 'Dietist vs psycholoog: wat is het verschil en wat past bij jou?',
+  description: 'Dietist of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-24T12:00:00.000Z',
   dateModified: '2025-09-24T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/adhd-coach-vs-psycholoog'
+    '@id': 'https://dietistindebuurt.nl/blog/adhd-coach-vs-psycholoog'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-coach-vs-psycholoog/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/adhd-coach-vs-psycholoog/featured.webp',
     width: 1024,
     height: 1024
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/adhd-coach-vs-psycholoog',
+  url: 'https://dietistindebuurt.nl/blog/adhd-coach-vs-psycholoog',
   inLanguage: 'nl-NL'
 };
 
 export default function BlogPost() {
   const post = {
     id: 2,
-    title: 'ADHD coach vs psycholoog: wat is het verschil en wat past bij jou?',
+    title: 'Dietist vs psycholoog: wat is het verschil en wat past bij jou?',
     slug: 'adhd-coach-vs-psycholoog',
-    excerpt: 'Twijfel je tussen een ADHD coach en psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest in deze complete vergelijking.',
-    metaDescription: 'ADHD coach of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
+    excerpt: 'Twijfel je tussen een Dietist en psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest in deze complete vergelijking.',
+    metaDescription: 'Dietist of psycholoog? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest. Complete vergelijking + praktische keuzewijzer.',
     publishedAt: new Date('2025-09-24T12:00:00.000Z'),
-    tags: ['ADHD', 'Coaching', 'Psychologie', 'Begeleiding', 'Keuzewijzer'],
+    tags: ['Diëtiek', 'Coaching', 'Psychologie', 'Begeleiding', 'Keuzewijzer'],
     city: null
   };
 
   const featuredImageUrl = `/img/blog/${post.slug}/featured.webp`;
-  const currentUrl = `https://adhdcoachindebuurt.nl/blog/${post.slug}`;
+  const currentUrl = `https://dietistindebuurt.nl/blog/${post.slug}`;
 
   return (
     <>
@@ -157,10 +157,10 @@ export default function BlogPost() {
           {/* Title and Introduction */}
           <header className="mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              ADHD coach vs psycholoog: wat is het verschil en wat past bij jou?
+              Dietist vs psycholoog: wat is het verschil en wat past bij jou?
             </h1>
             <p className="text-xl text-gray-600 mb-6">
-              Twijfel je tussen een <strong>ADHD coach of psycholoog</strong>? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest in deze complete vergelijking met praktische beslissingshulp.
+              Twijfel je tussen een <strong>Dietist of psycholoog</strong>? Ontdek alle verschillen, kosten en wanneer je voor welke hulp kiest in deze complete vergelijking met praktische beslissingshulp.
             </p>
             <div className="flex items-center text-sm text-gray-500 mb-8">
               <span>Laatst bijgewerkt: September 2025</span>
@@ -173,13 +173,13 @@ export default function BlogPost() {
           <div className="mb-8 bg-gradient-to-r from-purple-50 to-indigo-50 border-l-4 border-purple-500 p-6 rounded-r-lg">
             <h2 className="text-lg font-semibold text-purple-900 mb-3 flex items-center">
               <CheckCircle2 className="w-5 h-5 mr-2" />
-              🎯 TL;DR: ADHD coach of psycholoog?
+              🎯 TL;DR: Dietist of psycholoog?
             </h2>
             <div className="text-purple-800 space-y-2">
-              <p><strong>Kernverschil:</strong> <strong>ADHD coach</strong> = toekomstgericht, praktische vaardigheden. <strong>Psycholoog</strong> = verleden verwerken, emotionele healing.</p>
+              <p><strong>Kernverschil:</strong> <strong>Dietist</strong> = toekomstgericht, praktische vaardigheden. <strong>Psycholoog</strong> = verleden verwerken, emotionele healing.</p>
               <ul className="space-y-1 ml-4">
-                <li>• <strong>Kies ADHD coach:</strong> Voor dagelijkse structuur, productiviteit, doelen behalen (€60-120/sessie)</li>
-                <li>• <strong>Kies psycholoog:</strong> Voor trauma, depressie, angststoornissen naast ADHD (€80-150/sessie, vaak vergoed)</li>
+                <li>• <strong>Kies Dietist:</strong> Voor dagelijkse structuur, productiviteit, doelen behalen (€60-120/sessie)</li>
+                <li>• <strong>Kies psycholoog:</strong> Voor trauma, depressie, angststoornissen naast Diëtiek (€80-150/sessie, vaak vergoed)</li>
                 <li>• <strong>Kombinatie mogelijk:</strong> 34% gebruikt beide parallel voor optimale ondersteuning</li>
                 <li>• <strong>Beslissingsfactor:</strong> Wat heb je het meest nodig: praktische skills of emotionele verwerking?</li>
               </ul>
@@ -189,7 +189,7 @@ export default function BlogPost() {
           {/* Main Content */}
           <div className="prose prose-lg max-w-none">
             <p>
-              De vraag <strong>"ADHD coach of psycholoog?"</strong> komt vaak op wanneer je hulp zoekt bij ADHD-gerelateerde uitdagingen. Beide professionals kunnen waardevol zijn, maar ze hebben fundamenteel verschillende rollen, werkwijzen en focus gebieden. Deze complete vergelijking helpt je de juiste keuze maken voor jouw specifieke situatie.
+              De vraag <strong>"Dietist of psycholoog?"</strong> komt vaak op wanneer je hulp zoekt bij Diëtiek-gerelateerde uitdagingen. Beide professionals kunnen waardevol zijn, maar ze hebben fundamenteel verschillende rollen, werkwijzen en focus gebieden. Deze complete vergelijking helpt je de juiste keuze maken voor jouw specifieke situatie.
             </p>
 
             <p>
@@ -198,7 +198,7 @@ export default function BlogPost() {
 
             <h2>Het fundamentele verschil uitgelegd</h2>
             <p>
-              Het grootste verschil tussen een <strong>ADHD coach vs psycholoog</strong> ligt in de tijdsoriëntatie en focus van de behandeling.
+              Het grootste verschil tussen een <strong>Dietist vs psycholoog</strong> ligt in de tijdsoriëntatie en focus van de behandeling.
             </p>
 
             <div className="bg-slate-50 p-6 rounded-lg my-6">
@@ -206,7 +206,7 @@ export default function BlogPost() {
                 <div className="text-center">
                   <div className="bg-blue-100 p-4 rounded-lg mb-4">
                     <Target className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                    <h4 className="font-semibold text-blue-900 text-lg">ADHD Coach</h4>
+                    <h4 className="font-semibold text-blue-900 text-lg">Diëtiek Coach</h4>
                   </div>
                   <div className="space-y-3 text-left">
                     <div className="bg-white p-3 rounded border">
@@ -255,15 +255,15 @@ export default function BlogPost() {
               </div>
             </div>
 
-            <h2>Wanneer kies je voor een ADHD coach?</h2>
+            <h2>Wanneer kies je voor een Dietist?</h2>
             <p>
-              Een <strong>ADHD coach</strong> is ideaal wanneer je primair praktische uitdagingen wilt aanpakken en concrete vaardigheden wilt ontwikkelen.
+              Een <strong>Dietist</strong> is ideaal wanneer je primair praktische uitdagingen wilt aanpakken en concrete vaardigheden wilt ontwikkelen.
             </p>
 
             <div className="bg-blue-50 p-6 rounded-lg my-6">
               <h4 className="font-semibold text-blue-900 mb-4 flex items-center">
                 <CheckCircle2 className="w-5 h-5 mr-2" />
-                ✅ Perfecte situaties voor ADHD coaching
+                ✅ Perfecte situaties voor voedingsadvies
               </h4>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -294,14 +294,14 @@ export default function BlogPost() {
 
               <div className="mt-6 p-4 bg-white rounded border border-blue-200">
                 <p className="text-blue-800 text-sm">
-                  <strong>Coach keuze tip:</strong> Kies een ADHD coach als je denkt: <em>"Ik weet wat ik wil bereiken, maar weet niet hoe of kan het niet volhouden."</em>
+                  <strong>Coach keuze tip:</strong> Kies een Dietist als je denkt: <em>"Ik weet wat ik wil bereiken, maar weet niet hoe of kan het niet volhouden."</em>
                 </p>
               </div>
             </div>
 
             <h2>Wanneer kies je voor een psycholoog?</h2>
             <p>
-              Een <strong>psycholoog ADHD</strong> is de betere keuze wanneer er diepere emotionele of mentale gezondheid issues zijn die je ADHD compliceren.
+              Een <strong>psycholoog Diëtiek</strong> is de betere keuze wanneer er diepere emotionele of mentale gezondheid issues zijn die je Diëtiek compliceren.
             </p>
 
             <div className="bg-green-50 p-6 rounded-lg my-6">
@@ -346,7 +346,7 @@ export default function BlogPost() {
                 <div className="bg-white p-4 rounded border border-green-200">
                   <h5 className="font-medium text-green-800 mb-2">Crisis & assessment needs:</h5>
                   <div className="text-green-700 text-sm space-y-1">
-                    <div>• ADHD diagnosis assessment & testing</div>
+                    <div>• Diëtiek diagnosis assessment & testing</div>
                     <div>• Medication evaluation & management</div>
                     <div>• Crisis intervention & safety concerns</div>
                     <div>• Insurance claims & official documentation</div>
@@ -356,14 +356,14 @@ export default function BlogPost() {
 
               <div className="mt-6 p-4 bg-green-100 rounded">
                 <p className="text-green-800 text-sm">
-                  <strong>Psycholoog keuze tip:</strong> Kies een psycholoog als je denkt: <em>"Mijn ADHD wordt erger gemaakt door emotionele problemen of trauma uit het verleden."</em>
+                  <strong>Psycholoog keuze tip:</strong> Kies een psycholoog als je denkt: <em>"Mijn Diëtiek wordt erger gemaakt door emotionele problemen of trauma uit het verleden."</em>
                 </p>
               </div>
             </div>
 
             <h2>Cost vergelijking: wat mag je verwachten?</h2>
             <p>
-              <strong>ADHD coach kosten vs psycholoog kosten</strong> verschillen significant, net als de vergoeding mogelijkheden.
+              <strong>Dietist kosten vs psycholoog kosten</strong> verschillen significant, net als de vergoeding mogelijkheden.
             </p>
 
             <div className="bg-yellow-50 p-6 rounded-lg my-6">
@@ -373,7 +373,7 @@ export default function BlogPost() {
                 <div className="bg-white p-4 rounded border border-yellow-200">
                   <h5 className="font-medium text-blue-800 mb-3 flex items-center">
                     <Target className="w-4 h-4 mr-2" />
-                    ADHD Coach Kosten
+                    Diëtiek Coach Kosten
                   </h5>
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
@@ -416,7 +416,7 @@ export default function BlogPost() {
                       <span className="font-medium text-green-800">€80-150</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-700">ADHD assessment:</span>
+                      <span className="text-gray-700">Diëtiek assessment:</span>
                       <span className="font-medium text-green-800">€400-800</span>
                     </div>
                     <div className="flex justify-between">
@@ -437,7 +437,7 @@ export default function BlogPost() {
                 <h5 className="font-medium text-orange-900 mb-2">📊 Total cost of ownership (12 maanden):</h5>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="text-orange-800">ADHD Coach (eigen risico):</span>
+                    <span className="text-orange-800">Diëtiek Coach (eigen risico):</span>
                     <span className="font-bold text-orange-900 ml-2">€2,880-5,760</span>
                   </div>
                   <div>
@@ -450,7 +450,7 @@ export default function BlogPost() {
 
             <h2>Kan je beide combineren?</h2>
             <p>
-              Absoluut! <strong>ADHD coach en psycholoog</strong> combineren is vaak de meest effectieve aanpak voor complexe situaties.
+              Absoluut! <strong>Dietist en psycholoog</strong> combineren is vaak de meest effectieve aanpak voor complexe situaties.
             </p>
 
             <div className="bg-purple-50 p-6 rounded-lg my-6">
@@ -487,7 +487,7 @@ export default function BlogPost() {
                     <li>• <strong>Trauma + productiviteit:</strong> Psycholoog voor verwerking, coach voor dagelijkse structuur</li>
                     <li>• <strong>Depressie + werkproblemen:</strong> Psycholoog voor mood stability, coach voor career advancement</li>
                     <li>• <strong>Anxiety + time management:</strong> Psycholoog voor worry management, coach voor planning systems</li>
-                    <li>• <strong>Complex ADHD + life transitions:</strong> Beide voor comprehensive support tijdens major changes</li>
+                    <li>• <strong>Complex Diëtiek + life transitions:</strong> Beide voor comprehensive support tijdens major changes</li>
                   </ul>
                 </div>
 
@@ -501,7 +501,7 @@ export default function BlogPost() {
 
             <h2>Beslissingshulp: welke is jouw match?</h2>
             <p>
-              Gebruik deze praktische <strong>keuzewijzer ADHD hulp</strong> om de juiste beslissing te maken voor jouw situatie.
+              Gebruik deze praktische <strong>keuzewijzer Diëtiek hulp</strong> om de juiste beslissing te maken voor jouw situatie.
             </p>
 
             <div className="bg-gray-50 p-6 rounded-lg my-6">
@@ -585,7 +585,7 @@ export default function BlogPost() {
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div className="text-center">
                     <div className="font-bold text-blue-800">3-5 Coach antwoorden</div>
-                    <div className="text-blue-700">Start met ADHD coach</div>
+                    <div className="text-blue-700">Start met Dietist</div>
                   </div>
                   <div className="text-center">
                     <div className="font-bold text-green-800">3-5 Psycholoog antwoorden</div>
@@ -605,7 +605,7 @@ export default function BlogPost() {
               <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
                 <h4 className="font-semibold text-yellow-900 mb-2">Kan een psycholoog ook coaching geven?</h4>
                 <p className="text-yellow-800 text-sm">
-                  Sommige psychologen bieden inderdaad coaching-elementen aan, maar dit is niet hun hoofdfocus. Gespecialiseerde ADHD coaches hebben vaak meer praktische tools en zijn meer resultaatgericht dan therapeutisch getrainde psychologen.
+                  Sommige psychologen bieden inderdaad coaching-elementen aan, maar dit is niet hun hoofdfocus. Gespecialiseerde Dietisten hebben vaak meer praktische tools en zijn meer resultaatgericht dan therapeutisch getrainde psychologen.
                 </p>
               </div>
 
@@ -637,14 +637,14 @@ export default function BlogPost() {
                 Klaar om de juiste hulp te vinden?
               </h2>
               <p className="text-gray-700 mb-6">
-                Nu je het verschil kent, is het tijd om de perfecte ADHD professional te vinden in jouw regio.
+                Nu je het verschil kent, is het tijd om de perfecte Diëtiek professional te vinden in jouw regio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/" 
                   className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                 >
-                  Vind ADHD coaches bij mij in de buurt
+                  Vind Dietisten bij mij in de buurt
                 </Link>
                 <Link 
                   href="/blog/beste-vragen-adhd-coach" 

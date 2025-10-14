@@ -60,8 +60,8 @@ async function getCityWithPlaces(slug: string) {
       phone: place['PHONE'],
       website: place['WEBSITE'],
       url: place['URL'],
-      specialization: place['CATEGORY'] || 'ADHD Specialist',
-      description: place.description || `Professionele ADHD begeleiding in ${city.name}`,
+      specialization: place['CATEGORY'] || 'Diëtiek Specialist',
+      description: place.description || `Professionele Diëtiek begeleiding in ${city.name}`,
       address: place['ADDRESS'],
       city: place['CITY'],
       latitude: place['LAT'] ? parseFloat(place['LAT']) : null,
@@ -175,9 +175,9 @@ export default function CityPage({ params }: PageProps) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": `ADHD Coach ${city.name}`,
-    "description": `Vind ADHD coaches en gedragstherapeuten in ${city.name}. Vergelijk specialisten, bekijk reviews en boek een afspraak.`,
-    "url": `https://adhdcoachindebuurt.nl/stad/${city.slug}`,
+    "name": `Diëtiek Coach ${city.name}`,
+    "description": `Vind Dietisten en gedragstherapeuten in ${city.name}. Vergelijk specialisten, bekijk reviews en boek een afspraak.`,
+    "url": `https://dietistindebuurt.nl/stad/${city.slug}`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": city.name,
@@ -189,7 +189,7 @@ export default function CityPage({ params }: PageProps) {
       "latitude": city.latitude,
       "longitude": city.longitude
     },
-    "serviceType": "ADHD Coaching and Therapy Services",
+    "serviceType": "Diëtiek Coaching and Therapy Services",
     "areaServed": {
       "@type": "City",
       "name": city.name,
@@ -239,10 +239,10 @@ export default function CityPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              ADHD Coach {city.name}
+              Diëtiek Coach {city.name}
             </h1>
             <p className="text-xl mb-8 text-blue-100">
-              Vind de beste ADHD coaches en gedragstherapeuten in {city.name}.<br />
+              Vind de beste Dietisten en gedragstherapeuten in {city.name}.<br />
               Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
             </p>
             
@@ -250,7 +250,7 @@ export default function CityPage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
               <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg p-4 text-white">
                 <div className="text-2xl font-bold mb-1">{city.places.length}</div>
-                <div className="text-emerald-100 text-sm">ADHD Specialisten</div>
+                <div className="text-emerald-100 text-sm">Diëtiek Specialisten</div>
               </div>
               <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg p-4 text-white">
                 <div className="text-2xl font-bold mb-1">{city.places.filter((p: any) => p.weekendAvailable).length}</div>
@@ -291,15 +291,15 @@ export default function CityPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* ADHD Coaches op de kaart */}
+        {/* Diëtiek Coaches op de kaart */}
         <section className="mb-8">
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               <MapPin className="text-blue-600" />
-              ADHD Coaches op de kaart
+              Diëtiek Coaches op de kaart
             </h2>
             <p className="text-gray-600 mb-6">
-              Ontdek de locaties van alle ADHD coaches in {city.name}. Klik op een marker voor meer informatie.
+              Ontdek de locaties van alle Dietisten in {city.name}. Klik op een marker voor meer informatie.
             </p>
             
             <div className="w-full h-96 rounded-lg overflow-hidden">
@@ -317,7 +317,7 @@ export default function CityPage({ params }: PageProps) {
         <div>
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              ADHD Coaches in {city.name}
+              Diëtiek Coaches in {city.name}
             </h2>
             
             {/* Visible Filters - No Dropdown */}
@@ -576,7 +576,7 @@ export default function CityPage({ params }: PageProps) {
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-semibold text-gray-800 mb-3">Lokale ADHD Zorg</h3>
+                  <h3 className="font-semibold text-gray-800 mb-3">Lokale Diëtiek Zorg</h3>
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li>• {city.places.length} geregistreerde specialisten</li>
                     <li>• Gemiddelde wachttijd: 4-6 weken</li>
@@ -586,18 +586,18 @@ export default function CityPage({ params }: PageProps) {
                 </div>
                 
                 <div>
-                  <h3 className="font-semibold text-gray-800 mb-3">ADHD Statistieken {city.name}</h3>
+                  <h3 className="font-semibold text-gray-800 mb-3">Diëtiek Statistieken {city.name}</h3>
                   {adhdStats ? (
                     <ul className="space-y-2 text-sm text-gray-700">
                       <li>• Prevalentie: {adhdStats.prevalence || '5.2%'} van de bevolking</li>
-                      <li>• Geschat {adhdStats.estimated_adhd_population || Math.round(city.population * 0.052).toLocaleString()} mensen met ADHD</li>
+                      <li>• Geschat {adhdStats.estimated_adhd_population || Math.round(city.population * 0.052).toLocaleString()} mensen met Diëtiek</li>
                       <li>• Populatie: {city.population?.toLocaleString()} inwoners</li>
                       <li>• Provincie: {city.province}, Nederland</li>
                     </ul>
                   ) : (
                     <ul className="space-y-2 text-sm text-gray-700">
                       <li>• Prevalentie: 5.2% van de bevolking</li>
-                      <li>• Geschat {Math.round(city.population * 0.052).toLocaleString()} mensen met ADHD</li>
+                      <li>• Geschat {Math.round(city.population * 0.052).toLocaleString()} mensen met Diëtiek</li>
                       <li>• Populatie: {city.population?.toLocaleString()} inwoners</li>
                       <li>• Provincie: {city.province}, Nederland</li>
                     </ul>

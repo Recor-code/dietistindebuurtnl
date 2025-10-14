@@ -4,21 +4,21 @@ import Link from 'next/link';
 import { Share2, CheckCircle2, Target, Users, Clock, Euro, Brain, BookOpen, Lightbulb, TrendingUp, Star, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Wat doet een ADHD coach precies? Alle voordelen op een rij',
-  description: 'Ontdek wat een ADHD coach precies doet, welke voordelen coaching biedt en hoe een coach je helpt met ADHD symptomen, werkstructuur en persoonlijke groei.',
+  title: 'Wat doet een Dietist precies? Alle voordelen op een rij',
+  description: 'Ontdek wat een Dietist precies doet, welke voordelen coaching biedt en hoe een coach je helpt met Diëtiek symptomen, werkstructuur en persoonlijke groei.',
   keywords: [
-    'wat doet ADHD coach',
-    'ADHD coaching voordelen',
-    'ADHD coach taken',
-    'hoe helpt ADHD coach',
-    'ADHD coaching werkwijze',
-    'voordelen ADHD begeleiding',
-    'ADHD coach rol',
-    'wat verwachten van ADHD coach'
+    'wat doet Dietist',
+    'voedingsadvies voordelen',
+    'Dietist taken',
+    'hoe helpt Dietist',
+    'voedingsadvies werkwijze',
+    'voordelen Diëtiek begeleiding',
+    'Dietist rol',
+    'wat verwachten van Dietist'
   ],
   openGraph: {
-    title: 'Wat doet een ADHD coach precies? Alle voordelen op een rij',
-    description: 'Ontdek wat een ADHD coach precies doet, welke voordelen coaching biedt en hoe een coach je helpt met ADHD symptomen, werkstructuur en persoonlijke groei.',
+    title: 'Wat doet een Dietist precies? Alle voordelen op een rij',
+    description: 'Ontdek wat een Dietist precies doet, welke voordelen coaching biedt en hoe een coach je helpt met Diëtiek symptomen, werkstructuur en persoonlijke groei.',
     images: ['/img/blog/wat-doet-adhd-coach-precies/featured.webp'],
   },
 };
@@ -26,42 +26,42 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Wat doet een ADHD coach precies? Alle voordelen op een rij',
-  description: 'Ontdek wat een ADHD coach precies doet, welke voordelen coaching biedt en hoe een coach je helpt met ADHD symptomen, werkstructuur en persoonlijke groei.',
+  headline: 'Wat doet een Dietist precies? Alle voordelen op een rij',
+  description: 'Ontdek wat een Dietist precies doet, welke voordelen coaching biedt en hoe een coach je helpt met Diëtiek symptomen, werkstructuur en persoonlijke groei.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-18T14:00:00.000Z',
   dateModified: '2025-09-25T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies'
+    '@id': 'https://dietistindebuurt.nl/blog/wat-doet-adhd-coach-precies'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/wat-doet-adhd-coach-precies/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/wat-doet-adhd-coach-precies/featured.webp',
     width: 1024,
     height: 1024
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies',
+  url: 'https://dietistindebuurt.nl/blog/wat-doet-adhd-coach-precies',
   wordCount: 2200,
-  articleSection: 'ADHD Coaching',
-  keywords: ['wat doet ADHD coach', 'ADHD coaching voordelen', 'ADHD coach taken', 'hoe helpt ADHD coach'],
+  articleSection: 'Diëtiek Coaching',
+  keywords: ['wat doet Dietist', 'voedingsadvies voordelen', 'Dietist taken', 'hoe helpt Dietist'],
   inLanguage: 'nl-NL'
 };
 
-export default function WatDoetADHDCoachVoordelenPage() {
+export default function WatDoetDiëtiekCoachVoordelenPage() {
   const coachTaken = [
     {
       categorie: "Structuur & Organisatie",
@@ -133,7 +133,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
       fase: "Intake & Assessment",
       duur: "1-2 sessies",
       activiteiten: [
-        "ADHD symptomen en uitdagingen in kaart brengen",
+        "Diëtiek symptomen en uitdagingen in kaart brengen",
         "Persoonlijke doelen en prioriteiten vaststellen",
         "Huidige coping strategieën evalueren",
         "Coaching plan en verwachtingen afstemmen"
@@ -163,20 +163,20 @@ export default function WatDoetADHDCoachVoordelenPage() {
 
   const veelgesteldeVragen = [
     {
-      vraag: "Hoe verschilt een ADHD coach van een therapeut?",
-      antwoord: "Een ADHD coach focust op praktische vaardigheden, doelen en toekomstgericht werken. Therapeuten behandelen vaak trauma, depressie en verleden-gerelateerde problemen. Coaches helpen je vooruit, therapeuten helpen je helen."
+      vraag: "Hoe verschilt een Dietist van een therapeut?",
+      antwoord: "Een Dietist focust op praktische vaardigheden, doelen en toekomstgericht werken. Therapeuten behandelen vaak trauma, depressie en verleden-gerelateerde problemen. Coaches helpen je vooruit, therapeuten helpen je helen."
     },
     {
       vraag: "Hoelang duurt een coaching traject gemiddeld?",
       antwoord: "De meeste coaching trajecten duren 3-6 maanden met wekelijkse of tweewekelijkse sessies. Dit hangt af van je doelen, motivatie en de complexiteit van je situatie."
     },
     {
-      vraag: "Wat als ik ook medicatie gebruik voor ADHD?",
-      antwoord: "ADHD coaching werkt uitstekend samen met medicatie. Coaching helpt je optimaal gebruik maken van de focus die medicatie biedt door praktische vaardigheden en systemen te ontwikkelen."
+      vraag: "Wat als ik ook medicatie gebruik voor Diëtiek?",
+      antwoord: "voedingsadvies werkt uitstekend samen met medicatie. Coaching helpt je optimaal gebruik maken van de focus die medicatie biedt door praktische vaardigheden en systemen te ontwikkelen."
     },
     {
-      vraag: "Kan een ADHD coach ook helpen bij werk gerelateerde problemen?",
-      antwoord: "Ja! Veel ADHD coaches specialiseren zich in werkgerelateerde uitdagingen zoals time management, productiviteit, werkplek organisatie en carrière ontwikkeling."
+      vraag: "Kan een Dietist ook helpen bij werk gerelateerde problemen?",
+      antwoord: "Ja! Veel Dietisten specialiseren zich in werkgerelateerde uitdagingen zoals time management, productiviteit, werkplek organisatie en carrière ontwikkeling."
     }
   ];
 
@@ -198,7 +198,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
               </div>
               <div className="flex flex-wrap gap-2">
                 <a 
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dietistindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -206,7 +206,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
                   Facebook
                 </a>
                 <a 
-                  href={`https://wa.me/?text=${encodeURIComponent('Wat doet een ADHD coach precies? Alle voordelen op een rij - https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
+                  href={`https://wa.me/?text=${encodeURIComponent('Wat doet een Dietist precies? Alle voordelen op een rij - https://dietistindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -214,7 +214,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
                   WhatsApp
                 </a>
                 <a 
-                  href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
+                  href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://dietistindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -222,7 +222,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
                   Messenger
                 </a>
                 <a 
-                  href={`https://x.com/intent/tweet?text=${encodeURIComponent('Wat doet een ADHD coach precies? Alle voordelen op een rij')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
+                  href={`https://x.com/intent/tweet?text=${encodeURIComponent('Wat doet een Dietist precies? Alle voordelen op een rij')}&url=${encodeURIComponent('https://dietistindebuurt.nl/blog/wat-doet-adhd-coach-precies')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -237,10 +237,10 @@ export default function WatDoetADHDCoachVoordelenPage() {
         {/* Header */}
         <header className="px-8 pt-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Wat doet een ADHD coach precies? Alle voordelen op een rij
+            Wat doet een Dietist precies? Alle voordelen op een rij
           </h1>
           <p className="text-xl text-gray-600 mb-6">
-            Ontdek precies <strong>wat een ADHD coach doet</strong>, welke concrete voordelen coaching biedt, en hoe een coach je helpt om je ADHD symptomen om te zetten in sterke punten.
+            Ontdek precies <strong>wat een Dietist doet</strong>, welke concrete voordelen coaching biedt, en hoe een coach je helpt om je Diëtiek symptomen om te zetten in sterke punten.
           </p>
           <div className="flex items-center text-sm text-gray-500 mb-8">
             <span>Laatst bijgewerkt: September 2025</span>
@@ -253,7 +253,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
         <div className="px-8 mb-8">
           <Image
             src="/img/blog/wat-doet-adhd-coach-precies/featured.webp"
-            alt="ADHD coach guiding client success strategy development planning growth improvement"
+            alt="Dietist guiding client success strategy development planning growth improvement"
             width={800}
             height={400}
             className="w-full h-64 object-cover rounded-lg"
@@ -264,10 +264,10 @@ export default function WatDoetADHDCoachVoordelenPage() {
         <div className="mx-8 mb-8 bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-6 rounded-r-lg">
           <h2 className="text-lg font-semibold text-green-900 mb-3 flex items-center">
             <CheckCircle2 className="w-5 h-5 mr-2" />
-            ✅ TL;DR: Wat doet een ADHD coach voor jou?
+            ✅ TL;DR: Wat doet een Dietist voor jou?
           </h2>
           <div className="text-green-800 space-y-2">
-            <p><strong>Kernfunctie:</strong> Een <strong>ADHD coach</strong> helpt je praktische vaardigheden ontwikkelen om beter om te gaan met ADHD symptomen.</p>
+            <p><strong>Kernfunctie:</strong> Een <strong>Dietist</strong> helpt je praktische vaardigheden ontwikkelen om beter om te gaan met Diëtiek symptomen.</p>
             <ul className="space-y-1 ml-4">
               <li>• <strong>Structuur:</strong> Dagelijkse routines, time management en organisatie systemen</li>
               <li>• <strong>Skills:</strong> Focus technieken, emotie regulatie en sociale vaardigheden</li>
@@ -280,16 +280,16 @@ export default function WatDoetADHDCoachVoordelenPage() {
         {/* Content */}
         <div className="px-8 prose prose-lg max-w-none">
           <p>
-            Als je overweegt om met een <strong>ADHD coach</strong> te gaan werken, wil je natuurlijk weten wat je kunt verwachten. Een ADHD coach doet veel meer dan alleen luisteren - ze zijn jouw praktische partner in het ontwikkelen van concrete vaardigheden om succesvol te zijn met ADHD.
+            Als je overweegt om met een <strong>Dietist</strong> te gaan werken, wil je natuurlijk weten wat je kunt verwachten. Een Dietist doet veel meer dan alleen luisteren - ze zijn jouw praktische partner in het ontwikkelen van concrete vaardigheden om succesvol te zijn met Diëtiek.
           </p>
 
           <p>
-            In dit artikel ontdek je precies <strong>wat een ADHD coach doet</strong>, welke bewezen voordelen coaching biedt, en hoe een coach jouw leven kan transformeren van chaotisch en overweldigend naar gestructureerd en productief.
+            In dit artikel ontdek je precies <strong>wat een Dietist doet</strong>, welke bewezen voordelen coaching biedt, en hoe een coach jouw leven kan transformeren van chaotisch en overweldigend naar gestructureerd en productief.
           </p>
 
-          <h2>De 4 hoofdtaken van een ADHD coach</h2>
+          <h2>De 4 hoofdtaken van een Dietist</h2>
           <p>
-            Een professionele ADHD coach heeft vier kernrollen die elkaar versterken en samen zorgen voor blijvende verandering in jouw dagelijks leven.
+            Een professionele Dietist heeft vier kernrollen die elkaar versterken en samen zorgen voor blijvende verandering in jouw dagelijks leven.
           </p>
 
           <div className="space-y-6 my-8">
@@ -311,9 +311,9 @@ export default function WatDoetADHDCoachVoordelenPage() {
             ))}
           </div>
 
-          <h2>Bewezen voordelen van ADHD coaching</h2>
+          <h2>Bewezen voordelen van voedingsadvies</h2>
           <p>
-            ADHD coaching levert meetbare resultaten. Recent onderzoek toont aan dat coaching significant impact heeft op verschillende levensgebieden van mensen met ADHD.
+            voedingsadvies levert meetbare resultaten. Recent onderzoek toont aan dat coaching significant impact heeft op verschillende levensgebieden van mensen met Diëtiek.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -334,9 +334,9 @@ export default function WatDoetADHDCoachVoordelenPage() {
           <div className="bg-orange-50 p-6 rounded-lg my-6 border border-orange-200">
             <h4 className="font-semibold text-orange-900 mb-3 flex items-center">
               <Star className="w-5 h-5 mr-2" />
-              🏆 Lange termijn impact van ADHD coaching
+              🏆 Lange termijn impact van voedingsadvies
             </h4>
-            <p className="text-orange-800 text-sm mb-3">Follow-up studies laten zien dat de voordelen van ADHD coaching lang aanhouden:</p>
+            <p className="text-orange-800 text-sm mb-3">Follow-up studies laten zien dat de voordelen van voedingsadvies lang aanhouden:</p>
             <ul className="text-orange-700 text-sm space-y-1">
               <li>• <strong>6 maanden later:</strong> 82% houdt nieuwe gewoonten vol</li>
               <li>• <strong>1 jaar later:</strong> 74% rapporteert nog steeds verbeterde levenskwaliteit</li>
@@ -344,9 +344,9 @@ export default function WatDoetADHDCoachVoordelenPage() {
             </ul>
           </div>
 
-          <h2>Het ADHD coaching proces: stap voor stap</h2>
+          <h2>Het voedingsadvies proces: stap voor stap</h2>
           <p>
-            ADHD coaching volgt een gestructureerd proces dat is ontworpen om maximale resultaten te behalen. Hier zie je wat je kunt verwachten in elke fase.
+            voedingsadvies volgt een gestructureerd proces dat is ontworpen om maximale resultaten te behalen. Hier zie je wat je kunt verwachten in elke fase.
           </p>
 
           <div className="space-y-6 my-8">
@@ -378,15 +378,15 @@ export default function WatDoetADHDCoachVoordelenPage() {
             ))}
           </div>
 
-          <h2>ADHD coach vs andere professionals: wat is het verschil?</h2>
+          <h2>Dietist vs andere professionals: wat is het verschil?</h2>
           <p>
-            Het is belangrijk te begrijpen hoe een ADHD coach verschilt van andere professionals die ook kunnen helpen bij ADHD gerelateerde uitdagingen.
+            Het is belangrijk te begrijpen hoe een Dietist verschilt van andere professionals die ook kunnen helpen bij Diëtiek gerelateerde uitdagingen.
           </p>
 
           <div className="bg-slate-50 p-6 rounded-lg my-6">
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <h4 className="font-semibold text-slate-900 mb-3">ADHD Coach</h4>
+                <h4 className="font-semibold text-slate-900 mb-3">Diëtiek Coach</h4>
                 <div className="space-y-2 text-slate-700 text-sm">
                   <div>• Toekomst gericht</div>
                   <div>• Praktische vaardigheden</div>
@@ -420,7 +420,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
             </div>
           </div>
 
-          <h2>Veelgestelde vragen over ADHD coaching</h2>
+          <h2>Veelgestelde vragen over voedingsadvies</h2>
           
           <div className="space-y-4 my-8">
             {veelgesteldeVragen.map((item, index) => (
@@ -434,15 +434,15 @@ export default function WatDoetADHDCoachVoordelenPage() {
             ))}
           </div>
 
-          <h2>Hoe kies je de juiste ADHD coach?</h2>
+          <h2>Hoe kies je de juiste Dietist?</h2>
           <p>
-            Nu je weet <strong>wat een ADHD coach doet</strong> en welke voordelen coaching biedt, is de volgende stap het vinden van een coach die bij jou past.
+            Nu je weet <strong>wat een Dietist doet</strong> en welke voordelen coaching biedt, is de volgende stap het vinden van een coach die bij jou past.
           </p>
 
           <div className="bg-indigo-50 p-6 rounded-lg my-6 border border-indigo-200">
             <h4 className="font-semibold text-indigo-900 mb-3 flex items-center">
               <Target className="w-5 h-5 mr-2" />
-              🎯 Checklist voor het kiezen van een ADHD coach
+              🎯 Checklist voor het kiezen van een Dietist
             </h4>
             
             <div className="grid md:grid-cols-2 gap-4">
@@ -450,7 +450,7 @@ export default function WatDoetADHDCoachVoordelenPage() {
                 <h5 className="font-medium text-indigo-800 mb-2">Kwalificaties & ervaring:</h5>
                 <ul className="text-indigo-700 text-sm space-y-1">
                   <li>• Gecertificeerd door erkende coaching organisatie</li>
-                  <li>• Specialisatie in ADHD coaching</li>
+                  <li>• Specialisatie in voedingsadvies</li>
                   <li>• Minimaal 2 jaar ervaring</li>
                   <li>• Positieve reviews en testimonials</li>
                 </ul>
@@ -468,14 +468,14 @@ export default function WatDoetADHDCoachVoordelenPage() {
             </div>
           </div>
 
-          <h2>Klaar om te starten met ADHD coaching?</h2>
+          <h2>Klaar om te starten met voedingsadvies?</h2>
           <p>
-            ADHD coaching kan een transformative ervaring zijn die je helpt om je potentieel volledig te benutten. Met de juiste coach ontwikkel je praktische vaardigheden die je leven lang zullen helpen.
+            voedingsadvies kan een transformative ervaring zijn die je helpt om je potentieel volledig te benutten. Met de juiste coach ontwikkel je praktische vaardigheden die je leven lang zullen helpen.
           </p>
 
           <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg my-6 text-center border">
             <h4 className="font-semibold text-gray-900 mb-3">🚀 Neem de volgende stap</h4>
-            <p className="text-gray-700 mb-4">Vind de perfecte ADHD coach in jouw regio en start vandaag nog met het verbeteren van jouw leven.</p>
+            <p className="text-gray-700 mb-4">Vind de perfecte Dietist in jouw regio en start vandaag nog met het verbeteren van jouw leven.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link 
                 href="/blog/adhd-coach-vinden-regio" 

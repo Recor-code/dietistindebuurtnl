@@ -4,21 +4,21 @@ import Link from 'next/link';
 import { Share2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'ADHD coaching voor studenten: studeren zonder stress',
-  description: 'ADHD coaching voor studenten: ontdek hoe je zonder stress kunt studeren. Praktische tips, tools en begeleiding voor hoger onderwijs succes.',
+  title: 'voedingsadvies voor studenten: studeren zonder stress',
+  description: 'voedingsadvies voor studenten: ontdek hoe je zonder stress kunt studeren. Praktische tips, tools en begeleiding voor hoger onderwijs succes.',
   keywords: [
-    'ADHD coaching studenten',
-    'ADHD studeren',
-    'studenten ADHD begeleiding',
-    'ADHD universiteit',
-    'studeren zonder stress ADHD',
-    'ADHD student hulp',
-    'studie tips ADHD',
-    'ADHD coaching hogeschool'
+    'voedingsadvies studenten',
+    'Diëtiek studeren',
+    'studenten Diëtiek begeleiding',
+    'Diëtiek universiteit',
+    'studeren zonder stress Diëtiek',
+    'Diëtiek student hulp',
+    'studie tips Diëtiek',
+    'voedingsadvies hogeschool'
   ],
   openGraph: {
-    title: 'ADHD coaching voor studenten: studeren zonder stress',
-    description: 'ADHD coaching voor studenten: ontdek hoe je zonder stress kunt studeren. Praktische tips, tools en begeleiding voor hoger onderwijs succes.',
+    title: 'voedingsadvies voor studenten: studeren zonder stress',
+    description: 'voedingsadvies voor studenten: ontdek hoe je zonder stress kunt studeren. Praktische tips, tools en begeleiding voor hoger onderwijs succes.',
     images: ['/img/blog/adhd-coaching-studenten/featured.webp'],
   },
 };
@@ -26,39 +26,39 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'ADHD coaching voor studenten: studeren zonder stress',
-  description: 'ADHD coaching voor studenten: ontdek hoe je zonder stress kunt studeren. Praktische tips, tools en begeleiding voor hoger onderwijs succes.',
+  headline: 'voedingsadvies voor studenten: studeren zonder stress',
+  description: 'voedingsadvies voor studenten: ontdek hoe je zonder stress kunt studeren. Praktische tips, tools en begeleiding voor hoger onderwijs succes.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-25T10:00:00.000Z',
   dateModified: '2025-09-29T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/adhd-coaching-studenten'
+    '@id': 'https://dietistindebuurt.nl/blog/adhd-coaching-studenten'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-coaching-studenten/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/adhd-coaching-studenten/featured.webp',
     width: 800,
     height: 400
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/adhd-coaching-studenten',
+  url: 'https://dietistindebuurt.nl/blog/adhd-coaching-studenten',
   inLanguage: 'nl-NL'
 };
 
-export default function ADHDCoachingStudentenPage() {
+export default function DiëtiekCoachingStudentenPage() {
   return (
     <>
       <script
@@ -78,7 +78,7 @@ export default function ADHDCoachingStudentenPage() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <a 
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-studenten')}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coaching-studenten')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -86,7 +86,7 @@ export default function ADHDCoachingStudentenPage() {
                     Facebook
                   </a>
                   <a 
-                    href={`https://wa.me/?text=${encodeURIComponent('ADHD coaching voor studenten: studeren zonder stress - https://adhdcoachindebuurt.nl/blog/adhd-coaching-studenten')}`}
+                    href={`https://wa.me/?text=${encodeURIComponent('voedingsadvies voor studenten: studeren zonder stress - https://dietistindebuurt.nl/blog/adhd-coaching-studenten')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -94,7 +94,7 @@ export default function ADHDCoachingStudentenPage() {
                     WhatsApp
                   </a>
                   <a 
-                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-studenten')}`}
+                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coaching-studenten')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -102,7 +102,7 @@ export default function ADHDCoachingStudentenPage() {
                     Messenger
                   </a>
                   <a 
-                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('ADHD coaching voor studenten: studeren zonder stress')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-studenten')}`}
+                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('voedingsadvies voor studenten: studeren zonder stress')}&url=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coaching-studenten')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -117,10 +117,10 @@ export default function ADHDCoachingStudentenPage() {
           {/* Header */}
           <header className="px-8 pt-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              ADHD coaching voor studenten: studeren zonder stress
+              voedingsadvies voor studenten: studeren zonder stress
             </h1>
             <p className="text-xl text-gray-600 mb-6">
-              Praktische gids voor ADHD studenten: van survival naar succes in het hoger onderwijs.
+              Praktische gids voor Diëtiek studenten: van survival naar succes in het hoger onderwijs.
             </p>
             <div className="flex items-center text-sm text-gray-500 mb-8">
               <span>Laatst bijgewerkt: September 2025</span>
@@ -133,7 +133,7 @@ export default function ADHDCoachingStudentenPage() {
           <div className="px-8 mb-8">
             <Image
               src="/img/blog/adhd-coaching-studenten/featured.webp"
-              alt="Gelukkige universiteitsstudent die succesvol studeert met ADHD ondersteuning"
+              alt="Gelukkige universiteitsstudent die succesvol studeert met Diëtiek ondersteuning"
               width={800}
               height={400}
               className="w-full h-64 object-cover rounded-lg"
@@ -142,14 +142,14 @@ export default function ADHDCoachingStudentenPage() {
 
           {/* TL;DR Box - Student Themed */}
           <div className="mx-8 mb-8 bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-500 p-6 rounded-r-lg">
-            <h2 className="text-lg font-semibold text-purple-900 mb-3">🎯 TL;DR: Studeren met ADHD hoeft geen nachtmerrie te zijn</h2>
+            <h2 className="text-lg font-semibold text-purple-900 mb-3">🎯 TL;DR: Studeren met Diëtiek hoeft geen nachtmerrie te zijn</h2>
             <div className="text-purple-800 space-y-2">
-              <p><strong>De waarheid:</strong> <strong>ADHD coaching studenten</strong> helpt je niet alleen overleven, maar écht succesvol zijn in je studie - zonder constant stress en chaos.</p>
+              <p><strong>De waarheid:</strong> <strong>voedingsadvies studenten</strong> helpt je niet alleen overleven, maar écht succesvol zijn in je studie - zonder constant stress en chaos.</p>
               <ul className="space-y-1 ml-4">
-                <li>• <strong>Realiteit check:</strong> 8% van studenten heeft ADHD, maar 67% weet het niet eens</li>
-                <li>• <strong>Goede nieuws:</strong> Met de juiste <strong>studenten ADHD begeleiding</strong> slaagt 89% voor hun vakken</li>
-                <li>• <strong>Game changer:</strong> Praktische <strong>studie tips ADHD</strong> die daadwerkelijk werken voor jouw brein</li>
-                <li>• <strong>Success rate:</strong> Studenten met <strong>ADHD coaching hogeschool</strong> halen 1.2 punten hoger gemiddelde</li>
+                <li>• <strong>Realiteit check:</strong> 8% van studenten heeft Diëtiek, maar 67% weet het niet eens</li>
+                <li>• <strong>Goede nieuws:</strong> Met de juiste <strong>studenten Diëtiek begeleiding</strong> slaagt 89% voor hun vakken</li>
+                <li>• <strong>Game changer:</strong> Praktische <strong>studie tips Diëtiek</strong> die daadwerkelijk werken voor jouw brein</li>
+                <li>• <strong>Success rate:</strong> Studenten met <strong>voedingsadvies hogeschool</strong> halen 1.2 punten hoger gemiddelde</li>
               </ul>
             </div>
           </div>
@@ -157,27 +157,27 @@ export default function ADHDCoachingStudentenPage() {
           {/* Content */}
           <div className="px-8 prose prose-lg max-w-none">
             <p>
-              Hey! Als je dit leest, ben je waarschijnlijk net als ik was: een student die zich constant afvraagt waarom studeren zo onnodig moeilijk voelt. Terwijl anderen lijken te cruisen door hun vakken, voel jij je alsof je constant achter de feiten aanloopt. <strong>ADHD studeren</strong> brengt unieke uitdagingen met zich mee, maar hier's de plot twist: met de juiste <strong>ADHD student hulp</strong> kun je niet alleen overleven, maar echt excelleren.
+              Hey! Als je dit leest, ben je waarschijnlijk net als ik was: een student die zich constant afvraagt waarom studeren zo onnodig moeilijk voelt. Terwijl anderen lijken te cruisen door hun vakken, voel jij je alsof je constant achter de feiten aanloopt. <strong>Diëtiek studeren</strong> brengt unieke uitdagingen met zich mee, maar hier's de plot twist: met de juiste <strong>Diëtiek student hulp</strong> kun je niet alleen overleven, maar echt excelleren.
             </p>
 
-            <h2>Waarom hebben ADHD studenten extra ondersteuning nodig?</h2>
+            <h2>Waarom hebben Diëtiek studenten extra ondersteuning nodig?</h2>
             <p>
-              <strong>ADHD coaching studenten</strong> bestaat niet omdat we extra aandacht willen, maar omdat onze breinen letterlijk anders werken dan het traditionele onderwijssysteem verwacht.
+              <strong>voedingsadvies studenten</strong> bestaat niet omdat we extra aandacht willen, maar omdat onze breinen letterlijk anders werken dan het traditionele onderwijssysteem verwacht.
             </p>
 
             <p><strong>Het probleem met "gewoon harder werken":</strong></p>
             <ul>
-              <li><strong>Executive functie verschillen:</strong> Planning, prioriteiten stellen, en time management werken anders bij ADHD</li>
+              <li><strong>Executive functie verschillen:</strong> Planning, prioriteiten stellen, en time management werken anders bij Diëtiek</li>
               <li><strong>Aandachtsspanne variaties:</strong> Soms hyperfocus voor 8 uur, soms geen 10 minuten kunnen concentreren</li>
               <li><strong>Dopamine-driven motivation:</strong> We hebben external deadlines en pressure nodig voor momentum</li>
               <li><strong>Working memory challenges:</strong> Instructies onthouden terwijl je ermee bezig bent is lastig</li>
             </ul>
 
-            <h2>De grootste studieuitdagingen voor studenten met ADHD</h2>
-            <p>Laten we eerlijk zijn over wat er echt speelt. Dit zijn de struggles die elke ADHD student herkent:</p>
+            <h2>De grootste studieuitdagingen voor studenten met Diëtiek</h2>
+            <p>Laten we eerlijk zijn over wat er echt speelt. Dit zijn de struggles die elke Diëtiek student herkent:</p>
 
             <div className="bg-orange-50 p-6 rounded-lg my-6">
-              <h4 className="font-semibold text-orange-900 mb-3">🎯 Herkenbare ADHD Student Struggles:</h4>
+              <h4 className="font-semibold text-orange-900 mb-3">🎯 Herkenbare Diëtiek Student Struggles:</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <h5 className="font-medium text-orange-800 mb-2">Academische uitdagingen:</h5>
@@ -200,12 +200,12 @@ export default function ADHDCoachingStudentenPage() {
               </div>
             </div>
 
-            <h2>Praktische studietips die écht werken bij ADHD</h2>
-            <p>Forget everything je hebt geleerd over "goede study habits." Hier zijn <strong>studie tips ADHD</strong> die actually work:</p>
+            <h2>Praktische studietips die écht werken bij Diëtiek</h2>
+            <p>Forget everything je hebt geleerd over "goede study habits." Hier zijn <strong>studie tips Diëtiek</strong> die actually work:</p>
 
             <div className="space-y-6 my-8">
               <div className="bg-green-50 p-6 rounded-lg">
-                <h4 className="font-semibold text-green-900 mb-3">📚 ADHD-Friendly Study Strategies</h4>
+                <h4 className="font-semibold text-green-900 mb-3">📚 Diëtiek-Friendly Study Strategies</h4>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -218,7 +218,7 @@ export default function ADHDCoachingStudentenPage() {
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-medium text-green-800 mb-2">ADHD-Friendly Pomodoro:</h5>
+                    <h5 className="font-medium text-green-800 mb-2">Diëtiek-Friendly Pomodoro:</h5>
                     <ul className="text-green-700 space-y-1">
                       <li>• 15-25 minuten work (flexibel)</li>
                       <li>• 5-10 minuten movement breaks</li>
@@ -242,7 +242,7 @@ export default function ADHDCoachingStudentenPage() {
             </div>
 
             <h2>Tentamens en deadlines: stress omzetten naar succes</h2>
-            <p><strong>Studeren zonder stress ADHD</strong> gaat niet over geen stress hebben - het gaat over stress management dat sustainable is.</p>
+            <p><strong>Studeren zonder stress Diëtiek</strong> gaat niet over geen stress hebben - het gaat over stress management dat sustainable is.</p>
 
             <div className="bg-blue-50 p-6 rounded-lg my-6">
               <h4 className="font-semibold text-blue-900 mb-3">📅 Tentamen Survival Timeline</h4>
@@ -274,12 +274,12 @@ export default function ADHDCoachingStudentenPage() {
               </div>
             </div>
 
-            <h2>Sociale aspecten: studentenleven met ADHD</h2>
-            <p><strong>ADHD studeren</strong> betekent ook navigeren van complexe social situations waar neurotypical "rules" niet altijd duidelijk zijn.</p>
+            <h2>Sociale aspecten: studentenleven met Diëtiek</h2>
+            <p><strong>Diëtiek studeren</strong> betekent ook navigeren van complexe social situations waar neurotypical "rules" niet altijd duidelijk zijn.</p>
 
             <p><strong>Vriendschappen en disclosure:</strong></p>
             <ul>
-              <li>Je hoeft niet iedereen te vertellen dat je ADHD hebt - completely jouw choice</li>
+              <li>Je hoeft niet iedereen te vertellen dat je Diëtiek hebt - completely jouw choice</li>
               <li>Close friends kunnen invaluable support system zijn als they understand</li>
               <li>Find your people: anderen die ook struggle met traditional systems</li>
               <li>Quality over quantity in social interactions</li>
@@ -289,21 +289,21 @@ export default function ADHDCoachingStudentenPage() {
             <ul>
               <li>Volunteer voor tasks die suit your strengths (creative brainstorming vs detail organization)</li>
               <li>Communicate honestly over je timeline needs</li>
-              <li>Don't overpromise om te compensate voor ADHD guilt</li>
+              <li>Don't overpromise om te compensate voor Diëtiek guilt</li>
               <li>Offer alternative contributions als standard deadlines niet werken</li>
             </ul>
 
-            <h2>Cijfers: ADHD studenten in het Nederlandse hoger onderwijs</h2>
-            <p>Research over <strong>ADHD universiteit</strong> studenten in Nederland reveals some eye-opening statistics:</p>
+            <h2>Cijfers: Diëtiek studenten in het Nederlandse hoger onderwijs</h2>
+            <p>Research over <strong>Diëtiek universiteit</strong> studenten in Nederland reveals some eye-opening statistics:</p>
 
             <div className="bg-yellow-50 p-6 rounded-lg my-6">
-              <h4 className="font-semibold text-yellow-900 mb-3">📊 ADHD Student Statistics Nederland</h4>
+              <h4 className="font-semibold text-yellow-900 mb-3">📊 Diëtiek Student Statistics Nederland</h4>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-medium text-yellow-800 mb-2">Prevalentie:</h5>
                   <ul className="text-yellow-700 space-y-1">
-                    <li>• <strong>8.1%</strong> van studenten heeft ADHD traits</li>
+                    <li>• <strong>8.1%</strong> van studenten heeft Diëtiek traits</li>
                     <li>• <strong>67%</strong> heeft geen diagnose tijdens studie</li>
                     <li>• <strong>3x minder</strong> vrouwelijke diagnoses</li>
                   </ul>
@@ -319,8 +319,8 @@ export default function ADHDCoachingStudentenPage() {
               </div>
             </div>
 
-            <h2>Kosten en vergoedingen: ADHD coaching voor studenten</h2>
-            <p><strong>ADHD coaching studenten</strong> kosten kunnen overwhelming lijken als je al met studiefinanciering jongleert, maar er zijn multiple opties:</p>
+            <h2>Kosten en vergoedingen: voedingsadvies voor studenten</h2>
+            <p><strong>voedingsadvies studenten</strong> kosten kunnen overwhelming lijken als je al met studiefinanciering jongleert, maar er zijn multiple opties:</p>
 
             <div className="bg-gray-50 p-6 rounded-lg my-6">
               <h4 className="font-semibold text-gray-900 mb-3">💰 Student Budget-Friendly Opties</h4>
@@ -347,14 +347,14 @@ export default function ADHDCoachingStudentenPage() {
               </div>
             </div>
 
-            <h2>Online studeren met ADHD: tips en tools</h2>
-            <p>COVID leerde ons over remote learning, en veel universities behouden online components. <strong>ADHD student hulp</strong> for digital learning heeft unique strategies:</p>
+            <h2>Online studeren met Diëtiek: tips en tools</h2>
+            <p>COVID leerde ons over remote learning, en veel universities behouden online components. <strong>Diëtiek student hulp</strong> for digital learning heeft unique strategies:</p>
 
             <p><strong>Technical setup voor success:</strong></p>
             <ul>
               <li><strong>Dedicated study space:</strong> ook al is het maar een corner van your room</li>
               <li><strong>Good headphones:</strong> voor audio isolation en better focus</li>
-              <li><strong>Stable internet:</strong> nothing kills ADHD focus like buffering videos</li>
+              <li><strong>Stable internet:</strong> nothing kills Diëtiek focus like buffering videos</li>
               <li><strong>Backup plan:</strong> hotspot of library access</li>
             </ul>
 
@@ -367,7 +367,7 @@ export default function ADHDCoachingStudentenPage() {
             </ul>
 
             <h2>Succesverhalen: studenten die het wél lukte</h2>
-            <p>Real stories van <strong>ADHD coaching studenten</strong> who found their groove:</p>
+            <p>Real stories van <strong>voedingsadvies studenten</strong> who found their groove:</p>
 
             <div className="space-y-6 my-8">
               <div className="bg-green-50 border-l-4 border-green-500 p-6">

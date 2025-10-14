@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateADHDAnalysis, type ChatMessage } from '@/lib/openai';
+import { generateDiëtiekAnalysis, type ChatMessage } from '@/lib/openai';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const analysis = await generateADHDAnalysis(messages);
+    const analysis = await generateDiëtiekAnalysis(messages);
 
     return NextResponse.json(analysis);
   } catch (error) {

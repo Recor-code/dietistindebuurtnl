@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import { CheckCircle, Users, TrendingUp, Target, Zap, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Adverteer op ADHD Coach in de Buurt | Premium Bannerplekken',
-  description: 'Bereik duizenden mensen die actief zoeken naar ADHD hulp. Exclusieve bannerplekken op de grootste ADHD coach directory van Nederland en België.',
+  title: 'Adverteer op Diëtiek Coach in de Buurt | Premium Bannerplekken',
+  description: 'Bereik duizenden mensen die actief zoeken naar Diëtiek hulp. Exclusieve bannerplekken op de grootste Diëtiek coach directory van Nederland en België.',
   robots: {
     index: false,
     follow: false,
@@ -26,7 +26,7 @@ export default function BannerPage() {
               Stop Met Geld Verspillen aan Advertenties Die Niet Werken
             </h1>
             <p className="text-2xl md:text-3xl mb-8 font-light">
-              Bereik mensen die NU actief op zoek zijn naar ADHD hulp
+              Bereik mensen die NU actief op zoek zijn naar Diëtiek hulp
             </p>
             <p className="text-xl mb-12 opacity-90">
               Geen loze beloftes. Geen onduidelijke metrics. Alleen echte klanten die klaar zijn om te bestellen.
@@ -71,7 +71,7 @@ export default function BannerPage() {
 
             <div className="bg-green-50 border-l-4 border-green-500 p-8 text-center">
               <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                ✅ ADHD Coach in de Buurt Banners
+                ✅ Diëtiek Coach in de Buurt Banners
               </h3>
               <p className="text-xl text-gray-700 mb-4">
                 Eén vaste prijs. Nul gedoe. Alleen mensen die ACTIEF zoeken naar jouw diensten.
@@ -98,7 +98,7 @@ export default function BannerPage() {
                 <Target className="w-12 h-12 text-sky-500 mb-4" />
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Ultieme Targeting</h3>
                 <p className="text-gray-700">
-                  Onze bezoekers zijn niet "misschien geïnteresseerd". Ze typen letterlijk: "ADHD coach Amsterdam" en komen direct bij jou uit.
+                  Onze bezoekers zijn niet "misschien geïnteresseerd". Ze typen letterlijk: "Diëtiek coach Amsterdam" en komen direct bij jou uit.
                 </p>
               </div>
 
@@ -126,7 +126,7 @@ export default function BannerPage() {
                   <h3 className="text-2xl font-bold mb-3 text-gray-900">Waarom Dit Eigenlijk Te Goedkoop Is</h3>
                   <p className="text-lg text-gray-700 mb-4">
                     Als je €499/maand betaalt en je krijgt 5 nieuwe klanten binnen... hoeveel is dat waard? 
-                    Bij een gemiddelde ADHD coaching package van €1500-3000 praat je over €7500-15000 omzet.
+                    Bij een gemiddelde Diëtiek coaching package van €1500-3000 praat je over €7500-15000 omzet.
                   </p>
                   <p className="text-lg font-semibold text-sky-700">
                     Dat is een 15-30x return. En je concurrent krijgt deze klanten NU als jij dit niet doet.
@@ -310,7 +310,7 @@ export default function BannerPage() {
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Hoeveel bezoekers krijgt jullie website?</h3>
                 <p className="text-gray-700">
-                  We ontvangen duizenden unieke bezoekers per maand die actief zoeken naar ADHD hulp. En dit groeit maandelijks met 15-20%. Je banner wordt gezien op alle 415+ stadspagina's én de homepage.
+                  We ontvangen duizenden unieke bezoekers per maand die actief zoeken naar Diëtiek hulp. En dit groeit maandelijks met 15-20%. Je banner wordt gezien op alle 415+ stadspagina's én de homepage.
                 </p>
               </div>
 

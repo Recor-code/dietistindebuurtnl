@@ -2,7 +2,7 @@ import { db } from '../../lib/db';
 import { cities, coaches, faqItems, blogPosts } from '../../shared/schema';
 import { allCities, adhdStatsTemplate, generateCityTldr } from '../data/cities';
 
-// Sample ADHD coaches data
+// Sample Dietisten data
 const sampleCoaches = [
   {
     name: 'Dr. Sarah van den Berg',
@@ -10,8 +10,8 @@ const sampleCoaches = [
     email: 'sarah@adhdcoach.nl',
     phone: '06-12345678',
     website: 'https://sarahcoaching.nl',
-    specialization: 'ADHD Coach & Psycholoog',
-    description: 'Gespecialiseerd in ADHD coaching voor volwassenen. 15 jaar ervaring in gedragstherapie en coaching.',
+    specialization: 'Diëtiek Coach & Psycholoog',
+    description: 'Gespecialiseerd in voedingsadvies voor volwassenen. 15 jaar ervaring in gedragstherapie en coaching.',
     address: 'Hoofdstraat 123',
     rating: 4.8,
     reviewCount: 47,
@@ -27,8 +27,8 @@ const sampleCoaches = [
     slug: 'mark-jansen',
     email: 'mark@focuscoaching.nl',
     phone: '06-87654321',
-    specialization: 'ADHD Coach',
-    description: 'Focus en planningscoach met ADHD specialisatie. Helpt bij structuur en organisatie.',
+    specialization: 'Diëtiek Coach',
+    description: 'Focus en planningscoach met Diëtiek specialisatie. Helpt bij structuur en organisatie.',
     address: 'Parkweg 45',
     rating: 4.6,
     reviewCount: 32,
@@ -45,7 +45,7 @@ const sampleCoaches = [
     email: 'lisa@kindcoaching.nl',
     phone: '06-11223344',
     specialization: 'Gedragstherapeut',
-    description: 'Gedragstherapeut gespecialiseerd in ADHD bij kinderen en jongeren.',
+    description: 'Gedragstherapeut gespecialiseerd in Diëtiek bij kinderen en jongeren.',
     address: 'Schoolstraat 67',
     rating: 4.9,
     reviewCount: 63,
@@ -61,26 +61,26 @@ const sampleCoaches = [
 // Sample FAQ items
 const sampleFAQ = [
   {
-    question: 'Wat is het verschil tussen een ADHD coach en een psycholoog?',
-    answer: 'Een ADHD coach richt zich vooral op praktische vaardigheden zoals planning, organisatie en tijdmanagement. Een psycholoog kan ook therapeutische behandeling bieden voor bijkomende problematiek zoals angst of depressie.',
+    question: 'Wat is het verschil tussen een Dietist en een psycholoog?',
+    answer: 'Een Dietist richt zich vooral op praktische vaardigheden zoals planning, organisatie en tijdmanagement. Een psycholoog kan ook therapeutische behandeling bieden voor bijkomende problematiek zoals angst of depressie.',
     category: 'Algemeen',
     order: 1
   },
   {
-    question: 'Wordt ADHD coaching vergoed door de zorgverzekering?',
-    answer: 'ADHD coaching wordt niet standaard vergoed vanuit de basisverzekering. Sommige aanvullende verzekeringen vergoeden wel een deel van de kosten. Check dit altijd bij je verzekeraar.',
+    question: 'Wordt voedingsadvies vergoed door de zorgverzekering?',
+    answer: 'voedingsadvies wordt niet standaard vergoed vanuit de basisverzekering. Sommige aanvullende verzekeringen vergoeden wel een deel van de kosten. Check dit altijd bij je verzekeraar.',
     category: 'Vergoeding',
     order: 2
   },
   {
-    question: 'Hoe lang duurt een ADHD coaching traject gemiddeld?',
+    question: 'Hoe lang duurt een voedingsadvies traject gemiddeld?',
     answer: 'Een coaching traject duurt gemiddeld 3-6 maanden, afhankelijk van je doelen en voortgang. De meeste coaches werken met sessies van 45-60 minuten, 1x per week of om de week.',
     category: 'Proces',
     order: 3
   },
   {
-    question: 'Kan ik online ADHD coaching krijgen?',
-    answer: 'Ja, veel ADHD coaches bieden ook online coaching aan via videobellen. Dit kan handig zijn als er geen coach in je buurt is of als online beter uitkomt.',
+    question: 'Kan ik online voedingsadvies krijgen?',
+    answer: 'Ja, veel Dietisten bieden ook online coaching aan via videobellen. Dit kan handig zijn als er geen coach in je buurt is of als online beter uitkomt.',
     category: 'Online',
     order: 4
   },
@@ -144,14 +144,14 @@ export async function seedDatabase() {
     // Insert sample blog posts
     console.log('Inserting blog posts...');
     const blogInserts = insertedCities.slice(0, 10).map((city, index) => ({
-      title: `ADHD Coaching in ${city.name}: Wat Je Moet Weten`,
+      title: `Diëtiek Coaching in ${city.name}: Wat Je Moet Weten`,
       slug: `adhd-coaching-${city.slug}`,
-      content: `<h2>ADHD Coaching in ${city.name}</h2><p>Ben je op zoek naar ADHD coaching in ${city.name}? In dit artikel bespreken we alles wat je moet weten over ADHD ondersteuning in jouw stad.</p><h3>Beschikbare ADHD Coaches</h3><p>In ${city.name} zijn verschillende ervaren ADHD coaches actief die je kunnen helpen met praktische vaardigheden...</p>`,
-      excerpt: `Ontdek alles over ADHD coaching mogelijkheden in ${city.name}. Van lokale coaches tot specialisaties.`,
-      metaDescription: `ADHD coaching in ${city.name} - Vind ervaren coaches, bekijk reviews en vergelijk specialisaties in jouw stad.`,
+      content: `<h2>Diëtiek Coaching in ${city.name}</h2><p>Ben je op zoek naar voedingsadvies in ${city.name}? In dit artikel bespreken we alles wat je moet weten over Diëtiek ondersteuning in jouw stad.</p><h3>Beschikbare Diëtiek Coaches</h3><p>In ${city.name} zijn verschillende ervaren Dietisten actief die je kunnen helpen met praktische vaardigheden...</p>`,
+      excerpt: `Ontdek alles over voedingsadvies mogelijkheden in ${city.name}. Van lokale coaches tot specialisaties.`,
+      metaDescription: `voedingsadvies in ${city.name} - Vind ervaren coaches, bekijk reviews en vergelijk specialisaties in jouw stad.`,
       cityId: city.id,
       province: city.province,
-      tags: JSON.stringify(['ADHD', 'coaching', city.name, city.province]),
+      tags: JSON.stringify(['Diëtiek', 'coaching', city.name, city.province]),
       publishedAt: new Date()
     }));
 

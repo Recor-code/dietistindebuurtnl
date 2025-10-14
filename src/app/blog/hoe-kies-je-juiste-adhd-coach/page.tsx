@@ -5,83 +5,83 @@ import Image from 'next/image';
 
 // Static metadata for this specific article
 export const metadata: Metadata = {
-  title: 'Hoe kies je de juiste ADHD coach bij jou in de buurt? [Complete gids]',
-  description: 'Complete gids voor het kiezen van de juiste ADHD coach bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
+  title: 'Hoe kies je de juiste Dietist bij jou in de buurt? [Complete gids]',
+  description: 'Complete gids voor het kiezen van de juiste Dietist bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
   openGraph: {
-    title: 'Hoe kies je de juiste ADHD coach bij jou in de buurt? [Complete gids]',
-    description: 'Complete gids voor het kiezen van de juiste ADHD coach bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
+    title: 'Hoe kies je de juiste Dietist bij jou in de buurt? [Complete gids]',
+    description: 'Complete gids voor het kiezen van de juiste Dietist bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
     type: 'article',
     publishedTime: '2025-09-24T14:00:00.000Z',
-    authors: ['ADHD Coach in de Buurt'],
+    authors: ['Dietist in de Buurt'],
     images: [
       {
-        url: 'https://adhdcoachindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp',
+        url: 'https://dietistindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp',
         width: 1024,
         height: 1024,
-        alt: 'Hoe kies je de juiste ADHD coach? Complete gids'
+        alt: 'Hoe kies je de juiste Dietist? Complete gids'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hoe kies je de juiste ADHD coach bij jou in de buurt? [Complete gids]',
-    description: 'Complete gids voor het kiezen van de juiste ADHD coach bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
-    images: ['https://adhdcoachindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp']
+    title: 'Hoe kies je de juiste Dietist bij jou in de buurt? [Complete gids]',
+    description: 'Complete gids voor het kiezen van de juiste Dietist bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
+    images: ['https://dietistindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp']
   }
 };
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Hoe kies je de juiste ADHD coach bij jou in de buurt? [Complete gids]',
-  description: 'Complete gids voor het kiezen van de juiste ADHD coach bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
+  headline: 'Hoe kies je de juiste Dietist bij jou in de buurt? [Complete gids]',
+  description: 'Complete gids voor het kiezen van de juiste Dietist bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-24T14:00:00.000Z',
   dateModified: '2025-09-25T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/hoe-kies-je-juiste-adhd-coach'
+    '@id': 'https://dietistindebuurt.nl/blog/hoe-kies-je-juiste-adhd-coach'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/hoe-kies-je-juiste-adhd-coach/featured.webp',
     width: 1024,
     height: 1024
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/hoe-kies-je-juiste-adhd-coach',
+  url: 'https://dietistindebuurt.nl/blog/hoe-kies-je-juiste-adhd-coach',
   wordCount: 2500,
-  articleSection: 'ADHD Coaching',
-  keywords: ['ADHD coach', 'ADHD coaching', 'coach vinden', 'ADHD hulp', 'coach kiezen'],
+  articleSection: 'Diëtiek Coaching',
+  keywords: ['Dietist', 'voedingsadvies', 'coach vinden', 'Diëtiek hulp', 'coach kiezen'],
   inLanguage: 'nl-NL'
 };
 
 export default function BlogPost() {
   const post = {
     id: 3,
-    title: 'Hoe kies je de juiste ADHD coach bij jou in de buurt? [Complete gids]',
+    title: 'Hoe kies je de juiste Dietist bij jou in de buurt? [Complete gids]',
     slug: 'hoe-kies-je-juiste-adhd-coach',
-    excerpt: 'Het ADHD coach kiezen kan overweldigend aanvoelen. Deze complete gids helpt je stap voor stap de juiste ADHD coach vinden die perfect aansluit bij jouw behoeften, budget en locatie.',
-    metaDescription: 'Complete gids voor het kiezen van de juiste ADHD coach bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
+    excerpt: 'Het Dietist kiezen kan overweldigend aanvoelen. Deze complete gids helpt je stap voor stap de juiste Dietist vinden die perfect aansluit bij jouw behoeften, budget en locatie.',
+    metaDescription: 'Complete gids voor het kiezen van de juiste Dietist bij jou in de buurt. Inclusief checklist, vragen en tips om de beste match te vinden.',
     publishedAt: new Date('2025-09-24T14:00:00.000Z'),
-    tags: ['ADHD', 'Coaching', 'Keuzewijzer', 'Gids', 'Coach vinden'],
+    tags: ['Diëtiek', 'Coaching', 'Keuzewijzer', 'Gids', 'Coach vinden'],
     city: null
   };
 
   const featuredImageUrl = `/img/blog/${post.slug}/featured.webp`;
-  const currentUrl = `https://adhdcoachindebuurt.nl/blog/${post.slug}`;
+  const currentUrl = `https://dietistindebuurt.nl/blog/${post.slug}`;
 
   return (
     <>
@@ -161,10 +161,10 @@ export default function BlogPost() {
             {/* Title and Introduction */}
             <header className="mb-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Hoe kies je de juiste ADHD coach bij jou in de buurt?
+                Hoe kies je de juiste Dietist bij jou in de buurt?
               </h1>
               <p className="text-xl text-gray-600 mb-6">
-                Complete stap-voor-stap gids om <strong>de juiste ADHD coach</strong> te vinden die perfect aansluit bij jouw behoeften, budget en persoonlijkheid. Van onderzoek tot eerste gesprek - alles wat je moet weten.
+                Complete stap-voor-stap gids om <strong>de juiste Dietist</strong> te vinden die perfect aansluit bij jouw behoeften, budget en persoonlijkheid. Van onderzoek tot eerste gesprek - alles wat je moet weten.
               </p>
               <div className="flex items-center text-sm text-gray-500 mb-8">
                 <span>Laatst bijgewerkt: September 2025</span>
@@ -177,12 +177,12 @@ export default function BlogPost() {
             <div className="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
               <h2 className="text-lg font-semibold text-blue-900 mb-3 flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2" />
-                🎯 TL;DR: Perfecte ADHD coach vinden in 5 stappen
+                🎯 TL;DR: Perfecte Dietist vinden in 5 stappen
               </h2>
               <div className="text-blue-800 space-y-2">
                 <p><strong>Strategie:</strong> Bepaal eerst je <strong>coaching doelen</strong>, onderzoek lokale coaches, vergelijk 3-5 kandidaten</p>
                 <ul className="space-y-1 ml-4">
-                  <li>• <strong>Stap 1:</strong> Definieer je specifieke ADHD uitdagingen en coaching doelen</li>
+                  <li>• <strong>Stap 1:</strong> Definieer je specifieke Diëtiek uitdagingen en coaching doelen</li>
                   <li>• <strong>Stap 2:</strong> Onderzoek coaches in je regio (certificering, specialisatie, reviews)</li>
                   <li>• <strong>Stap 3:</strong> Plan intake gesprekken met 3-5 coaches</li>
                   <li>• <strong>Stap 4:</strong> Evalueer match op expertise, persoonlijkheid en budget</li>
@@ -194,16 +194,16 @@ export default function BlogPost() {
             {/* Main Content */}
             <div className="prose prose-lg max-w-none">
               <p>
-                Een <strong>ADHD coach kiezen</strong> is een belangrijke beslissing die je leven significant kan verbeteren. De juiste coach helpt je praktische vaardigheden ontwikkelen, doelen bereiken en je ADHD-gerelateerde uitdagingen effectief aanpakken. Maar hoe vind je die perfecte match?
+                Een <strong>Dietist kiezen</strong> is een belangrijke beslissing die je leven significant kan verbeteren. De juiste coach helpt je praktische vaardigheden ontwikkelen, doelen bereiken en je Diëtiek-gerelateerde uitdagingen effectief aanpakken. Maar hoe vind je die perfecte match?
               </p>
 
               <p>
-                Deze complete gids neemt je stap voor stap mee door het hele proces, van het bepalen van je coaching behoeften tot het maken van de uiteindelijke keuze. Na het lezen weet je precies hoe je <strong>de juiste ADHD coach vinden</strong> die past bij jouw unieke situatie.
+                Deze complete gids neemt je stap voor stap mee door het hele proces, van het bepalen van je coaching behoeften tot het maken van de uiteindelijke keuze. Na het lezen weet je precies hoe je <strong>de juiste Dietist vinden</strong> die past bij jouw unieke situatie.
               </p>
 
               <h2>Stap 1: Bepaal je coaching doelen en behoeften</h2>
               <p>
-                Voor je begint met zoeken naar <strong>ADHD coaches bij jou in de buurt</strong>, is het essentieel om helder te krijgen wat je precies wilt bereiken met coaching.
+                Voor je begint met zoeken naar <strong>Dietisten bij jou in de buurt</strong>, is het essentieel om helder te krijgen wat je precies wilt bereiken met coaching.
               </p>
 
               <div className="bg-green-50 p-6 rounded-lg my-6">
@@ -238,7 +238,7 @@ export default function BlogPost() {
                         <div>□ Emotieregulatie en impulscontrole</div>
                         <div>□ Relatie communicatie verbeteren</div>
                         <div>□ Zelfvertrouwen en zelfbeeld opbouwen</div>
-                        <div>□ Ouderschap met ADHD navigeren</div>
+                        <div>□ Ouderschap met Diëtiek navigeren</div>
                       </div>
                       <div className="space-y-2 text-green-700 text-sm">
                         <div>□ Financieel management en budgettering</div>
@@ -277,7 +277,7 @@ export default function BlogPost() {
 
               <h2>Stap 2: Onderzoek en identificeer potentiële coaches</h2>
               <p>
-                Nu je weet wat je zoekt, is het tijd om <strong>ADHD coaches in je regio</strong> te onderzoeken. Een systematische aanpak helpt je de beste kandidaten te identificeren.
+                Nu je weet wat je zoekt, is het tijd om <strong>Dietisten in je regio</strong> te onderzoeken. Een systematische aanpak helpt je de beste kandidaten te identificeren.
               </p>
 
               <div className="bg-blue-50 p-6 rounded-lg my-6">
@@ -287,11 +287,11 @@ export default function BlogPost() {
                   <div className="bg-white p-4 rounded border border-blue-200">
                     <h5 className="font-medium text-blue-800 mb-3">1. Lokale coaches vinden:</h5>
                     <div className="space-y-2 text-blue-700 text-sm">
-                      <div>□ Zoek op platforms zoals ADHD Coach in de Buurt</div>
+                      <div>□ Zoek op platforms zoals Dietist in de Buurt</div>
                       <div>□ Vraag referenties van je huisarts of GGZ instelling</div>
                       <div>□ Check certificering organisaties (NOBCO, ICF, EMCC)</div>
                       <div>□ Zoek in coaching directories en LinkedIn</div>
-                      <div>□ Vraag aanbevelingen in ADHD support groepen</div>
+                      <div>□ Vraag aanbevelingen in Diëtiek support groepen</div>
                     </div>
                   </div>
 
@@ -299,7 +299,7 @@ export default function BlogPost() {
                     <h5 className="font-medium text-blue-800 mb-3">2. Kwalificaties checken:</h5>
                     <div className="grid md:grid-cols-2 gap-3">
                       <div className="space-y-2 text-blue-700 text-sm">
-                        <div>□ ADHD-specifieke training en certificering</div>
+                        <div>□ Diëtiek-specifieke training en certificering</div>
                         <div>□ Erkende coaching opleiding (minimaal 125 uur)</div>
                         <div>□ Lidmaatschap professionele coaching organisatie</div>
                         <div>□ Voortgaande educatie en supervisie</div>
@@ -307,7 +307,7 @@ export default function BlogPost() {
                       <div className="space-y-2 text-blue-700 text-sm">
                         <div>□ Minimaal 2-3 jaar coaching ervaring</div>
                         <div>□ Specialisatie in jouw doelgebied</div>
-                        <div>□ Track record met ADHD cliënten</div>
+                        <div>□ Track record met Diëtiek cliënten</div>
                         <div>□ Referenties en testimonials beschikbaar</div>
                       </div>
                     </div>
@@ -329,7 +329,7 @@ export default function BlogPost() {
 
               <h2>Stap 3: Evaluatie criteria opstellen</h2>
               <p>
-                Maak een systematische vergelijking mogelijk door van tevoren criteria op te stellen waarop je <strong>ADHD coaches</strong> gaat beoordelen.
+                Maak een systematische vergelijking mogelijk door van tevoren criteria op te stellen waarop je <strong>Dietisten</strong> gaat beoordelen.
               </p>
 
               <div className="bg-purple-50 p-6 rounded-lg my-6">
@@ -341,11 +341,11 @@ export default function BlogPost() {
                     <div className="grid md:grid-cols-2 gap-3 text-purple-700 text-sm">
                       <div>
                         <div className="font-medium mb-1">Certificering & Training:</div>
-                        <div>Score 1-10: ADHD-specifieke kwalificaties</div>
+                        <div>Score 1-10: Diëtiek-specifieke kwalificaties</div>
                       </div>
                       <div>
                         <div className="font-medium mb-1">Ervaring:</div>
-                        <div>Score 1-10: Jaren ervaring + aantal ADHD cliënten</div>
+                        <div>Score 1-10: Jaren ervaring + aantal Diëtiek cliënten</div>
                       </div>
                       <div>
                         <div className="font-medium mb-1">Specialisatie match:</div>
@@ -445,7 +445,7 @@ export default function BlogPost() {
                     <h5 className="font-medium text-orange-800 mb-3">Voorbereiding (48 uur voor gesprek):</h5>
                     <div className="space-y-2 text-orange-700 text-sm">
                       <div>□ Bereid je top 10 vragen voor (zie onze vragenlijst)</div>
-                      <div>□ Schrijf je specifieke ADHD uitdagingen op</div>
+                      <div>□ Schrijf je specifieke Diëtiek uitdagingen op</div>
                       <div>□ Bepaal je ideale coaching frequentie en budget</div>
                       <div>□ Onderzoek de achtergrond van de coach nogmaals</div>
                       <div>□ Stel realistische verwachtingen voor het gesprek</div>
@@ -584,7 +584,7 @@ export default function BlogPost() {
                           <div>⚠ Vaage antwoorden op specifieke vragen</div>
                           <div>⚠ Druk om snel te beslissen</div>
                           <div>⚠ Onrealistische beloftes over resultaten</div>
-                          <div>⚠ Gebrek aan ADHD-specifieke expertise</div>
+                          <div>⚠ Gebrek aan Diëtiek-specifieke expertise</div>
                         </div>
                       </div>
                     </div>
@@ -676,7 +676,7 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              <h2>Veelgestelde vragen over ADHD coach selectie</h2>
+              <h2>Veelgestelde vragen over Dietist selectie</h2>
               
               <div className="space-y-4 my-8">
                 <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
@@ -687,9 +687,9 @@ export default function BlogPost() {
                 </div>
 
                 <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-                  <h4 className="font-semibold text-yellow-900 mb-2">Wat als er geen goede ADHD coaches in mijn regio zijn?</h4>
+                  <h4 className="font-semibold text-yellow-900 mb-2">Wat als er geen goede Dietisten in mijn regio zijn?</h4>
                   <p className="text-yellow-800 text-sm">
-                    Overweeg online coaching - dit geeft toegang tot specialisten uit heel Nederland. Veel coaches bieden hybrid modellen (online + enkele persoonlijke sessies). Kwaliteit gaat boven locatie, zeker voor ADHD coaching waar praktische tools centraal staan.
+                    Overweeg online coaching - dit geeft toegang tot specialisten uit heel Nederland. Veel coaches bieden hybrid modellen (online + enkele persoonlijke sessies). Kwaliteit gaat boven locatie, zeker voor voedingsadvies waar praktische tools centraal staan.
                   </p>
                 </div>
 
@@ -711,7 +711,7 @@ export default function BlogPost() {
               {/* Call to Action */}
               <div className="my-12 bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-xl p-8 text-center">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Klaar om je perfecte ADHD coach te vinden?
+                  Klaar om je perfecte Dietist te vinden?
                 </h2>
                 <p className="text-gray-700 mb-6">
                   Gebruik deze gids om systematisch de ideale coach te selecteren die jouw leven zal transformeren.

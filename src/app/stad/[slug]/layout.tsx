@@ -43,28 +43,28 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `ADHD Coaches in ${city.name} | Vind lokale ADHD ondersteuning`;
-  const description = `Ontdek ${city.coachCount} gecertificeerde ADHD coaches in ${city.name}, ${city.province}. Vergelijk specialisaties, bekijk reviews en vind de perfecte ADHD coach bij jou in de buurt.`;
+  const title = `Diëtiek Coaches in ${city.name} | Vind lokale Diëtiek ondersteuning`;
+  const description = `Ontdek ${city.coachCount} gecertificeerde Dietisten in ${city.name}, ${city.province}. Vergelijk specialisaties, bekijk reviews en vind de perfecte Dietist bij jou in de buurt.`;
 
   return {
     title,
     description,
-    keywords: `ADHD coach ${city.name}, ADHD coaching ${city.name}, ADHD behandeling ${city.province}, gedragstherapeut ${city.name}, ADHD hulp ${city.country}`,
+    keywords: `Dietist ${city.name}, voedingsadvies ${city.name}, Diëtiek behandeling ${city.province}, gedragstherapeut ${city.name}, Diëtiek hulp ${city.country}`,
     openGraph: {
       title,
       description,
       type: 'website',
       locale: 'nl_NL',
-      url: `https://adhdcoachindebuurt.nl/stad/${slug}`,
-      siteName: 'ADHD Coach in de Buurt',
+      url: `https://dietistindebuurt.nl/stad/${slug}`,
+      siteName: 'Dietist in de Buurt',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `ADHD Coaches in ${city.name}`,
-      description: `Vind de beste ADHD coaches in ${city.name}. ${city.coachCount} gecertificeerde professionals beschikbaar.`,
+      title: `Diëtiek Coaches in ${city.name}`,
+      description: `Vind de beste Dietisten in ${city.name}. ${city.coachCount} gecertificeerde professionals beschikbaar.`,
     },
     alternates: {
-      canonical: `https://adhdcoachindebuurt.nl/stad/${slug}`,
+      canonical: `https://dietistindebuurt.nl/stad/${slug}`,
     },
     robots: {
       index: true,

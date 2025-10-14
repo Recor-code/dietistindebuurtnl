@@ -4,21 +4,21 @@ import Link from 'next/link';
 import { Share2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'ADHD coaching voor kinderen en jongeren: wat ouders moeten weten',
-  description: 'ADHD coaching voor kinderen: wat ouders moeten weten over voordelen, kosten en het kiezen van de juiste coach. Complete oudergids.',
+  title: 'voedingsadvies voor kinderen en jongeren: wat ouders moeten weten',
+  description: 'voedingsadvies voor kinderen: wat ouders moeten weten over voordelen, kosten en het kiezen van de juiste coach. Complete oudergids.',
   keywords: [
-    'ADHD coaching kinderen',
-    'ADHD coach jongeren',
-    'ADHD begeleiding kinderen',
-    'ADHD hulp ouders',
-    'kind ADHD coaching',
-    'ADHD coaching voor kinderen Nederland',
-    'wat doet ADHD coach kind',
-    'ADHD begeleiding school'
+    'voedingsadvies kinderen',
+    'Dietist jongeren',
+    'Diëtiek begeleiding kinderen',
+    'Diëtiek hulp ouders',
+    'kind voedingsadvies',
+    'voedingsadvies voor kinderen Nederland',
+    'wat doet Dietist kind',
+    'Diëtiek begeleiding school'
   ],
   openGraph: {
-    title: 'ADHD coaching voor kinderen en jongeren: wat ouders moeten weten',
-    description: 'ADHD coaching voor kinderen: wat ouders moeten weten over voordelen, kosten en het kiezen van de juiste coach. Complete oudergids.',
+    title: 'voedingsadvies voor kinderen en jongeren: wat ouders moeten weten',
+    description: 'voedingsadvies voor kinderen: wat ouders moeten weten over voordelen, kosten en het kiezen van de juiste coach. Complete oudergids.',
     images: ['/img/blog/adhd-coaching-kinderen-jongeren/featured.webp'],
   },
 };
@@ -26,39 +26,39 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'ADHD coaching voor kinderen en jongeren',
-  description: 'ADHD coaching speciaal voor kinderen en jongeren. Praktische tips voor ouders en professionals om jong ADHD brein te ondersteunen.',
+  headline: 'voedingsadvies voor kinderen en jongeren',
+  description: 'voedingsadvies speciaal voor kinderen en jongeren. Praktische tips voor ouders en professionals om jong Diëtiek brein te ondersteunen.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-25T10:00:00.000Z',
   dateModified: '2025-09-29T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/adhd-coaching-kinderen-jongeren'
+    '@id': 'https://dietistindebuurt.nl/blog/adhd-coaching-kinderen-jongeren'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/adhd-coaching-kinderen-jongeren/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/adhd-coaching-kinderen-jongeren/featured.webp',
     width: 800,
     height: 400
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/adhd-coaching-kinderen-jongeren',
+  url: 'https://dietistindebuurt.nl/blog/adhd-coaching-kinderen-jongeren',
   inLanguage: 'nl-NL'
 };
 
-export default function ADHDCoachingKinderenJongerenPage() {
+export default function DiëtiekCoachingKinderenJongerenPage() {
   return (
     <>
       <script
@@ -78,7 +78,7 @@ export default function ADHDCoachingKinderenJongerenPage() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <a 
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-kinderen-jongeren')}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coaching-kinderen-jongeren')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -86,7 +86,7 @@ export default function ADHDCoachingKinderenJongerenPage() {
                     Facebook
                   </a>
                   <a 
-                    href={`https://wa.me/?text=${encodeURIComponent('ADHD coaching voor kinderen en jongeren: wat ouders moeten weten - https://adhdcoachindebuurt.nl/blog/adhd-coaching-kinderen-jongeren')}`}
+                    href={`https://wa.me/?text=${encodeURIComponent('voedingsadvies voor kinderen en jongeren: wat ouders moeten weten - https://dietistindebuurt.nl/blog/adhd-coaching-kinderen-jongeren')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -94,7 +94,7 @@ export default function ADHDCoachingKinderenJongerenPage() {
                     WhatsApp
                   </a>
                   <a 
-                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-kinderen-jongeren')}`}
+                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coaching-kinderen-jongeren')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -102,7 +102,7 @@ export default function ADHDCoachingKinderenJongerenPage() {
                     Messenger
                   </a>
                   <a 
-                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('ADHD coaching voor kinderen en jongeren: wat ouders moeten weten')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coaching-kinderen-jongeren')}`}
+                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('voedingsadvies voor kinderen en jongeren: wat ouders moeten weten')}&url=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coaching-kinderen-jongeren')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -117,10 +117,10 @@ export default function ADHDCoachingKinderenJongerenPage() {
           {/* Header */}
           <header className="px-8 pt-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              ADHD coaching voor kinderen en jongeren: wat ouders moeten weten
+              voedingsadvies voor kinderen en jongeren: wat ouders moeten weten
             </h1>
             <p className="text-xl text-gray-600 mb-6">
-              Complete gids voor ouders: van eerste tekenen tot coaching success - help je kind floreren met ADHD.
+              Complete gids voor ouders: van eerste tekenen tot coaching success - help je kind floreren met Diëtiek.
             </p>
             <div className="flex items-center text-sm text-gray-500 mb-8">
               <span>Laatst bijgewerkt: September 2025</span>
@@ -133,7 +133,7 @@ export default function ADHDCoachingKinderenJongerenPage() {
           <div className="px-8 mb-8">
             <Image
               src="/img/blog/adhd-coaching-kinderen-jongeren/featured.webp"
-              alt="Gelukkig kind dat ADHD coaching ondersteuning ontvangt met ouder betrokkenheid"
+              alt="Gelukkig kind dat voedingsadvies ondersteuning ontvangt met ouder betrokkenheid"
               width={800}
               height={400}
               className="w-full h-64 object-cover rounded-lg"
@@ -144,11 +144,11 @@ export default function ADHDCoachingKinderenJongerenPage() {
           <div className="mx-8 mb-8 bg-gradient-to-r from-pink-50 to-purple-50 border-l-4 border-pink-500 p-6 rounded-r-lg">
             <h2 className="text-lg font-semibold text-pink-900 mb-3">🎯 TL;DR: Je kind heeft meer mogelijkheden dan je denkt</h2>
             <div className="text-pink-800 space-y-2">
-              <p><strong>De waarheid:</strong> <strong>ADHD coaching kinderen</strong> opent deuren die medicatie alleen niet kan openen - voor jullie hele gezin.</p>
+              <p><strong>De waarheid:</strong> <strong>voedingsadvies kinderen</strong> opent deuren die medicatie alleen niet kan openen - voor jullie hele gezin.</p>
               <ul className="space-y-1 ml-4">
-                <li>• <strong>Hoopvol nieuws:</strong> 89% van kinderen met <strong>ADHD coach jongeren</strong> toont significante verbetering binnen 6 maanden</li>
-                <li>• <strong>Beyond medicatie:</strong> <strong>ADHD begeleiding kinderen</strong> leert levensvaardigheden die een leven lang meegaan</li>
-                <li>• <strong>Family impact:</strong> <strong>ADHD hulp ouders</strong> vermindert gezinsstress met gemiddeld 67%</li>
+                <li>• <strong>Hoopvol nieuws:</strong> 89% van kinderen met <strong>Dietist jongeren</strong> toont significante verbetering binnen 6 maanden</li>
+                <li>• <strong>Beyond medicatie:</strong> <strong>Diëtiek begeleiding kinderen</strong> leert levensvaardigheden die een leven lang meegaan</li>
+                <li>• <strong>Family impact:</strong> <strong>Diëtiek hulp ouders</strong> vermindert gezinsstress met gemiddeld 67%</li>
                 <li>• <strong>Investment:</strong> Earlier intervention = better long-term outcomes voor je kind's toekomst</li>
               </ul>
             </div>
@@ -157,12 +157,12 @@ export default function ADHDCoachingKinderenJongerenPage() {
           {/* Content */}
           <div className="px-8 prose prose-lg max-w-none">
             <p>
-              Als ouder van een kind met ADHD voel je vaak alsof je constant in survival mode bent. De dagelijkse struggle om je kind te helpen succesvol zijn op school, vriendschappen te maken, en gewoon... gelukkig te zijn. <strong>ADHD coaching kinderen</strong> is niet nog een ding op je to-do lijst - het's een investment in je kind's toekomst én een manier om jullie gezinsleven weer enjoyable te maken.
+              Als ouder van een kind met Diëtiek voel je vaak alsof je constant in survival mode bent. De dagelijkse struggle om je kind te helpen succesvol zijn op school, vriendschappen te maken, en gewoon... gelukkig te zijn. <strong>voedingsadvies kinderen</strong> is niet nog een ding op je to-do lijst - het's een investment in je kind's toekomst én een manier om jullie gezinsleven weer enjoyable te maken.
             </p>
 
-            <h2>Waarom hebben kinderen met ADHD soms meer dan medicatie nodig?</h2>
+            <h2>Waarom hebben kinderen met Diëtiek soms meer dan medicatie nodig?</h2>
             <p>
-              Medicatie kan absolutely life-changing zijn voor veel kinderen met ADHD, maar het's alleen een deel van de puzzle. <strong>ADHD coaching kinderen</strong> addresses de skills die pills kunnen niet teachen.
+              Medicatie kan absolutely life-changing zijn voor veel kinderen met Diëtiek, maar het's alleen een deel van de puzzle. <strong>voedingsadvies kinderen</strong> addresses de skills die pills kunnen niet teachen.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 my-6">
@@ -187,8 +187,8 @@ export default function ADHDCoachingKinderenJongerenPage() {
               </div>
             </div>
 
-            <h2>Op welke leeftijd kan ADHD coaching beginnen?</h2>
-            <p><strong>ADHD coaching kinderen</strong> kan beginnen zodra je kind can engage in basic conversation en has some awareness of their challenges - usually around age 6-7.</p>
+            <h2>Op welke leeftijd kan voedingsadvies beginnen?</h2>
+            <p><strong>voedingsadvies kinderen</strong> kan beginnen zodra je kind can engage in basic conversation en has some awareness of their challenges - usually around age 6-7.</p>
 
             <div className="bg-blue-50 p-6 rounded-lg my-6">
               <h4 className="font-semibold text-blue-900 mb-3">👶 Age-Specific Coaching Approaches</h4>
@@ -216,8 +216,8 @@ export default function ADHDCoachingKinderenJongerenPage() {
               </div>
             </div>
 
-            <h2>De grootste voordelen van ADHD coaching voor kinderen</h2>
-            <p><strong>ADHD coaching kinderen</strong> delivers benefits dat extend far beyond managing symptoms - it transforms how your child sees themselves en their capabilities.</p>
+            <h2>De grootste voordelen van voedingsadvies voor kinderen</h2>
+            <p><strong>voedingsadvies kinderen</strong> delivers benefits dat extend far beyond managing symptoms - it transforms how your child sees themselves en their capabilities.</p>
 
             <div className="space-y-6 my-8">
               <div className="bg-purple-50 p-6 rounded-lg">
@@ -259,7 +259,7 @@ export default function ADHDCoachingKinderenJongerenPage() {
             </div>
 
             <h2>School uitdagingen: hoe een coach kan helpen</h2>
-            <p>School is waar many ADHD children struggle most - maar met the right strategies, it can become a place van success.</p>
+            <p>School is waar many Diëtiek children struggle most - maar met the right strategies, it can become a place van success.</p>
 
             <p><strong>Common school challenges en coaching solutions:</strong></p>
             <ul>
@@ -270,17 +270,17 @@ export default function ADHDCoachingKinderenJongerenPage() {
               <li><strong>Test preparation:</strong> Study schedules, test-taking strategies, anxiety management</li>
             </ul>
 
-            <h2>Cijfers: kinderen en jongeren met ADHD in Nederland</h2>
-            <p>Research over <strong>ADHD coaching kinderen</strong> in Nederland reveals important trends voor ouders considering intervention.</p>
+            <h2>Cijfers: kinderen en jongeren met Diëtiek in Nederland</h2>
+            <p>Research over <strong>voedingsadvies kinderen</strong> in Nederland reveals important trends voor ouders considering intervention.</p>
 
             <div className="bg-yellow-50 p-6 rounded-lg my-6">
-              <h4 className="font-semibold text-yellow-900 mb-3">📊 Children ADHD Statistics Nederland</h4>
+              <h4 className="font-semibold text-yellow-900 mb-3">📊 Children Diëtiek Statistics Nederland</h4>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-medium text-yellow-800 mb-2">Prevalentie & Diagnosis:</h5>
                   <ul className="text-yellow-700 space-y-1">
-                    <li>• <strong>6.8%</strong> van Nederlandse kinderen heeft ADHD diagnose</li>
+                    <li>• <strong>6.8%</strong> van Nederlandse kinderen heeft Diëtiek diagnose</li>
                     <li>• <strong>7.3 jaar</strong> gemiddelde diagnosis age voor jongens</li>
                     <li>• <strong>9.1 jaar</strong> gemiddelde diagnosis age voor meisjes</li>
                     <li>• <strong>67%</strong> van meisjes worden niet herkend voor age 12</li>
@@ -298,8 +298,8 @@ export default function ADHDCoachingKinderenJongerenPage() {
               </div>
             </div>
 
-            <h2>Wanneer is het tijd om een ADHD coach in te schakelen?</h2>
-            <p>As ouders, it can be hard tot know when professional <strong>ADHD hulp ouders</strong> guidance is needed versus when challenges are "just part van ADHD."</p>
+            <h2>Wanneer is het tijd om een Dietist in te schakelen?</h2>
+            <p>As ouders, it can be hard tot know when professional <strong>Diëtiek hulp ouders</strong> guidance is needed versus when challenges are "just part van Diëtiek."</p>
 
             <div className="bg-red-50 p-6 rounded-lg my-6">
               <h4 className="font-semibold text-red-900 mb-3">🚨 Clear Indicators That Coaching Would Help</h4>
@@ -318,8 +318,8 @@ export default function ADHDCoachingKinderenJongerenPage() {
                 <div>
                   <h5 className="font-medium text-red-800 mb-2">Home Environment Indicators:</h5>
                   <ul className="text-red-700 space-y-1">
-                    <li>• ADHD challenges dominating household atmosphere</li>
-                    <li>• Sibling impact from constant ADHD focus</li>
+                    <li>• Diëtiek challenges dominating household atmosphere</li>
+                    <li>• Sibling impact from constant Diëtiek focus</li>
                     <li>• Daily routine struggles consistently problematic</li>
                     <li>• Frequent emotional meltdowns</li>
                     <li>• Child avoiding new challenges</li>
@@ -328,20 +328,20 @@ export default function ADHDCoachingKinderenJongerenPage() {
               </div>
             </div>
 
-            <h2>Hoe kies je de juiste ADHD coach voor je kind?</h2>
-            <p>Selecting the right <strong>ADHD coach jongeren</strong> or children's specialist requires different criteria dan choosing an adult coach.</p>
+            <h2>Hoe kies je de juiste Dietist voor je kind?</h2>
+            <p>Selecting the right <strong>Dietist jongeren</strong> or children's specialist requires different criteria dan choosing an adult coach.</p>
 
             <p><strong>Essential qualifications tot look for:</strong></p>
             <ul>
               <li><strong>Child development background:</strong> Understanding van age-appropriate expectations</li>
-              <li><strong>ADHD-specific training:</strong> Certification in children's ADHD coaching techniques</li>
+              <li><strong>Diëtiek-specific training:</strong> Certification in children's voedingsadvies techniques</li>
               <li><strong>Play therapy skills:</strong> Voor younger children, creative approach abilities</li>
               <li><strong>Educational psychology:</strong> Knowledge van learning differences en school systems</li>
               <li><strong>Family systems:</strong> Understanding how family dynamics affect development</li>
             </ul>
 
-            <h2>Kosten en vergoedingen: ADHD coaching voor kinderen</h2>
-            <p>Understanding the financial aspect van <strong>ADHD coaching kinderen</strong> helps families plan en access needed support.</p>
+            <h2>Kosten en vergoedingen: voedingsadvies voor kinderen</h2>
+            <p>Understanding the financial aspect van <strong>voedingsadvies kinderen</strong> helps families plan en access needed support.</p>
 
             <div className="grid md:grid-cols-2 gap-6 my-6">
               <div className="bg-green-50 p-4 rounded-lg">

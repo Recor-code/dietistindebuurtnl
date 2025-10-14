@@ -169,26 +169,26 @@ export const belgianCities: CityData[] = [
 
 export const allCities = [...dutchCities, ...belgianCities];
 
-// ADHD statistics templates for cities
+// Dietist statistics templates for cities
 export const adhdStatsTemplate = {
-  prevalenceAdults: '4-6%',
-  prevalenceChildren: '5-8%',
-  waitingTimeAverageWeeks: 12,
-  availableCoaches: 0, // Will be calculated based on actual coaches
-  averageRating: 4.2,
+  prevalenceAdults: '30-40%',
+  prevalenceChildren: '15-20%',
+  waitingTimeAverageWeeks: 4,
+  availableCoaches: 0, // Will be calculated based on actual dietists
+  averageRating: 4.5,
   treatmentTypes: [
-    'ADHD Coaching',
-    'Gedragstherapie',
-    'Medicatie begeleiding',
-    'Psychoeducatie',
-    'Ouder/partner coaching'
+    'Voedingsadvies',
+    'Dieetbegeleiding',
+    'Gewichtsmanagement',
+    'Sportvoeding',
+    'Medische voeding'
   ]
 };
 
 export const cityTldrTemplates = [
-  'ADHD coach zoeken in {city}? Ontdek ervaren professionals die jou helpen met focus, planning en dagelijkse uitdagingen.',
-  'Professionele ADHD ondersteuning in {city}. Van coaching tot therapie - vind de juiste hulp bij jou in de buurt.',
-  'ADHD hulp in {city}: bekijk reviews, beschikbaarheid en specialisaties van lokale coaches en therapeuten.',
+  'Dietist zoeken in {city}? Ontdek ervaren professionals die jou helpen met gezonde voeding, afvallen en voedingsadvies.',
+  'Professionele voedingsadvies in {city}. Van dieetbegeleiding tot sportvoeding - vind de juiste hulp bij jou in de buurt.',
+  'Dietist in {city}: bekijk reviews, beschikbaarheid en specialisaties van lokale dietisten.',
 ];
 
 export function generateCityTldr(cityName: string): string {

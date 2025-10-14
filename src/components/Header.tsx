@@ -17,14 +17,14 @@ export default function Header() {
             <div className="w-10 h-10 relative">
               <Image 
                 src="/images/logo.webp"
-                alt="ADHD Coach in de Buurt Logo"
+                alt="Dietist in de Buurt Logo"
                 width={40}
                 height={40}
                 className="rounded-full object-cover w-10 h-10"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-800 leading-tight">ADHD Coaching</span>
+              <span className="text-lg font-bold text-gray-800 leading-tight">Dietist</span>
               <span className="text-sm text-gray-600 leading-tight">in de Buurt</span>
             </div>
           </Link>
@@ -42,12 +42,10 @@ export default function Header() {
           </nav>
 
           <a
-            href="https://adhdzelftest.nl"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
           >
-            Gratis ADHD Test
+            Gratis Consult
           </a>
         </div>
 
@@ -59,14 +57,14 @@ export default function Header() {
               <div className="w-10 h-10 relative">
                 <Image 
                   src="/images/logo.webp"
-                  alt="ADHD Coach in de Buurt Logo"
+                  alt="Dietist in de Buurt Logo"
                   width={40}
                   height={40}
                   className="rounded-full object-cover w-10 h-10"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-gray-800 leading-tight">ADHD Coaching</span>
+                <span className="text-lg font-bold text-gray-800 leading-tight">Dietist</span>
                 <span className="text-sm text-gray-600 leading-tight">in de Buurt</span>
               </div>
             </Link>
@@ -82,12 +80,10 @@ export default function Header() {
 
           {/* CTA Button - Always Visible Below Logo */}
           <a
-            href="https://adhdzelftest.nl"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="block w-full bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md text-center"
           >
-            Gratis ADHD Test
+            Gratis Consult
           </a>
         </div>
       </div>

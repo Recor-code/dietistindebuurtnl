@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
       ip_address: userIP,
       user_agent: userAgent,
       submission_date: new Date().toISOString(),
-      source: 'adhdcoachindebuurt.nl',
+      source: 'dietistindebuurt.nl',
       quiz_type: 'matching_quiz'
     };
 

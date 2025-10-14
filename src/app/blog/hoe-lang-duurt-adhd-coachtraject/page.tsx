@@ -4,21 +4,21 @@ import Link from 'next/link';
 import { Share2, Clock, Calendar, TrendingUp, CheckCircle2, Users, Target, BarChart3, Euro, Lightbulb, AlertCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Hoe lang duurt een ADHD coachtraject gemiddeld?',
-  description: 'Hoe lang duurt ADHD coaching gemiddeld? Ontdek alle factoren die de duur bepalen en wat je kunt verwachten van je traject.',
+  title: 'Hoe lang duurt een Dietisttraject gemiddeld?',
+  description: 'Hoe lang duurt voedingsadvies gemiddeld? Ontdek alle factoren die de duur bepalen en wat je kunt verwachten van je traject.',
   keywords: [
-    'ADHD coachtraject duur',
-    'hoe lang ADHD coaching',
-    'ADHD coaching duur',
-    'ADHD coachtraject tijd',
-    'lengte ADHD coaching',
-    'hoeveel sessies ADHD coaching',
-    'ADHD coaching tijdsduur Nederland',
-    'wanneer klaar met ADHD coaching'
+    'Dietisttraject duur',
+    'hoe lang voedingsadvies',
+    'voedingsadvies duur',
+    'Dietisttraject tijd',
+    'lengte voedingsadvies',
+    'hoeveel sessies voedingsadvies',
+    'voedingsadvies tijdsduur Nederland',
+    'wanneer klaar met voedingsadvies'
   ],
   openGraph: {
-    title: 'Hoe lang duurt een ADHD coachtraject gemiddeld?',
-    description: 'Hoe lang duurt ADHD coaching gemiddeld? Ontdek alle factoren die de duur bepalen en wat je kunt verwachten van je traject.',
+    title: 'Hoe lang duurt een Dietisttraject gemiddeld?',
+    description: 'Hoe lang duurt voedingsadvies gemiddeld? Ontdek alle factoren die de duur bepalen en wat je kunt verwachten van je traject.',
     images: ['/img/blog/adhd-coachtraject-duur/featured.webp'],
   },
 };
@@ -26,39 +26,39 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Hoe lang duurt een ADHD coachtraject',
-  description: 'Complete tijdlijn van ADHD coaching: van intake tot afronding. Ontdek wat je kunt verwachten qua duur en resultaten.',
+  headline: 'Hoe lang duurt een Dietisttraject',
+  description: 'Complete tijdlijn van voedingsadvies: van intake tot afronding. Ontdek wat je kunt verwachten qua duur en resultaten.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-25T10:00:00.000Z',
   dateModified: '2025-09-29T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/hoe-lang-duurt-adhd-coachtraject'
+    '@id': 'https://dietistindebuurt.nl/blog/hoe-lang-duurt-adhd-coachtraject'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/hoe-lang-duurt-adhd-coachtraject/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/hoe-lang-duurt-adhd-coachtraject/featured.webp',
     width: 800,
     height: 400
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/hoe-lang-duurt-adhd-coachtraject',
+  url: 'https://dietistindebuurt.nl/blog/hoe-lang-duurt-adhd-coachtraject',
   inLanguage: 'nl-NL'
 };
 
-export default function ADHDCoachtrajectDuurPage() {
+export default function DiëtiekCoachtrajectDuurPage() {
   const trajectDurations = [
     {
       type: "Kort traject",
@@ -168,7 +168,7 @@ export default function ADHDCoachtrajectDuurPage() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <a 
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coachtraject-duur')}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coachtraject-duur')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -176,7 +176,7 @@ export default function ADHDCoachtrajectDuurPage() {
                     Facebook
                   </a>
                   <a 
-                    href={`https://wa.me/?text=${encodeURIComponent('Hoe lang duurt een ADHD coachtraject gemiddeld? - https://adhdcoachindebuurt.nl/blog/adhd-coachtraject-duur')}`}
+                    href={`https://wa.me/?text=${encodeURIComponent('Hoe lang duurt een Dietisttraject gemiddeld? - https://dietistindebuurt.nl/blog/adhd-coachtraject-duur')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -184,7 +184,7 @@ export default function ADHDCoachtrajectDuurPage() {
                     WhatsApp
                   </a>
                   <a 
-                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coachtraject-duur')}`}
+                    href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coachtraject-duur')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -192,7 +192,7 @@ export default function ADHDCoachtrajectDuurPage() {
                     Messenger
                   </a>
                   <a 
-                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('Hoe lang duurt een ADHD coachtraject gemiddeld?')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/adhd-coachtraject-duur')}`}
+                    href={`https://x.com/intent/tweet?text=${encodeURIComponent('Hoe lang duurt een Dietisttraject gemiddeld?')}&url=${encodeURIComponent('https://dietistindebuurt.nl/blog/adhd-coachtraject-duur')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -207,10 +207,10 @@ export default function ADHDCoachtrajectDuurPage() {
           {/* Header */}
           <header className="px-8 pt-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Hoe lang duurt een ADHD coachtraject gemiddeld?
+              Hoe lang duurt een Dietisttraject gemiddeld?
             </h1>
             <p className="text-xl text-gray-600 mb-6">
-              Realistische tijdslijnen en wat de <strong>ADHD coachtraject duur</strong> bepaalt - van korte intensieve trajecten tot langdurige transformatieprocessen.
+              Realistische tijdslijnen en wat de <strong>Dietisttraject duur</strong> bepaalt - van korte intensieve trajecten tot langdurige transformatieprocessen.
             </p>
             <div className="flex items-center text-sm text-gray-500 mb-8">
               <span>Laatst bijgewerkt: September 2025</span>
@@ -234,12 +234,12 @@ export default function ADHDCoachtrajectDuurPage() {
           <div className="mx-8 mb-8 bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
             <h2 className="text-lg font-semibold text-blue-900 mb-3 flex items-center">
               <Clock className="w-5 h-5 mr-2" />
-              ⏰ TL;DR: Tijdsinvestering in ADHD coaching
+              ⏰ TL;DR: Tijdsinvestering in voedingsadvies
             </h2>
             <div className="text-blue-800 space-y-2">
-              <p><strong>Gemiddeld:</strong> <strong>ADHD coaching duur</strong> is 6-12 maanden (25-40 sessies) voor de meeste mensen.</p>
+              <p><strong>Gemiddeld:</strong> <strong>voedingsadvies duur</strong> is 6-12 maanden (25-40 sessies) voor de meeste mensen.</p>
               <ul className="space-y-1 ml-4">
-                <li>• <strong>Kort (3-6 mnd):</strong> Specifiek probleem, goede basis - <strong>hoe lang ADHD coaching</strong> bij focus doelen</li>
+                <li>• <strong>Kort (3-6 mnd):</strong> Specifiek probleem, goede basis - <strong>hoe lang voedingsadvies</strong> bij focus doelen</li>
                 <li>• <strong>Gemiddeld (6-12 mnd):</strong> Meerdere levensdomeinen, duurzame verandering</li>
                 <li>• <strong>Lang (12+ mnd):</strong> Complexe situaties, diepgaande transformatie</li>
                 <li>• <strong>Maintenance:</strong> 1 sessie per 2-3 maanden voor doorlopende ondersteuning</li>
@@ -250,22 +250,22 @@ export default function ADHDCoachtrajectDuurPage() {
           {/* Content */}
           <div className="px-8 prose prose-lg max-w-none">
             <p>
-              De vraag <strong>hoe lang ADHD coaching</strong> duurt is een van de meest gestelde vragen tijdens intakegesprekken. Het antwoord is genuanceerder dan "6 maanden" of "een jaar" - de <strong>ADHD coachtraject tijd</strong> hangt af van vele individuele factoren. In dit artikel delen we concrete cijfers en realistische verwachtingen.
+              De vraag <strong>hoe lang voedingsadvies</strong> duurt is een van de meest gestelde vragen tijdens intakegesprekken. Het antwoord is genuanceerder dan "6 maanden" of "een jaar" - de <strong>Dietisttraject tijd</strong> hangt af van vele individuele factoren. In dit artikel delen we concrete cijfers en realistische verwachtingen.
             </p>
 
             <p>
-              <strong>Lengte ADHD coaching</strong> varieert enorm tussen individuals, maar er zijn duidelijke patronen zichtbaar in Nederlandse coaching praktijken. We bespreken alle factoren die bepalen <strong>hoeveel sessies ADHD coaching</strong> jij nodig hebt.
+              <strong>Lengte voedingsadvies</strong> varieert enorm tussen individuals, maar er zijn duidelijke patronen zichtbaar in Nederlandse coaching praktijken. We bespreken alle factoren die bepalen <strong>hoeveel sessies voedingsadvies</strong> jij nodig hebt.
             </p>
 
-            <h2>Gemiddelde duur ADHD coaching: wat zeggen de cijfers?</h2>
+            <h2>Gemiddelde duur voedingsadvies: wat zeggen de cijfers?</h2>
             <p>
-              Nederlandse <strong>ADHD coaching tijdsduur Nederland</strong> statistieken tonen duidelijke trends based on extensive client outcome research.
+              Nederlandse <strong>voedingsadvies tijdsduur Nederland</strong> statistieken tonen duidelijke trends based on extensive client outcome research.
             </p>
 
             <div className="bg-gray-50 p-6 rounded-lg my-6">
               <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
                 <BarChart3 className="w-5 h-5 mr-2" />
-                Nederlandse ADHD coaching statistieken
+                Nederlandse voedingsadvies statistieken
               </h4>
               
               <div className="grid md:grid-cols-3 gap-4 mb-4">
@@ -296,7 +296,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Factoren die de duur van je coachtraject beïnvloeden</h2>
             <p>
-              Verschillende elementen bepalen jouw persoonlijke <strong>ADHD coachtraject duur</strong>. Understanding these factors helpt realistic expectations te stellen.
+              Verschillende elementen bepalen jouw persoonlijke <strong>Dietisttraject duur</strong>. Understanding these factors helpt realistic expectations te stellen.
             </p>
 
             <div className="space-y-4 my-8">
@@ -330,7 +330,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Korte trajecten (3-6 maanden): wanneer is dit voldoende?</h2>
             <p>
-              <strong>ADHD coaching duur</strong> van 3-6 maanden works well voor mensen met specific, focused goals en een goede foundation.
+              <strong>voedingsadvies duur</strong> van 3-6 maanden works well voor mensen met specific, focused goals en een goede foundation.
             </p>
 
             <div className="bg-green-50 p-6 rounded-lg my-6">
@@ -373,7 +373,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Middellange trajecten (6-12 maanden): de meest voorkomende duur</h2>
             <p>
-              Met 54% van alle coaching trajecten valt <strong>hoe lang ADHD coaching</strong> meestal in de 6-12 maanden category - en daar zijn goede redenen voor.
+              Met 54% van alle coaching trajecten valt <strong>hoe lang voedingsadvies</strong> meestal in de 6-12 maanden category - en daar zijn goede redenen voor.
             </p>
 
             <div className="bg-blue-50 p-6 rounded-lg my-6">
@@ -385,7 +385,7 @@ export default function ADHDCoachtrajectDuurPage() {
               <div className="space-y-4">
                 <div className="bg-white p-4 rounded border-l-4 border-blue-400">
                   <h5 className="font-medium text-blue-800 mb-2">Habit formation timeline:</h5>
-                  <p className="text-blue-700 text-sm mb-2">Research toont dat ADHD brains 3-8 maanden nodig hebben voor stable habit formation</p>
+                  <p className="text-blue-700 text-sm mb-2">Research toont dat Diëtiek brains 3-8 maanden nodig hebben voor stable habit formation</p>
                   <ul className="text-blue-600 text-xs space-y-1">
                     <li>• Maand 1-2: Nieuwe routines experimenteren</li>
                     <li>• Maand 3-4: Patterns beginnen te stabiliseren</li>
@@ -413,7 +413,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Lange trajecten (12+ maanden): wanneer is meer tijd nodig?</h2>
             <p>
-              18% van coaching clients heeft <strong>ADHD coachtraject tijd</strong> van een jaar of langer nodig voor comprehensive transformation.
+              18% van coaching clients heeft <strong>Dietisttraject tijd</strong> van een jaar of langer nodig voor comprehensive transformation.
             </p>
 
             <div className="bg-purple-50 p-6 rounded-lg my-6">
@@ -426,7 +426,7 @@ export default function ADHDCoachtrajectDuurPage() {
                 <div>
                   <h5 className="font-medium text-purple-800 mb-2">Complexe situaties:</h5>
                   <ul className="text-purple-700 space-y-1 text-sm">
-                    <li>• Trauma geschiedenis dat ADHD complicated</li>
+                    <li>• Trauma geschiedenis dat Diëtiek complicated</li>
                     <li>• Multiple comorbide condities (angst, depressie)</li>
                     <li>• Grote levensveranderingen tijdens coaching</li>
                     <li>• Deep-rooted zelfbeeld issues</li>
@@ -439,9 +439,9 @@ export default function ADHDCoachtrajectDuurPage() {
                   <ul className="text-purple-700 space-y-1 text-sm">
                     <li>• Complete career overhaul</li>
                     <li>• Relationship patterns fundamentally changing</li>
-                    <li>• Identity work rondom ADHD acceptance</li>
+                    <li>• Identity work rondom Diëtiek acceptance</li>
                     <li>• Systematic skill building from ground up</li>
-                    <li>• Leadership development met ADHD strengths</li>
+                    <li>• Leadership development met Diëtiek strengths</li>
                   </ul>
                 </div>
               </div>
@@ -454,7 +454,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Intensiteit vs duur: wekelijks, tweewekelijks of maandelijks?</h2>
             <p>
-              <strong>Lengte ADHD coaching</strong> wordt ook bepaald door frequency van sessions. De meeste effective approach varies per fase.
+              <strong>Lengte voedingsadvies</strong> wordt ook bepaald door frequency van sessions. De meeste effective approach varies per fase.
             </p>
 
             <div className="bg-indigo-50 p-6 rounded-lg my-6">
@@ -464,7 +464,7 @@ export default function ADHDCoachtrajectDuurPage() {
                 <div className="bg-white p-4 rounded border border-indigo-200">
                   <h5 className="font-medium text-indigo-800 mb-2">Startfase (eerste 4-8 weken): WEKELIJKS</h5>
                   <p className="text-indigo-700 text-sm mb-2"><strong>Waarom:</strong> Momentum opbouwen, coaching relatie vestigen, quick wins creëren</p>
-                  <p className="text-indigo-600 text-xs">ADHD brains thrive on consistent reinforcement tijdens nieuwe habit formation</p>
+                  <p className="text-indigo-600 text-xs">Diëtiek brains thrive on consistent reinforcement tijdens nieuwe habit formation</p>
                 </div>
                 
                 <div className="bg-white p-4 rounded border border-indigo-200">
@@ -485,9 +485,9 @@ export default function ADHDCoachtrajectDuurPage() {
               </div>
             </div>
 
-            <h2>Verschillende fases van een ADHD coachtraject uitgelegd</h2>
+            <h2>Verschillende fases van een Dietisttraject uitgelegd</h2>
             <p>
-              Understanding de phases helpt je anticiperen <strong>wanneer klaar met ADHD coaching</strong> en wat je kunt verwachten in each stage.
+              Understanding de phases helpt je anticiperen <strong>wanneer klaar met voedingsadvies</strong> en wat je kunt verwachten in each stage.
             </p>
 
             <div className="space-y-6 my-8">
@@ -528,7 +528,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Cijfers: wat bepaalt het eindpunt van je coaching?</h2>
             <p>
-              Research about <strong>hoeveel sessies ADHD coaching</strong> toont clear patterns in wat successful completion defines.
+              Research about <strong>hoeveel sessies voedingsadvies</strong> toont clear patterns in wat successful completion defines.
             </p>
 
             <div className="bg-emerald-50 p-6 rounded-lg my-6">
@@ -569,7 +569,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Signalen dat je coaching succesvol kunt afronden</h2>
             <p>
-              These concrete indicators help determine <strong>wanneer klaar met ADHD coaching</strong> en ready voor independence of maintenance mode.
+              These concrete indicators help determine <strong>wanneer klaar met voedingsadvies</strong> en ready voor independence of maintenance mode.
             </p>
 
             <div className="bg-teal-50 p-6 rounded-lg my-6">
@@ -633,7 +633,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Kosten per trajectduur: wat investeer je gemiddeld?</h2>
             <p>
-              Financial planning voor <strong>ADHD coaching tijdsduur Nederland</strong> requires understanding total investment across different trajectory lengths.
+              Financial planning voor <strong>voedingsadvies tijdsduur Nederland</strong> requires understanding total investment across different trajectory lengths.
             </p>
 
             <div className="bg-yellow-50 p-6 rounded-lg my-6">
@@ -672,7 +672,7 @@ export default function ADHDCoachtrajectDuurPage() {
 
             <h2>Tips om je coachtraject efficiënter te maken</h2>
             <p>
-              Smart strategies kunnen de <strong>ADHD coachtraject tijd</strong> optimaliseren en betere outcomes creëren binnen kortere timeframes.
+              Smart strategies kunnen de <strong>Dietisttraject tijd</strong> optimaliseren en betere outcomes creëren binnen kortere timeframes.
             </p>
 
             <div className="bg-violet-50 p-6 rounded-lg my-6">
@@ -696,37 +696,37 @@ export default function ADHDCoachtrajectDuurPage() {
               </div>
             </div>
 
-            <h2>Veelgestelde vragen over de duur van ADHD coaching</h2>
+            <h2>Veelgestelde vragen over de duur van voedingsadvies</h2>
             
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 1: Kan ik mijn coaching stoppen als ik me beter voel na 2 maanden?</h3>
-                <p>Je kunt altijd stoppen, maar <strong>hoe lang ADHD coaching</strong> werkt best depends on sustainable change vs temporary improvement. Most lasting change requires 4-6 maanden minimum. Discuss early improvements met je coach om realistic continuation te bepalen.</p>
+                <p>Je kunt altijd stoppen, maar <strong>hoe lang voedingsadvies</strong> werkt best depends on sustainable change vs temporary improvement. Most lasting change requires 4-6 maanden minimum. Discuss early improvements met je coach om realistic continuation te bepalen.</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 2: Wat als ik na een jaar nog steeds vastloop met dezelfde problemen?</h3>
-                <p>Extended challenges kunnen indicate verschillende issues: coach mismatch, underlying medical/mental health needs, of unrealistic expectations. <strong>ADHD coaching duur</strong> should show steady improvement. Consider tweede mening of therapy assessment if progress stagnates.</p>
+                <p>Extended challenges kunnen indicate verschillende issues: coach mismatch, underlying medical/mental health needs, of unrealistic expectations. <strong>voedingsadvies duur</strong> should show steady improvement. Consider tweede mening of therapy assessment if progress stagnates.</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 3: Is het normaal dat mijn vooruitgang niet linear is?</h3>
-                <p>Absolutely normal! ADHD progress komt in waves - periods van breakthrough afgewisseld met plateaus of temporary setbacks. <strong>ADHD coachtraject tijd</strong> accounts voor deze natural fluctuations. Setbacks are often precursors tot major breakthroughs.</p>
+                <p>Absolutely normal! Diëtiek progress komt in waves - periods van breakthrough afgewisseld met plateaus of temporary setbacks. <strong>Dietisttraject tijd</strong> accounts voor deze natural fluctuations. Setbacks are often precursors tot major breakthroughs.</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 4: Kan ik pauzes nemen tijdens mijn coaching traject?</h3>
-                <p>Yes, maar timing matters. Short breaks (2-4 weeks) during stressful periods are fine. Longer breaks kunnen momentum disrupt. <strong>Lengte ADHD coaching</strong> works best met consistency, maar good coaches accommodate necessary life circumstances.</p>
+                <p>Yes, maar timing matters. Short breaks (2-4 weeks) during stressful periods are fine. Longer breaks kunnen momentum disrupt. <strong>Lengte voedingsadvies</strong> works best met consistency, maar good coaches accommodate necessary life circumstances.</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 5: Hoe weet ik of mijn coach realistisch is over duur?</h3>
-                <p>Red flags: promises super-quick results, reluctant tot discuss timeline, geen experience met ADHD specifiek. Good coaches give realistic ranges, explain factors dat affect duration, en regularly review progress naar goals.</p>
+                <p>Red flags: promises super-quick results, reluctant tot discuss timeline, geen experience met Diëtiek specifiek. Good coaches give realistic ranges, explain factors dat affect duration, en regularly review progress naar goals.</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Vraag 6: Is maintenance coaching echt nodig of gewoon extra geld verdienen?</h3>
-                <p>Legitimate maintenance prevents skill decay en provides support during major life changes. <strong>Hoeveel sessies ADHD coaching</strong> maintenance needs varies - typically 4-8 sessions per year. Beware coaches who push excessive ongoing sessions zonder clear value.</p>
+                <p>Legitimate maintenance prevents skill decay en provides support during major life changes. <strong>Hoeveel sessies voedingsadvies</strong> maintenance needs varies - typically 4-8 sessions per year. Beware coaches who push excessive ongoing sessions zonder clear value.</p>
               </div>
 
               <div>
@@ -741,7 +741,7 @@ export default function ADHDCoachtrajectDuurPage() {
                 Wil je weten hoe lang jouw traject duurt? Bespreek dit met een coach
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                <strong>ADHD coachtraject duur</strong> is highly individual - een goede coach kan na intake gesprek realistic timeline geven based op jouw specific situation.
+                <strong>Dietisttraject duur</strong> is highly individual - een goede coach kan na intake gesprek realistic timeline geven based op jouw specific situation.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -758,16 +758,16 @@ export default function ADHDCoachtrajectDuurPage() {
                 <div className="text-left">
                   <h3 className="font-semibold text-gray-900 mb-2">Find experienced trajectory coaches:</h3>
                   <ul className="space-y-1 text-gray-700">
-                    <li>• <Link href="/ede" className="text-blue-600 hover:underline">ADHD coach in Ede</Link> - Timeline planning specialists</li>
-                    <li>• <Link href="/delft" className="text-blue-600 hover:underline">ADHD coach in Delft</Link> - Flexible trajectory approaches</li>
-                    <li>• <Link href="/leeuwarden" className="text-blue-600 hover:underline">ADHD coach in Leeuwarden</Link> - Experience met all duration types</li>
+                    <li>• <Link href="/ede" className="text-blue-600 hover:underline">Dietist in Ede</Link> - Timeline planning specialists</li>
+                    <li>• <Link href="/delft" className="text-blue-600 hover:underline">Dietist in Delft</Link> - Flexible trajectory approaches</li>
+                    <li>• <Link href="/leeuwarden" className="text-blue-600 hover:underline">Dietist in Leeuwarden</Link> - Experience met all duration types</li>
                   </ul>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg p-6 border border-gray-200">
                 <p className="text-xl font-semibold text-gray-900 mb-4">
-                  Remember: <strong>ADHD coaching tijdsduur Nederland</strong> gemiddelden zijn guidelines, not rules.
+                  Remember: <strong>voedingsadvies tijdsduur Nederland</strong> gemiddelden zijn guidelines, not rules.
                 </p>
                 <p className="text-gray-700">
                   Your timeline will be unique tot your situation, goals, complexity, en commitment level. Focus on finding de right coach who can flexibly support jouw journey, however long it takes tot achieve lasting transformation.
@@ -782,7 +782,7 @@ export default function ADHDCoachtrajectDuurPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Gerelateerde artikelen</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <Link href="/blog/kosten-adhd-coaching-tarieven" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-blue-600 mb-2">ADHD coaching kosten en vergoedingen: complete gids 2025</h4>
+                <h4 className="font-semibold text-blue-600 mb-2">voedingsadvies kosten en vergoedingen: complete gids 2025</h4>
                 <p className="text-sm text-gray-600">Financiële planning voor coaching trajecten van verschillende lengtes.</p>
               </Link>
               <Link href="/blog/eerste-gesprek-adhd-coach-voorbereiding" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">

@@ -153,7 +153,7 @@ export default function GoogleMap({ coaches, center, zoom = 12, height = '400px'
               const infoContent = `
                 <div style="padding: 12px; max-width: 280px; font-family: system-ui, -apple-system, sans-serif;">
                   <h3 style="font-size: 16px; font-weight: 600; color: #1f2937; margin: 0 0 4px 0;">${coach.name}</h3>
-                  <p style="font-size: 14px; color: #0ea5e9; margin: 0 0 8px 0;">${coach.specialization || 'ADHD Specialist'}</p>
+                  <p style="font-size: 14px; color: #0ea5e9; margin: 0 0 8px 0;">${coach.specialization || 'Diëtiek Specialist'}</p>
                   ${coach.rating ? `
                     <div style="display: flex; align-items: center; gap: 4px; font-size: 14px; color: #6b7280; margin-bottom: 8px;">
                       <span style="color: #fbbf24;">★</span>

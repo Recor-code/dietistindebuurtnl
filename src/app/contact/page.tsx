@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
-  title: 'Contact - ADHD Coach in de Buurt',
-  description: 'Neem contact met ons op voor vragen over ADHD coaches, coaching of onze platform. We helpen je graag verder.',
+  title: 'Contact - Dietist in de Buurt',
+  description: 'Neem contact met ons op voor vragen over Dietisten, coaching of onze platform. We helpen je graag verder.',
 };
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
             Contact
           </h1>
           <p className="text-xl text-blue-100">
-            Heb je vragen over ADHD coaching of onze platform? We helpen je graag verder.
+            Heb je vragen over voedingsadvies of onze platform? We helpen je graag verder.
           </p>
         </div>
       </section>
@@ -51,8 +51,8 @@ export default function ContactPage() {
                   <Mail className="text-blue-600 flex-shrink-0 mt-1" size={20} />
                   <div>
                     <p className="font-semibold text-gray-700">E-mail</p>
-                    <a href="mailto:info@adhdcoachindebuurt.nl" className="text-blue-600 hover:underline">
-                      info@adhdcoachindebuurt.nl
+                    <a href="mailto:info@dietistindebuurt.nl" className="text-blue-600 hover:underline">
+                      info@dietistindebuurt.nl
                     </a>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
             {/* Coach Listing Card */}
             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-3">Ben je ADHD coach?</h3>
+              <h3 className="text-lg font-bold text-gray-800 mb-3">Ben je Dietist?</h3>
               <p className="text-gray-600 mb-4">
                 Wil je jezelf toevoegen aan ons platform? Neem contact met ons op via het formulier.
               </p>

@@ -5,25 +5,25 @@ import { Users } from 'lucide-react';
 // Static blog posts data - latest 3 articles
 const latestPosts = [
   {
-    title: 'ADHD Coach Vinden: Complete Gids per Regio',
+    title: 'Dietist Vinden: Complete Gids per Regio',
     slug: 'adhd-coach-vinden-regio',
-    excerpt: 'Ontdek hoe je de beste ADHD coach vindt in jouw regio. Van Amsterdam tot Antwerpen - complete gids met tips, kosten en waar je op moet letten.',
+    excerpt: 'Ontdek hoe je de beste Dietist vindt in jouw regio. Van Amsterdam tot Antwerpen - complete gids met tips, kosten en waar je op moet letten.',
     publishedAt: '2024-12-15',
     readingTime: '8 min leestijd',
     shares: '5.1K',
   },
   {
-    title: 'ADHD & Relaties: Hoe een Coach Helpt je Balans Vinden',
+    title: 'Voeding & Gezondheid: Hoe een Dietist Helpt je Balans Vinden',
     slug: 'adhd-relaties-coach-balans',
-    excerpt: 'ADHD kan relationele uitdagingen veroorzaken. Leer hoe een gespecialiseerde coach je helpt om balans te vinden in liefde, vriendschap en werk.',
+    excerpt: 'Voedingsproblemen kunnen uitdagingen veroorzaken. Leer hoe een gespecialiseerde dietist je helpt om balans te vinden in je eetpatroon en gezondheid.',
     publishedAt: '2024-12-10',
     readingTime: '6 min leestijd',
     shares: '4.2K',
   },
   {
-    title: 'ADHD Volwassenen: Coaching vs Medicatie - Wat Werkt?',
+    title: 'Afvallen: Diëten vs Professioneel Advies - Wat Werkt?',
     slug: 'adhd-volwassenen-coaching-vs-medicatie',
-    excerpt: 'Vergelijk de voor- en nadelen van ADHD coaching versus medicatie voor volwassenen. Welke aanpak past bij jouw situatie?',
+    excerpt: 'Vergelijk de voor- en nadelen van zelfstandig diëten versus professioneel voedingsadvies. Welke aanpak past bij jouw situatie?',
     publishedAt: '2024-12-05',
     readingTime: '9 min leestijd',
     shares: '3.8K',
@@ -43,7 +43,7 @@ export default function BlogPostsSection() {
             <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-teal-50">
               <Image
                 src={`/img/blog/${post.slug}/featured.webp`}
-                alt={`${post.title} - ADHD coaching artikel`}
+                alt={`${post.title} - Diëtiek artikel`}
                 width={400}
                 height={225}
                 className="w-full h-full object-cover"

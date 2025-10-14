@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { CheckCircle, Crown, TrendingUp, Users, Target, Zap, Award, DollarSign } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Premium Posities | Word de #1 ADHD Coach in Jouw Stad',
+  title: 'Premium Posities | Word de #1 Diëtiek Coach in Jouw Stad',
   description: 'Stop met onzichtbaar zijn. Domineer de top 3 posities in jouw stad en trek dagelijks nieuwe cliënten aan. Beperkte plekken beschikbaar.',
   robots: {
     index: false,
@@ -129,7 +129,7 @@ export default function PremiumPositiePage() {
                 <Target className="w-12 h-12 text-amber-500 mb-4" />
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Hot Leads</h3>
                 <p className="text-gray-700">
-                  Dit zijn geen koude leads. Dit zijn mensen die NU een ADHD coach zoeken en klaar zijn om te boeken. Geen tijd verspillen.
+                  Dit zijn geen koude leads. Dit zijn mensen die NU een Dietist zoeken en klaar zijn om te boeken. Geen tijd verspillen.
                 </p>
               </div>
 
@@ -148,7 +148,7 @@ export default function PremiumPositiePage() {
                 <div>
                   <h3 className="text-2xl font-bold mb-3 text-gray-900">De Keiharde Waarheid</h3>
                   <p className="text-lg text-gray-800 mb-4">
-                    Als jij €1000/maand investeert en je krijgt 6 nieuwe cliënten binnen... dat is €9000-15000 omzet bij een gemiddelde ADHD coaching package van €1500-2500.
+                    Als jij €1000/maand investeert en je krijgt 6 nieuwe cliënten binnen... dat is €9000-15000 omzet bij een gemiddelde voedingsadvies package van €1500-2500.
                   </p>
                   <p className="text-xl font-bold text-green-700 mb-4">
                     Dat is een 9-15x return op je investering. Elke. Maand.

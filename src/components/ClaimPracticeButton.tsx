@@ -25,7 +25,7 @@ export default function ClaimPracticeButton({ practiceName, specialistSlug }: Cl
             Is dit jouw praktijk?
           </h3>
           <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            Neem de controle over je profiel en kom in contact met meer families die ADHD hulp zoeken.
+            Neem de controle over je profiel en kom in contact met meer families die Diëtiek hulp zoeken.
           </p>
           <button
             onClick={() => setIsModalOpen(true)}

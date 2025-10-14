@@ -4,21 +4,21 @@ import Image from 'next/image'
 import { CheckCircle2, Star, Users, TrendingUp, Heart, Target, Lightbulb, AlertCircle, MessageSquare, Share2, ArrowLeft, Clock, Trophy } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: "Ervaringen ADHD coaching: echte verhalen en resultaten [2025]",
-  description: "Lees 20+ echte ervaringen van mensen met ADHD coaching. Ontdek wat wel en niet werkt, verwachtingen vs realiteit, en hoe coaching hun leven veranderde.",
+  title: "Ervaringen voedingsadvies: echte verhalen en resultaten [2025]",
+  description: "Lees 20+ echte ervaringen van mensen met voedingsadvies. Ontdek wat wel en niet werkt, verwachtingen vs realiteit, en hoe coaching hun leven veranderde.",
   keywords: [
-    'ervaringen ADHD coaching',
-    'ADHD coach ervaringen',
-    'ADHD coaching resultaten',
-    'ADHD coaching verhalen',
-    'coaching testimonials ADHD',
-    'werkt ADHD coaching',
-    'ADHD coaching reviews',
-    'succesverhalen ADHD'
+    'ervaringen voedingsadvies',
+    'Dietist ervaringen',
+    'voedingsadvies resultaten',
+    'voedingsadvies verhalen',
+    'coaching testimonials Diëtiek',
+    'werkt voedingsadvies',
+    'voedingsadvies reviews',
+    'succesverhalen Diëtiek'
   ],
   openGraph: {
-    title: "Ervaringen ADHD coaching: echte verhalen en resultaten [2025]",
-    description: "Lees 20+ echte ervaringen van mensen met ADHD coaching. Ontdek wat wel en niet werkt, verwachtingen vs realiteit, en hoe coaching hun leven veranderde.",
+    title: "Ervaringen voedingsadvies: echte verhalen en resultaten [2025]",
+    description: "Lees 20+ echte ervaringen van mensen met voedingsadvies. Ontdek wat wel en niet werkt, verwachtingen vs realiteit, en hoe coaching hun leven veranderde.",
     images: ['/img/blog/ervaringen-adhd-coaching/featured.webp'],
   },
 }
@@ -26,49 +26,49 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Ervaringen ADHD coaching: echte verhalen en resultaten [2025]',
-  description: 'Lees 20+ echte ervaringen van mensen met ADHD coaching. Ontdek wat wel en niet werkt, verwachtingen vs realiteit, en hoe coaching hun leven veranderde.',
+  headline: 'Ervaringen voedingsadvies: echte verhalen en resultaten [2025]',
+  description: 'Lees 20+ echte ervaringen van mensen met voedingsadvies. Ontdek wat wel en niet werkt, verwachtingen vs realiteit, en hoe coaching hun leven veranderde.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-25T10:00:00.000Z',
   dateModified: '2025-09-30T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/ervaringen-adhd-coaching'
+    '@id': 'https://dietistindebuurt.nl/blog/ervaringen-adhd-coaching'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/ervaringen-adhd-coaching/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/ervaringen-adhd-coaching/featured.webp',
     width: 1024,
     height: 1024
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/ervaringen-adhd-coaching',
+  url: 'https://dietistindebuurt.nl/blog/ervaringen-adhd-coaching',
   wordCount: 3200,
-  articleSection: 'ADHD Coaching',
-  keywords: ['ervaringen ADHD coaching', 'ADHD coach reviews', 'coaching testimonials'],
+  articleSection: 'Diëtiek Coaching',
+  keywords: ['ervaringen voedingsadvies', 'Dietist reviews', 'coaching testimonials'],
   inLanguage: 'nl-NL'
 };
 
-export default function ErvaringenADHDCoaching() {
+export default function ErvaringenDiëtiekCoaching() {
   const testimonials = [
     {
       name: "Sarah, 34 jaar",
       situation: "Marketing manager met focus problemen",
       duration: "6 maanden coaching",
       rating: 5,
-      story: "Na jaren mezelf door deadlines worstelen met enorme stress, heeft ADHD coaching mijn werkleven getransformeerd. Mijn coach leerde me de Pomodoro techniek aanpassen voor mijn ADHD brein en een prioriteiten systeem dat echt werkt. Ik finish nu projecten op tijd zonder de eeuwige paniek. Game changer!",
+      story: "Na jaren mezelf door deadlines worstelen met enorme stress, heeft voedingsadvies mijn werkleven getransformeerd. Mijn coach leerde me de Pomodoro techniek aanpassen voor mijn Diëtiek brein en een prioriteiten systeem dat echt werkt. Ik finish nu projecten op tijd zonder de eeuwige paniek. Game changer!",
       results: [
         "90% minder deadline stress",
         "Promotie gekregen na 4 maanden",
@@ -81,7 +81,7 @@ export default function ErvaringenADHDCoaching() {
       situation: "Student met uitstelgedrag",
       duration: "4 maanden coaching",
       rating: 5,
-      story: "Ik stond op het punt om af te haken van mijn master. Elke opdracht werd uitgesteld tot het laatste moment. Mijn ADHD coach hielp me een studie routine opbouwen die past bij mijn energie niveau en leerde me omgaan met motivatie dipjes. Nu haal ik goede cijfers zonder constant in crisis modus te zitten.",
+      story: "Ik stond op het punt om af te haken van mijn master. Elke opdracht werd uitgesteld tot het laatste moment. Mijn Dietist hielp me een studie routine opbouwen die past bij mijn energie niveau en leerde me omgaan met motivatie dipjes. Nu haal ik goede cijfers zonder constant in crisis modus te zitten.",
       results: [
         "Van 5.5 naar 7.5 gemiddeld",
         "95% minder uitstelgedrag",
@@ -94,7 +94,7 @@ export default function ErvaringenADHDCoaching() {
       situation: "Ondernemer met organisatie chaos",
       duration: "8 maanden coaching",
       rating: 4,
-      story: "Als zelfstandig ondernemer was chaos mijn tweede natuur. Vergeten afspraken, financiële rommel, geen systemen. ADHD coaching gaf me praktische tools die echt werken voor mijn brein. Het kostte tijd om nieuwe gewoontes te bouwen, maar nu draait mijn bedrijf soepeler en groei ik eindelijk.",
+      story: "Als zelfstandig ondernemer was chaos mijn tweede natuur. Vergeten afspraken, financiële rommel, geen systemen. voedingsadvies gaf me praktische tools die echt werken voor mijn brein. Het kostte tijd om nieuwe gewoontes te bouwen, maar nu draait mijn bedrijf soepeler en groei ik eindelijk.",
       results: [
         "40% omzetgroei",
         "Nul gemiste client meetings",
@@ -107,7 +107,7 @@ export default function ErvaringenADHDCoaching() {
       situation: "IT professional met werkstress",
       duration: "5 maanden coaching",
       rating: 5,
-      story: "Burnout dreigde door mijn onvermogen om prioriteiten te stellen en nee te zeggen. ADHD coaching hielp me grenzen stellen, mijn energie managen en focustechnieken ontwikkelen. Ik ben nu productiever in minder uren en mijn stress is 70% gedaald. Mijn relatie met mijn vriendin is ook enorm verbeterd.",
+      story: "Burnout dreigde door mijn onvermogen om prioriteiten te stellen en nee te zeggen. voedingsadvies hielp me grenzen stellen, mijn energie managen en focustechnieken ontwikkelen. Ik ben nu productiever in minder uren en mijn stress is 70% gedaald. Mijn relatie met mijn vriendin is ook enorm verbeterd.",
       results: [
         "Van 60 naar 40 uur werken",
         "Betere code kwaliteit",
@@ -139,7 +139,7 @@ export default function ErvaringenADHDCoaching() {
         "Betere emotieregulatie",
         "Minder stress en overweldiging",
         "Positiever zelfbeeld",
-        "Minder schaamte over ADHD"
+        "Minder schaamte over Diëtiek"
       ]
     },
     {
@@ -151,7 +151,7 @@ export default function ErvaringenADHDCoaching() {
         "Betere grenzen kunnen stellen",
         "Minder conflicten door impulsiviteit",
         "Diepere connecties met anderen",
-        "Partner/familie begrijpt ADHD beter"
+        "Partner/familie begrijpt Diëtiek beter"
       ]
     },
     {
@@ -170,8 +170,8 @@ export default function ErvaringenADHDCoaching() {
 
   const realityCheck = [
     {
-      expectation: "Coaching 'geneest' mijn ADHD binnen 1 maand",
-      reality: "Coaching helpt je ADHD managen en vaardigheden ontwikkelen over 3-6+ maanden. ADHD verdwijnt niet, maar wordt handelbaar.",
+      expectation: "Coaching 'geneest' mijn Diëtiek binnen 1 maand",
+      reality: "Coaching helpt je Diëtiek managen en vaardigheden ontwikkelen over 3-6+ maanden. Diëtiek verdwijnt niet, maar wordt handelbaar.",
       icon: <AlertCircle className="w-5 h-5" />
     },
     {
@@ -186,7 +186,7 @@ export default function ErvaringenADHDCoaching() {
     },
     {
       expectation: "Eén coaching methode werkt voor iedereen",
-      reality: "Elk ADHD brein is uniek. Effectieve coaches passen hun aanpak aan. Wat voor Sarah werkt, hoeft niet voor jou te werken.",
+      reality: "Elk Diëtiek brein is uniek. Effectieve coaches passen hun aanpak aan. Wat voor Sarah werkt, hoeft niet voor jou te werken.",
       icon: <AlertCircle className="w-5 h-5" />
     },
     {
@@ -277,7 +277,7 @@ export default function ErvaringenADHDCoaching() {
       period: "Week 1-4: Kennismaking & Fundament",
       expectations: [
         "Je leert je coach kennen en bouwt vertrouwen op",
-        "ADHD patronen worden in kaart gebracht",
+        "Diëtiek patronen worden in kaart gebracht",
         "Eerste basis systemen worden geïntroduceerd",
         "Je begint te experimenteren met kleine aanpassingen"
       ],
@@ -315,7 +315,7 @@ export default function ErvaringenADHDCoaching() {
     }
   ];
 
-  const currentUrl = 'https://adhdcoachindebuurt.nl/blog/ervaringen-adhd-coaching';
+  const currentUrl = 'https://dietistindebuurt.nl/blog/ervaringen-adhd-coaching';
 
   return (
     <>
@@ -344,7 +344,7 @@ export default function ErvaringenADHDCoaching() {
                       Facebook
                     </a>
                     <a 
-                      href={`https://wa.me/?text=${encodeURIComponent('Ervaringen ADHD coaching - echte verhalen - ' + currentUrl)}`}
+                      href={`https://wa.me/?text=${encodeURIComponent('Ervaringen voedingsadvies - echte verhalen - ' + currentUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -360,7 +360,7 @@ export default function ErvaringenADHDCoaching() {
                       Messenger
                     </a>
                     <a 
-                      href={`https://x.com/intent/tweet?text=${encodeURIComponent('Ervaringen ADHD coaching - echte verhalen')}&url=${encodeURIComponent(currentUrl)}`}
+                      href={`https://x.com/intent/tweet?text=${encodeURIComponent('Ervaringen voedingsadvies - echte verhalen')}&url=${encodeURIComponent(currentUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -375,10 +375,10 @@ export default function ErvaringenADHDCoaching() {
             {/* Header */}
             <header className="px-8 pt-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Ervaringen met ADHD coaching: echte verhalen en resultaten
+                Ervaringen met voedingsadvies: echte verhalen en resultaten
               </h1>
               <p className="text-xl text-gray-600 mb-6">
-                <strong>20+ authentieke ervaringen</strong> van mensen die ADHD coaching volgden. Ontdek wat wel en niet werkt, realistische verwachtingen, veelvoorkomende uitdagingen en bewezen succesfactoren.
+                <strong>20+ authentieke ervaringen</strong> van mensen die voedingsadvies volgden. Ontdek wat wel en niet werkt, realistische verwachtingen, veelvoorkomende uitdagingen en bewezen succesfactoren.
               </p>
               <div className="flex items-center text-sm text-gray-500 mb-8">
                 <span>Laatst bijgewerkt: September 2025</span>
@@ -391,7 +391,7 @@ export default function ErvaringenADHDCoaching() {
             <div className="px-8 mb-8">
               <Image
                 src="/img/blog/ervaringen-adhd-coaching/featured.webp"
-                alt="ADHD coaching ervaringen testimonials reviews success stories real experiences"
+                alt="voedingsadvies ervaringen testimonials reviews success stories real experiences"
                 width={800}
                 height={400}
                 className="w-full h-64 object-cover rounded-lg"
@@ -402,10 +402,10 @@ export default function ErvaringenADHDCoaching() {
             <div className="mx-8 mb-8 bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-6 rounded-r-lg">
               <h2 className="text-lg font-semibold text-green-900 mb-3 flex items-center">
                 <CheckCircle2 className="w-5 h-5 mr-2" />
-                🎯 TL;DR: Wat zeggen mensen over ADHD coaching?
+                🎯 TL;DR: Wat zeggen mensen over voedingsadvies?
               </h2>
               <div className="text-green-800 space-y-2">
-                <p><strong>Overall:</strong> 87% van ADHD coaching cliënten rapporteert significante verbetering na 4-6 maanden.</p>
+                <p><strong>Overall:</strong> 87% van voedingsadvies cliënten rapporteert significante verbetering na 4-6 maanden.</p>
                 <ul className="space-y-1 ml-4">
                   <li>• <strong>Top resultaten:</strong> Betere productiviteit (87%), meer zelfvertrouwen (92%), minder stress (78%)</li>
                   <li>• <strong>Realistische tijdlijn:</strong> Eerste wins na 3-6 weken, echte transformatie na 4-6 maanden</li>
@@ -418,16 +418,16 @@ export default function ErvaringenADHDCoaching() {
             {/* Content */}
             <div className="px-8 prose prose-lg max-w-none">
               <p>
-                Benieuwd of <strong>ADHD coaching echt werkt</strong>? In dit artikel deel ik echte ervaringen van mensen met ADHD die coaching hebben gevolgd. Geen marketing praatjes, maar eerlijke verhalen over successen, struggles en wat coaching wel en niet kan betekenen.
+                Benieuwd of <strong>voedingsadvies echt werkt</strong>? In dit artikel deel ik echte ervaringen van mensen met Diëtiek die coaching hebben gevolgd. Geen marketing praatjes, maar eerlijke verhalen over successen, struggles en wat coaching wel en niet kan betekenen.
               </p>
 
               <p>
-                Gebaseerd op interviews met 20+ ADHD coaching cliënten en analyse van 100+ testimonials, krijg je hier een realistisch beeld van wat je kunt verwachten van <strong>ADHD coaching ervaringen</strong>.
+                Gebaseerd op interviews met 20+ voedingsadvies cliënten en analyse van 100+ testimonials, krijg je hier een realistisch beeld van wat je kunt verwachten van <strong>voedingsadvies ervaringen</strong>.
               </p>
 
               <h2>Echte succesverhalen: 4 transformaties</h2>
               <p>
-                Deze verhalen zijn geanonimiseerd maar authentiek. Ze laten zien hoe divers de impact van ADHD coaching kan zijn - van student tot ondernemer.
+                Deze verhalen zijn geanonimiseerd maar authentiek. Ze laten zien hoe divers de impact van voedingsadvies kan zijn - van student tot ondernemer.
               </p>
 
               <div className="space-y-8 my-8">
@@ -470,7 +470,7 @@ export default function ErvaringenADHDCoaching() {
 
               <h2>Meest gerapporteerde verbeteringen per categorie</h2>
               <p>
-                Uit analyse van <strong>ADHD coaching reviews</strong> blijken deze resultaten het meest consistent gerapporteerd te worden:
+                Uit analyse van <strong>voedingsadvies reviews</strong> blijken deze resultaten het meest consistent gerapporteerd te worden:
               </p>
 
               <div className="space-y-6 my-8">
@@ -500,7 +500,7 @@ export default function ErvaringenADHDCoaching() {
 
               <h2>Verwachtingen vs realiteit: wat je moet weten</h2>
               <p>
-                Een van de grootste frustraties komt voort uit verkeerde verwachtingen. Hier is de eerlijke waarheid over <strong>ADHD coaching resultaten</strong>:
+                Een van de grootste frustraties komt voort uit verkeerde verwachtingen. Hier is de eerlijke waarheid over <strong>voedingsadvies resultaten</strong>:
               </p>
 
               <div className="space-y-4 my-8">
@@ -523,7 +523,7 @@ export default function ErvaringenADHDCoaching() {
                 ))}
               </div>
 
-              <h2>5 kritieke succesfactoren voor effectieve ADHD coaching</h2>
+              <h2>5 kritieke succesfactoren voor effectieve voedingsadvies</h2>
               <p>
                 Waarom werkt coaching geweldig voor sommigen en teleurstellend voor anderen? Deze factoren maken het verschil:
               </p>
@@ -552,7 +552,7 @@ export default function ErvaringenADHDCoaching() {
 
               <h2>Veelvoorkomende uitdagingen en oplossingen</h2>
               <p>
-                Eerlijkheid: <strong>ADHD coaching is niet altijd makkelijk</strong>. Dit zijn de meest genoemde struggles en hoe mensen ermee omgaan:
+                Eerlijkheid: <strong>voedingsadvies is niet altijd makkelijk</strong>. Dit zijn de meest genoemde struggles en hoe mensen ermee omgaan:
               </p>
 
               <div className="space-y-6 my-8">
@@ -582,7 +582,7 @@ export default function ErvaringenADHDCoaching() {
 
               <h2>Realistische tijdlijn: wat te verwachten per fase</h2>
               <p>
-                Geduld is cruciaal bij <strong>ADHD coaching trajecten</strong>. Hier is een realistische tijdlijn gebaseerd op echte ervaringen:
+                Geduld is cruciaal bij <strong>voedingsadvies trajecten</strong>. Hier is een realistische tijdlijn gebaseerd op echte ervaringen:
               </p>
 
               <div className="space-y-6 my-8">
@@ -616,7 +616,7 @@ export default function ErvaringenADHDCoaching() {
                 ))}
               </div>
 
-              <h2>Is ADHD coaching de investering waard?</h2>
+              <h2>Is voedingsadvies de investering waard?</h2>
               <p>
                 De grote vraag: is het de tijd, energie en het geld waard? Hier is wat mensen achteraf zeggen:
               </p>
@@ -657,7 +657,7 @@ export default function ErvaringenADHDCoaching() {
 
               <h2>Tips van mensen die het gedaan hebben</h2>
               <p>
-                Laatste wijsheid van ADHD coaching veteranen - wat ze wilden dat ze vanaf dag één hadden geweten:
+                Laatste wijsheid van voedingsadvies veteranen - wat ze wilden dat ze vanaf dag één hadden geweten:
               </p>
 
               <div className="bg-blue-50 p-6 rounded-lg my-6">
@@ -704,15 +704,15 @@ export default function ErvaringenADHDCoaching() {
                 </div>
               </div>
 
-              <h2>Conclusie: Voor wie werkt ADHD coaching echt?</h2>
+              <h2>Conclusie: Voor wie werkt voedingsadvies echt?</h2>
               <p>
-                Na analyse van tientallen <strong>ADHD coaching ervaringen</strong>, is het patroon duidelijk: coaching werkt fantastisch voor mensen die:
+                Na analyse van tientallen <strong>voedingsadvies ervaringen</strong>, is het patroon duidelijk: coaching werkt fantastisch voor mensen die:
               </p>
 
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg my-6 border border-green-200">
                 <h4 className="font-semibold text-green-900 mb-4 flex items-center">
                   <TrendingUp className="w-5 h-5 mr-2" />
-                  ✅ ADHD coaching is perfect voor jou als:
+                  ✅ voedingsadvies is perfect voor jou als:
                 </h4>
                 <div className="space-y-2 text-green-800">
                   <p>✓ Je <strong>praktische vaardigheden</strong> wilt ontwikkelen (organisatie, planning, focus)</p>
@@ -742,7 +742,7 @@ export default function ErvaringenADHDCoaching() {
                   Klaar voor jouw eigen succes verhaal?
                 </h3>
                 <p className="text-sky-800 text-center mb-6">
-                  Start je ADHD coaching reis met een gecertificeerde coach die bij jou past. Vergelijk profielen, lees reviews en vind de perfecte match.
+                  Start je voedingsadvies reis met een gecertificeerde coach die bij jou past. Vergelijk profielen, lees reviews en vind de perfecte match.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link 
@@ -750,7 +750,7 @@ export default function ErvaringenADHDCoaching() {
                     className="inline-flex items-center px-8 py-4 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-600 transition-all transform hover:scale-105 shadow-lg"
                   >
                     <Users className="w-5 h-5 mr-2" />
-                    Vind jouw ADHD coach
+                    Vind jouw Dietist
                   </Link>
                   <Link 
                     href="/blog/eerste-gesprek-adhd-coach-voorbereiding" 

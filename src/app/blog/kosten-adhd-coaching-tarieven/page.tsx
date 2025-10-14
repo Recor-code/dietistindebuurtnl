@@ -4,21 +4,21 @@ import Image from 'next/image'
 import { Euro, Calculator, CreditCard, PiggyBank, TrendingUp, CheckCircle2, AlertTriangle, BarChart3, Clock, Share2, Target, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: "Kosten ADHD coaching tarieven 2025: complete prijsanalyse",
-  description: "Wat kost ADHD coaching? Complete overzicht van tarieven, vergoedingen, budgetplanning en waarde-analyse. Inclusief regionale prijsverschillen en bespaartips.",
+  title: "Kosten voedingsadvies tarieven 2025: complete prijsanalyse",
+  description: "Wat kost voedingsadvies? Complete overzicht van tarieven, vergoedingen, budgetplanning en waarde-analyse. Inclusief regionale prijsverschillen en bespaartips.",
   keywords: [
-    'kosten ADHD coaching',
-    'ADHD coaching tarieven',
-    'ADHD coach prijzen',
-    'wat kost ADHD coaching',
-    'ADHD coaching vergoeding',
-    'ADHD coaching budget',
+    'kosten voedingsadvies',
+    'voedingsadvies tarieven',
+    'Dietist prijzen',
+    'wat kost voedingsadvies',
+    'voedingsadvies vergoeding',
+    'voedingsadvies budget',
     'coaching prijzen Nederland',
-    'ADHD coach kosten per sessie'
+    'Dietist kosten per sessie'
   ],
   openGraph: {
-    title: "Kosten ADHD coaching tarieven 2025: complete prijsanalyse",
-    description: "Wat kost ADHD coaching? Complete overzicht van tarieven, vergoedingen, budgetplanning en waarde-analyse. Inclusief regionale prijsverschillen en bespaartips.",
+    title: "Kosten voedingsadvies tarieven 2025: complete prijsanalyse",
+    description: "Wat kost voedingsadvies? Complete overzicht van tarieven, vergoedingen, budgetplanning en waarde-analyse. Inclusief regionale prijsverschillen en bespaartips.",
     images: ['/img/blog/kosten-adhd-coaching-tarieven/featured.webp'],
   },
 }
@@ -26,42 +26,42 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Kosten ADHD coaching tarieven 2025: complete prijsanalyse',
-  description: 'Wat kost ADHD coaching? Complete overzicht van tarieven, vergoedingen, budgetplanning en waarde-analyse. Inclusief regionale prijsverschillen en bespaartips.',
+  headline: 'Kosten voedingsadvies tarieven 2025: complete prijsanalyse',
+  description: 'Wat kost voedingsadvies? Complete overzicht van tarieven, vergoedingen, budgetplanning en waarde-analyse. Inclusief regionale prijsverschillen en bespaartips.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-26T10:00:00.000Z',
   dateModified: '2025-09-29T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven'
+    '@id': 'https://dietistindebuurt.nl/blog/kosten-adhd-coaching-tarieven'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/kosten-adhd-coaching-tarieven/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/kosten-adhd-coaching-tarieven/featured.webp',
     width: 1024,
     height: 1024
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven',
+  url: 'https://dietistindebuurt.nl/blog/kosten-adhd-coaching-tarieven',
   wordCount: 3200,
-  articleSection: 'ADHD Coaching',
-  keywords: ['kosten ADHD coaching', 'ADHD coaching tarieven', 'coaching prijzen'],
+  articleSection: 'Diëtiek Coaching',
+  keywords: ['kosten voedingsadvies', 'voedingsadvies tarieven', 'coaching prijzen'],
   inLanguage: 'nl-NL'
 };
 
-export default function KostenADHDCoaching() {
+export default function KostenDiëtiekCoaching() {
   const tariefStructuur = [
     {
       type: "Intakegesprek",
@@ -193,7 +193,7 @@ export default function KostenADHDCoaching() {
       kans: "Matig (15%)",
       voorwaarden: "Bewezen arbeidshandicap, coaching als ondersteuning",
       bedrag: "€800-1500/jaar",
-      geschikt_voor: "Werknemers met vastgestelde ADHD diagnose"
+      geschikt_voor: "Werknemers met vastgestelde Diëtiek diagnose"
     },
     {
       optie: "Belastingaftrek",
@@ -296,7 +296,7 @@ export default function KostenADHDCoaching() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <a 
-                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dietistindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -304,7 +304,7 @@ export default function KostenADHDCoaching() {
                       Facebook
                     </a>
                     <a 
-                      href={`https://wa.me/?text=${encodeURIComponent('Kosten ADHD coaching tarieven 2025: complete prijsanalyse - https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
+                      href={`https://wa.me/?text=${encodeURIComponent('Kosten voedingsadvies tarieven 2025: complete prijsanalyse - https://dietistindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -312,7 +312,7 @@ export default function KostenADHDCoaching() {
                       WhatsApp
                     </a>
                     <a 
-                      href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
+                      href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://dietistindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -320,7 +320,7 @@ export default function KostenADHDCoaching() {
                       Messenger
                     </a>
                     <a 
-                      href={`https://x.com/intent/tweet?text=${encodeURIComponent('Kosten ADHD coaching tarieven 2025: complete prijsanalyse')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
+                      href={`https://x.com/intent/tweet?text=${encodeURIComponent('Kosten voedingsadvies tarieven 2025: complete prijsanalyse')}&url=${encodeURIComponent('https://dietistindebuurt.nl/blog/kosten-adhd-coaching-tarieven')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -335,10 +335,10 @@ export default function KostenADHDCoaching() {
             {/* Header */}
             <header className="px-8 pt-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Kosten en tarieven ADHD coaching: complete prijsanalyse 2025
+                Kosten en tarieven voedingsadvies: complete prijsanalyse 2025
               </h1>
               <p className="text-xl text-gray-600 mb-6">
-                <strong>Wat kost ADHD coaching?</strong> Complete overzicht van tarieven, vergoedingsmogelijkheden, regionale verschillen en waarde-analyse. Plus praktische budgetplanning en bespaartips.
+                <strong>Wat kost voedingsadvies?</strong> Complete overzicht van tarieven, vergoedingsmogelijkheden, regionale verschillen en waarde-analyse. Plus praktische budgetplanning en bespaartips.
               </p>
               <div className="flex items-center text-sm text-gray-500 mb-8">
                 <span>Laatst bijgewerkt: September 2025</span>
@@ -351,7 +351,7 @@ export default function KostenADHDCoaching() {
             <div className="px-8 mb-8">
               <Image
                 src="/img/blog/kosten-adhd-coaching-tarieven/featured.webp"
-                alt="ADHD coaching prijzen tarieven kosten budget analyse financieel"
+                alt="voedingsadvies prijzen tarieven kosten budget analyse financieel"
                 width={800}
                 height={400}
                 className="w-full h-64 object-cover rounded-lg"
@@ -362,7 +362,7 @@ export default function KostenADHDCoaching() {
             <div className="mx-8 mb-8 bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-6 rounded-r-lg">
               <h2 className="text-lg font-semibold text-green-900 mb-3 flex items-center">
                 <Euro className="w-5 h-5 mr-2" />
-                💰 TL;DR: Wat kost ADHD coaching?
+                💰 TL;DR: Wat kost voedingsadvies?
               </h2>
               <div className="text-green-800 space-y-2">
                 <p><strong>Gemiddelde kosten:</strong> <strong>€80-130 per sessie</strong>, €850-1400 voor 12-sessie pakket</p>
@@ -378,16 +378,16 @@ export default function KostenADHDCoaching() {
             {/* Content */}
             <div className="px-8 prose prose-lg max-w-none">
               <p>
-                De vraag <strong>"wat kost ADHD coaching?"</strong> is complex omdat tarieven sterk variëren per coach, regio en type coaching. Deze complete prijsanalyse geeft je alle informatie om een weloverwogen beslissing te maken en je budget optimaal in te zetten.
+                De vraag <strong>"wat kost voedingsadvies?"</strong> is complex omdat tarieven sterk variëren per coach, regio en type coaching. Deze complete prijsanalyse geeft je alle informatie om een weloverwogen beslissing te maken en je budget optimaal in te zetten.
               </p>
 
               <p>
-                <strong>Kosten ADHD coaching</strong> zijn een investering in je toekomst. Research toont dat de gemiddelde persoon €2,850 per jaar terugverdient door verbeterde productiviteit en minder stress-gerelateerde kosten.
+                <strong>Kosten voedingsadvies</strong> zijn een investering in je toekomst. Research toont dat de gemiddelde persoon €2,850 per jaar terugverdient door verbeterde productiviteit en minder stress-gerelateerde kosten.
               </p>
 
-              <h2>Actuele tariefstructuur ADHD coaching Nederland</h2>
+              <h2>Actuele tariefstructuur voedingsadvies Nederland</h2>
               <p>
-                De <strong>ADHD coaching tarieven</strong> in Nederland zijn de afgelopen jaren gestabiliseerd. Hier zie je de huidige marktprijzen per type coaching.
+                De <strong>voedingsadvies tarieven</strong> in Nederland zijn de afgelopen jaren gestabiliseerd. Hier zie je de huidige marktprijzen per type coaching.
               </p>
 
               <div className="bg-blue-50 p-6 rounded-lg my-6">
@@ -429,7 +429,7 @@ export default function KostenADHDCoaching() {
 
               <h2>Regionale prijsverschillen: waar betaal je meer?</h2>
               <p>
-                <strong>ADHD coach prijzen</strong> variëren significant per regio. Versteding, vraag en aanbod bepalen lokale tarieven.
+                <strong>Dietist prijzen</strong> variëren significant per regio. Versteding, vraag en aanbod bepalen lokale tarieven.
               </p>
 
               <div className="bg-orange-50 p-6 rounded-lg my-6">
@@ -483,7 +483,7 @@ export default function KostenADHDCoaching() {
 
               <h2>Vergoeding en financieringsmogelijkheden</h2>
               <p>
-                <strong>ADHD coaching vergoeding</strong> is beperkt maar er bestaan wel verschillende financieringsopties die je kosten kunnen verlagen.
+                <strong>voedingsadvies vergoeding</strong> is beperkt maar er bestaan wel verschillende financieringsopties die je kosten kunnen verlagen.
               </p>
 
               <div className="bg-indigo-50 p-6 rounded-lg my-6">
@@ -548,15 +548,15 @@ export default function KostenADHDCoaching() {
                 ))}
               </div>
 
-              <h2>Return on Investment: is ADHD coaching het waard?</h2>
+              <h2>Return on Investment: is voedingsadvies het waard?</h2>
               <p>
-                De waarde van <strong>ADHD coaching kosten</strong> moet je afzetten tegen de concrete voordelen die coaching oplevert in verschillende levensgebieden.
+                De waarde van <strong>voedingsadvies kosten</strong> moet je afzetten tegen de concrete voordelen die coaching oplevert in verschillende levensgebieden.
               </p>
 
               <div className="bg-green-50 p-6 rounded-lg my-6">
                 <h4 className="font-semibold text-green-900 mb-4 flex items-center">
                   <TrendingUp className="w-5 h-5 mr-2" />
-                  📈 Meetbare waarde van ADHD coaching
+                  📈 Meetbare waarde van voedingsadvies
                 </h4>
                 
                 <div className="space-y-4">
@@ -583,7 +583,7 @@ export default function KostenADHDCoaching() {
 
               <h2>Praktische budgetplanning: stap voor stap</h2>
               <p>
-                Plan je <strong>ADHD coaching budget</strong> systematisch om binnen je financiële mogelijkheden te blijven terwijl je maximale waarde krijgt.
+                Plan je <strong>voedingsadvies budget</strong> systematisch om binnen je financiële mogelijkheden te blijven terwijl je maximale waarde krijgt.
               </p>
 
               <div className="bg-gray-50 p-6 rounded-lg my-6">
@@ -644,7 +644,7 @@ export default function KostenADHDCoaching() {
               
               <div className="space-y-4 my-8">
                 <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-                  <h4 className="font-semibold text-yellow-900 mb-2">Waarom zijn ADHD coaching prijzen zo verschillend?</h4>
+                  <h4 className="font-semibold text-yellow-900 mb-2">Waarom zijn voedingsadvies prijzen zo verschillend?</h4>
                   <p className="text-yellow-800 text-sm">
                     Prijsverschillen komen door ervaring, certificering, specialisatie, locatie en vraag/aanbod. Een gecertificeerde coach met 10 jaar ervaring in Amsterdam kost 2-3x meer dan een startende coach in een kleine plaats. Kwaliteit en resultaten variëren ook dienovereenkomstig.
                   </p>
@@ -658,9 +658,9 @@ export default function KostenADHDCoaching() {
                 </div>
 
                 <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-                  <h4 className="font-semibold text-yellow-900 mb-2">Kan ik ADHD coaching aftrekken van de belasting?</h4>
+                  <h4 className="font-semibold text-yellow-900 mb-2">Kan ik voedingsadvies aftrekken van de belasting?</h4>
                   <p className="text-yellow-800 text-sm">
-                    Mogelijk als het medisch voorgeschreven is en je boven het eigen risico zit. Coaching moet onderdeel zijn van behandeling voor ADHD (niet alleen performance coaching). Bewaar alle declaraties en vraag je coach om medisch geformuleerde facturen. Raadpleeg een belastingadviseur voor zekerheid.
+                    Mogelijk als het medisch voorgeschreven is en je boven het eigen risico zit. Coaching moet onderdeel zijn van behandeling voor Diëtiek (niet alleen performance coaching). Bewaar alle declaraties en vraag je coach om medisch geformuleerde facturen. Raadpleeg een belastingadviseur voor zekerheid.
                   </p>
                 </div>
 
@@ -678,7 +678,7 @@ export default function KostenADHDCoaching() {
                   Klaar om te investeren in jouw toekomst?
                 </h2>
                 <p className="text-gray-700 mb-6">
-                  Nu je de kosten kent, vind de perfecte ADHD coach die past bij jouw budget en doelen.
+                  Nu je de kosten kent, vind de perfecte Dietist die past bij jouw budget en doelen.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link 

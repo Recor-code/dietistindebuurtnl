@@ -66,8 +66,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       type: 'article',
       locale: 'nl_NL',
-      url: `https://adhdcoachindebuurt.nl/stad/${citySlug}/blog/${articleSlug}`,
-      siteName: 'ADHD Coach in de Buurt',
+      url: `https://dietistindebuurt.nl/stad/${citySlug}/blog/${articleSlug}`,
+      siteName: 'Dietist in de Buurt',
       publishedTime: article.publishedAt.toISOString(),
       authors: [article.author],
     },
@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `${description.substring(0, 150)}...`,
     },
     alternates: {
-      canonical: `https://adhdcoachindebuurt.nl/stad/${citySlug}/blog/${articleSlug}`,
+      canonical: `https://dietistindebuurt.nl/stad/${citySlug}/blog/${articleSlug}`,
     },
     robots: {
       index: true,

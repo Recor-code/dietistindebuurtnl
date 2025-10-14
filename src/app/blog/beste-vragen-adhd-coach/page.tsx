@@ -4,21 +4,21 @@ import Image from 'next/image'
 import { CheckCircle2, AlertTriangle, MessageCircle, Target, Users, Calendar, Euro, BookOpen, Lightbulb, TrendingUp, Clock, Share2 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: "Beste vragen voor ADHD coach: complete interview gids [2025]",
-  description: "De 25+ belangrijkste vragen om aan je ADHD coach te stellen. Inclusief red flags, evaluatiecriteria en interview strategie voor het perfecte match.",
+  title: "Beste vragen voor Dietist: complete interview gids [2025]",
+  description: "De 25+ belangrijkste vragen om aan je Dietist te stellen. Inclusief red flags, evaluatiecriteria en interview strategie voor het perfecte match.",
   keywords: [
-    'beste vragen ADHD coach',
-    'ADHD coach interview vragen',
-    'wat vragen aan ADHD coach',
-    'ADHD coaching intake',
+    'beste vragen Dietist',
+    'Dietist interview vragen',
+    'wat vragen aan Dietist',
+    'voedingsadvies intake',
     'coach evaluatie vragen',
-    'ADHD coach selectie',
+    'Dietist selectie',
     'coaching gesprek vragen',
-    'ADHD coach keuze'
+    'Dietist keuze'
   ],
   openGraph: {
-    title: "Beste vragen voor ADHD coach: complete interview gids [2025]",
-    description: "De 25+ belangrijkste vragen om aan je ADHD coach te stellen. Inclusief red flags, evaluatiecriteria en interview strategie voor het perfecte match.",
+    title: "Beste vragen voor Dietist: complete interview gids [2025]",
+    description: "De 25+ belangrijkste vragen om aan je Dietist te stellen. Inclusief red flags, evaluatiecriteria en interview strategie voor het perfecte match.",
     images: ['/img/blog/beste-vragen-adhd-coach/featured.webp'],
   },
 }
@@ -26,51 +26,51 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Beste vragen voor ADHD coach: complete interview gids [2025]',
-  description: 'De 25+ belangrijkste vragen om aan je ADHD coach te stellen. Inclusief red flags, evaluatiecriteria en interview strategie voor het perfecte match.',
+  headline: 'Beste vragen voor Dietist: complete interview gids [2025]',
+  description: 'De 25+ belangrijkste vragen om aan je Dietist te stellen. Inclusief red flags, evaluatiecriteria en interview strategie voor het perfecte match.',
   author: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl'
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'ADHD Coach in de Buurt',
-    url: 'https://adhdcoachindebuurt.nl',
+    name: 'Dietist in de Buurt',
+    url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://adhdcoachindebuurt.nl/images/logo.webp'
+      url: 'https://dietistindebuurt.nl/images/logo.webp'
     }
   },
   datePublished: '2025-09-25T10:00:00.000Z',
   dateModified: '2025-09-29T12:00:00.000Z',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach'
+    '@id': 'https://dietistindebuurt.nl/blog/beste-vragen-adhd-coach'
   },
   image: {
     '@type': 'ImageObject',
-    url: 'https://adhdcoachindebuurt.nl/img/blog/beste-vragen-adhd-coach/featured.webp',
+    url: 'https://dietistindebuurt.nl/img/blog/beste-vragen-adhd-coach/featured.webp',
     width: 1024,
     height: 1024
   },
-  url: 'https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach',
+  url: 'https://dietistindebuurt.nl/blog/beste-vragen-adhd-coach',
   wordCount: 2800,
-  articleSection: 'ADHD Coaching',
-  keywords: ['beste vragen ADHD coach', 'ADHD coach interview', 'coaching selectie'],
+  articleSection: 'Diëtiek Coaching',
+  keywords: ['beste vragen Dietist', 'Dietist interview', 'coaching selectie'],
   inLanguage: 'nl-NL'
 };
 
-export default function BestVragenADHDCoach() {
+export default function BestVragenDiëtiekCoach() {
   const essentialQuestions = [
     {
       category: "Ervaring & Kwalificaties",
       questions: [
-        "Hoelang werk je al als ADHD coach?",
-        "Wat is je specifieke training in ADHD coaching?",
+        "Hoelang werk je al als Dietist?",
+        "Wat is je specifieke training in voedingsadvies?",
         "Heb je certificering van een erkende coaching organisatie?",
-        "Hoeveel ADHD cliënten begeleid je momenteel?",
-        "Heb je zelf ervaring met ADHD of andere neurodiversiteit?"
+        "Hoeveel Diëtiek cliënten begeleid je momenteel?",
+        "Heb je zelf ervaring met Diëtiek of andere neurodiversiteit?"
       ],
       why: "Deze vragen helpen je de expertise en geloofwaardigheid van de coach te beoordelen.",
       icon: <Target className="w-5 h-5" />
@@ -82,7 +82,7 @@ export default function BestVragenADHDCoach() {
         "Hoe pas je je aanpak aan per individu?",
         "Werk je evidence-based of meer intuïtief?",
         "Gebruik je specifieke tools of assessments?",
-        "Hoe integreer je ADHD medicatie in je coaching?"
+        "Hoe integreer je Diëtiek medicatie in je coaching?"
       ],
       why: "Begrijp of hun werkwijze aansluit bij jouw leerstijl en behoeften.",
       icon: <BookOpen className="w-5 h-5" />
@@ -115,8 +115,8 @@ export default function BestVragenADHDCoach() {
 
   const redFlags = [
     {
-      warning: "Belooft snelle 'genezing' van ADHD",
-      explanation: "ADHD is geen ziekte die genezen kan worden - coaches helpen je ermee omgaan"
+      warning: "Belooft snelle 'genezing' van Diëtiek",
+      explanation: "Diëtiek is geen ziekte die genezen kan worden - coaches helpen je ermee omgaan"
     },
     {
       warning: "Geen duidelijke certificering of training",
@@ -144,7 +144,7 @@ export default function BestVragenADHDCoach() {
     {
       phase: "Voorbereiding (dag voor gesprek)",
       activities: [
-        "Schrijf je specifieke ADHD uitdagingen op",
+        "Schrijf je specifieke Diëtiek uitdagingen op",
         "Bepaal je coaching doelen",
         "Bereid je lijst met vragen voor",
         "Onderzoek de achtergrond van de coach"
@@ -172,9 +172,9 @@ export default function BestVragenADHDCoach() {
 
   const situationSpecificQuestions = [
     {
-      situation: "Voor werkgerelateerde ADHD problemen",
+      situation: "Voor werkgerelateerde Diëtiek problemen",
       questions: [
-        "Heb je ervaring met ADHD op de werkplek?",
+        "Heb je ervaring met Diëtiek op de werkplek?",
         "Kun je helpen bij gesprekken met werkgevers?",
         "Werk je samen met HR afdelingen?",
         "Hoe pak je werkstress en deadline management aan?"
@@ -193,7 +193,7 @@ export default function BestVragenADHDCoach() {
       situation: "Voor studenten en jongvolwassenen",
       questions: [
         "Heb je ervaring met studie coaching?",
-        "Ken je onderwijsvoorzieningen voor ADHD?",
+        "Ken je onderwijsvoorzieningen voor Diëtiek?",
         "Hoe help je bij carrière planning?",
         "Werk je samen met studenten begeleiders?"
       ]
@@ -219,7 +219,7 @@ export default function BestVragenADHDCoach() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <a 
-                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://dietistindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -227,7 +227,7 @@ export default function BestVragenADHDCoach() {
                       Facebook
                     </a>
                     <a 
-                      href={`https://wa.me/?text=${encodeURIComponent('Beste vragen voor ADHD coach: complete interview gids - https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
+                      href={`https://wa.me/?text=${encodeURIComponent('Beste vragen voor Dietist: complete interview gids - https://dietistindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -235,7 +235,7 @@ export default function BestVragenADHDCoach() {
                       WhatsApp
                     </a>
                     <a 
-                      href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
+                      href={`https://www.messenger.com/t/?link=${encodeURIComponent('https://dietistindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -243,7 +243,7 @@ export default function BestVragenADHDCoach() {
                       Messenger
                     </a>
                     <a 
-                      href={`https://x.com/intent/tweet?text=${encodeURIComponent('Beste vragen voor ADHD coach: complete interview gids')}&url=${encodeURIComponent('https://adhdcoachindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
+                      href={`https://x.com/intent/tweet?text=${encodeURIComponent('Beste vragen voor Dietist: complete interview gids')}&url=${encodeURIComponent('https://dietistindebuurt.nl/blog/beste-vragen-adhd-coach')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-black text-white text-sm rounded-md hover:bg-gray-800 transition-colors w-[calc(50%-0.25rem)] sm:w-auto"
@@ -258,10 +258,10 @@ export default function BestVragenADHDCoach() {
             {/* Header */}
             <header className="px-8 pt-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                De beste vragen om te stellen aan je ADHD coach
+                De beste vragen om te stellen aan je Dietist
               </h1>
               <p className="text-xl text-gray-600 mb-6">
-                Complete interview gids met <strong>25+ essentiële vragen</strong> om de perfecte ADHD coach te vinden. Inclusief red flags, evaluatiecriteria en situatie-specifieke vragen.
+                Complete interview gids met <strong>25+ essentiële vragen</strong> om de perfecte Dietist te vinden. Inclusief red flags, evaluatiecriteria en situatie-specifieke vragen.
               </p>
               <div className="flex items-center text-sm text-gray-500 mb-8">
                 <span>Laatst bijgewerkt: September 2025</span>
@@ -274,7 +274,7 @@ export default function BestVragenADHDCoach() {
             <div className="px-8 mb-8">
               <Image
                 src="/img/blog/beste-vragen-adhd-coach/featured.webp"
-                alt="Professional ADHD coach consultation interview questions checklist evaluation"
+                alt="Professional Dietist consultation interview questions checklist evaluation"
                 width={800}
                 height={400}
                 className="w-full h-64 object-cover rounded-lg"
@@ -285,10 +285,10 @@ export default function BestVragenADHDCoach() {
             <div className="mx-8 mb-8 bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-6 rounded-r-lg">
               <h2 className="text-lg font-semibold text-green-900 mb-3 flex items-center">
                 <CheckCircle2 className="w-5 h-5 mr-2" />
-                🎯 TL;DR: Je ADHD coach interview checklist
+                🎯 TL;DR: Je Dietist interview checklist
               </h2>
               <div className="text-green-800 space-y-2">
-                <p><strong>Doel:</strong> Stel de juiste <strong>beste vragen ADHD coach</strong> om een perfecte match te vinden voor jouw specifieke situatie.</p>
+                <p><strong>Doel:</strong> Stel de juiste <strong>beste vragen Dietist</strong> om een perfecte match te vinden voor jouw specifieke situatie.</p>
                 <ul className="space-y-1 ml-4">
                   <li>• <strong>Essentieel:</strong> 25+ vragen verdeeld over 4 categorieën (ervaring, methodiek, praktijk, resultaten)</li>
                   <li>• <strong>Red flags:</strong> 6 waarschuwingssignalen om te vermijden</li>
@@ -301,16 +301,16 @@ export default function BestVragenADHDCoach() {
             {/* Content */}
             <div className="px-8 prose prose-lg max-w-none">
               <p>
-                Het eerste gesprek met een potentiële <strong>ADHD coach</strong> is cruciaal voor een succesvolle samenwerking. De juiste <strong>beste vragen ADHD coach</strong> stellen kan het verschil maken tussen een transformerende coaching ervaring en een teleurstellende geldverspilling.
+                Het eerste gesprek met een potentiële <strong>Dietist</strong> is cruciaal voor een succesvolle samenwerking. De juiste <strong>beste vragen Dietist</strong> stellen kan het verschil maken tussen een transformerende coaching ervaring en een teleurstellende geldverspilling.
               </p>
 
               <p>
-                Research toont dat 73% van de mensen die ontevreden zijn met hun ADHD coach, achteraf zeggen dat ze de verkeerde vragen stelden tijdens het selectieproces. Deze complete gids helpt je dat te voorkomen.
+                Research toont dat 73% van de mensen die ontevreden zijn met hun Dietist, achteraf zeggen dat ze de verkeerde vragen stelden tijdens het selectieproces. Deze complete gids helpt je dat te voorkomen.
               </p>
 
               <h2>Waarom de juiste vragen stellen zo belangrijk is</h2>
               <p>
-                Een <strong>ADHD coach interview</strong> is niet zomaar een kennismakingsgesprek - het is jouw kans om te evalueren of deze professional jou daadwerkelijk kan helpen. Verkeerde coach keuzes kosten gemiddeld €1.200-2.500 aan verloren tijd en geld.
+                Een <strong>Dietist interview</strong> is niet zomaar een kennismakingsgesprek - het is jouw kans om te evalueren of deze professional jou daadwerkelijk kan helpen. Verkeerde coach keuzes kosten gemiddeld €1.200-2.500 aan verloren tijd en geld.
               </p>
 
               <div className="bg-orange-50 p-6 rounded-lg my-6">
@@ -363,7 +363,7 @@ export default function BestVragenADHDCoach() {
 
               <h2>Red flags: waarschuwingssignalen om te herkennen</h2>
               <p>
-                Sommige coaches zijn niet geschikt of professioneel. Deze <strong>ADHD coach evaluatie</strong> signalen helpen je problematische coaches te vermijden.
+                Sommige coaches zijn niet geschikt of professioneel. Deze <strong>Dietist evaluatie</strong> signalen helpen je problematische coaches te vermijden.
               </p>
 
               <div className="space-y-4 my-8">
@@ -389,7 +389,7 @@ export default function BestVragenADHDCoach() {
 
               <h2>Interview strategie: 3-fase aanpak</h2>
               <p>
-                Een gestructureerde <strong>ADHD coaching intake</strong> aanpak maximaliseert je kansen op de juiste keuze. Volg deze bewezen strategie.
+                Een gestructureerde <strong>voedingsadvies intake</strong> aanpak maximaliseert je kansen op de juiste keuze. Volg deze bewezen strategie.
               </p>
 
               <div className="space-y-6 my-8">
@@ -505,7 +505,7 @@ export default function BestVragenADHDCoach() {
               {/* Call to Action */}
               <div className="my-12 bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 rounded-xl p-8 text-center">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Klaar om de perfecte ADHD coach te vinden?
+                  Klaar om de perfecte Dietist te vinden?
                 </h2>
                 <p className="text-gray-700 mb-6">
                   Gebruik deze vragen om de ideale coach in jouw regio te vinden. Start vandaag nog met het transformeren van je leven.
@@ -515,7 +515,7 @@ export default function BestVragenADHDCoach() {
                     href="/" 
                     className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                   >
-                    Vind ADHD coaches bij mij in de buurt
+                    Vind Dietisten bij mij in de buurt
                   </Link>
                   <Link 
                     href="/blog/hoe-kies-je-juiste-adhd-coach" 

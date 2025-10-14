@@ -55,8 +55,8 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
   ];
 
   const therapyOptions = [
-    'Nooit ADHD therapie geprobeerd',
-    'Momenteel in ADHD therapie',
+    'Nooit Diëtiek therapie geprobeerd',
+    'Momenteel in Diëtiek therapie',
     'Geprobeerd maar gestopt',
     'Op zoek naar een andere specialist'
   ];
@@ -65,7 +65,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
     'Concentratieproblemen op werk/school',
     'Impulsief gedrag en emotieregulatie',
     'Organisatie en tijdsmanagement',
-    'Relatieproblemen door ADHD symptomen',
+    'Relatieproblemen door Diëtiek symptomen',
     'Zelfvertrouwen en zelfbeeld verbeteren'
   ];
 
@@ -170,7 +170,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
       <div className="bg-white rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header with close button */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
-          <h2 className="text-xl font-bold text-gray-800">ADHD Coach Matching Quiz</h2>
+          <h2 className="text-xl font-bold text-gray-800">Diëtiek Coach Matching Quiz</h2>
           <button
             onClick={handleClose}
             className="text-gray-400 hover:text-gray-600 p-1"
@@ -229,7 +229,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
           {currentStep === 2 && (
             <div>
               <h3 className="text-lg font-semibold mb-4">
-                Ben je gediagnosticeerd met ADHD?
+                Ben je gediagnosticeerd met Diëtiek?
               </h3>
               <div className="space-y-3">
                 {diagnosisOptions.map((option) => (
@@ -253,7 +253,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
           {currentStep === 3 && (
             <div>
               <h3 className="text-lg font-semibold mb-4">
-                Heb je eerder ADHD therapie geprobeerd?
+                Heb je eerder Diëtiek therapie geprobeerd?
               </h3>
               <div className="space-y-3">
                 {therapyOptions.map((option) => (
@@ -399,7 +399,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Bedankt!</h3>
                 <p className="text-gray-600">
-                  We hebben je antwoorden ontvangen en gaan op zoek naar de beste ADHD coaches voor jou.
+                  We hebben je antwoorden ontvangen en gaan op zoek naar de beste Dietisten voor jou.
                 </p>
               </div>
               <p className="text-sm text-gray-500 mb-6">

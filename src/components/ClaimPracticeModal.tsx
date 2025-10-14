@@ -21,9 +21,9 @@ interface FormData {
 }
 
 const SERVICES = [
-  'ADHD Coach',
-  'ADHD Psycholoog',
-  'ADHD Kinderpsycholoog',
+  'Diëtiek Coach',
+  'Diëtiek Psycholoog',
+  'Diëtiek Kinderpsycholoog',
   'Anders'
 ];
 
@@ -80,7 +80,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName, spec
   const handleSubmit = async () => {
     setIsSubmitting(true);
     
-    const fullUrl = `https://adhdcoachindebuurt.nl/specialist/${specialistSlug}`;
+    const fullUrl = `https://dietistindebuurt.nl/specialist/${specialistSlug}`;
     
     try {
       const response = await fetch('https://n8n-595.workflowapp.ai/webhook/e892c3b5-8e7c-4bcc-909f-9e4bcdf2a1a1', {
@@ -189,7 +189,7 @@ export default function ClaimPracticeModal({ isOpen, onClose, practiceName, spec
                 Klaar om meer referrals te krijgen?
               </h3>
               <p className="text-lg text-gray-600 mb-8">
-                Neem de controle over je praktijkprofiel en kom in contact met families die ADHD hulp zoeken.
+                Neem de controle over je praktijkprofiel en kom in contact met families die Diëtiek hulp zoeken.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
