@@ -19,402 +19,278 @@ interface FAQItem {
   is_published?: boolean;
 }
 
-// Comprehensive static FAQ data
+// Comprehensive static FAQ data for Dietist
 const comprehensiveFAQs = [
-  // General Diëtiek Information
+  // General Information about Dietists
   {
     id: 'general-1',
-    question: 'Wat is Diëtiek precies?',
-    answer: 'Diëtiek staat voor Attention Deficit Hyperactivity Disorder (Aandachtstekort Hyperactiviteitsstoornis). Het is een neurobiologische aandoening die invloed heeft op de uitvoerende functies van de hersenen. Diëtiek kenmerkt zich door drie hoofdsymptomen: aandachtsproblemen, hyperactiviteit en impulsiviteit. Deze symptomen zijn niet simpelweg een kwestie van wilskracht of opvoeding, maar hebben een biologische basis.\n\nMensen met Diëtiek hebben een andere manier van informatie verwerken en kunnen moeite hebben met concentratie, planning, organisatie en het reguleren van emoties. Het is belangrijk om te begrijpen dat Diëtiek ook veel positieve kanten heeft, zoals creativiteit, energie, spontaniteit en out-of-the-box denken.',
+    question: 'Wat is een dietist en wat doet een dietist?',
+    answer: 'Een dietist is een erkend zorgprofessional die gespecialiseerd is in voeding en gezondheid. Dietisten hebben een HBO-opleiding Voeding en Diëtetiek afgerond en zijn geregistreerd bij de beroepsvereniging (NVD - Nederlandse Vereniging van Diëtisten).\n\n**Wat doet een dietist:**\n- **Voedingsadvies op maat:** Persoonlijke begeleiding bij gezonde voeding\n- **Medische voedingstherapie:** Behandeling van ziekten via voeding (diabetes, hart- en vaatziekten, maag-darmproblemen)\n- **Gewichtsmanagement:** Begeleiding bij gezond afvallen of aankomen\n- **Allergieën en intoleranties:** Hulp bij voedselallergie of -intolerantie\n- **Sportvoeding:** Optimale voeding voor sporters\n- **Eetgedrag:** Begeleiding bij eetstoornis of emotioneel eten\n\n**Verschil met voedingsdeskundige:**\nAlleen dietisten zijn erkende zorgverleners en mogen medische voedingstherapie geven. Voedingsdeskundigen hebben vaak geen erkende opleiding en hun adviezen worden niet vergoed door zorgverzekeraars.',
     category: 'Algemeen',
     order: 1
   },
   {
     id: 'general-2',
-    question: 'Wat zijn de verschillende typen Diëtiek?',
-    answer: 'Diëtiek wordt ingedeeld in drie hoofdtypen:\n\n1. **Diëtiek Voornamelijk Onoplettend** (vroeger ADD genoemd): Personen hebben vooral moeite met aandacht en concentratie, maar vertonen weinig hyperactiviteit. Symptomen zijn dagdromen, vergeetachtigheid, moeite met organisatie.\n\n2. **Diëtiek Voornamelijk Hyperactief-Impulsief**: Personen zijn vooral hyperactief en impulsief, maar hebben minder aandachtsproblemen. Symptomen zijn rusteloosheid, veel praten, moeite met wachten.\n\n3. **Diëtiek Gecombineerd Type**: Dit is het meest voorkomende type, waarbij zowel aandachtsproblemen als hyperactiviteit-impulsiviteit aanwezig zijn.\n\nHet type kan in de loop van het leven veranderen, vooral bij de overgang van kindertijd naar volwassenheid.',
+    question: 'Wanneer moet ik naar een dietist?',
+    answer: 'Je kunt een dietist raadplegen in veel verschillende situaties:\n\n**Medische redenen:**\n- Diabetes type 1 of 2\n- Hoge cholesterol of bloeddruk\n- Hart- en vaatziekten\n- Overgewicht of obesitas\n- Ondergewicht of ondervoeding\n- Maag-darmproblemen (IBS, coeliakie, Crohn)\n- Nierziekte\n- Kanker (voedingsondersteuning tijdens behandeling)\n\n**Voedingsgerelateerde problemen:**\n- Voedselallergie of -intolerantie\n- Moeite met gezond eten\n- Vermoeidheid door verkeerde voeding\n- Spijsverteringsproblemen\n\n**Leefstijl en preventie:**\n- Gezond willen afvallen\n- Sportprestaties verbeteren\n- Zwangerschap of borstvoeding\n- Ouder worden gezond\n- Preventie van ziekten\n\n**Eetgedrag:**\n- Emotioneel eten\n- Binge eating\n- Orthorexie (obsessief gezond eten)\n\n**Tip:** Je hoeft niet te wachten tot problemen ernstig zijn. Preventief advies kan veel gezondheidsproblemen voorkomen.',
     category: 'Algemeen',
     order: 2
   },
   {
     id: 'general-3',
-    question: 'Hoe herken ik Diëtiek symptomen bij mezelf of mijn kind?',
-    answer: 'Diëtiek symptomen variëren per persoon en leeftijd. Bij **kinderen** zie je vaak:\n- Moeite met stilzitten, veel bewegen\n- Snel afgeleid door externe prikkels\n- Vergeten van huiswerk of spullen\n- Moeite met instructies opvolgen\n- Praten zonder nadenken, onderbreken\n\nBij **volwassenen** zijn symptomen vaak subtieler:\n- Chronische desorganisatie\n- Uitstelgedrag en moeite met deadlines\n- Relatieproblemen door impulsiviteit\n- Werkproblemen, vaak jobhopping\n- Gevoelens van falen of inadequaatheid\n\n**Belangrijk:** Alleen een gekwalificeerde professional kan Diëtiek diagnosticeren. Als je meerdere symptomen herkent die al langere tijd bestaan en problemen veroorzaken in verschillende levensdomeinen, overweeg dan om hulp te zoeken.',
+    question: 'Wat is het verschil tussen een dietist en een voedingsdeskundige?',
+    answer: '**Dietist (erkend zorgprofessional):**\n- HBO-opleiding Voeding en Diëtetiek (4 jaar)\n- Geregistreerd bij kwaliteitsregister (SKD/NVD)\n- Mag medische diagnoses stellen en behandelen\n- Werkt evidence-based (wetenschappelijk onderbouwd)\n- Vergoeding via zorgverzekering mogelijk\n- Jaarlijkse bij- en nascholing verplicht\n- Valt onder tuchtrecht en klachtenregeling\n\n**Voedingsdeskundige (geen beschermde titel):**\n- Geen wettelijk erkende opleiding vereist\n- Geen registratie vereist\n- Mag geen medische voedingstherapie geven\n- Vaak korte cursussen of zelfstudie\n- Geen vergoeding via zorgverzekering\n- Geen verplichte nascholing\n- Geen tuchtrecht\n\n**Voedingscoach/lifestyle coach:**\n- Vaak nog minder opleiding dan voedingsdeskundige\n- Focus op algemene leefstijladviezen\n- Geen medische kennis vereist\n\n**Let op:** Alleen bij een erkende dietist ben je verzekerd van gekwalificeerde zorg en eventuele vergoeding. Check altijd registratie bij SKD (Stichting Kwaliteitszorg Diëtisten).',
     category: 'Algemeen',
     order: 3
   },
   {
     id: 'general-4',
-    question: 'Is Diëtiek een echte aandoening of een excuus?',
-    answer: 'Diëtiek is een wetenschappelijk erkende neurobiologische aandoening. Dit is geen mening, maar een feit ondersteund door decennia van onderzoek:\n\n**Wetenschappelijk bewijs:**\n- Hersenscans tonen structurele en functionele verschillen\n- Genetisch onderzoek toont erfelijkheid van 70-80%\n- Neurochemische verschillen in neurotransmitters\n- Consistent wereldwijd erkend door medische organisaties\n\n**Waarom misverstanden bestaan:**\n- Symptomen zijn niet altijd zichtbaar\n- Iedereen heeft wel eens concentratieproblemen\n- Stigma en gebrek aan begrip\n- Media representatie is vaak onnauwkeurig\n\n**De realiteit:**\n- Diëtiek veroorzaakt meetbare problemen in hersenfunctie\n- Mensen met Diëtiek willen wel, maar kunnen vaak niet\n- Het is geen kwestie van luiheid of gebrek aan wilskracht\n- Behandeling werkt omdat het een echte aandoening is\n\n**Belangrijk:** Diëtiek minimaliseren als "excuus" is schadelijk en incorrect.',
+    question: 'Zijn alle dietisten hetzelfde of zijn er specialisaties?',
+    answer: 'Hoewel alle dietisten een brede basis hebben, zijn er veel specialisaties:\n\n**Medische specialisaties:**\n- **Diabetes dietist:** Gespecialiseerd in diabetes type 1 en 2\n- **Oncologie dietist:** Voeding bij kanker\n- **Nefro-dietist:** Nierziekten\n- **MDL-dietist:** Maag-, darm- en leverziekten\n- **Hart- en vaatziekte dietist**\n- **Intensive care dietist:** Kritiek zieke patiënten\n\n**Levensfase specialisaties:**\n- **Kinder dietist:** 0-18 jaar (groei, ontwikkeling, gewicht)\n- **Zwangerschaps dietist:** Voor, tijdens en na zwangerschap\n- **Ouderen dietist:** Ondervoeding, kauwproblemen\n\n**Gedrag en psychologie:**\n- **Eetstoornissen dietist:** Anorexia, boulimia, binge eating\n- **Emotioneel eten specialist**\n- **Mindful eating begeleider**\n\n**Sport en prestatie:**\n- **Sportdietist:** Topsporten tot recreatie\n- **Fitness dietist:** Bodybuilding, krachtsport\n\n**Overig:**\n- **Vegetarisch/veganistisch voedingsadvies**\n- **Allergie en intolerantie specialist**\n- **Gewichtsmanagement specialist**\n\n**Hoe vind je een specialist?**\nCheck op de website van de dietist of vraag bij eerste contact naar ervaring met jouw specifieke vraag.',
     category: 'Algemeen',
     order: 4
   },
   {
-    id: 'general-5',
-    question: 'Wat zijn de positieve kanten van Diëtiek?',
-    answer: 'Diëtiek wordt vaak alleen negatief belicht, maar heeft ook veel sterke punten:\n\n**Creativiteit en innovatie:**\n- Out-of-the-box denken\n- Originele oplossingen voor problemen\n- Artistieke en creatieve talenten\n- Vermogen om verbanden te zien die anderen missen\n\n**Energie en passie:**\n- Hoge energie levels\n- Enthousiasme voor interessante onderwerpen\n- Hyperfocus: intense concentratie op passies\n- Doorzettingsvermogen bij uitdagingen\n\n**Sociale kwaliteiten:**\n- Spontaniteit en levendigheid\n- Empathie en gevoeligheid\n- Humor en entertainmentwaarde\n- Vermogen om anderen te inspireren\n\n**Probleemoplossend vermogen:**\n- Flexibel denken\n- Snel schakelen tussen onderwerpen\n- Multitasking (in de juiste omstandigheden)\n- Crisismanagement\n\n**Belangrijke boodschap:** Diëtiek is geen tekort maar een verschil. Veel succesvolle ondernemers, kunstenaars en innovators hebben Diëtiek.',
-    category: 'Algemeen',
+    id: 'costs-1',
+    question: 'Wat kosten dietist consulten en wordt het vergoed?',
+    answer: '**Kosten dietist consulten:**\n\n**Gemiddelde tarieven:**\n- **Eerste consult (60 min):** €70-€95\n- **Vervolgconsult (30-45 min):** €45-€70\n- **Groepssessies:** €25-€40 per persoon\n- **Online consult:** Vaak 10-20% goedkoper\n- **Thuisbezoek:** €90-€130 (inclusief reiskosten)\n\n**Vergoeding door zorgverzekering:**\n\n**Basisverzekering:**\n- Medische voeding bij diagnose zoals diabetes, hart- en vaatziekten\n- Vaak 3-7 consulten per jaar vergoed\n- Eigen risico van toepassing (€385 in 2024)\n- Verwijzing huisarts soms vereist (check je polis)\n\n**Aanvullende verzekering:**\n- Extra consulten zonder verwijzing\n- Vaak 3-10 extra consulten\n- Preventieve voedingsadviezen\n- Variabel per verzekeraar: €100-€400 per jaar\n\n**Voorbeelden per verzekeraar (2024):**\n- **VGZ:** 3 uur basis + max €250 aanvullend\n- **Zilveren Kruis:** 3 uur basis + max €200 aanvullend  \n- **CZ:** 3 uur basis + max €300 aanvullend\n- **Menzis:** 3 uur basis + max €150 aanvullend\n\n**Niet vergoed:**\n- Sportvoeding (tenzij medisch noodzakelijk)\n- Algemeen gezond leven advies\n- Consulten zonder diagnose\n\n**Tip:** Check altijd je polis en bel je verzekeraar voor zekerheid. Vraag de dietist om een kostenopgave vooraf.',
+    category: 'Kosten en Vergoeding',
     order: 5
   },
   {
-    id: 'diagnosis-1',
-    question: 'Hoe wordt Diëtiek gediagnosticeerd?',
-    answer: 'Diëtiek diagnose is een uitgebreid proces dat verschillende stappen omvat:\n\n**1. Intake en anamnese:** Uitgebreide gesprekken over symptomen, ontwikkelingsgeschiedenis en functioneren in verschillende situaties.\n\n**2. Vragenlijsten:** Gestandaardiseerde vragenlijsten voor patiënt en naasten (zoals Diëtiek Rating Scale, Conners vragenlijsten).\n\n**3. Observatie:** Gedragsobservatie in verschillende situaties.\n\n**4. Neuropsychologisch onderzoek:** Tests om aandacht, executieve functies en andere cognitieve vaardigheden te meten.\n\n**5. Lichamelijk onderzoek:** Om andere oorzaken uit te sluiten.\n\n**6. Schoolrapporten/werkgegevens:** Informatie over functioneren op school of werk.\n\n**Wie kan diagnosticeren?** Psychiaters, klinisch psychologen, en soms huisartsen met specialistische kennis. Het proces kan enkele weken tot maanden duren.',
-    category: 'Diagnose',
-    order: 4
-  },
-  {
-    id: 'diagnosis-2',
-    question: 'Kan Diëtiek ook op volwassen leeftijd voor het eerst gediagnosticeerd worden?',
-    answer: 'Ja, absoluut! Steeds meer volwassenen krijgen een Diëtiek diagnose. Dit kan verschillende redenen hebben:\n\n**Waarom later gediagnosticeerd:**\n- Diëtiek werd vroeger minder herkend, vooral bij meisjes\n- Compensatiestrategieën werkten in jeugd, maar falen bij toenemende verantwoordelijkheden\n- Andere levensomstagigheden (studie, werk, ouderschap) maken symptomen duidelijker\n- Toegenomen bewustzijn en herkenning van Diëtiek\n\n**Volwassen Diëtiek signalen:**\n- Chronische organisatieproblemen\n- Moeite met tijdmanagement\n- Impulsieve beslissingen\n- Relatieproblemen\n- Werkgerelateerde uitdagingen\n- Gevoelens van underachievement\n\n**Diagnostiek volwassenen** is vaak complexer omdat:\n- Symptomen kunnen gemaskeerd zijn door coping strategieën\n- Andere aandoeningen (depressie, angst) kunnen overlappen\n- Kindertijdsymptomen moeten retrospectief beoordeeld worden',
-    category: 'Diagnose',
-    order: 5
-  },
-  {
-    id: 'diagnosis-3',
-    question: 'Wat kost een Diëtiek diagnose en hoe lang duurt het?',
-    answer: '**Kosten Diëtiek diagnose:**\n\n**Via GGZ (vergoed):**\n- Basispakket zorgverzekering dekt diagnostiek\n- Eigen risico van toepassing (€385 in 2024)\n- Verwijzing huisarts nodig\n- Wachttijden: 8-20 weken gemiddeld\n\n**Privé (niet vergoed):**\n- €1500-€3000 voor volledige diagnostiek\n- Sneller: 2-6 weken wachttijd\n- Uitgebreidere tests mogelijk\n- Meer tijd per consult\n\n**Wat is inbegrepen:**\n- Intake gesprekken (2-3 sessies)\n- Vragenlijsten en tests\n- Neuropsychologisch onderzoek\n- Rapportage en behandeladvies\n- Terugkoppeling gesprek\n\n**Tijdsduur proces:**\n- **Totaal:** 3-6 maanden (GGZ) of 1-2 maanden (privé)\n- **Actieve tijd:** 6-10 uur spreiding over meerdere afspraken\n- **Intake:** 1-2 weken\n- **Testfase:** 2-4 weken  \n- **Rapportage:** 2-3 weken\n\n**Tip:** Vraag vooraf kostenopgave en check dekking verzekering.',
-    category: 'Diagnose',
+    id: 'costs-2',
+    question: 'Heb ik een verwijzing nodig van mijn huisarts?',
+    answer: '**Korte antwoord:** Nee, meestal niet meer!\n\n**Per 2022 is verwijsplicht afgeschaft:**\n- Je kunt direct naar een dietist zonder huisarts\n- Dit geldt voor vrijwel alle zorgverzekeraars\n- Scheelt tijd en een extra arts bezoek\n\n**Uitzonderingen waarbij verwijzing nog nuttig/nodig is:**\n\n**1. Medische indicatie aantonen:**\n- Als je vergoeding wilt uit basispakket\n- Huisarts kan medische noodzaak documenteren\n- Maakt verzekeringsproces soepeler\n\n**2. Enkele verzekeraars:**\n- Sommige polissen vereisen nog verwijzing\n- Check je polisvoorwaarden\n- Bel je verzekeraar bij twijfel\n\n**3. Complexe medische situaties:**\n- Bij multiple aandoeningen\n- Als medicatie aangepast moet worden\n- Multidisciplinaire aanpak nodig\n\n**Voordelen van wel naar huisarts gaan:**\n- Medische gegevens worden gedeeld\n- Arts kan bloedwaarden laten checken\n- Integrale aanpak van je gezondheid\n- Sommige verzekeraars geven hogere vergoeding\n\n**Nadelen:**\n- Extra tijd en mogelijk kosten\n- Wachttijd voor huisartsafspraak\n\n**Advies:** \n- Bij duidelijke medische diagnose (diabetes, hoog cholesterol): ga via huisarts\n- Bij algemeen voedingsadvies of preventie: direct naar dietist kan\n- Twijfel? Bel je zorgverzekeraar',
+    category: 'Kosten en Vergoeding',
     order: 6
   },
   {
-    id: 'diagnosis-4',
-    question: 'Welke tests worden gebruikt bij Diëtiek diagnose?',
-    answer: '**Gesprekken en vragenlijsten:**\n- **Diëtiek Rating Scale:** Symptoom beoordeling\n- **Conners vragenlijsten:** Voor verschillende leeftijden\n- **DIVA interview:** Diagnostisch interview volwassenen\n- **Vragenlijsten voor familie/partners:** Externe observatie\n\n**Neuropsychologische tests:**\n- **Aandacht tests:** Continuous Performance Test (CPT)\n- **Werkgeheugen:** Digitspan, visuospatiële taken\n- **Inhibitie:** Stroop test, stop-signal taken\n- **Planning:** Tower tests, Trail Making Test\n\n**Observatie tests:**\n- **QbTest:** Computertest met bewegingssensor\n- **Gedragsobservatie:** In verschillende situaties\n- **Schoolrapporten:** Historische informatie\n\n**Medische onderzoeken:**\n- **Lichamelijk onderzoek:** Andere oorzaken uitsluiten\n- **Bloedonderzoek:** Schildklier, ijzer, vitamines\n- **Gehoortest:** Gehoorproblemen uitsluiten\n\n**Belangrijke noot:** Geen enkele test alleen is voldoende. Diagnose is gebaseerd op combinatie van alle informatie.',
-    category: 'Diagnose',
+    id: 'process-1',
+    question: 'Hoe verloopt een eerste consult bij een dietist?',
+    answer: 'Een eerste consult bij een dietist duurt meestal 60 minuten en bestaat uit verschillende onderdelen:\n\n**Voor het consult:**\n- **Voorbereiding:** Vaak krijg je een vragenlijst of voedingsdagboek toe te sturen\n- **Medische gegevens:** Breng huisartsbrief mee (indien aanwezig)\n- **Bloedwaarden:** Recente labresultaten kunnen nuttig zijn\n\n**Tijdens het eerste consult:**\n\n**1. Intake gesprek (20-30 min):**\n- Kennismaking en vertrouwensband\n- Bespreking van je hulpvraag en doelen\n- Medische geschiedenis en huidige gezondheid\n- Medicijngebruik en allergieën\n- Eetgewoonten en leefstijl\n- Werk, gezin en dagelijks leven\n\n**2. Metingen (5-10 min):**\n- Lengte en gewicht\n- Body Mass Index (BMI)\n- Vaak ook: buikomvang, vetpercentage\n- Soms bloeddruk\n\n**3. Voedingsanalyse (15-20 min):**\n- Bespreking voedingsdagboek\n- Eetpatroon en gewoonten\n- Maaltijdritme en portie groottes\n- Voedingsvoorkeuren en afkeren\n- Kookvaardigheden en tijd\n\n**4. Advies en actieplan (15-20 min):**\n- Persoonlijk voedingsadvies\n- Concrete, haalbare doelen\n- Praktische tips en recepten\n- Vervolgafspraken plannen\n\n**Na het consult:**\n- **Schriftelijk advies:** Meestal krijg je binnen een week een rapport\n- **Recepten en tips:** Extra materiaal per email\n- **Vervolgafspraak:** Meestal na 2-4 weken\n\n**Wat te verwachten:**\n- Geen oordeel of veroordeling\n- Luisterende, empathische houding\n- Maatwerk, geen standaard diëten\n- Realistische, haalbare doelen',
+    category: 'Praktisch',
     order: 7
   },
   {
-    id: 'treatment-1',
-    question: 'Welke behandelingsmogelijkheden zijn er voor Diëtiek?',
-    answer: 'Diëtiek behandeling is meestal multimodaal en kan bestaan uit:\n\n**1. Medicatie:**\n- Stimulantia (methylfenidaat, dexamfetamine)\n- Non-stimulantia (atomoxetine)\n- Werken op dopamine en noradrenaline systemen\n\n**2. Psychologische behandeling:**\n- Cognitieve gedragstherapie (CGT)\n- voedingsadvies\n- Social skills training\n- Oudertraining (bij kinderen)\n\n**3. Psycho-educatie:**\n- Begrip van Diëtiek\n- Coping strategieën\n- Zelfacceptatie\n\n**4. Lifestyle interventies:**\n- Regelmatige beweging\n- Gezonde voeding\n- Voldoende slaap\n- Stress management\n\n**5. Praktische ondersteuning:**\n- Structuur en routine\n- Planningshulpmiddelen\n- Workplace accommodations\n\n**Beste aanpak:** Combinatie van behandelingen, afgestemd op individuele behoeften en levenssituatie.',
-    category: 'Behandeling',
-    order: 6
-  },
-  {
-    id: 'treatment-2',
-    question: 'Wat is cognitieve gedragstherapie (CGT) voor Diëtiek?',
-    answer: '**Wat is CGT voor Diëtiek:**\nCognitieve gedragstherapie helpt bij het veranderen van denkpatronen en gedrag die problemen veroorzaken bij Diëtiek.\n\n**Cognitieve aspecten:**\n- **Negatieve gedachten herkennen:** "Ik faal altijd", "Ik ben dom"\n- **Gedachten uitdagen:** Bewijs zoeken, alternatieven bedenken\n- **Realistische denken:** Meer evenwichtige perspectieven\n- **Zelfcompassie:** Vriendelijker zijn voor jezelf\n\n**Gedragsaspecten:**\n- **Organisatie vaardigheden:** Planning en structuur\n- **Tijdmanagement:** Realistische inschatting van tijd\n- **Probleemoplossing:** Stap voor stap aanpak\n- **Sociale vaardigheden:** Betere communicatie\n\n**Specifieke technieken:**\n- **Gedachtenregistratie:** Bewustwording van denkpatronen\n- **Behavioral activation:** Plezierige activiteiten plannen\n- **Exposure:** Geleidelijk moeilijke taken aanpakken\n- **Mindfulness:** Aandacht training\n\n**Duur en opzet:**\n- 12-20 sessies gemiddeld\n- Wekelijks of tweewekelijks\n- Huiswerkopdrachten tussen sessies\n- Focus op praktische vaardigheden',
-    category: 'Behandeling',
-    order: 7
-  },
-  {
-    id: 'treatment-3',
-    question: 'Helpen natuurlijke behandelingen en supplementen bij Diëtiek?',
-    answer: '**Wetenschappelijk ondersteunde aanvullingen:**\n\n**Beweging en sport:**\n- **Zeer effectief:** 30-60 min matige beweging dagelijks\n- **Mechanisme:** Verhoogt dopamine en noradrenaline natuurlijk\n- **Types:** Cardio, martial arts, team sporten\n- **Bonus:** Vermindert stress en verbetert slaap\n\n**Voeding:**\n- **Omega-3 vetzuren:** Enig bewijs voor verbetering (1000-2000mg/dag)\n- **Protein rijke ontbijt:** Stabiele bloedsuiker hele dag\n- **Vermijd:** Suiker pieken, cafeïne overdosis\n- **Regel:** 3 hoofdmaaltijden + gezonde snacks\n\n**Supplementen met beperkt bewijs:**\n- **Magnesium:** Bij tekort (laat testen)\n- **IJzer:** Alleen bij aantoonbare tekort\n- **Vitamine D:** Bij tekort aanvullen\n- **Probiotica:** Opkomend onderzoek naar darm-brein as\n\n**Niet bewezen:**\n- Elimatie diëten (tenzij allergieën)\n- Kruiden supplementen\n- Homeopathie\n- Detox kuren\n\n**Belangrijk:** Natuurlijke aanvullingen vervangen geen professionele behandeling, maar kunnen wel ondersteunen.',
-    category: 'Behandeling',
+    id: 'process-2',
+    question: 'Hoe lang duurt een traject bij een dietist?',
+    answer: '**Standaard traject duurt:** 3-6 maanden\n\n**Fase 1: Start en kennismaking (1-2 consulten)**\n- Eerste consult (60 min)\n- Eventueel tweede consult voor verdieping\n- Doelen stellen en actieplan maken\n\n**Fase 2: Actieve begeleiding (4-8 consulten)**\n- Vervolgconsulten elke 2-4 weken\n- Consulten van 30-45 minuten\n- Bijsturen van advies waar nodig\n- Obstakels bespreken en oplossen\n- Nieuwe vaardigheden aanleren\n\n**Fase 3: Consolidatie (2-3 consulten)**\n- Consulten elke 4-6 weken\n- Zelfstandigheid vergroten\n- Behoud van nieuwe gewoonten\n- Terugvalpreventie\n\n**Fase 4: Afsluiting en nazorg**\n- Evaluatie van resultaten\n- Toekomstplan zonder dietist\n- Mogelijk 1-2 check-ins per jaar\n\n**Totaal aantal consulten verschilt per situatie:**\n\n**Kort traject (3-5 consulten, 2-3 maanden):**\n- Simpele vraag (gezond afvallen, fitter worden)\n- Goede motivatie en discipline\n- Weinig obstakels\n\n**Gemiddeld traject (6-10 consulten, 3-6 maanden):**\n- Medische aandoening (diabetes, hoog cholesterol)\n- Gewichtsmanagement met uitdagingen\n- Leefstijl aanpassingen nodig\n\n**Lang traject (10-15+ consulten, 6-12 maanden):**\n- Complexe medische situatie\n- Eetstoornis of emotioneel eten\n- Groot gewichtsverlies nodig\n- Gedragsverandering moeilijk\n\n**Frequentie consulten:**\n- **Start:** Elke 2 weken\n- **Midden:** Elke 3-4 weken  \n- **Eind:** Elke 4-8 weken\n\n**Flexibiliteit:** Het tempo bepaal je zelf in overleg met de dietist. Sommige mensen hebben meer tijd nodig, anderen gaan sneller.',
+    category: 'Praktisch',
     order: 8
   },
   {
-    id: 'coaching-1',
-    question: 'Wat is het verschil tussen voedingsadvies en therapie?',
-    answer: '**Diëtiek Coaching** is praktisch gericht:\n- Focus op concrete doelen en vaardigheden\n- Ontwikkelen van organisatie- en planningsstrategieën\n- Structuur aanbrengen in dagelijks leven\n- Accountability en motivatie\n- Geen focus op verleden of diepliggende trauma\'s\n- Vooruitkijkend en oplossingsgericht\n\n**Therapie/Psychologie** is meer analytisch:\n- Behandeling van onderliggende problemen\n- Verwerken van emoties en ervaringen\n- Focus op psychische symptomen (angst, depressie)\n- Inzicht in gedragspatronen\n- Vaak terugkijkend naar oorzaken\n\n**Wanneer kies je wat?**\n- **Coaching:** Als je praktische vaardigheden wilt ontwikkelen en beter wilt functioneren\n- **Therapie:** Als je emotionele problemen hebt of trauma verwerking nodig hebt\n- **Beide:** Vaak het meest effectief, coaching voor praktische vaardigheden en therapie voor emotionele verwerking\n\n**voedingsadvies** is specifiek ontwikkeld voor de unieke uitdagingen van Diëtiek en vaak zeer effectief.',
-    category: 'Coaching',
-    order: 7
-  },
-  {
-    id: 'coaching-2',
-    question: 'Hoe verloopt een voedingsadvies traject?',
-    answer: 'Een typisch voedingsadvies traject bestaat uit verschillende fasen:\n\n**Fase 1: Intake en doelstelling (1-2 sessies)**\n- Kennismaking en vertrouwensband\n- Diëtiek impact in kaart brengen\n- Concrete doelen formuleren\n- Verwachtingen afstemmen\n\n**Fase 2: Vaardigheden ontwikkelen (6-12 sessies)**\n- Organisatie en planning strategieën\n- Tijdmanagement technieken\n- Structuur aanbrengen\n- Coping mechanismen\n- Praktische oefeningen\n\n**Fase 3: Implementatie en consolidatie (4-6 sessies)**\n- Toepassing in dagelijks leven\n- Obstakels identificeren en oplossen\n- Zelfvertrouwen opbouwen\n- Relapse prevention\n\n**Fase 4: Afsluiting en nazorg**\n- Evaluatie van vooruitgang\n- Toekomstplanning\n- Booster sessies indien nodig\n\n**Sessie frequentie:** Meestal wekelijks of tweewekelijks\n**Duur:** 60-90 minuten per sessie\n**Totale duur:** 3-9 maanden, afhankelijk van doelen en vooruitgang',
-    category: 'Coaching',
-    order: 8
-  },
-  {
-    id: 'coaching-3',
-    question: 'Hoe vind ik een goede Dietist?',
-    answer: '**Kwalificaties om op te letten:**\n\n**Opleiding en certificering:**\n- **Diëtiek-specifieke training:** Niet alleen algemene coaching\n- **Erkende instituten:** NRVT, NOBCO, International Coach Federation\n- **Bijscholing:** Blijft up-to-date met Diëtiek onderzoek\n- **Ervaring:** Minimaal 2 jaar praktijkervaring met Diëtiek\n\n**Persoonlijke fit:**\n- **Chemie:** Voel je je begrepen en geaccepteerd?\n- **Communicatiestijl:** Past bij jouw voorkeuren\n- **Beschikbaarheid:** Flexibel met afspraken\n- **Locatie/online:** Wat werkt voor jou?\n\n**Praktische zaken:**\n- **Kosten:** Transparant over tarieven en trajekt\n- **Aanpak:** Vraag naar concrete methodes\n- **Resultaten:** Vraag om referenties of verhalen\n- **Grenzen:** Kent eigen beperkingen, verwijst door indien nodig\n\n**Rode vlaggen:**\n- Belooft snelle "genezing"\n- Heeft geen Diëtiek-specifieke training\n- Wil geen intake gesprek\n- Kritisch over medicatie zonder medische achtergrond\n\n**Tip:** Vraag altijd een kennismakingsgesprek voordat je begint.',
-    category: 'Coaching',
+    id: 'process-3',
+    question: 'Kan ik ook online naar een dietist?',
+    answer: '**Ja! Online diëtetiek is volwaardig alternatief.**\n\n**Voordelen online consulten:**\n- **Geen reistijd:** Bespaar 30-60 minuten per consult\n- **Flexibeler:** Ook \'s avonds of weekenden mogelijk\n- **Veilig thuis:** Geen zorgen over parkeren of ov\n- **Vaak goedkoper:** 10-20% lagere tarieven\n- **Grotere keuze:** Niet beperkt tot jouw regio\n- **Comfortabel:** Eigen vertrouwde omgeving\n\n**Hoe werkt het:**\n- **Videobellen:** Via Zoom, Teams, WhatsApp Video of speciale platforms\n- **Voorbereiding:** Vragenlijst en voedingsdagboek digitaal invullen\n- **Materialen:** Advies en recepten per email/app\n- **Metingen thuis:** Je weegt jezelf thuis\n- **App begeleiding:** Sommige dietisten gebruiken apps voor dagelijkse ondersteuning\n\n**Ook vergoed:**\n- Zorgverzekeraars vergoeden online consulten gelijk aan fysieke consulten\n- Dietist moet wel geregistreerd zijn bij kwaliteitsregister\n- Dezelfde regels voor verwijzing en eigen risico\n\n**Wanneer is online minder geschikt:**\n- Bij eerste consult wil je soms persoonlijk contact\n- Complexe medische metingen nodig (bijv. huidplooimetingen)\n- Problemen met technologie of internet\n- Voorkeur voor persoonlijk contact\n\n**Hybride optie:**\nVeel dietisten bieden combinatie:\n- Eerste consult fysiek voor kennismaking\n- Vervolgconsulten online voor gemak\n- Check-ups fysiek voor metingen\n\n**Kwaliteit:**\nOnline diëtetiek is net zo effectief als fysieke consulten volgens onderzoek. De persoonlijke aandacht en het advies zijn hetzelfde.',
+    category: 'Praktisch',
     order: 9
   },
   {
-    id: 'coaching-4',
-    question: 'Wat zijn de kosten van voedingsadvies?',
-    answer: '**Gemiddelde tarieven in Nederland:**\n\n**Per sessie:**\n- **Startende coaches:** €60-€85 per uur\n- **Ervaren coaches:** €85-€120 per uur\n- **Top specialists:** €120-€150 per uur\n- **Online coaching:** Vaak 20-30% goedkoper\n\n**Totale trajectkosten:**\n- **Kort traject (8-10 sessies):** €650-€1200\n- **Standaard traject (12-15 sessies):** €1000-€1800\n- **Intensief traject (20+ sessies):** €1500-€3000\n\n**Extra kosten:**\n- **Intake (uitgebreid):** €150-€300\n- **Tussentijdse evaluaties:** €100-€150\n- **E-mail/telefooncontact:** Vaak inbegrepen\n- **Huiswerkmaterialen:** €25-€75\n\n**Vergoedinsmogelijkheden:**\n- **Zorgverzekering:** Aanvullend pakket (€200-€800/jaar)\n- **Werkgever:** Vaak bereid te investeren\n- **Gemeente:** Soms via WMO\n- **Belastingaftrek:** Als ziektekosten\n\n**Bespaartips:**\n- Groepscoaching is goedkoper\n- Online sessies kosten minder\n- Vraag naar pakket deals\n- Check of je werkgever meebetaalt',
-    category: 'Coaching',
+    id: 'process-4',
+    question: 'Hoe bereid ik me voor op mijn eerste afspraak?',
+    answer: '**Goede voorbereiding zorgt voor beter resultaat!**\n\n**1. Verzamel medische informatie:**\n- Recente bloedwaarden (indien aanwezig)\n- Lijst van medicijnen die je gebruikt\n- Verwijsbrief van huisarts (indien van toepassing)\n- Eerdere diëten of programma\'s die je geprobeerd hebt\n- Relevante medische diagnoses\n\n**2. Bijhouden voedingsdagboek (3-7 dagen):**\n- **Noteer alles** wat je eet en drinkt\n- **Hoeveelheden:** Bij benadering is prima\n- **Tijdstippen:** Wanneer je eet\n- **Situaties:** Waar, met wie, hoe voel je je\n- **Eerlijk zijn:** Dietist oordeelt niet, maar heeft correcte info nodig\n\n**Voorbeeld dagboek:**\n```\n7:00 - 2 boterhammen volkoren met kaas, 1 glas melk\n10:30 - 1 appel, 1 kop koffie met melk\n13:00 - Broodje gezond met kip, 1 blikje cola light\n15:30 - Handje noten, 1 reep chocola (50gr)\n18:30 - Pasta carbonara (groot bord), salade, glas wijn\n21:00 - Chips tijdens TV kijken (klein zakje)\n```\n\n**3. Denk na over je doelen:**\n- **Wat wil je bereiken?** (afvallen, gezonder eten, meer energie)\n- **Waarom nu?** (wat is je motivatie)\n- **Wat zijn obstakels?** (weinig tijd, stress, gezin)\n- **Wat heb je al geprobeerd?** (wat werkte/werkte niet)\n\n**4. Praktische vragen voorbereiden:**\n- Hoe vaak moeten we afspreken?\n- Wat gaat het kosten totaal?\n- Wat kan ik verwachten qua resultaten?\n- Krijg ik recepten en boodschappenlijsten?\n- Hoe kan ik tussendoor contact opnemen?\n\n**5. Praktische zaken regelen:**\n- Zorg dat je op tijd bent (liever 5 min te vroeg)\n- Neem je ID-bewijs en zorgpas mee\n- Draag comfortabele kleding (voor eventuele metingen)\n- Zorg dat je niet direct na de afspraak weg moet\n\n**6. Mentale voorbereiding:**\n- **Open mindset:** Wees bereid om dingen te veranderen\n- **Realistisch:** Geen quick fix, maar duurzame verandering\n- **Eerlijk:** Alleen met eerlijkheid kan dietist je echt helpen\n- **Geduldig:** Resultaten komen geleidelijk\n\n**Wat NIET te doen:**\n- Niet extra "goed eten" de dagen ervoor (geeft geen realistisch beeld)\n- Niet crashdiëten voor de afspraak\n- Niet liegen in voedingsdagboek (helpt niemand)',
+    category: 'Praktisch',
     order: 10
   },
   {
-    id: 'daily-life-1',
-    question: 'Hoe kan ik mijn dagelijkse routine beter organiseren met Diëtiek?',
-    answer: '**Structuur creëren:**\n- Vaste tijden voor opstaan, eten, werken, slapen\n- Gebruik van agenda\'s en planners (digitaal of papier)\n- To-do lijstjes met realistische doelen\n- Time-blocking technieken\n\n**Praktische tips:**\n- **Preparation is key:** Spullen de avond ervoor klaarzetten\n- **One thing at a time:** Focus op één taak tegelijk\n- **Timer methodes:** Pomodoro techniek (25 min work, 5 min pauze)\n- **Visual cues:** Sticky notes, whiteboards, apps met meldingen\n\n**Omgeving optimaliseren:**\n- Minimaliseer afleidingen (opgeruimde werkplek)\n- Vaste plekken voor belangrijke spullen\n- Gebruik van kleuren en labels\n- Background noise of stilte, wat voor jou werkt\n\n**Zelfzorg:**\n- Regelmatige pauzes inplannen\n- Beweging en frisse lucht\n- Gezond eten (stabiele bloedsuiker)\n- Voldoende slaap (7-9 uur)\n\n**Flexibiliteit:** Houd rekening met "Diëtiek dagen" en pas verwachtingen aan',
-    category: 'Dagelijks Leven',
-    order: 9
-  },
-  {
-    id: 'daily-life-2',
-    question: 'Welke apps en tools helpen bij Diëtiek?',
-    answer: '**Organisatie en planning:**\n\n**Agenda apps:**\n- **Google Calendar:** Gratis, sync tussen apparaten\n- **Fantastical:** Mooie interface, natuurlijke taal\n- **Any.do:** Eenvoudig, met familie functie\n\n**Taakbeheer:**\n- **Todoist:** Projecten, labels, karma systeem\n- **Things 3:** Elegant, alleen Apple\n- **TickTick:** Pomodoro timer ingebouwd\n\n**Focus en concentratie:**\n- **Forest:** Bomen planten tijdens focus tijd\n- **Freedom:** Blokkeer afleidende websites/apps\n- **Brain.fm:** Muziek specifiek voor focus\n- **Noisli:** Achtergrondgeluiden voor concentratie\n\n**Tijd tracking:**\n- **RescueTime:** Automatisch tijd bijhouden\n- **Toggl:** Handmatig tijd loggen\n- **Forest:** Pomodoro timer met beloningssysteem\n\n**Gewoontes:**\n- **Habitica:** Gamification van gewoontes\n- **Streaks:** Simpel gewoontes bijhouden\n- **Way of Life:** Kleurcodering van activiteiten\n\n**Tips:**\n- Start met 1-2 apps, niet teveel tegelijk\n- Probeer gratis versies eerst\n- Kies apps die bij jouw stijl passen',
-    category: 'Dagelijks Leven',
-    order: 10
-  },
-  {
-    id: 'daily-life-3',
-    question: 'Hoe ga ik om met uitstelgedrag (procrastinatie)?',
-    answer: '**Waarom uitstellen met Diëtiek:**\n- Taken lijken overweldigend groot\n- Perfectie angst: bang om te falen\n- Dopamine tekort: taken zijn niet bevredigend genoeg\n- Executive function problemen: moeilijk om te beginnen\n\n**Strategieën om te beginnen:**\n\n**Taken kleiner maken:**\n- **2-minuten regel:** Als het minder dan 2 min kost, doe het nu\n- **Eerste stap focus:** Alleen de eerste kleine stap plannen\n- **Salami techniek:** Grote taak in kleine plakjes verdelen\n\n**Weerstand verlagen:**\n- **Werk omgeving klaarzetten:** Alles binnen handbereik\n- **Makkelijke versie:** Begin met gedeeltelijke taak\n- **Samen werken:** Body doubling, iemand erbij\n\n**Motivatie verhogen:**\n- **Rewards:** Beloning na voltooiing\n- **Deadline druk:** Kunstmatige deadlines creëren\n- **Interessant maken:** Muziek, nieuwe locatie\n\n**Timing optimaliseren:**\n- **Prime time:** Werk tijdens jouw beste energie\n- **Time boxing:** Vaste tijd blokken voor taken\n- **Pomodoro:** 25 min werken, 5 min pauze\n\n**Zelfcompassie:** Wees vriendelijk voor jezelf, iedereen stelt uit.',
-    category: 'Dagelijks Leven',
+    id: 'weight-1',
+    question: 'Kan een dietist mij helpen met afvallen?',
+    answer: '**Absoluut! Gewichtsmanagement is kernexpertise van dietisten.**\n\n**Waarom een dietist bij afvallen:**\n- **Wetenschappelijk onderbouwd:** Geen modieuze diëten maar bewezen methoden\n- **Persoonlijk plan:** Afgestemd op jouw situatie, voorkeuren en gezondheid\n- **Gedragsverandering:** Focus op duurzame gewoonten, niet tijdelijke diëten\n- **Begeleiding:** Iemand die je motiveert en bijstuurt\n- **Medisch verantwoord:** Veilig afvallen zonder gezondheidsproblemen\n\n**Hoe werkt afvallen met een dietist:**\n\n**1. Realistische doelstelling:**\n- Gezond is 0,5-1 kg per week\n- Focus op gezondheid, niet alleen cijfer op weegschaal\n- Kleine, haalbare stappen\n\n**2. Analyse huidige situatie:**\n- Wat eet je nu en waarom\n- Welke gewoonten zorgen voor overgewicht\n- Emotionele triggers voor eten\n- Leefstijl en beweging\n\n**3. Persoonlijk voedingsplan:**\n- **Geen verboden:** Alles kan, op de juiste hoeveelheid\n- **Flexibel:** Past bij jouw leven en voorkeuren\n- **Haalbaar:** Geen extreme maatregelen\n- **Gezond:** Alle voedingstoffen die je nodig hebt\n\n**4. Gedragsverandering:**\n- Herkennen van eetpatronen\n- Omgaan met emotioneel eten\n- Mindful eten technieken\n- Alternatieve strategieën voor stress/verveling\n\n**5. Beweging:**\n- Advies over activiteit (samenwerking met fysiotherapeut mogelijk)\n- Realistisch beginnen\n- Opbouwen van beweging\n\n**Verwachte resultaten:**\n- **Eerste maand:** 2-4 kg (vaak iets meer door vocht)\n- **Daarna:** 0,5-1 kg per week gemiddeld\n- **10 kg afvallen:** 3-6 maanden\n- **20 kg afvallen:** 6-12 maanden\n\n**Succesfactoren:**\n- Regelmatige consulten (elke 2-4 weken)\n- Eerlijkheid over struggle\n- Geduld (geen quick fix)\n- Focus op gedrag, niet alleen gewicht\n- Acceptatie van terugval (hoort erbij)\n\n**Vergoeding:**\nAfvallen bij overgewicht/obesitas wordt vaak (gedeeltelijk) vergoed, vooral bij:\n- BMI > 30\n- BMI > 27 met gezondheidsproblemen (diabetes, hoge bloeddruk)\n- Medische indicatie van huisarts',
+    category: 'Gewichtsmanagement',
     order: 11
   },
   {
-    id: 'workplace-1',
-    question: 'Hoe ga ik om met Diëtiek op de werkplek?',
-    answer: '**Workplace accommodations:**\n- Rustige werkplek, weg van afleidingen\n- Flexibele werktijden\n- Frequent overleg met supervisor\n- Schriftelijke instructies en deadlines\n- Pauzes voor movement\n\n**Productiviteit strategieën:**\n- Moeilijke taken \'s ochtends (betere focus)\n- Grote projecten opdelen in kleinere delen\n- Gebruik van project management tools\n- Reguliere check-ins met jezelf\n\n**Communicatie:**\n- **Openheid:** Overweeg om je Diëtiek te delen met je werkgever\n- **Educatie:** Leg uit wat Diëtiek betekent en wat je nodig hebt\n- **Oplossingen aanbieden:** Kom met concrete voorstellen\n- **Grenzen stellen:** Zeg nee tegen te veel taken tegelijk\n\n**Netwerken:**\n- Zoek mentors of collega\'s met begrip\n- Diëtiek support groepen\n- Professional development\n\n**Carrière keuzes:**\n- Banen die aansluiten bij Diëtiek sterke punten (creativiteit, energie)\n- Vermijd micro-management omgevingen\n- Overwegen van ondernemerschap',
-    category: 'Werk & School',
+    id: 'weight-2',
+    question: 'Waarom lukt het mij niet om af te vallen zonder dietist?',
+    answer: '**Je bent zeker niet de enige! Afvallen is moeilijk om meerdere redenen:**\n\n**1. Biologische factoren:**\n- **Honger hormonen:** Lichaam verhoogt honger bij gewichtsverlies\n- **Trager metabolisme:** Lichaam past zich aan en verbrandt minder\n- **Volle signalen:** Verzadigingssignalen werken minder goed\n- **Set point:** Lichaam heeft "voorkeurs" gewicht\n- **Genetica:** Sommige mensen hebben genetisch moeilijker afvallen\n\n**2. Psychologische obstakels:**\n- **Emotioneel eten:** Eten uit stress, verveling, verdriet\n- **All-or-nothing denken:** "Nu heb ik het toch verpest, ik eet alles maar op"\n- **Gebrek aan zelfvertrouwen:** "Ik kan het toch niet"\n- **Externe triggers:** Reclames, sociale media, eten overal aanwezig\n- **Stress en slaapgebrek:** Maken afvallen moeilijker\n\n**3. Praktische uitdagingen:**\n- **Onduidelijke informatie:** Tegenstrijdig advies overal\n- **Geen structuur:** Niet weten waar te beginnen\n- **Tijdgebrek:** Geen tijd voor gezonde maaltijden\n- **Sociale druk:** Verjaardagen, etentjes, familie\n- **Omgeving:** Junkfood in huis, geen gezonde opties bij werk\n\n**4. Foutieve aanpak:**\n- **Te streng dieet:** Niet vol te houden\n- **Te snelle verwachtingen:** Opgeven bij tegenvallende resultaten\n- **Focus op verbieden:** Verboden maakt juist aantrekkelijk\n- **Geen plan voor terugval:** Opgeven bij eerste misstap\n- **Alleen op cijfer weegschaal:** Vergeten van andere voordelen\n\n**Wat een dietist anders doet:**\n\n**Persoonlijke aanpak:**\n- Jouw unieke situatie, uitdagingen en voorkeuren\n- Plan dat bij jouw leven past\n- Realistische verwachtingen stellen\n\n**Gedragsverandering:**\n- Patronen herkennen en doorbreken\n- Nieuwe gewoonten aanleren\n- Omgaan met emotioneel eten\n- Mindful eten technieken\n\n**Ondersteuning en accountability:**\n- Regelmatige check-ins houden je gemotiveerd\n- Iemand om mee te sparren bij struggle\n- Geen oordeel, wel begrip\n- Samen terugval analyseren en oplossen\n\n**Structuur:**\n- Duidelijk stappenplan\n- Concrete doelen en acties\n- Monitoring van voortgang\n- Bijsturen wanneer nodig\n\n**Wetenschappelijke kennis:**\n- Bewezen methoden, geen hypes\n- Begrijpen van biologische processen\n- Medische aspecten in de gaten houden\n\n**De boodschap:** Afvallen is moeilijk en het is NIET jouw schuld dat het tot nu toe niet lukte. Met de juiste ondersteuning en aanpak verhoog je je kans op succes enorm.',
+    category: 'Gewichtsmanagement',
     order: 12
   },
   {
-    id: 'workplace-2',
-    question: 'Hoe kan ik beter studeren met Diëtiek?',
-    answer: '**Studiemethoden voor Diëtiek:**\n\n**Structuur en planning:**\n- **Study schedule:** Vaste tijden voor verschillende vakken\n- **Kleine blokken:** 25-45 minuten studie met pauzes\n- **Deadlines opdelen:** Grote opgaven in kleinere stukken\n- **Visuele planning:** Kalender met kleuren per vak\n\n**Actieve studiemethoden:**\n- **Samenvatten:** Eigen woorden, mindmaps\n- **Flashcards:** Herhaling met apps zoals Anki\n- **Uitleggen:** Verhaal vertellen aan iemand anders\n- **Beweging:** Loop tijdens lezen, fidget toys\n\n**Optimale studieomgeving:**\n- **Vaste studieplek:** Geassocieerd met focus\n- **Geluid:** Noise-cancelling koptelefoon of witte ruis\n- **Materialen:** Alles binnen handbereik\n- **Afleiding weg:** Telefoon in andere kamer\n\n**Examens:**\n- **Extra tijd:** Vraag accommodaties aan\n- **Rustige ruimte:** Minder afleidende omgeving\n- **Pauzes:** Korte breaks tijdens lange examens\n- **Voorbereiding:** Oefen onder examencondities\n\n**Tips:**\n- Study buddy voor accountability\n- Beloning na studiesessies\n- Varieer studiemethoden om het interessant te houden',
-    category: 'Werk & School',
+    id: 'sports-1',
+    question: 'Kan een dietist mij helpen met sportvoeding?',
+    answer: '**Ja! Sportvoeding is een belangrijke specialisatie binnen de diëtetiek.**\n\n**Wat doet een sportdietist:**\n- **Voedingsplan voor training:** Wat eten voor, tijdens en na sport\n- **Prestatie optimalisatie:** Maximaal halen uit je training\n- **Herstel verbeteren:** Sneller herstellen tussen trainingen\n- **Lichaamssamenstelling:** Spiermassa opbouwen, vet verliezen\n- **Wedstrijd voeding:** Strategie voor competitie dag\n- **Supplementen advies:** Wat wel en niet nuttig is\n\n**Voor welke sporters:**\n- **Topsporters:** Professionele begeleiding\n- **Ambitie sporters:** Serieus trainende amateurs\n- **Recreatieve sporters:** Fitter en sterker worden\n- **Begin sporters:** Goede basis leggen\n\n**Verschillende sporten, verschillende aanpak:**\n\n**Duursport (hardlopen, wielrennen, zwemmen):**\n- Focus op koolhydraten en energie\n- Hydratatie strategie\n- Voeding tijdens lange sessies\n\n**Krachtsport (fitness, bodybuilding):**\n- Voldoende eiwit voor spiergroei\n- Timing van voeding rond training\n- Bulken en cutten verantwoord\n\n**Teamsport (voetbal, hockey):**\n- Energie voor intensieve wedstrijden\n- Herstel tussen wedstrijden\n- Seizoen periodisering\n\n**Wat te verwachten:**\n\n**Eerste consult:**\n- Bespreking sportdoel en ambitie\n- Analyse huidige voeding\n- Training schema bekijken\n- Metingen: gewicht, vetpercentage, spiermassa\n\n**Voedingsplan:**\n- Dagelijkse voeding aangepast op trainingen\n- Specifiek pre-workout en post-workout advies\n- Wedstrijd strategie\n- Recepten en maaltijdideeën\n\n**Supplementen:**\n- Advies over wat wel/niet zinvol is\n- Geen verkoop, objectief advies\n- Focus eerst op voeding, supplementen zijn aanvulling\n\n**Vergoeding:**\n- Sportvoeding wordt meestal NIET vergoed door zorgverzekering\n- Tenzij medische indicatie (ondergewicht, eetstoornis bij sporter)\n- Check je aanvullende verzekering, sommige hebben sportdietist vergoeding\n- Kosten: €60-€100 per consult\n\n**Samenwerking:**\nSportdietisten werken vaak samen met:\n- Personal trainers\n- Sportartsen\n- Fysiotherapeuten\n- Coaches',
+    category: 'Specialisaties',
     order: 13
   },
   {
-    id: 'workplace-3',
-    question: 'Welke banen passen goed bij Diëtiek?',
-    answer: '**Diëtiek-vriendelijke carrières:**\n\n**Creatieve beroepen:**\n- **Design/kunst:** Grafisch ontwerp, fotografie, kunst\n- **Media:** Journalist, contentcreator, filmmaker\n- **Marketing:** Creative director, social media\n- **Muziek/entertainment:** Musicus, producer, evenementenorganisatie\n\n**Hands-on werk:**\n- **Techniek:** Elektricien, loodgieter, monteur\n- **Gezondheidszorg:** Paramedicus, verpleegkundige, fysiotherapeut\n- **Sport/fitness:** Personal trainer, sportinstructeur\n- **Voeding:** Chef-kok, cateraar\n\n**Dynamische omgevingen:**\n- **Ondernemerschap:** Eigen bedrijf starten\n- **Sales:** Vertegenwoordiger, makelaar\n- **Consulting:** Freelance consultant\n- **Reizen:** Reisagent, piloot, tourguide\n\n**Waarom deze banen werken:**\n- Afwisseling en variatie\n- Flexibele structuur\n- Ruimte voor creativiteit\n- Directe feedback/resultaten\n- Mogelijkheid tot beweging\n\n**Banen om te vermijden:**\n- Extreme micro-management\n- Repetitieve administratie\n- Lange vergaderingen zonder pauzes\n- Perfectie-vereiste details\n\n**Belangrijk:** Elke persoon is uniek, vind wat bij jou past!',
-    category: 'Werk & School',
+    id: 'medical-1',
+    question: 'Kan een dietist mij helpen bij diabetes?',
+    answer: '**Ja! Voeding is cruciaal bij diabetes management.**\n\n**Type 1 diabetes:**\nHoewel je insuline blijft nodig hebben, kan een dietist:\n- **Koolhydraat tellen leren:** Hoeveel insuline bij welk voedsel\n- **Bloedsuiker stabiliteit:** Voorkomen van hypo\'s en hyper\'s\n- **Sport en voeding:** Aanpassen van insuline en eten rond beweging\n- **Gezonde voeding:** Preventie van complicaties op lange termijn\n\n**Type 2 diabetes:**\nVoeding kan diabetes verbeteren of zelfs omkeren:\n- **Gewichtsverlies:** Vaak 5-10% verlies verbetert bloedsuiker al enorm\n- **Koolhydraat management:** Juiste koolhydraten op juiste moment\n- **Medicatie verminderen:** Soms kan dosering omlaag\n- **Complicaties voorkomen:** Hart- en vaatziekten preventie\n\n**Wat doet de dietist:**\n\n**1. Educatie:**\n- Uitleg over effect van voeding op bloedsuiker\n- Koolhydraten, vezels, vetten begrijpen\n- Labels lezen en berekeningen maken\n\n**2. Persoonlijk voedingsplan:**\n- **Niet streng dieet:** Flexibel plan dat past bij jouw leven\n- **Verdeling over de dag:** Regelmatige maaltijden\n- **Portie controle:** Juiste hoeveelheden\n- **Keuzes maken:** Gezonde alternatieven voor favorieten\n\n**3. Monitoring:**\n- Bloedsuiker logboek bespreken\n- HbA1c (gemiddelde bloedsuiker) verbeteren\n- Gewicht en andere waarden volgen\n\n**4. Praktische tips:**\n- Boodschappen doen\n- Koken en maaltijdbereiding\n- Eten buitenshuis\n- Feestdagen en speciale gelegenheden\n\n**Samenwerking:**\nDietist werkt samen met:\n- Huisarts of internist\n- Diabetesverpleegkundige\n- Eventueel podoloog, oogarts\n\n**Resultaten:**\nMet goede voeding en begeleiding:\n- **HbA1c verlaging:** 0,5-2% gemiddeld\n- **Gewichtsverlies:** 5-10% bij type 2\n- **Betere waardes:** Cholesterol, bloeddruk\n- **Meer energie:** Stabiele bloedsuiker = betere energie\n- **Minder medicatie:** Bij type 2 vaak mogelijk\n\n**Vergoeding:**\nDiabetes voedingsadvies wordt altijd vergoed:\n- Vanuit basispakket (3-7 consulten)\n- Eigen risico van toepassing\n- Vaak aanvullend nog extra consulten mogelijk\n- Verwijzing huisarts meestal gewenst',
+    category: 'Medische Aandoeningen',
     order: 14
   },
   {
-    id: 'relationships-1',
-    question: 'Hoe beïnvloedt Diëtiek mijn relaties en hoe kan ik dit verbeteren?',
-    answer: '**Diëtiek impact op relaties:**\n- Vergeetachtigheid (vergeten afspraken, belangrijke data)\n- Impulsiviteit in communicatie\n- Moeite met luisteren en aandacht geven\n- Emotionele dysregulatie\n- Hyperfocus op bepaalde interesses\n\n**Verbetering strategieën:**\n\n**Communicatie:**\n- Open zijn over je Diëtiek\n- Samen leren over Diëtiek impact\n- Actief luisteren oefenen\n- "Time-outs" nemen bij emotionele momenten\n\n**Praktische aanpassingen:**\n- Gedeelde kalenders en reminders\n- Vaste overleg momenten\n- Verdeling taken op basis van sterke punten\n- Geduld en begrip van beide kanten\n\n**Intimiteit:**\n- Bewust quality time inplannen\n- Afleiding minimaliseren tijdens gesprekken\n- Waardering uiten (niet als vanzelfsprekend zien)\n- Ruimte geven voor individuele interesses\n\n**Professional hulp:**\n- Relatietherapie met Diëtiek kennis\n- Communicatie training\n- Support groepen voor partners',
-    category: 'Relaties',
+    id: 'medical-2',
+    question: 'Helpt een dietist bij hoog cholesterol of hart- en vaatziekten?',
+    answer: '**Absoluut! Voeding heeft grote impact op hart- en vaatgezondheid.**\n\n**Hoog cholesterol:**\nVoeding kan cholesterol met 10-20% verlagen:\n\n**Wat een dietist doet:**\n- **Analyse huidige voeding:** Waar zitten verzadigde vetten\n- **Gezonde vetten:** Vervangen door onverzadigd vet\n- **Vezels verhogen:** Havervezels, psyllium verlagen LDL\n- **Plantsterolen:** Producten met toegevoegde plantsterolen\n- **Gewichtsverlies:** Elke kilo minder helpt\n\n**Concreet voedingsadvies:**\n- **Vervangen:** Boter → margarine, rood vlees → vis/kip\n- **Toevoegen:** Noten, volkoren granen, groente, fruit\n- **Beperken:** Koekjes, gebak, gefrituurde producten\n- **Bewegen:** Combinatie met voeding is het beste\n\n**Hart- en vaatziekten:**\nNa hartinfarct, beroerte of bij hoog risico:\n\n**Mediterraan dieet bewezen effectief:**\n- Veel groente, fruit, volkoren\n- Olijfolie als hoofdvet\n- Vis 2x per week\n- Noten en peulvruchten\n- Weinig rood vlees\n- Gematigd alcohol (optioneel)\n\n**Specifieke aandachtspunten:**\n- **Zout beperken:** Max 6 gram per dag (bloeddruk)\n- **Omega-3:** Vette vis of supplement\n- **Antioxidanten:** Kleurrijke groente en fruit\n- **Gewicht:** Gezond gewicht bereiken/behouden\n\n**Hoge bloeddruk:**\nVoeding kan bloeddruk met 10-15 mmHg verlagen:\n- **DASH dieet:** Bewezen effectief\n- **Zout beperken:** Vers koken, geen kant-en-klaar\n- **Kalium:** Groente, fruit, aardappel\n- **Magnesium:** Volkoren, noten\n- **Alcohol matigen:** Max 1-2 glazen per dag\n\n**Resultaten met begeleiding:**\n- **Cholesterol:** 0,5-1 mmol/l verlaging LDL\n- **Bloeddruk:** 5-15 mmHg verlaging\n- **Gewicht:** 5-10% verlies verbetert alle waardes\n- **Medicatie:** Soms dosering verminderen mogelijk\n- **Risico:** 20-30% risico reductie op events\n\n**Duur begeleiding:**\n- 6-10 consulten over 6-9 maanden\n- Start intensief (elke 2-3 weken)\n- Later minder frequent (elke 4-6 weken)\n\n**Vergoeding:**\nHart- en vaatziekten worden altijd vergoed:\n- Vanuit basispakket\n- Verwijzing huisarts of cardioloog\n- Vaak aanvullende consulten in aanvullende verzekering',
+    category: 'Medische Aandoeningen',
     order: 15
   },
   {
-    id: 'relationships-2',
-    question: 'Hoe help ik mijn partner/familie begrijpen wat Diëtiek inhoudt?',
-    answer: '**Educatie is de sleutel:**\n\n**Begin met de basis:**\n- **Diëtiek is neurobiologisch:** Leg uit dat het hersenstructuur betreft\n- **Niet persoonlijk:** Gedrag komt voort uit aandoening, niet gebrek aan liefde\n- **Onzichtbare handicap:** Moeilijkheden zijn niet altijd zichtbaar\n- **Willen vs kunnen:** Verschil tussen niet willen en niet kunnen\n\n**Concrete voorbeelden geven:**\n- **Vergeetachtigheid:** "Alsof je telefoon vol is en geen nieuwe info opslaat"\n- **Hyperactiviteit:** "Motor die altijd aanstaat"\n- **Aandachtsproblemen:** "Radio die steeds tussen zenders springt"\n- **Hyperfocus:** "Tunnelvisie waarbij tijd verdwijnt"\n\n**Samen leren:**\n- **Boeken lezen:** "Driven to Distraction", "You Mean I\'m Not Lazy, Stupid or Crazy?"\n- **Videos kijken:** YouTube kanalen over Diëtiek\n- **Support groepen:** Voor partners van mensen met Diëtiek\n- **Workshops:** Samen naar Diëtiek informatiebijeenkomsten\n\n**Praktische afspraken maken:**\n- **Cues systeem:** Signalen voor aandacht\n- **Reminder systeem:** Samen organiseren\n- **Taken verdeling:** Op basis van sterke punten\n- **Geduld oefening:** Begrijpen dat het tijd kost',
-    category: 'Relaties',
+    id: 'behavior-1',
+    question: 'Kan een dietist helpen bij emotioneel eten?',
+    answer: '**Ja! Gedragsverandering is kern van modern dieetadvies.**\n\n**Wat is emotioneel eten:**\n- Eten uit verveling, stress, verdriet, woede\n- Eten zonder echte honger\n- Comfort zoeken in voedsel\n- Vaak snel, ongezond en veel\n\n**Waarom ontstaat het:**\n- **Geleerd gedrag:** Als kind troost met eten\n- **Stress coping:** Eten vermindert tijdelijk stress\n- **Beloning:** Jezelf trakteren na zware dag\n- **Sociale gewoonte:** Altijd eten bij bepaalde activiteit\n- **Emotie onderdrukking:** Niet voelen maar eten\n\n**Hoe helpt een dietist:**\n\n**1. Bewustwording:**\n- **Eetdagboek:** Noteer ook gevoelens en situaties\n- **Patronen herkennen:** Wanneer eet je emotioneel\n- **Triggers identificeren:** Wat zorgt voor emotioneel eten\n- **Onderscheid maken:** Echte honger vs emotionele honger\n\n**2. Alternatieve strategieën:**\n- **Stress:** Ademhalingen, wandelen, muziek\n- **Verveling:** Hobby, contact met vriend\n- **Verdriet:** Praten, schrijven, huilen mag\n- **Woede:** Sporten, schreeuwen (ergens veilig)\n\n**3. Mindful eating:**\n- **Langzaam eten:** Bewust proeven en genieten\n- **Aandachtig:** Geen TV, telefoon tijdens eten\n- **Portie controle:** Eerst opscheppen, dan eten\n- **Verzadigingssignalen:** Leren herkennen\n\n**4. Zelfcompassie:**\n- **Geen perfectie:** Terugval hoort erbij\n- **Vriendelijk zijn:** Voor jezelf zoals voor vriend\n- **Niet straffen:** Na emotioneel eten niet crashdiëten\n- **Leren:** Elke keer is leerkans\n\n**5. Gezonde gewoonten:**\n- **Regelmatig eten:** Voorkomt extreme honger\n- **Gezond in huis:** Geen junkfood voorraad\n- **Alternatieven:** Gezondere comfort food opties\n- **Plannen:** Maaltijden voorbereiden helpt\n\n**Wanneer extra hulp nodig:**\nBij ernstig emotioneel eten of eetstoornis:\n- **Psycholoog:** Voor onderliggende problemen\n- **GZ-psycholoog:** Cognitieve gedragstherapie\n- **Gespecialiseerde centrum:** Bij eetstoornis\n\n**Dietist werkt samen met psycholoog:**\n- Voeding en gedrag gaan hand in hand\n- Multidisciplinaire aanpak meest effectief\n- Dietist focus op voeding, psycholoog op emoties\n\n**Verwachte duur:**\n- Emotioneel eten verandert niet overnight\n- 6-12 maanden begeleiding vaak nodig\n- Kleine stappen, duurzame verandering\n\n**Resultaat:**\n- Beter omgaan met emoties\n- Minder afhankelijk van voedsel voor troost\n- Gezonder gewicht als bijeffect\n- Meer zelfvertrouwen en controle',
+    category: 'Eetgedrag',
     order: 16
   },
   {
-    id: 'relationships-3',
-    question: 'Hoe ga ik om met vriendschappen en sociale situaties met Diëtiek?',
-    answer: '**Sociale uitdagingen met Diëtiek:**\n- Onderbreken van gesprekken\n- Moeite met signalen lezen\n- Te persoonlijk worden te snel\n- Vergeten van afspraken\n- Emotionele reacties\n\n**Strategieën voor betere vriendschappen:**\n\n**Communicatie verbeteren:**\n- **Luister training:** Focus op de ander, stel vragen\n- **Pauze nemen:** Tel tot 3 voor je antwoordt\n- **Signalen leren:** Lichaamstaal en gezichtsuitdrukkingen\n- **Feedback vragen:** "Praat ik te veel?"\n\n**Afspraken beheren:**\n- **Alles opschrijven:** Agenda, reminders, alarmen\n- **Bevestigen:** Dag van tevoren even checken\n- **Buffer tijd:** Eerder vertrekken voor punctualiteit\n- **Backup plan:** Voor als je te laat bent\n\n**Emotionele regulatie:**\n- **Ademtechnieken:** Kalm blijven bij discussies\n- **Uitleg geven:** "Ik ben emotioneel, geef me even"\n- **Later praten:** Als je te geactiveerd bent\n- **Excuses maken:** Als je over de schreef ging\n\n**Vrienden kiezen:**\n- Zoek begripvolle mensen\n- Diëtiek vrienden begrijpen elkaar\n- Kwaliteit boven kwantiteit\n- Accepteer dat niet iedereen jou begrijpt',
-    category: 'Relaties',
+    id: 'special-1',
+    question: 'Kan een dietist helpen bij voedselallergie of intolerantie?',
+    answer: '**Ja! Dit is een belangrijke specialisatie binnen diëtetiek.**\n\n**Verschil allergie vs intolerantie:**\n\n**Voedselallergie:**\n- Immuunsysteem reageert op voedsel\n- Kleine hoeveelheid kan al ernstig zijn\n- Symptomen: huiduitslag, zwelling, ademhalingsproblemen\n- Diagnose via allergoloog (prik/bloedtest)\n- Voorbeelden: noten, melk, ei, vis, schaal-/schelpdieren\n\n**Voedselintolerantie:**\n- Spijsvertering kan voedsel niet goed verwerken\n- Afhankelijk van hoeveelheid\n- Symptomen: buikpijn, diarree, winderigheid\n- Diagnose soms lastig, uitsluit dieet\n- Voorbeelden: lactose, gluten (coeliakie), fructose, histamine\n\n**Wat doet de dietist:**\n\n**1. Bij voedselallergie:**\n- **Eliminatie:** Volledig vermijden van allergeen\n- **Labels lezen:** Herkennen van allergenen in producten\n- **Alternatieven:** Vervangingsproducten die wel kunnen\n- **Voedingswaarde:** Zorgen dat je alle voedingsstoffen krijgt\n- **Kruisbesmetting:** Voorkomen in keuken\n- **Eten buitenshuis:** Restaurant, feest, vakantie\n\n**2. Bij intolerantie:**\n- **Uitsluit dieet:** Tijdelijk weglaten om te testen\n- **Drempelwaarde vinden:** Hoeveel kan wel\n- **Alternatieven:** Producten die wel kunnen\n- **Enzymes/hulpmiddelen:** Lactase bij lactose intolerantie\n\n**Specifieke intoleranties:**\n\n**Lactose intolerantie:**\n- Beperken zuivel of lactasedruppels\n- Lactosevrije alternatieven\n- Calcium uit andere bronnen\n\n**Gluten (coeliakie):**\n- 100% glutenvrij noodzakelijk\n- Labels en herkennen van gluten\n- Alternatieve granen\n- DGA label herkennen\n\n**FODMAP intolerantie (IBS):**\n- Laag FODMAP dieet (complex!)\n- Gefaseerde introductie\n- Uitzoeken wat wel/niet kan\n\n**Histamine intolerantie:**\n- Beperken histamine rijke producten\n- Vers koken (geen lang bewaard)\n- Persoonlijke triggers vinden\n\n**Waarom dietist nodig:**\n- **Voorkomen tekorten:** Bij veel elimineren\n- **Niet te streng:** Alleen weglaten wat echt moet\n- **Diagnose ondersteuning:** Correct uitsluit dieet\n- **Praktisch advies:** Koken, boodschappen, eten buitenshuis\n- **Monitoring:** Groei bij kinderen, voedingsstatus\n\n**Samenwerking:**\n- **Allergoloog/MDL-arts:** Diagnose\n- **Huisarts:** Verwijzing en monitoring\n- **Apotheker:** Medicatie check op allergenen\n\n**Vergoeding:**\nAllergie/intolerantie begeleiding wordt meestal vergoed:\n- Vanuit basispakket bij diagnose\n- Vaak meerdere consulten nodig (5-10)\n- Vooral bij kinderen goede monitoring belangrijk',
+    category: 'Specialisaties',
     order: 17
   },
   {
-    id: 'medication-1',
-    question: 'Moet ik medicatie nemen voor Diëtiek? Wat zijn de voor- en nadelen?',
-    answer: '**Medicatie is een persoonlijke keuze** die je samen met een arts maakt:\n\n**Voordelen medicatie:**\n- Significante verbetering concentratie en focus\n- Betere impulscontrole\n- Verhoogde productiviteit\n- Minder emotionele dysregulatie\n- Snel merkbare effecten\n- Wetenschappelijk bewezen effectiviteit (70-80% van gebruikers)\n\n**Mogelijke nadelen:**\n- Bijwerkingen (verminderde eetlust, slaapproblemen, hoofdpijn)\n- Afhankelijkheid zorgen (hoewel weinig bewijs)\n- Kosten (afhankelijk van verzekering)\n- Stigma rondom medicatie gebruik\n- Individuele variatie in effectiviteit\n\n**Veel voorkomende misverstanden:**\n- "Medicatie verandert je persoonlijkheid" (niet waar)\n- "Je wordt er zombie van" (goede medicatie doet dit niet)\n- "Het is verslavend" (stimulantia zijn veilig bij correct gebruik)\n\n**Beslissing factors:**\n- Severity van symptomen\n- Impact op dagelijks functioneren\n- Andere behandelingen geprobeerd\n- Persoonlijke voorkeur\n- Medische geschiedenis\n\n**Tip:** Start met lage dosis, bouw langzaam op onder medische begeleiding',
-    category: 'Medicatie',
+    id: 'children-1',
+    question: 'Wanneer moet mijn kind naar een dietist?',
+    answer: '**Kinderdietisten zijn gespecialiseerd in voeding voor kinderen 0-18 jaar.**\n\n**Redenen om naar kinderdietist te gaan:**\n\n**Gewichtsproblemen:**\n- **Overgewicht/obesitas:** Gezond afvallen zonder groei te remmen\n- **Ondergewicht:** Te weinig aankomen, groeistoornissen\n- **Selectief eten:** Kind eet zeer beperkt assortiment\n\n**Medische redenen:**\n- **Diabetes type 1:** Koolhydraat tellen leren\n- **Voedselallergie:** Veilig eten zonder tekorten\n- **Coeliakie:** Glutenvrij dieet met voldoende voedingstoffen\n- **Maag-darm problemen:** Reflux, obstipatie, diarree\n- **Ontwikkelingsstoornissen:** Autisme, ADHD met voedingsproblemen\n\n**Eet- en drinkproblemen:**\n- **Weigering:** Niet willen eten/drinken\n- **Textuurproblemen:** Alleen glad/krokant eten\n- **Zuigen/slikken problemen:** Bij baby's\n- **Sondevoeding:** Overgaan naar normale voeding\n\n**Sportvoeding:**\n- **Jonge topsporters:** Optimale voeding voor prestatie en groei\n- **Gewichtsklasse sporten:** Verantwoord gewichtsmanagement\n\n**Vegetarisch/veganistisch:**\n- **Correcte voedingstoffen:** Vooral vitamine B12, ijzer, calcium\n- **Groei monitoring:** Voorkomen van tekorten\n\n**Wat doet een kinderdietist:**\n\n**Speelse aanpak:**\n- Aangepast aan leeftijd kind\n- Spelletjes en activiteiten\n- Positieve sfeer, geen dwang\n- Kind betrekken bij keuzes\n\n**Ouders/verzorgers:**\n- Uitleg en educatie\n- Praktische tips voor thuis\n- Omgaan met lastig eetgedrag\n- Realistische verwachtingen\n\n**Monitoring:**\n- **Groei:** Lengte en gewicht bijhouden\n- **Ontwikkeling:** Leeftijd adequaat\n- **Voedingsstatus:** Bloedwaarden indien nodig\n\n**Samenwerking:**\n- Huisarts of kinderarts\n- Logopedist (bij slikproblemen)\n- Psycholoog (bij gedragsproblemen)\n- School (bij allergieën)\n\n**Hoe verloopt consult:**\n- **Met ouders én kind:** (vanaf ~4 jaar)\n- **Speelse setting:** Niet zielig of eng\n- **Praktisch:** Proeven, voelen, ruiken\n- **Samen doelen:** Wat wil kind/ouders\n\n**Vergoeding:**\nKinderen vrijwel altijd vergoed:\n- Groei en ontwikkeling prioriteit\n- Vaak meer consulten mogelijk\n- Verwijzing kinderarts of huisarts\n\n**Tip voor ouders:**\n- Hoe eerder hoe beter bij problemen\n- Niet afwachten "groeit wel over"\n- Vooral bij groei/gewicht problemen snel handelen\n- Open staan voor advies, ook over opvoeding rondom eten',
+    category: 'Levensfasen',
     order: 18
   },
   {
-    id: 'medication-2',
-    question: 'Welke Diëtiek medicatie zijn er en hoe werken ze?',
-    answer: '**Stimulantia (eerste keus):**\n\n**Methylfenidaat:**\n- **Merknamen:** Ritalin, Concerta, Medikinet\n- **Kortwerkend:** 3-5 uur effect\n- **Langwerkend:** 8-12 uur effect\n- **Mechanisme:** Blokkeert dopamine heropname\n\n**Dexamfetamine:**\n- **Merknamen:** Amfexa, Elvanse (lisdexamfetamine)\n- **Duur:** 6-10 uur (Elvanse tot 13 uur)\n- **Mechanisme:** Verhoogt dopamine en noradrenaline afgifte\n\n**Non-stimulantia (tweede keus):**\n\n**Atomoxetine (Strattera):**\n- **Duur:** 24 uur werkend\n- **Voordeel:** Geen misbruikpotentieel\n- **Nadeel:** Langzamer effect (4-6 weken)\n- **Mechanisme:** Noradrenaline heropname remmer\n\n**Guanfacine (Intuniv):**\n- **Gebruik:** Vooral bij kinderen\n- **Voordeel:** Helpt ook bij agressie\n- **Mechanisme:** Alpha-2 receptor agonist\n\n**Hoe medicatie werkt:**\n- Verhoogt beschikbare neurotransmitters\n- Verbetert signaaloverdracht in frontale hersenen\n- Effect merkbaar binnen 30-60 minuten (stimulantia)\n\n**Belangrijke noot:** Medicatie keuze is individueel, werkt niet voor iedereen hetzelfde.',
-    category: 'Medicatie',
+    id: 'pregnancy-1',
+    question: 'Kan een dietist mij begeleiden tijdens zwangerschap?',
+    answer: '**Ja! Goede voeding tijdens zwangerschap is cruciaal voor jou én je baby.**\n\n**Waarom dietist tijdens zwangerschap:**\n\n**Voor de zwangerschap (preconceptie):**\n- **Foliumzuur:** Belangrijk voor eerst 12 weken\n- **Gezond gewicht:** Optimaal gewicht verhoogt vruchtbaarheid\n- **Voedingsstoffen:** Optimale status voor conceptie\n\n**Tijdens zwangerschap:**\n\n**Normale zwangerschap:**\n- **Gewichtstoename:** Hoeveel is gezond (12-16 kg gemiddeld)\n- **Voedingstoffen:** Foliumzuur, ijzer, calcium, vitamine D\n- **Veilig eten:** Wat wel/niet (toxoplasmose, listeria)\n- **Energie behoefte:** Extra energie in 2e en 3e trimester\n- **Klachten:** Misselijkheid, brandend maagzuur, obstipatie\n\n**Zwangerschapsdiabetes:**\n- Tijdelijke diabetes tijdens zwangerschap\n- Voeding eerste behandeling (medicatie vaak niet nodig)\n- Koolhydraat verdeling over de dag\n- Monitoring bloedsuiker\n- Baby gezondheid beschermen\n\n**Hoog risico zwangerschap:**\n- **Tweeling/meerling:** Extra voedingstoffen\n- **Ondergewicht:** Voldoende aankomen\n- **Obesitas:** Niet teveel aankomen, gezond eten\n- **Pre-eclampsie risico:** Zout, eiwit, calcium\n\n**Specifieke aandoeningen:**\n- **Diabetes type 1/2:** Extra monitoring\n- **Coeliakie:** Glutenvrij met alle voedingsstoffen\n- **Allergie:** Veilig eten zonder tekorten\n\n**Vegetarisch/veganistisch:**\n- Extra aandacht voor B12, ijzer, omega-3\n- Supplementen indien nodig\n- Voldoende eiwit\n\n**Wat te verwachten van dietist:**\n\n**Eerste trimester (0-12 weken):**\n- Advies over misselijkheid\n- Foliumzuur en andere supplementen\n- Wat te vermijden (rauwe vis, lever, bepaalde kazen)\n- Veilig eten (hygiene, temperatuur)\n\n**Tweede trimester (13-26 weken):**\n- Extra energie en voedingstoffen\n- Gewichtstoename monitoring\n- Gezonde snacks en maaltijden\n- Omgaan met trek en afkeer\n\n**Derde trimester (27-40 weken):**\n- Voorbereiden op borstvoeding\n- Kleine maaltijden (baby drukt op maag)\n- IJzer en calcium extra belangrijk\n- Energiereserve voor bevalling\n\n**Na bevalling:**\n\n**Borstvoeding:**\n- **Extra energie:** 500 kcal per dag\n- **Voldoende drinken:** 2-3 liter per dag\n- **Voedingsstoffen:** Omega-3, calcium, ijzer\n- **Verboden:** Alcohol, beperkt cafeïne\n- **Medicijnen check:** Wat mag wel/niet\n\n**Flesvoeding:**\n- Correcte bereiding en hygiene\n- Hoeveelheden per leeftijd\n\n**Herstel moeder:**\n- Gezond gewicht terugkeren\n- Niet crashdiëten tijdens borstvoeding\n- Energie voor verzorgen baby\n\n**Vergoeding:**\nZwangerschap gerelateerde zorg meestal vergoed:\n- Zwangerschapsdiabetes volledig\n- Bij complicaties/risico's\n- Check aanvullende verzekering voor preventief advies',
+    category: 'Levensfasen',
     order: 19
   },
   {
-    id: 'medication-3',
-    question: 'Wat zijn veelvoorkomende bijwerkingen en hoe ga ik ermee om?',
-    answer: '**Meest voorkomende bijwerkingen:**\n\n**Eetlust en gewicht:**\n- **Probleem:** Verminderde eetlust, gewichtsverlies\n- **Oplossing:** Eten voor medicatie innemen, calorie-rijke snacks, medicatie pauzes\n- **Monitor:** Regelmatig wegen, vooral bij kinderen\n\n**Slaapproblemen:**\n- **Probleem:** Moeite met inslapen\n- **Oplossing:** Medicatie eerder innemen, slaaphygiëne, melatonine overleggen\n- **Vermijd:** Cafeïne na 14:00, schermen voor bedtijd\n\n**Hoofdpijn en maagklachten:**\n- **Oplossing:** Medicatie bij het eten, voldoende water drinken\n- **Tijdelijk:** Vaak wennen eerste weken\n\n**Emotionele bijwerkingen:**\n- **Rebound effect:** Emotioneel als medicatie uitwerkt\n- **Oplossing:** Timing aanpassen, dosis spreiden\n- **Persoonlijkheid:** Als je je niet jezelf voelt, bespreek met arts\n\n**Cardiovasculaire:**\n- **Hartslag/bloeddruk:** Regelmatige controle\n- **Waarschuwing:** Pijn op borst direct melden\n\n**Tips voor omgaan met bijwerkingen:**\n- Bijwerkingen-dagboek bijhouden\n- Geduld: veel bijwerkingen verdwijnen na 2-4 weken\n- Open communicatie met arts\n- Nooit zelf stoppen of dosis aanpassen',
-    category: 'Medicatie',
+    id: 'find-1',
+    question: 'Hoe vind ik een goede dietist bij mij in de buurt?',
+    answer: '**Stappen om de juiste dietist te vinden:**\n\n**1. Controleer kwaliteitsregistratie:**\n- **SKD register:** Stichting Kwaliteitszorg Diëtisten (www.skdregister.nl)\n- **NVD:** Nederlandse Vereniging van Diëtisten (www.nvdietist.nl)\n- Alleen geregistreerde dietisten zijn betrouwbaar\n- Registratie garandeert opleiding en nascholing\n\n**2. Bepaal jouw vraag/specialisatie:**\n- Wat is je hulpvraag (afvallen, diabetes, allergie, sport)?\n- Zoek dietist met ervaring in jouw gebied\n- Check website voor specialisaties\n\n**3. Zoek in jouw regio:**\n- **Online zoeken:** "dietist [jouw stad]"\n- **Zorgzoeker websites:** Filter op locatie en specialisatie\n- **Huisarts:** Kan dietist aanbevelen\n- **Zorgverzekeraar:** Heeft vaak overzicht gecontracteerde dietisten\n\n**4. Check reviews en ervaringen:**\n- Google reviews\n- Zorgkaartnederland.nl\n- Vraag bij kennissen/familie\n\n**5. Vergelijk praktijken:**\n\n**Locatie en bereikbaarheid:**\n- Afstand tot praktijk\n- Parkeren of OV bereikbaar\n- Online consulten mogelijk?\n\n**Werkwijze:**\n- Persoonlijke aanpak of protocollair\n- Ervaring met jouw vraagstuk\n- Samenwerking met andere zorgverleners\n\n**Praktisch:**\n- Openingstijden (ook avond/weekend?)\n- Wachttijd voor afspraak\n- Contact tussen consulten mogelijk\n\n**Kosten:**\n- Tarief per consult\n- Gecontracteerd met jouw verzekeraar?\n- Kostenopgave vooraf\n\n**6. Bel voor kennismaking:**\nMeeste dietisten bieden gratis telefoongesprek:\n- **Bespreek je vraag:** Past dietist bij jouw situatie?\n- **Stel vragen:** Werkwijze, ervaring, kosten\n- **Check klik:** Voel je je op je gemak?\n\n**Vragen om te stellen:**\n- Hoeveel ervaring heeft u met [jouw probleem]?\n- Hoe verloopt een typisch traject?\n- Hoeveel consulten zijn ongeveer nodig?\n- Wat gaat het totaal kosten?\n- Krijg ik materialen mee (recepten, schema's)?\n- Hoe kan ik contact opnemen tussen afspraken?\n- Werkt u samen met andere zorgverleners?\n\n**7. Probeer eerst consult:**\n- Klik je met de dietist?\n- Voel je je gehoord en begrepen?\n- Krijg je praktisch, haalbaar advies?\n- Geen oordeel of veroordeling?\n\n**Red flags (niet kiezen bij):**\n- Niet geregistreerd bij SKD\n- Belooft snelle resultaten zonder inspanning\n- Verkoopt eigen supplementen/producten\n- Heel streng dieet zonder maatwerk\n- Niet luisteren naar jouw verhaal\n- Veel te duur zonder duidelijke reden\n- Negatieve reviews over deskundigheid\n\n**Wissel van dietist als:**\n- Geen klik of vertrouwen\n- Advies werkt niet voor jou\n- Je voelt je niet gehoord\n- Geen vooruitgang na redelijke tijd\n\n**Gebruik onze website:**\nOp dietistindebuurt.nl vind je:\n- Overzicht dietisten per stad\n- Filter op specialisatie\n- Reviews van cliënten\n- Direct contact opnemen\n- Vergelijken van praktijken',
+    category: 'Kiezen en Vinden',
     order: 20
-  },
-  {
-    id: 'insurance-1',
-    question: 'Wordt voedingsadvies vergoed door de zorgverzekering?',
-    answer: '**Vergoeding situatie in Nederland:**\n\n**Basisverzekering:**\n- voedingsadvies wordt meestal niet vergoed uit basispakket\n- Psychologische behandeling (DBC-traject) wel\n- GGZ behandeling via huisarts verwijzing\n\n**Aanvullende verzekering:**\n- Sommige verzekeraars vergoeden coaching uit aanvullend pakket\n- Bedragen variëren (€200-€1000 per jaar)\n- Check je polis of bel je verzekeraar\n\n**Alternatieve vergoedingen:**\n- **Werkgever:** Vaak bereid coaching te vergoeden (productiviteit)\n- **Individueel budget (PGB):** Voor mensen met indicatie\n- **Belasting:** Coaching kan aftrekbaar zijn als ziektekosten\n- **Pgb/Zorgverzekering:** Via GGZ-traject soms mogelijk\n\n**Tips voor vergoeding:**\n- Vraag verwijsbrief van huisarts\n- Documenteer medische noodzaak\n- Zoek coach met juiste certificering\n- Check of coach gecontracteerd is\n\n**Kosten zonder vergoeding:**\n- voedingsadvies: €75-€150 per sessie\n- Traject van 10-15 sessies: €750-€2250\n- Investering in je toekomst en welzijn',
-    category: 'Vergoeding',
-    order: 21
-  },
-  {
-    id: 'insurance-2',
-    question: 'Hoe krijg ik vergoeding voor Diëtiek behandeling via de zorgverzekering?',
-    answer: '**Stap-voor-stap vergoeding:**\n\n**1. Huisarts:**\n- **Verwijzing:** Vraag doorverwijzing naar GGZ\n- **Indicatie:** Leg uit waarom behandeling nodig is\n- **Documentatie:** Vraag kopie van verwijsbrief\n\n**2. GGZ instelling:**\n- **Intake:** Uitgebreid onderzoek en diagnose\n- **Behandelplan:** Samen opstellen wat nodig is\n- **DBC:** Diagnose Behandeling Combinatie wordt geopend\n\n**3. Behandeling opties (vergoed):**\n- **Psychiater/psycholoog:** DBC-tarief, volledig vergoed\n- **Cognitieve gedragstherapie:** In GGZ traject\n- **Medicatie:** Receptkosten via apotheek\n- **Groepstherapie:** Binnen GGZ instelling\n\n**4. Aanvullende vergoeding:**\n- **voedingsadvies:** Check aanvullend pakket\n- **Praktijkondersteuner:** Soms vergoed\n- **Tweede opinie:** Binnen referentiekader\n\n**Praktische tips:**\n- **Administratie:** Bewaar alle declaraties\n- **Eigen risico:** €385 (2024) eerst zelf betalen\n- **Maximale vergoeding:** Geen limiet binnen DBC\n- **Wachttijd:** 4-8 weken voor eerste afspraak\n\n**Let op:** Privé behandeling wordt niet vergoed uit basispakket.',
-    category: 'Vergoeding',
-    order: 22
-  },
-  {
-    id: 'children-1',
-    question: 'Hoe herken en help ik een kind met Diëtiek?',
-    answer: '**Herkenning bij kinderen:**\n\n**Aandachtsproblemen:**\n- Snel afgeleid tijdens taken of spel\n- Moeite met instructies opvolgen\n- Vergeetachtig bij dagelijkse activiteiten\n- Vermijdt taken die concentratie vereisen\n- Verliest vaak spullen\n\n**Hyperactiviteit:**\n- Kan niet stilzitten op stoel\n- Rent of klimt excessief\n- Praat veel, moeilijk stil\n- Altijd "on the go"\n\n**Impulsiviteit:**\n- Antwoordt voordat vraag af is\n- Moeite met wachten op beurt\n- Onderbreekt anderen\n- Neemt risico\'s zonder na te denken\n\n**Hulp bieden:**\n\n**Thuis:**\n- Duidelijke structuur en routine\n- Positieve bekrachtiging\n- Korte, concrete instructies\n- Pauzes en beweging inplannen\n- Geduld en begrip\n\n**School:**\n- Overleg met leerkrachten\n- Eventueel passend onderwijs\n- Extra begeleiding of arrangementen\n- IEP (Individueel Educatie Plan)\n\n**Professional hulp:**\n- Kinderpsycholoog of psychiater\n- voedingsadvies voor kinderen\n- Oudertraining en -ondersteuning\n- Medicatie overweging (meestal vanaf 6 jaar)',
-    category: 'Kinderen',
-    order: 23
-  },
-  {
-    id: 'children-2',
-    question: 'Hoe praat ik met mijn kind over Diëtiek?',
-    answer: '**Leeftijdsgepaste uitleg:**\n\n**Jonge kinderen (5-8 jaar):**\n- **Simpel:** "Je hersenen werken anders, dat maakt je speciaal"\n- **Vergelijking:** "Net als een auto die anders rijdt"\n- **Positief:** Focus op sterke punten (creatief, energiek)\n- **Geen schuld:** "Het is niet jouw schuld of die van papa/mama"\n\n**Oudere kinderen (9-12 jaar):**\n- **Uitgebreider:** "Diëtiek betekent dat je hersenen informatie anders verwerken"\n- **Voorbeelden:** "Daarom is stilzitten moeilijk" of "daarom vergeet je dingen"\n- **Behandeling:** "Er zijn manieren om het makkelijker te maken"\n- **Beroemdheden:** Vertel over succesvolle mensen met Diëtiek\n\n**Tieners (13+):**\n- **Volledige uitleg:** Neurobiologie, behandelopties\n- **Zelfadvocacy:** Leren zelf hulp vragen\n- **Toekomst:** "Diëtiek belemmert je dromen niet"\n- **Peer support:** Contact met andere tieners met Diëtiek\n\n**Belangrijke boodschappen:**\n- Diëtiek is geen excuus maar een verklaring\n- Iedereen heeft sterke en zwakke punten\n- Met hulp kun je alles bereiken\n- Je bent meer dan je Diëtiek\n\n**Timing:** Kies een rustig moment, geen stress situatie.',
-    category: 'Kinderen',
-    order: 24
-  },
-  {
-    id: 'children-3',
-    question: 'Welke school keuzes zijn er voor kinderen met Diëtiek?',
-    answer: '**Regulier onderwijs met ondersteuning:**\n\n**Arrangementen:**\n- **Extra tijd:** Voor toetsen en taken\n- **Rustige werkplek:** Weg van afleidingen\n- **Bewegingspauzes:** Regelmatig even lopen\n- **Visuele structuur:** Schema\'s en timers\n- **Kleinere groepen:** Voor bepaalde vakken\n\n**School ondersteuningsprofiel:**\n- **Basisondersteuning:** Tot €3000 per jaar\n- **Arrangement:** €3000-€15000 per jaar\n- **Toelaatbaarheidsverklaring:** Voor speciaal onderwijs\n\n**Speciaal onderwijs:**\n\n**SO cluster 4:** \n- **Voor:** Ernstige gedragsproblematiek\n- **Kleine klassen:** 8-12 leerlingen\n- **Specialistische begeleiding:** Diëtiek expertise\n- **Intensieve ondersteuning:** Gedrag en leerproblemen\n\n**Praktijkonderwijs:**\n- **Voor:** Leerlingen die moeite hebben met theoretisch leren\n- **Praktijkgericht:** Veel hands-on activiteiten\n- **Kleinere groepen:** Meer persoonlijke aandacht\n\n**Keuze factors:**\n- Mate van Diëtiek symptomen\n- Leerproblemen\n- Sociale vaardigheden\n- Thuissituatie\n- Beschikbaarheid in de buurt\n\n**Tip:** Vraag schoolbezoek en praat met andere ouders.',
-    category: 'Kinderen',
-    order: 25
-  },
-  {
-    id: 'women-1',
-    question: 'Hoe uit Diëtiek zich bij vrouwen en meisjes?',
-    answer: '**Diëtiek bij vrouwen wordt vaak gemist omdat:**\n- Symptomen zijn vaak minder opvallend\n- Meer internaliserende symptomen\n- Betere compensatiestrategieën\n- Historische focus op hyperactieve jongens\n\n**Typische symptomen bij vrouwen:**\n\n**Aandachtsproblemen:**\n- Dagdromen en "spacing out"\n- Moeite met organisatie en planning\n- Vergeetachtigheid\n- Hyperfocus op interessante onderwerpen\n\n**Emotionele aspecten:**\n- Intense emoties en mood swings\n- Perfectionisme als compensatie\n- Lage zelfwaarde en zelfkritiek\n- Angst en depressie (comorbiditeit)\n\n**Hormonale invloeden:**\n- Symptomen verergeren tijdens menstruatie\n- Veranderingen tijdens zwangerschap\n- Overgang kan symptomen intensiveren\n\n**Masking gedrag:**\n- Inspanning om "normaal" te lijken\n- Sociale camouflage\n- Uitputting door constant compenseren\n\n**Unieke uitdagingen:**\n- Later gediagnosticeerd (gemiddeld 12 jaar later)\n- Mommy guilt en perfecte moeder druk\n- Carrière vs familie balans\n- Hormonale therapie interacties\n\n**Belangrijke boodschap:** Diëtiek bij vrouwen is net zo reëel en behandelbaar als bij mannen',
-    category: 'Vrouwen & Diëtiek',
-    order: 26
-  },
-  {
-    id: 'women-2',
-    question: 'Hoe beïnvloeden hormonen Diëtiek symptomen bij vrouwen?',
-    answer: '**Hormonale cyclus en Diëtiek:**\n\n**Menstruatiecyclus:**\n- **Week 1-2 (folliculaire fase):** Oestrogeen stijgt, symptomen vaak beter\n- **Week 3 (ovulatie):** Piek hormonen, vaak beste periode\n- **Week 4 (luteale fase):** Hormonen dalen, Diëtiek symptomen verergeren\n- **Menstruatie:** Laagste hormoonspiegels, moeilijkste periode\n\n**Zwangerschap:**\n- **1e trimester:** Vaak verergering door hormonale schommelingen\n- **2e trimester:** Verbetering door hoge oestrogeen\n- **3e trimester:** Wisselend, vermoeidheid speelt rol\n- **Postpartum:** Dramale hormoondaling, vaak ernstige symptomen\n\n**Menopauze:**\n- **Perimenopauze:** Onregelmatige hormonen, wisselende symptomen\n- **Menopauze:** Lage oestrogeen, vaak verergering Diëtiek\n- **Postmenopauze:** Stabiele (lage) hormonen\n\n**Waarom hormonen belangrijk zijn:**\n- Oestrogeen verhoogt dopamine beschikbaarheid\n- Progesteron kan Diëtiek symptomen verergeren\n- Hormonale schommelingen verstoren focus en emotieregulatie\n\n**Aanpassingen:**\n- **Medicatie:** Mogelijk dosisaanpassing tijdens cyclus\n- **Planning:** Zware taken in goede weken\n- **Zelfzorg:** Extra support tijdens moeilijke periodes\n- **Hormoontherapie:** Overleggen bij menopauze',
-    category: 'Vrouwen & Diëtiek',
-    order: 27
-  },
-  {
-    id: 'women-3',
-    question: 'Hoe ga ik om met Diëtiek als werkende moeder?',
-    answer: '**Unieke uitdagingen werkende moeders:**\n- Dubbele belasting: werk en gezin organiseren\n- Mental load: aan alles denken voor het gezin\n- Perfectie druk: "supermom" syndroom\n- Weinig tijd voor zelfzorg\n- Schuldgevoelens over Diëtiek impact\n\n**Praktische strategieën:**\n\n**Organisatie:**\n- **Familie kalender:** Alles op één plek\n- **Meal prep:** Maaltijden voorbereiden\n- **Routines:** Vaste ochten- en avondroutines\n- **Delegeren:** Taken verdelen met partner/kinderen\n\n**Werk optimalisatie:**\n- **Flexibele werktijden:** Werk tijdens beste focus momenten\n- **Thuiswerken:** Minder reistijd, meer controle\n- **Prioriteiten:** Leer "nee" zeggen tegen extra taken\n- **Pauzes:** Neem bewust rustmomenten\n\n**Zelfzorg:**\n- **Eigen tijd:** Minimaal 30 min per dag voor jezelf\n- **Support netwerk:** Hulp vragen aan familie/vrienden\n- **Medicatie timing:** Afstemmen op dagritme\n- **Therapie/coaching:** Professionele ondersteuning\n\n**Kinderen:**\n- **Eerlijkheid:** Leg uit waarom mama soms gestrest is\n- **Structuur:** Kinderen hebben ook baat bij routines\n- **Quality time:** Bewuste aandacht belangrijker dan perfectie\n\n**Mantra:** Je bent een goede moeder, ook met Diëtiek. Perfectie bestaat niet.',
-    category: 'Vrouwen & Diëtiek',
-    order: 28
   }
 ];
 
-// Helper function to group FAQs by category
-function groupFAQsByCategory(faqs: FAQItem[]) {
-  return faqs.reduce((groups, faq) => {
-    const category = faq.category;
-    if (!groups[category]) {
-      groups[category] = [];
-    }
-    groups[category].push(faq);
-    return groups;
-  }, {} as Record<string, FAQItem[]>);
-}
-
 export default function FAQPage() {
-  // Group FAQs by category
-  const faqsByCategory = groupFAQsByCategory(comprehensiveFAQs);
-  const categories = Object.keys(faqsByCategory).sort();
+  const [openItem, setOpenItem] = React.useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = React.useState<string>('Allemaal');
+
+  // Get unique categories
+  const categories = ['Allemaal', ...Array.from(new Set(comprehensiveFAQs.map(faq => faq.category)))];
+
+  // Filter FAQs by category
+  const filteredFAQs = activeCategory === 'Allemaal'
+    ? comprehensiveFAQs
+    : comprehensiveFAQs.filter(faq => faq.category === activeCategory);
+
+  const toggleItem = (id: string) => {
+    setOpenItem(openItem === id ? null : id);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <HelpCircle size={64} className="mx-auto mb-6 text-blue-200" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Veelgestelde Vragen over Diëtiek
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-sky-500">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+            <HelpCircle className="w-5 h-5 text-white" />
+            <span className="text-white font-medium">Veelgestelde Vragen</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Alles wat je moet weten over Dietisten
           </h1>
-          <p className="text-xl text-blue-100">
-            Uitgebreide antwoorden op de meest voorkomende vragen over voedingsadvies, diagnose, kosten en behandeling in Nederland en België.
+          <p className="text-xl text-blue-50 mb-8 max-w-2xl mx-auto">
+            Uitgebreide antwoorden op de meest gestelde vragen over voedingsadvies, 
+            kosten, vergoeding en het vinden van een dietist bij jou in de buurt.
           </p>
         </div>
       </section>
 
-
-      {/* FAQ Categories Overview */}
-      <section className="py-8 px-4 bg-white">
+      {/* Category Filter */}
+      <section className="py-8 px-4 bg-white border-b sticky top-[72px] z-40">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            FAQ Categorieën
-          </h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {categories.map(category => {
-              const categorySlug = category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
-              return (
-                <a 
-                  key={category} 
-                  href={`#${categorySlug}`}
-                  className="bg-blue-50 rounded-lg border border-blue-200 p-4 hover:bg-blue-100 transition-colors cursor-pointer block"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const element = document.getElementById(categorySlug);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
-                >
-                  <h3 className="text-sm font-semibold text-blue-800 mb-2">
-                    {category}
-                  </h3>
-                  <div className="text-blue-600 text-sm">
-                    {faqsByCategory[category].length} {faqsByCategory[category].length === 1 ? 'vraag' : 'vragen'}
-                  </div>
-                </a>
-              );
-            })}
+          <div className="flex flex-wrap gap-3 justify-center">
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                  activeCategory === category
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Content organized by category */}
+      {/* FAQ Items */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          {categories.map(category => {
-            const categorySlug = category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
-            return (
-              <div key={category} id={categorySlug} className="mb-12 scroll-mt-20">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-blue-200">
-                  {category}
-                </h2>
-              <div className="space-y-4">
-                {faqsByCategory[category].map((faq) => (
-                  <details key={faq.id} className="bg-white rounded-lg shadow-md">
-                    <summary className="p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors list-none [&::-webkit-details-marker]:hidden">
-                      <div className="flex justify-between items-center">
-                        <h3 className="text-lg font-semibold text-gray-800 pr-4">
-                          {faq.question}
-                        </h3>
-                        <ChevronDown className="text-gray-400 flex-shrink-0 transform transition-transform duration-200" size={20} />
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <div className="pt-4 border-t border-gray-200">
-                        <div className="prose prose-blue prose-lg max-w-none text-gray-700 
-                                      prose-p:mb-4 prose-p:leading-relaxed 
-                                      prose-headings:text-gray-800 prose-headings:font-semibold prose-headings:mb-3 prose-headings:mt-6
-                                      prose-ul:mb-4 prose-ul:mt-2 prose-li:mb-1 prose-li:leading-relaxed
-                                      prose-ol:mb-4 prose-ol:mt-2
-                                      prose-strong:text-gray-800 prose-strong:font-semibold
-                                      prose-em:text-gray-700
-                                      first:prose-headings:mt-0">
-                          <ReactMarkdown 
-                            remarkPlugins={[remarkGfm]}
-                            components={{
-                              p: ({children}) => <p className="mb-4 leading-relaxed">{children}</p>,
-                              h1: ({children}) => <h1 className="text-xl font-semibold text-gray-800 mb-3 mt-6 first:mt-0">{children}</h1>,
-                              h2: ({children}) => <h2 className="text-lg font-semibold text-gray-800 mb-3 mt-6 first:mt-0">{children}</h2>,
-                              h3: ({children}) => <h3 className="text-base font-semibold text-gray-800 mb-2 mt-5 first:mt-0">{children}</h3>,
-                              ul: ({children}) => <ul className="mb-4 mt-2 space-y-1">{children}</ul>,
-                              ol: ({children}) => <ol className="mb-4 mt-2 space-y-1">{children}</ol>,
-                              li: ({children}) => <li className="leading-relaxed">{children}</li>,
-                              strong: ({children}) => <strong className="font-semibold text-gray-800">{children}</strong>
-                            }}
-                          >
-                            {faq.answer}
-                          </ReactMarkdown>
-                        </div>
-                      </div>
+          <div className="space-y-4">
+            {filteredFAQs.map((faq, index) => (
+              <div
+                key={faq.id}
+                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
+              >
+                <button
+                  onClick={() => toggleItem(faq.id)}
+                  className="w-full px-6 py-5 flex items-start justify-between gap-4 text-left hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                        {faq.category}
+                      </span>
                     </div>
-                  </details>
-                ))}
-              </div>
-              </div>
-            );
-          })}
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <ChevronDown
+                    className={`w-6 h-6 text-gray-400 flex-shrink-0 transition-transform ${
+                      openItem === faq.id ? 'transform rotate-180' : ''
+                    }`}
+                  />
+                </button>
 
-
-          {/* Additional CTA for finding coaches */}
-          <div className="mt-8 bg-blue-50 rounded-lg p-6 text-center border border-blue-200">
-            <p className="text-blue-700 mb-4">
-              Of bekijk Dietisten in jouw stad voor persoonlijke ondersteuning
-            </p>
-            <Link
-              href="/"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
-            >
-              Vind een Coach
-            </Link>
+                {openItem === faq.id && (
+                  <div className="px-6 pb-6 pt-2">
+                    <div className="prose prose-blue max-w-none">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {faq.answer}
+                      </ReactMarkdown>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
+
+          {filteredFAQs.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">
+                Geen vragen gevonden in deze categorie.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-sky-500">
+        <div className="max-w-4xl mx-auto text-center">
+          <Heart className="w-16 h-16 text-white mx-auto mb-6" />
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Heb je nog vragen?
+          </h2>
+          <p className="text-xl text-blue-50 mb-8 max-w-2xl mx-auto">
+            Neem direct contact op met een dietist bij jou in de buurt voor persoonlijk advies.
+          </p>
+          <Link
+            href="/"
+            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg"
+          >
+            Vind een Dietist bij jou in de buurt
+          </Link>
         </div>
       </section>
 
