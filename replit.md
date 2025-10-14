@@ -76,6 +76,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**October 14, 2025**: UI improvements for homepage search and quiz phone input:
+- ✅ Fixed homepage "Zoeken" button width by changing grid ratio from 10:2 to 9:3 (input:button)
+  - **Impact**: Button now 50% wider and better proportioned to input field
+- ✅ Fixed "Zoeken" button height to match input field height (changed from py-2 to py-3 padding)
+  - **Result**: Button and input now perfectly aligned in both width and height
+- ✅ Added country code dropdown to MatchingQuiz phone input
+  - **Options**: NL (+31) default and BE (+32) for Belgium
+  - **Features**: Smart placeholder changes based on selected country
+  - **Data**: countryCode field included in form submission
+
 **October 10, 2025**: Major performance optimizations for Google PageSpeed:
 - ✅ Removed unused ChatAssistant component (~30KB+ savings from bundle)
 - ✅ Implemented lazy-loading for Google Maps using IntersectionObserver (loads 200px before visible)
