@@ -222,7 +222,9 @@ export default function WatKostEenDietistPage() {
       grossCost: "€70 + (4 × €50) = €270",
       insurance: "€200 vergoed (aanvullend)",
       netCost: "€70 eigen bijdrage",
-      forWho: "Mild overgewicht, preventie, algemeen advies"
+      perMonth: "€23/maand",
+      forWho: "Mild overgewicht, preventie, algemeen advies",
+      worth: "Goede investering in je gezondheid"
     },
     {
       name: "Standaard Traject",
@@ -231,7 +233,9 @@ export default function WatKostEenDietistPage() {
       grossCost: "€80 + (7 × €55) = €465",
       insurance: "€350 vergoed (aanvullend)",
       netCost: "€115 eigen bijdrage",
-      forWho: "Gewichtsverlies 10-20 kg, licht medisch"
+      perMonth: "€19/maand",
+      forWho: "Gewichtsverlies 10-20 kg, licht medisch",
+      worth: "Meest gekozen traject met beste prijs/kwaliteit"
     },
     {
       name: "Intensief Traject",
@@ -240,7 +244,9 @@ export default function WatKostEenDietistPage() {
       grossCost: "€90 + (11 × €60) = €750",
       insurance: "€400 vergoed (aanvullend)",
       netCost: "€350 eigen bijdrage",
-      forWho: "Obesitas, diabetes, medisch complex, langdurige begeleiding"
+      perMonth: "€29/maand",
+      forWho: "Obesitas, diabetes, medisch complex, langdurige begeleiding",
+      worth: "Intensieve begeleiding tegen scherp tarief"
     }
   ];
 
