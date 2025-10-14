@@ -68,7 +68,7 @@ export default function HeroSearchSection() {
             <button 
               onClick={handleSearch}
               disabled={!isButtonEnabled}
-              className={`w-full px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
+              className={`w-full px-4 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
                 isButtonEnabled 
                   ? 'bg-sky-500 hover:bg-sky-600 text-white' 
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
