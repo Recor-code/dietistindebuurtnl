@@ -635,7 +635,7 @@ export default function AfvallenNa50Page() {
                         </div>
                       )}
 
-                      {item.numbers && (
+                      {item.numbers && Array.isArray(item.numbers) && (
                         <div className="mb-4">
                           <p className="font-semibold mb-2">{item.explanation}</p>
                           <div className="overflow-x-auto">
@@ -648,7 +648,7 @@ export default function AfvallenNa50Page() {
                                 </tr>
                               </thead>
                               <tbody>
-                                {item.numbers.map((row, rIdx) => (
+                                {item.numbers.map((row: any, rIdx: number) => (
                                   <tr key={rIdx} className={rIdx % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
                                     <td className="p-2 font-semibold">{row.age}</td>
                                     <td className="p-2">{row.calories}</td>
@@ -669,6 +669,12 @@ export default function AfvallenNa50Page() {
                           <p className="text-sm bg-red-50 p-3 rounded mt-3 text-red-800">
                             <strong>⚠️ </strong>{item.conclusion}
                           </p>
+                        </div>
+                      )}
+
+                      {item.numbers && typeof item.numbers === 'string' && (
+                        <div className="bg-amber-100 p-3 rounded mb-4">
+                          <p className="text-sm"><strong>📊</strong> {item.numbers}</p>
                         </div>
                       )}
 
