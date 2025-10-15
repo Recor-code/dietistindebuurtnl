@@ -22,16 +22,16 @@ Preferred communication style: Simple, everyday language.
 
 ### Backend Architecture
 - **API Routes**: Next.js API routes for server-side functionality
-- **Database ORM**: Drizzle ORM with PostgreSQL dialect for type-safe database operations
-- **Schema Design**: Centralized schema definition in `shared/schema.ts` with tables for cities, coaches, blog posts, and FAQ items
+- **Database Client**: Supabase SDK for all database operations (no ORM layer)
+- **Database Access**: Direct Supabase client usage via `supabaseServer` for server-side operations
 - **Real-time Features**: WebSocket support via `ws` package for potential real-time functionality
 
 ### Data Storage Solutions
 - **Primary Database**: Supabase (PostgreSQL) as the main data store
 - **Database Schema**: Relational design with cities, places (Google Maps data), coaches (legacy), blog posts, and FAQ items
 - **Primary Data Source**: Places table contains all specialist listings with Google Maps integration
-- **Migration Strategy**: Drizzle Kit for database migrations and schema management
-- **Data Seeding**: Automated seeding system for Dutch and Belgian cities with specialist data from Google Maps
+- **Database Operations**: All CRUD operations performed via Supabase SDK (supabaseServer)
+- **Data Seeding**: Automated seeding system using Supabase SDK for Dutch and Belgian cities
 
 ### Authentication and Authorization
 - **Auth Provider**: Supabase Authentication for user management
@@ -53,9 +53,9 @@ Preferred communication style: Simple, everyday language.
 - **Vercel**: Hosting platform with analytics integration
 
 ### Development Tools
-- **Drizzle Kit**: Database schema management and migrations
 - **Next.js**: React framework with server-side rendering and API routes
 - **Tailwind CSS**: Utility-first CSS framework for styling
+- **Supabase SDK**: Direct database access without ORM overhead
 
 ### Third-party Libraries
 - **Form Handling**: React Hook Form with Zod validation schemas
@@ -76,7 +76,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-**October 15, 2025**: Updated MatchingQuiz with dietist-relevant questions:
+**October 15, 2025**: Major architectural simplification - Removed Drizzle ORM:
+- ✅ **Database Architecture Cleanup**: Completely removed Drizzle ORM and related dependencies
+  - Eliminated DATABASE_URL requirement (no longer needed for builds)
+  - All database operations now use Supabase SDK directly
+  - Removed files: lib/db.ts, drizzle.config.ts, shared/schema*.ts
+  - Uninstalled packages: drizzle-orm, drizzle-kit, postgres
+  - Seed script rewritten to use supabaseServer instead of Drizzle queries
+  - Cleaner architecture with single database connection method (Supabase SDK only)
+  - Build now works without any database credentials at build time
+- ✅ **Updated MatchingQuiz with dietist-relevant questions**:
 - ✅ **Quiz Content Update**: Completely revised quiz questions to be relevant for dietist directory
   - Step 2: Changed from "Ben je gediagnosticeerd met Diëtiek?" to "Wat is je belangrijkste doel?" with options:
     - Afvallen en gewichtsverlies

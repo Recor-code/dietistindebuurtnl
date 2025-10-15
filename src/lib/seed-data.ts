@@ -1,5 +1,4 @@
-import { db } from '../../lib/db';
-import { cities, coaches, faqItems, blogPosts } from '../../shared/schema';
+import { supabaseServer } from '../../lib/supabase';
 import { allCities, adhdStatsTemplate, generateCityTldr } from '../data/cities';
 
 // Sample Dietisten data
@@ -13,14 +12,14 @@ const sampleCoaches = [
     specialization: 'Diëtiek Coach & Psycholoog',
     description: 'Gespecialiseerd in voedingsadvies voor volwassenen. 15 jaar ervaring in gedragstherapie en coaching.',
     address: 'Hoofdstraat 123',
-    rating: 4.8,
-    reviewCount: 47,
-    isChildFriendly: true,
-    weekendAvailable: true,
-    onlineAvailable: true,
-    inPersonAvailable: true,
-    acceptsInsurance: true,
-    availabilityStatus: 'available'
+    rating: '4.8',
+    review_count: 47,
+    is_child_friendly: true,
+    weekend_available: true,
+    online_available: true,
+    in_person_available: true,
+    accepts_insurance: true,
+    availability_status: 'available'
   },
   {
     name: 'Mark Jansen',
@@ -30,14 +29,14 @@ const sampleCoaches = [
     specialization: 'Diëtiek Coach',
     description: 'Focus en planningscoach met Diëtiek specialisatie. Helpt bij structuur en organisatie.',
     address: 'Parkweg 45',
-    rating: 4.6,
-    reviewCount: 32,
-    isChildFriendly: false,
-    weekendAvailable: false,
-    onlineAvailable: true,
-    inPersonAvailable: true,
-    acceptsInsurance: false,
-    availabilityStatus: 'available'
+    rating: '4.6',
+    review_count: 32,
+    is_child_friendly: false,
+    weekend_available: false,
+    online_available: true,
+    in_person_available: true,
+    accepts_insurance: false,
+    availability_status: 'available'
   },
   {
     name: 'Lisa de Vries',
@@ -47,14 +46,14 @@ const sampleCoaches = [
     specialization: 'Gedragstherapeut',
     description: 'Gedragstherapeut gespecialiseerd in Diëtiek bij kinderen en jongeren.',
     address: 'Schoolstraat 67',
-    rating: 4.9,
-    reviewCount: 63,
-    isChildFriendly: true,
-    weekendAvailable: true,
-    onlineAvailable: false,
-    inPersonAvailable: true,
-    acceptsInsurance: true,
-    availabilityStatus: 'busy'
+    rating: '4.9',
+    review_count: 63,
+    is_child_friendly: true,
+    weekend_available: true,
+    online_available: false,
+    in_person_available: true,
+    accepts_insurance: true,
+    availability_status: 'busy'
   }
 ];
 
@@ -98,65 +97,100 @@ export async function seedDatabase() {
 
     // Insert cities
     console.log('Inserting cities...');
-    const insertedCities = await db.insert(cities).values(
-      allCities.map(city => ({
-        name: city.name,
-        slug: city.slug,
-        province: city.province,
-        country: city.country,
-        population: city.population,
-        latitude: city.latitude.toString(),
-        longitude: city.longitude.toString(),
-        adhdStats: JSON.stringify({
-          ...adhdStatsTemplate,
-          lastUpdated: new Date().toISOString()
-        }),
-        tldr: generateCityTldr(city.name)
-      }))
-    ).returning();
+    const cityData = allCities.map(city => ({
+      name: city.name,
+      slug: city.slug,
+      province: city.province,
+      country: city.country,
+      population: city.population,
+      latitude: city.latitude.toString(),
+      longitude: city.longitude.toString(),
+      adhd_stats: {
+        ...adhdStatsTemplate,
+        lastUpdated: new Date().toISOString()
+      },
+      tldr: generateCityTldr(city.name)
+    }));
 
-    console.log(`Inserted ${insertedCities.length} cities`);
+    const { data: insertedCities, error: citiesError } = await supabaseServer
+      .from('cities')
+      .insert(cityData)
+      .select();
+
+    if (citiesError) {
+      console.error('Error inserting cities:', citiesError);
+      throw citiesError;
+    }
+
+    console.log(`Inserted ${insertedCities?.length || 0} cities`);
 
     // Insert coaches for each city (sample data)
     console.log('Inserting coaches...');
     const coachInserts = [];
     
-    for (const city of insertedCities.slice(0, 20)) { // First 20 cities get coaches
-      for (const coach of sampleCoaches) {
-        coachInserts.push({
-          ...coach,
-          cityId: city.id,
-          latitude: (parseFloat(city.latitude!) + (Math.random() - 0.5) * 0.01).toString(),
-          longitude: (parseFloat(city.longitude!) + (Math.random() - 0.5) * 0.01).toString(),
-          rating: coach.rating.toString(),
-        });
+    if (insertedCities) {
+      for (const city of insertedCities.slice(0, 20)) {
+        for (const coach of sampleCoaches) {
+          coachInserts.push({
+            ...coach,
+            city_id: city.id,
+            latitude: (parseFloat(city.latitude) + (Math.random() - 0.5) * 0.01).toString(),
+            longitude: (parseFloat(city.longitude) + (Math.random() - 0.5) * 0.01).toString(),
+          });
+        }
       }
-    }
 
-    await db.insert(coaches).values(coachInserts);
-    console.log(`Inserted ${coachInserts.length} coaches`);
+      const { error: coachesError } = await supabaseServer
+        .from('coaches')
+        .insert(coachInserts);
+
+      if (coachesError) {
+        console.error('Error inserting coaches:', coachesError);
+        throw coachesError;
+      }
+
+      console.log(`Inserted ${coachInserts.length} coaches`);
+    }
 
     // Insert FAQ items
     console.log('Inserting FAQ items...');
-    await db.insert(faqItems).values(sampleFAQ);
+    const { error: faqError } = await supabaseServer
+      .from('faq_items')
+      .insert(sampleFAQ);
+
+    if (faqError) {
+      console.error('Error inserting FAQ items:', faqError);
+      throw faqError;
+    }
+
     console.log(`Inserted ${sampleFAQ.length} FAQ items`);
 
     // Insert sample blog posts
     console.log('Inserting blog posts...');
-    const blogInserts = insertedCities.slice(0, 10).map((city, index) => ({
-      title: `Diëtiek Coaching in ${city.name}: Wat Je Moet Weten`,
-      slug: `adhd-coaching-${city.slug}`,
-      content: `<h2>Diëtiek Coaching in ${city.name}</h2><p>Ben je op zoek naar voedingsadvies in ${city.name}? In dit artikel bespreken we alles wat je moet weten over Diëtiek ondersteuning in jouw stad.</p><h3>Beschikbare Diëtiek Coaches</h3><p>In ${city.name} zijn verschillende ervaren Dietisten actief die je kunnen helpen met praktische vaardigheden...</p>`,
-      excerpt: `Ontdek alles over voedingsadvies mogelijkheden in ${city.name}. Van lokale coaches tot specialisaties.`,
-      metaDescription: `voedingsadvies in ${city.name} - Vind ervaren coaches, bekijk reviews en vergelijk specialisaties in jouw stad.`,
-      cityId: city.id,
-      province: city.province,
-      tags: JSON.stringify(['Diëtiek', 'coaching', city.name, city.province]),
-      publishedAt: new Date()
-    }));
+    if (insertedCities) {
+      const blogInserts = insertedCities.slice(0, 10).map((city) => ({
+        title: `Diëtiek Coaching in ${city.name}: Wat Je Moet Weten`,
+        slug: `adhd-coaching-${city.slug}`,
+        content: `<h2>Diëtiek Coaching in ${city.name}</h2><p>Ben je op zoek naar voedingsadvies in ${city.name}? In dit artikel bespreken we alles wat je moet weten over Diëtiek ondersteuning in jouw stad.</p><h3>Beschikbare Diëtiek Coaches</h3><p>In ${city.name} zijn verschillende ervaren Dietisten actief die je kunnen helpen met praktische vaardigheden...</p>`,
+        excerpt: `Ontdek alles over voedingsadvies mogelijkheden in ${city.name}. Van lokale coaches tot specialisaties.`,
+        meta_description: `voedingsadvies in ${city.name} - Vind ervaren coaches, bekijk reviews en vergelijk specialisaties in jouw stad.`,
+        city_id: city.id,
+        province: city.province,
+        tags: ['Diëtiek', 'coaching', city.name, city.province],
+        published_at: new Date().toISOString()
+      }));
 
-    await db.insert(blogPosts).values(blogInserts);
-    console.log(`Inserted ${blogInserts.length} blog posts`);
+      const { error: blogError } = await supabaseServer
+        .from('blog_posts')
+        .insert(blogInserts);
+
+      if (blogError) {
+        console.error('Error inserting blog posts:', blogError);
+        throw blogError;
+      }
+
+      console.log(`Inserted ${blogInserts.length} blog posts`);
+    }
 
     console.log('Database seeding completed successfully!');
     return { success: true };
