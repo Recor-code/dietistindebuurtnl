@@ -1,4 +1,4 @@
-import { pgTable, serial, text, boolean, decimal, timestamp, integer, varchar } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, boolean, decimal, timestamp, integer } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
 // Cities table for Dutch and Belgian cities
@@ -20,7 +20,7 @@ export const cities = pgTable('cities', {
 // PLACES table (Google Maps data) - This will be our primary source
 export const places = pgTable('places', {
   // Google Places data
-  PLACE_ID: varchar('PLACE ID').primaryKey(), // Unique Google Place ID
+  PLACE_ID: text('PLACE ID').primaryKey(), // Unique Google Place ID
   NAME: text('NAME').notNull(),
   slug: text('slug'), // We'll add this column for URL routing
   CATEGORY: text('CATEGORY'),
@@ -69,8 +69,8 @@ export const places = pgTable('places', {
 
 // Reviews table (Google Reviews data)
 export const reviews = pgTable('reviews', {
-  INTERNAL_REVIEW_ID: varchar('INTERNAL REVIEW ID').primaryKey(),
-  PLACE_ID: varchar('PLACE ID').notNull().references(() => places.PLACE_ID),
+  INTERNAL_REVIEW_ID: text('INTERNAL REVIEW ID').primaryKey(),
+  PLACE_ID: text('PLACE ID').notNull().references(() => places.PLACE_ID),
   PLACE_NAME: text('PLACE NAME'),
   PLACE_ADDRESS: text('PLACE ADDRESS'),
   USER_NAME: text('USER NAME'),
@@ -163,7 +163,7 @@ export const chatConversations = pgTable('chat_conversations', {
 // Featured spots for premium placement on city pages - NOW LINKS TO PLACES
 export const featuredSpots = pgTable('featured_spots', {
   id: serial('id').primaryKey(),
-  placeId: varchar('place_id').notNull().references(() => places.PLACE_ID),
+  placeId: text('place_id').notNull().references(() => places.PLACE_ID),
   cityId: integer('city_id').notNull().references(() => cities.id),
   position: integer('position').notNull(),
   

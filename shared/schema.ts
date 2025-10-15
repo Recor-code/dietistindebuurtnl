@@ -1,4 +1,4 @@
-import { pgTable, serial, text, boolean, decimal, timestamp, integer, varchar } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, boolean, decimal, timestamp, integer } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
 // Cities table for Dutch and Belgian cities
@@ -20,7 +20,7 @@ export const cities = pgTable('cities', {
 // PLACES table (Google Maps data) - Primary source for specialists
 export const places = pgTable('places', {
   // Google Places data - Using exact column names from database
-  PLACE_ID: varchar('PLACE ID').primaryKey(), // Unique Google Place ID
+  PLACE_ID: text('PLACE ID').primaryKey(), // Unique Google Place ID
   NAME: text('NAME').notNull(),
   CATEGORY: text('CATEGORY'),
   STREET_ADDRESS: text('STREET ADDRESS'),
@@ -67,8 +67,8 @@ export const places = pgTable('places', {
 // Reviews table (Google Reviews data)
 export const reviews = pgTable('reviews', {
   // Using exact column names from database
-  INTERNAL_REVIEW_ID: varchar('INTERNAL REVIEW ID').primaryKey(),
-  PLACE_ID: varchar('PLACE ID').notNull(), // References places.PLACE_ID
+  INTERNAL_REVIEW_ID: text('INTERNAL REVIEW ID').primaryKey(),
+  PLACE_ID: text('PLACE ID').notNull(), // References places.PLACE_ID
   PLACE_NAME: text('PLACE NAME'),
   PLACE_ADDRESS: text('PLACE ADDRESS'),
   USER_NAME: text('USER NAME'),
@@ -166,7 +166,7 @@ export const chatConversations = pgTable('chat_conversations', {
 export const featuredSpots = pgTable('featured_spots', {
   id: serial('id').primaryKey(),
   coachId: integer('coach_id').references(() => coaches.id), // Legacy reference
-  placeId: varchar('place_id'), // New reference to places.PLACE_ID
+  placeId: text('place_id'), // New reference to places.PLACE_ID
   cityId: integer('city_id').notNull().references(() => cities.id),
   position: integer('position').notNull(), // 1, 2, or 3 for the 3 featured spots
   

@@ -2,20 +2,28 @@ import { NextRequest, NextResponse } from 'next/server';
 import { supabaseServer } from '../../../../lib/supabase';
 import Stripe from 'stripe';
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
-}
+// Lazy initialize Stripe only when needed
+let stripe: Stripe | null = null;
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2025-08-27.basil',
-});
+function getStripeClient(): Stripe {
+  if (!stripe) {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
+    }
+    stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2025-08-27.basil',
+    });
+  }
+  return stripe;
+}
 
 export async function POST(request: NextRequest) {
   try {
     const { paymentIntentId } = await request.json();
 
     // Retrieve payment intent from Stripe
-    const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
+    const stripeClient = getStripeClient();
+    const paymentIntent = await stripeClient.paymentIntents.retrieve(paymentIntentId);
 
     if (paymentIntent.status !== 'succeeded') {
       return NextResponse.json(

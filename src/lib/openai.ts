@@ -2,7 +2,18 @@
 import OpenAI from "openai";
 
 // the newest OpenAI model is "gpt-5" which was released August 7, 2025. do not change this unless explicitly requested by the user
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// Only initialize OpenAI client if API key is available (lazy initialization)
+let openai: OpenAI | null = null;
+
+function getOpenAIClient(): OpenAI {
+  if (!openai) {
+    if (!process.env.OPENAI_API_KEY) {
+      throw new Error('OPENAI_API_KEY is not configured. AI features are disabled.');
+    }
+    openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  }
+  return openai;
+}
 
 // Assistant configuration - disabled for better streaming experience
 const USE_ASSISTANTS = false; // !!process.env.OPENAI_ASSISTANT_ID;
@@ -34,7 +45,8 @@ export async function generateDiëtiekAnalysis(
     const conversation = messages.map(m => `${m.role}: ${m.content}`).join('\n');
     
     // Always use chat completions for analysis (more reliable for structured output)
-    const response = await openai.chat.completions.create({
+    const client = getOpenAIClient();
+    const response = await client.chat.completions.create({
       model: "gpt-4o", // Using GPT-4o (GPT-5 requires org verification)
       messages: [
         {
@@ -141,7 +153,8 @@ async function streamAssistantResponse(
   let threadId = getThreadId(sessionId);
   
   if (!threadId) {
-    const thread = await openai.beta.threads.create();
+    const client = getOpenAIClient();
+    const thread = await client.beta.threads.create();
     threadId = thread.id;
     setThreadId(sessionId, threadId);
   }
@@ -149,7 +162,8 @@ async function streamAssistantResponse(
   // Add the latest user message to the thread
   const latestMessage = messages[messages.length - 1];
   if (latestMessage && latestMessage.role === 'user') {
-    await openai.beta.threads.messages.create(threadId, {
+    const client = getOpenAIClient();
+    await client.beta.threads.messages.create(threadId, {
       role: 'user',
       content: latestMessage.content
     });
@@ -162,7 +176,8 @@ async function streamAssistantResponse(
   }) + '\n'));
 
   // Create streaming run
-  const stream = openai.beta.threads.runs.stream(threadId, {
+  const client = getOpenAIClient();
+  const stream = client.beta.threads.runs.stream(threadId, {
     assistant_id: process.env.OPENAI_ASSISTANT_ID!,
   });
 
@@ -230,7 +245,8 @@ async function streamAssistantResponse(
 
         // Submit tool outputs and continue streaming
         if (toolOutputs.length > 0) {
-          const submitStream = openai.beta.threads.runs.submitToolOutputsStream(
+          const client = getOpenAIClient();
+          const submitStream = client.beta.threads.runs.submitToolOutputsStream(
             event.data.id,
             { thread_id: threadId, tool_outputs: toolOutputs }
           );
@@ -267,7 +283,8 @@ async function streamChatCompletionResponse(
   encoder: TextEncoder,
   messages: ChatMessage[]
 ): Promise<void> {
-  const stream = await openai.chat.completions.create({
+  const client = getOpenAIClient();
+  const stream = await client.chat.completions.create({
     model: "gpt-4o", // Using GPT-4o for streaming (GPT-5 requires org verification for streaming)
     messages: [
       {
@@ -345,7 +362,8 @@ async function generateAssistantResponse(
     let threadId = getThreadId(sessionId);
     
     if (!threadId) {
-      const thread = await openai.beta.threads.create();
+      const client = getOpenAIClient();
+      const thread = await client.beta.threads.create();
       threadId = thread.id;
       setThreadId(sessionId, threadId);
     }
@@ -353,14 +371,16 @@ async function generateAssistantResponse(
     // Add the latest user message to the thread
     const latestMessage = messages[messages.length - 1];
     if (latestMessage && latestMessage.role === 'user') {
-      await openai.beta.threads.messages.create(threadId, {
+      const client = getOpenAIClient();
+      await client.beta.threads.messages.create(threadId, {
         role: 'user',
         content: latestMessage.content
       });
     }
 
     // Run the assistant
-    const run = await openai.beta.threads.runs.create(threadId, {
+    const client = getOpenAIClient();
+    const run = await client.beta.threads.runs.create(threadId, {
       assistant_id: process.env.OPENAI_ASSISTANT_ID!
     });
 
@@ -369,13 +389,15 @@ async function generateAssistantResponse(
     
     while (runStatus.status === 'queued' || runStatus.status === 'in_progress') {
       await new Promise(resolve => setTimeout(resolve, 1000));
-      const retrievedRun = await openai.beta.threads.runs.retrieve(run.id, { thread_id: threadId });
+      const client = getOpenAIClient();
+      const retrievedRun = await client.beta.threads.runs.retrieve(run.id, { thread_id: threadId });
       runStatus = retrievedRun;
     }
 
     if (runStatus.status === 'completed') {
       // Get the latest messages from the thread
-      const threadMessages = await openai.beta.threads.messages.list(threadId);
+      const client = getOpenAIClient();
+      const threadMessages = await client.beta.threads.messages.list(threadId);
       const latestResponse = threadMessages.data[0];
       
       if (latestResponse && latestResponse.content[0]) {
@@ -401,7 +423,8 @@ async function generateChatCompletionResponse(
   messages: ChatMessage[]
 ): Promise<string> {
   try {
-    const response = await openai.chat.completions.create({
+    const client = getOpenAIClient();
+    const response = await client.chat.completions.create({
       model: "gpt-4o", // Using GPT-4o (GPT-5 requires org verification)
       messages: [
         {
