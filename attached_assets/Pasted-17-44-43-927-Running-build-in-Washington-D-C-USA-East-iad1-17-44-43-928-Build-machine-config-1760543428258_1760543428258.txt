@@ -1,0 +1,45 @@
+17:44:43.927 Running build in Washington, D.C., USA (East) – iad1
+17:44:43.928 Build machine configuration: 2 cores, 8 GB
+17:44:43.946 Cloning github.com/Recor-code/dietistindebuurtnl (Branch: main, Commit: 3eda4ea)
+17:44:44.079 Previous build caches not available
+17:44:44.927 Cloning completed: 980.000ms
+17:44:45.231 Running "vercel build"
+17:44:45.679 Vercel CLI 48.2.9
+17:44:46.101 Warning: Due to "engines": { "node": "20.x" } in your `package.json` file, the Node.js Version defined in your Project Settings ("22.x") will not apply, Node.js Version "20.x" will be used instead. Learn More: http://vercel.link/node-version
+17:44:46.118 Installing dependencies...
+17:44:51.994 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+17:44:52.112 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+17:45:02.480 
+17:45:02.480 added 570 packages in 16s
+17:45:02.481 
+17:45:02.481 229 packages are looking for funding
+17:45:02.481   run `npm fund` for details
+17:45:02.504 Detected Next.js version: 15.5.4
+17:45:02.510 Running "npm run build"
+17:45:02.635 
+17:45:02.635 > adhdcoachindebuurt@0.1.0 build
+17:45:02.636 > next build
+17:45:02.636 
+17:45:03.536 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+17:45:03.536 This information is used to shape Next.js' roadmap and prioritize features.
+17:45:03.536 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+17:45:03.536 https://nextjs.org/telemetry
+17:45:03.536 
+17:45:03.590    ▲ Next.js 15.5.4
+17:45:03.591 
+17:45:03.690    Creating an optimized production build ...
+17:45:29.995  ✓ Compiled successfully in 22.9s
+17:45:30.001    Skipping linting
+17:45:30.001    Checking validity of types ...
+17:45:48.512    Collecting page data ...
+17:45:49.318 Error: DATABASE_URL is required
+17:45:49.318     at 63125 (.next/server/app/api/seed/route.js:28:47915)
+17:45:49.318     at c (.next/server/webpack-runtime.js:1:128)
+17:45:49.318     at <unknown> (.next/server/app/api/seed/route.js:28:53794)
+17:45:49.318     at c.X (.next/server/webpack-runtime.js:1:1206)
+17:45:49.318     at <unknown> (.next/server/app/api/seed/route.js:28:53774)
+17:45:49.318     at Object.<anonymous> (.next/server/app/api/seed/route.js:28:53826)
+17:45:49.324 
+17:45:49.324 > Build error occurred
+17:45:49.328 [Error: Failed to collect page data for /api/seed] { type: 'Error' }
+17:45:49.360 Error: Command "npm run build" exited with 1
