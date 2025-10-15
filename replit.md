@@ -76,6 +76,20 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**October 15, 2025**: Updated MatchingQuiz with dietist-relevant questions:
+- ✅ **Quiz Content Update**: Completely revised quiz questions to be relevant for dietist directory
+  - Step 2: Changed from "Ben je gediagnosticeerd met Diëtiek?" to "Wat is je belangrijkste doel?" with options:
+    - Afvallen en gewichtsverlies
+    - Gezonder leven en preventie  
+    - Medische aandoening (diabetes, cholesterol, etc.)
+    - Sportvoeding en prestatie
+    - Voedselallergieën of intoleranties
+    - Veganistisch of plantaardig eten
+  - Step 3: Changed from "Heb je eerder Diëtiek therapie geprobeerd?" to "Heb je eerder met een diëtist gewerkt?"
+  - Step 4: Updated concerns to dietist-relevant issues (starting with diet, emotional eating, health issues, etc.)
+  - Title changed from "Diëtiek Coach Matching Quiz" to "Diëtist Matching Quiz"
+- ✅ **Build Stability**: Fixed database lazy initialization to prevent deployment errors
+
 **October 14, 2025**: Complete platform transformation from ADHD to Dietist:
 - ✅ **Full Content Migration**: Transformed entire app from ADHD coaching to dietist/nutritionist directory
   - All ADHD terminology replaced with dietist-specific content throughout the codebase

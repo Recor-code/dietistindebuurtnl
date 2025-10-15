@@ -5,8 +5,8 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface QuizData {
   age: string;
-  diagnosis: string;
-  therapy: string;
+  goal: string;
+  experience: string;
   concern: string;
   location: string;
   name: string;
@@ -27,8 +27,8 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState<QuizData>({
     age: '',
-    diagnosis: '',
-    therapy: '',
+    goal: '',
+    experience: '',
     concern: '',
     location: '',
     name: '',
@@ -47,26 +47,28 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
     '46+ jaar (ouder volwassene)'
   ];
 
-  const diagnosisOptions = [
-    'Ja, recent gediagnosticeerd',
-    'Ja, gediagnosticeerd meer dan een jaar geleden',
-    'Nog niet, maar ik vermoed het wel',
-    'Momenteel in evaluatie'
+  const goalOptions = [
+    'Afvallen en gewichtsverlies',
+    'Gezonder leven en preventie',
+    'Medische aandoening (diabetes, cholesterol, etc.)',
+    'Sportvoeding en prestatie',
+    'Voedselallergieën of intoleranties',
+    'Veganistisch of plantaardig eten'
   ];
 
-  const therapyOptions = [
-    'Nooit Diëtiek therapie geprobeerd',
-    'Momenteel in Diëtiek therapie',
-    'Geprobeerd maar gestopt',
-    'Op zoek naar een andere specialist'
+  const experienceOptions = [
+    'Nooit eerder bij een diëtist geweest',
+    'Momenteel in behandeling bij een diëtist',
+    'Eerder gehad maar gestopt',
+    'Op zoek naar een andere diëtist'
   ];
 
   const concernOptions = [
-    'Concentratieproblemen op werk/school',
-    'Impulsief gedrag en emotieregulatie',
-    'Organisatie en tijdsmanagement',
-    'Relatieproblemen door Diëtiek symptomen',
-    'Zelfvertrouwen en zelfbeeld verbeteren'
+    'Ik weet niet waar ik moet beginnen',
+    'Moeite met volhouden van een dieet',
+    'Emotioneel eten en stress',
+    'Specifieke gezondheidsklachten',
+    'Advies over voedingsstoffen en supplementen'
   ];
 
   const handleOptionSelect = (field: keyof QuizData, value: string) => {
@@ -87,8 +89,8 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
   const canProceed = () => {
     switch (currentStep) {
       case 1: return formData.age !== '';
-      case 2: return formData.diagnosis !== '';
-      case 3: return formData.therapy !== '';
+      case 2: return formData.goal !== '';
+      case 3: return formData.experience !== '';
       case 4: return formData.concern !== '';
       case 5: return formData.location.trim() !== '';
       case 6: return formData.name.trim() !== '' && formData.email.trim() !== '';
@@ -147,8 +149,8 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
       setSubmitError(null);
       setFormData({
         age: '',
-        diagnosis: '',
-        therapy: '',
+        goal: '',
+        experience: '',
         concern: '',
         location: '',
         name: '',
@@ -170,7 +172,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
       <div className="bg-white rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header with close button */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
-          <h2 className="text-xl font-bold text-gray-800">Diëtiek Coach Matching Quiz</h2>
+          <h2 className="text-xl font-bold text-gray-800">Diëtist Matching Quiz</h2>
           <button
             onClick={handleClose}
             className="text-gray-400 hover:text-gray-600 p-1"
@@ -225,19 +227,19 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
             </div>
           )}
 
-          {/* Step 2: Diagnosis */}
+          {/* Step 2: Goal */}
           {currentStep === 2 && (
             <div>
               <h3 className="text-lg font-semibold mb-4">
-                Ben je gediagnosticeerd met Diëtiek?
+                Wat is je belangrijkste doel?
               </h3>
               <div className="space-y-3">
-                {diagnosisOptions.map((option) => (
+                {goalOptions.map((option) => (
                   <button
                     key={option}
-                    onClick={() => handleOptionSelect('diagnosis', option)}
+                    onClick={() => handleOptionSelect('goal', option)}
                     className={`w-full p-3 text-left rounded-lg border transition-colors ${
-                      formData.diagnosis === option
+                      formData.goal === option
                         ? 'border-blue-500 bg-blue-50 text-blue-700'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
@@ -249,19 +251,19 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
             </div>
           )}
 
-          {/* Step 3: Therapy Experience */}
+          {/* Step 3: Experience */}
           {currentStep === 3 && (
             <div>
               <h3 className="text-lg font-semibold mb-4">
-                Heb je eerder Diëtiek therapie geprobeerd?
+                Heb je eerder met een diëtist gewerkt?
               </h3>
               <div className="space-y-3">
-                {therapyOptions.map((option) => (
+                {experienceOptions.map((option) => (
                   <button
                     key={option}
-                    onClick={() => handleOptionSelect('therapy', option)}
+                    onClick={() => handleOptionSelect('experience', option)}
                     className={`w-full p-3 text-left rounded-lg border transition-colors ${
-                      formData.therapy === option
+                      formData.experience === option
                         ? 'border-blue-500 bg-blue-50 text-blue-700'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
