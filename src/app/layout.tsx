@@ -90,7 +90,7 @@ export default function RootLayout({
                   j.async=true;
                   j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
                   f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','GTM-WQ87ZF3Z');
+                })(window,document,'script','dataLayer','GTM-MWMH3KH7');
               }
               
               // Load GTM after 3 seconds
@@ -117,7 +117,7 @@ export default function RootLayout({
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe 
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WQ87ZF3Z"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MWMH3KH7"
             height="0" 
             width="0" 
             style={{display:'none',visibility:'hidden'}}
