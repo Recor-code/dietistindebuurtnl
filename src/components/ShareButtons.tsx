@@ -24,17 +24,10 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
   const shareLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
     whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
-    messenger: `fb-messenger://share/?link=${encodedUrl}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`
   };
 
   const handleShare = (platform: string, link: string) => {
-    if (platform === 'messenger' && typeof window !== 'undefined') {
-      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        window.open(`https://www.facebook.com/dialog/send?link=${encodedUrl}&app_id=YOUR_APP_ID&redirect_uri=${encodedUrl}`, '_blank');
-        return;
-      }
-    }
     window.open(link, '_blank', 'width=600,height=400');
   };
 
@@ -65,15 +58,6 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
       >
         <MessageCircle className="w-4 h-4" />
         <span>WhatsApp</span>
-      </button>
-
-      <button
-        onClick={() => handleShare('messenger', shareLinks.messenger)}
-        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors text-sm font-medium"
-        aria-label="Delen op Messenger"
-      >
-        <Send className="w-4 h-4" />
-        <span>Messenger</span>
       </button>
 
       <button

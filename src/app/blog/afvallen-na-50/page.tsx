@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { TrendingDown, Activity, Users, Calendar, Flame, Heart, Brain, Dumbbell, Moon, Apple, CheckCircle2, XCircle, AlertTriangle, Info, Target, Zap, Clock } from 'lucide-react';
+import { TrendingDown, Activity, Users, Calendar, Flame, Heart, Brain, Dumbbell, Moon, Apple, CheckCircle2, XCircle, AlertTriangle, Info, Target, Zap, Clock, Award } from 'lucide-react';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Afvallen Na Je 50e: Waarom Het Moeilijker Is (En Hoe Het Wel Lukt) | 2025',
@@ -533,20 +534,45 @@ export default function AfvallenNa50Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
+      <article className="min-h-screen bg-white">
+        {/* Featured Image */}
+        <div className="w-full aspect-video max-h-[500px] overflow-hidden">
+          <Image
+            src="/img/blog/afvallen-na-50/featured.webp"
+            alt="Afvallen Na Je 50e - Succesvol Gewichtsverlies 50+"
+            width={1200}
+            height={675}
+            className="w-full h-full object-cover"
+            priority
+          />
+        </div>
+
+        {/* Share Buttons */}
+        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+          <ShareButtons title="Afvallen Na Je 50e: Waarom Het Moeilijker Is (En Hoe Het Wel Lukt)" />
+        </div>
+
         {/* Hero Section */}
-        <header className="relative bg-gradient-to-r from-amber-600 to-orange-500 text-white py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <Users className="w-5 h-5" />
-              <span className="font-medium">50+ Gewichtsverlies Gids</span>
+        <header className="max-w-4xl mx-auto px-4 py-12">
+          <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-700 px-4 py-2 rounded-full mb-6">
+            <Users className="w-5 h-5" />
+            <span className="font-semibold uppercase text-sm tracking-wide">50+ Gewichtsverlies Gids 2025</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            Afvallen Na Je 50e: Waarom Het Moeilijker Is (En Hoe Het Wel Lukt)
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            Complete gids: hormonen, metabolisme, spierverlies en bewezen strategieën voor succesvol gewichtsverlies 50+
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              <span>14 min leestijd</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Afvallen Na Je 50e: Waarom Het Moeilijker Is (En Hoe Het Wel Lukt)
-            </h1>
-            <p className="text-xl text-amber-50 mb-8">
-              Complete gids: hormonen, metabolisme, spierverlies en bewezen strategieën voor succesvol gewichtsverlies 50+
-            </p>
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4" />
+              <span className="font-medium">Evidence-based</span>
+            </div>
           </div>
         </header>
 

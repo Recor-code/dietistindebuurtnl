@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Heart, TrendingDown, Apple, CheckCircle2, XCircle, AlertTriangle, Clock, Target, Activity, Utensils, Info, Zap, Shield } from 'lucide-react';
+import { Heart, TrendingDown, Apple, CheckCircle2, XCircle, AlertTriangle, Clock, Target, Activity, Utensils, Info, Zap, Shield, Award } from 'lucide-react';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Dieet voor Diabetes Type 2: Complete Gids | Bloedsuiker Verlagen 2025',
@@ -499,20 +500,45 @@ export default function DieetDiabetesType2Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-gradient-to-b from-red-50 to-white">
+      <article className="min-h-screen bg-white">
+        {/* Featured Image */}
+        <div className="w-full aspect-video max-h-[500px] overflow-hidden">
+          <Image
+            src="/img/blog/dieet-diabetes-type-2/featured.webp"
+            alt="Dieet voor Diabetes Type 2 - Bloedsuiker Controle"
+            width={1200}
+            height={675}
+            className="w-full h-full object-cover"
+            priority
+          />
+        </div>
+
+        {/* Share Buttons */}
+        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+          <ShareButtons title="Dieet voor Diabetes Type 2: Complete Gids" />
+        </div>
+
         {/* Hero Section */}
-        <header className="relative bg-gradient-to-r from-red-600 to-orange-500 text-white py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <Heart className="w-5 h-5" />
-              <span className="font-medium">Diabetes Type 2 Gids</span>
+        <header className="max-w-4xl mx-auto px-4 py-12">
+          <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full mb-6">
+            <Heart className="w-5 h-5" />
+            <span className="font-semibold uppercase text-sm tracking-wide">Diabetes Type 2 Gids 2025</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            Dieet voor Diabetes Type 2: Complete Gids
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            Alles over voeding bij diabetes: bloedsuiker onder controle, medicatie verminderen en gezonder leven
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              <span>13 min leestijd</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Dieet voor Diabetes Type 2: Complete Gids
-            </h1>
-            <p className="text-xl text-red-50 mb-8">
-              Alles over voeding bij diabetes: bloedsuiker onder controle, medicatie verminderen en gezonder leven
-            </p>
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4" />
+              <span className="font-medium">Evidence-based</span>
+            </div>
           </div>
         </header>
 

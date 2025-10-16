@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { AlertCircle, CheckCircle2, XCircle, Info, Apple, ShieldAlert, TrendingDown, Heart, Lightbulb, Clock, BookOpen, ChefHat } from 'lucide-react';
+import { AlertCircle, CheckCircle2, XCircle, Info, Apple, ShieldAlert, TrendingDown, Heart, Lightbulb, Clock, BookOpen, ChefHat, Award } from 'lucide-react';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Prikkelbare Darm Syndroom (PDS): Het Juiste Dieet | FODMAP Gids 2025',
@@ -450,20 +451,45 @@ export default function PrikkelbareDarmDieetPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
+      <article className="min-h-screen bg-white">
+        {/* Featured Image */}
+        <div className="w-full aspect-video max-h-[500px] overflow-hidden">
+          <Image
+            src="/img/blog/prikkelbare-darm-dieet/featured.webp"
+            alt="Prikkelbare Darm Syndroom - Het Juiste Dieet"
+            width={1200}
+            height={675}
+            className="w-full h-full object-cover"
+            priority
+          />
+        </div>
+
+        {/* Share Buttons */}
+        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+          <ShareButtons title="Prikkelbare Darm Syndroom (PDS): Het Juiste Dieet" />
+        </div>
+
         {/* Hero Section */}
-        <header className="relative bg-gradient-to-r from-orange-600 to-amber-500 text-white py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <AlertCircle className="w-5 h-5" />
-              <span className="font-medium">PDS / IBS Dieet Gids</span>
+        <header className="max-w-4xl mx-auto px-4 py-12">
+          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full mb-6">
+            <AlertCircle className="w-5 h-5" />
+            <span className="font-semibold uppercase text-sm tracking-wide">PDS / IBS Dieet Gids 2025</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            Prikkelbare Darm Syndroom (PDS): Het Juiste Dieet
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            Complete FODMAP gids: elimineren, herintroduceren en personaliseren voor minder klachten
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              <span>10 min leestijd</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Prikkelbare Darm Syndroom (PDS): Het Juiste Dieet
-            </h1>
-            <p className="text-xl text-orange-50 mb-8">
-              Complete FODMAP gids: elimineren, herintroduceren en personaliseren voor minder klachten
-            </p>
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4" />
+              <span className="font-medium">Evidence-based</span>
+            </div>
           </div>
         </header>
 

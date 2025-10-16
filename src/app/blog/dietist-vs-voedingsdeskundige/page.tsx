@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { GraduationCap, Shield, Euro, FileCheck, AlertCircle, CheckCircle2, XCircle, Users, Stethoscope, BookOpen, Award, Search, Info, Scale } from 'lucide-react';
+import { GraduationCap, Shield, Euro, FileCheck, AlertCircle, CheckCircle2, XCircle, Users, Stethoscope, BookOpen, Award, Search, Info, Scale, Clock } from 'lucide-react';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Diëtist vs Voedingsdeskundige: Het Verschil Uitgelegd | 2025 Gids',
@@ -432,20 +433,45 @@ export default function DietistVsVoedingsdeskundigePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+      <article className="min-h-screen bg-white">
+        {/* Featured Image */}
+        <div className="w-full aspect-video max-h-[500px] overflow-hidden">
+          <Image
+            src="/img/blog/dietist-vs-voedingsdeskundige/featured.webp"
+            alt="Diëtist vs Voedingsdeskundige Verschil"
+            width={1200}
+            height={675}
+            className="w-full h-full object-cover"
+            priority
+          />
+        </div>
+
+        {/* Share Buttons */}
+        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+          <ShareButtons title="Diëtist vs Voedingsdeskundige: Het Verschil Uitgelegd" />
+        </div>
+
         {/* Hero Section */}
-        <header className="relative bg-gradient-to-r from-purple-600 to-indigo-500 text-white py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <Scale className="w-5 h-5" />
-              <span className="font-medium">Professional Vergelijking</span>
+        <header className="max-w-4xl mx-auto px-4 py-12">
+          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full mb-6">
+            <Scale className="w-5 h-5" />
+            <span className="font-semibold uppercase text-sm tracking-wide">Professional Vergelijking 2025</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            Diëtist vs Voedingsdeskundige: Het Verschil Uitgelegd
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            Belangrijk te weten: opleiding, bevoegdheden, vergoeding en wanneer je voor welke professional kiest
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              <span>10 min leestijd</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Diëtist vs Voedingsdeskundige: Het Verschil Uitgelegd
-            </h1>
-            <p className="text-xl text-purple-50 mb-8">
-              Belangrijk te weten: opleiding, bevoegdheden, vergoeding en wanneer je voor welke professional kiest
-            </p>
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4" />
+              <span className="font-medium">Evidence-based</span>
+            </div>
           </div>
         </header>
 
