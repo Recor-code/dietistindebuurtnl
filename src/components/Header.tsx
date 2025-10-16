@@ -16,11 +16,11 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 relative">
               <Image 
-                src="/images/logo.webp"
+                src="/logo.png"
                 alt="Dietist in de Buurt Logo"
                 width={40}
                 height={40}
-                className="rounded-full object-cover w-10 h-10"
+                className="object-contain w-10 h-10"
               />
             </div>
             <div className="flex flex-col">
@@ -56,11 +56,11 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 relative">
                 <Image 
-                  src="/images/logo.webp"
+                  src="/logo.png"
                   alt="Dietist in de Buurt Logo"
                   width={40}
                   height={40}
-                  className="rounded-full object-cover w-10 h-10"
+                  className="object-contain w-10 h-10"
                 />
               </div>
               <div className="flex flex-col">
