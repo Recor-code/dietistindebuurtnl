@@ -534,7 +534,13 @@ export default function AfvallenNa50Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -548,12 +554,12 @@ export default function AfvallenNa50Page() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Afvallen Na Je 50e: Waarom Het Moeilijker Is (En Hoe Het Wel Lukt)" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-700 px-4 py-2 rounded-full mb-6">
             <Users className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">50+ Gewichtsverlies Gids 2025</span>
@@ -577,8 +583,7 @@ export default function AfvallenNa50Page() {
         </header>
 
         {/* Quick Facts */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <div className="bg-amber-100 border-l-4 border-amber-600 p-8 mb-12 rounded-r-xl">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-3">
                 <Info className="w-8 h-8 text-amber-600" />
@@ -602,12 +607,10 @@ export default function AfvallenNa50Page() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Why Harder */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Redenen Waarom Afvallen Moeilijker Wordt Na 50
             </h2>
@@ -779,12 +782,10 @@ export default function AfvallenNa50Page() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Strategies That Work */}
-        <section className="py-16 px-4 bg-gradient-to-b from-green-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-green-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Strategieën Die WÉL Werken Na 50
             </h2>
@@ -858,12 +859,10 @@ export default function AfvallenNa50Page() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Diet Adjustments */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Voeding Aanpassen Per Leeftijd
             </h2>
@@ -930,12 +929,10 @@ export default function AfvallenNa50Page() {
                 </p>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Men vs Women */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gray-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Mannen vs Vrouwen: Verschillende Uitdagingen
             </h2>
@@ -999,12 +996,10 @@ export default function AfvallenNa50Page() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Common Mistakes */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Fatale Fouten Bij Afvallen 50+
             </h2>
@@ -1030,12 +1025,10 @@ export default function AfvallenNa50Page() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Supplements */}
-        <section className="py-16 px-4 bg-gradient-to-b from-purple-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-purple-50 to-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
               Nuttige Supplementen Voor 50+ Afvallen
             </h2>
@@ -1056,12 +1049,10 @@ export default function AfvallenNa50Page() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Week Schedule */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               {weekSchedule.title}
             </h2>
@@ -1100,12 +1091,9 @@ export default function AfvallenNa50Page() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
-
-        {/* Success Factors */}
-        <section className="py-16 px-4 bg-amber-50">
-          <div className="max-w-4xl mx-auto">
+          {/* Success Factors */}
+          <section className="py-16 px-6 md:px-12 bg-amber-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Succesfactoren: Wat Maakt Het Verschil?
             </h2>
@@ -1133,12 +1121,11 @@ export default function AfvallenNa50Page() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-amber-600 to-orange-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-amber-600 to-orange-500 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Klaar Om Succesvol Af Te Vallen Na Je 50e?
             </h2>
@@ -1151,12 +1138,11 @@ export default function AfvallenNa50Page() {
             >
               Vind Een Diëtist Voor 50+ Begeleiding
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -1191,9 +1177,10 @@ export default function AfvallenNa50Page() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }

@@ -472,7 +472,13 @@ export default function EmotioneelEtenPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -486,12 +492,12 @@ export default function EmotioneelEtenPage() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Emotioneel Eten: Herken en Doorbreek de Cyclus" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-700 px-4 py-2 rounded-full mb-6">
             <Heart className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Emotioneel Eten Gids 2025</span>
@@ -515,8 +521,7 @@ export default function EmotioneelEtenPage() {
         </header>
 
         {/* Emotional vs Physical Hunger */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Het Verschil: Emotionele vs Fysieke Honger
             </h2>
@@ -574,12 +579,10 @@ export default function EmotioneelEtenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Common Triggers */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Meest Voorkomende Emotionele Eet-Triggers
             </h2>
@@ -621,12 +624,10 @@ export default function EmotioneelEtenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Recognition Signals */}
-        <section className="py-16 px-4 bg-gradient-to-b from-rose-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-rose-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Emotioneel Eten Herkennen: Voor, Tijdens en Na
             </h2>
@@ -655,12 +656,10 @@ export default function EmotioneelEtenPage() {
                 Hoe meer signalen je herkent, hoe eerder je kunt ingrijpen. Emotioneel eten is GEEN zwakte of gebrek aan wilskracht - het is een aangeleerde reactie op emoties die je kunt afleren.
               </p>
             </div>
-          </div>
         </section>
 
         {/* Breaking Strategies */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Bewezen Strategieën Om Cyclus Te Doorbreken
             </h2>
@@ -697,12 +696,10 @@ export default function EmotioneelEtenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Emotion Alternatives */}
-        <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Wat Te Doen In Plaats Van Eten? (Per Emotie)
             </h2>
@@ -722,12 +719,10 @@ export default function EmotioneelEtenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Common Mistakes */}
-        <section className="py-16 px-4 bg-rose-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-rose-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Fatale Fouten Bij Emotioneel Eten Aanpakken
             </h2>
@@ -751,12 +746,10 @@ export default function EmotioneelEtenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Practical Plan */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               12-Weken Plan: Stap Voor Stap Emotioneel Eten Doorbreken
             </h2>
@@ -784,12 +777,11 @@ export default function EmotioneelEtenPage() {
                 Dit plan is richtlijn, geen strikt schema. Iedereen gaat in eigen tempo. Terugval is normaal (onderdeel van proces). Bij hardnekkige patronen of eetstoornis: zoek professionele hulp (therapie/diëtist).
               </p>
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-rose-500 to-pink-600 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-rose-500 to-pink-600 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Professionele Hulp Bij Emotioneel Eten
             </h2>
@@ -802,12 +794,11 @@ export default function EmotioneelEtenPage() {
             >
               Vind Een Specialist
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -849,9 +840,10 @@ export default function EmotioneelEtenPage() {
                 <strong>Langdurig succes vereist:</strong> zelfcompassie (niet straffen bij terugval), professionele hulp bij hardnekkige patronen (therapie 70-80% effectief, diëtist 65-75%), structurele stressreductie (60% minder emotioneel eten) en sociale steun (40-50% meer succes). Onthoud: het is een reis, geen race. Elke kleine stap vooruit telt.
               </p>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }

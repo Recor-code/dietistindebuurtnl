@@ -387,7 +387,13 @@ export default function EersteConsultDietistPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -401,12 +407,12 @@ export default function EersteConsultDietistPage() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Eerste Consult Bij Diëtist: Wat Kun Je Verwachten?" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-6">
             <Calendar className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Eerste Afspraak Gids 2025</span>
@@ -430,8 +436,7 @@ export default function EersteConsultDietistPage() {
         </header>
 
         {/* Quick Overview */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <div className="bg-blue-100 border-l-4 border-blue-600 p-8 mb-12 rounded-r-xl">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-3">
                 <Info className="w-8 h-8 text-blue-600" />
@@ -479,12 +484,10 @@ export default function EersteConsultDietistPage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Consult Phases */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
               Wat Gebeurt Er Tijdens Het Consult?
             </h2>
@@ -527,12 +530,10 @@ export default function EersteConsultDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Questions Asked */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gray-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Welke Vragen Worden Gesteld?
             </h2>
@@ -563,12 +564,10 @@ export default function EersteConsultDietistPage() {
                 <strong>⚠️ Belangrijk:</strong> Al deze vragen zijn bedoeld om je zo goed mogelijk te helpen. Wees eerlijk - alle informatie is strikt vertrouwelijk en valt onder medisch beroepsgeheim.
               </p>
             </div>
-          </div>
         </section>
 
         {/* What to Bring */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Wat Moet Je Meenemen?
             </h2>
@@ -604,12 +603,10 @@ export default function EersteConsultDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Preparation Tips */}
-        <section className="py-16 px-4 bg-gradient-to-b from-green-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-green-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Tips Voor Optimale Voorbereiding
             </h2>
@@ -649,12 +646,10 @@ export default function EersteConsultDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* After Consult */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Wat Gebeurt Er Na Het Consult?
             </h2>
@@ -705,12 +700,10 @@ export default function EersteConsultDietistPage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Common Concerns */}
-        <section className="py-16 px-4 bg-yellow-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-yellow-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Veelvoorkomende Zorgen (En De Realiteit)
             </h2>
@@ -739,12 +732,10 @@ export default function EersteConsultDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Do's and Don'ts */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Do's & Don'ts Voor Je Eerste Consult
             </h2>
@@ -782,12 +773,10 @@ export default function EersteConsultDietistPage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Timeline */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gray-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Typische Tijdlijn Rondom Je Eerste Consult
             </h2>
@@ -807,16 +796,15 @@ export default function EersteConsultDietistPage() {
                 ))}
               </div>
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Klaar Voor Je Eerste Consult?
             </h2>
-            <p className="text-xl text-blue-50 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-50 mb-8">
               Vind een ervaren diëtist bij jou in de buurt en plan je eerste afspraak
             </p>
             <Link
@@ -825,12 +813,11 @@ export default function EersteConsultDietistPage() {
             >
               Vind Een Diëtist in Jouw Regio
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -865,9 +852,10 @@ export default function EersteConsultDietistPage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }

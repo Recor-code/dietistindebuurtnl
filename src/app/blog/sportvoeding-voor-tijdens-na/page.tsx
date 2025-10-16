@@ -575,7 +575,13 @@ export default function SportvoedingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -589,12 +595,12 @@ export default function SportvoedingPage() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Sportvoeding: Wat Eet Je Voor, Tijdens en Na Sporten?" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-6">
             <Activity className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Sportvoeding Gids 2025</span>
@@ -618,8 +624,7 @@ export default function SportvoedingPage() {
         </header>
 
         {/* Timing Overview */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-12 text-center">
               De 3 Belangrijkste Momenten
             </h2>
@@ -659,12 +664,10 @@ export default function SportvoedingPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Before Sport */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Voor Sporten: Energy Tanken
             </h2>
@@ -743,12 +746,10 @@ export default function SportvoedingPage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* During Sport */}
-        <section className="py-16 px-4 bg-gradient-to-b from-yellow-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-yellow-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Tijdens Sporten: Energie Aanvullen
             </h2>
@@ -826,12 +827,10 @@ export default function SportvoedingPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* After Sport - Content continues... */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Na Sporten: Herstel & Groei
             </h2>
@@ -924,12 +923,10 @@ export default function SportvoedingPage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Hydration Guide */}
-        <section className="py-16 px-4 bg-cyan-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-cyan-50">
             <h2 className="text-3xl font-bold mb-4 text-center">
               Hydratatie: Het Vergeten Onderdeel
             </h2>
@@ -1006,12 +1003,10 @@ export default function SportvoedingPage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Sport Types - Abbreviated for space */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Voeding Per Sporttype
             </h2>
@@ -1040,12 +1035,10 @@ export default function SportvoedingPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Common Mistakes */}
-        <section className="py-16 px-4 bg-red-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-red-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Fatale Fouten Bij Sportvoeding
             </h2>
@@ -1069,16 +1062,15 @@ export default function SportvoedingPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Wil Je Persoonlijk Sportvoedingsadvies?
             </h2>
-            <p className="text-xl text-blue-50 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-50 mb-8">
               Vind een sportdiëtist bij jou in de buurt voor een plan op maat
             </p>
             <Link
@@ -1087,12 +1079,11 @@ export default function SportvoedingPage() {
             >
               Vind Een Sportdiëtist
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -1127,9 +1118,10 @@ export default function SportvoedingPage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }

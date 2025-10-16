@@ -437,7 +437,13 @@ export default function GezondeVoedingKinderenPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -451,12 +457,12 @@ export default function GezondeVoedingKinderenPage() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Gezonde Voeding Voor Kinderen: Complete Gids Voor Ouders" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-700 px-4 py-2 rounded-full mb-6">
             <Apple className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Kindervoeding Gids 2025</span>
@@ -480,8 +486,7 @@ export default function GezondeVoedingKinderenPage() {
         </header>
 
         {/* Daily Needs Per Age */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Dagelijkse Voedingsbehoefte Per Leeftijd
             </h2>
@@ -535,12 +540,10 @@ export default function GezondeVoedingKinderenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Essential Nutrients */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Essentiële Voedingsstoffen Voor Groei
             </h2>
@@ -569,12 +572,10 @@ export default function GezondeVoedingKinderenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Picky Eater Strategies */}
-        <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Picky Eaters: 6 Strategieën Die Werken
             </h2>
@@ -607,12 +608,10 @@ export default function GezondeVoedingKinderenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Healthy Lunch Ideas */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Gezonde Lunch Ideeën Voor School
             </h2>
@@ -635,12 +634,10 @@ export default function GezondeVoedingKinderenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Sugar Guidelines */}
-        <section className="py-16 px-4 bg-red-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-red-50">
             <h2 className="text-3xl font-bold mb-12 text-center text-red-800">
               ⚠️ Suiker: De Verborgen Vijand
             </h2>
@@ -689,12 +686,10 @@ export default function GezondeVoedingKinderenPage() {
                 ))}
               </ul>
             </div>
-          </div>
         </section>
 
         {/* Common Mistakes */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Fatale Fouten Bij Kindervoeding
             </h2>
@@ -719,12 +714,10 @@ export default function GezondeVoedingKinderenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Weekly Menu */}
-        <section className="py-16 px-4 bg-gradient-to-b from-teal-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-teal-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Praktisch Weekmenu (Maandag-Vrijdag)
             </h2>
@@ -767,12 +760,11 @@ export default function GezondeVoedingKinderenPage() {
                 <li>• Kind betrekken: 1x per week recept kiezen (binnen gezonde opties)</li>
               </ul>
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-amber-500 to-yellow-400 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-amber-500 to-yellow-400 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Hulp Nodig Bij Kindervoeding?
             </h2>
@@ -785,12 +777,11 @@ export default function GezondeVoedingKinderenPage() {
             >
               Vind Een Kinderdiëtist
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -824,9 +815,10 @@ export default function GezondeVoedingKinderenPage() {
                 <strong>Geduld en consistentie zijn sleutel</strong>: kinderen ontwikkelen smaak over jaren, niet dagen. Eerste 1000 dagen (0-3 jaar) cruciaal voor smaakvoorkeuren (brede variatie aanbieden = gezondere eter later). Bij hardnekkige picky eating, gewichtsproblemen of zorgen: zoek kinderdiëtist (gespecialiseerd in gedragsverandering en ouder-kind dynamiek).
               </p>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }

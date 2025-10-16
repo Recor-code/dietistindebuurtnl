@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://dietistindebuurt.nl'),
   title: {
     default: "Dietist in de Buurt | Vind de beste Dietisten bij jou in de buurt",
     template: "%s | Dietist in de Buurt"

@@ -701,7 +701,13 @@ export default function VoedselallergienIntolerantiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -715,12 +721,12 @@ export default function VoedselallergienIntolerantiesPage() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Voedselallergieën en Intoleranties: Het Verschil en Wat Te Eten" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full mb-6">
             <ShieldAlert className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Allergieën & Intoleranties 2025</span>
@@ -744,8 +750,7 @@ export default function VoedselallergienIntolerantiesPage() {
         </header>
 
         {/* Key Differences */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Het Cruciale Verschil: Allergie vs Intolerantie
             </h2>
@@ -812,12 +817,10 @@ export default function VoedselallergienIntolerantiesPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Common Allergies */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Meest Voorkomende Voedselallergieën
             </h2>
@@ -889,12 +892,10 @@ export default function VoedselallergienIntolerantiesPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Common Intolerances */}
-        <section className="py-16 px-4 bg-gradient-to-b from-yellow-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-yellow-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Meest Voorkomende Voedselintoleranties
             </h2>
@@ -957,12 +958,10 @@ export default function VoedselallergienIntolerantiesPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Emergency Protocol - abbreviated for length */}
-        <section className="py-16 px-4 bg-red-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-red-50">
             <h2 className="text-3xl font-bold mb-4 text-center text-red-800">
               🚨 Noodprotocol Bij Allergische Reactie
             </h2>
@@ -1001,12 +1000,10 @@ export default function VoedselallergienIntolerantiesPage() {
                 <p className="font-bold">⚠️ {emergencyProtocol.epipen.note}</p>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Label Reading - abbreviated */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Etiketten Lezen: Allergenen Herkennen
             </h2>
@@ -1037,12 +1034,10 @@ export default function VoedselallergienIntolerantiesPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Common Mistakes */}
-        <section className="py-16 px-4 bg-red-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-red-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Fatale Fouten Bij Allergieën/Intoleranties
             </h2>
@@ -1066,12 +1061,11 @@ export default function VoedselallergienIntolerantiesPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-teal-600 to-cyan-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-teal-600 to-cyan-500 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Hulp Nodig Bij Voedselallergieën of Intoleranties?
             </h2>
@@ -1084,12 +1078,11 @@ export default function VoedselallergienIntolerantiesPage() {
             >
               Vind Een Allergie Diëtist
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -1124,9 +1117,10 @@ export default function VoedselallergienIntolerantiesPage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }

@@ -433,7 +433,13 @@ export default function DietistVsVoedingsdeskundigePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -447,12 +453,12 @@ export default function DietistVsVoedingsdeskundigePage() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Diëtist vs Voedingsdeskundige: Het Verschil Uitgelegd" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full mb-6">
             <Scale className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Professional Vergelijking 2025</span>
@@ -476,8 +482,7 @@ export default function DietistVsVoedingsdeskundigePage() {
         </header>
 
         {/* Quick Answer */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <div className="bg-blue-100 border-l-4 border-blue-600 p-8 mb-12 rounded-r-xl">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-3">
                 <Info className="w-8 h-8 text-blue-600" />
@@ -568,12 +573,10 @@ export default function DietistVsVoedingsdeskundigePage() {
                 </table>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Detailed Differences */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               5 Belangrijke Verschillen in Detail
             </h2>
@@ -676,12 +679,10 @@ export default function DietistVsVoedingsdeskundigePage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* When to Choose */}
-        <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
               Wanneer Kies Je Voor Welke Professional?
             </h2>
@@ -753,12 +754,10 @@ export default function DietistVsVoedingsdeskundigePage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Quality Checklists */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Kwaliteit Checken: Wat Moet Je Controleren?
             </h2>
@@ -822,12 +821,10 @@ export default function DietistVsVoedingsdeskundigePage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Cost Comparison */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gray-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Kosten Vergelijking: Wat Betaal Je Echt?
             </h2>
@@ -877,12 +874,10 @@ export default function DietistVsVoedingsdeskundigePage() {
                 Door verzekeringsdekking is een diëtist vaak <strong>goedkoper</strong> dan een voedingsdeskundige, zelfs als de bruto tarieven hoger lijken. Check altijd eerst je aanvullende verzekering!
               </p>
             </div>
-          </div>
         </section>
 
         {/* Registration Info */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Belangrijke Registers en Hoe Je Ze Controleert
             </h2>
@@ -916,12 +911,10 @@ export default function DietistVsVoedingsdeskundigePage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Common Misconceptions */}
-        <section className="py-16 px-4 bg-yellow-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-yellow-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               5 Veelvoorkomende Misverstanden
             </h2>
@@ -955,12 +948,11 @@ export default function DietistVsVoedingsdeskundigePage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-indigo-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-purple-600 to-indigo-500 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Op Zoek Naar Een Gekwalificeerde Diëtist?
             </h2>
@@ -974,12 +966,11 @@ export default function DietistVsVoedingsdeskundigePage() {
               <Search className="w-5 h-5" />
               Vind Een Diëtist Bij Jou in de Buurt
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -1014,9 +1005,10 @@ export default function DietistVsVoedingsdeskundigePage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }

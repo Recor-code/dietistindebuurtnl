@@ -537,7 +537,13 @@ export default function HoogCholesterolDietistPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -551,12 +557,12 @@ export default function HoogCholesterolDietistPage() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Hoog Cholesterol? Dit Kan Een Diëtist Voor Je Doen" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full mb-6">
             <Heart className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Hart & Vaten Gezondheid 2025</span>
@@ -580,8 +586,7 @@ export default function HoogCholesterolDietistPage() {
         </header>
 
         {/* Cholesterol Basics */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Cholesterol Uitgelegd: LDL vs HDL
             </h2>
@@ -646,12 +651,10 @@ export default function HoogCholesterolDietistPage() {
                 <strong>HDL</strong> = <span className="text-green-600">Higher is better</span> (hoe hoger, hoe beter)
               </p>
             </div>
-          </div>
         </section>
 
         {/* Foods to Increase */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Voedingsgroepen Die LDL Verlagen
             </h2>
@@ -702,12 +705,10 @@ export default function HoogCholesterolDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Foods to Avoid */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gray-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Wat Te Vermijden Bij Hoog Cholesterol
             </h2>
@@ -742,12 +743,10 @@ export default function HoogCholesterolDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Mediterranean Diet */}
-        <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
               Mediterraan Dieet: Gouden Standaard Voor Cholesterol
             </h2>
@@ -780,12 +779,10 @@ export default function HoogCholesterolDietistPage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Meal Examples */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Cholesterolverlagende Maaltijdvoorbeelden
             </h2>
@@ -854,12 +851,10 @@ export default function HoogCholesterolDietistPage() {
                 <strong>Legend:</strong> ↓↓↓ = Zeer effectief voor LDL verlaging | ↓↓ = Effectief | ↓ = Licht effectief
               </p>
             </div>
-          </div>
         </section>
 
         {/* Dietist Role */}
-        <section className="py-16 px-4 bg-gradient-to-b from-purple-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-purple-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Hoe Een Diëtist Je Helpt Cholesterol Te Verlagen
             </h2>
@@ -884,12 +879,10 @@ export default function HoogCholesterolDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Expected Results Timeline */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Wat Kun Je Verwachten? (Timeline)
             </h2>
@@ -920,12 +913,10 @@ export default function HoogCholesterolDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* With vs Without Dietist */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gray-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               {withVsWithout.title}
             </h2>
@@ -979,12 +970,10 @@ export default function HoogCholesterolDietistPage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Statin Alternative */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
               {statinAlternative.title}
             </h2>
@@ -1020,12 +1009,10 @@ export default function HoogCholesterolDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Common Mistakes */}
-        <section className="py-16 px-4 bg-yellow-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-yellow-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               6 Veelgemaakte Fouten Bij Cholesterol Verlaging
             </h2>
@@ -1052,12 +1039,11 @@ export default function HoogCholesterolDietistPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-indigo-600 to-purple-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-indigo-600 to-purple-500 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Wil Je Jouw Cholesterol Onder Controle Krijgen?
             </h2>
@@ -1070,12 +1056,11 @@ export default function HoogCholesterolDietistPage() {
             >
               Vind Een Diëtist Voor Cholesterol
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -1110,9 +1095,10 @@ export default function HoogCholesterolDietistPage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }

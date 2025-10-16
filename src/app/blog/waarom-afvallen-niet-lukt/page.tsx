@@ -644,7 +644,9 @@ export default function WaaromAfvallenNietLuktPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -657,13 +659,13 @@ export default function WaaromAfvallenNietLuktPage() {
           />
         </div>
 
-        {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
-          <ShareButtons title="10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)" />
-        </div>
+          {/* Share Buttons */}
+          <div className="px-6 md:px-12 py-6 border-b">
+            <ShareButtons title="10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)" />
+          </div>
 
-        {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+          {/* Hero Section */}
+          <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-6">
             <Scale className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Gewichtsverlies Gids 2025</span>
@@ -690,9 +692,8 @@ export default function WaaromAfvallenNietLuktPage() {
           </div>
         </header>
 
-        {/* Introduction */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Introduction */}
+          <section className="py-16 px-6 md:px-12">
             <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
               <div className="flex gap-3">
                 <AlertCircle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
@@ -730,12 +731,11 @@ export default function WaaromAfvallenNietLuktPage() {
                 ))}
               </ul>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* Main Content: 10 Reasons */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+          <section className="py-16 px-6 md:px-12 bg-white">
+
             <h2 className="text-3xl font-bold mb-12 text-center">
               De 10 Belangrijkste Redenen Waarom Afvallen Mislukt
             </h2>
@@ -873,12 +873,11 @@ export default function WaaromAfvallenNietLuktPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* Dietist Approach Section */}
-        <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-4xl mx-auto">
+          <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white">
+
             <h2 className="text-3xl font-bold mb-4 text-center">
               Hoe Werkt Begeleiding Door Een Dietist?
             </h2>
@@ -954,12 +953,11 @@ export default function WaaromAfvallenNietLuktPage() {
                 </ul>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* Success Factors */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+          <section className="py-16 px-6 md:px-12 bg-white">
+
             <h2 className="text-3xl font-bold mb-8 text-center">
               7 Succesfactoren Voor Duurzaam Gewichtsverlies
             </h2>
@@ -986,12 +984,11 @@ export default function WaaromAfvallenNietLuktPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* Cost-Benefit Analysis */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+          <section className="py-16 px-6 md:px-12 bg-gray-50">
+
             <h2 className="text-3xl font-bold mb-8 text-center">
               Kosten vs Baten: Alleen vs Met Dietist
             </h2>
@@ -1083,40 +1080,38 @@ export default function WaaromAfvallenNietLuktPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* CTA Section */}
-        <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-sky-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Klaar Om Te Starten Met Duurzaam Afvallen?
-            </h2>
-            <p className="text-xl text-blue-50 mb-8 max-w-2xl mx-auto">
-              Vind een geregistreerde dietist bij jou in de buurt die je kan helpen met persoonlijke begeleiding en bewezen methoden.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center gap-2 justify-center"
-              >
-                <Search className="w-5 h-5" />
-                Vind Een Dietist
-              </Link>
-              <Link
-                href="/faq"
-                className="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition-colors inline-flex items-center gap-2 justify-center"
-              >
-                <Lightbulb className="w-5 h-5" />
-                Veelgestelde Vragen
-              </Link>
+          {/* CTA Section */}
+          <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-blue-600 to-sky-500 text-white">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold mb-6">
+                Klaar Om Te Starten Met Duurzaam Afvallen?
+              </h2>
+              <p className="text-xl text-blue-50 mb-8">
+                Vind een geregistreerde dietist bij jou in de buurt die je kan helpen met persoonlijke begeleiding en bewezen methoden.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/"
+                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center gap-2 justify-center"
+                >
+                  <Search className="w-5 h-5" />
+                  Vind Een Dietist
+                </Link>
+                <Link
+                  href="/faq"
+                  className="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition-colors inline-flex items-center gap-2 justify-center"
+                >
+                  <Lightbulb className="w-5 h-5" />
+                  Veelgestelde Vragen
+                </Link>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="mb-4">
@@ -1157,9 +1152,9 @@ export default function WaaromAfvallenNietLuktPage() {
                 </p>
               </div>
             </div>
-          </div>
-        </section>
-      </article>
+          </section>
+        </article>
+      </div>
     </>
   );
 }

@@ -85,12 +85,15 @@ Preferred communication style: Simple, everyday language.
   - Share count display (static placeholder: "4.7K Aandelen")
   - Clean, modern button design with proper icons
   - Client-side URL detection for accurate sharing
-- ✅ **Article Template Updates**: All 14 blog articles now feature:
-  - Featured image at top of article
+- ✅ **Article Design Update**: All 14 blog articles now feature modern card-based design:
+  - Light blue gradient background (from-blue-50 to-blue-100) behind white content container
+  - White article container with rounded corners (rounded-lg) and shadow-lg for depth
+  - Featured image at top within the white container
   - Share buttons below image for social engagement
-  - Clean white header design (removed gradient backgrounds)
-  - Clock icon for reading time and Award icon for "Evidence-based" badge
-  - Consistent, professional layout across all articles
+  - Responsive padding (px-6 md:px-12) throughout article sections
+  - Clean, modern card-based layout matching reference design
+  - Maximum width of 5xl for optimal readability
+- ✅ **GTM Update**: Updated Google Tag Manager pixel to GTM-MWMH3KH7
 - ✅ **Cleanup**: Removed all old ADHD blog image folders from public/img/blog
 - ✅ **Blog Page**: Updated to correctly show "14 uitgebreide artikelen"
 

@@ -416,7 +416,13 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       
-      <article className="min-h-screen bg-white">
+      {/* Light Blue Background Wrapper */}
+
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
+
+      
+        <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
@@ -430,12 +436,12 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
         </div>
 
         {/* Share Buttons */}
-        <div className="max-w-4xl mx-auto px-4 py-6 border-b">
+        <div className="px-6 md:px-12 py-6 border-b">
           <ShareButtons title="Hoeveel Kilo Per Week Afvallen is Gezond en Haalbaar?" />
         </div>
 
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-4 py-12">
+        <header className="px-6 md:px-12 py-12">
           <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-6">
             <Scale className="w-5 h-5" />
             <span className="font-semibold uppercase text-sm tracking-wide">Gezond Afvallen Gids 2025</span>
@@ -463,8 +469,7 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
         </header>
 
         {/* Quick Answer */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12">
             <div className="bg-green-100 border-l-4 border-green-600 p-8 mb-12 rounded-r-xl">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-3">
                 <CheckCircle2 className="w-8 h-8 text-green-600" />
@@ -536,12 +541,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Week by Week Timeline */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
               Wat Gebeurt Er Week Na Week?
             </h2>
@@ -597,12 +600,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Dangers of Crash Diets */}
-        <section className="py-16 px-4 bg-red-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-red-50">
             <h2 className="text-3xl font-bold mb-4 text-center text-red-900">
               Waarom Te Snel Afvallen Gevaarlijk Is
             </h2>
@@ -660,12 +661,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Realistic Goals */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-8 text-center">
               Realistische Tijdlijn Per Doel
             </h2>
@@ -719,12 +718,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </li>
               </ul>
             </div>
-          </div>
         </section>
 
         {/* Factors */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gray-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               5 Factoren Die Je Afvaltempo Beïnvloeden
             </h2>
@@ -745,12 +742,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Plateau Tips */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
               Als Je Gewicht Niet Meer Daalt (Plateau)
             </h2>
@@ -774,12 +769,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* Dietist Help */}
-        <section className="py-16 px-4 bg-gradient-to-b from-green-50 to-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-green-50 to-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
               Hoe Een Dietist Je Helpt Met Gezond Tempo
             </h2>
@@ -836,12 +829,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
 
         {/* Myths */}
-        <section className="py-16 px-4 bg-yellow-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 px-6 md:px-12 bg-yellow-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               5 Mythes Over Afvaltempo Ontkracht
             </h2>
@@ -870,12 +861,11 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 px-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-r from-green-600 to-emerald-500 text-white">
+          <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
               Klaar Voor Gezond en Duurzaam Gewichtsverlies?
             </h2>
@@ -888,12 +878,11 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
             >
               Vind Een Dietist Bij Jou in de Buurt
             </Link>
-          </div>
+        </div>
         </section>
 
-        {/* Conclusion */}
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
+          {/* Conclusion */}
+          <section className="py-16 px-6 md:px-12">
             <h2 className="text-3xl font-bold mb-6">Conclusie</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
@@ -920,9 +909,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                 </ul>
               </div>
             </div>
-          </div>
         </section>
       </article>
+
+      </div>
     </>
   );
 }
