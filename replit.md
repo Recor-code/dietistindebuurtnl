@@ -76,6 +76,24 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**October 16, 2025**: Blog article enhancements - Added featured images and social sharing:
+- ✅ **Featured Images**: Added 14 high-quality stock images (converted to WebP) for all dietist blog articles
+  - Images properly optimized and placed in `/public/img/blog/{slug}/featured.webp`
+  - Aspect ratio and quality optimized for web performance
+- ✅ **ShareButtons Component**: Created reusable social sharing component
+  - Facebook, WhatsApp, and X (Twitter) share functionality
+  - Share count display (static placeholder: "4.7K Aandelen")
+  - Clean, modern button design with proper icons
+  - Client-side URL detection for accurate sharing
+- ✅ **Article Template Updates**: All 14 blog articles now feature:
+  - Featured image at top of article
+  - Share buttons below image for social engagement
+  - Clean white header design (removed gradient backgrounds)
+  - Clock icon for reading time and Award icon for "Evidence-based" badge
+  - Consistent, professional layout across all articles
+- ✅ **Cleanup**: Removed all old ADHD blog image folders from public/img/blog
+- ✅ **Blog Page**: Updated to correctly show "14 uitgebreide artikelen"
+
 **October 15, 2025**: Major architectural simplification - Removed Drizzle ORM:
 - ✅ **Database Architecture Cleanup**: Completely removed Drizzle ORM and related dependencies
   - Eliminated DATABASE_URL requirement (no longer needed for builds)
