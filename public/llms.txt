@@ -1,0 +1,134 @@
+# Dietist in de Buurt
+
+> Dietist in de Buurt is een Nederlandse en Vlaamse (Belgische) platform dat mensen helpt om gecertificeerde diëtisten en voedingsdeskundigen in hun lokale omgeving te vinden. Het platform biedt locatie-gebaseerd zoeken, gedetailleerde profielen, reviews en uitgebreide FAQ-content om gebruikers te helpen de juiste diëtist te vinden.
+
+## Over het Platform
+
+Dietist in de Buurt is een directory en matchmaking service voor personen die op zoek zijn naar voedingsadvies en dieetbegeleiding. Het platform richt zich specifiek op de Nederlandse en Vlaamse markt, met lokale informatie over diëtisten, voedingsdeskundigen en diëtiek resources.
+
+De website helpt gebruikers bij het vinden van gekwalificeerde diëtisten voor verschillende doeleinden:
+- Gewichtsverlies en gewichtsmanagement
+- Gezonder leven en preventie
+- Medische aandoeningen (diabetes, hoog cholesterol, etc.)
+- Sportvoeding en prestatieverbetering
+- Voedselallergieën en intoleranties
+- Veganistisch en plantaardig eten
+- Emotioneel eten en eetstoornissen
+- Zwangerschap en borstvoeding
+- Kindervoeding
+
+## Kernfunctionaliteit
+
+**Zoeken op Locatie**: Gebruikers kunnen diëtisten zoeken op basis van hun stad of locatie. Het platform ondersteunt:
+- 100 grootste Nederlandse steden
+- 50+ grootste Vlaamse (Nederlandstalige) steden in België
+- Interactieve Google Maps integratie voor locatievisualisatie
+
+**Filter Opties**: Specialisten kunnen gefilterd worden op:
+- Kindvriendelijk
+- Weekend beschikbaar
+- Hoogste beoordeling
+- Studenten-vriendelijk
+- Basisverzekering gedekt
+
+**Specialist Profielen**: Elk profiel bevat:
+- Naam en contactgegevens (telefoon, email, website)
+- Adres en locatie
+- Google Maps reviews en beoordelingen
+- Openingstijden
+- Specialisaties en services
+
+## Content Secties
+
+### Blog (14 Artikelen)
+Het platform biedt 14 uitgebreide blog artikelen (3000+ woorden elk) over diëtiek onderwerpen:
+- Wat doet een diëtist en wanneer consulteer je er een?
+- Kosten en verzekering (€70-€95 eerste consult, €45-€70 vervolgconsult)
+- Afvallen en gewichtsverlies strategieën
+- Sportvoeding en prestatie
+- Medische diëten (diabetes, hoog cholesterol, hartziekten)
+- Emotioneel eten en gedragsverandering
+- Voedselallergieën en intoleranties
+- Veganistische en plantaardige voeding
+- Zwangerschap en borstvoeding
+- Kindervoeding en gezonde eetgewoonten
+- Vergoeding basisverzekering en aanvullende verzekering
+
+Elk artikel bevat:
+- Featured image (WebP formaat)
+- Social share knoppen (Facebook, WhatsApp, X)
+- Moderne card-based design met lichtblauwe gradient achtergrond
+- SEO-geoptimaliseerde content
+
+### FAQ (20 Vragen)
+Uitgebreide FAQ sectie met 20 gedetailleerde vragen over:
+- Wat is een diëtist en wanneer consulteer je er een?
+- Kosten en verzekering
+- Verschil tussen diëtist en voedingsdeskundige
+- Geen verwijzing meer nodig sinds 2022
+- Specialisaties en aandoeningen
+- Hoe vind je een goede diëtist?
+
+FAQ features:
+- 10 categoriefilters voor eenvoudige navigatie
+- Inklapbare FAQ items
+- Professioneel blauw gradient design
+
+## Technische Architectuur
+
+**Frontend**: Next.js 15 met App Router, React 19, Tailwind CSS v4
+**Database**: Supabase (PostgreSQL) met directe SDK toegang
+**Authenticatie**: Supabase Authentication
+**Maps**: Google Maps API voor locatie visualisatie
+**Betalingen**: Stripe integratie voor premium plaatsingen
+**Analytics**: Vercel Analytics
+**SEO**: Dynamische sitemaps, robots.txt, Next-SEO
+
+## Belangrijkste Pagina's
+
+- `/` - Homepage met zoekfunctionaliteit en matching quiz
+- `/blog` - Overzicht van 14 diëtiek artikelen
+- `/blog/[slug]` - Individuele blog artikelen met featured images en social sharing
+- `/faq` - Uitgebreide FAQ sectie met 20 vragen
+- `/stad/[slug]` - Stad-specifieke pagina's met lokale diëtisten (415+ steden)
+- `/specialist/[slug]` - Individuele specialist profielen met Google Maps data
+- `/contact` - Contact formulier
+
+## Featured Spots Systeem
+
+Premium plaatsing systeem voor diëtisten:
+- Top positie: €199 per maand
+- Tweede positie: €149 per maand
+- Derde positie: €99 per maand
+
+Betaald via Stripe met automatische tracking en vervaldatums.
+
+## Doelgroep
+
+**Primaire gebruikers**:
+- Personen op zoek naar gewichtsverlies begeleiding
+- Mensen met medische aandoeningen (diabetes, cholesterol)
+- Sporters die voedingsadvies zoeken
+- Ouders op zoek naar kinderdiëtisten
+- Personen met voedselallergieën of intoleranties
+- Zwangere vrouwen en moeders die borstvoeding geven
+
+**Geografische focus**:
+- Nederland (100 grootste steden)
+- Vlaanderen, België (50+ grootste Nederlandstalige steden)
+
+## Data Bronnen
+
+**Google Maps Integratie**: Alle specialist data komt van Google Maps Places API met:
+- Verified business informatie
+- Real-time reviews en ratings
+- Accurate openingstijden en contactgegevens
+- Geolocation data (latitude/longitude)
+
+**Content**: Alle blog artikelen en FAQ items zijn professioneel geschreven en geoptimaliseerd voor SEO en gebruikerservaring.
+
+## Contact
+
+Website: https://dietistindebuurt.nl
+Doelmarkt: Nederland en Vlaanderen (België)
+Taal: Nederlands
