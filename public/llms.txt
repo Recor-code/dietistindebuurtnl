@@ -22,7 +22,9 @@ De website helpt gebruikers bij het vinden van gekwalificeerde diëtisten voor v
 **Zoeken op Locatie**: Gebruikers kunnen diëtisten zoeken op basis van hun stad of locatie. Het platform ondersteunt:
 - 100 grootste Nederlandse steden
 - 50+ grootste Vlaamse (Nederlandstalige) steden in België
+- Postcode zoeken met automatische matching naar dichtstbijzijnde stad (binnen 50km radius)
 - Interactieve Google Maps integratie voor locatievisualisatie
+- Lazy-loaded Google Maps (200px voor zichtbaarheid) voor optimale performance
 
 **Filter Opties**: Specialisten kunnen gefilterd worden op:
 - Kindvriendelijk
@@ -33,32 +35,47 @@ De website helpt gebruikers bij het vinden van gekwalificeerde diëtisten voor v
 
 **Specialist Profielen**: Elk profiel bevat:
 - Naam en contactgegevens (telefoon, email, website)
-- Adres en locatie
+- Adres en locatie met Google Maps integratie
 - Google Maps reviews en beoordelingen
 - Openingstijden
 - Specialisaties en services
+- Online en/of in-persoon beschikbaarheid
+- Weekend beschikbaarheid
+
+**Reviews Functionaliteit**: Uitgebreide review weergave met:
+- Filtering op sterren (1-5 sterren)
+- Sortering: nieuwste, hoogste beoordeling, laagste beoordeling
+- Rating distributie visualisatie
+- Reacties van eigenaren
+- "Toon meer" functionaliteit voor lange reviews
+- Responsive design voor mobile en desktop
 
 ## Content Secties
 
 ### Blog (14 Artikelen)
 Het platform biedt 14 uitgebreide blog artikelen (3000+ woorden elk) over diëtiek onderwerpen:
-- Wat doet een diëtist en wanneer consulteer je er een?
-- Kosten en verzekering (€70-€95 eerste consult, €45-€70 vervolgconsult)
-- Afvallen en gewichtsverlies strategieën
-- Sportvoeding en prestatie
-- Medische diëten (diabetes, hoog cholesterol, hartziekten)
-- Emotioneel eten en gedragsverandering
-- Voedselallergieën en intoleranties
-- Veganistische en plantaardige voeding
-- Zwangerschap en borstvoeding
-- Kindervoeding en gezonde eetgewoonten
-- Vergoeding basisverzekering en aanvullende verzekering
+
+1. `/blog/waarom-afvallen-niet-lukt` - Waarom Afvallen Niet Lukt: De 7 Grootste Valkuilen
+2. `/blog/hoeveel-kilo-per-week-afvallen` - Hoeveel Kilo Per Week Afvallen is Gezond?
+3. `/blog/dietist-vs-voedingsdeskundige` - Diëtist vs Voedingsdeskundige: Wat is het Verschil?
+4. `/blog/wat-kost-een-dietist` - Wat Kost een Diëtist? Complete Prijsoverzicht 2025
+5. `/blog/eerste-consult-dietist` - Eerste Consult bij de Diëtist: Wat Kun Je Verwachten?
+6. `/blog/dieet-diabetes-type-2` - Dieet bij Diabetes Type 2: Complete Gids
+7. `/blog/hoog-cholesterol-dietist` - Hoog Cholesterol Verlagen: Voedingsadvies
+8. `/blog/afvallen-na-50` - Afvallen na je 50e: Waarom Het Moeilijker Is
+9. `/blog/sportvoeding-voor-tijdens-na` - Sportvoeding: Voor, Tijdens en Na Training
+10. `/blog/veganistisch-voedingsstoffen` - Veganistisch Eten: Voedingsstoffen Aanvullen
+11. `/blog/prikkelbare-darm-dieet` - Prikkelbare Darm Syndroom: Het Beste Dieet
+12. `/blog/voedselallergien-intoleranties` - Voedselallergie vs Intolerantie
+13. `/blog/emotioneel-eten` - Emotioneel Eten Stoppen: Praktische Tips
+14. `/blog/gezonde-voeding-kinderen` - Gezonde Voeding voor Kinderen
 
 Elk artikel bevat:
-- Featured image (WebP formaat)
-- Social share knoppen (Facebook, WhatsApp, X)
+- Featured image (WebP formaat, 1200x675px, 85% quality)
+- Social share knoppen (Facebook, WhatsApp, X/Twitter)
 - Moderne card-based design met lichtblauwe gradient achtergrond
-- SEO-geoptimaliseerde content
+- SEO-geoptimaliseerde content met structured data
+- 3000+ woorden uitgebreide, evidence-based informatie
 
 ### FAQ (20 Vragen)
 Uitgebreide FAQ sectie met 20 gedetailleerde vragen over:
@@ -89,10 +106,19 @@ FAQ features:
 - `/` - Homepage met zoekfunctionaliteit en matching quiz
 - `/blog` - Overzicht van 14 diëtiek artikelen
 - `/blog/[slug]` - Individuele blog artikelen met featured images en social sharing
-- `/faq` - Uitgebreide FAQ sectie met 20 vragen
+- `/faq` - Uitgebreide FAQ sectie met 20 vragen en 10 categoriefilters
 - `/stad/[slug]` - Stad-specifieke pagina's met lokale diëtisten (415+ steden)
 - `/specialist/[slug]` - Individuele specialist profielen met Google Maps data
 - `/contact` - Contact formulier
+
+### Matching Quiz
+Interactieve quiz om gebruikers te helpen de juiste diëtist te vinden:
+- Stap 1: Locatie selectie (stad of postcode, met landcode NL/BE)
+- Stap 2: Belangrijkste doel kiezen (afvallen, gezonder leven, medische aandoening, sportvoeding, allergieën, veganistisch)
+- Stap 3: Eerdere ervaring met diëtist
+- Stap 4: Specifieke zorgen en uitdagingen
+- Stap 5: Contactgegevens (naam, email, telefoonnummer met landcode)
+- Resultaat: Gepersonaliseerde diëtist aanbevelingen op basis van quiz antwoorden
 
 ## Featured Spots Systeem
 
