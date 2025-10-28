@@ -5,14 +5,14 @@ export default function RelaxBanner() {
     <div className="bg-gray-50 border-t border-gray-200 py-8 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <a
-          href="https://organicolabs.com/relax-plus/"
+          href="https://ketogeen.com/keto-quiz/?utm_source=dietistindebuurt.nl&utm_medium=banner&utm_campaign=keto_quiz_banner"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block hover:opacity-90 transition-opacity"
         >
           <img 
             src="/relax-banner-500.webp" 
-            alt="RELAX - Natuurlijke rust zonder loom gevoel" 
+            alt="Ontdek Hoeveel Je Kan Afvallen Met Het Keto Plan - Doe De Keto-Quiz" 
             className="w-full max-w-[500px] mx-auto rounded-lg"
           />
         </a>
