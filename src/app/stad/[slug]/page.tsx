@@ -572,9 +572,22 @@ export default function CityPage({ params }: PageProps) {
               </h2>
               <p className="text-gray-700 leading-relaxed mb-6">
                 {city.tldr
-                  .replace(/ADHD coach/g, 'Dietist')
-                  .replace(/ADHD-coach/g, 'dietist')
-                  .replace(/focus, planning en dagelijkse uitdagingen/g, 'gezonde voeding, gewichtsmanagement en voedingsgerelateerde gezondheidsklachten')}
+                  .replace(/ADHD coach zoeken/gi, 'Dietist zoeken')
+                  .replace(/ADHD-coach zoeken/gi, 'dietist zoeken')
+                  .replace(/ADHD coach/gi, 'Dietist')
+                  .replace(/ADHD-coach/gi, 'dietist')
+                  .replace(/ADHD hulp/gi, 'Voedingsadvies')
+                  .replace(/ADHD coaching/gi, 'Dietist coaching')
+                  .replace(/ADHD begeleiding/gi, 'Voedingsbegeleiding')
+                  .replace(/ADHD ondersteuning/gi, 'Voedingsondersteuning')
+                  .replace(/ADHD/gi, 'voedingsgerelateerde uitdagingen')
+                  .replace(/focus, planning en dagelijkse uitdagingen/gi, 'gezonde voeding, gewichtsmanagement en voedingsgerelateerde gezondheidsklachten')
+                  .replace(/lokale coaches en therapeuten/gi, 'lokale dietisten en voedingsdeskundigen')
+                  .replace(/coaches en therapeuten/gi, 'dietisten en voedingsdeskundigen')
+                  .replace(/Van coaching tot therapie/gi, 'Van voedingsadvies tot medische voedingstherapie')
+                  .replace(/Specialisten voor kinderen, jongeren en volwassenen/gi, 'Specialisten voor alle leeftijden en voedingsbehoeften')
+                  .replace(/van diagnose tot dagelijkse ondersteuning/gi, 'van eerste consult tot doorlopende begeleiding')
+                }
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
