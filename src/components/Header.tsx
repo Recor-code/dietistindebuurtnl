@@ -42,10 +42,12 @@ export default function Header() {
           </nav>
 
           <a
-            href="/contact"
+            href="https://ketogeen.com/keto-quiz/?utm_source=dietistindebuurt.nl&utm_medium=header&utm_campaign=doe_de_test"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
           >
-            Gratis Consult
+            Doe de Test
           </a>
         </div>
 
@@ -80,10 +82,12 @@ export default function Header() {
 
           {/* CTA Button - Always Visible Below Logo */}
           <a
-            href="/contact"
+            href="https://ketogeen.com/keto-quiz/?utm_source=dietistindebuurt.nl&utm_medium=header&utm_campaign=doe_de_test"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block w-full bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md text-center"
           >
-            Gratis Consult
+            Doe de Test
           </a>
         </div>
       </div>
