@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Tag } from 'lucide-react';
+import { MapPin, Tag } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -181,9 +181,7 @@ export default function BlogPage() {
                   </div>
                 </Link>
                 <div className="p-6">
-                  <div className="flex items-center gap-2 text-xs text-gray-600 mb-3">
-                    <Calendar size={14} />
-                    <span>{post.publishedAt.toLocaleDateString('nl-NL')}</span>
+                  <div className="flex items-center gap-2 text-xs mb-3">
                     <span className="text-green-600 font-medium">• Nieuw</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-3">

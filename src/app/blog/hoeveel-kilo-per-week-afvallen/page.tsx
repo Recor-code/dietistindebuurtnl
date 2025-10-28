@@ -454,10 +454,6 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
           </p>
           <div className="flex flex-wrap gap-4 text-sm text-gray-600">
             <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>14 oktober 2025</span>
-            </div>
-            <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
               <span>12 min leestijd</span>
             </div>
