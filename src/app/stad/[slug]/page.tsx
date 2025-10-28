@@ -536,18 +536,18 @@ export default function CityPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* RELAX Plus Banner */}
+        {/* Keto Quiz Banner */}
         <div className="bg-gray-50 border-t border-gray-200 py-8 px-4 mb-8">
           <div className="max-w-4xl mx-auto text-center">
             <a
-              href="https://organicolabs.com/relax-plus/"
+              href="https://ketogeen.com/keto-quiz/?utm_source=dietistindebuurt.nl&utm_medium=banner_city&utm_campaign=keto_quiz_banner"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block hover:opacity-90 transition-opacity"
             >
               <img 
                 src="/relax-banner-500.webp" 
-                alt="RELAX - Natuurlijke rust zonder loom gevoel" 
+                alt="Ontdek Hoeveel Je Kan Afvallen Met Het Keto Plan - Doe De Keto-Quiz" 
                 className="w-full max-w-[500px] mx-auto rounded-lg"
               />
             </a>
@@ -571,7 +571,10 @@ export default function CityPage({ params }: PageProps) {
                 <span className="text-blue-600">ℹ️</span> TL;DR - {city.name}
               </h2>
               <p className="text-gray-700 leading-relaxed mb-6">
-                {city.tldr}
+                {city.tldr
+                  .replace(/ADHD coach/g, 'Dietist')
+                  .replace(/ADHD-coach/g, 'dietist')
+                  .replace(/focus, planning en dagelijkse uitdagingen/g, 'gezonde voeding, gewichtsmanagement en voedingsgerelateerde gezondheidsklachten')}
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
