@@ -20,16 +20,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'daily' as const,
+      changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/over-adhd`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
   ];
+
+  // Blog posts
+  const blogPosts = [
+    'waarom-afvallen-niet-lukt',
+    'hoeveel-kilo-per-week-afvallen',
+    'dietist-vs-voedingsdeskundige',
+    'wat-kost-een-dietist',
+    'eerste-consult-dietist',
+    'dieet-diabetes-type-2',
+    'hoog-cholesterol-dietist',
+    'afvallen-na-50',
+    'sportvoeding-voor-tijdens-na',
+    'veganistisch-voedingsstoffen',
+    'prikkelbare-darm-dieet',
+    'voedselallergien-intoleranties',
+    'emotioneel-eten',
+    'gezonde-voeding-kinderen',
+  ];
+
+  const blogPages = blogPosts.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
   try {
     // Use Supabase REST API to avoid IPv6 connectivity issues during static generation
@@ -63,9 +82,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }));
     }
 
-    return [...staticPages, ...cityPages];
+    // Get all specialists/places using REST API
+    const placesResponse = await fetch(`${supabaseUrl}/rest/v1/places?select=slug,created_at,updated_at&limit=1000`, {
+      headers,
+    });
+    
+    let specialistPages = [];
+    if (placesResponse.ok) {
+      const allPlaces = await placesResponse.json();
+      specialistPages = (allPlaces || [])
+        .filter((place: any) => place.slug)
+        .map((place: any) => ({
+          url: `${baseUrl}/specialist/${place.slug}`,
+          lastModified: place.updated_at ? new Date(place.updated_at) : new Date(place.created_at || new Date()),
+          changeFrequency: 'monthly' as const,
+          priority: 0.6,
+        }));
+    }
+
+    return [...staticPages, ...blogPages, ...cityPages, ...specialistPages];
   } catch (error) {
     console.error('Error generating sitemap:', error);
-    return staticPages;
+    return [...staticPages, ...blogPages];
   }
 }

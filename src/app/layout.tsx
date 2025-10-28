@@ -48,8 +48,17 @@ export const metadata: Metadata = {
     description: "De grootste directory voor Dietisten in Nederland en België. Vergelijk gecertificeerde dietisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
     type: "website",
     locale: "nl_NL",
+    alternateLocale: ["nl_BE"],
     url: "https://dietistindebuurt.nl",
     siteName: "Dietist in de Buurt",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Dietist in de Buurt Logo"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
