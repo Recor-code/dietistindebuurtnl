@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Scale, Brain, Heart, TrendingDown, TrendingUp, AlertCircle, Coffee, Moon, Users, Target, CheckCircle2, Lightbulb, Calendar, Search, Clock, Award } from 'lucide-react';
+import { Scale, Brain, Heart, TrendingDown, TrendingUp, AlertCircle, Coffee, Moon, Users, Target, CheckCircle2, Lightbulb, Calendar, Search, Clock, Award , ArrowLeft } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
@@ -647,6 +647,17 @@ export default function WaaromAfvallenNietLuktPage() {
       {/* Light Blue Background Wrapper */}
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8">
         <article className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        {/* Back to Blog Link */}
+        <div className="px-6 md:px-12 pt-6 pb-4">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Terug naar blog
+          </Link>
+        </div>
+
         {/* Featured Image */}
         <div className="w-full aspect-video max-h-[500px] overflow-hidden">
           <Image
