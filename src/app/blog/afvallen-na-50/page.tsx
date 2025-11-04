@@ -209,7 +209,7 @@ export default function AfvallenNa50Page() {
       strategy: "NEAT Maximaliseren",
       priority: "Hoog",
       icon: Activity,
-      why: "Non-Exercise Activity Thermogenesis - dagelijkse beweging telt meer dan je denkt",
+      why: "Niet-Oefening Activiteit Thermogenese - dagelijkse beweging telt meer dan je denkt",
       how: [
         "10.000 stappen per dag doel (start met 6000, bouw op)",
         "Trap i.p.v. lift",
@@ -334,7 +334,7 @@ export default function AfvallenNa50Page() {
         "Eiwit 1.4-1.6g/kg voor spieropbouw",
         "Zink en vitamine D optimaliseren (testosteron)",
         "Verzadigd vet beperken (hart)",
-        "Overweeg testosteron check bij arts (bij <12 nmol/L)"
+        "Overweeg testosteron controle bij arts (bij <12 nmol/L)"
       ]
     },
     women: {
@@ -401,7 +401,7 @@ export default function AfvallenNa50Page() {
       dosage: "20-50 mcg per dag (1000-2000 IE)",
       why: "Vaak tekort, belangrijk voor spieren, botten en afweersysteem",
       effect: "Kan metabolisme met 3-5% verhogen, verbetert spierfunctie",
-      note: "Laat spiegel checken (ideaal: 75-100 nmol/L)"
+      note: "Laat spiegel controleren (ideaal: 75-100 nmol/L)"
     },
     {
       supplement: "Omega-3 (EPA/DHA)",
