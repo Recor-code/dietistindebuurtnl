@@ -107,25 +107,25 @@ export default function WaaromAfvallenNietLuktPage() {
       ],
       dietistHelp: [
         "Helpt onderscheid maken tussen honger en emotie",
-        "Leert alternatieve coping strategieën (wandelen, journalen, ademhaling)",
+        "Leert alternatieve manieren om met emoties om te gaan (wandelen, dagboek bijhouden, ademhalingsoefeningen)",
         "Gebruikt voedingsdagboek met gevoelens en situaties",
         "Werkt samen met psycholoog bij ernstige eetproblematiek",
-        "Mindful eating technieken: bewust en langzaam eten"
+        "Bewust eten technieken: aandachtig en langzaam eten"
       ],
       practicalTip: "Vóór eten: stel jezelf vraag 'Ben ik echt fysiek honger of voel ik iets anders?'"
     },
     {
       id: 3,
-      title: "Te Strenge Diëten: All-or-Nothing Mentaliteit",
+      title: "Te Strenge Diëten: Alles-of-Niets Mentaliteit",
       icon: AlertCircle,
       severity: "Hoog",
       description: "Extreme regels die onmogelijk vol te houden zijn op lange termijn",
       details: [
         "Verbieden van voedsel maakt het juist aantrekkelijker",
         "Een 'foutje' leidt tot opgeven: 'Nu heb ik het toch verpest'",
-        "Te weinig eten → extreme honger → binge eating",
+        "Te weinig eten → extreme honger → vreetbuien",
         "Sociale isolatie: kan niet meer normaal mee-eten",
-        "Crash diëten (< 1200 kcal/dag) zijn niet vol te houden"
+        "Crashdiëten (< 1200 kcal/dag) zijn niet vol te houden"
       ],
       commonMistakes: [
         "Koolhydraten volledig schrappen",
@@ -213,9 +213,9 @@ export default function WaaromAfvallenNietLuktPage() {
       details: [
         "30 min hardlopen = ~300 kcal (1 croissant)",
         "Fitness apps en apparaten overschatten vaak 20-30%",
-        "Compensatie gedrag: extra eten na sporten",
-        "NEAT (Non-Exercise Activity) daalt: je beweegt minder overdag",
-        "'Earned it' mentaliteit: ik heb gesport dus mag dit"
+        "Compensatiegedrag: extra eten na sporten",
+        "Dagelijkse beweging daalt: je beweegt minder overdag",
+        "'Verdiend' mentaliteit: ik heb gesport dus mag dit"
       ],
       realityCheck: [
         {
@@ -393,7 +393,7 @@ export default function WaaromAfvallenNietLuktPage() {
           note: "Normaal, lichaam past aan"
         }
       ],
-      nonScaleVictories: [
+      succesZonderWeegschaal: [
         "Meer energie en betere focus",
         "Kleding zit losser (lichaam vermagert)",
         "Betere slaap",
@@ -406,7 +406,7 @@ export default function WaaromAfvallenNietLuktPage() {
       dietistHelp: [
         "Stelt realistische en haalbare doelen",
         "Meet meer dan alleen gewicht (omtrek, vetpercentage)",
-        "Viert non-scale victories met jou",
+        "Viert successen zonder weegschaal met jou",
         "Bereidt voor op plateaus en schommelingen",
         "Houdt focus op lange termijn gezondheid"
       ]
@@ -419,7 +419,7 @@ export default function WaaromAfvallenNietLuktPage() {
       description: "Chronische stress blokkeert gewichtsverlies door hormonale veranderingen",
       details: [
         "Cortisol (stresshormoon) bevordert vetopslag, vooral buikvet",
-        "Stress verhoogt trek in comfort food (suiker, vet, zout)",
+        "Stress verhoogt trek in troostvoedsel (suiker, vet, zout)",
         "Vermindert wilskracht en zelfcontrole",
         "Verstoort slaap → extra gewichtstoename",
         "Ontstekingen in lichaam belemmeren vetstofwisseling"
@@ -477,8 +477,8 @@ export default function WaaromAfvallenNietLuktPage() {
       details: [
         "'Wat eten we vanavond?' → besluiteloosheid → afhaal",
         "Geen gezonde snacks klaar → grijpen naar koekjes",
-        "Lege koelkast → noodoplossing fast food",
-        "Geen tijd om te koken → convenience food",
+        "Lege koelkast → noodoplossing fastfood",
+        "Geen tijd om te koken → gemaksvoedsel",
         "Weekenden zonder structuur → extra calorieën"
       ],
       planningFailures: [
@@ -503,19 +503,19 @@ export default function WaaromAfvallenNietLuktPage() {
       ],
       timeExcuses: [
         "'Geen tijd om gezond te koken' → maar wel 2 uur Netflix",
-        "'Te druk voor meal prep' → maar wel 1 uur scrollen",
+        "'Te druk voor maaltijdvoorbereiding' → maar wel 1 uur scrollen",
         "'Geen energie om boodschappen te doen' → maar wel naar drive-through",
         "Realiteit: prioriteit en organisatie, niet tijd"
       ],
       dietistHelp: [
         "Maakt haalbaar weekmenu met boodschappenlijst",
-        "Leert efficiënte meal prep strategieën",
+        "Leert efficiënte maaltijdvoorbereiding strategieën",
         "Simpele, snelle recepten binnen 20 minuten",
-        "Gezonde convenience opties en kant-en-klaar maaltijden",
+        "Gezonde gemaksopties en kant-en-klaar maaltijden",
         "Structuur voor weekdagen én weekenden"
       ],
-      mealPrepTips: [
-        "Zondag 2 uur meal prep = hele week geregeld",
+      maaltijdbereidingTips: [
+        "Zondag 2 uur maaltijden voorbereiden = hele week geregeld",
         "Dubbelportie koken = lunch volgende dag",
         "Groente voorsnijden en bewaren",
         "Gezonde snacks portioneren in bakjes",
@@ -601,7 +601,7 @@ export default function WaaromAfvallenNietLuktPage() {
     },
     {
       factor: "Structuur en Planning",
-      description: "Maaltijdplanning, meal prep, voorbereiding",
+      description: "Maaltijdplanning, maaltijdvoorbereiding, voorbereiding",
       impact: "Hoog"
     },
     {
@@ -615,7 +615,7 @@ export default function WaaromAfvallenNietLuktPage() {
     selfGuided: {
       cost: "€0-50 (apps, boeken)",
       successRate: "5-10%",
-      timeInvested: "Trial & error, jaren",
+      timeInvested: "Vallen en opstaan, jaren",
       pros: ["Goedkoop", "Flexibel"],
       cons: ["Zeer lage slagingskans", "Geen begeleiding", "Risico op jojo-effect", "Kan schadelijk zijn"]
     },
