@@ -124,7 +124,7 @@ export default function PremiumPositiePage() {
                 <Target className="w-12 h-12 text-amber-500 mb-4" />
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Hot Leads</h3>
                 <p className="text-gray-700">
-                  Dit zijn geen koude leads. Dit zijn mensen die NU een Diëtist zoeken en klaar zijn om te boeken. Geen tijd verspillen.
+                  Dit zijn geen koude leads. Dit zijn mensen die NU een diëtist zoeken en klaar zijn om te boeken. Geen tijd verspillen.
                 </p>
               </div>
 

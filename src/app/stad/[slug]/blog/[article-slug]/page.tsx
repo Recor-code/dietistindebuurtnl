@@ -337,7 +337,7 @@ export default async function CityBlogPage({ params }: PageProps) {
 
                 <h2>Tips voor het eerste bezoek</h2>
                 <p>
-                  Voor je eerste afspraak met een Diëtist in {city.name}:
+                  Voor je eerste afspraak met een diëtist in {city.name}:
                 </p>
                 <ul>
                   <li><strong>Bereiding:</strong> Schrijf vragen en doelen op voorhand op</li>

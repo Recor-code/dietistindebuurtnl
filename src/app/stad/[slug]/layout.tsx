@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `Diëtiek Coaches in ${city.name} | Vind lokale Diëtiek ondersteuning`;
-  const description = `Ontdek ${city.coachCount} gecertificeerde Diëtisten in ${city.name}, ${city.province}. Vergelijk specialisaties, bekijk reviews en vind de perfecte Diëtist bij jou in de buurt.`;
+  const description = `Ontdek ${city.coachCount} gecertificeerde Diëtisten in ${city.name}, ${city.province}. Vergelijk specialisaties, bekijk reviews en vind de perfecte diëtist bij jou in de buurt.`;
 
   return {
     title,

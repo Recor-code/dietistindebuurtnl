@@ -275,7 +275,7 @@ export default function FAQPage() {
             href="/"
             className="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-full hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
-            Vind een Diëtist
+            Vind een diëtist
           </Link>
         </div>
 
