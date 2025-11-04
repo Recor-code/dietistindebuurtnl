@@ -1,19 +1,14 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { CheckCircle, Crown, TrendingUp, Users, Target, Zap, Award, DollarSign } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Premium Posities | Word de #1 Diëtiek Coach in Jouw Stad',
-  description: 'Stop met onzichtbaar zijn. Domineer de top 3 posities in jouw stad en trek dagelijks nieuwe cliënten aan. Beperkte plekken beschikbaar.',
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
-
 export default function PremiumPositiePage() {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col bg-white scroll-smooth">
       <Header />
@@ -171,9 +166,31 @@ export default function PremiumPositiePage() {
             <p className="text-xl text-center text-gray-600 mb-2">
               Slechts 4 plekken per stad. Wie het eerst komt, het eerst maalt.
             </p>
-            <p className="text-center text-red-600 font-bold mb-12">
+            <p className="text-center text-red-600 font-bold mb-8">
               ⚠️ Als je stad vol is, kom je op de wachtlijst. Volgende beschikbaarheid kan maanden duren.
             </p>
+
+            {/* Monthly/Annual Toggle */}
+            <div className="flex justify-center items-center gap-4 mb-12">
+              <span className={`text-lg font-semibold ${!isAnnual ? 'text-amber-600' : 'text-gray-500'}`}>
+                Maandelijks
+              </span>
+              <button
+                onClick={() => setIsAnnual(!isAnnual)}
+                className="relative inline-flex h-8 w-16 items-center rounded-full bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                style={{ backgroundColor: isAnnual ? '#f59e0b' : '#e5e7eb' }}
+              >
+                <span
+                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
+                    isAnnual ? 'translate-x-9' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className={`text-lg font-semibold ${isAnnual ? 'text-amber-600' : 'text-gray-500'}`}>
+                Jaarlijks
+                <span className="ml-2 text-sm text-green-600 font-bold">(-17%)</span>
+              </span>
+            </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {/* Position 1 */}
@@ -189,15 +206,23 @@ export default function PremiumPositiePage() {
                   <p className="text-gray-600">De absolute top. Iedereen ziet jou eerst.</p>
                 </div>
                 <div className="text-center mb-6">
-                  <div className="mb-3">
-                    <span className="text-5xl font-bold text-gray-900">€149</span>
-                    <span className="text-gray-600">/maand</span>
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    <div className="font-semibold text-green-600 mb-1">Jaarprijs: €1.490</div>
-                    <div className="line-through text-gray-400">i.p.v. €1.788</div>
-                    <div className="text-xs text-green-600 font-medium">2 maanden gratis!</div>
-                  </div>
+                  {!isAnnual ? (
+                    <div className="mb-3">
+                      <span className="text-5xl font-bold text-gray-900">€147</span>
+                      <span className="text-gray-600">/maand</span>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-5xl font-bold text-gray-900">€1.470</span>
+                        <span className="text-gray-600">/jaar</span>
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        <div className="line-through text-gray-400">i.p.v. €1.764</div>
+                        <div className="text-xs text-green-600 font-bold">Bespaar €294/jaar (2 maanden gratis!)</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
@@ -239,15 +264,23 @@ export default function PremiumPositiePage() {
                   <p className="text-gray-600">Sterke zichtbaarheid, hoge conversie.</p>
                 </div>
                 <div className="text-center mb-6">
-                  <div className="mb-3">
-                    <span className="text-5xl font-bold text-gray-900">€99</span>
-                    <span className="text-gray-600">/maand</span>
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    <div className="font-semibold text-green-600 mb-1">Jaarprijs: €990</div>
-                    <div className="line-through text-gray-400">i.p.v. €1.188</div>
-                    <div className="text-xs text-green-600 font-medium">2 maanden gratis!</div>
-                  </div>
+                  {!isAnnual ? (
+                    <div className="mb-3">
+                      <span className="text-5xl font-bold text-gray-900">€97</span>
+                      <span className="text-gray-600">/maand</span>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-5xl font-bold text-gray-900">€970</span>
+                        <span className="text-gray-600">/jaar</span>
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        <div className="line-through text-gray-400">i.p.v. €1.164</div>
+                        <div className="text-xs text-green-600 font-bold">Bespaar €194/jaar (2 maanden gratis!)</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
@@ -289,15 +322,23 @@ export default function PremiumPositiePage() {
                   <p className="text-gray-600">Premium zichtbaarheid, toegankelijk tarief.</p>
                 </div>
                 <div className="text-center mb-6">
-                  <div className="mb-3">
-                    <span className="text-5xl font-bold text-gray-900">€69</span>
-                    <span className="text-gray-600">/maand</span>
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    <div className="font-semibold text-green-600 mb-1">Jaarprijs: €690</div>
-                    <div className="line-through text-gray-400">i.p.v. €828</div>
-                    <div className="text-xs text-green-600 font-medium">2 maanden gratis!</div>
-                  </div>
+                  {!isAnnual ? (
+                    <div className="mb-3">
+                      <span className="text-5xl font-bold text-gray-900">€67</span>
+                      <span className="text-gray-600">/maand</span>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-5xl font-bold text-gray-900">€670</span>
+                        <span className="text-gray-600">/jaar</span>
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        <div className="line-through text-gray-400">i.p.v. €804</div>
+                        <div className="text-xs text-green-600 font-bold">Bespaar €134/jaar (2 maanden gratis!)</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
@@ -339,15 +380,23 @@ export default function PremiumPositiePage() {
                   <p className="text-gray-600">Goede zichtbaarheid, beste prijs.</p>
                 </div>
                 <div className="text-center mb-6">
-                  <div className="mb-3">
-                    <span className="text-5xl font-bold text-gray-900">€49</span>
-                    <span className="text-gray-600">/maand</span>
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    <div className="font-semibold text-green-600 mb-1">Jaarprijs: €490</div>
-                    <div className="line-through text-gray-400">i.p.v. €588</div>
-                    <div className="text-xs text-green-600 font-medium">2 maanden gratis!</div>
-                  </div>
+                  {!isAnnual ? (
+                    <div className="mb-3">
+                      <span className="text-5xl font-bold text-gray-900">€47</span>
+                      <span className="text-gray-600">/maand</span>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-5xl font-bold text-gray-900">€470</span>
+                        <span className="text-gray-600">/jaar</span>
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        <div className="line-through text-gray-400">i.p.v. €564</div>
+                        <div className="text-xs text-green-600 font-bold">Bespaar €94/jaar (2 maanden gratis!)</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
