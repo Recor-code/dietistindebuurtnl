@@ -40,7 +40,7 @@ export default function ShareButtons({ title, url, shareCount }: ShareButtonsPro
         <span className="font-medium">Deel dit artikel</span>
       </div>
       
-      <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-2">
         <button
           onClick={() => handleShare('facebook', shareLinks.facebook)}
           className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm font-medium"
@@ -52,7 +52,7 @@ export default function ShareButtons({ title, url, shareCount }: ShareButtonsPro
           <span>Facebook</span>
         </button>
         {shareCount && (
-          <div className="px-3 py-1 bg-white border border-gray-200 rounded-md text-center">
+          <div className="px-3 py-2 bg-white border border-gray-200 rounded-md text-center">
             <span className="text-sm font-semibold text-gray-700">{shareCount}</span>
           </div>
         )}
