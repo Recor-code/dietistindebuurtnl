@@ -191,7 +191,7 @@ export default function DietistVsVoedingsdeskundigePage() {
           "Alleen bij erkende registers (NVD, VVVB)",
           "Dan vaak lager bedrag dan diëtist",
           "Moet zelf kosten voorfinancieren",
-          "Check altijd eerst bij verzekeraar!"
+          "Controleer altijd eerst bij verzekeraar!"
         ],
         cost: "Gemiddeld €50-80 per consult uit eigen zak"
       }
@@ -221,7 +221,7 @@ export default function DietistVsVoedingsdeskundigePage() {
           "Zelfbenoemden: geen enkele controle",
           "Kwaliteit hangt af van individu"
         ],
-        advice: "Check altijd registratie en referenties!"
+        advice: "Controleer altijd registratie en referenties!"
       }
     }
   ];
@@ -247,7 +247,7 @@ export default function DietistVsVoedingsdeskundigePage() {
           examples: [
             "Obesitas (BMI > 30)",
             "Extreem ondergewicht (BMI < 18,5)",
-            "Eetstoornissen (anorexia, boulimia, eetbuistoornis)",
+            "Eetstoornissen (anorexia, boulimie, eetbuistoornis)",
             "Gewichtsverlies na bariatrische chirurgie"
           ]
         },
@@ -294,9 +294,9 @@ export default function DietistVsVoedingsdeskundigePage() {
           ]
         },
         {
-          situation: "Lifestyle en Gedrag",
+          situation: "Levensstijl en Gedrag",
           examples: [
-            "Mindful eating en bewust eten leren",
+            "Bewust eten en aandachtig eten leren",
             "Emotioneel eten aanpakken (zonder eetstoornis)",
             "Kookworkshops en praktische tips",
             "Voedingscoaching en motivatie"
@@ -323,7 +323,7 @@ export default function DietistVsVoedingsdeskundigePage() {
       checks: [
         { item: "Staat in BIG-register", critical: true, check: "Controleer op bigregister.nl" },
         { item: "Lid Nederlandse Vereniging Diëtisten (NVD)", critical: false, check: "Logo op website of visitiekaartje" },
-        { item: "HBO diploma Voeding en Diëtetiek", critical: true, check: "Vraag naar diploma of check LinkedIn" },
+        { item: "HBO diploma Voeding en Diëtetiek", critical: true, check: "Vraag naar diploma of controleer LinkedIn" },
         { item: "Specialisaties relevant voor jouw situatie", critical: false, check: "Website of intake gesprek" },
         { item: "Beroepsaansprakelijkheidsverzekering", critical: true, check: "Vraag ernaar bij intake" },
         { item: "Duidelijke werkwijze en tarieven", critical: true, check: "Transparant op website" },
@@ -334,14 +334,14 @@ export default function DietistVsVoedingsdeskundigePage() {
       title: "Checklist: Herken Een Goede Voedingsdeskundige",
       checks: [
         { item: "HBO diploma Voeding en Diëtetiek of gelijkwaardig", critical: true, check: "MOET aantoonbaar zijn!" },
-        { item: "Geregistreerd bij NVD of VVVB", critical: true, check: "Check op website beroepsvereniging" },
+        { item: "Geregistreerd bij NVD of VVVB", critical: true, check: "Controleer op website beroepsvereniging" },
         { item: "Minimaal 3 jaar werkervaring", critical: false, check: "Vraag tijdens intake" },
         { item: "Duidelijk over beperkingen (geen medisch)", critical: true, check: "Moet doorverwijzen naar diëtist bij ziektes" },
-        { item: "Portfolio met casussen/resultaten", critical: false, check: "Website of tijdens gesprek" },
+        { item: "Overzicht met casussen/resultaten", critical: false, check: "Website of tijdens gesprek" },
         { item: "Regelmatige nascholing", critical: true, check: "Vraag naar recente cursussen" },
-        { item: "Geen wilde claims (bijv. '10 kg in 2 weken')", critical: true, check: "Red flag bij unrealistische beloftes!" }
+        { item: "Geen wilde claims (bijv. '10 kg in 2 weken')", critical: true, check: "Waarschuwingsteken bij unrealistische beloftes!" }
       ],
-      warning: "Als deze checks niet kloppen: zoek een andere professional!"
+      warning: "Als deze controles niet kloppen: zoek een andere professional!"
     }
   };
 
