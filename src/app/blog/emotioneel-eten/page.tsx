@@ -6,16 +6,16 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Emotioneel Eten: Herken en Doorbreek de Cyclus | Complete Gids 2025',
-  description: 'Emotioneel eten stoppen: leer triggers herkennen, doorbreek stress- en troosteten patronen met praktische strategieën en mindful eating technieken.',
+  description: 'Emotioneel eten stoppen: leer triggers herkennen, doorbreek stress- en troosteten patronen met praktische strategieën en bewust eten technieken.',
   keywords: [
     'emotioneel eten',
     'stress eten',
     'troosteten',
     'emotioneel eten stoppen',
     'eetbuien',
-    'mindful eating',
+    'bewust eten',
     'emotionele honger',
-    'binge eating',
+    'vreetbuien',
     'eetpatroon doorbreken',
     'stress en eten'
   ],
@@ -213,9 +213,9 @@ export default function EmotioneelEtenPage() {
 
   const breakingStrategies = [
     {
-      strategy: "HALT Check (Honger, Angry, Lonely, Tired)",
+      strategy: "HALT Controle (Honger, Angry, Lonely, Tired)",
       icon: Shield,
-      description: "Voor je eet: check of het HALT is (geen echte honger)",
+      description: "Voor je eet: controleer of het HALT is (geen echte honger)",
       steps: [
         "H - Honger? Laatste maaltijd &gt;3u geleden? Fysieke signalen?",
         "A - Angry (Boos)? Geïrriteerd, gefrustreerd, boos op iets/iemand?",
@@ -223,7 +223,7 @@ export default function EmotioneelEtenPage() {
         "T - Tired (Moe)? Uitgeput, slaaptekort, energie laag?"
       ],
       action: "Als HALT = ja → Los oorzaak op (niet met eten). Boos? Praat. Moe? Rust. Eenzaam? Bel iemand.",
-      effectiveness: "80% emotioneel eten herkenbaar met HALT check"
+      effectiveness: "80% emotioneel eten herkenbaar met HALT controle"
     },
     {
       strategy: "10 Minuten Regel",
@@ -232,7 +232,7 @@ export default function EmotioneelEtenPage() {
       steps: [
         "Trek voelen → Zeg: 'Ik wacht 10 minuten'",
         "Doe iets anders: wandelen, muziek, opruimen, water drinken",
-        "Na 10min: check opnieuw of trek er nog is",
+        "Na 10min: controleer opnieuw of trek er nog is",
         "Vaak verdwijnt emotionele trek (want geen echte honger)"
       ],
       action: "Als trek blijft na 10min EN fysieke honger = eet. Anders = emotioneel (zoek andere oplossing)",
@@ -246,13 +246,13 @@ export default function EmotioneelEtenPage() {
         "Voel trek → Stop, vraag: 'Wat voel ik nu echt?'",
         "Benoem emotie: 'Ik ben gestrest / verdrietig / boos / eenzaam'",
         "Kies passend alternatief (zie lijst hieronder)",
-        "Voer actie uit (15-30min), check daarna of trek weg is"
+        "Voer actie uit (15-30min), controleer daarna of trek weg is"
       ],
       action: "Elke emotie heeft betere oplossing dan eten. Stress? Beweeg. Verdriet? Huil/praat. Verveling? Activiteit.",
       effectiveness: "70% succesvol bij bewust emotie benoemen en alternatief kiezen"
     },
     {
-      strategy: "Mindful Eating (Bewust Eten)",
+      strategy: "Bewust Eten (Mindful Eating)",
       icon: Lightbulb,
       description: "Als je eet: doe het volledig bewust (geen automatisme)",
       steps: [
@@ -260,10 +260,10 @@ export default function EmotioneelEtenPage() {
         "Zet portie af (niet uit pak/zak eten)",
         "Leg telefoon/laptop weg (geen afleiding)",
         "Eet langzaam: ruik, proef, kauw 20x per hap",
-        "Check elke 5 happen: 'Ben ik nog honger?' (stop bij verzadigd)"
+        "Controleer elke 5 happen: 'Ben ik nog honger?' (stop bij verzadigd)"
       ],
       action: "Bewust eten maakt emotioneel eten zichtbaar (smaakt niet eens lekker, stop automatisch eerder)",
-      effectiveness: "50% minder geconsumeerd bij mindful eating vs afleiden"
+      effectiveness: "50% minder geconsumeerd bij bewust eten vs afleiden"
     },
     {
       strategy: "Emotie Dagboek (Patroon Inzicht)",
@@ -351,7 +351,7 @@ export default function EmotioneelEtenPage() {
       description: "Regelmatig sporten als emotie uitlaatklep + stressreductie",
       when: "Bij stress, boosheid, angst als triggers",
       what: "3-5x per week 30min bewegen (cardio voor stress, kracht voor controle gevoel)",
-      duration: "Doorlopend (vast onderdeel lifestyle)",
+      duration: "Doorlopend (vast onderdeel levensstijl)",
       effectiveness: "30-40% minder emotioneel eten door regelmatig sporten (endorfines)"
     }
   ];
@@ -400,7 +400,7 @@ export default function EmotioneelEtenPage() {
       name: "Sarah (34)",
       trigger: "Stress op werk (deadline druk)",
       pattern: "Elke dag 15:00 naar automaat voor chocolade/chips tijdens stressvolle periode",
-      approach: "HALT check + 10min wandeling alternatief + therapie voor werkstress",
+      approach: "HALT controle + 10min wandeling alternatief + therapie voor werkstress",
       result: "Na 6 weken: 80% minder emotioneel eten, wandeling = vast ritual 15:00",
       key: "Alternatief ritual creëren (wandeling) voor oude ritual (snack automaat)"
     },
@@ -408,7 +408,7 @@ export default function EmotioneelEtenPage() {
       name: "Mark (42)",
       trigger: "Eenzaamheid (scheiding, alleen wonen)",
       pattern: "Avonden alleen → halve pizza + ijs voor TV als 'gezelschap'",
-      approach: "Social contact plan (vriend bellen dagelijks) + mindful eating + hobby (piano)",
+      approach: "Sociaal contact plan (vriend bellen dagelijks) + bewust eten + hobby (piano)",
       result: "Na 3 maanden: emotioneel eten van 6x per week naar 1x per 2 weken",
       key: "Echte behoefte vervullen (sociaal contact) in plaats van vervangen met eten"
     },
@@ -428,7 +428,7 @@ export default function EmotioneelEtenPage() {
       goal: "Patronen herkennen zonder veranderen",
       actions: [
         "Emotie dagboek bijhouden elke emotionele eetmoment",
-        "HALT check doen (niet stoppen, alleen observeren)",
+        "HALT controle doen (niet stoppen, alleen observeren)",
         "Fysieke vs emotionele honger onderscheid leren voelen",
         "Geen verandering forceren, alleen observeren"
       ]
@@ -447,8 +447,8 @@ export default function EmotioneelEtenPage() {
       week: "Week 5-8: Uitbreiding",
       goal: "Meerdere strategieën + triggers aanpakken",
       actions: [
-        "Voeg HALT check toe aan routine",
-        "Mindful eating bij 1 maaltijd per dag oefenen",
+        "Voeg HALT controle toe aan routine",
+        "Bewust eten bij 1 maaltijd per dag oefenen",
         "Omgeving aanpassen (trigger foods niet meer in huis)",
         "Sociale steun: vertel 1 vertrouwd persoon over reis"
       ]
@@ -823,7 +823,7 @@ export default function EmotioneelEtenPage() {
                 <ul className="space-y-2">
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
-                    <span><strong>HALT check:</strong> Voor eten: ben ik Hongerig, Angry, Lonely of Tired? (80% effectief)</span>
+                    <span><strong>HALT controle:</strong> Voor eten: ben ik Hongerig, Angry, Lonely of Tired? (80% effectief)</span>
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
@@ -835,7 +835,7 @@ export default function EmotioneelEtenPage() {
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
-                    <span><strong>Mindful eating:</strong> Bewust eten = 50% minder consumptie vs afgeleid eten</span>
+                    <span><strong>Bewust eten:</strong> Bewust eten = 50% minder consumptie vs afgeleid eten</span>
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
