@@ -274,7 +274,7 @@ export default function WatKostEenDietistPage() {
         {
           item: "Contract met jouw zorgverzekeraar",
           critical: true,
-          check: "Check lijst op website verzekeraar of bel klantenservice"
+          check: "Bekijk lijst op website verzekeraar of bel klantenservice"
         },
         {
           item: "Aanvullende verzekering afgesloten",
@@ -284,7 +284,7 @@ export default function WatKostEenDietistPage() {
         {
           item: "Binnen jaarlijks maximum blijven",
           critical: false,
-          check: "Check hoeveel budget je nog over hebt dit jaar"
+          check: "Bekijk hoeveel budget je nog over hebt dit jaar"
         }
       ]
     }
@@ -295,7 +295,7 @@ export default function WatKostEenDietistPage() {
       tip: "Kies Een Gecontracteerde Diëtist",
       saving: "100% vergoeding vs 75% bij vrije keuze",
       explanation: "Diëtisten met contract bij jouw verzekeraar worden volledig vergoed. Vrije keuze diëtisten vaak maar 75%.",
-      action: "Check de lijst op website van je verzekeraar"
+      action: "Bekijk de lijst op website van je verzekeraar"
     },
     {
       tip: "Upgrade Je Aanvullende Verzekering",
@@ -319,7 +319,7 @@ export default function WatKostEenDietistPage() {
       tip: "Combineer Met Werkgever Regeling",
       saving: "Extra €100-200 via werkgever",
       explanation: "Veel werkgevers hebben leefstijlbudget of vitaliteitsprogramma dat ook diëtist vergoedt.",
-      action: "Check bij HR of je werkgever lifestyle/gezondheidsbudget heeft"
+      action: "Controleer bij HR of je werkgever levensstijl/gezondheidsbudget heeft"
     },
     {
       tip: "Kies Online Consulten Waar Mogelijk",
@@ -344,16 +344,16 @@ export default function WatKostEenDietistPage() {
       },
       {
         item: "Boeken en Materiaal",
-      explanation: "Receptenboeken, weegschalen, meal prep bakjes zijn voor eigen rekening",
+      explanation: "Receptenboeken, weegschalen, maaltijdbereidingsbakjes zijn voor eigen rekening",
         alternative: "Veel gratis materiaal krijg je van diëtist (handouts, recepten)"
       },
       {
-        item: "No-Show Kosten",
+        item: "No-show Kosten",
         explanation: "Als je niet komt opdagen en niet 24u van tevoren afzegt, betaal je vaak vol tarief",
         alternative: "Zet afspraken in agenda met herinnering"
       },
       {
-        item: "Lifestyle Coaching",
+        item: "Levensstijl Coaching",
         explanation: "Als je geen medische noodzaak hebt (puur cosmetisch), vaak geen vergoeding",
         alternative: "Ook bij 'klein' overgewicht is vaak medische indicatie aan te tonen"
       }
@@ -362,7 +362,7 @@ export default function WatKostEenDietistPage() {
 
   const realExamples = [
     {
-      case: "Emma, 32 jaar - Gewichtsverlies 15 kg",
+      case: "Situatie: Emma, 32 jaar - Gewichtsverlies 15 kg",
       situation: "BMI 29, wil gezond afvallen",
       trajectory: "8 consulten in 6 maanden",
       costs: {
@@ -374,7 +374,7 @@ export default function WatKostEenDietistPage() {
       worth: "Ja - blijvend resultaat en gezonder"
     },
     {
-      case: "Jan, 58 jaar - Diabetes Type 2",
+      case: "Situatie: Jan, 58 jaar - Diabetes Type 2",
       situation: "Net gediagnosticeerd, suiker te hoog",
       trajectory: "12 consulten in 12 maanden",
       costs: {
@@ -386,7 +386,7 @@ export default function WatKostEenDietistPage() {
       worth: "Zeker - voorkomt medicatie en complicaties"
     },
     {
-      case: "Lisa, 25 jaar - Sportvoeding",
+      case: "Situatie: Lisa, 25 jaar - Sportvoeding",
       situation: "Halve marathon training optimaliseren",
       trajectory: "4 consulten in 3 maanden",
       costs: {
@@ -638,7 +638,7 @@ export default function WatKostEenDietistPage() {
                 <p className="text-gray-700 mb-2">{insuranceCoverage.additional.note}</p>
                 <div className="bg-green-100 rounded p-3">
                   <p className="text-sm text-green-800">
-                    ✅ <strong>Check je polis:</strong> Zie hoeveel jouw pakket vergoedt!
+                    ✅ <strong>Bekijk je polis:</strong> Zie hoeveel jouw pakket vergoedt!
                   </p>
                 </div>
               </div>
@@ -678,7 +678,7 @@ export default function WatKostEenDietistPage() {
 
             <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mt-8">
               <p className="text-gray-700">
-                <strong>💡 Tip:</strong> Bel je verzekeraar om exacte vergoeding te checken. Sommige verzekeraars hebben meerdere pakket varianten met verschillende bedragen. De getoonde bedragen zijn indicatief voor 2025.
+                <strong>💡 Tip:</strong> Bel je verzekeraar om exacte vergoeding te controleren. Sommige verzekeraars hebben meerdere pakket varianten met verschillende bedragen. De getoonde bedragen zijn indicatief voor 2025.
               </p>
             </div>
         </section>
@@ -1018,7 +1018,7 @@ export default function WatKostEenDietistPage() {
                 Een diëtist kost gemiddeld <strong>€70-95 voor het eerste consult</strong> en <strong>€45-70 voor vervolgconsulten</strong>. Hoewel dit niet in de basisverzekering zit, vergoedt je aanvullende verzekering meestal <strong>€100-400 per jaar</strong>, wat betekent dat je per saldo vaak maar <strong>€20-40 per consult</strong> zelf betaalt.
               </p>
               <p>
-                Sinds 2022 heb je geen verwijzing meer nodig van je huisarts, waardoor de drempel om hulp te zoeken lager is. Check altijd eerst of de diëtist gecontracteerd is bij jouw verzekeraar voor optimale vergoeding.
+                Sinds 2022 heb je geen verwijzing meer nodig van je huisarts, waardoor de drempel om hulp te zoeken lager is. Controleer altijd eerst of de diëtist gecontracteerd is bij jouw verzekeraar voor optimale vergoeding.
               </p>
               <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-xl">
                 <p className="font-semibold text-lg mb-3">💡 Belangrijkste Tips:</p>
@@ -1029,7 +1029,7 @@ export default function WatKostEenDietistPage() {
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span>Check je aanvullende verzekering - sommige vergoeden tot €400/jaar</span>
+                    <span>Bekijk je aanvullende verzekering - sommige vergoeden tot €400/jaar</span>
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
