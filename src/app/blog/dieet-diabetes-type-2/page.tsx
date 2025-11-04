@@ -319,7 +319,7 @@ export default function DieetDiabetesType2Page() {
         "KH-verdeling passend bij jouw schema en medicatie",
         "Rekening houdend met voorkeuren en cultuur",
         "Praktische maaltijdvoorbeelden en recepten",
-        "Boodschappenlijsten en meal prep tips",
+        "Boodschappenlijsten en maaltijdvoorbereiding tips",
         "Strategie voor feestjes, restaurants, vakantie"
       ]
     },
@@ -395,7 +395,7 @@ export default function DieetDiabetesType2Page() {
       mistake: "Light Producten = Gezond",
       why: "Light kan nog steeds veel suiker bevatten",
       consequence: "Onverwachte bloedsuikerstijging",
-      solution: "Check altijd etiketten op KH-gehalte"
+      solution: "Controleer altijd etiketten op KH-gehalte"
     },
     {
       mistake: "Maaltijden Overslaan",
@@ -482,7 +482,7 @@ export default function DieetDiabetesType2Page() {
         "Wazig zien",
         "Hoofdpijn"
       ],
-      treatment: "Drink veel water → check ketonlichamen (urine) → bij ketonlichamen: bel arts → pas voeding/medicatie aan",
+      treatment: "Drink veel water → controleer ketonlichamen (urine) → bij ketonlichamen: bel arts → pas voeding/medicatie aan",
       prevention: [
         "Portiecontrole koolhydraten",
         "Regelmatig meten",
