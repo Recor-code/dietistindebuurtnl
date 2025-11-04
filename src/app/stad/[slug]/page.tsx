@@ -266,17 +266,17 @@ export default function CityPage({ params }: PageProps) {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* RELAX Plus Banner - Small */}
+        {/* Keto Quiz Banner - Small */}
         <section className="mb-8 flex flex-col items-center">
           <a
-            href="https://organicolabs.com/relax-plus/"
+            href="https://ketogeen.com/keto-quiz/?utm_source=dietistindebuurt.nl&utm_medium=banner_city&utm_campaign=keto_quiz_banner"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block hover:opacity-90 transition-opacity"
           >
             <img 
               src="/relax-banner-500.webp" 
-              alt="RELAX - Natuurlijke rust zonder loom gevoel" 
+              alt="Ontdek Hoeveel Je Kan Afvallen Met Het Keto Plan - Doe De Keto-Quiz" 
               className="w-full max-w-[300px] rounded-lg"
             />
           </a>
