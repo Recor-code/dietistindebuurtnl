@@ -377,10 +377,23 @@ export default function CityPage({ params }: PageProps) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {filteredPlaces.slice(0, visibleCount).map((place) => {
+            {filteredPlaces.slice(0, visibleCount).map((place, index) => {
+              const isTopResult = index < 4;
+              const topPosition = index + 1;
 
               return (
-              <div key={place.id} className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow p-6 relative">
+              <div key={place.id} className={`rounded-lg shadow-sm border hover:shadow-md transition-shadow p-6 relative ${
+                isTopResult 
+                  ? 'bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-300' 
+                  : 'bg-white border-gray-200'
+              }`}>
+                {/* Top Badge */}
+                {isTopResult && (
+                  <div className="absolute -top-3 left-6 bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-4 py-1 rounded-full text-xs font-bold shadow-md">
+                    Top {topPosition}
+                  </div>
+                )}
+                
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-blue-700 font-semibold">
