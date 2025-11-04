@@ -180,7 +180,7 @@ export default function HoogCholesterolDietistPage() {
       avoid: [
         "Frituurvet (friet, snacks) - vermijd zoveel mogelijk",
         "Kant-en-klaar gebak - lees etiket, vermijd 'geharde olie'",
-        "Koekjes en crackers - check etiket op trans vet",
+        "Koekjes en crackers - controleer etiket op trans vet",
         "Bak- en braadvetten - gebruik olijfolie",
         "Fast food - beperkt tot max 1x per maand"
       ],
@@ -217,7 +217,7 @@ export default function HoogCholesterolDietistPage() {
       icon: Activity,
       activities: [
         "Huidige LDL, HDL en totaal cholesterol beoordelen",
-        "Triglyceriden en andere lipiden waarden checken",
+        "Triglyceriden en andere lipiden waarden controleren",
         "Familiaire belasting en cardiovasculair risico bepalen",
         "Huidige voedingspatroon en verzadigd vet inname analyseren",
         "Doelstellingen bepalen op basis van totaal risicoprofiel"
@@ -241,7 +241,7 @@ export default function HoogCholesterolDietistPage() {
         "Leren etiketten lezen (verzadigd vet, trans vet)",
         "Gezond boodschappen doen en keuzes maken",
         "Koken met gezonde vetten (olijfolie, noten)",
-        "Recepten en meal prep voor de hele week",
+        "Recepten en maaltijdvoorbereiding voor de hele week",
         "Omgaan met sociale situaties (feestjes, restaurants)"
       ]
     },
@@ -459,7 +459,7 @@ export default function HoogCholesterolDietistPage() {
     {
       mistake: "Denken Light = Gezond",
       consequence: "Light producten kunnen veel suiker bevatten",
-      solution: "Check etiketten: kies laag verzadigd vet én suiker"
+      solution: "Controleer etiketten: kies laag verzadigd vet én suiker"
     },
     {
       mistake: "Geen Voedingsplan, Alleen Statines",
