@@ -1,6 +1,5 @@
 'use client';
 
-import { MessageCircle, Send, Share2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface ShareButtonsProps {
@@ -23,7 +22,6 @@ export default function ShareButtons({ title, url, shareCount }: ShareButtonsPro
 
   const shareLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-    whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`
   };
 
@@ -57,15 +55,6 @@ export default function ShareButtons({ title, url, shareCount }: ShareButtonsPro
           </div>
         )}
       </div>
-
-      <button
-        onClick={() => handleShare('whatsapp', shareLinks.whatsapp)}
-        className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors text-sm font-medium"
-        aria-label="Delen op WhatsApp"
-      >
-        <MessageCircle className="w-4 h-4" />
-        <span>WhatsApp</span>
-      </button>
 
       <button
         onClick={() => handleShare('twitter', shareLinks.twitter)}
