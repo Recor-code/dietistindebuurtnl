@@ -24,7 +24,7 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-800 leading-tight">Diëtist</span>
+              <span className="text-lg font-bold text-gray-800 leading-tight">Diëtisten</span>
               <span className="text-sm text-gray-600 leading-tight">in de Buurt</span>
             </div>
           </Link>
@@ -66,7 +66,7 @@ export default function Header() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-gray-800 leading-tight">Diëtist</span>
+                <span className="text-lg font-bold text-gray-800 leading-tight">Diëtisten</span>
                 <span className="text-sm text-gray-600 leading-tight">in de Buurt</span>
               </div>
             </Link>
