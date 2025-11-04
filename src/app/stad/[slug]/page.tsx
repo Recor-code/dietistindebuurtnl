@@ -94,7 +94,7 @@ export default function CityPage({ params }: PageProps) {
     hoogsteBeoordeling: false,
     englishSpeaking: false
   });
-  const [visibleCount, setVisibleCount] = useState(8);
+  const [visibleCount, setVisibleCount] = useState(30);
 
   useEffect(() => {
     async function fetchCityData() {
@@ -507,7 +507,7 @@ export default function CityPage({ params }: PageProps) {
           {filteredPlaces.length > visibleCount && (
             <div className="mt-8 text-center">
               <button
-                onClick={() => setVisibleCount(prev => prev + 8)}
+                onClick={() => setVisibleCount(prev => prev + 30)}
                 className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 Meer specialisten laden ({filteredPlaces.length - visibleCount} over)
