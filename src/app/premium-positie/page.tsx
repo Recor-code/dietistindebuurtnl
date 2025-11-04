@@ -164,7 +164,7 @@ export default function PremiumPositiePage() {
 
         {/* Pricing Section */}
         <section id="pricing" className="py-16 px-4 bg-gray-50">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
               Kies Jouw Positie
             </h2>
@@ -177,7 +177,7 @@ export default function PremiumPositiePage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {/* Position 1 */}
-              <div className="bg-white rounded-xl shadow-2xl border-4 border-yellow-400 p-6 md:p-8 relative transform hover:scale-105 transition-transform">
+              <div className="bg-white rounded-xl shadow-2xl border-4 border-yellow-400 p-4 relative transform hover:scale-105 transition-transform">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 px-3 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg whitespace-nowrap">
                     👑 KONING POSITIE
@@ -232,7 +232,7 @@ export default function PremiumPositiePage() {
               </div>
 
               {/* Position 2 */}
-              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-6 md:p-8 transform hover:scale-105 transition-transform">
+              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-4 transform hover:scale-105 transition-transform">
                 <div className="text-center mb-6">
                   <Crown className="w-16 h-16 text-amber-600 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold mb-2">Positie #2</h3>
@@ -282,7 +282,7 @@ export default function PremiumPositiePage() {
               </div>
 
               {/* Position 3 */}
-              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-6 md:p-8 transform hover:scale-105 transition-transform">
+              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-4 transform hover:scale-105 transition-transform">
                 <div className="text-center mb-6">
                   <Crown className="w-16 h-16 text-amber-500 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold mb-2">Positie #3</h3>
@@ -332,7 +332,7 @@ export default function PremiumPositiePage() {
               </div>
 
               {/* Position 4 */}
-              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-6 md:p-8 transform hover:scale-105 transition-transform">
+              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-4 transform hover:scale-105 transition-transform">
                 <div className="text-center mb-6">
                   <Crown className="w-16 h-16 text-amber-400 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold mb-2">Positie #4</h3>
