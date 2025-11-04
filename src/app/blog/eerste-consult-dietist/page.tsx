@@ -92,8 +92,8 @@ export default function EersteConsultDietistPage() {
         "Medicatie en supplementen doornemen",
         "Eerdere diëten en gewichtsverlies pogingen",
         "Familiegeschiedenis (diabetes, hart- en vaatziekten, etc.)",
-        "Allergie en intoleranties checken",
-        "Lifestyle: werk, stress, slaap, beweging"
+        "Allergie en intoleranties controleren",
+        "Levensstijl: werk, stress, slaap, beweging"
       ],
       tip: "Neem een lijst mee van je medicatie en eventuele bloedwaarden"
     },
@@ -156,7 +156,7 @@ export default function EersteConsultDietistPage() {
       ]
     },
     lifestyle: {
-      title: "Lifestyle & Gedrag",
+      title: "Levensstijl & Gedrag",
       icon: TrendingUp,
       questions: [
         "Hoe ziet een normale dag eruit? (werk, activiteiten)",
@@ -269,7 +269,7 @@ export default function EersteConsultDietistPage() {
     {
       tip: "Kom Nuchter Als Het Kan",
       why: "Metingen (gewicht, buikomtrek, vet%) zijn dan meest accuraat",
-      how: "Drink alleen water, eet niet voor afspraak (check of dit mag)",
+      how: "Drink alleen water, eet niet voor afspraak (controleer of dit mag)",
       impact: "Middel - betere baseline meting"
     },
     {
