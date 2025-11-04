@@ -163,7 +163,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-3">
-                3000+
+                2600+
               </div>
               <p className="text-gray-600 leading-relaxed">
                 gecertificeerde diëtisten
