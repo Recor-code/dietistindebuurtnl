@@ -25,7 +25,7 @@ export default function Footer() {
               <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
               <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-              <li><Link href="/contact" className="hover:text-white">Gratis Consult</Link></li>
+              <li><a href="https://ketogeen.com/keto-quiz/?utm_source=dietistindebuurt.nl&utm_medium=footer&utm_campaign=keto_quiz" target="_blank" rel="noopener noreferrer" className="hover:text-white">Doe de Keto-Quiz</a></li>
               <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
             </ul>
           </div>
