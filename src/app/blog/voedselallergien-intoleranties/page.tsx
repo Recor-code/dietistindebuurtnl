@@ -161,9 +161,9 @@ export default function VoedselallergienIntolerantiesPage() {
       ],
       alternatives: [
         "Glutenvrije granen: rijst, maïs, quinoa, boekweit",
-        "Glutenvrij brood, pasta (check etiket)",
+        "Glutenvrij brood, pasta (controleer etiket)",
         "Aardappel, zoete aardappel",
-        "Haver (vaak veilig, check kruisbesmetting)"
+        "Haver (vaak veilig, controleer kruisbesmetting)"
       ],
       labels: "Gluten-ingrediënten: tarwemeel, gerstemout, roggebloem, seitan",
       note: "Tarweallergie ≠ coeliakie (auto-immuun) ≠ glutenintolerantie (niet-coeliakie)"
@@ -222,7 +222,7 @@ export default function VoedselallergienIntolerantiesPage() {
       avoidList: [
         "Sojamelk, soja yoghurt, tofu, tempeh",
         "Sojasaus, tamari, miso",
-        "Veel vegan alternatieven (check etiket)",
+        "Veel vegan alternatieven (controleer etiket)",
         "Edamame, sojanoten"
       ],
       alternatives: [
@@ -449,7 +449,7 @@ export default function VoedselallergienIntolerantiesPage() {
         text: "Glutenvrij (doorgestreepte aar)",
         meaning: "Max 20mg gluten/kg (EU norm)",
         action: "Veilig voor coeliakie en meeste intoleranties",
-        strict: "Bij tarweallergie: check of tarwe gebruikt (kan nog eiwit bevatten)"
+        strict: "Bij tarweallergie: controleer of tarwe gebruikt (kan nog eiwit bevatten)"
       },
       {
         text: "Lactosevrij",
@@ -490,7 +490,7 @@ export default function VoedselallergienIntolerantiesPage() {
       "Boek hotel met keuken (zelf koken = veiligst)",
       "Google Translate klaar met allergie zinnen",
       "Noodvoeding in koffer (energie repen, glutenvrij crackers)",
-      "Check supermarkten vooraf (Azië vaak moeilijk voor zuivel/gluten)"
+      "Controleer supermarkten vooraf (Azië vaak moeilijk voor zuivel/gluten)"
     ]
   };
 
@@ -598,7 +598,7 @@ export default function VoedselallergienIntolerantiesPage() {
         "Werk samen met diëtist (essentieel bij &gt;2 allergieën)",
         "Focus op wat WEL mag, niet op verboden",
         "Supplementen vaak nodig (B12, D, calcium)",
-        "Regelmatige bloedwaarden check (2x per jaar)"
+        "Regelmatige bloedwaarden controle (2x per jaar)"
       ],
       supplement: "Persoonlijk advies diëtist nodig"
     }
@@ -606,12 +606,12 @@ export default function VoedselallergienIntolerantiesPage() {
 
   const practicalTips = [
     {
-      category: "Boodschappen Checklist",
+      category: "Boodschappen Controlelijst",
       icon: Apple,
       tips: [
         "Lees ALTIJD ingrediëntenlijst (ook bij 'bekende' producten - recepten wijzigen)",
-        "Check allergenen vetgedrukt/HOOFDLETTERS",
-        "Download apps: SQTS (scan barcode = allergenen check)",
+        "Controleer allergenen vetgedrukt/HOOFDLETTERS",
+        "Download apps: SQTS (scan barcode = allergenen controle)",
         "Vermijd 'kan sporen bevatten' bij ernstige allergie",
         "Nieuwe producten eerst thuis testen (niet onderweg/restaurant)",
         "Bewaar verpakkingen met ingrediëntenlijst (foto op telefoon)"
@@ -621,7 +621,7 @@ export default function VoedselallergienIntolerantiesPage() {
       category: "Maaltijd Voorbereiding",
       icon: Info,
       tips: [
-        "Meal prep is je vriend (weet precies wat erin zit)",
+        "Maaltijdvoorbereiding is je vriend (weet precies wat erin zit)",
         "Maak grote batches veilig voedsel, vries in",
         "Aparte voorraad 'veilige' producten (eigen kastje)",
         "Label alles duidelijk in koelkast/kast",
@@ -1103,7 +1103,7 @@ export default function VoedselallergienIntolerantiesPage() {
                 <strong>Diagnose is essentieel</strong>: bij allergie via bloedtest (IgE) + huidpriktest + provocatietest, bij intolerantie via eliminatiedieet + herintroductie. Vermijd onbetrouwbare IgG-testen (€150-300 verspilling, geen wetenschappelijk bewijs). Werk samen met allergoloog en diëtist voor juiste diagnose en veilig dieet.
               </p>
               <div className="bg-teal-50 border-l-4 border-teal-500 p-6 rounded-r-xl">
-                <p className="font-semibold text-lg mb-3">💡 Veilig Leven Checklist:</p>
+                <p className="font-semibold text-lg mb-3">💡 Veilig Leven Controlelijst:</p>
                 <ul className="space-y-2">
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
@@ -1115,7 +1115,7 @@ export default function VoedselallergienIntolerantiesPage() {
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                    <span><strong>Labels lezen:</strong> Check ALLE ingrediënten, 14 allergenen vetgedrukt verplicht (EU)</span>
+                    <span><strong>Labels lezen:</strong> Controleer ALLE ingrediënten, 14 allergenen vetgedrukt verplicht (EU)</span>
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
