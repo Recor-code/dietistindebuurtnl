@@ -78,7 +78,7 @@ export default function VeganistischVoedingsstoffenPage() {
       veganSources: "GEEN natuurlijke plantaardige bronnen!",
       solution: [
         "Supplementen: 50-100 mcg dagelijks OF 1000-2000 mcg 2x per week",
-        "Verrijkte producten: sojamelk, cereals (check etiket)",
+        "Verrijkte producten: sojamelk, cereals (controleer etiket)",
         "Voedingsgist (nutritional yeast) verrijkt met B12"
       ],
       critical: "Verplicht supplementeren - geen uitzondering!"
@@ -100,7 +100,7 @@ export default function VeganistischVoedingsstoffenPage() {
         "Supplementen: 20-25 mcg (800-1000 IE) per dag",
         "Extra in winter: 25-50 mcg per dag",
         "Kies altijd D3 vegan (uit korstmos/algen)",
-        "Check bloedwaarden 1-2x per jaar (streef 75-100 nmol/L)"
+        "Controleer bloedwaarden 1-2x per jaar (streef 75-100 nmol/L)"
       ],
       critical: "Vooral najaar/winter supplementeren essentieel"
     },
@@ -145,7 +145,7 @@ export default function VeganistischVoedingsstoffenPage() {
         "Bij tekort: supplement 15-30mg (niet-heem) met maaltijd",
         "Vrouwen: extra aandacht (menstruatie = ijzerverlies)"
       ],
-      critical: "Check ijzerniveaus 1x per jaar, vooral vrouwen"
+      critical: "Controleer ijzerniveaus 1x per jaar, vooral vrouwen"
     },
     {
       nutrient: "Zink",
@@ -416,7 +416,7 @@ export default function VeganistischVoedingsstoffenPage() {
     {
       mistake: "Alleen B12 Supplementeren",
       consequence: "Tekorten aan D, omega-3, ijzer, zink blijven onopgemerkt",
-      correct: "Minimaal: B12 + D + omega-3 algen. Check bloedwaarden jaarlijks",
+      correct: "Minimaal: B12 + D + omega-3 algen. Controleer bloedwaarden jaarlijks",
       solution: "Neem complete vegan multivitamine of individuele supplements"
     },
     {
@@ -438,10 +438,10 @@ export default function VeganistischVoedingsstoffenPage() {
       solution: "Spinazie met citroen, linzen met tomaat, volkoren met sinaasappelsap"
     },
     {
-      mistake: "Geen Bloedwaarden Checken",
+      mistake: "Geen Bloedwaarden Controleren",
       consequence: "Tekorten pas opmerken bij ernstige symptomen (te laat)",
-      correct: "Check minimaal 1x per jaar: B12, D, ijzer, foliumzuur",
-      solution: "Plan jaarlijkse check-up, vraag uitgebreide bloedwaarden aan huisarts"
+      correct: "Controleer minimaal 1x per jaar: B12, D, ijzer, foliumzuur",
+      solution: "Plan jaarlijkse controle, vraag uitgebreide bloedwaarden aan huisarts"
     },
     {
       mistake: "Zeewier Onbeperkt Eten Voor Jodium",
@@ -470,8 +470,8 @@ export default function VeganistischVoedingsstoffenPage() {
       },
       {
         nutrient: "IJzer",
-        standard: "Check 1x per jaar",
-        athlete: "Check 2-3x per jaar",
+        standard: "Controleer 1x per jaar",
+        athlete: "Controleer 2-3x per jaar",
         why: "Intensief sporten verhoogt ijzerverlies (zweet, impact)",
         solution: "Extra aandacht voor ijzerrijke voeding + vitamine C, supplement indien nodig"
       },
@@ -499,7 +499,7 @@ export default function VeganistischVoedingsstoffenPage() {
         { week: "Week 1-4", action: "Start B12 supplement + vervang helft zuivel door plantaardig" },
         { week: "Week 5-8", action: "Voeg D + omega-3 toe, vervang alle zuivel" },
         { week: "Week 9-12", action: "Vervang vlees/vis door peulvruchten/tofu/tempeh" },
-        { week: "Week 13+", action: "Laatste dierlijke producten vervangen, check bloedwaarden" }
+        { week: "Week 13+", action: "Laatste dierlijke producten vervangen, controleer bloedwaarden" }
       ],
       benefit: "Lichaam went geleidelijk, minder kans op tekorten, duurzamer volhouden"
     },
@@ -510,7 +510,7 @@ export default function VeganistischVoedingsstoffenPage() {
         "START METEEN met B12 supplement (verplicht!)",
         "Binnen week 1: ook D en omega-3 toevoegen",
         "Plan maaltijden vooraf (voorkom improviseren zonder eiwit)",
-        "Check bloedwaarden na 3 maanden (B12, D, ijzer, foliumzuur)"
+        "Controleer bloedwaarden na 3 maanden (B12, D, ijzer, foliumzuur)"
       ],
       benefit: "Snelle overgang, duidelijke commitment",
       risk: "Hogere kans op tekorten eerste maanden als je niet plant"
@@ -608,7 +608,7 @@ export default function VeganistischVoedingsstoffenPage() {
                   <p className="text-sm text-gray-600">per kg lichaamsgewicht (iets meer dan omnivoor)</p>
                 </div>
                 <div>
-                  <h3 className="font-bold mb-2">Check Bloedwaarden:</h3>
+                  <h3 className="font-bold mb-2">Controleer Bloedwaarden:</h3>
                   <p className="text-3xl font-bold text-green-700">1-2x</p>
                   <p className="text-sm text-gray-600">per jaar (B12, D, ijzer, foliumzuur)</p>
                 </div>
@@ -930,7 +930,7 @@ export default function VeganistischVoedingsstoffenPage() {
                 Veganistisch eten kan gezond zijn, maar vereist <strong>bewuste aandacht voor kritieke voedingsstoffen</strong>. B12, vitamine D en omega-3 (EPA/DHA) supplementeren is verplicht - deze zijn niet of nauwelijks in plantaardige voeding aanwezig. IJzer, zink en jodium vereisen extra aandacht door lagere opname of beperkte bronnen.
               </p>
               <p>
-                <strong>Eiwit is geen probleem</strong> als je gevarieerd eet met peulvruchten, soja, noten en volkoren granen. Streef naar 1.2-1.6g per kg lichaamsgewicht en combineer verschillende bronnen binnen de dag. Check jaarlijks je bloedwaarden (minimaal B12, D, ijzer, foliumzuur) om tekorten tijdig op te sporen.
+                <strong>Eiwit is geen probleem</strong> als je gevarieerd eet met peulvruchten, soja, noten en volkoren granen. Streef naar 1.2-1.6g per kg lichaamsgewicht en combineer verschillende bronnen binnen de dag. Controleer jaarlijks je bloedwaarden (minimaal B12, D, ijzer, foliumzuur) om tekorten tijdig op te sporen.
               </p>
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-xl">
                 <p className="font-semibold text-lg mb-3">💡 Vegan Succes Checklist:</p>
@@ -949,7 +949,7 @@ export default function VeganistischVoedingsstoffenPage() {
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span><strong>Check bloedwaarden:</strong> 1-2x per jaar (B12, D, ijzer, foliumzuur)</span>
+                    <span><strong>Controleer bloedwaarden:</strong> 1-2x per jaar (B12, D, ijzer, foliumzuur)</span>
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
