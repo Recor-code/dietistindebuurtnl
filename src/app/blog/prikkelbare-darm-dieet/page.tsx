@@ -378,7 +378,7 @@ export default function PrikkelbareDarmDieetPage() {
     {
       mistake: "Denken Dat Glutenvrij = Laag FODMAP",
       problem: "Glutenvrije producten kunnen nog steeds hoge FODMAP ingrediënten bevatten (ui, honing, appel, dadels)",
-      correct: "Check altijd alle ingrediënten, niet alleen gluten",
+      correct: "Controleer altijd alle ingrediënten, niet alleen gluten",
       solution: "Gebruik FODMAP app bij twijfel"
     },
     {
@@ -409,7 +409,7 @@ export default function PrikkelbareDarmDieetPage() {
       mistake: "Stress en Emoties Negeren",
       problem: "Dieet alleen lost het niet op als stress de trigger is",
       correct: "PDS = combinatie darmen + stress + voeding",
-      solution: "Aanpak stress tegelijk met dieet (mindfulness, therapie)"
+      solution: "Aanpak stress tegelijk met dieet (aandachtstraining, therapie)"
     }
   ];
 
@@ -438,9 +438,9 @@ export default function PrikkelbareDarmDieetPage() {
     {
       supplement: "Vitamine D",
       evidence: "Tekort komt vaak voor bij PDS, supplementeren kan helpen",
-      dosage: "Check bloedwaarden, vaak 25-50 mcg per dag",
+      dosage: "Controleer bloedwaarden, vaak 25-50 mcg per dag",
       timing: "Met vetrijke maaltijd",
-      note: "Laat arts checken bij aanhoudende klachten"
+      note: "Laat arts controleren bij aanhoudende klachten"
     }
   ];
 
@@ -887,7 +887,7 @@ export default function PrikkelbareDarmDieetPage() {
                 Het <strong>FODMAP eliminatiedieet is de meest effectieve voedingsaanpak</strong> bij prikkelbare darm syndroom, met 70-80% symptoomverbetering bij correct uitgevoerd. Het 3-fasen plan (eliminatie 4-6 weken, systematische herintroductie 6-8 weken, personalisatie levenslang) helpt je ontdekken welke FODMAPs JIJ verdraagt.
               </p>
               <p>
-                Belangrijkste succesfactoren: <strong>professionele begeleiding door MDL-diëtist</strong> (80% doet het fout zonder begeleiding), strikte eliminatie minimaal 4 weken, systematische herintroductie (1 FODMAP per keer), en stress management (70% heeft stress als trigger). Glutenvrij is niet hetzelfde als laag FODMAP - check altijd alle ingrediënten.
+                Belangrijkste succesfactoren: <strong>professionele begeleiding door MDL-diëtist</strong> (80% doet het fout zonder begeleiding), strikte eliminatie minimaal 4 weken, systematische herintroductie (1 FODMAP per keer), en stress management (70% heeft stress als trigger). Glutenvrij is niet hetzelfde als laag FODMAP - controleer altijd alle ingrediënten.
               </p>
               <div className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-xl">
                 <p className="font-semibold text-lg mb-3">💡 FODMAP Succes Checklist:</p>
@@ -910,7 +910,7 @@ export default function PrikkelbareDarmDieetPage() {
                   </li>
                   <li className="flex gap-2">
                     <CheckCircle2 className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
-                    <span><strong>Stress:</strong> Pak stress tegelijk aan (mindfulness, therapie) voor beste resultaat</span>
+                    <span><strong>Stress:</strong> Pak stress tegelijk aan (aandachtstraining, therapie) voor beste resultaat</span>
                   </li>
                 </ul>
               </div>

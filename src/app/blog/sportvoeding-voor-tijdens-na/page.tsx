@@ -197,7 +197,7 @@ export default function SportvoedingPage() {
       {
         product: "Energiegel",
         carbs: "20-25g per gel",
-        electrolytes: "Soms toegevoegd (check etiket)",
+        electrolytes: "Soms toegevoegd (controleer etiket)",
         when: "Hardlopen, fietsen >90 min",
         benefit: "Compacte snelle energie",
         tip: "Altijd met water innemen!"
