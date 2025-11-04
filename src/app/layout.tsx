@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://dietistindebuurt.nl'),
   title: {
-    default: "Diëtist in de Buurt | Vind de beste Diëtisten bij jou in de buurt",
+    default: "Diëtist in de Buurt | Vind de beste diëtisten bij jou in de buurt",
     template: "%s | Diëtist in de Buurt"
   },
   description: "De grootste directory voor Diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Diëtist in de Buurt | Vind de beste Diëtisten bij jou in de buurt",
+    title: "Diëtist in de Buurt | Vind de beste diëtisten bij jou in de buurt",
     description: "De grootste directory voor Diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
     type: "website",
     locale: "nl_NL",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Diëtist in de Buurt",
-    description: "Vind de beste Diëtisten bij jou in de buurt. Vergelijk gecertificeerde diëtisten en vind de perfecte match.",
+    description: "Vind de beste diëtisten bij jou in de buurt. Vergelijk gecertificeerde diëtisten en vind de perfecte match.",
   },
   alternates: {
     canonical: "https://dietistindebuurt.nl",

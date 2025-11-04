@@ -15,7 +15,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400">
-              Vind de beste Diëtisten bij jou in de buurt.<br />
+              Vind de beste diëtisten bij jou in de buurt.<br />
               Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
             </p>
           </div>
