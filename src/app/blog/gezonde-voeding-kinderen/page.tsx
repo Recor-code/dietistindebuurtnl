@@ -6,11 +6,11 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Gezonde Voeding Voor Kinderen: Complete Gids Voor Ouders | 2025',
-  description: 'Gezonde kindervoeding gids: portiegroottes per leeftijd, vitaal eetpatroon, groenten lekker maken, picky eaters aanpak en praktische tips.',
+  description: 'Gezonde kindervoeding gids: portiegroottes per leeftijd, vitaal eetpatroon, groenten lekker maken, kieskeurige eters aanpak en praktische tips.',
   keywords: [
     'gezonde voeding kinderen',
     'kindervoeding',
-    'picky eater',
+    'kieskeurige eters',
     'groenten kinderen',
     'portiegroottes kinderen',
     'gezond eten kids',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Gezonde Voeding Voor Kinderen: Complete Gids Voor Ouders',
-    description: 'Praktische gids voor gezonde kindervoeding met portiegroottes, tips voor picky eaters en gezonde lunch ideeën',
+    description: 'Praktische gids voor gezonde kindervoeding met portiegroottes, tips voor kieskeurige eters en gezonde lunch ideeën',
     images: ['/img/blog/gezonde-voeding-kinderen/featured.webp'],
   },
 };
@@ -204,7 +204,7 @@ export default function GezondeVoedingKinderenPage() {
       how: [
         "Zet wekelijks nieuwe groente op tafel (ook als kind weigert)",
         "Geen druk: 'Het staat er, je mag proberen als je wilt'",
-        "Zelf eten (rolemodel): 'Hmm, lekker deze broccoli!'",
+        "Zelf eten (voorbeeldrol): 'Hmm, lekker deze broccoli!'",
         "Geen alternatief aanbieden (honger gaat vanzelf over)",
         "Vier kleine successen: aanraken, likken, proeven = vooruitgang!"
       ],
@@ -250,7 +250,7 @@ export default function GezondeVoedingKinderenPage() {
       effectiveness: "Tijdelijk OK, maar blijf ook zichtbare groenten aanbieden (anders leert kind nooit)"
     },
     {
-      strategy: "Positive Rolemodelling (Ouders Als Voorbeeld)",
+      strategy: "Positief Voorbeeldgedrag (Ouders Als Voorbeeld)",
       problem: "Kind weigert wat ouders ook niet eten",
       solution: "Kinderen kopiëren ouders - eet zelf wat je kind moet eten",
       how: [
@@ -306,7 +306,7 @@ export default function GezondeVoedingKinderenPage() {
         "Volkoren crackers + kaas blokjes + druiven + wortels",
         "Zelfgemaakte pizza stukjes (volkoren bodem + groenten) - koud lekker"
       ],
-      tips: "Maak zondag meal prep: portioneer in bakjes voor hele week"
+      tips: "Maak zondag maaltijdvoorbereiding: portioneer in bakjes voor hele week"
     },
     {
       type: "Tussendoortjes (Bij Lunch)",
@@ -482,7 +482,7 @@ export default function GezondeVoedingKinderenPage() {
             Gezonde Voeding Voor Kinderen: Complete Gids Voor Ouders
           </h1>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Praktische gids voor gezonde kindervoeding: portiegroottes, picky eaters aanpak, lunch ideeën en suiker vermijden
+            Praktische gids voor gezonde kindervoeding: portiegroottes, kieskeurige eters aanpak, lunch ideeën en suiker vermijden
           </p>
           <div className="flex flex-wrap gap-4 text-sm text-gray-600">
             <div className="flex items-center gap-2">
@@ -585,10 +585,10 @@ export default function GezondeVoedingKinderenPage() {
             </div>
         </section>
 
-        {/* Picky Eater Strategies */}
+        {/* Kieskeurige Eters Strategieën */}
         <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Picky Eaters: 6 Strategieën Die Werken
+              Kieskeurige Eters: 6 Strategieën Die Werken
             </h2>
 
             <div className="space-y-6">
@@ -799,7 +799,7 @@ export default function GezondeVoedingKinderenPage() {
                 <strong>Gezonde kindervoeding start met de juiste portiegroottes</strong>: peuters (1-3j) 1000-1400 kcal, kleuters (4-8j) 1200-1800 kcal, opgroeiende kinderen (9-13j) 1600-2200 kcal, en tieners (14-18j) 2000-3000 kcal. Focus op 6 essentiële voedingsstoffen: calcium voor botten (3-4 porties zuivel/dag), ijzer voor energie (rood vlees + vitamine C), vitamine D supplement (10mcg/dag), vitamine A voor ogen (oranje groenten), omega-3 voor hersenen (vette vis 1-2x/week), en vezels voor spijsvertering (volkoren granen, fruit, groenten).
               </p>
               <p>
-                <strong>Picky eaters aanpakken met bewezen strategieën</strong>: herhaal nieuwe voedsel 10-15x zonder druk (80% acceptatie), betrek kind bij koken (3x meer groente consumptie), creatieve presentatie met kleuren en vormen (60% meer consumptie), verstop groenten tijdelijk maar blijf ook zichtbaar aanbieden, wees rolemodel (kinderen eten 2-3x meer groenten als ouders dat ook doen), en gebruik GEEN eten als beloning (voorkomt emotioneel eten later).
+                <strong>Kieskeurige eters aanpakken met bewezen strategieën</strong>: herhaal nieuwe voedsel 10-15x zonder druk (80% acceptatie), betrek kind bij koken (3x meer groente consumptie), creatieve presentatie met kleuren en vormen (60% meer consumptie), verstop groenten tijdelijk maar blijf ook zichtbaar aanbieden, wees een voorbeeld (kinderen eten 2-3x meer groenten als ouders dat ook doen), en gebruik GEEN eten als beloning (voorkomt emotioneel eten later).
               </p>
               <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl">
                 <p className="font-semibold text-lg mb-3">🎯 Cruciale Do's &amp; Don'ts:</p>
