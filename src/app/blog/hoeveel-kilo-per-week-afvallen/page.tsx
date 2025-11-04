@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'gezond afvallen tempo',
     'verantwoord gewichtsverlies',
     'afvallen per week',
-    'crash dieet gevaarlijk',
+    'crashdieet gevaarlijk',
     'duurzaam afvallen',
     '1 kilo per week afvallen',
     'realistische gewichtsverlies',
@@ -159,9 +159,9 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
       reality: "Laatste fase naar streefgewicht",
       whatHappens: [
         "Gewicht stabiliseert meer",
-        "Lichaam komt dichter bij 'set point'",
+        "Lichaam komt dichter bij 'voorkeurgewicht'",
         "Kleine aanpassingen hebben grote impact",
-        "Focus verschuift naar behoud en lifestyle"
+        "Focus verschuift naar behoud en levensstijl"
       ],
       tip: "Overgang naar onderhoud. Leer gewicht behouden."
     }
@@ -228,7 +228,7 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
       description: "Te strikte diëten leiden tot obsessief gedrag en eetstoornissen",
       consequences: [
         "Ontwikkeling orthorexie (obsessie met 'gezond' eten)",
-        "Binge eating na te streng dieet",
+        "Vreetbuien na te streng dieet",
         "Angst voor voedsel en sociale isolatie",
         "Negatief zelfbeeld en schaamte",
         "Eeuwige dieet cyclus"
@@ -300,7 +300,7 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
       details: [
         "Cardio: 200-400 kcal extra per dag verbranden",
         "Kracht: Spierbehoud = hoger metabolisme",
-        "NEAT: Meer bewegen overdag (+200 kcal)",
+        "Dagelijkse beweging: Meer bewegen overdag (+200 kcal)",
         "Combinatie sport + voeding = beste resultaat"
       ]
     },
@@ -333,7 +333,7 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
       why: "Drastische veranderingen leiden tot meer adaptatie en jojo-effect"
     },
     {
-      tip: "Diet break: 1-2 weken onderhoud",
+      tip: "Dieetpauze: 1-2 weken onderhoud",
       explanation: "Eet op onderhoudsniveau (geen tekort) om metabolisme te resetten",
       why: "Hormonen normaliseren, honger vermindert, psychologische pauze"
     }
@@ -366,7 +366,7 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
         "Bijhouden van energie, honger, slaap",
         "Aanpassen als gewichtsverlies te snel of te traag gaat",
         "Herkennen en doorbreken van plateaus",
-        "Vieren van successen (non-scale victories)"
+        "Vieren van successen (zonder weegschaal)"
       ]
     },
     longTerm: {
@@ -403,8 +403,8 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
       truth: "Eten is brandstof. Te weinig = motor stopt met draaien"
     },
     {
-      myth: "Crash diëten werken voor kickstart, daarna normaal verder",
-      reality: "Crash diëten trainen je lichaam juist om minder te verbranden",
+      myth: "Crashdiëten werken voor kickstart, daarna normaal verder",
+      reality: "Crashdiëten trainen je lichaam juist om minder te verbranden",
       truth: "Begin zoals je verder wilt gaan: gezond en houdbaar"
     }
   ];
@@ -683,7 +683,7 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
                     <th className="border p-4 text-left">Start</th>
                     <th className="border p-4 text-left">Doel</th>
                     <th className="border p-4 text-left">Veilige Tijd</th>
-                    <th className="border p-4 text-left">Crash Dieet</th>
+                    <th className="border p-4 text-left">Crashdieet</th>
                     <th className="border p-4 text-left">Aanbeveling</th>
                   </tr>
                 </thead>
