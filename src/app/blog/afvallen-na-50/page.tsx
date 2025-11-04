@@ -566,7 +566,7 @@ export default function AfvallenNa50Page() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Afvallen Na Je 50e: Waarom Het Moeilijker Is (En Hoe Het Wel Lukt)" />
+          <ShareButtons title="Afvallen Na Je 50e: Waarom Het Moeilijker Is (En Hoe Het Wel Lukt)" shareCount="5.3k" />
         </div>
 
         {/* Hero Section */}

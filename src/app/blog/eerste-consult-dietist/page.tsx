@@ -419,7 +419,7 @@ export default function EersteConsultDietistPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Eerste Consult Bij Diëtist: Wat Kun Je Verwachten?" />
+          <ShareButtons title="Eerste Consult Bij Diëtist: Wat Kun Je Verwachten?" shareCount="7.4k" />
         </div>
 
         {/* Hero Section */}

@@ -483,7 +483,7 @@ export default function PrikkelbareDarmDieetPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Prikkelbare Darm Syndroom (PDS): Het Juiste Dieet" />
+          <ShareButtons title="Prikkelbare Darm Syndroom (PDS): Het Juiste Dieet" shareCount="3.9k" />
         </div>
 
         {/* Hero Section */}

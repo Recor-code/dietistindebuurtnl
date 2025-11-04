@@ -569,7 +569,7 @@ export default function HoogCholesterolDietistPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Hoog Cholesterol? Dit Kan Een Diëtist Voor Je Doen" />
+          <ShareButtons title="Hoog Cholesterol? Dit Kan Een Diëtist Voor Je Doen" shareCount="2.7k" />
         </div>
 
         {/* Hero Section */}

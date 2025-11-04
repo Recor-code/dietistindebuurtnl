@@ -465,7 +465,7 @@ export default function DietistVsVoedingsdeskundigePage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Diëtist vs Voedingsdeskundige: Het Verschil Uitgelegd" />
+          <ShareButtons title="Diëtist vs Voedingsdeskundige: Het Verschil Uitgelegd" shareCount="3.5k" />
         </div>
 
         {/* Hero Section */}

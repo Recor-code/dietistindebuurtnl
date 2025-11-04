@@ -733,7 +733,7 @@ export default function VoedselallergienIntolerantiesPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Voedselallergieën en Intoleranties: Het Verschil en Wat Te Eten" />
+          <ShareButtons title="Voedselallergieën en Intoleranties: Het Verschil en Wat Te Eten" shareCount="1.4k" />
         </div>
 
         {/* Hero Section */}

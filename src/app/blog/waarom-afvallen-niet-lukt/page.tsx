@@ -672,7 +672,7 @@ export default function WaaromAfvallenNietLuktPage() {
 
           {/* Share Buttons */}
           <div className="px-6 md:px-12 py-6 border-b">
-            <ShareButtons title="10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)" />
+            <ShareButtons title="10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)" shareCount="9.7k" />
           </div>
 
           {/* Hero Section */}

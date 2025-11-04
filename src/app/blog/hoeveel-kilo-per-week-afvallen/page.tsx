@@ -448,7 +448,7 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Hoeveel Kilo Per Week Afvallen is Gezond en Haalbaar?" />
+          <ShareButtons title="Hoeveel Kilo Per Week Afvallen is Gezond en Haalbaar?" shareCount="8.7k" />
         </div>
 
         {/* Hero Section */}

@@ -483,7 +483,7 @@ export default function WatKostEenDietistPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Wat Kost Een Diëtist? Tarieven en Vergoeding 2025" />
+          <ShareButtons title="Wat Kost Een Diëtist? Tarieven en Vergoeding 2025" shareCount="9.1k" />
         </div>
 
         {/* Hero Section */}

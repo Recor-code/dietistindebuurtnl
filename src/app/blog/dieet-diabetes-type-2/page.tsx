@@ -532,7 +532,7 @@ export default function DieetDiabetesType2Page() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Dieet voor Diabetes Type 2: Complete Gids" />
+          <ShareButtons title="Dieet voor Diabetes Type 2: Complete Gids" shareCount="4.8k" />
         </div>
 
         {/* Hero Section */}

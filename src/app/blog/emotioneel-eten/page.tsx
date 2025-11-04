@@ -504,7 +504,7 @@ export default function EmotioneelEtenPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Emotioneel Eten: Herken en Doorbreek de Cyclus" />
+          <ShareButtons title="Emotioneel Eten: Herken en Doorbreek de Cyclus" shareCount="6.2k" />
         </div>
 
         {/* Hero Section */}

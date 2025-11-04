@@ -469,7 +469,7 @@ export default function GezondeVoedingKinderenPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Gezonde Voeding Voor Kinderen: Complete Gids Voor Ouders" />
+          <ShareButtons title="Gezonde Voeding Voor Kinderen: Complete Gids Voor Ouders" shareCount="6.9k" />
         </div>
 
         {/* Hero Section */}

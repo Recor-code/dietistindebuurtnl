@@ -562,7 +562,7 @@ export default function VeganistischVoedingsstoffenPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Veganistisch en Alle Voedingsstoffen Binnenkrijgen" />
+          <ShareButtons title="Veganistisch en Alle Voedingsstoffen Binnenkrijgen" shareCount="2.3k" />
         </div>
 
         {/* Hero Section */}

@@ -607,7 +607,7 @@ export default function SportvoedingPage() {
 
         {/* Share Buttons */}
         <div className="px-6 md:px-12 py-6 border-b">
-          <ShareButtons title="Sportvoeding: Wat Eet Je Voor, Tijdens en Na Sporten?" />
+          <ShareButtons title="Sportvoeding: Wat Eet Je Voor, Tijdens en Na Sporten?" shareCount="4.1k" />
         </div>
 
         {/* Hero Section */}
