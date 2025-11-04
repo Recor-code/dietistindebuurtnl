@@ -47,7 +47,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md"
           >
-            Doe de Test
+            Doe de Keto-Quiz
           </a>
         </div>
 
@@ -87,7 +87,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="block w-full bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md text-center"
           >
-            Doe de Test
+            Doe de Keto-Quiz
           </a>
         </div>
       </div>
