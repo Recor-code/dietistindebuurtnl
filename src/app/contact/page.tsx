@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
-  title: 'Contact - Dietist in de Buurt',
-  description: 'Neem contact met ons op voor vragen over Dietisten, coaching of onze platform. We helpen je graag verder.',
+  title: 'Contact - Diëtist in de Buurt',
+  description: 'Neem contact met ons op voor vragen over Diëtisten, coaching of onze platform. We helpen je graag verder.',
 };
 
 export default function ContactPage() {
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
             {/* Coach Listing Card */}
             <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-3">Ben je Dietist?</h3>
+              <h3 className="text-lg font-bold text-gray-800 mb-3">Ben je Diëtist?</h3>
               <p className="text-gray-600 mb-4">
                 Wil je jezelf toevoegen aan ons platform? Neem contact met ons op via het formulier.
               </p>

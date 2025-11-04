@@ -33,12 +33,12 @@ const articleSchema = {
   description: 'Uitgebreide gids over het juiste dieet bij prikkelbare darm syndroom (PDS/IBS) met FODMAP aanpak.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',

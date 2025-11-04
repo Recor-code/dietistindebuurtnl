@@ -123,7 +123,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
   return {
     title: `${specialist.name} - ${specialist.specialization} in ${specialist.cityName}`,
     description: specialist.description?.substring(0, 155),
-    keywords: `Dietist, ${specialist.name}, ${specialist.cityName}, Diëtiek specialist`,
+    keywords: `Diëtist, ${specialist.name}, ${specialist.cityName}, Diëtiek specialist`,
   };
 }
 

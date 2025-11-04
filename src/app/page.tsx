@@ -11,10 +11,10 @@ import Link from 'next/link';
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Dietist in de Buurt',
+  name: 'Diëtist in de Buurt',
   url: 'https://dietistindebuurt.nl',
   logo: 'https://dietistindebuurt.nl/images/logo.webp',
-  description: 'De grootste directory voor Dietisten in Nederland en België. Vergelijk gecertificeerde dietisten, bekijk reviews en vind de perfecte match voor voedingsadvies.',
+  description: 'De grootste directory voor Diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.',
   areaServed: [
     {
       '@type': 'Country',
@@ -25,7 +25,7 @@ const organizationSchema = {
       name: 'België'
     }
   ],
-  serviceType: 'Dietist Directory',
+  serviceType: 'Diëtist Directory',
   sameAs: [
     'https://dietistindebuurt.nl'
   ],
@@ -39,9 +39,9 @@ const organizationSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Dietist in de Buurt',
+  name: 'Diëtist in de Buurt',
   url: 'https://dietistindebuurt.nl',
-  description: 'De grootste directory voor Dietisten in Nederland en België.',
+  description: 'De grootste directory voor Diëtisten in Nederland en België.',
   potentialAction: {
     '@type': 'SearchAction',
     target: 'https://dietistindebuurt.nl/stad/{search_term_string}',
@@ -66,11 +66,11 @@ export default function Home() {
       <section className="relative isolate py-12 sm:py-16 px-4 min-h-[55vh] flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/20 before:z-0" style={{backgroundImage: "url('/adhd-bg3.webp')"}}>
         <div className="w-full mx-auto text-center relative z-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg px-4">
-            Vind de beste Dietisten<br className="hidden sm:block" />
+            Vind de beste Diëtisten<br className="hidden sm:block" />
             <span className="sm:hidden"> </span>bij jou in de buurt
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-md px-4">
-            Vergelijk gecertificeerde dietisten en voedingsdeskundigen in jouw stad.<br className="hidden sm:block" />
+            Vergelijk gecertificeerde diëtisten en voedingsdeskundigen in jouw stad.<br className="hidden sm:block" />
             <span className="sm:hidden"> </span>Bekijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
           </p>
 
@@ -104,7 +104,7 @@ export default function Home() {
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-4">Alleen gecertificeerde professionals</h4>
               <p className="text-gray-600 leading-relaxed">
-                Alle dietisten zijn geverifieerd en hebben bewezen expertise in voedingsadvies.
+                Alle diëtisten zijn geverifieerd en hebben bewezen expertise in voedingsadvies.
               </p>
             </div>
 
@@ -124,7 +124,7 @@ export default function Home() {
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-4">Lokale specialisten</h4>
               <p className="text-gray-600 leading-relaxed">
-                Vind dietisten bij jou in de buurt voor persoonlijke sessies of online consultaties.
+                Vind diëtisten bij jou in de buurt voor persoonlijke sessies of online consultaties.
               </p>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Dietist Statistics */}
+      {/* Diëtist Statistics */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">
@@ -166,7 +166,7 @@ export default function Home() {
                 3000+
               </div>
               <p className="text-gray-600 leading-relaxed">
-                gecertificeerde dietisten
+                gecertificeerde diëtisten
               </p>
             </div>
 

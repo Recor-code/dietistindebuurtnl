@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
 
     // Email options (BCC removed for privacy - can be added back if needed)
     const mailOptions = {
-      from: `Dietist in de Buurt Assistant <${process.env.SMTP_USER}>`,
+      from: `Diëtist in de Buurt Assistant <${process.env.SMTP_USER}>`,
       to: email,
       subject: `Je persoonlijke Diëtiek rapport van ${name}`,
       text: reportText,
@@ -196,8 +196,8 @@ function generateReportHTML(name: string, responses: any): string {
         <h3 style="color: #16a34a; margin-top: 0;">Wat kun je nu doen?</h3>
         <ul style="margin: 0; padding-left: 20px;">
           <li>Bespreek je antwoorden met een Diëtiek-specialist of je huisarts</li>
-          <li>Overweeg contact op te nemen met een Dietist voor praktische ondersteuning</li>
-          <li>Bekijk onze website voor Dietisten bij jou in de buurt</li>
+          <li>Overweeg contact op te nemen met een Diëtist voor praktische ondersteuning</li>
+          <li>Bekijk onze website voor Diëtisten bij jou in de buurt</li>
           <li>Zoek steun bij familie, vrienden of Diëtiek-gemeenschappen</li>
         </ul>
       </div>
@@ -214,10 +214,10 @@ function generateReportHTML(name: string, responses: any): string {
       <div style="text-align: center; border-top: 1px solid #e5e7eb; padding-top: 20px; margin-top: 30px;">
         <p style="color: #6b7280; font-size: 14px; margin: 0;">
           Met vriendelijke groeten,<br>
-          <strong style="color: #2563eb;">Dietist in de Buurt</strong>
+          <strong style="color: #2563eb;">Diëtist in de Buurt</strong>
         </p>
         <p style="color: #6b7280; font-size: 12px; margin-top: 10px;">
-          Vind Dietisten bij jou in de buurt op dietistindebuurt.nl
+          Vind Diëtisten bij jou in de buurt op dietistindebuurt.nl
         </p>
       </div>
 
@@ -257,8 +257,8 @@ ${responsesText || 'Geen specifieke antwoorden beschikbaar.'}
 
 Wat kun je nu doen?
 - Bespreek je antwoorden met een Diëtiek-specialist of je huisarts
-- Overweeg contact op te nemen met een Dietist voor praktische ondersteuning  
-- Bekijk onze website voor Dietisten bij jou in de buurt
+- Overweeg contact op te nemen met een Diëtist voor praktische ondersteuning  
+- Bekijk onze website voor Diëtisten bij jou in de buurt
 - Zoek steun bij familie, vrienden of Diëtiek-gemeenschappen
 
 Belangrijke opmerking:
@@ -267,8 +267,8 @@ Voor een officiële diagnose of behandeling is het belangrijk om contact op te n
 met een gekwalificeerde zorgverlener.
 
 Met vriendelijke groeten,
-Dietist in de Buurt
+Diëtist in de Buurt
 
-Vind Dietisten bij jou in de buurt op dietistindebuurt.nl
+Vind Diëtisten bij jou in de buurt op dietistindebuurt.nl
   `.trim();
 }

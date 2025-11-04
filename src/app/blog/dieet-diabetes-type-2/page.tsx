@@ -33,12 +33,12 @@ const articleSchema = {
   description: 'Uitgebreide gids over voeding bij diabetes type 2, bloedsuikercontrole en hoe diëtisten helpen.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
@@ -895,7 +895,7 @@ export default function DieetDiabetesType2Page() {
             </div>
         </section>
 
-        {/* Dietist Role */}
+        {/* Diëtist Role */}
         <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-green-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Hoe Een Diëtist Je Helpt Bij Diabetes

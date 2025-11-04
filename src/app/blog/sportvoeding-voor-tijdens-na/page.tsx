@@ -33,12 +33,12 @@ const articleSchema = {
   description: 'Uitgebreide gids over sportvoeding: timing, hoeveelheden en beste voeding voor optimale prestaties.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',

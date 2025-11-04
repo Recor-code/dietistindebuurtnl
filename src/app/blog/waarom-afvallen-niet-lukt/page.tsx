@@ -5,14 +5,14 @@ import { Scale, Brain, Heart, TrendingDown, TrendingUp, AlertCircle, Coffee, Moo
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
-  title: '10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen) | 2025',
-  description: 'Ontdek waarom 95% van de diëten faalt en hoe een dietist jou kan helpen met duurzaam gewichtsverlies. Biologische, psychologische en praktische obstakels uitgelegd.',
+  title: '10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Diëtist Kan Helpen) | 2025',
+  description: 'Ontdek waarom 95% van de diëten faalt en hoe een diëtist jou kan helpen met duurzaam gewichtsverlies. Biologische, psychologische en praktische obstakels uitgelegd.',
   keywords: [
     'waarom lukt afvallen niet',
     'afvallen mislukt',
     'dieet faalt',
     'gewichtsverlies problemen',
-    'dietist afvallen',
+    'diëtist afvallen',
     'duurzaam afvallen',
     'jojo effect',
     'metabolisme afvallen',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     'afvallen hulp'
   ],
   openGraph: {
-    title: '10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)',
-    description: 'Ontdek waarom 95% van de diëten faalt en hoe een dietist jou kan helpen met duurzaam gewichtsverlies.',
+    title: '10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Diëtist Kan Helpen)',
+    description: 'Ontdek waarom 95% van de diëten faalt en hoe een diëtist jou kan helpen met duurzaam gewichtsverlies.',
     images: ['/img/blog/waarom-afvallen-niet-lukt/featured.webp'],
   },
 };
@@ -29,16 +29,16 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: '10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)',
+  headline: '10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Diëtist Kan Helpen)',
   description: 'Uitgebreide analyse van waarom gewichtsverlies zo moeilijk is en hoe professionele begeleiding het verschil maakt.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
@@ -632,9 +632,9 @@ export default function WaaromAfvallenNietLuktPage() {
   const scientificStats = [
     "95% van zelfgeleide diëten faalt binnen 5 jaar (Mann et al., 2007)",
     "Gemiddeld gewichtsverlies zonder begeleiding: 5-10% met 80% terugval binnen 1 jaar",
-    "Met dietist begeleiding: 7-15% gewichtsverlies met 60% behoud na 2 jaar",
+    "Met diëtist begeleiding: 7-15% gewichtsverlies met 60% behoud na 2 jaar",
     "Begeleide trajecten hebben 5-7x hogere slagingskans dan zelfstandig",
-    "Medische kosten van obesitas: €1000-3000 per jaar, dietist betaalt zichzelf terug"
+    "Medische kosten van obesitas: €1000-3000 per jaar, diëtist betaalt zichzelf terug"
   ];
 
   return (
@@ -672,7 +672,7 @@ export default function WaaromAfvallenNietLuktPage() {
 
           {/* Share Buttons */}
           <div className="px-6 md:px-12 py-6 border-b">
-            <ShareButtons title="10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)" shareCount="9.7k" />
+            <ShareButtons title="10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Diëtist Kan Helpen)" shareCount="9.7k" />
           </div>
 
           {/* Hero Section */}
@@ -682,7 +682,7 @@ export default function WaaromAfvallenNietLuktPage() {
             <span className="font-semibold uppercase text-sm tracking-wide">Gewichtsverlies Gids 2025</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)
+            10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Diëtist Kan Helpen)
           </h1>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             Ontdek waarom 95% van de diëten faalt en hoe professionele begeleiding het verschil maakt voor duurzaam gewichtsverlies
@@ -719,7 +719,7 @@ export default function WaaromAfvallenNietLuktPage() {
               </p>
 
               <p className="text-gray-700 mb-8">
-                In dit artikel ontdek je de 10 belangrijkste redenen waarom afvallen zo moeilijk is, wat er biologisch en psychologisch in je lichaam gebeurt, en - het goede nieuws - hoe een dietist je kan helpen deze obstakels te overwinnen. Want met de juiste kennis en begeleiding is duurzaam gewichtsverlies wel degelijk mogelijk.
+                In dit artikel ontdek je de 10 belangrijkste redenen waarom afvallen zo moeilijk is, wat er biologisch en psychologisch in je lichaam gebeurt, en - het goede nieuws - hoe een diëtist je kan helpen deze obstakels te overwinnen. Want met de juiste kennis en begeleiding is duurzaam gewichtsverlies wel degelijk mogelijk.
               </p>
             </div>
 
@@ -848,11 +848,11 @@ export default function WaaromAfvallenNietLuktPage() {
                     </div>
                   )}
 
-                  {/* Dietist Help Section */}
+                  {/* Diëtist Help Section */}
                   <div className="bg-green-50 rounded-lg p-6 border-l-4 border-green-500">
                     <h4 className="font-bold text-lg mb-3 flex items-center gap-2 text-gray-900">
                       <CheckCircle2 className="w-6 h-6 text-green-600" />
-                      Hoe Een Dietist Je Helpt:
+                      Hoe Een Diëtist Je Helpt:
                     </h4>
                     <ul className="space-y-2">
                       {reason.dietistHelp.map((help, idx) => (
@@ -882,11 +882,11 @@ export default function WaaromAfvallenNietLuktPage() {
             </div>
           </section>
 
-        {/* Dietist Approach Section */}
+        {/* Diëtist Approach Section */}
           <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white">
 
             <h2 className="text-3xl font-bold mb-4 text-center">
-              Hoe Werkt Begeleiding Door Een Dietist?
+              Hoe Werkt Begeleiding Door Een Diëtist?
             </h2>
             <p className="text-xl text-gray-600 text-center mb-12">
               Een bewezen methode voor duurzaam gewichtsverlies
@@ -997,7 +997,7 @@ export default function WaaromAfvallenNietLuktPage() {
           <section className="py-16 px-6 md:px-12 bg-gray-50">
 
             <h2 className="text-3xl font-bold mb-8 text-center">
-              Kosten vs Baten: Alleen vs Met Dietist
+              Kosten vs Baten: Alleen vs Met Diëtist
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -1040,12 +1040,12 @@ export default function WaaromAfvallenNietLuktPage() {
                 </div>
               </div>
 
-              {/* With Dietist */}
+              {/* With Diëtist */}
               <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-6 shadow-md border-2 border-blue-500">
                 <div className="bg-blue-600 text-white px-3 py-1 rounded-full w-fit mb-2 text-sm font-bold">
                   AANBEVOLEN
                 </div>
-                <h3 className="font-bold text-xl mb-4 text-center">Met Dietist Begeleiding</h3>
+                <h3 className="font-bold text-xl mb-4 text-center">Met Diëtist Begeleiding</h3>
                 <div className="space-y-4">
                   <div>
                     <span className="font-bold">Kosten:</span> {costBenefit.withDietist.cost}
@@ -1096,7 +1096,7 @@ export default function WaaromAfvallenNietLuktPage() {
                 Klaar Om Te Starten Met Duurzaam Afvallen?
               </h2>
               <p className="text-xl text-blue-50 mb-8">
-                Vind een geregistreerde dietist bij jou in de buurt die je kan helpen met persoonlijke begeleiding en bewezen methoden.
+                Vind een geregistreerde diëtist bij jou in de buurt die je kan helpen met persoonlijke begeleiding en bewezen methoden.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -1104,7 +1104,7 @@ export default function WaaromAfvallenNietLuktPage() {
                   className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center gap-2 justify-center"
                 >
                   <Search className="w-5 h-5" />
-                  Vind Een Dietist
+                  Vind Een Diëtist
                 </Link>
                 <Link
                   href="/faq"
@@ -1125,7 +1125,7 @@ export default function WaaromAfvallenNietLuktPage() {
                 Afvallen is moeilijk - en dat is niet jouw schuld. Je lichaam, je omgeving, je stress, en vele andere factoren werken tegen je. <strong>Willskracht alleen is niet genoeg</strong> omdat je tegen biologische overlevingsmechanismen vecht die miljoenen jaren oud zijn.
               </p>
               <p className="mb-4">
-                De goede nieuws? Met de juiste kennis, aanpak en professionele begeleiding is duurzaam gewichtsverlies wél mogelijk. Een dietist kan je helpen:
+                De goede nieuws? Met de juiste kennis, aanpak en professionele begeleiding is duurzaam gewichtsverlies wél mogelijk. Een diëtist kan je helpen:
               </p>
               <ul className="mb-4 space-y-2">
                 <li className="flex gap-2">
@@ -1155,7 +1155,7 @@ export default function WaaromAfvallenNietLuktPage() {
               <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mt-8">
                 <p className="font-semibold text-lg mb-2">💡 Eerste Stap:</p>
                 <p className="text-gray-700">
-                  Gebruik onze zoekfunctie om een geregistreerde dietist bij jou in de buurt te vinden. De meeste eerste consulten worden (gedeeltelijk) vergoed door je zorgverzekering. Je hebt sinds 2022 geen verwijzing meer nodig van je huisarts.
+                  Gebruik onze zoekfunctie om een geregistreerde diëtist bij jou in de buurt te vinden. De meeste eerste consulten worden (gedeeltelijk) vergoed door je zorgverzekering. Je hebt sinds 2022 geen verwijzing meer nodig van je huisarts.
                 </p>
               </div>
             </div>

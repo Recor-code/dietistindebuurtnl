@@ -33,12 +33,12 @@ const articleSchema = {
   description: 'Uitgebreide gids over gewichtsverlies na je 50e: hormonen, metabolisme en bewezen strategieën.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',

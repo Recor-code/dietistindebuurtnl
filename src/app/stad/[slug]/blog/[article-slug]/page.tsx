@@ -68,12 +68,12 @@ export default async function CityBlogPage({ params }: PageProps) {
     description: article.description,
     author: {
       '@type': 'Organization',
-      name: 'Dietist in de Buurt',
+      name: 'Diëtist in de Buurt',
       url: 'https://dietistindebuurt.nl'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Dietist in de Buurt',
+      name: 'Diëtist in de Buurt',
       url: 'https://dietistindebuurt.nl'
     },
     datePublished: article.publishedAt.toISOString(),
@@ -122,7 +122,7 @@ export default async function CityBlogPage({ params }: PageProps) {
             <span>/</span>
             <Link href="/blog" className="hover:text-blue-600">Blog</Link>
             <span>/</span>
-            <span className="text-gray-800">Dietist in {city.name}</span>
+            <span className="text-gray-800">Diëtist in {city.name}</span>
           </nav>
         </div>
       </div>
@@ -171,18 +171,18 @@ export default async function CityBlogPage({ params }: PageProps) {
                     🎯 Snel overzicht: voedingsadvies in {city.name}
                   </h2>
                   <ul className="text-blue-700 space-y-2">
-                    <li>• <strong>{city.coachCount} gecertificeerde Dietisten</strong> beschikbaar in {city.name}</li>
+                    <li>• <strong>{city.coachCount} gecertificeerde Diëtisten</strong> beschikbaar in {city.name}</li>
                     <li>• <strong>Kosten:</strong> €60-€150 per sessie (mogelijk vergoeding)</li>
                     <li>• <strong>Specialisaties:</strong> volwassenen, kinderen, werkgerelateerde problemen</li>
                     <li>• <strong>Locaties:</strong> Centrum, Noord, Zuid, Oost, West en online</li>
                   </ul>
                 </div>
 
-                <h2>Waarom een Dietist in {city.name}?</h2>
+                <h2>Waarom een Diëtist in {city.name}?</h2>
                 <p>
                   {city.name} biedt een rijk aanbod aan Diëtiek-specialisten en coaches die je kunnen helpen bij het omgaan met Diëtiek in het dagelijks leven. 
                   Of je nu woont in het historische centrum, de groene wijken van Noord, of de moderne ontwikkelingen in Zuid - er is altijd een 
-                  gekwalificeerde Dietist bij jou in de buurt.
+                  gekwalificeerde Diëtist bij jou in de buurt.
                 </p>
 
                 <p>
@@ -190,9 +190,9 @@ export default async function CityBlogPage({ params }: PageProps) {
                   Diëtiek-professionals, elk met hun eigen specialisatie en aanpak. Dit artikel helpt je de juiste match te vinden.
                 </p>
 
-                <h2>Wat maakt een goede Dietist uit?</h2>
+                <h2>Wat maakt een goede Diëtist uit?</h2>
                 <p>
-                  Een effectieve Dietist in {city.name} heeft verschillende belangrijke kwaliteiten:
+                  Een effectieve Diëtist in {city.name} heeft verschillende belangrijke kwaliteiten:
                 </p>
                 
                 <h3>1. Erkende certificering en ervaring</h3>
@@ -214,7 +214,7 @@ export default async function CityBlogPage({ params }: PageProps) {
                   zowel online als persoonlijke sessies aan, en sommigen hebben ook avond- of weekendtijden beschikbaar.
                 </p>
 
-                <h2>Hoe vind je de juiste Dietist in {city.name}?</h2>
+                <h2>Hoe vind je de juiste Diëtist in {city.name}?</h2>
                 
                 <h3>Stap 1: Bepaal je behoeften</h3>
                 <p>
@@ -242,7 +242,7 @@ export default async function CityBlogPage({ params }: PageProps) {
 
                 <h3>Stap 3: Eerste contact en intake</h3>
                 <p>
-                  De meeste Dietisten in {city.name} bieden een korte kennismakingssessie of telefonisch gesprek aan. 
+                  De meeste Diëtisten in {city.name} bieden een korte kennismakingssessie of telefonisch gesprek aan. 
                   Gebruik dit om te beoordelen of er een goede match is. Stel vragen over:
                 </p>
                 <ul>
@@ -276,7 +276,7 @@ export default async function CityBlogPage({ params }: PageProps) {
                   <li><strong>PGB (Persoonsgebonden Budget):</strong> Voor specifieke situaties</li>
                 </ul>
 
-                <h2>Specialisaties van Dietisten in {city.name}</h2>
+                <h2>Specialisaties van Diëtisten in {city.name}</h2>
                 
                 <h3>Coaches voor volwassenen</h3>
                 <p>
@@ -337,7 +337,7 @@ export default async function CityBlogPage({ params }: PageProps) {
 
                 <h2>Tips voor het eerste bezoek</h2>
                 <p>
-                  Voor je eerste afspraak met een Dietist in {city.name}:
+                  Voor je eerste afspraak met een Diëtist in {city.name}:
                 </p>
                 <ul>
                   <li><strong>Bereiding:</strong> Schrijf vragen en doelen op voorhand op</li>
@@ -347,7 +347,7 @@ export default async function CityBlogPage({ params }: PageProps) {
                   <li><strong>Open houding:</strong> Wees eerlijk over je uitdagingen en behoeften</li>
                 </ul>
 
-                <h2>Conclusie: De juiste Dietist vinden in {city.name}</h2>
+                <h2>Conclusie: De juiste Diëtist vinden in {city.name}</h2>
                 <p>
                   {city.name} biedt uitstekende mogelijkheden voor voedingsadvies, met een breed scala aan gekwalificeerde professionals 
                   die je kunnen helpen je doelen te bereiken. Door je behoeften goed in kaart te brengen, onderzoek te doen naar 
@@ -363,14 +363,14 @@ export default async function CityBlogPage({ params }: PageProps) {
                 <div className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white p-6 rounded-lg mt-8">
                   <h3 className="text-xl font-semibold mb-3">Klaar om te beginnen?</h3>
                   <p className="mb-4">
-                    Bekijk alle beschikbare Dietisten in {city.name} en vind de perfecte match voor jouw situatie.
+                    Bekijk alle beschikbare Diëtisten in {city.name} en vind de perfecte match voor jouw situatie.
                   </p>
                   <Link 
                     href={`/stad/${citySlug}`}
                     className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
                   >
                     <Users size={20} />
-                    Bekijk Dietisten in {city.name}
+                    Bekijk Diëtisten in {city.name}
                   </Link>
                 </div>
               </div>

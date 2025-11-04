@@ -6,7 +6,7 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Hoeveel Kilo Per Week Afvallen is Gezond en Haalbaar? | Expert Gids 2025',
-  description: 'Ontdek hoeveel kilo per week gezond afvallen is (0,5-1 kg), waarom sneller afvallen gevaarlijk is, en hoe je realistisch en duurzaam gewicht verliest met hulp van een dietist.',
+  description: 'Ontdek hoeveel kilo per week gezond afvallen is (0,5-1 kg), waarom sneller afvallen gevaarlijk is, en hoe je realistisch en duurzaam gewicht verliest met hulp van een diëtist.',
   keywords: [
     'hoeveel kilo per week afvallen',
     'gezond afvallen tempo',
@@ -33,12 +33,12 @@ const articleSchema = {
   description: 'Complete gids over gezond afvaltempo, risicos van te snel afvallen en realistische verwachtingen voor duurzaam gewichtsverlies.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
@@ -778,10 +778,10 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
             </div>
         </section>
 
-        {/* Dietist Help */}
+        {/* Diëtist Help */}
         <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-green-50 to-white">
             <h2 className="text-3xl font-bold mb-4 text-center">
-              Hoe Een Dietist Je Helpt Met Gezond Tempo
+              Hoe Een Diëtist Je Helpt Met Gezond Tempo
             </h2>
             <p className="text-xl text-gray-600 text-center mb-12">
               Professionele begeleiding voor duurzaam resultaat
@@ -877,13 +877,13 @@ export default function HoeveelKiloPerWeekAfvallenPage() {
               Klaar Voor Gezond en Duurzaam Gewichtsverlies?
             </h2>
             <p className="text-xl text-green-50 mb-8 max-w-2xl mx-auto">
-              Vind een geregistreerde dietist die je helpt met een realistisch plan op jouw tempo
+              Vind een geregistreerde diëtist die je helpt met een realistisch plan op jouw tempo
             </p>
             <Link
               href="/"
               className="inline-block bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors shadow-lg"
             >
-              Vind Een Dietist Bij Jou in de Buurt
+              Vind Een Diëtist Bij Jou in de Buurt
             </Link>
         </div>
         </section>

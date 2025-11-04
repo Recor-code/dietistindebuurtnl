@@ -1,7 +1,7 @@
 {
-  "name": "Dietist in de Buurt",
-  "short_name": "Dietist",
-  "description": "Vind de beste Dietisten bij jou in de buurt",
+  "name": "Diëtist in de Buurt",
+  "short_name": "Diëtist",
+  "description": "Vind de beste Diëtisten bij jou in de buurt",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

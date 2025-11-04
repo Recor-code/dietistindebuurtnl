@@ -33,12 +33,12 @@ const articleSchema = {
   description: 'Uitgebreide gids over diëtist tarieven, zorgverzekering vergoedingen en hoe je kosten kunt besparen.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',

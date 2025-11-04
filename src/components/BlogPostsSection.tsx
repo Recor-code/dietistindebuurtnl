@@ -4,7 +4,7 @@ import Image from 'next/image';
 // Static blog posts data - latest 3 articles
 const latestPosts = [
   {
-    title: '10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Dietist Kan Helpen)',
+    title: '10 Redenen Waarom Afvallen Niet Lukt (En Hoe Een Diëtist Kan Helpen)',
     slug: 'waarom-afvallen-niet-lukt',
     excerpt: 'Ontdek waarom 95% van de diëten faalt en hoe professionele begeleiding het verschil maakt voor duurzaam gewichtsverlies.',
     publishedAt: '2025-10-14',
@@ -13,7 +13,7 @@ const latestPosts = [
   {
     title: 'Hoeveel Kilo Per Week Afvallen is Gezond? Complete Gids 2025',
     slug: 'hoeveel-kilo-per-week-afvallen',
-    excerpt: 'Leer wat een gezond en haalbaar afvalltempo is, hoe je dit bereikt zonder jojo-effect, en wanneer een dietist kan helpen.',
+    excerpt: 'Leer wat een gezond en haalbaar afvalltempo is, hoe je dit bereikt zonder jojo-effect, en wanneer een diëtist kan helpen.',
     publishedAt: '2025-10-14',
     readingTime: '12 min leestijd',
   },

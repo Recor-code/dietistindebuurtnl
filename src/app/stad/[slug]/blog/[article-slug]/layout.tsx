@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'article',
       locale: 'nl_NL',
       url: `https://dietistindebuurt.nl/stad/${citySlug}/blog/${articleSlug}`,
-      siteName: 'Dietist in de Buurt',
+      siteName: 'Diëtist in de Buurt',
       publishedTime: article.publishedAt.toISOString(),
       authors: [article.author],
     },

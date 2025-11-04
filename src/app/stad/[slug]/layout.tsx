@@ -44,24 +44,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `Diëtiek Coaches in ${city.name} | Vind lokale Diëtiek ondersteuning`;
-  const description = `Ontdek ${city.coachCount} gecertificeerde Dietisten in ${city.name}, ${city.province}. Vergelijk specialisaties, bekijk reviews en vind de perfecte Dietist bij jou in de buurt.`;
+  const description = `Ontdek ${city.coachCount} gecertificeerde Diëtisten in ${city.name}, ${city.province}. Vergelijk specialisaties, bekijk reviews en vind de perfecte Diëtist bij jou in de buurt.`;
 
   return {
     title,
     description,
-    keywords: `Dietist ${city.name}, voedingsadvies ${city.name}, Diëtiek behandeling ${city.province}, gedragstherapeut ${city.name}, Diëtiek hulp ${city.country}`,
+    keywords: `Diëtist ${city.name}, voedingsadvies ${city.name}, Diëtiek behandeling ${city.province}, gedragstherapeut ${city.name}, Diëtiek hulp ${city.country}`,
     openGraph: {
       title,
       description,
       type: 'website',
       locale: 'nl_NL',
       url: `https://dietistindebuurt.nl/stad/${slug}`,
-      siteName: 'Dietist in de Buurt',
+      siteName: 'Diëtist in de Buurt',
     },
     twitter: {
       card: 'summary_large_image',
       title: `Diëtiek Coaches in ${city.name}`,
-      description: `Vind de beste Dietisten in ${city.name}. ${city.coachCount} gecertificeerde professionals beschikbaar.`,
+      description: `Vind de beste Diëtisten in ${city.name}. ${city.coachCount} gecertificeerde professionals beschikbaar.`,
     },
     alternates: {
       canonical: `https://dietistindebuurt.nl/stad/${slug}`,

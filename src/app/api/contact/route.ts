@@ -146,7 +146,7 @@ Verzonden op: ${new Date().toLocaleString('nl-NL')}
     `.trim();
 
     const mailOptions = {
-      from: `Dietist in de Buurt <${process.env.SMTP_USER}>`,
+      from: `Diëtist in de Buurt <${process.env.SMTP_USER}>`,
       to: 'info@dietistindebuurt.nl',
       replyTo: email,
       subject: emailSubject,

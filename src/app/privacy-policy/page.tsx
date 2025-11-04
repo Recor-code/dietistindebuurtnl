@@ -6,8 +6,8 @@ import RelaxBanner from '@/components/RelaxBanner';
 import { Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Dietist in de Buurt',
-  description: 'Privacybeleid van Dietist in de Buurt. Lees hoe wij omgaan met uw persoonsgegevens.',
+  title: 'Privacy Policy - Diëtist in de Buurt',
+  description: 'Privacybeleid van Diëtist in de Buurt. Lees hoe wij omgaan met uw persoonsgegevens.',
 };
 
 export default function PrivacyPolicy() {
@@ -32,13 +32,13 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Inleiding</h2>
               <p className="text-gray-700 mb-4">
-                Dietist in de Buurt hecht veel waarde aan de bescherming van uw persoonsgegevens. 
+                Diëtist in de Buurt hecht veel waarde aan de bescherming van uw persoonsgegevens. 
                 In deze privacyverklaring leggen wij uit welke persoonsgegevens wij verzamelen, 
                 waarom wij deze verzamelen en hoe wij deze gebruiken.
               </p>
               <p className="text-gray-700">
                 Deze privacyverklaring is van toepassing op het gebruik van de website en de 
-                daarop ontsloten dienstverlening van Dietist in de Buurt.
+                daarop ontsloten dienstverlening van Diëtist in de Buurt.
               </p>
             </section>
 
@@ -60,11 +60,11 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Waarom verzamelen wij uw gegevens?</h2>
               <p className="text-gray-700 mb-4">
-                Dietist in de Buurt verwerkt uw persoonsgegevens voor de volgende doeleinden:
+                Diëtist in de Buurt verwerkt uw persoonsgegevens voor de volgende doeleinden:
               </p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
                 <li>Om contact met u op te kunnen nemen</li>
-                <li>Om u te kunnen helpen bij het vinden van een geschikte Dietist</li>
+                <li>Om u te kunnen helpen bij het vinden van een geschikte Diëtist</li>
                 <li>Om u nieuwsbrieven en andere informatie te sturen (alleen met uw toestemming)</li>
                 <li>Om de website te analyseren en te verbeteren</li>
                 <li>Om fraude te voorkomen en de veiligheid van de website te waarborgen</li>
@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Hoe lang bewaren wij uw gegevens?</h2>
               <p className="text-gray-700">
-                Dietist in de Buurt bewaart uw persoonsgegevens niet langer dan noodzakelijk 
+                Diëtist in de Buurt bewaart uw persoonsgegevens niet langer dan noodzakelijk 
                 voor het doel waarvoor deze zijn verstrekt dan wel op grond van de wet is vereist. 
                 Wanneer u contact met ons opneemt, bewaren wij uw gegevens maximaal 2 jaar na het 
                 laatste contact.
@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Delen met derden</h2>
               <p className="text-gray-700 mb-4">
-                Dietist in de Buurt verkoopt uw gegevens niet aan derden en verstrekt deze 
+                Diëtist in de Buurt verkoopt uw gegevens niet aan derden en verstrekt deze 
                 uitsluitend indien dit nodig is voor de uitvoering van onze overeenkomst met u 
                 of om te voldoen aan een wettelijke verplichting.
               </p>
@@ -92,7 +92,7 @@ export default function PrivacyPolicy() {
                 Wij kunnen uw gegevens delen met:
               </p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                <li>Dietisten en therapeuten waarmee u contact wenst</li>
+                <li>Diëtisten en therapeuten waarmee u contact wenst</li>
                 <li>Dienstverleners die ons ondersteunen bij het aanbieden van onze diensten</li>
                 <li>Overheidsinstanties indien wij daartoe wettelijk verplicht zijn</li>
               </ul>
@@ -101,7 +101,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Cookies</h2>
               <p className="text-gray-700 mb-4">
-                Dietist in de Buurt gebruikt functionele en analytische cookies. Een cookie is 
+                Diëtist in de Buurt gebruikt functionele en analytische cookies. Een cookie is 
                 een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen 
                 op uw computer, tablet of smartphone.
               </p>
@@ -118,7 +118,7 @@ export default function PrivacyPolicy() {
                 U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. 
                 Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking 
                 in te trekken of bezwaar te maken tegen de verwerking van uw persoonsgegevens door 
-                Dietist in de Buurt.
+                Diëtist in de Buurt.
               </p>
               <p className="text-gray-700 mb-4">
                 U heeft tevens het recht op gegevensoverdraagbaarheid. Dat betekent dat u bij ons 
@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Beveiliging</h2>
               <p className="text-gray-700">
-                Dietist in de Buurt neemt de bescherming van uw gegevens serieus en neemt 
+                Diëtist in de Buurt neemt de bescherming van uw gegevens serieus en neemt 
                 passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste 
                 openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als u de indruk heeft 
                 dat uw gegevens niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, 
@@ -141,7 +141,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Wijzigingen privacyverklaring</h2>
               <p className="text-gray-700">
-                Dietist in de Buurt kan deze privacyverklaring van tijd tot tijd aanpassen. 
+                Diëtist in de Buurt kan deze privacyverklaring van tijd tot tijd aanpassen. 
                 Wij raden u aan deze privacyverklaring regelmatig te raadplegen, zodat u op de 
                 hoogte bent van eventuele wijzigingen.
               </p>

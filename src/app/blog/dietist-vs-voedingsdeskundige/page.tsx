@@ -33,12 +33,12 @@ const articleSchema = {
   description: 'Uitgebreide uitleg over de verschillen tussen diëtisten en voedingsdeskundigen qua opleiding, bevoegdheden en vergoeding.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
@@ -63,7 +63,7 @@ const articleSchema = {
 
 export default function DietistVsVoedingsdeskundigePage() {
   const quickComparison = {
-    dietist: {
+    diëtist: {
       title: "Diëtist",
       protected: true,
       education: "HBO bachelor (4 jaar) of WO master",
@@ -89,7 +89,7 @@ export default function DietistVsVoedingsdeskundigePage() {
     {
       category: "Wettelijke Status",
       icon: Shield,
-      dietist: {
+      diëtist: {
         title: "Beschermde Titel (BIG-register)",
         points: [
           "Titel 'diëtist' is wettelijk beschermd sinds 1997",
@@ -115,7 +115,7 @@ export default function DietistVsVoedingsdeskundigePage() {
     {
       category: "Opleiding",
       icon: GraduationCap,
-      dietist: {
+      diëtist: {
         title: "HBO Bachelor of WO Master",
         points: [
           "HBO: 4 jaar opleiding Voeding en Diëtetiek",
@@ -143,7 +143,7 @@ export default function DietistVsVoedingsdeskundigePage() {
     {
       category: "Bevoegdheden",
       icon: FileCheck,
-      dietist: {
+      diëtist: {
         title: "Medische Diëtetiek Toegestaan",
         points: [
           "Mag dieetbehandeling geven bij ziektes",
@@ -171,7 +171,7 @@ export default function DietistVsVoedingsdeskundigePage() {
     {
       category: "Zorgverzekering",
       icon: Euro,
-      dietist: {
+      diëtist: {
         title: "Meestal Vergoed",
         points: [
           "Basisverzekering: nee (sinds 2012)",
@@ -199,7 +199,7 @@ export default function DietistVsVoedingsdeskundigePage() {
     {
       category: "Kwaliteitsborging",
       icon: Award,
-      dietist: {
+      diëtist: {
         title: "Strenge Eisen en Controle",
         points: [
           "Verplichte nascholing: 200 uur per 5 jaar",
@@ -227,7 +227,7 @@ export default function DietistVsVoedingsdeskundigePage() {
   ];
 
   const whenToChoose = {
-    dietist: {
+    diëtist: {
       title: "Kies Een Diëtist Bij:",
       icon: Stethoscope,
       situations: [
@@ -318,7 +318,7 @@ export default function DietistVsVoedingsdeskundigePage() {
   };
 
   const qualityChecklist = {
-    dietist: {
+    diëtist: {
       title: "Checklist: Herken Een Goede Diëtist",
       checks: [
         { item: "Staat in BIG-register", critical: true, check: "Controleer op bigregister.nl" },
@@ -375,7 +375,7 @@ export default function DietistVsVoedingsdeskundigePage() {
   ];
 
   const costComparison = {
-    dietist: {
+    diëtist: {
       consult1: "€70-95",
       followUp: "€45-70",
       insurance: "€100-400/jaar uit aanvullend",
@@ -403,7 +403,7 @@ export default function DietistVsVoedingsdeskundigePage() {
     {
       name: "Nederlandse Vereniging Diëtisten (NVD)",
       forWho: "Diëtisten + sommige voedingsdeskundigen",
-      website: "nvdietist.nl",
+      website: "nvdiëtist.nl",
       purpose: "Beroepsvereniging met kwaliteitseisen",
       check: "Ledenlijst op website",
       trust: "Hoog - strenge toelatingseisen"
@@ -603,43 +603,43 @@ export default function DietistVsVoedingsdeskundigePage() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    {/* Dietist */}
+                    {/* Diëtist */}
                     <div className="bg-green-50 rounded-lg p-6 border border-green-200">
                       <h4 className="font-bold text-lg mb-3 text-green-800 flex items-center gap-2">
                         <CheckCircle2 className="w-6 h-6" />
-                        Diëtist: {diff.dietist.title}
+                        Diëtist: {diff.diëtist.title}
                       </h4>
                       <ul className="space-y-2 mb-4">
-                        {diff.dietist.points.map((point, pIdx) => (
+                        {diff.diëtist.points.map((point, pIdx) => (
                           <li key={pIdx} className="flex gap-2 text-gray-700">
                             <span className="text-green-600 font-bold">•</span>
                             <span>{point}</span>
                           </li>
                         ))}
                       </ul>
-                      {diff.dietist.legal && (
+                      {diff.diëtist.legal && (
                         <p className="text-sm text-green-700 italic bg-green-100 p-2 rounded">
-                          📚 {diff.dietist.legal}
+                          📚 {diff.diëtist.legal}
                         </p>
                       )}
-                      {diff.dietist.institutions && (
+                      {diff.diëtist.institutions && (
                         <p className="text-sm text-gray-600 mt-2">
-                          <strong>Opleidingen:</strong> {diff.dietist.institutions}
+                          <strong>Opleidingen:</strong> {diff.diëtist.institutions}
                         </p>
                       )}
-                      {diff.dietist.scope && (
+                      {diff.diëtist.scope && (
                         <p className="text-sm font-semibold text-green-700 mt-2">
-                          ✓ {diff.dietist.scope}
+                          ✓ {diff.diëtist.scope}
                         </p>
                       )}
-                      {diff.dietist.typical && (
+                      {diff.diëtist.typical && (
                         <p className="text-sm font-semibold text-green-700 mt-2">
-                          💰 {diff.dietist.typical}
+                          💰 {diff.diëtist.typical}
                         </p>
                       )}
-                      {diff.dietist.guarantee && (
+                      {diff.diëtist.guarantee && (
                         <p className="text-sm font-semibold text-green-700 mt-2 bg-green-100 p-2 rounded">
-                          ⭐ {diff.dietist.guarantee}
+                          ⭐ {diff.diëtist.guarantee}
                         </p>
                       )}
                     </div>
@@ -702,16 +702,16 @@ export default function DietistVsVoedingsdeskundigePage() {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Dietist */}
+              {/* Diëtist */}
               <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-green-500">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="bg-green-100 rounded-full p-3">
-                    <whenToChoose.dietist.icon className="w-8 h-8 text-green-600" />
+                    <whenToChoose.diëtist.icon className="w-8 h-8 text-green-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-green-800">{whenToChoose.dietist.title}</h3>
+                  <h3 className="text-2xl font-bold text-green-800">{whenToChoose.diëtist.title}</h3>
                 </div>
 
-                {whenToChoose.dietist.situations.map((sit, idx) => (
+                {whenToChoose.diëtist.situations.map((sit, idx) => (
                   <div key={idx} className="mb-6">
                     <h4 className="font-bold text-lg mb-2 text-gray-900">{sit.situation}</h4>
                     <ul className="space-y-1">
@@ -727,7 +727,7 @@ export default function DietistVsVoedingsdeskundigePage() {
 
                 <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded mt-6">
                   <p className="font-semibold text-green-800">
-                    ✅ {whenToChoose.dietist.summary}
+                    ✅ {whenToChoose.diëtist.summary}
                   </p>
                 </div>
               </div>
@@ -774,11 +774,11 @@ export default function DietistVsVoedingsdeskundigePage() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Dietist Checklist */}
+              {/* Diëtist Checklist */}
               <div className="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 shadow-md border border-green-200">
-                <h3 className="text-xl font-bold mb-4 text-green-800">{qualityChecklist.dietist.title}</h3>
+                <h3 className="text-xl font-bold mb-4 text-green-800">{qualityChecklist.diëtist.title}</h3>
                 <div className="space-y-3">
-                  {qualityChecklist.dietist.checks.map((check, idx) => (
+                  {qualityChecklist.diëtist.checks.map((check, idx) => (
                     <div key={idx} className={`p-3 rounded-lg ${check.critical ? 'bg-green-100 border-l-4 border-green-600' : 'bg-gray-50'}`}>
                       <div className="flex items-start gap-2 mb-1">
                         {check.critical ? (
@@ -852,27 +852,27 @@ export default function DietistVsVoedingsdeskundigePage() {
                 <tbody>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Eerste consult</td>
-                    <td className="p-4">{costComparison.dietist.consult1}</td>
+                    <td className="p-4">{costComparison.diëtist.consult1}</td>
                     <td className="p-4">{costComparison.voedingsdeskundige.consult1}</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Vervolgconsult</td>
-                    <td className="p-4">{costComparison.dietist.followUp}</td>
+                    <td className="p-4">{costComparison.diëtist.followUp}</td>
                     <td className="p-4">{costComparison.voedingsdeskundige.followUp}</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Zorgverzekering vergoedt</td>
-                    <td className="p-4 text-green-700 font-semibold">{costComparison.dietist.insurance}</td>
+                    <td className="p-4 text-green-700 font-semibold">{costComparison.diëtist.insurance}</td>
                     <td className="p-4 text-red-700 font-semibold">{costComparison.voedingsdeskundige.insurance}</td>
                   </tr>
                   <tr className="border-b bg-yellow-50">
                     <td className="p-4 font-bold">Netto kosten per consult</td>
-                    <td className="p-4 font-bold text-green-700">{costComparison.dietist.netCost}</td>
+                    <td className="p-4 font-bold text-green-700">{costComparison.diëtist.netCost}</td>
                     <td className="p-4 font-bold text-red-700">{costComparison.voedingsdeskundige.netCost}</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-bold">Compleet traject (8 sessies)</td>
-                    <td className="p-4 font-bold text-green-700">{costComparison.dietist.trajectory}</td>
+                    <td className="p-4 font-bold text-green-700">{costComparison.diëtist.trajectory}</td>
                     <td className="p-4 font-bold text-red-700">{costComparison.voedingsdeskundige.trajectory}</td>
                   </tr>
                 </tbody>

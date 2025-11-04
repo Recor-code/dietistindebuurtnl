@@ -401,7 +401,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Bedankt!</h3>
                 <p className="text-gray-600">
-                  We hebben je antwoorden ontvangen en gaan op zoek naar de beste Dietisten voor jou.
+                  We hebben je antwoorden ontvangen en gaan op zoek naar de beste Diëtisten voor jou.
                 </p>
               </div>
               <p className="text-sm text-gray-500 mb-6">

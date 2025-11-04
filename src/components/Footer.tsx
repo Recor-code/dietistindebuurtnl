@@ -10,12 +10,12 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Heart className="text-blue-400" size={24} />
               <div>
-                <span className="text-xl font-bold">Dietist in de Buurt</span>
-                <div className="text-sm text-gray-500 mt-1">De grootste directory voor Dietisten</div>
+                <span className="text-xl font-bold">Diëtist in de Buurt</span>
+                <div className="text-sm text-gray-500 mt-1">De grootste directory voor Diëtisten</div>
               </div>
             </div>
             <p className="text-gray-400">
-              Vind de beste Dietisten bij jou in de buurt.<br />
+              Vind de beste Diëtisten bij jou in de buurt.<br />
               Vergelijk reviews, beschikbaarheid en specialisaties om de perfecte match te vinden.
             </p>
           </div>
@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Dietist in de Buurt. Alle rechten voorbehouden.
+              © {new Date().getFullYear()} Diëtist in de Buurt. Alle rechten voorbehouden.
             </p>
             <div className="text-center">
               <a

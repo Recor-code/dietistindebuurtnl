@@ -2,7 +2,7 @@ import { MapPin, Tag } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Static blog posts data - 14 dietist articles
+// Static blog posts data - 14 diëtist articles
 const blogPosts = [
   {
     id: 'waarom-afvallen-niet-lukt',
@@ -133,7 +133,7 @@ const blogPosts = [
 ];
 
 export const metadata = {
-  title: 'Diëtiek Blog - Tips, Nieuws en Lokale Informatie | Dietist in de Buurt',
+  title: 'Diëtiek Blog - Tips, Nieuws en Lokale Informatie | Diëtist in de Buurt',
   description: 'Lees de laatste artikelen over voedingsadvies, tips voor dagelijks leven en lokale informatie per stad.',
 };
 

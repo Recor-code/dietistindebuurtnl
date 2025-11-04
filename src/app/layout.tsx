@@ -17,12 +17,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://dietistindebuurt.nl'),
   title: {
-    default: "Dietist in de Buurt | Vind de beste Dietisten bij jou in de buurt",
-    template: "%s | Dietist in de Buurt"
+    default: "Diëtist in de Buurt | Vind de beste Diëtisten bij jou in de buurt",
+    template: "%s | Diëtist in de Buurt"
   },
-  description: "De grootste directory voor Dietisten in Nederland en België. Vergelijk gecertificeerde dietisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
-  keywords: "Dietisten, Diëtiek, voedingsadvies, voedingsdeskundige, Nederland, België, voedingsbegeleiding",
-  authors: [{ name: "Dietist in de Buurt" }],
+  description: "De grootste directory voor Diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
+  keywords: "Diëtisten, Diëtiek, voedingsadvies, voedingsdeskundige, Nederland, België, voedingsbegeleiding",
+  authors: [{ name: "Diëtist in de Buurt" }],
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -44,26 +44,26 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Dietist in de Buurt | Vind de beste Dietisten bij jou in de buurt",
-    description: "De grootste directory voor Dietisten in Nederland en België. Vergelijk gecertificeerde dietisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
+    title: "Diëtist in de Buurt | Vind de beste Diëtisten bij jou in de buurt",
+    description: "De grootste directory voor Diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
     type: "website",
     locale: "nl_NL",
     alternateLocale: ["nl_BE"],
     url: "https://dietistindebuurt.nl",
-    siteName: "Dietist in de Buurt",
+    siteName: "Diëtist in de Buurt",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Dietist in de Buurt Logo"
+        alt: "Diëtist in de Buurt Logo"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dietist in de Buurt",
-    description: "Vind de beste Dietisten bij jou in de buurt. Vergelijk gecertificeerde dietisten en vind de perfecte match.",
+    title: "Diëtist in de Buurt",
+    description: "Vind de beste Diëtisten bij jou in de buurt. Vergelijk gecertificeerde diëtisten en vind de perfecte match.",
   },
   alternates: {
     canonical: "https://dietistindebuurt.nl",

@@ -33,12 +33,12 @@ const articleSchema = {
   description: 'Uitgebreide gids over cholesterol verlagen met voeding en hoe diëtisten helpen.',
   author: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl'
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Dietist in de Buurt',
+    name: 'Diëtist in de Buurt',
     url: 'https://dietistindebuurt.nl',
     logo: {
       '@type': 'ImageObject',
@@ -864,7 +864,7 @@ export default function HoogCholesterolDietistPage() {
             </div>
         </section>
 
-        {/* Dietist Role */}
+        {/* Diëtist Role */}
         <section className="py-16 px-6 md:px-12 bg-gradient-to-b from-purple-50 to-white">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Hoe Een Diëtist Je Helpt Cholesterol Te Verlagen
@@ -926,7 +926,7 @@ export default function HoogCholesterolDietistPage() {
             </div>
         </section>
 
-        {/* With vs Without Dietist */}
+        {/* With vs Without Diëtist */}
         <section className="py-16 px-6 md:px-12 bg-gray-50">
             <h2 className="text-3xl font-bold mb-12 text-center">
               {withVsWithout.title}

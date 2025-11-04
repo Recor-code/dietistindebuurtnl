@@ -17,14 +17,14 @@ export default function Header() {
             <div className="w-10 h-10 relative">
               <Image 
                 src="/logo.png"
-                alt="Dietist in de Buurt Logo"
+                alt="Diëtist in de Buurt Logo"
                 width={40}
                 height={40}
                 className="object-contain w-10 h-10"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-800 leading-tight">Dietist</span>
+              <span className="text-lg font-bold text-gray-800 leading-tight">Diëtist</span>
               <span className="text-sm text-gray-600 leading-tight">in de Buurt</span>
             </div>
           </Link>
@@ -59,14 +59,14 @@ export default function Header() {
               <div className="w-10 h-10 relative">
                 <Image 
                   src="/logo.png"
-                  alt="Dietist in de Buurt Logo"
+                  alt="Diëtist in de Buurt Logo"
                   width={40}
                   height={40}
                   className="object-contain w-10 h-10"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-gray-800 leading-tight">Dietist</span>
+                <span className="text-lg font-bold text-gray-800 leading-tight">Diëtist</span>
                 <span className="text-sm text-gray-600 leading-tight">in de Buurt</span>
               </div>
             </Link>

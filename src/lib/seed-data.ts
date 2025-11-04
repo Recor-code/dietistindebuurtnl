@@ -1,7 +1,7 @@
 import { supabaseServer } from '../../lib/supabase';
 import { allCities, adhdStatsTemplate, generateCityTldr } from '../data/cities';
 
-// Sample Dietisten data
+// Sample Diëtisten data
 const sampleCoaches = [
   {
     name: 'Dr. Sarah van den Berg',
@@ -60,8 +60,8 @@ const sampleCoaches = [
 // Sample FAQ items
 const sampleFAQ = [
   {
-    question: 'Wat is het verschil tussen een Dietist en een psycholoog?',
-    answer: 'Een Dietist richt zich vooral op praktische vaardigheden zoals planning, organisatie en tijdmanagement. Een psycholoog kan ook therapeutische behandeling bieden voor bijkomende problematiek zoals angst of depressie.',
+    question: 'Wat is het verschil tussen een Diëtist en een psycholoog?',
+    answer: 'Een Diëtist richt zich vooral op praktische vaardigheden zoals planning, organisatie en tijdmanagement. Een psycholoog kan ook therapeutische behandeling bieden voor bijkomende problematiek zoals angst of depressie.',
     category: 'Algemeen',
     order: 1
   },
@@ -79,7 +79,7 @@ const sampleFAQ = [
   },
   {
     question: 'Kan ik online voedingsadvies krijgen?',
-    answer: 'Ja, veel Dietisten bieden ook online coaching aan via videobellen. Dit kan handig zijn als er geen coach in je buurt is of als online beter uitkomt.',
+    answer: 'Ja, veel Diëtisten bieden ook online coaching aan via videobellen. Dit kan handig zijn als er geen coach in je buurt is of als online beter uitkomt.',
     category: 'Online',
     order: 4
   },
@@ -171,7 +171,7 @@ export async function seedDatabase() {
       const blogInserts = insertedCities.slice(0, 10).map((city) => ({
         title: `Diëtiek Coaching in ${city.name}: Wat Je Moet Weten`,
         slug: `adhd-coaching-${city.slug}`,
-        content: `<h2>Diëtiek Coaching in ${city.name}</h2><p>Ben je op zoek naar voedingsadvies in ${city.name}? In dit artikel bespreken we alles wat je moet weten over Diëtiek ondersteuning in jouw stad.</p><h3>Beschikbare Diëtiek Coaches</h3><p>In ${city.name} zijn verschillende ervaren Dietisten actief die je kunnen helpen met praktische vaardigheden...</p>`,
+        content: `<h2>Diëtiek Coaching in ${city.name}</h2><p>Ben je op zoek naar voedingsadvies in ${city.name}? In dit artikel bespreken we alles wat je moet weten over Diëtiek ondersteuning in jouw stad.</p><h3>Beschikbare Diëtiek Coaches</h3><p>In ${city.name} zijn verschillende ervaren Diëtisten actief die je kunnen helpen met praktische vaardigheden...</p>`,
         excerpt: `Ontdek alles over voedingsadvies mogelijkheden in ${city.name}. Van lokale coaches tot specialisaties.`,
         meta_description: `voedingsadvies in ${city.name} - Vind ervaren coaches, bekijk reviews en vergelijk specialisaties in jouw stad.`,
         city_id: city.id,

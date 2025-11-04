@@ -169,12 +169,12 @@ export const belgianCities: CityData[] = [
 
 export const allCities = [...dutchCities, ...belgianCities];
 
-// Dietist statistics templates for cities
+// Diëtist statistics templates for cities
 export const adhdStatsTemplate = {
   prevalenceAdults: '30-40%',
   prevalenceChildren: '15-20%',
   waitingTimeAverageWeeks: 4,
-  availableCoaches: 0, // Will be calculated based on actual dietists
+  availableCoaches: 0, // Will be calculated based on actual diëtisten
   averageRating: 4.5,
   treatmentTypes: [
     'Voedingsadvies',
@@ -186,9 +186,9 @@ export const adhdStatsTemplate = {
 };
 
 export const cityTldrTemplates = [
-  'Dietist zoeken in {city}? Ontdek ervaren professionals die jou helpen met gezonde voeding, afvallen en voedingsadvies.',
+  'Diëtist zoeken in {city}? Ontdek ervaren professionals die jou helpen met gezonde voeding, afvallen en voedingsadvies.',
   'Professionele voedingsadvies in {city}. Van dieetbegeleiding tot sportvoeding - vind de juiste hulp bij jou in de buurt.',
-  'Dietist in {city}: bekijk reviews, beschikbaarheid en specialisaties van lokale dietisten.',
+  'Diëtist in {city}: bekijk reviews, beschikbaarheid en specialisaties van lokale diëtisten.',
 ];
 
 export function generateCityTldr(cityName: string): string {
