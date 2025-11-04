@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Users } from 'lucide-react';
 
 // Static blog posts data - latest 3 articles
 const latestPosts = [
@@ -10,7 +9,6 @@ const latestPosts = [
     excerpt: 'Ontdek waarom 95% van de diëten faalt en hoe professionele begeleiding het verschil maakt voor duurzaam gewichtsverlies.',
     publishedAt: '2025-10-14',
     readingTime: '15 min leestijd',
-    shares: '4.7K',
   },
   {
     title: 'Hoeveel Kilo Per Week Afvallen is Gezond? Complete Gids 2025',
@@ -18,7 +16,6 @@ const latestPosts = [
     excerpt: 'Leer wat een gezond en haalbaar afvalltempo is, hoe je dit bereikt zonder jojo-effect, en wanneer een dietist kan helpen.',
     publishedAt: '2025-10-14',
     readingTime: '12 min leestijd',
-    shares: '4.7K',
   },
   {
     title: 'Wat Kost een Diëtist? Prijzen, Vergoeding & Kosten Overzicht 2025',
@@ -26,7 +23,6 @@ const latestPosts = [
     excerpt: 'Complete overzicht van diëtist kosten in Nederland en België. Tarieven, verzekeringsdekking en waar je op moet letten.',
     publishedAt: '2025-10-14',
     readingTime: '10 min leestijd',
-    shares: '4.7K',
   },
 ];
 
@@ -51,12 +47,6 @@ export default function BlogPostsSection() {
               />
             </div>
             <div className="p-6">
-              <div className="flex items-center justify-end mb-3">
-                <div className="flex items-center gap-1 text-sm text-blue-600 font-medium">
-                  <Users className="w-4 h-4" />
-                  <span>{post.shares}</span>
-                </div>
-              </div>
               <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                 {post.title}
               </h4>
