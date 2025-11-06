@@ -78,7 +78,7 @@ export default function DankUPremiumPositiePage() {
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span>Je gekozen stad(en) te bevestigen</span>
+                        <span>Je gekozen stad te bevestigen</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -104,7 +104,7 @@ export default function DankUPremiumPositiePage() {
                       3. Activatie (binnen 48 uur)
                     </h3>
                     <p className="text-gray-700">
-                      Je premium positie wordt binnen 48 uur geactiveerd. Je profiel verschijnt bovenaan in jouw gekozen stad(en) met een premium crown badge.
+                      Je premium positie wordt binnen 48 uur geactiveerd. Je profiel verschijnt bovenaan in jouw gekozen stad met een premium crown badge.
                     </p>
                   </div>
                 </div>
