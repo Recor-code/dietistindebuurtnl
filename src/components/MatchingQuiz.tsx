@@ -450,7 +450,7 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
               <button
                 onClick={handleSubmit}
                 disabled={!canProceed() || isSubmitting}
-                className={`px-6 py-2 rounded-lg transition-colors ${
+                className={`optin-ok px-6 py-2 rounded-lg transition-colors ${
                   canProceed() && !isSubmitting
                     ? 'bg-green-500 hover:bg-green-600 text-white'
                     : 'bg-gray-200 text-gray-400 cursor-not-allowed'
