@@ -247,7 +247,10 @@ export default function PremiumPositiePage() {
                   </li>
                 </ul>
                 <a
-                  href="https://shop-nu.plugandpay.nl/checkout/premium-positie-1-adhdcoachindebuurt"
+                  href={isAnnual 
+                    ? "https://checkout.scalepulse.nl/b/3cI14peB9flBdDtfa96EU0m"
+                    : "https://checkout.scalepulse.nl/b/3cI14p2Sr0qHgPF8LL6EU0l"
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-900 text-center py-4 rounded-lg font-bold hover:from-yellow-500 hover:to-amber-600 transition-colors shadow-lg"
@@ -305,7 +308,10 @@ export default function PremiumPositiePage() {
                   </li>
                 </ul>
                 <a
-                  href="https://shop-nu.plugandpay.nl/checkout/premium-positie-2-adhdcoachindebuurt"
+                  href={isAnnual
+                    ? "https://checkout.scalepulse.nl/b/4gM28t2Srehxarh4vv6EU0o"
+                    : "https://checkout.scalepulse.nl/b/9B6aEZakTgpFarh8LL6EU0n"
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-amber-600 text-white text-center py-4 rounded-lg font-bold hover:bg-amber-700 transition-colors shadow-lg"
@@ -363,7 +369,10 @@ export default function PremiumPositiePage() {
                   </li>
                 </ul>
                 <a
-                  href="https://shop-nu.plugandpay.nl/checkout/premium-positie-3-adhdcoachindebuurt"
+                  href={isAnnual
+                    ? "https://checkout.scalepulse.nl/b/4gM3cxboX7T92YPged6EU0q"
+                    : "https://checkout.scalepulse.nl/b/eVqeVf8cL4GX2YP7HH6EU0p"
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-amber-600 text-white text-center py-4 rounded-lg font-bold hover:bg-amber-700 transition-colors shadow-lg"
