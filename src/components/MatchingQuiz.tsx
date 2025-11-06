@@ -40,11 +40,11 @@ const MatchingQuiz: React.FC<MatchingQuizProps> = ({ isOpen, onClose }) => {
   const totalSteps = 6;
 
   const ageOptions = [
-    '0-12 jaar (kind)',
     '13-17 jaar (tiener)', 
     '18-25 jaar (jongvolwassene)',
     '26-45 jaar (volwassene)',
-    '46+ jaar (ouder volwassene)'
+    '46-60 jaar',
+    '60+ jaar'
   ];
 
   const goalOptions = [
