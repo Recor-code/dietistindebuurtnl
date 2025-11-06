@@ -378,7 +378,7 @@ export default function CityPage({ params }: PageProps) {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {filteredPlaces.slice(0, visibleCount).map((place, index) => {
-              const isTopResult = index < 4;
+              const isTopResult = index < 3;
               const topPosition = index + 1;
 
               return (
