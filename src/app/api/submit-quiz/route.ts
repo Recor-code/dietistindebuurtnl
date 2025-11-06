@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
     
     // Submit to n8n webhook
     try {
-      const webhookResponse = await fetch('https://n8n-595.workflowapp.ai/webhook/2000b831-93f2-407d-b0c2-eae969395796', {
+      const webhookResponse = await fetch('https://n8n-595.workflowapp.ai/webhook/47e63627-c0a7-4af8-961d-d3f9c176c879', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
