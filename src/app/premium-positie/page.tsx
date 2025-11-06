@@ -164,7 +164,7 @@ export default function PremiumPositiePage() {
               Kies Jouw Positie
             </h2>
             <p className="text-xl text-center text-gray-600 mb-2">
-              Slechts 4 plekken per stad. Wie het eerst komt, het eerst maalt.
+              Slechts 3 plekken per stad. Wie het eerst komt, het eerst maalt.
             </p>
             <p className="text-center text-red-600 font-bold mb-8">
               ⚠️ Als je stad vol is, kom je op de wachtlijst. Volgende beschikbaarheid kan maanden duren.
@@ -192,7 +192,7 @@ export default function PremiumPositiePage() {
               </span>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {/* Position 1 */}
               <div className="bg-white rounded-xl shadow-2xl border-4 border-yellow-400 p-4 relative transform hover:scale-105 transition-transform">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -372,63 +372,6 @@ export default function PremiumPositiePage() {
                 </a>
               </div>
 
-              {/* Position 4 */}
-              <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-4 transform hover:scale-105 transition-transform">
-                <div className="text-center mb-6">
-                  <Crown className="w-16 h-16 text-amber-400 mx-auto mb-4" />
-                  <h3 className="text-3xl font-bold mb-2">Positie #4</h3>
-                  <p className="text-gray-600">Goede zichtbaarheid, beste prijs.</p>
-                </div>
-                <div className="text-center mb-6">
-                  {!isAnnual ? (
-                    <div className="mb-3">
-                      <span className="text-5xl font-bold text-gray-900">€47</span>
-                      <span className="text-gray-600">/maand</span>
-                    </div>
-                  ) : (
-                    <div>
-                      <div className="mb-2">
-                        <span className="text-5xl font-bold text-gray-900">€470</span>
-                        <span className="text-gray-600">/jaar</span>
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        <div className="line-through text-gray-400">i.p.v. €564</div>
-                        <div className="text-xs text-green-600 font-bold">Bespaar €94/jaar (2 maanden gratis!)</div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Vierde premium positie</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Op jouw gekozen stadspagina</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Premium crown badge</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Zichtbaarheid boven standaard resultaten</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Maandelijkse performance rapportage</span>
-                  </li>
-                </ul>
-                <a
-                  href="https://shop-nu.plugandpay.nl/checkout/premium-positie-4-adhdcoachindebuurt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-amber-600 text-white text-center py-4 rounded-lg font-bold hover:bg-amber-700 transition-colors shadow-lg"
-                >
-                  Claim Positie #4
-                </a>
-              </div>
             </div>
 
             <div className="bg-red-50 border-2 border-red-300 rounded-lg p-6 text-center">
