@@ -217,7 +217,10 @@ export default function BannerPage() {
                   </li>
                 </ul>
                 <Link
-                  href="/contact"
+                  href={isAnnual 
+                    ? "https://checkout.scalepulse.nl/b/fZueVf0Kja1hczp2nn6EU0Y?locale=nl"
+                    : "https://checkout.scalepulse.nl/b/28EbJ3eB94GX56Xd216EU0V?locale=nl"
+                  }
                   className="block w-full bg-yellow-400 text-gray-900 text-center py-4 rounded-lg font-bold hover:bg-yellow-500 transition-colors"
                 >
                   Reserveer Nu
@@ -270,7 +273,10 @@ export default function BannerPage() {
                   </li>
                 </ul>
                 <Link
-                  href="/contact"
+                  href={isAnnual
+                    ? "https://checkout.scalepulse.nl/b/14A14pboX4GXarhged6EU0X?locale=nl"
+                    : "https://checkout.scalepulse.nl/b/bJecN750z1uL1UL2nn6EU0W?locale=nl"
+                  }
                   className="block w-full bg-sky-600 text-white text-center py-4 rounded-lg font-bold hover:bg-sky-700 transition-colors"
                 >
                   Reserveer Nu
@@ -323,7 +329,10 @@ export default function BannerPage() {
                   </li>
                 </ul>
                 <Link
-                  href="/contact"
+                  href={isAnnual
+                    ? "https://checkout.scalepulse.nl/b/4gMbJ350z2yP56XaTT6EU10?locale=nl"
+                    : "https://checkout.scalepulse.nl/b/00w14p2Sr6P556Xe656EU0Z?locale=nl"
+                  }
                   className="block w-full bg-sky-600 text-white text-center py-4 rounded-lg font-bold hover:bg-sky-700 transition-colors"
                 >
                   Reserveer Nu
