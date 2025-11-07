@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import { CheckCircle, Crown, TrendingUp, Users, Target, Zap, Award, DollarSign } from 'lucide-react';
 
 export default function PremiumPositiePage() {
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [isAnnual, setIsAnnual] = useState(true);
 
   return (
     <div className="min-h-screen flex flex-col bg-white scroll-smooth">
