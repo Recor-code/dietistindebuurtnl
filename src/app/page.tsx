@@ -63,7 +63,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative isolate py-12 sm:py-16 px-4 min-h-[55vh] flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/20 before:z-0" style={{backgroundImage: "url('/adhd-bg3.webp')"}}>
+      <section className="relative isolate py-12 sm:py-16 px-4 min-h-[55vh] flex items-center bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/30 before:z-0" style={{backgroundImage: "url('/dietist-hero-bg.jpg')"}}>
         <div className="w-full mx-auto text-center relative z-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg px-4">
             Vind de beste Diëtisten<br className="hidden sm:block" />
