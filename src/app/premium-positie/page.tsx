@@ -248,8 +248,8 @@ export default function PremiumPositiePage() {
                 </ul>
                 <a
                   href={isAnnual 
-                    ? "https://checkout.scalepulse.nl/b/3cI14peB9flBdDtfa96EU0m"
-                    : "https://checkout.scalepulse.nl/b/3cI14p2Sr0qHgPF8LL6EU0l"
+                    ? "https://checkout.scalepulse.nl/b/3cI14peB9flBdDtfa96EU0m?locale=nl"
+                    : "https://checkout.scalepulse.nl/b/3cI14p2Sr0qHgPF8LL6EU0l?locale=nl"
                   }
                   target="_blank"
                   rel="noopener noreferrer"
@@ -309,8 +309,8 @@ export default function PremiumPositiePage() {
                 </ul>
                 <a
                   href={isAnnual
-                    ? "https://checkout.scalepulse.nl/b/4gM28t2Srehxarh4vv6EU0o"
-                    : "https://checkout.scalepulse.nl/b/9B6aEZakTgpFarh8LL6EU0n"
+                    ? "https://checkout.scalepulse.nl/b/4gM28t2Srehxarh4vv6EU0o?locale=nl"
+                    : "https://checkout.scalepulse.nl/b/9B6aEZakTgpFarh8LL6EU0n?locale=nl"
                   }
                   target="_blank"
                   rel="noopener noreferrer"
@@ -370,8 +370,8 @@ export default function PremiumPositiePage() {
                 </ul>
                 <a
                   href={isAnnual
-                    ? "https://checkout.scalepulse.nl/b/4gM3cxboX7T92YPged6EU0q"
-                    : "https://checkout.scalepulse.nl/b/eVqeVf8cL4GX2YP7HH6EU0p"
+                    ? "https://checkout.scalepulse.nl/b/4gM3cxboX7T92YPged6EU0q?locale=nl"
+                    : "https://checkout.scalepulse.nl/b/eVqeVf8cL4GX2YP7HH6EU0p?locale=nl"
                   }
                   target="_blank"
                   rel="noopener noreferrer"
