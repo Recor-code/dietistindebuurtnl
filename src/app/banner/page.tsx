@@ -1,19 +1,14 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { CheckCircle, Users, TrendingUp, Target, Zap, Award } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Adverteer op Diëtiek Coach in de Buurt | Premium Bannerplekken',
-  description: 'Bereik duizenden mensen die actief zoeken naar Diëtiek hulp. Exclusieve bannerplekken op de grootste Diëtiek coach directory van Nederland en België.',
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
-
 export default function BannerPage() {
+  const [isAnnual, setIsAnnual] = useState(true);
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -125,8 +120,8 @@ export default function BannerPage() {
                 <div>
                   <h3 className="text-2xl font-bold mb-3 text-gray-900">Waarom Dit Eigenlijk Te Goedkoop Is</h3>
                   <p className="text-lg text-gray-700 mb-4">
-                    Als je €499/maand betaalt en je krijgt 5 nieuwe klanten binnen... hoeveel is dat waard? 
-                    Bij een gemiddelde Diëtiek coaching package van €1500-3000 praat je over €7500-15000 omzet.
+                    Als je €997/maand betaalt voor de City Top Banner en je krijgt 10 nieuwe klanten binnen... hoeveel is dat waard? 
+                    Bij een gemiddelde diëtist package van €1500-3000 praat je over €15.000-30.000 omzet.
                   </p>
                   <p className="text-lg font-semibold text-sky-700">
                     Dat is een 15-30x return. En je concurrent krijgt deze klanten NU als jij dit niet doet.
@@ -143,9 +138,31 @@ export default function BannerPage() {
             <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
               Beschikbare Bannerplekken
             </h2>
-            <p className="text-xl text-center text-gray-600 mb-12">
+            <p className="text-xl text-center text-gray-600 mb-2">
               Beperkte plekken. First come, first served.
             </p>
+
+            {/* Monthly/Annual Toggle */}
+            <div className="flex justify-center items-center gap-4 mb-12">
+              <span className={`text-lg font-semibold ${!isAnnual ? 'text-sky-600' : 'text-gray-500'}`}>
+                Maandelijks
+              </span>
+              <button
+                onClick={() => setIsAnnual(!isAnnual)}
+                className="relative inline-flex h-8 w-16 items-center rounded-full bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                style={{ backgroundColor: isAnnual ? '#0ea5e9' : '#e5e7eb' }}
+              >
+                <span
+                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
+                    isAnnual ? 'translate-x-9' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className={`text-lg font-semibold ${isAnnual ? 'text-sky-600' : 'text-gray-500'}`}>
+                Jaarlijks
+                <span className="ml-2 text-sm text-green-600 font-bold">(-17%)</span>
+              </span>
+            </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {/* Premium Spot */}
@@ -156,32 +173,47 @@ export default function BannerPage() {
                   </span>
                 </div>
                 <Award className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-center mb-2">Premium Positie</h3>
-                <p className="text-center text-gray-600 mb-6">Eerste banner, hoogste zichtbaarheid</p>
+                <h3 className="text-2xl font-bold text-center mb-2">City Top Banner</h3>
+                <p className="text-center text-gray-600 mb-6">Bovenste positie op alle stadspagina's</p>
                 <div className="text-center mb-6">
-                  <span className="text-5xl font-bold text-gray-900">€499</span>
-                  <span className="text-gray-600">/maand</span>
+                  {!isAnnual ? (
+                    <div className="mb-3">
+                      <span className="text-5xl font-bold text-gray-900">€997</span>
+                      <span className="text-gray-600">/maand</span>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-5xl font-bold text-gray-900">€9.970</span>
+                        <span className="text-gray-600">/jaar</span>
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        <div className="line-through text-gray-400">i.p.v. €11.964</div>
+                        <div className="text-xs text-green-600 font-bold">Bespaar €1.994/jaar (2 maanden gratis!)</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Bovenste bannerlocatie</span>
+                    <span>Top bannerlocatie op alle stadspagina's</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Op alle 415+ stadspagina's</span>
+                    <span>Zichtbaar op alle 415+ steden</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Homepage plaatsing</span>
+                    <span>Hoogste zichtbaarheid & conversie</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Maandelijkse statistieken</span>
+                    <span>Maandelijkse click & impression statistieken</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Doorklikken naar jouw website</span>
+                    <span>Direct doorklikken naar jouw website</span>
                   </li>
                 </ul>
                 <Link
@@ -194,32 +226,47 @@ export default function BannerPage() {
 
               {/* Standard Spot 1 */}
               <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-8 transform hover:scale-105 transition-transform">
-                <h3 className="text-2xl font-bold text-center mb-2">Standaard Positie</h3>
-                <p className="text-center text-gray-600 mb-6">Tweede banner positie</p>
+                <h3 className="text-2xl font-bold text-center mb-2">City Footer Banner</h3>
+                <p className="text-center text-gray-600 mb-6">Onderaan op alle stadspagina's</p>
                 <div className="text-center mb-6">
-                  <span className="text-5xl font-bold text-gray-900">€349</span>
-                  <span className="text-gray-600">/maand</span>
+                  {!isAnnual ? (
+                    <div className="mb-3">
+                      <span className="text-5xl font-bold text-gray-900">€797</span>
+                      <span className="text-gray-600">/maand</span>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-5xl font-bold text-gray-900">€7.970</span>
+                        <span className="text-gray-600">/jaar</span>
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        <div className="line-through text-gray-400">i.p.v. €9.564</div>
+                        <div className="text-xs text-green-600 font-bold">Bespaar €1.594/jaar (2 maanden gratis!)</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Tweede bannerlocatie</span>
+                    <span>Footer banner op alle stadspagina's</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Op alle stadspagina's</span>
+                    <span>Zichtbaar op alle 415+ steden</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Homepage plaatsing</span>
+                    <span>Hoge zichtbaarheid aan einde pagina</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Maandelijkse statistieken</span>
+                    <span>Maandelijkse click & impression statistieken</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Doorklikken naar jouw website</span>
+                    <span>Direct doorklikken naar jouw website</span>
                   </li>
                 </ul>
                 <Link
@@ -232,32 +279,47 @@ export default function BannerPage() {
 
               {/* Standard Spot 2 */}
               <div className="bg-white rounded-xl shadow-xl border-2 border-gray-300 p-8 transform hover:scale-105 transition-transform">
-                <h3 className="text-2xl font-bold text-center mb-2">Basis Positie</h3>
-                <p className="text-center text-gray-600 mb-6">Derde banner positie</p>
+                <h3 className="text-2xl font-bold text-center mb-2">Homepage Footer Banner</h3>
+                <p className="text-center text-gray-600 mb-6">Onderaan op de homepage</p>
                 <div className="text-center mb-6">
-                  <span className="text-5xl font-bold text-gray-900">€249</span>
-                  <span className="text-gray-600">/maand</span>
+                  {!isAnnual ? (
+                    <div className="mb-3">
+                      <span className="text-5xl font-bold text-gray-900">€497</span>
+                      <span className="text-gray-600">/maand</span>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="mb-2">
+                        <span className="text-5xl font-bold text-gray-900">€4.970</span>
+                        <span className="text-gray-600">/jaar</span>
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        <div className="line-through text-gray-400">i.p.v. €5.964</div>
+                        <div className="text-xs text-green-600 font-bold">Bespaar €994/jaar (2 maanden gratis!)</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Derde bannerlocatie</span>
+                    <span>Footer banner op de homepage</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Op alle stadspagina's</span>
+                    <span>Zichtbaar op de hoofdpagina</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Homepage plaatsing</span>
+                    <span>Breed publieksbereik</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Maandelijkse statistieken</span>
+                    <span>Maandelijkse click & impression statistieken</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Doorklikken naar jouw website</span>
+                    <span>Direct doorklikken naar jouw website</span>
                   </li>
                 </ul>
                 <Link
