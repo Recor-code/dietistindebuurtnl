@@ -2,7 +2,7 @@
 
 import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
-import { MapPin, Star, Phone, Mail, Globe, Clock, Users } from 'lucide-react';
+import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Scale, Dumbbell, Apple, Baby, Activity, Pill, Heart, Timer, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
@@ -73,6 +73,15 @@ async function getCityWithPlaces(slug: string) {
       acceptsInsurance: place.basisverzekering_filter === 'yes',
       studentFriendly: place.studenten_filter === 'yes',
       englishSpeaking: place.english_filter === 'yes',
+      gewichtsmanagement: place.gewichtsmanagement_filter === 'yes',
+      fitness: place.fitness_filter === 'yes',
+      spijsverteringsproblemen: place.spijsverteringsproblemen_filter === 'yes',
+      zwangerschap: place.zwangerschap_filter === 'yes',
+      bloedonderzoek: place.bloedonderzoek_filter === 'yes',
+      diabetes: place.diabetes_filter === 'yes',
+      voedselallergieen: place.voedselallergieen_filter === 'yes',
+      wachttijd: place.wachttijd_filter === 'yes',
+      maaltijdplannen: place.maaltijdplannen_filter === 'yes',
       openingHours: place['OPENING HOURS'],
       mainImageUrl: place['MAIN IMAGE URL'],
       resultPosition: place['RESULT POSITION'] || 999999,
@@ -92,7 +101,16 @@ export default function CityPage({ params }: PageProps) {
     kindvriendelijk: false,
     weekend: false,
     hoogsteBeoordeling: false,
-    englishSpeaking: false
+    englishSpeaking: false,
+    gewichtsmanagement: false,
+    fitness: false,
+    spijsverteringsproblemen: false,
+    zwangerschap: false,
+    bloedonderzoek: false,
+    diabetes: false,
+    voedselallergieen: false,
+    wachttijd: false,
+    maaltijdplannen: false
   });
   const [visibleCount, setVisibleCount] = useState(30);
 
@@ -137,6 +155,33 @@ export default function CityPage({ params }: PageProps) {
   }
   if (filters.englishSpeaking) {
     filteredPlaces = filteredPlaces.filter(place => place.englishSpeaking);
+  }
+  if (filters.gewichtsmanagement) {
+    filteredPlaces = filteredPlaces.filter(place => place.gewichtsmanagement);
+  }
+  if (filters.fitness) {
+    filteredPlaces = filteredPlaces.filter(place => place.fitness);
+  }
+  if (filters.spijsverteringsproblemen) {
+    filteredPlaces = filteredPlaces.filter(place => place.spijsverteringsproblemen);
+  }
+  if (filters.zwangerschap) {
+    filteredPlaces = filteredPlaces.filter(place => place.zwangerschap);
+  }
+  if (filters.bloedonderzoek) {
+    filteredPlaces = filteredPlaces.filter(place => place.bloedonderzoek);
+  }
+  if (filters.diabetes) {
+    filteredPlaces = filteredPlaces.filter(place => place.diabetes);
+  }
+  if (filters.voedselallergieen) {
+    filteredPlaces = filteredPlaces.filter(place => place.voedselallergieen);
+  }
+  if (filters.wachttijd) {
+    filteredPlaces = filteredPlaces.filter(place => place.wachttijd);
+  }
+  if (filters.maaltijdplannen) {
+    filteredPlaces = filteredPlaces.filter(place => place.maaltijdplannen);
   }
   if (filters.hoogsteBeoordeling) {
     // Sort by weighted score: considers both rating AND review count
@@ -366,6 +411,105 @@ export default function CityPage({ params }: PageProps) {
               >
                 <Globe size={16} />
                 English Speaking
+              </button>
+              <button 
+                onClick={() => toggleFilter('gewichtsmanagement')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.gewichtsmanagement 
+                    ? 'bg-pink-600 text-white border-pink-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-pink-400 hover:bg-pink-50'
+                }`}
+              >
+                <Scale size={16} />
+                Gewichtsmanagement
+              </button>
+              <button 
+                onClick={() => toggleFilter('fitness')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.fitness 
+                    ? 'bg-orange-600 text-white border-orange-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-orange-400 hover:bg-orange-50'
+                }`}
+              >
+                <Dumbbell size={16} />
+                Fitness & Sportvoeding
+              </button>
+              <button 
+                onClick={() => toggleFilter('spijsverteringsproblemen')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.spijsverteringsproblemen 
+                    ? 'bg-teal-600 text-white border-teal-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-teal-400 hover:bg-teal-50'
+                }`}
+              >
+                <Apple size={16} />
+                Spijsverteringsproblemen
+              </button>
+              <button 
+                onClick={() => toggleFilter('zwangerschap')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.zwangerschap 
+                    ? 'bg-rose-600 text-white border-rose-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-rose-400 hover:bg-rose-50'
+                }`}
+              >
+                <Baby size={16} />
+                Zwangerschap & Borstvoeding
+              </button>
+              <button 
+                onClick={() => toggleFilter('bloedonderzoek')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.bloedonderzoek 
+                    ? 'bg-red-600 text-white border-red-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-red-400 hover:bg-red-50'
+                }`}
+              >
+                <Activity size={16} />
+                Bloedonderzoek
+              </button>
+              <button 
+                onClick={() => toggleFilter('diabetes')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.diabetes 
+                    ? 'bg-indigo-600 text-white border-indigo-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-indigo-400 hover:bg-indigo-50'
+                }`}
+              >
+                <Pill size={16} />
+                Diabetes
+              </button>
+              <button 
+                onClick={() => toggleFilter('voedselallergieen')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.voedselallergieen 
+                    ? 'bg-amber-600 text-white border-amber-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-amber-400 hover:bg-amber-50'
+                }`}
+              >
+                <Heart size={16} />
+                Voedselallergie
+              </button>
+              <button 
+                onClick={() => toggleFilter('wachttijd')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.wachttijd 
+                    ? 'bg-cyan-600 text-white border-cyan-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-cyan-400 hover:bg-cyan-50'
+                }`}
+              >
+                <Timer size={16} />
+                Korte wachttijd
+              </button>
+              <button 
+                onClick={() => toggleFilter('maaltijdplannen')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.maaltijdplannen 
+                    ? 'bg-lime-600 text-white border-lime-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-lime-400 hover:bg-lime-50'
+                }`}
+              >
+                <Calendar size={16} />
+                Maaltijdplannen
               </button>
             </div>
 
