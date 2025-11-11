@@ -19,13 +19,13 @@ async function getCityForMetadata(slug: string) {
       return null;
     }
 
-    // Get coach count for this city
-    const { count: coachCount } = await supabase
-      .from('coaches')
+    // Get places count for this city (using CITY column to match city name)
+    const { count: placesCount } = await supabase
+      .from('places')
       .select('*', { count: 'exact', head: true })
-      .eq('city_id', city.id);
+      .eq('CITY', city.name);
 
-    return { ...city, coachCount: coachCount || 0 };
+    return { ...city, coachCount: placesCount || 0 };
   } catch (error) {
     console.error('Error fetching city for metadata:', error);
     return null;
@@ -43,13 +43,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `Diëtiek Coaches in ${city.name} | Vind lokale Diëtiek ondersteuning`;
-  const description = `Ontdek ${city.coachCount} gecertificeerde Diëtisten in ${city.name}, ${city.province}. Vergelijk specialisaties, bekijk reviews en vind de perfecte diëtist bij jou in de buurt.`;
+  const title = `Diëtisten in ${city.name} | Vind lokale voedingsbegeleiding`;
+  const description = `Ontdek ${city.coachCount} gecertificeerde diëtisten in ${city.name}, ${city.province}. Vergelijk specialisaties, bekijk reviews en vind de perfecte diëtist bij jou in de buurt.`;
 
   return {
     title,
     description,
-    keywords: `Diëtist ${city.name}, voedingsadvies ${city.name}, Diëtiek behandeling ${city.province}, gedragstherapeut ${city.name}, Diëtiek hulp ${city.country}`,
+    keywords: `diëtist ${city.name}, voedingsadvies ${city.name}, voedingsbegeleiding ${city.province}, voedingsdeskundige ${city.name}, diëtiste ${city.country}`,
     openGraph: {
       title,
       description,
@@ -60,8 +60,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Diëtiek Coaches in ${city.name}`,
-      description: `Vind de beste Diëtisten in ${city.name}. ${city.coachCount} gecertificeerde professionals beschikbaar.`,
+      title: `Diëtisten in ${city.name}`,
+      description: `Vind de beste diëtisten in ${city.name}. ${city.coachCount} gecertificeerde professionals beschikbaar.`,
     },
     alternates: {
       canonical: `https://dietistindebuurt.nl/stad/${slug}`,
