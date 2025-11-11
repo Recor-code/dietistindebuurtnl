@@ -42,6 +42,17 @@ async function getCityWithPlaces(slug: string) {
     }
 
     console.log(`👥 Found ${places?.length || 0} places for ${city.name}`);
+    
+    // Debug: Check first place's filter values
+    if (places && places.length > 0) {
+      console.log('🔍 First place filter values:', {
+        name: places[0]['NAME'],
+        gewichtsmanagement_filter: places[0].gewichtsmanagement_filter,
+        fitness_filter: places[0].fitness_filter,
+        english_filter: places[0].english_filter,
+        diabetes_filter: places[0].diabetes_filter,
+      });
+    }
 
     // Transform data
     const transformedCity = {
@@ -68,20 +79,20 @@ async function getCityWithPlaces(slug: string) {
       longitude: place['LNG'] ? parseFloat(place['LNG']) : null,
       rating: place['SCORE'] ? parseFloat(place['SCORE']) : null,
       reviewCount: place['RATINGS'] ? parseInt(place['RATINGS']) : 0,
-      isChildFriendly: place.kindvriendelijk_filter === 'yes',
-      weekendAvailable: place.weekend_beschikbaar_filter === 'yes',
-      acceptsInsurance: place.basisverzekering_filter === 'yes',
-      studentFriendly: place.studenten_filter === 'yes',
-      englishSpeaking: place.english_filter === 'yes',
-      gewichtsmanagement: place.gewichtsmanagement_filter === 'yes',
-      fitness: place.fitness_filter === 'yes',
-      spijsverteringsproblemen: place.spijsverteringsproblemen_filter === 'yes',
-      zwangerschap: place.zwangerschap_filter === 'yes',
-      bloedonderzoek: place.bloedonderzoek_filter === 'yes',
-      diabetes: place.diabetes_filter === 'yes',
-      voedselallergieen: place.voedselallergieen_filter === 'yes',
-      wachttijd: place.wachttijd_filter === 'yes',
-      maaltijdplannen: place.maaltijdplannen_filter === 'yes',
+      isChildFriendly: place.kindvriendelijk_filter?.toLowerCase() === 'yes',
+      weekendAvailable: place.weekend_beschikbaar_filter?.toLowerCase() === 'yes',
+      acceptsInsurance: place.basisverzekering_filter?.toLowerCase() === 'yes',
+      studentFriendly: place.studenten_filter?.toLowerCase() === 'yes',
+      englishSpeaking: place.english_filter?.toLowerCase() === 'yes',
+      gewichtsmanagement: place.gewichtsmanagement_filter?.toLowerCase() === 'yes',
+      fitness: place.fitness_filter?.toLowerCase() === 'yes',
+      spijsverteringsproblemen: place.spijsverteringsproblemen_filter?.toLowerCase() === 'yes',
+      zwangerschap: place.zwangerschap_filter?.toLowerCase() === 'yes',
+      bloedonderzoek: place.bloedonderzoek_filter?.toLowerCase() === 'yes',
+      diabetes: place.diabetes_filter?.toLowerCase() === 'yes',
+      voedselallergieen: place.voedselallergieen_filter?.toLowerCase() === 'yes',
+      wachttijd: place.wachttijd_filter?.toLowerCase() === 'yes',
+      maaltijdplannen: place.maaltijdplannen_filter?.toLowerCase() === 'yes',
       openingHours: place['OPENING HOURS'],
       mainImageUrl: place['MAIN IMAGE URL'],
       resultPosition: place['RESULT POSITION'] || 999999,
@@ -143,6 +154,22 @@ export default function CityPage({ params }: PageProps) {
   }
 
   const adhdStats = city.adhd_stats ? JSON.parse(city.adhd_stats) : null;
+  
+  // Count how many places match each filter (for debugging)
+  const filterCounts = {
+    kindvriendelijk: city.places.filter((p: any) => p.isChildFriendly).length,
+    weekend: city.places.filter((p: any) => p.weekendAvailable).length,
+    englishSpeaking: city.places.filter((p: any) => p.englishSpeaking).length,
+    gewichtsmanagement: city.places.filter((p: any) => p.gewichtsmanagement).length,
+    fitness: city.places.filter((p: any) => p.fitness).length,
+    spijsverteringsproblemen: city.places.filter((p: any) => p.spijsverteringsproblemen).length,
+    zwangerschap: city.places.filter((p: any) => p.zwangerschap).length,
+    bloedonderzoek: city.places.filter((p: any) => p.bloedonderzoek).length,
+    diabetes: city.places.filter((p: any) => p.diabetes).length,
+    voedselallergieen: city.places.filter((p: any) => p.voedselallergieen).length,
+    wachttijd: city.places.filter((p: any) => p.wachttijd).length,
+    maaltijdplannen: city.places.filter((p: any) => p.maaltijdplannen).length,
+  };
   
   // Apply filters to places
   let filteredPlaces = [...city.places];
