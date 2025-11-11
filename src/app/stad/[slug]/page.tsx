@@ -654,6 +654,51 @@ export default function CityPage({ params }: PageProps) {
                           English Speaking
                         </span>
                       )}
+                      {place.gewichtsmanagement && (
+                        <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Gewichtsmanagement
+                        </span>
+                      )}
+                      {place.fitness && (
+                        <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Fitness & Sportvoeding
+                        </span>
+                      )}
+                      {place.spijsverteringsproblemen && (
+                        <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Spijsverteringsproblemen
+                        </span>
+                      )}
+                      {place.zwangerschap && (
+                        <span className="bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Zwangerschap & Borstvoeding
+                        </span>
+                      )}
+                      {place.bloedonderzoek && (
+                        <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Bloedonderzoek
+                        </span>
+                      )}
+                      {place.diabetes && (
+                        <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Diabetes
+                        </span>
+                      )}
+                      {place.voedselallergieen && (
+                        <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Voedselallergie
+                        </span>
+                      )}
+                      {place.wachttijd && (
+                        <span className="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Korte wachttijd
+                        </span>
+                      )}
+                      {place.maaltijdplannen && (
+                        <span className="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Maaltijdplannen
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
