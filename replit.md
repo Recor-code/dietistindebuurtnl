@@ -76,6 +76,24 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**November 11, 2025**: Footer affiliate link update and city page filter enhancements:
+- ✅ **Footer Link Update**: Changed footer promotional link to Organico Labs supplements
+  - New text: "Op zoek naar natuurlijke supplementen die doen wat ze beloven?"
+  - Links to: https://shop.organicolabs.com/
+  - UTM tracking: utm_source=dietistindebuurt.nl&utm_medium=footer&utm_campaign=supplements
+- ✅ **10 New Specialty Filters Added to City Pages**: Enhanced filtering with specialty-specific buttons
+  - Gewichtsmanagement (Weight Management) - Pink with Scale icon
+  - Fitness & Sportvoeding (Fitness & Sports Nutrition) - Orange with Dumbbell icon
+  - Spijsverteringsproblemen (Digestive Issues) - Teal with Apple icon
+  - Zwangerschap & Borstvoeding (Pregnancy & Breastfeeding) - Rose with Baby icon
+  - Bloedonderzoek (Blood Testing) - Red with Activity icon
+  - Diabetes - Indigo with Pill icon
+  - Voedselallergie (Food Allergies) - Amber with Heart icon
+  - Korte wachttijd (Short Wait Time) - Cyan with Timer icon
+  - Maaltijdplannen (Meal Plans) - Lime with Calendar icon
+  - All mapped to corresponding Supabase filter columns
+- ✅ **Total of 13 filters** now available on all 415+ city pages (3 general + 10 specialty filters)
+
 **October 16, 2025**: Blog article enhancements - Added featured images and social sharing:
 - ✅ **Featured Images**: Added 14 high-quality stock images (converted to WebP) for all dietist blog articles
   - Images properly optimized and placed in `/public/img/blog/{slug}/featured.webp`

@@ -38,12 +38,12 @@ export default function Footer() {
             </p>
             <div className="text-center">
               <a
-                href="https://ketogeen.com/keto-quiz/?utm_source=dietistindebuurt.nl&utm_medium=footer&utm_campaign=keto_quiz"
+                href="https://shop.organicolabs.com/?utm_source=dietistindebuurt.nl&utm_medium=footer&utm_campaign=supplements"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 text-sm underline"
               >
-                Ontdek hoeveel je kan afvallen met het keto plan - Doe de keto-quiz
+                Op zoek naar natuurlijke supplementen die doen wat ze beloven?
               </a>
             </div>
           </div>
