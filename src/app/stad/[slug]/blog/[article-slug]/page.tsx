@@ -276,7 +276,7 @@ export default async function CityBlogPage({ params }: PageProps) {
                   <li><strong>PGB (Persoonsgebonden Budget):</strong> Voor specifieke situaties</li>
                 </ul>
 
-                <h2>Specialisaties van Diëtisten in {city.name}</h2>
+                <h2>Specialisaties van diëtisten in {city.name}</h2>
                 
                 <h3>Coaches voor volwassenen</h3>
                 <p>

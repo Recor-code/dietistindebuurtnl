@@ -11,7 +11,7 @@ export default function Footer() {
               <Heart className="text-blue-400" size={24} />
               <div>
                 <span className="text-xl font-bold">Diëtisten in de Buurt</span>
-                <div className="text-sm text-gray-500 mt-1">De grootste directory voor Diëtisten</div>
+                <div className="text-sm text-gray-500 mt-1">De grootste directory voor diëtisten</div>
               </div>
             </div>
             <p className="text-gray-400">

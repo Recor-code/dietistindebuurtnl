@@ -14,7 +14,7 @@ const organizationSchema = {
   name: 'Diëtist in de Buurt',
   url: 'https://dietistindebuurt.nl',
   logo: 'https://dietistindebuurt.nl/images/logo.webp',
-  description: 'De grootste directory voor Diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.',
+  description: 'De grootste directory voor diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.',
   areaServed: [
     {
       '@type': 'Country',

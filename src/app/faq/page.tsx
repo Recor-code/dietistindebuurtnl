@@ -201,7 +201,7 @@ export default function FAQPage() {
             <HelpCircle className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Veelgestelde Vragen over Diëtisten
+            Veelgestelde vragen over diëtisten
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Uitgebreide antwoorden op de meest voorkomende vragen over diëtisten, voedingsadvies, kosten en vergoeding

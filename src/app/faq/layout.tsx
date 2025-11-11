@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Veelgestelde Vragen over Diëtisten | Diëtist in de Buurt',
+  title: 'Veelgestelde vragen over diëtisten | Diëtist in de Buurt',
   description: 'Uitgebreide antwoorden op de meest voorkomende vragen over diëtisten, voedingsadvies, kosten, vergoeding en het vinden van een diëtist bij jou in de buurt.',
   keywords: 'dietist FAQ, dietist vragen, voedingsadvies vragen, dietist kosten, vergoeding diëtist, veelgestelde vragen diëtist, dietist kiezen',
   openGraph: {
-    title: 'Veelgestelde Vragen over Diëtisten | Diëtist in de Buurt',
+    title: 'Veelgestelde vragen over diëtisten | Diëtist in de Buurt',
     description: 'Uitgebreide antwoorden op de meest voorkomende vragen over diëtisten, voedingsadvies, kosten en vergoeding in Nederland en België.',
     type: 'website',
     locale: 'nl_NL',

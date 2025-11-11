@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "Diëtist in de Buurt | Vind de beste diëtisten bij jou in de buurt",
     template: "%s | Diëtist in de Buurt"
   },
-  description: "De grootste directory voor Diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
+  description: "De grootste directory voor diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
   keywords: "Diëtisten, Diëtiek, voedingsadvies, voedingsdeskundige, Nederland, België, voedingsbegeleiding",
   authors: [{ name: "Diëtist in de Buurt" }],
   icons: {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Diëtist in de Buurt | Vind de beste diëtisten bij jou in de buurt",
-    description: "De grootste directory voor Diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
+    description: "De grootste directory voor diëtisten in Nederland en België. Vergelijk gecertificeerde diëtisten, bekijk reviews en vind de perfecte match voor voedingsadvies.",
     type: "website",
     locale: "nl_NL",
     alternateLocale: ["nl_BE"],

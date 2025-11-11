@@ -6,7 +6,7 @@ import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
   title: 'Contact - Diëtist in de Buurt',
-  description: 'Neem contact met ons op voor vragen over Diëtisten, coaching of onze platform. We helpen je graag verder.',
+  description: 'Neem contact met ons op voor vragen over diëtisten, coaching of onze platform. We helpen je graag verder.',
 };
 
 export default function ContactPage() {

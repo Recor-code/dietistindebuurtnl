@@ -197,7 +197,7 @@ function generateReportHTML(name: string, responses: any): string {
         <ul style="margin: 0; padding-left: 20px;">
           <li>Bespreek je antwoorden met een Diëtiek-specialist of je huisarts</li>
           <li>Overweeg contact op te nemen met een Diëtist voor praktische ondersteuning</li>
-          <li>Bekijk onze website voor Diëtisten bij jou in de buurt</li>
+          <li>Bekijk onze website voor diëtisten bij jou in de buurt</li>
           <li>Zoek steun bij familie, vrienden of Diëtiek-gemeenschappen</li>
         </ul>
       </div>
@@ -217,7 +217,7 @@ function generateReportHTML(name: string, responses: any): string {
           <strong style="color: #2563eb;">Diëtist in de Buurt</strong>
         </p>
         <p style="color: #6b7280; font-size: 12px; margin-top: 10px;">
-          Vind Diëtisten bij jou in de buurt op dietistindebuurt.nl
+          Vind diëtisten bij jou in de buurt op dietistindebuurt.nl
         </p>
       </div>
 
@@ -258,7 +258,7 @@ ${responsesText || 'Geen specifieke antwoorden beschikbaar.'}
 Wat kun je nu doen?
 - Bespreek je antwoorden met een Diëtiek-specialist of je huisarts
 - Overweeg contact op te nemen met een Diëtist voor praktische ondersteuning  
-- Bekijk onze website voor Diëtisten bij jou in de buurt
+- Bekijk onze website voor diëtisten bij jou in de buurt
 - Zoek steun bij familie, vrienden of Diëtiek-gemeenschappen
 
 Belangrijke opmerking:
@@ -269,6 +269,6 @@ met een gekwalificeerde zorgverlener.
 Met vriendelijke groeten,
 Diëtist in de Buurt
 
-Vind Diëtisten bij jou in de buurt op dietistindebuurt.nl
+Vind diëtisten bij jou in de buurt op dietistindebuurt.nl
   `.trim();
 }
