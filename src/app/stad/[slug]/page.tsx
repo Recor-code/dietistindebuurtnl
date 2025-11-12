@@ -408,7 +408,7 @@ export default function CityPage({ params }: PageProps) {
                 }`}
               >
                 <Users size={16} />
-                Kindvriendelijk
+                Kinderen & Tieners
               </button>
               <button 
                 onClick={() => toggleFilter('weekend')}
@@ -646,7 +646,7 @@ export default function CityPage({ params }: PageProps) {
                     <div className="flex flex-wrap gap-2 mb-4">
                       {place.isChildFriendly && (
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
-                          Kindvriendelijk
+                          Kinderen & Tieners
                         </span>
                       )}
                       {place.weekendAvailable && (
