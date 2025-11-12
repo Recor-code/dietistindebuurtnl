@@ -2,7 +2,7 @@
 
 import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
-import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Scale, Dumbbell, Baby, Activity, Pill, Video, Sparkles, UserCircle, Leaf } from 'lucide-react';
+import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Scale, Dumbbell, Baby, Activity, Pill, Video, Sparkles, User, Leaf } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
@@ -506,7 +506,7 @@ export default function CityPage({ params }: PageProps) {
                     : 'bg-white text-gray-700 border-gray-300 hover:border-emerald-400 hover:bg-emerald-50'
                 }`}
               >
-                <UserCircle size={16} />
+                <User size={16} />
                 Voedingsdeskundige
               </button>
               <button 
