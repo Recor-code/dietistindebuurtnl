@@ -2,7 +2,7 @@
 
 import { notFound } from 'next/navigation';
 import { supabase } from '../../../../lib/supabase';
-import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Scale, Dumbbell, Apple, Baby, Activity, Pill, Heart, Timer, Calendar } from 'lucide-react';
+import { MapPin, Star, Phone, Mail, Globe, Clock, Users, Scale, Dumbbell, Baby, Activity, Pill, Video, Sparkles, UserCircle, Leaf } from 'lucide-react';
 import Link from 'next/link';
 import GoogleMap from '@/components/GoogleMap';
 import Header from '@/components/Header';
@@ -81,18 +81,17 @@ async function getCityWithPlaces(slug: string) {
       reviewCount: place['RATINGS'] ? parseInt(place['RATINGS']) : 0,
       isChildFriendly: place.kindvriendelijk_filter?.toLowerCase() === 'yes',
       weekendAvailable: place.weekend_beschikbaar_filter?.toLowerCase() === 'yes',
-      acceptsInsurance: place.basisverzekering_filter?.toLowerCase() === 'yes',
-      studentFriendly: place.studenten_filter?.toLowerCase() === 'yes',
       englishSpeaking: place.english_filter?.toLowerCase() === 'yes',
       gewichtsmanagement: place.gewichtsmanagement_filter?.toLowerCase() === 'yes',
       fitness: place.fitness_filter?.toLowerCase() === 'yes',
-      spijsverteringsproblemen: place.spijsverteringsproblemen_filter?.toLowerCase() === 'yes',
       zwangerschap: place.zwangerschap_filter?.toLowerCase() === 'yes',
       bloedonderzoek: place.bloedonderzoek_filter?.toLowerCase() === 'yes',
       diabetes: place.diabetes_filter?.toLowerCase() === 'yes',
-      voedselallergieen: place.voedselallergieen_filter?.toLowerCase() === 'yes',
-      wachttijd: place.wachttijd_filter?.toLowerCase() === 'yes',
-      maaltijdplannen: place.maaltijdplannen_filter?.toLowerCase() === 'yes',
+      voedingsdeskundige: place.voedingsdeskundige_filter?.toLowerCase() === 'yes',
+      holistisch: place.holistisch_filter?.toLowerCase() === 'yes',
+      coach: place.coach_filter?.toLowerCase() === 'yes',
+      orthomoleculaire: place.orthomoleculaire_filter?.toLowerCase() === 'yes',
+      onlineConsulten: place.online_consulten_filter?.toLowerCase() === 'yes',
       openingHours: place['OPENING HOURS'],
       mainImageUrl: place['MAIN IMAGE URL'],
       resultPosition: place['RESULT POSITION'] || 999999,
@@ -115,13 +114,14 @@ export default function CityPage({ params }: PageProps) {
     englishSpeaking: false,
     gewichtsmanagement: false,
     fitness: false,
-    spijsverteringsproblemen: false,
     zwangerschap: false,
     bloedonderzoek: false,
     diabetes: false,
-    voedselallergieen: false,
-    wachttijd: false,
-    maaltijdplannen: false
+    voedingsdeskundige: false,
+    holistisch: false,
+    coach: false,
+    orthomoleculaire: false,
+    onlineConsulten: false
   });
   const [visibleCount, setVisibleCount] = useState(30);
 
@@ -162,13 +162,14 @@ export default function CityPage({ params }: PageProps) {
     englishSpeaking: city.places.filter((p: any) => p.englishSpeaking).length,
     gewichtsmanagement: city.places.filter((p: any) => p.gewichtsmanagement).length,
     fitness: city.places.filter((p: any) => p.fitness).length,
-    spijsverteringsproblemen: city.places.filter((p: any) => p.spijsverteringsproblemen).length,
     zwangerschap: city.places.filter((p: any) => p.zwangerschap).length,
     bloedonderzoek: city.places.filter((p: any) => p.bloedonderzoek).length,
     diabetes: city.places.filter((p: any) => p.diabetes).length,
-    voedselallergieen: city.places.filter((p: any) => p.voedselallergieen).length,
-    wachttijd: city.places.filter((p: any) => p.wachttijd).length,
-    maaltijdplannen: city.places.filter((p: any) => p.maaltijdplannen).length,
+    voedingsdeskundige: city.places.filter((p: any) => p.voedingsdeskundige).length,
+    holistisch: city.places.filter((p: any) => p.holistisch).length,
+    coach: city.places.filter((p: any) => p.coach).length,
+    orthomoleculaire: city.places.filter((p: any) => p.orthomoleculaire).length,
+    onlineConsulten: city.places.filter((p: any) => p.onlineConsulten).length,
   };
   
   // Apply filters to places
@@ -189,9 +190,6 @@ export default function CityPage({ params }: PageProps) {
   if (filters.fitness) {
     filteredPlaces = filteredPlaces.filter(place => place.fitness);
   }
-  if (filters.spijsverteringsproblemen) {
-    filteredPlaces = filteredPlaces.filter(place => place.spijsverteringsproblemen);
-  }
   if (filters.zwangerschap) {
     filteredPlaces = filteredPlaces.filter(place => place.zwangerschap);
   }
@@ -201,14 +199,20 @@ export default function CityPage({ params }: PageProps) {
   if (filters.diabetes) {
     filteredPlaces = filteredPlaces.filter(place => place.diabetes);
   }
-  if (filters.voedselallergieen) {
-    filteredPlaces = filteredPlaces.filter(place => place.voedselallergieen);
+  if (filters.voedingsdeskundige) {
+    filteredPlaces = filteredPlaces.filter(place => place.voedingsdeskundige);
   }
-  if (filters.wachttijd) {
-    filteredPlaces = filteredPlaces.filter(place => place.wachttijd);
+  if (filters.holistisch) {
+    filteredPlaces = filteredPlaces.filter(place => place.holistisch);
   }
-  if (filters.maaltijdplannen) {
-    filteredPlaces = filteredPlaces.filter(place => place.maaltijdplannen);
+  if (filters.coach) {
+    filteredPlaces = filteredPlaces.filter(place => place.coach);
+  }
+  if (filters.orthomoleculaire) {
+    filteredPlaces = filteredPlaces.filter(place => place.orthomoleculaire);
+  }
+  if (filters.onlineConsulten) {
+    filteredPlaces = filteredPlaces.filter(place => place.onlineConsulten);
   }
   if (filters.hoogsteBeoordeling) {
     // Sort by weighted score: considers both rating AND review count
@@ -462,17 +466,6 @@ export default function CityPage({ params }: PageProps) {
                 Fitness & Sportvoeding
               </button>
               <button 
-                onClick={() => toggleFilter('spijsverteringsproblemen')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
-                  filters.spijsverteringsproblemen 
-                    ? 'bg-teal-600 text-white border-teal-600' 
-                    : 'bg-white text-gray-700 border-gray-300 hover:border-teal-400 hover:bg-teal-50'
-                }`}
-              >
-                <Apple size={16} />
-                Spijsverteringsproblemen
-              </button>
-              <button 
                 onClick={() => toggleFilter('zwangerschap')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
                   filters.zwangerschap 
@@ -506,37 +499,59 @@ export default function CityPage({ params }: PageProps) {
                 Diabetes
               </button>
               <button 
-                onClick={() => toggleFilter('voedselallergieen')}
+                onClick={() => toggleFilter('voedingsdeskundige')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
-                  filters.voedselallergieen 
+                  filters.voedingsdeskundige 
+                    ? 'bg-emerald-600 text-white border-emerald-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-emerald-400 hover:bg-emerald-50'
+                }`}
+              >
+                <UserCircle size={16} />
+                Voedingsdeskundige
+              </button>
+              <button 
+                onClick={() => toggleFilter('holistisch')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.holistisch 
+                    ? 'bg-teal-600 text-white border-teal-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-teal-400 hover:bg-teal-50'
+                }`}
+              >
+                <Sparkles size={16} />
+                Holistisch
+              </button>
+              <button 
+                onClick={() => toggleFilter('coach')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.coach 
+                    ? 'bg-violet-600 text-white border-violet-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-violet-400 hover:bg-violet-50'
+                }`}
+              >
+                <Users size={16} />
+                Coach
+              </button>
+              <button 
+                onClick={() => toggleFilter('orthomoleculaire')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
+                  filters.orthomoleculaire 
                     ? 'bg-amber-600 text-white border-amber-600' 
                     : 'bg-white text-gray-700 border-gray-300 hover:border-amber-400 hover:bg-amber-50'
                 }`}
               >
-                <Heart size={16} />
-                Voedselallergie
+                <Leaf size={16} />
+                Orthomoleculaire
               </button>
               <button 
-                onClick={() => toggleFilter('wachttijd')}
+                onClick={() => toggleFilter('onlineConsulten')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
-                  filters.wachttijd 
+                  filters.onlineConsulten 
                     ? 'bg-cyan-600 text-white border-cyan-600' 
                     : 'bg-white text-gray-700 border-gray-300 hover:border-cyan-400 hover:bg-cyan-50'
                 }`}
               >
-                <Timer size={16} />
-                Korte wachttijd
-              </button>
-              <button 
-                onClick={() => toggleFilter('maaltijdplannen')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors text-sm font-medium ${
-                  filters.maaltijdplannen 
-                    ? 'bg-lime-600 text-white border-lime-600' 
-                    : 'bg-white text-gray-700 border-gray-300 hover:border-lime-400 hover:bg-lime-50'
-                }`}
-              >
-                <Calendar size={16} />
-                Maaltijdplannen
+                <Video size={16} />
+                Online Consulten
               </button>
             </div>
 
@@ -639,18 +654,8 @@ export default function CityPage({ params }: PageProps) {
                           Weekend beschikbaar
                         </span>
                       )}
-                      {place.acceptsInsurance && (
-                        <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
-                          Zorgverzekering
-                        </span>
-                      )}
-                      {place.studentFriendly && (
-                        <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
-                          Studentvriendelijk
-                        </span>
-                      )}
                       {place.englishSpeaking && (
-                        <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">
+                        <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
                           English Speaking
                         </span>
                       )}
@@ -662,11 +667,6 @@ export default function CityPage({ params }: PageProps) {
                       {place.fitness && (
                         <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-medium">
                           Fitness & Sportvoeding
-                        </span>
-                      )}
-                      {place.spijsverteringsproblemen && (
-                        <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-medium">
-                          Spijsverteringsproblemen
                         </span>
                       )}
                       {place.zwangerschap && (
@@ -684,19 +684,29 @@ export default function CityPage({ params }: PageProps) {
                           Diabetes
                         </span>
                       )}
-                      {place.voedselallergieen && (
+                      {place.voedingsdeskundige && (
+                        <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Voedingsdeskundige
+                        </span>
+                      )}
+                      {place.holistisch && (
+                        <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Holistisch
+                        </span>
+                      )}
+                      {place.coach && (
+                        <span className="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-xs font-medium">
+                          Coach
+                        </span>
+                      )}
+                      {place.orthomoleculaire && (
                         <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-medium">
-                          Voedselallergie
+                          Orthomoleculaire
                         </span>
                       )}
-                      {place.wachttijd && (
+                      {place.onlineConsulten && (
                         <span className="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs font-medium">
-                          Korte wachttijd
-                        </span>
-                      )}
-                      {place.maaltijdplannen && (
-                        <span className="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-xs font-medium">
-                          Maaltijdplannen
+                          Online Consulten
                         </span>
                       )}
                     </div>
